@@ -60,6 +60,9 @@ function applyTheme(isLightMode, playSound = false) {
     localStorage.setItem("theme", isLightMode ? "light" : "dark");
 }
 
+/**
+ * Setup the theme switch logic on page load and user interaction.
+ */
 function setupThemeSwitch() {
     const themeSwitch = document.getElementById("theme-switch");
     // Get saved theme preference from localStorage
