@@ -112,6 +112,22 @@ main {
     font-size: 0.8rem; /* Set small font size for stats */
 }
 
+/* Grid container */
+#grid {
+    display: flex; /* Enable flex layout */
+    flex-direction: column; /* Stack grid rows vertically */
+    align-items: center; /* Center the grid horizontally */
+}
+
+/* Number keys container */
+#numbers-container {  
+    display: grid; /* Use CSS Grid layout */  
+    gap: 1rem; /* Space between buttons */
+    justify-content: center; /* Center the grid horizontally */
+    padding: 0 0.5rem; /* Add horizontal padding */
+    margin-top: auto; /* Push container to the bottom of the #game section */
+}
+
 /* --- Modals --- */
 
 /* --- About Page --- */
