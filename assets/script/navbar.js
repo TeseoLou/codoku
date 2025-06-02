@@ -67,4 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
             soundEffects.play("page");
         });
     });
+    // Intercept clicks on main navigation links
+    // Reference: https://stackoverflow.com/questions/23269951
+    // Reference: https://attacomsian.com/blog/javascript-loop-dom-elements
+    document.querySelectorAll('a[href="index.html"], a[href="about.html"]');
 }
