@@ -21,7 +21,7 @@ const themeToggleSounds = {
     }
 };
 
-function applyTheme(isLightMode, playSound = false) {
+function applyTheme(isLightMode) {
     // Toggle 'dark' class based on theme
     // Reference: https://stackoverflow.com/questions/60469551
     $("body").toggleClass("dark", !isLightMode);
