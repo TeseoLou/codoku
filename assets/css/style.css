@@ -106,7 +106,7 @@ button,
 /* Navbar Container */
 nav {
     background-color: var(--color-bg-light); /* Light background color */   
-    background-image: url(../backgrounds/light-background.png); /* Light background image */  
+    background-image: url(../backgrounds/nav-light-background.png); /* Light background image */  
     background-repeat: no-repeat; /* Prevent image repetition */
     background-position: center center; /* Center the background image */  
     background-size: cover; /* Scale image to cover the container */
@@ -115,7 +115,7 @@ nav {
 /* Navbar container - Dark mode */
 body.dark nav {
     background-color: var(--color-bg-dark); /* Dark fallback color if background image fails */
-    background-image: url(../backgrounds/dark-background.png); /* Dark background image */
+    background-image: url(../backgrounds/nav-dark-background.png); /* Dark background image */
 }
 
 /* Collapsed navbar content */
@@ -152,7 +152,7 @@ body.dark nav {
 
 /* Hamburger icon - Dark mode */
 body.dark .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' ... %3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 /* Nav link - Dark mode */
