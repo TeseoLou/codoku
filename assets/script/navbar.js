@@ -23,5 +23,12 @@ const navSounds = {
  */
 // Reference: https://stackoverflow.com/questions/62375324
 function setupNavLinkCollapse() {
-    
+    // Declare variable that selects all nav links in navbar
+    const links = document.querySelectorAll(".navbar-collapse .nav-link");
+    // Attach a click event to all nav links inside the collapsed navbar
+    links.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            
+    });
+});
 }
