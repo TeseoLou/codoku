@@ -45,6 +45,37 @@ h6 {
     font-family: var(--font-heading); /* Apply space mono font */
 }
 
+/* Buttons */
+
+/* General button and modal label */
+button,
+#setup-modal-label {
+    /* Use heading font */
+    font-family: var(--font-heading);
+    /* Bold text for emphasis */
+    font-weight: bold;
+    /* Center button text */
+    text-align: center;
+}
+
+/* Button styling override */
+.btn {
+    /* Remove border radius for square corners */
+    border-radius: 0;
+}
+
+/* Make buttons equal width */
+.equal-width-buttons {
+    /* Inline-block for layout */
+    display: inline-block;
+    /* Full width by default */
+    width: 100%;
+    /* Prevent overly wide buttons on large screens */
+    max-width: 70px;
+    /* Center text inside button */
+    text-align: center;
+}
+
 /* --- Navbar --- */
 /* Navbar Container */
 nav {
