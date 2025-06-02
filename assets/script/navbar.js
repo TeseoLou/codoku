@@ -33,5 +33,8 @@ function setupOutsideNavbarCollapse() {
         // Check if the click happened inside the navbar content using jQuery
         // Reference: https://stackoverflow.com/questions/62375324
         const isClickInsideNavbar = $(event.target).closest("#navbar-content").length > 0;
+        // Check if the click target is the navbar toggler or inside it using jQuery
+        // Reference: https://stackoverflow.com/questions/46736823
+        const isNavbarToggler = $(event.target).is(".navbar-toggler") || $(event.target).closest(".navbar-toggler").length > 0;
     });
 }
