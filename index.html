@@ -73,7 +73,8 @@
     <!-- Header Section -->
     <header class="container">
         <h1 id="title" class="text-center">
-            <i class="fa-solid fa-code"></i> <b>Codoku</b> <i class="fa-solid fa-i-cursor"></i>
+            <i class="fa-solid fa-code"></i> <b>Codoku</b>
+            <i class="fa-solid fa-i-cursor"></i>
         </h1>
         <!-- Buttons Section -->
         <div class="text-center">
@@ -135,34 +136,50 @@
                         <h2 id="rules-modal-label" class="modal-title">Game Rules</h2>
                     </header>
                     <section id="rules-modal-info" class="modal-body">
-                        <p>The goal of Codoku is to complete the grid so that every row, column, and 3x3 box contains
-                            the numbers 1 through 9.</p>
+                        <p>
+                            The goal of Codoku is to complete the grid so that every row,
+                            column, and 3x3 box contains the numbers 1 through 9.
+                        </p>
                         <ul>
-                            <li>Select a cell and then select a numbers key below the grid or on your keyboard to place your answer.</li>
-                            <li>Choose your difficulty and time before starting a new game.</li>
+                            <li>
+                                Select a cell and then select a numbers key below the grid or
+                                on your keyboard to place your answer.
+                            </li>
+                            <li>
+                                Choose your difficulty and time before starting a new game.
+                            </li>
                             <li>If you need a hint then press the check or clue button.</li>
                         </ul>
                     </section>
                     <footer class="modal-footer">
-                        <button id="rules-modal-button" class="btn btn-dark" type="button" aria-label="Close game rules and return to game" data-bs-dismiss="modal">Back ↲</button>
+                        <button id="rules-modal-button" class="btn btn-dark" type="button"
+                            aria-label="Close game rules and return to game" data-bs-dismiss="modal">
+                            Back ↲
+                        </button>
                     </footer>
                 </div>
             </article>
         </div>
     </section>
     <!-- Setup Modal -->
-    <section id="setup-modal" class="">
-        <div>
-            <h2 id="setup-modal-label" class="">Setup Game</h2>
-            <section id="setup-modal-content" class="modal-body">
-                <form id="setup-options" class="">
-                    <fieldset id="difficulty-level" class="">Difficulty Level</fieldset>
-                    <fieldset id="time-countdown" class="">Timer (Minutes)</fieldset>
-                    <div class="">
-                        <button type="button" id="start-button" class="">Enter ↲</button>
-                    </div>
-                </form>
-            </section>
+    <section id="setup-modal" class="modal fade" tabindex="-1" aria-labelledby="setup-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <article class="modal-content setup-modal-custom">
+                <h2 id="setup-modal-label" class="modal-title visually-hidden">Setup Game</h2>
+                <section id="setup-modal-content" class="modal-body">
+                    <form id="setup-options" class="d-flex flex-column align-items-center" aria-labelledby="setup-modal-label">
+                        <fieldset id="difficulty-level" class="">
+                            Difficulty Level
+                        </fieldset>
+                        <fieldset id="time-countdown" class="">Timer (Minutes)</fieldset>
+                        <div class="">
+                            <button type="button" id="start-button" class="">
+                                Enter ↲
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </article>
         </div>
     </section>
     <!-- Footer Section -->
