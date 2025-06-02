@@ -16,7 +16,7 @@ const navSounds = {
             sound.play();
         }
     }
-}
+};
 
 /**
  * Collapse the Bootstrap navbar when clicking outside of the open menu
@@ -37,17 +37,17 @@ function setupOutsideNavbarCollapse() {
         // Reference: https://stackoverflow.com/questions/46736823
         const isNavbarToggler = $(event.target).is(".navbar-toggler") || $(event.target).closest(".navbar-toggler").length > 0;
         // If the click is outside both the navbar and toggler, and the navbar is expanded
-        if (!isClickInsideNavbar && !isNavbarToggler && $navbarCollapse.hasClass("show")) {
+        if (!isClickInsideNavbar && !isNavbarToggler && navbarCollapse.hasClass("show")) {
             // Get the Bootstrap Collapse instance associated with the navbar
             // https://getbootstrap.com/docs/5.3/components/collapse/#methods
-            const bsCollapse = bootstrap.Collapse.getInstance($navbarCollapse[0]);
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse[0]);
             // If the instance exists, hide the navbar
             if (bsCollapse) {
                 bsCollapse.hide();
             }
         }
     });
-}
+};
 
 /**
  * Sets up button event listeners, sound triggers, and navigation handling once the page is fully loaded
