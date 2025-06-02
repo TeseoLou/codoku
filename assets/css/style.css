@@ -66,6 +66,12 @@ h6 {
     display: inline-block; /* Display inline for horizontal alignment */
 }
 
+/* Nav links */
+.navbar-nav .nav-link {
+    font-family: "Space Mono", monospace; /* Apply space mono heading font */
+    padding: 0 1rem; /* Add horizontal padding */ 
+}
+
 /* --- Header --- */
 
 /* --- Footer --- */
