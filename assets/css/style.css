@@ -35,6 +35,12 @@ body {
     width: 100vw; /* Full screen width */
 }
 
+/* Background - Dark mode */
+body.dark {
+    background-color: var(--color-bg-dark); /* Dark fallback color if background image fails */
+    background-image: url(../backgrounds/dark-background.png); /* Dark background image */
+}
+
 /* Headings */
 h1,
 h2,
@@ -43,6 +49,26 @@ h4,
 h5,
 h6 {  
     font-family: var(--font-heading); /* Apply space mono font */
+}
+
+/* Headings - Dark mode */
+body.dark,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6 {
+    color: var(--color-white); /* Set text color to white in dark mode */
+}
+
+/* Other text elements - Dark mode */
+body.dark p,
+body.dark li,
+body.dark label,
+body.dark legend,
+body.dark a {
+    color: var(--color-white); /* Set text color to white in dark mode */
 }
 
 /* Buttons */
