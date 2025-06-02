@@ -48,3 +48,10 @@ function setupOutsideNavbarCollapse() {
         }
     });
 }
+
+/**
+ * Sets up button event listeners, sound triggers, and navigation handling once the page is fully loaded
+ */
+document.addEventListener('DOMContentLoaded', function () {
+    
+}
