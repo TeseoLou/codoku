@@ -53,5 +53,7 @@ function setupOutsideNavbarCollapse() {
  * Sets up button event listeners, sound triggers, and navigation handling once the page is fully loaded
  */
 document.addEventListener('DOMContentLoaded', function () {
-    
+    // Selects all elements with the class .modal from the DOM
+    // Reference: https://getbootstrap.com/docs/5.3/components/modal/
+    const modals = document.querySelectorAll('.modal');
 }
