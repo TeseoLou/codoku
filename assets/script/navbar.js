@@ -73,7 +73,9 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('a[href="index.html"], a[href="about.html"]').forEach(link => {
         // Attaches a click event listener to each selected link
         link.addEventListener('click', function (event) {
-            
+            // Stop the browser from navigating right away
+            // Reference: https://stackoverflow.com/questions/821011
+            event.preventDefault();
         }
     }
 }
