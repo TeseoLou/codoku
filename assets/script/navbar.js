@@ -19,24 +19,9 @@ const navSounds = {
 }
 
 /**
- * Collapse the Bootstrap navbar when a nav-link is clicked
+ * Collapse the Bootstrap navbar when clicking outside of the open menu
  */
-// Reference: https://stackoverflow.com/questions/62375324
-function setupNavLinkCollapse() {
-    // Declare variable that selects all nav links in navbar
-    const links = document.querySelectorAll(".navbar-collapse .nav-link");
-    // Attach a click event to all nav links inside the collapsed navbar
-    links.forEach(function (link) {
-        link.addEventListener("click", function (event) {
-            // Set the href attribute of the clicked nav link
-            const href = $(this).attr("href");
-            // Set the target section based on the href
-            const section = $(href);
-            // Only proceed if the target section exists in the DOM
-            // Reference: https://dev.to/lavary/how-to-check-if-an-element-exists-in-javascript-with-examples-4mpb#:~:text=So%20to%20check%20if%20the,ll%20get%20a%20null%20value
-            if (section.length) {
-                
-            }
-    });
-});
+// Reference: https://stackoverflow.com/questions/74670132
+function setupOutsideNavbarCollapse() {
+    
 }
