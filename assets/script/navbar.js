@@ -41,6 +41,10 @@ function setupOutsideNavbarCollapse() {
             // Get the Bootstrap Collapse instance associated with the navbar
             // https://getbootstrap.com/docs/5.3/components/collapse/#methods
             const bsCollapse = bootstrap.Collapse.getInstance($navbarCollapse[0]);
+            // If the instance exists, hide the navbar
+            if (bsCollapse) {
+                bsCollapse.hide();
+            }
         }
     });
 }
