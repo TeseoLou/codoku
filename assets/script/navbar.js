@@ -81,6 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // Check if the current page is index.html
             // Reference: https://www.samanthaming.com/tidbits/86-window-location-cheatsheet/
             const isLeavingGame = window.location.pathname.includes("index.html") || window.location.pathname === "/" || window.location.pathname.endsWith("index.html");
+            // Prompt the user before leaving the game to avoid accidental loss
+            if (isLeavingGame && href.includes("about.html")) {
+                
+            }
         }
     }
 }
