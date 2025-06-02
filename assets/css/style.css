@@ -185,6 +185,25 @@ footer a:hover {
 }
 
 /* --- Game Page --- */
+/* --- Setup Modal --- */
+/* Modal content */
+.modal-content {   
+    background-color: var(--color-bg-light); /* Fallback background color */
+    background-image: url(../backgrounds/light-background.png); /* Background image path */ 
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center center; /* Center background image */
+    background-size: cover; /* Scale image to cover modal */
+    border-radius: 0; /* Remove rounded corners */
+    border: none; /* Remove default border */
+    color: var(--color-black); /* Default text color */
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.9); /* Dark shadow for modal elevation */
+}
+
+/* Modal body */
+.modal-body {
+    border-radius: 0; /* Force sharp corners */
+}
+
 /* --- Main Section --- */
 /* Main */
 main {  
@@ -243,8 +262,6 @@ main {
 #numbers-container h2:active {   
     transform: scale(0.96); /* Slight shrink effect when pressed */
 }
-
-/* --- Setup Modal --- */
 
 /* --- About Page --- */
 
