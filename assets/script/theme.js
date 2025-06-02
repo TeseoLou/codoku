@@ -21,8 +21,13 @@ const themeToggleSounds = {
     }
 };
 
-function applyTheme(isLightMode) {
+function applyTheme(isLightMode, playSound = false) {
     // Toggle 'dark' class based on theme
     // Reference: https://stackoverflow.com/questions/60469551
     $("body").toggleClass("dark", !isLightMode);
+    // Update the checkbox to reflect the current theme
+    // Reference: https://api.jquery.com/prop/
+    $("#theme-switch").prop("checked", isLightMode);
+    // Change theme icon class
+    $("#theme-icon").attr("class", isLightMode ? "fa-solid fa-sun" : "fa-solid fa-moon");
 }
