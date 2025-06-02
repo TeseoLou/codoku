@@ -14,5 +14,10 @@ function setupStartButton() {
         // Get the Bootstrap modal instance using jQuery wrapper for the setup modal
         // Reference: https://getbootstrap.com/docs/5.3/components/modal/#methods
         const setupModalBootstrap = bootstrap.Modal.getInstance(setupModal[0]);
+        // If the modal instance exists hide the modal
+        if (setupModalBootstrap) {
+            // Reference: https://getbootstrap.com/docs/5.0/components/modal/#hide
+            setupModalBootstrap.hide();
+        }
     }
 }
