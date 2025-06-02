@@ -184,7 +184,27 @@
                                     <label for="hard" class="form-check-label">Hard</label>
                                 </div>
                             </section>
-                        <fieldset id="time-countdown" class="text-center w-100">Timer (Minutes)</fieldset>
+                        <fieldset id="time-countdown" class="text-center w-100">
+                            <legend>Timer (Minutes)</legend>
+                            <section id="timer-options" class="d-flex flex-wrap justify-content-center gap-3">
+                                <div class="form-check">
+                                    <input type="radio" id="time-none" class="form-check-input" name="time" value="none" checked>
+                                    <label for="time-none" class="form-check-label">None</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="time-3" class="form-check-input" name="time" value="3">
+                                    <label for="time-3" class="form-check-label">3</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="time-5" class="form-check-input" name="time" value="5">
+                                    <label for="time-5" class="form-check-label">5</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="time-10" class="form-check-input" name="time" value="10">
+                                    <label for="time-10" class="form-check-label">10</label>
+                                </div>
+                            </section>
+                        </fieldset>
                         <div class="text-center mt-4">
                             <button type="button" id="start-button" class="btn btn-dark">
                                 Enter ↲
