@@ -66,4 +66,6 @@ function setupThemeSwitch() {
     // Reference: https://whitep4nth3r.com/blog/best-light-dark-mode-theme-toggle-javascript/
     const savedTheme = localStorage.getItem("theme");
     const isLightMode = savedTheme !== "dark"; // Default to light mode
+    // Call function - Apply the theme settings to the DOM without sound
+    applyTheme(isLightMode, false);
 }
