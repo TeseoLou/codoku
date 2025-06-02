@@ -132,6 +132,36 @@ header {
     margin: 1rem;  /* Add margin around modal border */
 }
 
+/* Modal header */
+#rules-modal .modal-header {
+    justify-content: center; /* Center header content */
+    border-bottom: none; /* Remove bottom border */
+    padding-bottom: 0.5rem; /* Add space below header */
+}
+
+/* Modal title */
+#rules-modal .modal-title {
+    font-family: var(--font-heading); /* Use heading font */
+    font-weight: normal; /* Normal font weight */
+    font-size: 1.2rem; /* Enlarge title font size */
+    text-align: center; /* Center text */
+    margin: 0; /* Remove default margin */
+}
+
+/* Modal body */
+#rules-modal .modal-body {
+    font-family: var(--font-body); /* Use quicksand font */
+    font-size: 0.9rem; /* Reduce text font size */ 
+    padding-top: 0; /* Remove top padding */
+}
+
+/* Modal footer */
+#rules-modal .modal-footer {  
+    justify-content: center; /* Center footer content */   
+    border-top: none; /* Remove top border */   
+    padding-top: 0; /* Remove top padding */
+}
+
 /* --- Footer Section --- */
 /* Footer */
 footer {
