@@ -77,7 +77,7 @@ nav {
 
 /* Nav links */
 .navbar-nav .nav-link {
-    font-family: "Space Mono", monospace; /* Apply space mono heading font */
+    font-family: var(--font-heading); /* Apply space mono heading font */
     padding: 0 1rem; /* Add horizontal padding */ 
 }
 
@@ -105,7 +105,7 @@ header {
 
 /* Title */
 #title {   
-    font-family: var(--font-heading); /* Use heading font */
+    font-family: var(--font-heading); /* Use space mono heading font  */
     font-weight: normal; /* Normal font weight */    
     font-size: 2.5rem; /* Set large font size for headings */    
     padding-top: 0rem; /* Remove top padding */
