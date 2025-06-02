@@ -89,6 +89,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             // Play a page transition sound
             soundEffects.play("page");
+            // Then navigates to the desired page after a 300ms delay
+            // Reference: https://stackoverflow.com/questions/66144270
+            setTimeout(() => {
+                window.location.href = href;
+            }, 300);
         })
     })
 })
