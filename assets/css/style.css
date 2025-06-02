@@ -103,7 +103,7 @@ button,
 }
 
 /* --- Navbar --- */
-/* Navbar Container */
+/* Navbar container */
 nav {
     background-color: var(--color-bg-light); /* Light background color */   
     background-image: url(../backgrounds/light-background.png); /* Light background image */  
@@ -112,7 +112,8 @@ nav {
     background-size: cover; /* Scale image to cover the container */
 }
 
-nav.dark {
+/* Navbar container - Dark mode */
+body.dark nav {
     background-color: var(--color-bg-dark); /* Dark fallback color if background image fails */
     background-image: url(../backgrounds/dark-background.png); /* Dark background image */
 }
