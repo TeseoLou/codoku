@@ -149,6 +149,16 @@ main {
     transition: transform 0.1s ease-in-out; /* Smooth scale animation on press */
 }
 
+/* Number keys on hover */
+#numbers-container h2:hover {   
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.35); /* Darker inner shadow on hover */
+}
+
+/* Number keys on press */
+#numbers-container h2:active {   
+    transform: scale(0.96); /* Slight shrink effect when pressed */
+}
+
 /* --- Modals --- */
 
 /* --- About Page --- */
