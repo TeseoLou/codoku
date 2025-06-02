@@ -52,4 +52,7 @@ function applyTheme(isLightMode, playSound = false) {
                 .toggleClass("btn-dark", isLightMode);
         }
     });
+    // Save theme preference to localStorage
+    // Reference: https://www.w3schools.com/jsref/prop_win_localstorage.asp
+    localStorage.setItem("theme", isLightMode ? "light" : "dark");
 }
