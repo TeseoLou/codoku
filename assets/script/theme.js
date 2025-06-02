@@ -71,5 +71,9 @@ function setupThemeSwitch() {
     // Add listener for user toggle
     // Reference: https://dev.to/whitep4nth3r/the-best-lightdark-mode-theme-toggle-in-javascript-368f
     themeSwitch.addEventListener("change", function () {
+        const isLight = this.checked;
+        // Update ARIA for accessibility
+        // Reference: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked
+        this.setAttribute("aria-checked", isLight ? "true" : "false");
     }
 }
