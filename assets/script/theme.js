@@ -80,5 +80,5 @@ function setupThemeSwitch() {
         this.setAttribute("aria-checked", isLight ? "true" : "false");
         // Call function - Apply the theme settings to the DOM with sound
         applyTheme(isLight, true);
-    }
+    });
 }
