@@ -17,3 +17,11 @@ const navSounds = {
         }
     }
 }
+
+/**
+ * Collapse the Bootstrap navbar when a nav-link is clicked
+ */
+// Reference: https://stackoverflow.com/questions/62375324
+function setupNavLinkCollapse() {
+    
+}
