@@ -1,5 +1,5 @@
 /* --- Global Variables --- */
-/* Custom Styling */
+/* Typography */
 :root {
     --font-body: "Quicksand", sans-serif; /* Main font for body text */
     --font-heading: "Space Mono", monospace; /* Main font for headings */    
@@ -12,7 +12,7 @@
 }
 
 /* --- Base Styles --- */
-/* Page Styling */
+/* Page */
 html,
 body {   
     height: 100%; /* Make the elements take up full height of the viewport */   
@@ -22,7 +22,7 @@ body {
     flex-direction: column; /* Stack children vertically */
 }
 
-/* Background Styling */
+/* Background */
 body {    
     font-family: var(--font-body); /* Apply quicksand font */ 
     background-color: var(--color-bg-light); /* Fallback color */  
@@ -35,7 +35,7 @@ body {
     width: 100vw; /* Full screen width */
 }
 
-/* Heading styling */
+/* Headings */
 h1,
 h2,
 h3,
@@ -46,6 +46,18 @@ h6 {
 }
 
 /* --- Navbar --- */
+/* Collapsed navbar content */
+.navbar-collapse {
+    text-align: center; /* Align navbar content to center */
+}
+
+/* Navbar navigation list */
+.navbar-nav { 
+    display: inline-block; /* Display inline-block for centering */
+    flex-direction: row; /* Force horizontal layout with flex */   
+    justify-content: center; /* Center items horizontally */    
+    gap: 1rem; /* Add consistent spacing between items */
+}
 
 /* --- Header --- */
 
