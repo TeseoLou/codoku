@@ -11,6 +11,14 @@
 }
 
 /* --- Base Styles --- */
+html,
+body {   
+    height: 100%; /* Make the elements take up full height of the viewport */   
+    margin: 0; /* Remove default margin */   
+    padding: 0; /* Remove default padding */  
+    display: flex; /* Enable flexbox layout */  
+    flex-direction: column; /* Stack children vertically */
+}
 
 /* --- Navbar --- */
 
