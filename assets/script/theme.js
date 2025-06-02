@@ -75,5 +75,7 @@ function setupThemeSwitch() {
         // Update ARIA for accessibility
         // Reference: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked
         this.setAttribute("aria-checked", isLight ? "true" : "false");
+        // Call function - Apply the theme settings to the DOM with sound
+        applyTheme(isLight, true);
     }
 }
