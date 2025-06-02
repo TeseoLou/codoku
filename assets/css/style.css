@@ -112,6 +112,11 @@ nav {
     background-size: cover; /* Scale image to cover the container */
 }
 
+nav.dark {
+    background-color: var(--color-bg-dark); /* Dark fallback color if background image fails */
+    background-image: url(../backgrounds/dark-background.png); /* Dark background image */
+}
+
 /* Collapsed navbar content */
 .navbar-collapse {
     text-align: center; /* Align navbar content to center */
