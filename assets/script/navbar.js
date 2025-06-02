@@ -56,4 +56,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // Selects all elements with the class .modal from the DOM
     // Reference: https://getbootstrap.com/docs/5.3/components/modal/
     const modals = document.querySelectorAll('.modal');
+    // Reference: https://stackoverflow.com/questions/47168607
+    modals.forEach(modal => {
+        // Reference: https://getbootstrap.com/docs/5.3/components/modal/#events
+        modal.addEventListener('shown.bs.modal', () => {
+            soundEffects.play("page");
+        });
+        // Reference: https://getbootstrap.com/docs/5.3/components/modal/#events
+        modal.addEventListener('hidden.bs.modal', () => {
+            soundEffects.play("page");
+        });
+    });
 }
