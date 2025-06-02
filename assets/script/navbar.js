@@ -25,6 +25,7 @@ const navSounds = {
 function setupOutsideNavbarCollapse() {
     // Listen for any click on the entire document
     document.addEventListener("click", function (event) {
-
+        // Set the collapsible navbar element
+        const navbarCollapse = $("#navbar-content");
     });
 }
