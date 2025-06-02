@@ -21,5 +21,5 @@ function setupStartButton() {
         }
         // Call function - Start a game by providing a fresh board, resetting stats, and resetting the timer and game stats
         startNewGame();
-    }
+    })
 }
