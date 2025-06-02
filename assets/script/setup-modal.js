@@ -19,5 +19,7 @@ function setupStartButton() {
             // Reference: https://getbootstrap.com/docs/5.0/components/modal/#hide
             setupModalBootstrap.hide();
         }
+        // Call function - Start a game by providing a fresh board, resetting stats, and resetting the timer and game stats
+        startNewGame();
     }
 }
