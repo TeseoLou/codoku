@@ -30,4 +30,8 @@ function applyTheme(isLightMode, playSound = false) {
     $("#theme-switch").prop("checked", isLightMode);
     // Change theme icon class
     $("#theme-icon").attr("class", isLightMode ? "fa-solid fa-sun" : "fa-solid fa-moon");
+    // Play sound if requested
+    if (playSound) {
+        themeToggleSounds.play(isLightMode ? "tweet" : "hoot");
+    }
 }
