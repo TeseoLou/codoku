@@ -68,4 +68,8 @@ function setupThemeSwitch() {
     const isLightMode = savedTheme !== "dark"; // Default to light mode
     // Call function - Apply the theme settings to the DOM without sound
     applyTheme(isLightMode, false);
+    // Add listener for user toggle
+    // Reference: https://dev.to/whitep4nth3r/the-best-lightdark-mode-theme-toggle-in-javascript-368f
+    themeSwitch.addEventListener("change", function () {
+    }
 }
