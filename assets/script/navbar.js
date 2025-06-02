@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', function () {
     modals.forEach(modal => {
         // Reference: https://getbootstrap.com/docs/5.3/components/modal/#events
         modal.addEventListener('shown.bs.modal', () => {
-            soundEffects.play("page");
+            navSounds.play("page");
         });
         // Reference: https://getbootstrap.com/docs/5.3/components/modal/#events
         modal.addEventListener('hidden.bs.modal', () => {
-            soundEffects.play("page");
+            navSounds.play("page");
         });
     });
     // Intercept clicks on main navigation links
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!proceed) return;
             }
             // Play a page transition sound
-            soundEffects.play("page");
+            navSounds.play("page");
             // Then navigates to the desired page after a 300ms delay
             // Reference: https://stackoverflow.com/questions/66144270
             setTimeout(() => {
