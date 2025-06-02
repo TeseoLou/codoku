@@ -28,7 +28,10 @@ function setupNavLinkCollapse() {
     // Attach a click event to all nav links inside the collapsed navbar
     links.forEach(function (link) {
         link.addEventListener("click", function (event) {
-            
+            // Set the href attribute of the clicked nav link
+            const href = $(this).attr("href");
+            // Set the target section based on the href
+            const section = $(href);
     });
 });
 }
