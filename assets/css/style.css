@@ -115,22 +115,21 @@ header {
 /* Modal content container */
 #rules-modal .modal-content {  
     background-color: var(--color-bg-light); /* Light background color */
-    /* Light background image */
-    background-image: url(../backgrounds/light-background.png);
-    /* Prevent image repetition */
-    background-repeat: no-repeat;
-    /* Center the background image */
-    background-position: center center;
-    /* Scale image to cover the container */
-    background-size: cover;
-    /* Remove border radius */
-    border-radius: 0;
-    /* Set text color to black */
-    color: var(--color-black);
-    /* Apply dark shadow for elevation */
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.9);
-    /* Add margin around modal */
-    margin: 1rem;
+    background-image: url(../backgrounds/light-background.png); /* Light background image */ 
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center center; /* Center the background image */
+    background-size: cover; /* Scale image to cover the container */
+    border-radius: 0; /* Remove border radius */
+    color: var(--color-black); /* Set text color to black */
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.9); /* Apply dark shadow for elevation */
+    margin: 1rem; /* Add margin around modal */
+}
+
+/* Modal border */
+#modal-border {
+    border-radius: 0; /* Remove border radius */
+    border: 2px solid var(--color-black); /* Matching solid black border */
+    margin: 1rem;  /* Add margin around modal border */
 }
 
 /* --- Footer Section --- */
