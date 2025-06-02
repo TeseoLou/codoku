@@ -7,6 +7,8 @@ function initPage() {
     setupOutsideNavbarCollapse();
     // Call function - Setup the theme switch logic on page load and user interaction
     setupThemeSwitch();
+    // Call function - Close the setup modal when the Enter button is clicked
+    setupStartButton();
 }
 
 // Run everything once the page is fully loaded
