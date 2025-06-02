@@ -3,6 +3,9 @@
  */
 // Reference: https://www.shecodes.io/athena/60837-how-to-call-a-function-within-another-function-in-javascript
 function initPage() {
+    // Call function - Collapse the Bootstrap navbar when clicking outside of the open menu
+    setupOutsideNavbarCollapse();
+    // Call function - Setup the theme switch logic on page load and user interaction
     setupThemeSwitch();
 }
 
