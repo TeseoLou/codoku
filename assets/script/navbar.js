@@ -32,6 +32,11 @@ function setupNavLinkCollapse() {
             const href = $(this).attr("href");
             // Set the target section based on the href
             const section = $(href);
+            // Only proceed if the target section exists in the DOM
+            // Reference: https://dev.to/lavary/how-to-check-if-an-element-exists-in-javascript-with-examples-4mpb#:~:text=So%20to%20check%20if%20the,ll%20get%20a%20null%20value
+            if (section.length) {
+                
+            }
     });
 });
 }
