@@ -8,4 +8,7 @@ function setupStartButton() {
     if (!startButton) {
         return;
     }
+    startButton.addEventListener("click", function () {
+        
+    }
 }
