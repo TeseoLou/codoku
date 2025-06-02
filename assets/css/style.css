@@ -1,4 +1,14 @@
 /* --- Global Variables --- */
+:root {
+    --font-body: "Quicksand", sans-serif; /* Main font for body text */
+    --font-heading: "Space Mono", monospace; /* Main font for headings */    
+    --color-primary: #403a6b; /* Used for dark purple accents */
+    --color-accent: #e0b336; /* Used for gold highlights */ 
+    --color-bg-light: #f8f9fa; /* Default light background */   
+    --color-bg-dark: #212529; /* Default dark background */   
+    --color-white: #ffffff; /* White */   
+    --color-black: #000000; /* Black */
+}
 
 /* --- Base Styles --- */
 
