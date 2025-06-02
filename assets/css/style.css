@@ -54,8 +54,10 @@ h6 {
 /* Navbar navigation list */
 .navbar-nav { 
     display: inline-block; /* Display inline-block for centering */
-    flex-direction: row; /* Force horizontal layout with flex */   
+    flex-direction: row !important; /* Force horizontal layout with flex */   
     justify-content: center; /* Center items horizontally */    
+    float: none;
+    flex-wrap: nowrap;
     gap: 1rem; /* Add consistent spacing between items */
 }
 
