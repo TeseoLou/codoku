@@ -82,3 +82,6 @@ function setupThemeSwitch() {
         applyTheme(isLight, true);
     });
 }
+
+if (document.readyState !== "loading") {
+}
