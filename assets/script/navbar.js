@@ -27,5 +27,8 @@ function setupOutsideNavbarCollapse() {
     document.addEventListener("click", function (event) {
         // Set the collapsible navbar element
         const navbarCollapse = $("#navbar-content");
+        // Return early if navbar content element is not found in the DOM
+        // Reference: https://www.sitepoint.com/jquery-check-element-exists/
+        if (!navbarCollapse.length) return;
     });
 }
