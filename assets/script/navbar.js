@@ -83,7 +83,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const isLeavingGame = window.location.pathname.includes("index.html") || window.location.pathname === "/" || window.location.pathname.endsWith("index.html");
             // Prompt the user before leaving the game to avoid accidental loss
             if (isLeavingGame && href.includes("about.html")) {
-                
+                // Reference: https://www.geeksforgeeks.org/javascript-window-confirm-method/
+                const proceed = confirm("Are you sure you want to leave? Your current game will be lost.");
+                if (!proceed) return;
             }
         }
     }
