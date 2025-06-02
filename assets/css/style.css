@@ -241,11 +241,25 @@ body.dark .modal-footer {
     margin: 1rem; /* Add margin around modal */
 }
 
+/* Modal content container - Dark mode */
+body.dark #rules-modal .modal-content {
+    background-color: var(--color-bg-dark); /* Dark background color */
+    background-image: url(../backgrounds/dark-background.png); /* Dark background image */
+    color: var(--color-white); /* Set text color to white */
+    box-shadow: 0 0 20px 5px var(--color-white); /* White shadow glow */
+}
+
 /* Modal border */
 #modal-border {
     border-radius: 0; /* Remove border radius */
     border: 2px solid var(--color-black); /* Matching solid black border */
     margin: 1rem;  /* Add margin around modal border */
+}
+
+/* Modal border - Dark mode */
+body.dark #rules-modal #modal-border {
+    /* White border in dark mode */
+    border: 2px solid var(--color-white);
 }
 
 /* Modal header */
@@ -294,10 +308,26 @@ footer a {
     vertical-align: middle; /* Align icons/text vertically in line */    
 }
 
+/* Footer elements - Dark mode */
+body.dark footer,
+body.dark footer div,
+body.dark footer span,
+body.dark footer p,
+body.dark footer a,
+body.dark footer a i {
+    color: var(--color-white) !important; /* Override all footer content to white in dark mode */
+}
+
 /* Footer links on hover */
 footer a:hover {    
     color: var(--color-primary); /* Change color on hover (light theme) */   
     font-size: 1.2rem; /* Slight increase in font size for effect */
+}
+
+/* Footer links on hover*/
+body.dark footer a:hover,
+body.dark footer a:hover i {
+    color: var(--color-accent) !important; /* Gold hover color for contrast in dark mode */
 }
 
 /* --- Game Page --- */
