@@ -98,6 +98,26 @@ header {
 }
 
 /* --- Footer Section --- */
+/* Footer */
+footer {
+    flex-shrink: 0; /* Prevent footer from shrinking when using flex layout */
+    background-color: transparent; /* Transparent background to inherit body/theme styling */
+    text-decoration: none; /* Remove underline from any text */
+    color: inherit; /* Inherit text color from parent */
+}
+
+/* Footer links */
+footer a { 
+    text-decoration: none; /* Remove default underline from links */  
+    line-height: 1; /* Reduce vertical spacing */   
+    vertical-align: middle; /* Align icons/text vertically in line */    
+}
+
+/* Footer links on hover */
+footer a:hover {    
+    color: var(--color-primary); /* Change color on hover (light theme) */   
+    font-size: 1.2rem; /* Slight increase in font size for effect */
+}
 
 /* --- Game Page --- */
 /* --- Main Section --- */
