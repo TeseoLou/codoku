@@ -8,8 +8,12 @@ const navSounds = {
     play(name) {
         // Retrieve the sound object matching the given name from the navSounds object
         const sound = this[name];
+        // Check if a valid sound was found for the given name
         if (sound) {
+            // Restart sound
             sound.currentTime = 0;
+            // Play the sound
+            sound.play();
         }
     }
-};
+}
