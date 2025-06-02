@@ -364,6 +364,45 @@ body.dark #setup {
     text-align: center; /* Center text */
 }
 
+/* Radio buttons */
+body:not(.dark) .form-check-input[type="radio"] { 
+    accent-color: var(--color-primary); /* Use accent color for radio */
+}
+
+/* Radio buttons - Dark mode */
+body.dark .form-check-input[type="radio"] {
+    appearance: none; /* Remove default browser styling */
+    /* Set size of radio button */
+    width: 1rem; 
+    height: 1rem;
+    border-radius: 50%; /* Make radio button circular */
+    border: 2px solid var(--color-white); /* White border */
+    background-color: transparent; /* Transparent background */
+    position: relative; /* Positioning context for pseudo-element */
+    cursor: pointer; /* Make clickable */
+    margin-top: 0.3rem; /* Align with label */
+}
+
+/* Radio button checked - Dark mode */
+body.dark .form-check-input[type="radio"]:checked {
+    background-color: var(--color-accent); /* Fill color */
+    border-color: var(--color-accent); /* Border color matches fill */
+}
+
+/* Dot inside radio button - Dark mode*/
+body.dark .form-check-input[type="radio"]::before {
+    content: ""; /* Empty content block for dot */
+    display: block; /* Render as block element */
+    /* Dot size */
+    width: 0.5rem; 
+    height: 0.5rem;
+    margin: auto; /* Center dot horizontally */
+    
+    margin-top: 0.15rem; /* Center dot vertically */
+    background-color: var(--color-white); /* White dot */
+    border-radius: 50%; /* Circular dot */
+}
+
 /* Form labels */
 #setup .form-check-label {
     font-size: 0.9rem; /* Slightly smaller font */
