@@ -103,7 +103,7 @@ button,
 }
 
 /* --- Navbar --- */
-/* Navbar container */
+/* Navbar Container */
 nav {
     background-color: var(--color-bg-light); /* Light background color */   
     background-image: url(../backgrounds/light-background.png); /* Light background image */  
@@ -189,6 +189,19 @@ body.dark .form-check-input[type="checkbox"] {
     background-color: var(--color-primary); /* Purple background */
     border-color: var(--color-primary); /* Purple border */
     box-shadow: 0 0 10px 2px var(--color-accent); /* Gold outer glow effect */
+}
+
+/* Switch thumb - Dark mode */
+/* Reference: https://stackoverflow.com/questions/57224537 */
+body.dark .form-check-input[type="checkbox"]:not(:focus)::before {
+    content: "";
+    display: block;
+    width: 0.7rem;
+    height: 0.7rem;
+    background-color: white;
+    border-radius: 50%;
+    transform: translateX(0.1rem) translateY(0.1rem);
+    transition: transform 2s ease;
 }
 
 /* Theme toggle label */
