@@ -87,4 +87,6 @@ function setupThemeSwitch() {
 if (document.readyState !== "loading") {
     // Call function - Setup the theme switch logic on page load and user interaction
     setupThemeSwitch();
+} else {
+    document.addEventListener("DOMContentLoaded", setupThemeSwitch);
 }
