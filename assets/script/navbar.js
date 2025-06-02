@@ -8,5 +8,7 @@ const navSounds = {
     play(name) {
         // Retrieve the sound object matching the given name from the navSounds object
         const sound = this[name];
+        if (sound) {
+    }
     }
 };
