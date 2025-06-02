@@ -100,7 +100,17 @@ header {
 /* --- Footer Section --- */
 
 /* --- Game Page --- */
-/* --- Main Content --- */
+/* --- Main Section --- */
+/* Main */
+main {  
+    flex: 1 0 auto; /* Allow main to grow and push footer to bottom */
+}
+
+/* Game stats text */
+.game-stat {
+    font-family: var(--font-heading); /* Use heading font */   
+    font-size: 0.8rem; /* Set small font size for stats */
+}
 
 /* --- Modals --- */
 
