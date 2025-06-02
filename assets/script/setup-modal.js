@@ -9,6 +9,10 @@ function setupStartButton() {
         return;
     }
     startButton.addEventListener("click", function () {
-        
+        // Get the setup modal element
+        const setupModal = $("#setup-modal");
+        // Get the Bootstrap modal instance using jQuery wrapper for the setup modal
+        // Reference: https://getbootstrap.com/docs/5.3/components/modal/#methods
+        const setupModalBootstrap = bootstrap.Modal.getInstance(setupModal[0]);
     }
 }
