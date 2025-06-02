@@ -34,4 +34,22 @@ function applyTheme(isLightMode, playSound = false) {
     if (playSound) {
         themeToggleSounds.play(isLightMode ? "tweet" : "hoot");
     }
+    // Button elements that change appearance depending on theme
+    const themeButtons = [
+        $('button[data-bs-target="#setup-modal"]'),
+        $("#start-button"),
+        $("#rules-back-button"),
+        $("#donate-button"),
+        $("#check-button"),
+        $("#hint-button")
+    ];
+    // Toggle Bootstrap theme classes
+    // Reference: https://www.freecodecamp.org/news/javascript-array-foreach-tutorial-how-to-iterate-through-elements-in-an-array-with-map/
+    themeButtons.forEach($btn => {
+        if ($btn.length) {
+            $btn
+                .toggleClass("btn-light", !isLightMode)
+                .toggleClass("btn-dark", isLightMode);
+        }
+    });
 }
