@@ -30,5 +30,8 @@ function setupOutsideNavbarCollapse() {
         // Return early if navbar content element is not found in the DOM
         // Reference: https://www.sitepoint.com/jquery-check-element-exists/
         if (!navbarCollapse.length) return;
+        // Check if the click happened inside the navbar content using jQuery
+        // Reference: https://stackoverflow.com/questions/62375324
+        const isClickInsideNavbar = $(event.target).closest("#navbar-content").length > 0;
     });
 }
