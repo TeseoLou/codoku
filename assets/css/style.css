@@ -204,6 +204,59 @@ footer a:hover {
     border-radius: 0; /* Force sharp corners */
 }
 
+/* Setup form container */
+#setup {
+    background-color: transparent; /* Transparent background to show modal theme */
+    border: 2px solid var(--color-bg-dark); /* Border for visibility */
+    border-radius: 0; /* Remove default border radius */
+    padding: 1.5rem; /* Inner spacing */
+    width: 100%; /* Full width to fit modal */
+}
+
+/* Full-width centering utility */
+#setup .text-center {
+    width: 100%; /* Stretch to full width */
+}
+
+/* Setup option groups */
+#setup .setup-options { 
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: flex-start; /* Align content to the top */
+    gap: 40px; /* Space between option groups */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Fieldsets */
+#setup fieldset {  
+    border: none; /* Remove default borders */
+    text-align: center; /* Center all content */
+    min-width: 300px; /* Minimum width for layout consistency */
+    flex: 1; /* Allow flexible growth */
+}
+
+/* Legends */
+#setup legend {
+    font-family: var(--font-heading); /* Use space mono font */    
+    font-size: 1rem; /* Set base font size */
+    text-align: center; /* Center text */
+}
+
+/* Form labels */
+#setup .form-check-label {
+    font-size: 0.9rem; /* Slightly smaller font */
+}
+
+/* Modal footer */
+.modal-footer {  
+    justify-content: center; /* Align footer content to center */
+}
+
+/* Start button */
+#setup .start-button {
+    margin-top: 20px; /* Space between options and start button */
+}
+
 /* --- Main Section --- */
 /* Main */
 main {  
