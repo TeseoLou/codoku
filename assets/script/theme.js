@@ -83,5 +83,8 @@ function setupThemeSwitch() {
     });
 }
 
+// Reference: https://builtin.com/articles/document-ready-javascript
 if (document.readyState !== "loading") {
+    // Call function - Setup the theme switch logic on page load and user interaction
+    setupThemeSwitch();
 }
