@@ -59,3 +59,7 @@ function applyTheme(isLightMode, playSound = false) {
     // Reference: https://www.w3schools.com/jsref/prop_win_localstorage.asp
     localStorage.setItem("theme", isLightMode ? "light" : "dark");
 }
+
+function setupThemeSwitch() {
+    const themeSwitch = document.getElementById("theme-switch");
+}
