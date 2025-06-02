@@ -1,4 +1,5 @@
 /* --- Global Variables --- */
+/* Custom Styling */
 :root {
     --font-body: "Quicksand", sans-serif; /* Main font for body text */
     --font-heading: "Space Mono", monospace; /* Main font for headings */    
@@ -11,6 +12,7 @@
 }
 
 /* --- Base Styles --- */
+/* Page Styling */
 html,
 body {   
     height: 100%; /* Make the elements take up full height of the viewport */   
@@ -20,8 +22,9 @@ body {
     flex-direction: column; /* Stack children vertically */
 }
 
+/* Background Styling */
 body {    
-    font-family: var(--font-body); /* Apply main body font */ 
+    font-family: var(--font-body); /* Apply quicksand font */ 
     background-color: var(--color-bg-light); /* Fallback color */  
     background-image: url(../backgrounds/light-background.png); /* Background image */ 
     background-repeat: no-repeat; /* No image repeating */ 
@@ -30,6 +33,16 @@ body {
     background-attachment: fixed; /* Keep background static */  
     position: relative; /* Needed for layering if child elements use absolute positioning */   
     width: 100vw; /* Full screen width */
+}
+
+/* Heading styling */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {  
+    font-family: var(--font-heading); /* Apply space mono font */
 }
 
 /* --- Navbar --- */
