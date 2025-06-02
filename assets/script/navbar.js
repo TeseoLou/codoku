@@ -23,5 +23,8 @@ const navSounds = {
  */
 // Reference: https://stackoverflow.com/questions/74670132
 function setupOutsideNavbarCollapse() {
-    
+    // Listen for any click on the entire document
+    document.addEventListener("click", function (event) {
+
+    });
 }
