@@ -38,7 +38,9 @@ function setupOutsideNavbarCollapse() {
         const isNavbarToggler = $(event.target).is(".navbar-toggler") || $(event.target).closest(".navbar-toggler").length > 0;
         // If the click is outside both the navbar and toggler, and the navbar is expanded
         if (!isClickInsideNavbar && !isNavbarToggler && $navbarCollapse.hasClass("show")) {
-            
+            // Get the Bootstrap Collapse instance associated with the navbar
+            // https://getbootstrap.com/docs/5.3/components/collapse/#methods
+            const bsCollapse = bootstrap.Collapse.getInstance($navbarCollapse[0]);
         }
     });
 }
