@@ -144,6 +144,28 @@ nav {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* SVG icon with black strokes */
 }
 
+/* Hamburger icon - Dark mode */
+body.dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' ... %3E");
+}
+
+/* Nav link - Dark mode */
+body.dark .nav-link {
+    color: var(--color-white) !important; /* Set text color to white */
+}
+
+/* Active nav link */
+body:not(.dark) .nav-link.active {
+    color: var(--color-primary) !important; /* Use primary color */
+    text-decoration: underline; /* Underline active link */
+}
+
+/* Active nav link - Dark mode */
+body.dark .nav-link.active {
+    color: var(--color-accent) !important; /* Use accent color for active link */
+    text-decoration: underline; /* Underline active link */
+}
+
 /* Theme switch */
 #theme-toggle {
     min-width: 150px;
