@@ -76,6 +76,11 @@ document.addEventListener('DOMContentLoaded', function () {
             // Stop the browser from navigating right away
             // Reference: https://stackoverflow.com/questions/821011
             event.preventDefault();
+            // Identify the href attribute of the clicked link
+            const href = $(this).attr('href');
+            // Check if the current page is index.html
+            // Reference: https://www.samanthaming.com/tidbits/86-window-location-cheatsheet/
+            const isLeavingGame = window.location.pathname.includes("index.html") || window.location.pathname === "/" || window.location.pathname.endsWith("index.html");
         }
     }
 }
