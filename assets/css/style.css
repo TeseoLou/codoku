@@ -171,6 +171,20 @@ body.dark .nav-link.active {
     min-width: 150px;
 }
 
+/* Switch checkbox */
+body:not(.dark) .form-check-input[type="checkbox"]:checked {
+    background-color: var(--color-accent); /* Gold switch background */
+    border-color: var(--color-accent); /* Gold switch border */
+    box-shadow: 0 0 8px var(--color-primary); /* Purple glow effect */
+}
+
+/* Switch checkbox - Dark mode */
+body.dark .form-check-input[type="checkbox"] {
+    background-color: var(--color-primary); /* Purple background */
+    border-color: var(--color-primary); /* Purple border */
+    box-shadow: 0 0 10px 2px var(--color-accent); /* Gold outer glow effect */
+}
+
 /* Theme toggle label */
 #theme-label span {
     font-family: var(--font-heading);
@@ -277,6 +291,13 @@ footer a:hover {
     color: var(--color-black); /* Default text color */
     box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.9); /* Dark shadow for modal elevation */
 }
+/* Modal content - Dark mode */
+body.dark .modal-content {
+    background-color: var(--color-bg-dark); /* Dark background color */
+    background-image: url(../backgrounds/dark-background.png); /* Dark background image */
+    color: var(--color-white); /* White text for contrast */
+    box-shadow: 0 0 20px 5px var(--color-white); /* White glow around modal */
+} 
 
 /* Modal body */
 .modal-body {
@@ -383,6 +404,12 @@ main {
     user-select: none; /* Prevent text from being selectable */   
     cursor: pointer; /* Show pointer cursor on hover */   
     transition: transform 0.1s ease-in-out; /* Smooth scale animation on press */
+}
+
+/* Number keys - Dark mode*/
+body.dark #numbers-container h2 {
+    /* Force black text in dark mode */
+    color: var(--color-black);
 }
 
 /* Number keys on hover */
