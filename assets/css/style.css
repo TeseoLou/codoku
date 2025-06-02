@@ -20,6 +20,18 @@ body {
     flex-direction: column; /* Stack children vertically */
 }
 
+body {    
+    font-family: var(--font-body); /* Apply main body font */ 
+    background-color: var(--color-bg-light); /* Fallback color */  
+    background-image: url(../backgrounds/light-background.png); /* Background image */ 
+    background-repeat: no-repeat; /* No image repeating */ 
+    background-position: center center; /* Center background image */  
+    background-size: cover; /* Background cover the whole screen */   
+    background-attachment: fixed; /* Keep background static */  
+    position: relative; /* Needed for layering if child elements use absolute positioning */   
+    width: 100vw; /* Full screen width */
+}
+
 /* --- Navbar --- */
 
 /* --- Header --- */
