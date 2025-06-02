@@ -87,6 +87,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 const proceed = confirm("Are you sure you want to leave? Your current game will be lost.");
                 if (!proceed) return;
             }
-        }
-    }
-}
+            // Play a page transition sound
+            soundEffects.play("page");
+        })
+    })
+})
