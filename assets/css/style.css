@@ -204,6 +204,29 @@ header {
     padding-top: 0rem; /* Remove top padding */
 }
 
+/* --- Modals --- */
+/* Modal content - Dark mode */
+body.dark .modal-content {
+    /* Dark background color */
+    background-color: var(--color-bg-dark);
+    /* Dark background image */
+    background-image: url(../backgrounds/dark-background.png);
+    /* White text for contrast */
+    color: var(--color-white);
+    /* White glow around modal */
+    box-shadow: 0 0 20px 5px var(--color-white);
+}
+
+/* Modal sections - Dark mode */
+body.dark .modal-header,
+body.dark .modal-body,
+body.dark .modal-footer {
+    /* Allow background image to be visible */
+    background-color: transparent;
+    /* Set text color to white for contrast */
+    color: var(--color-white);
+}
+
 /* --- Rules Modal --- */
 /* Modal content container */
 #rules-modal .modal-content {  
@@ -291,13 +314,6 @@ footer a:hover {
     color: var(--color-black); /* Default text color */
     box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.9); /* Dark shadow for modal elevation */
 }
-/* Modal content - Dark mode */
-body.dark .modal-content {
-    background-color: var(--color-bg-dark); /* Dark background color */
-    background-image: url(../backgrounds/dark-background.png); /* Dark background image */
-    color: var(--color-white); /* White text for contrast */
-    box-shadow: 0 0 20px 5px var(--color-white); /* White glow around modal */
-} 
 
 /* Modal body */
 .modal-body {
@@ -311,6 +327,12 @@ body.dark .modal-content {
     border-radius: 0; /* Remove default border radius */
     padding: 1.5rem; /* Inner spacing */
     width: 100%; /* Full width to fit modal */
+}
+
+/* Setup form container - Dark mode */
+body.dark #setup {
+    /* Make border white in dark mode for contrast */
+    border-color: var(--color-white);
 }
 
 /* Full-width centering utility */
