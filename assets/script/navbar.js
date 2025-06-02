@@ -70,5 +70,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Intercept clicks on main navigation links
     // Reference: https://stackoverflow.com/questions/23269951
     // Reference: https://attacomsian.com/blog/javascript-loop-dom-elements
-    document.querySelectorAll('a[href="index.html"], a[href="about.html"]');
+    document.querySelectorAll('a[href="index.html"], a[href="about.html"]').forEach(link => {
+        // Attaches a click event listener to each selected link
+        link.addEventListener('click', function (event) {
+            
+        }
+    }
 }
