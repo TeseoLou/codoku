@@ -56,9 +56,14 @@ h6 {
     display: inline-block; /* Display inline-block for centering */
     flex-direction: row !important; /* Force horizontal layout with flex */   
     justify-content: center; /* Center items horizontally */    
-    float: none;
-    flex-wrap: nowrap;
+    float: none; /* Remove float behavior */
+    flex-wrap: nowrap; /* Prevent items from wrapping */
     gap: 1rem; /* Add consistent spacing between items */
+}
+
+/* Nav items */
+.navbar-nav .nav-item {   
+    display: inline-block; /* Display inline for horizontal alignment */
 }
 
 /* --- Header --- */
