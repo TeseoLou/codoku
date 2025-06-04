@@ -77,6 +77,9 @@ function populateGrid(puzzleData) {
         const rowIndex = Number(this.dataset.row);
         // Find horizontal index
         const colIndex = Number(this.dataset.col);
+        // Get respective puzzle position
+        // Reference: https://www.freecodecamp.org/news/javascript-2d-arrays/
+        const cellValue = puzzleData[rowIndex][colIndex];
     }
 }
 
