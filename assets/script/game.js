@@ -475,13 +475,6 @@ function popConfetti() {
  * Checks if the board is complete and correct
  */
 function triggerAutoWinCheck() {
-
-};
-
-/**
- * Ends the game when the timer runs out, disables input, and shows the setup modal
- */
-function endGameDueToTime() {
     // If the player hasn't completed yet and the answers are right
     if (!hasCelebrated && isBoardCompleteAndCorrect()) {
         // Call function - Confetti animation when board is complete
@@ -519,7 +512,14 @@ function endGameDueToTime() {
         setTimeout(() => {
             alert("🔍 Try again! It looks like there's an error somewhere!");
         }, 100); // 0.1second/100ms delay
-    }
+    };
+};
+
+/**
+ * Ends the game when the timer runs out, disables input, and shows the setup modal
+ */
+function endGameDueToTime() {
+    
 };
 
 /**
