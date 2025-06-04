@@ -187,14 +187,13 @@ function enableCellSelection() {
     $('#numbers-container h2').each(function () {
         // // Attach a click event listener to the current element
         $(this).on('click', function () {
-            // Prevent interaction if no cell is currently selected to ensure we only proceed if a cell has been clicked
-            if (!selectedCell) {
+            // Prevent interaction if no cell is currently selected to ensure we only proceed if a cell has been clicked or the selected cell is not editable
+            if (!selectedCell || !$(selectedCell).hasClass('editable')) {
                 return;
-            }
-            // If the selected cell is not editable, exit function
-            if (!$(selectedCell).hasClass('editable')) {
-                return;
-            }
+            };
+            // Get the text content of the clicked on-screen number tile
+            // Reference: https://www.tutorialrepublic.com/jquery-tutorial/jquery-getter-and-setter.php
+            const val = $(this).text();
         });
     });
 }
