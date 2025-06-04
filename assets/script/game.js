@@ -265,7 +265,11 @@ function revealHint() {
     // Stop if there are no empty cells are left
     if (blanks.length === 0) {
         return;
-    }
+    };
+    // Randomly select one of the empty cells
+    // Reference: https://timonweb.com/javascript/how-to-get-a-random-value-from-a-javascript-array/
+    const pick = blanks[Math.floor(Math.random() * blanks.length)];
+    const cell = $(pick);
 }
 
 /**
