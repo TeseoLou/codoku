@@ -155,6 +155,8 @@ function enableCellSelection() {
             $(selectedCell).addClass('selected');
         });
     });
+    // Handle keyboard number and deletion interactions
+    $(document).on('keydown', function (event) {
 }
 
 /**
