@@ -340,6 +340,13 @@ function triggerAutoWinCheck() {
 }
 
 /**
+ * Ends the game when the timer runs out, disables input, and shows the setup modal
+ */
+function endGameDueToTime() {
+    
+}
+
+/**
  * Start a game by providing a fresh board, resetting stats, and resetting the timer and game stats.
  */
 // Reference: https://www.shecodes.io/athena/60837-how-to-call-a-function-within-another-function-in-javascript
