@@ -308,6 +308,14 @@ function startTimer() {
     let minutes = parseInt(timeLimit, 10);
     // Multiplies by 60 to convert minutes to seconds
     timeRemaining = minutes * 60;
+    // Call function- Show remaining time in game-stats
+    updateTimerDisplay();
+}
+
+/**
+ * Show remaining time in game-stats
+ */
+function updateTimerDisplay() {
 }
 
 /**
