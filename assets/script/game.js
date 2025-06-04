@@ -63,6 +63,13 @@ function renderEmptyGrid() {
     }
 }
 
+/**
+ * Create a new Sudoku board + solution from API Ninjas according to difficulty level chosen by the user
+ */
+function fetchSudokuBoard() {
+    
+}
+
 // Call function - Render a blank 9x9 Sudoku grid
 $(document).ready(() => {
     renderEmptyGrid();
