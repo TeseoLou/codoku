@@ -284,6 +284,13 @@ function revealHint() {
 }
 
 /**
+ * Checks whether all editable cells have the correct solution values and returns true if the entire board is filled and correct
+ */
+function isBoardCompleteAndCorrect() {
+
+};
+
+/**
  * Start a game by providing a fresh board, resetting stats, and resetting the timer and game stats.
  */
 // Reference: https://www.shecodes.io/athena/60837-how-to-call-a-function-within-another-function-in-javascript
