@@ -249,6 +249,19 @@ function revealHint() {
     if (!currentSolution) {
         return;
     }
+    // Identify all cells in the grid that are empty and creates an empty array to store references to empty cells
+    const blanks = [];
+    // Iterates through all editable cells
+    // Reference: https://stackoverflow.com/questions/47168607
+    $('.editable').each(function () {
+        // Gather cell text content
+        // Reference: https://stackoverflow.com/questions/33682536
+        const value = $(this).text().trim();
+        // If a cell is empty it is added to the blanks array
+        if (value.length === 0) {
+            blanks.push(this);
+        }
+    });
 }
 
 /**
