@@ -174,6 +174,8 @@ function enableCellSelection() {
             // Set the content of the selected cell to the number key pressed by the user
             // Reference: https://iamhuzaifa.medium.com/keyboard-event-codes-javascript-project-aec43bb7bf79
             selectedCell.textContent = event.key;
+            // Get rid of previous incorrect color
+            $(selectedCell).removeClass('incorrect');
         };
         // Allow backspace or delete
         // Reference: https://stackoverflow.com/questions/1116244
@@ -181,6 +183,8 @@ function enableCellSelection() {
             // Clear the content of the selected cell by setting it to an empty string which removes previously entered numbers
             // Reference: https://dev.to/javascript_jeep/how-to-empty-the-dom-element-in-javascript-nf8
             selectedCell.textContent = '';
+            // Remove incorrect color if it is present
+            $(selectedCell).removeClass('incorrect');
         };
     });
     // Handle clicks on on-screen number tiles
@@ -197,6 +201,8 @@ function enableCellSelection() {
             // Set the selected cell’s content based on the clicked tile value using ternary operator
             // Reference: https://forum.freecodecamp.org/t/need-help-on-step-70-javascript/695562
             selectedCell.textContent = val === 'X' ? '' : val;
+            // Remove incorrect color if it is present
+            $(selectedCell).removeClass('incorrect');
         });
     });
 };
@@ -231,9 +237,9 @@ function checkUserInput() {
         } else {
             // If the entered value does not match the expected value, the 'incorrect' class is added
             cell.addClass('incorrect');
-        }
+        };
     });
-}
+};
 
 /**
  * Start a game by providing a fresh board, resetting stats, and resetting the timer and game stats.
@@ -242,7 +248,7 @@ function checkUserInput() {
 function startNewGame() {
     // Call function - Create a new Sudoku board + solution from API Ninjas according to difficulty level chosen by the user
     fetchSudokuBoard();
-}
+};
 
 // Call function - Render a blank 9x9 Sudoku grid
 $(document).ready(() => {
