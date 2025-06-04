@@ -80,6 +80,23 @@ function populateGrid(puzzleData) {
         // Get respective puzzle position
         // Reference: https://www.freecodecamp.org/news/javascript-2d-arrays/
         const cellValue = puzzleData[rowIndex][colIndex];
+        // Give cells different styling classes based on datatype
+        // Add value to the cell if datatype is not null
+        // Reference: https://codedamn.com/news/javascript/check-if-undefined-null
+        if (cellValue !== null) {
+            // Set a fixed cell value
+            this.textContent = cellValue;
+            // Make the fixed cell value stand out
+            this.classList.add('fw-bold', 'generated');
+            // Set value to an empty string if datatype is null
+        } else {
+            // Clear the cell and mark it as user-editable
+            this.textContent = '';
+            // Add editable class to cell
+            this.classList.add('editable');
+            // Show interactivity
+            this.style.cursor = 'pointer';
+        }
     }
 }
 

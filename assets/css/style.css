@@ -535,6 +535,18 @@ body.dark #grid p {
     align-items: center;
 }
 
+/* Background for generated cells (light mode) */
+.generated {
+    /* Semi-transparent black background */
+    background-color: #00000020;
+}
+
+/* Background override for dark mode */
+body.dark .generated {
+    /* Semi-transparent white background */
+    background-color: #ffffff20;
+}
+
 /* Selected cell styling */
 #grid .selected {
     /* Gold highlight */
