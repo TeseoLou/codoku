@@ -97,7 +97,9 @@ function populateGrid(puzzleData) {
             // Show interactivity
             this.style.cursor = 'pointer';
         }
-    }
+    });
+    // Call function - Allow interactivity with editable grid cells with clicking or typing
+    enableCellSelection();
 }
 
 /**
@@ -131,6 +133,12 @@ function fetchSudokuBoard() {
             console.error('Failed to retrieve puzzle data:', response?.responseText || 'No response text available');
         }
     });
+}
+
+/**
+ * Allow interactivity with editable grid cells with clicking or typing
+ */
+function enableCellSelection() {
 }
 
 // Call function - Render a blank 9x9 Sudoku grid
