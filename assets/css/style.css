@@ -603,6 +603,7 @@ body.dark #grid p.bottom-border {
     border-left: 1px solid transparent !important;
 }
 
+/* Number Keys */
 /* Number keys container */
 #numbers-container {  
     display: grid; /* Use CSS Grid layout */  

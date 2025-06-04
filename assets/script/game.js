@@ -150,6 +150,9 @@ function enableCellSelection() {
             if (selectedCell) {
                 $(selectedCell).removeClass('selected');
             }
+            // Add selected class to clicked cell
+            selectedCell = this;
+            $(selectedCell).addClass('selected');
         });
     });
 }
