@@ -331,7 +331,7 @@ function startTimer() {
             endGameDueToTime();
         }
     }, 1000);
-}
+};
 
 /**
  * Show remaining time in game-stats
@@ -348,7 +348,7 @@ function updateTimerDisplay() {
     // Update the timer text on the page
     // Reference: https://stackoverflow.com/questions/59747815
     $('#timer').text(`Timer: ${minutes}:${reformattedSeconds}`);
-}
+};
 
 /**
  * Show difficulty level in game-stats
@@ -359,8 +359,14 @@ function updateDifficultyDisplay() {
     const difficultyLevel = $('input[name="difficulty"]:checked').get(0);
     // Ensures that a difficulty level was actually selected before trying to access properties on it
     if (difficultyLevel) {
+        // Find the label text next to the radio button using and if no sibling label exists, it falls back to using the input’s value
+        // Reference: https://accreditly.io/articles/how-to-get-the-sibling-or-next-element-in-javascript
+        const level = difficultyLevel.nextElementSibling.textContent;
+        // Update the difficulty text on the page using template literal
+        $('#difficulty').text(`Difficulty: ${level}`);
     }
-}
+    };
+};
 
 /**
  * Checks whether all editable cells have the correct solution values and returns true if the entire board is filled and correct
