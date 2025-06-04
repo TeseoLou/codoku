@@ -507,7 +507,7 @@ function triggerAutoWinCheck() {
         const setupModalInstance = new bootstrap.Modal(setupModal[0]);
         setupModalInstance.show();
     } // If the board is full but the user has made a mistake
-    else (isBoardFilled() && !isBoardCompleteAndCorrect()) {
+    else if (isBoardFilled() && !isBoardCompleteAndCorrect()) {
         // Get the preloaded error sound element from the HTML
         // Reference: https://stackoverflow.com/questions/21815323
         const errorAudio = document.getElementById("error-sound");
@@ -593,7 +593,7 @@ function startNewGame() {
 };
 
 /**
- * Sets up button event listeners 
+ * Sets up button event listeners and sound triggers
  */
 document.addEventListener('DOMContentLoaded', function () {
     // Handle the Check button click
