@@ -529,7 +529,12 @@ function endGameDueToTime() {
         alarmAudio.currentTime = 0;
         // Attempt to play the alarm sound
         alarmAudio.play();
-    }
+    };
+    // Slightly delay the alert so the alarm sound has time to begin playing
+    // Reference: https://stackoverflow.com/questions/65764348
+    setTimeout(() => {
+        alert("⏰ Time's up! Better luck next time."); // 100ms delay
+    }, 100);
 };
 
 /**
