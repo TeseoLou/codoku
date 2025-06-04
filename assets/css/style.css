@@ -615,6 +615,18 @@ body.dark p.incorrect {
     color: #f69696 !important;
 }
 
+/* Hinted cell color (light theme) */
+p.hinted {
+    /* Deep green for hint */
+    color: #285228 !important;
+}
+
+/* Hinted cell color override (dark mode) */
+body.dark p.hinted {
+    /* Bright green for visibility */
+    color: #a5f3a5 !important;
+}
+
 /* Number Keys */
 /* Number keys container */
 #numbers-container {  
