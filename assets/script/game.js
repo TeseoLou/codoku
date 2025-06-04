@@ -11,6 +11,29 @@ let countdownInterval = null;
 let timeRemaining = 0;
 // Number of hints the player has used so far
 let hintsUsed = 0;
+// Sound manager for game sound effects
+// Object to store and control game sound effects
+// Reference: https://stackoverflow.com/questions/40100433
+const soundEffects = {
+    key: new Audio("assets/sounds/key.mp3"),
+    tap: new Audio("assets/sounds/tap.mp3"),
+    applause: new Audio("assets/sounds/applause.mp3"),
+    page: new Audio("assets/sounds/page.mp3"),
+    hint: new Audio("assets/sounds/hint.mp3"),
+    // Method to play a sound effect by name 
+    // Reference: https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement
+    play(name) {
+        // Retrieve the sound object matching the given name from the themeToggleSounds object
+        const sound = this[name];
+        // Check if a valid sound was found for the given name
+        if (sound) {
+            // Restart sound
+            sound.currentTime = 0;
+            // Play the sound
+            sound.play();
+        }
+    }
+};
 
 /**
  * Render a blank 9x9 Sudoku grid
@@ -439,6 +462,7 @@ function isBoardFilled() {
  * Checks if the board is complete and correct
  */
 function triggerAutoWinCheck() {
+
 }
 
 /**
