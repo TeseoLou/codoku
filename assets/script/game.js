@@ -513,7 +513,12 @@ function endGameDueToTime() {
             errorAudio.currentTime = 0;
             // Play the error sound
             errorAudio.play();
-        }
+        };
+        // Delay the alert slightly so the sound can begin playing before the blocking alert appears
+        // Reference: https://stackoverflow.com/questions/65764348
+        setTimeout(() => {
+            alert("🔍 Try again! It looks like there's an error somewhere!");
+        }, 100); // 0.1second/100ms delay
     }
 };
 
