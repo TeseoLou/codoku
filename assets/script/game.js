@@ -223,6 +223,15 @@ function checkUserInput() {
         // Gets the text input of the cell and removes any whitespace
         // Reference: https://stackoverflow.com/questions/33682536
         const entered = cell.text().trim();
+        // Clear incorrect state if cell is blank or correct
+        // Reference: https://www.freecodecamp.org/news/javascript-if-else-and-if-then-js-conditional-statements
+        if (entered === "" || entered === String(expected)) {
+            // If the cell is empty or the entered value matches the expected value the 'incorrect' class will be removed
+            cell.removeClass('incorrect');
+        } else {
+            // If the entered value does not match the expected value, the 'incorrect' class is added
+            cell.addClass('incorrect');
+        }
     });
 }
 
