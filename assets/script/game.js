@@ -13,7 +13,7 @@ function renderEmptyGrid() {
     for (let row = 0; row < 9; row++) {
         // Create a row div with Bootstrap flex class
         const rowDiv = $('<div>').addClass('d-flex');
-        // Nested for loop
+        // Nested for loop to build 9 columns for the grid
         for (let col = 0; col < 9; col++) {
             // Create a paragraph element which will act as a cell and add classes
             const cell = $('<p>')
@@ -22,11 +22,11 @@ function renderEmptyGrid() {
                 .attr('data-row', row) // Store vertical position
                 .attr('data-col', col); // Store horizontal position
             rowDiv.append(cell); // Add cell to current row
+            // Join rows together
+            // Reference: https://stackoverflow.com/questions/19058606
+            // Add the current cell to the row
+            gridContainer.append(rowDiv);
         }
-        // Join rows together
-        // Reference: https://stackoverflow.com/questions/19058606
-        // Add the current cell to the row
-        gridContainer.append(rowDiv);
     }
 }
 
