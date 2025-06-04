@@ -3,6 +3,12 @@
 const API_KEY = '6nP4AYB9ImbH8hd6Zl79tg==iJV6BjdAY08uPpZU';
 // Stores the correct solution grid returned by the API
 let currentSolution = null;
+// Tracks the currently selected cell in the grid 
+let selectedCell = null;
+// Holds the interval ID for the countdown timer
+let countdownInterval = null;
+// Time remaining for the current game in seconds
+let timeRemaining = 0;
 
 /**
  * Render a blank 9x9 Sudoku grid
@@ -343,7 +349,7 @@ function triggerAutoWinCheck() {
  * Ends the game when the timer runs out, disables input, and shows the setup modal
  */
 function endGameDueToTime() {
-    
+
 }
 
 /**
