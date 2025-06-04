@@ -212,6 +212,18 @@ function checkUserInput() {
     // Loop through each editable cell to compare input with the correct value
     // Reference: https://stackoverflow.com/questions/47168607
     $('.editable').each(function () {
+        const cell = $(this);
+        // Retrieves the 'data-row' and 'data-col' attributes from the current cell, which indicate its position in the grid and parseInt converts these string values to integers
+        // Reference: https://stackoverflow.com/questions/34067985
+        const rowIndex = parseInt(cell.data('row'));
+        const colIndex = parseInt(cell.data('col'));
+        // Finds the correct value from the currentSolution array based on the cell's row and column indices
+        // Reference: https://www.freecodecamp.org/news/javascript-2d-arrays/
+        const expected = currentSolution[rowIndex][colIndex];
+        // Gets the text input of the cell and removes any whitespace
+        // Reference: https://stackoverflow.com/questions/33682536
+        const entered = cell.text().trim();
+    });
 }
 
 /**
