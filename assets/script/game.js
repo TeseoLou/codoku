@@ -329,6 +329,8 @@ function isBoardFilled() {
         // If the trimmed value is not an empty string the cell is considered filled and will return true only if this condition is true for every cell
         return value !== '';
     });
+    // The function returns true if all editable cells are filled and returns false if one or more cells are empty
+    return allFilled;
 }
 
 /**
