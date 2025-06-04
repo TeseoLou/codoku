@@ -296,6 +296,13 @@ function startTimer() {
     // Get the time limit set by the user in the setup modal
     // Reference: https://stackoverflow.com/questions/15148659
     const timeLimit = $('input[name="time"]:checked').val();
+    // If the user selects no timer
+    if (timeLimit === "none") {
+        // Clear timer in game-stats div if no time is selected
+        $('#timer').text("Timer: None");
+        // Exits without starting a countdown
+        return;
+    }
 }
 
 /**
