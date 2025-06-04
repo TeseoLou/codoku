@@ -323,6 +323,11 @@ function isBoardFilled() {
     // Go through array and it is filled with numbers
     // Reference: https://www.geeksforgeeks.org/javascript-array-every-method/
     const allFilled = editableCells.every(cell => {
+        // Remove whitespace from cells content
+        // Reference: https://stackoverflow.com/questions/33682536
+        const value = cell.textContent.trim();
+        // If the trimmed value is not an empty string the cell is considered filled and will return true only if this condition is true for every cell
+        return value !== '';
     });
 }
 
