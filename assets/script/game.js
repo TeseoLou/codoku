@@ -208,7 +208,10 @@ function checkUserInput() {
     // If the solution hasn't been loaded yet skip the check
     if (!currentSolution) {
         return;
-    }
+    };
+    // Loop through each editable cell to compare input with the correct value
+    // Reference: https://stackoverflow.com/questions/47168607
+    $('.editable').each(function () {
 }
 
 /**
