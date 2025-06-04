@@ -71,6 +71,14 @@ function fetchSudokuBoard() {
     // Get the value of the currently selected radio button for difficulty
     // Reference: https://stackoverflow.com/questions/15148659
     const selectedDifficulty = document.querySelector('input[name="difficulty"]:checked').value;
+    // Make GET request
+    // Reference: https://www.youtube.com/watch?v=X51Ry-R5coQ
+    $.ajax({
+        method: 'GET',
+        url: `https://api.api-ninjas.com/v1/sudokugenerate?difficulty=${selectedDifficulty}`,
+        headers: { 'X-Api-Key': API_KEY },
+        contentType: 'application/json',
+    });
 }
 
 // Call function - Render a blank 9x9 Sudoku grid
