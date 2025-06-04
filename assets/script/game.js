@@ -317,6 +317,9 @@ function isBoardCompleteAndCorrect() {
  * Checks if every editable cell on the board has some value entered
  */
 function isBoardFilled() {
+    // Grab all editable cells and make an array
+    // Reference: https://api.jquery.com/toArray/
+    const editableCells = $('.editable').toArray();
 }
 
 /**
