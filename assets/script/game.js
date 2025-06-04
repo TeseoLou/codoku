@@ -187,7 +187,14 @@ function enableCellSelection() {
     $('#numbers-container h2').each(function () {
         // // Attach a click event listener to the current element
         $(this).on('click', function () {
-
+            // Prevent interaction if no cell is currently selected to ensure we only proceed if a cell has been clicked
+            if (!selectedCell) {
+                return;
+            }
+            // If the selected cell is not editable, exit function
+            if (!$(selectedCell).hasClass('editable')) {
+                return;
+            }
         });
     });
 }
