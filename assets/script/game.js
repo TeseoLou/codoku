@@ -21,6 +21,8 @@ function renderEmptyGrid() {
                 .css({ width: '40px', height: '40px' }) // Fixed size
                 .attr('data-row', row) // Store vertical position
                 .attr('data-col', col); // Store horizontal position
+            // Create board styling on cells
+            // Reference: https://stackoverflow.com/questions/31231945
             // Add thicker right border every third column except the last one
             if ((col + 1) % 3 === 0 && col < 8) {
                 cell.addClass('right-border'); // Custom class to thicken border
@@ -29,7 +31,22 @@ function renderEmptyGrid() {
             if ((row + 1) % 3 === 0 && row < 8) {
                 cell.addClass('bottom-border'); // Custom class to thicken border
             }
-            rowDiv.append(cell); // Add cell to current row
+            // Hide top border for first row
+            if (row === 0) {
+                cell.addClass('no-border-top');
+            }
+            // Hide left border for first column
+            if (col === 0) {
+                cell.addClass('no-border-left');
+            }
+            // Hide bottom border for last row
+            if (row === 8) {
+                cell.addClass('no-border-bottom');
+            }
+            // Hide right border for last column
+            if (col === 8) {
+                cell.addClass('no-border-right');
+            }
             // Join cells together
             // Reference: https://stackoverflow.com/questions/19058606
             // Add the current cell to the row

@@ -535,37 +535,37 @@ body.dark #grid p {
     align-items: center;
 }
 
-/* Selected cell styling (light mode) */
+/* Selected cell styling */
 #grid .selected {
     /* Gold highlight */
     background-color: #e0b33671;
 }
 
-/* Selected cell styling override (dark mode) */
+/* Selected cell styling override - Dark mode */
 body.dark #grid .selected {
     /* Light purple highlight */
     background-color: #bcb6e998;
 }
 
-/* Thick 3x3 right borders (light theme) */
+/* Thick 3x3 right borders */
 #grid p.right-border {
     /* Thicker black border */
     border-right: 4px solid var(--color-black);
 }
 
-/* Thick 3x3 bottom borders (light theme) */
+/* Thick 3x3 bottom borders */
 #grid p.bottom-border {
     /* Thicker black border */
     border-bottom: 4px solid var(--color-black);
 }
 
-/* Thick 3x3 right borders (dark mode) */
+/* Thick 3x3 right borders - Dark mode */
 body.dark #grid p.right-border {
     /* Thicker white border */
     border-right: 4px solid var(--color-white);
 }
 
-/* Thick 3x3 bottom borders (dark mode) */
+/* Thick 3x3 bottom borders - Dark mode */
 body.dark #grid p.bottom-border {
     /* Thicker white border */
     border-bottom: 4px solid var(--color-white);
