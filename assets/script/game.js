@@ -503,6 +503,9 @@ function endGameDueToTime() {
         setupModalInstance.show();
     } // If the board is full but the user has made a mistake
     else if (isBoardFilled() && !isBoardCompleteAndCorrect()) {
+        // Get the preloaded error sound element from the HTML
+        // Reference: https://stackoverflow.com/questions/21815323
+        const errorAudio = document.getElementById("error-sound");
     }
 };
 
