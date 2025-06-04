@@ -194,6 +194,9 @@ function enableCellSelection() {
             // Get the text content of the clicked on-screen number tile
             // Reference: https://www.tutorialrepublic.com/jquery-tutorial/jquery-getter-and-setter.php
             const val = $(this).text();
+            // Set the selected cell’s content based on the clicked tile value using ternary operator
+            // Reference: https://forum.freecodecamp.org/t/need-help-on-step-70-javascript/695562
+            selectedCell.textContent = val === 'X' ? '' : val;
         });
     });
 }
