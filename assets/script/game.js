@@ -70,6 +70,13 @@ function populateGrid(puzzleData) {
     // Go through cells with data-row attribute
     // Reference: https://stackoverflow.com/questions/4958081
     $('[data-row]').each(function () {
+        // Retrieve row and col attributes from each element and convert to numbers
+        // Reference: https://stackoverflow.com/questions/76361204
+        // Reference: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
+        // Find vertical index
+        const rowIndex = Number(this.dataset.row);
+        // Find horizontal index
+        const colIndex = Number(this.dataset.col);
     }
 }
 
