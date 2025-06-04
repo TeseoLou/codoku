@@ -310,6 +310,11 @@ function startTimer() {
     timeRemaining = minutes * 60;
     // Call function- Show remaining time in game-stats
     updateTimerDisplay();
+    // Stop any existing timer before starting a new one
+    // Reference: https://stackoverflow.com/questions/57860947
+    if (countdownInterval) {
+        clearInterval(countdownInterval);
+    }
 }
 
 /**
