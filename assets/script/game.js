@@ -309,6 +309,8 @@ function isBoardCompleteAndCorrect() {
         // Compares the user input to the expected value and returns true if they match
         return input === expected;
     });
+    // The function returns true if all editable cells are correct and false otherwise
+    return allCorrect;
 };
 
 /**
