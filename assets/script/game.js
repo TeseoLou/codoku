@@ -484,6 +484,12 @@ function triggerAutoWinCheck() {
 function endGameDueToTime() {
     // If the player hasn't completed yet and the answers are right
     if (!hasCelebrated && isBoardCompleteAndCorrect()) {
+        // Call function - Confetti animation when board is complete
+        popConfetti();
+        soundEffects.play("applause");
+        // Prevent repeated celebration
+        hasCelebrated = true;
+    };
 };
 
 /**
