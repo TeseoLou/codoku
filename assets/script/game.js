@@ -241,6 +241,8 @@ function enableCellSelection() {
             selectedCell.textContent = val === 'X' ? '' : val;
             // Remove incorrect color if it is present
             $(selectedCell).removeClass('incorrect');
+            // Call function - Checks if the board is complete and correct
+            triggerAutoWinCheck();
             soundEffects.play("key");
         });
     });
