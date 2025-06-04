@@ -479,11 +479,72 @@ main {
     font-size: 0.8rem; /* Set small font size for stats */
 }
 
+/* Game Section Layout */
 /* Grid container */
 #grid {
     display: flex; /* Enable flex layout */
     flex-direction: column; /* Stack grid rows vertically */
     align-items: center; /* Center the grid horizontally */
+}
+
+/* Default grid cell appearance (light mode) */
+#grid p {
+    /* Right border for grid lines */
+    border-right: 1px solid var(--color-black);
+    /* Bottom border for grid lines */
+    border-bottom: 1px solid var(--color-black);
+    /* No top border */
+    border-top: none;
+    /* No left border */
+    border-left: none;
+    /* Default text color */
+    color: var(--color-black);
+}
+
+/* Dark mode override for grid cells */
+body.dark #grid p {
+    /* White right border in dark mode */
+    border-right: 1px solid var(--color-white);
+    /* White bottom border in dark mode */
+    border-bottom: 1px solid var(--color-white);
+    /* No top border */
+    border-top: none;
+    /* No left border */
+    border-left: none;
+    /* White text color */
+    color: var(--color-white);
+}
+
+/* Number cells */
+#grid .number {
+    /* Vertical alignment height */
+    line-height: 40px;
+    /* Middle align text */
+    vertical-align: middle;
+    /* Use body font */
+    font-family: var(--font-body);
+    /* Set number font size */
+    font-size: 1.5rem;
+    /* Center text horizontally */
+    text-align: center;
+    /* Flexbox for full centering */
+    display: flex;
+    /* Center content horizontally */
+    justify-content: center;
+    /* Center content vertically */
+    align-items: center;
+}
+
+/* Selected cell styling (light mode) */
+#grid .selected {
+    /* Gold highlight */
+    background-color: #e0b33671;
+}
+
+/* Selected cell styling override (dark mode) */
+body.dark #grid .selected {
+    /* Light purple highlight */
+    background-color: #bcb6e998;
 }
 
 /* Number keys container */
