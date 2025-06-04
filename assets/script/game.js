@@ -468,7 +468,15 @@ function isBoardFilled() {
  * Confetti animation when board is complete
  */
 function popConfetti() {
-
+    // Reference: https://www.kirilv.com/canvas-confetti/
+    confetti({
+        // Confetti pieces to launch
+        particleCount: 200,
+        // How far the confetti spreads out 
+        spread: 100,
+        // Starting point of the confetti on the vertical axis
+        origin: { y: 0.5 }
+    });
 };
 
 /**
