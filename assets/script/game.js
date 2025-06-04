@@ -217,6 +217,10 @@ function enableCellSelection() {
  * Compare the user's current inputs against the correct solution
  */
 function checkUserInput() {
+    // Increase the hint counter and refresh the display
+    hintsUsed++;
+    // Call function - Displays the current number of hints used on the screen
+    updateHintsDisplay();
     // If the solution hasn't been loaded yet skip the check
     if (!currentSolution) {
         return;
@@ -251,6 +255,10 @@ function checkUserInput() {
  * Pick one empty cell and show its correct number from the solution
  */
 function revealHint() {
+    // Increase the count of used hints and update the display in game-stats div
+    hintsUsed++;
+    // Call function - Displays the current number of hints used on the screen
+    updateHintsDisplay();
     // Exit if there is no solution
     if (!currentSolution) {
         return;
@@ -334,6 +342,23 @@ function startTimer() {
 };
 
 /**
+ * Show difficulty level in game-stats
+ */
+function updateDifficultyDisplay() {
+    // Find the selected radio input with the name="difficulty"
+    // Reference: https://stackoverflow.com/questions/15148659
+    const difficultyLevel = $('input[name="difficulty"]:checked').get(0);
+    // Ensures that a difficulty level was actually selected before trying to access properties on it
+    if (difficultyLevel) {
+        // Find the label text next to the radio button using and if no sibling label exists, it falls back to using the input’s value
+        // Reference: https://accreditly.io/articles/how-to-get-the-sibling-or-next-element-in-javascript
+        const level = difficultyLevel.nextElementSibling.textContent;
+        // Update the difficulty text on the page using template literal
+        $('#difficulty').text(`Difficulty: ${level}`);
+    };
+};
+
+/**
  * Show remaining time in game-stats
  */
 function updateTimerDisplay() {
@@ -351,22 +376,12 @@ function updateTimerDisplay() {
 };
 
 /**
- * Show difficulty level in game-stats
+ * Displays the current number of hints used on the screen
  */
-function updateDifficultyDisplay() {
-    // Find the selected radio input with the name="difficulty"
-    // Reference: https://stackoverflow.com/questions/15148659
-    const difficultyLevel = $('input[name="difficulty"]:checked').get(0);
-    // Ensures that a difficulty level was actually selected before trying to access properties on it
-    if (difficultyLevel) {
-        // Find the label text next to the radio button using and if no sibling label exists, it falls back to using the input’s value
-        // Reference: https://accreditly.io/articles/how-to-get-the-sibling-or-next-element-in-javascript
-        const level = difficultyLevel.nextElementSibling.textContent;
-        // Update the difficulty text on the page using template literal
-        $('#difficulty').text(`Difficulty: ${level}`);
-    }
-    };
-};
+function updateHintsDisplay() {
+    // Update the hints count in the game-stats using template literal
+    $('#hints').text(`Hints: ${hintsUsed}`);
+}
 
 /**
  * Checks whether all editable cells have the correct solution values and returns true if the entire board is filled and correct
