@@ -182,6 +182,11 @@ function enableCellSelection() {
             // Reference: https://dev.to/javascript_jeep/how-to-empty-the-dom-element-in-javascript-nf8
             selectedCell.textContent = '';
         }
+    });
+    // Handle clicks on on-screen number tiles
+    $('#numbers-container h2').each(function () {
+        
+    })
 }
 
 /**
