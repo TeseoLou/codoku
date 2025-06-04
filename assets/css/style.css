@@ -571,6 +571,26 @@ body.dark #grid p.bottom-border {
     border-bottom: 4px solid var(--color-white);
 }
 
+/* Hide top border for edge cleanup */
+#grid p.no-border-top {
+    border-top: 1px solid transparent !important;
+}
+
+/* Hide right border for edge cleanup */
+#grid p.no-border-right {
+    border-right: 1px solid transparent !important;
+}
+
+/* Hide bottom border for edge cleanup */
+#grid p.no-border-bottom {
+    border-bottom: 1px solid transparent !important;
+}
+
+/* Hide left border for edge cleanup */
+#grid p.no-border-left {
+    border-left: 1px solid transparent !important;
+}
+
 /* Number keys container */
 #numbers-container {  
     display: grid; /* Use CSS Grid layout */  
