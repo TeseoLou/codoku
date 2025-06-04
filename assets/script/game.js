@@ -144,6 +144,9 @@ function enableCellSelection() {
     // Make each editable cell selectable
     // Reference: https://stackoverflow.com/questions/47168607
     $('.editable').each(function () {
+        $(this).on('click', function () {
+            
+        });
     });
 }
 
