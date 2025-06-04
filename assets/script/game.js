@@ -337,6 +337,11 @@ function startTimer() {
  * Show remaining time in game-stats
  */
 function updateTimerDisplay() {
+    // Reference: https://stackoverflow.com/questions/3733227
+    // Calculates the full minutes left by dividing total seconds by 60
+    const minutes = Math.floor(timeRemaining / 60);
+    // Uses the modulo operator (%) to get the remaining seconds after minutes have been calculated which then gives the seconds portion of the timer in game-stats t
+    const seconds = timeRemaining % 60;
 }
 
 /**
