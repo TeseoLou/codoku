@@ -293,6 +293,9 @@ function revealHint() {
  * Initiates a countdown timer corresponding with the time limit set by the user
  */
 function startTimer() {
+    // Get the time limit set by the user in the setup modal
+    // Reference: https://stackoverflow.com/questions/15148659
+    const timeLimit = $('input[name="time"]:checked').val();
 }
 
 /**
