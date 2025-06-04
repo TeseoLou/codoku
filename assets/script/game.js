@@ -245,7 +245,10 @@ function checkUserInput() {
  * Pick one empty cell and show its correct number from the solution
  */
 function revealHint() {
-    
+    // Exit if there is no solution
+    if (!currentSolution) {
+        return;
+    }
 }
 
 /**
