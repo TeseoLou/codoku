@@ -184,6 +184,7 @@ function enableCellSelection() {
             // Add selected class to clicked cell
             selectedCell = this;
             $(selectedCell).addClass('selected');
+            soundEffects.play("tap");
         });
     });
     // Handle keyboard number and deletion interactions
@@ -207,6 +208,7 @@ function enableCellSelection() {
             selectedCell.textContent = event.key;
             // Get rid of previous incorrect color
             $(selectedCell).removeClass('incorrect');
+            soundEffects.play("key");
         }
         // Allow backspace or delete
         // Reference: https://stackoverflow.com/questions/1116244
@@ -216,6 +218,7 @@ function enableCellSelection() {
             selectedCell.textContent = '';
             // Remove incorrect color if it is present
             $(selectedCell).removeClass('incorrect');
+            soundEffects.play("key");
         };
     });
     // Handle clicks on on-screen number tiles
@@ -234,6 +237,7 @@ function enableCellSelection() {
             selectedCell.textContent = val === 'X' ? '' : val;
             // Remove incorrect color if it is present
             $(selectedCell).removeClass('incorrect');
+            soundEffects.play("key");
         });
     });
 };
@@ -485,6 +489,8 @@ function startNewGame() {
     updateDifficultyDisplay();
     // Reset hints
     hintsUsed = 0;
+    // Call function - Displays the current number of hints used on the screen           
+    updateHintsDisplay();
 };
 
 /**
@@ -503,6 +509,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 // Call function - Compare the user's current inputs against the correct solution
                 checkUserInput();
+                soundEffects.play("hint");
             }, 10); // After a short 10ms delay
         });
     };
@@ -517,6 +524,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 // Call function - Pick one empty cell and show its correct number from the solution
                 revealHint();
+                soundEffects.play("hint");
             }, 10); // After a short 10ms delay
         });
     }
