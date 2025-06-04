@@ -4,3 +4,6 @@
 function renderEmptyGrid() {
     
 }
+
+// Call function - Render a blank 9x9 Sudoku grid
+renderEmptyGrid();
