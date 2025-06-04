@@ -519,7 +519,9 @@ function triggerAutoWinCheck() {
  * Ends the game when the timer runs out, disables input, and shows the setup modal
  */
 function endGameDueToTime() {
-    
+    // Get the preloaded alarm sound element from the HTML
+    // Reference: https://stackoverflow.com/questions/21815323
+    const alarmAudio = document.getElementById("alarm-sound");
 };
 
 /**
