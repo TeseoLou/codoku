@@ -67,7 +67,7 @@ function renderEmptyGrid() {
  * Use generated sudoku grid from API Ninjas to put cell number values in board
  */
 function populateGrid(puzzleData) {
-    
+
 }
 
 /**
@@ -97,7 +97,8 @@ function fetchSudokuBoard() {
             populateGrid(puzzle);        
         },
         error: function ajaxError(jqXHR) {
-            console.error('Error: ', jqXHR.responseText);
+            // Show a message in the console to show failure
+            console.error('Failed to retrieve puzzle data:', response?.responseText || 'No response text available');
         }
     });
 }
