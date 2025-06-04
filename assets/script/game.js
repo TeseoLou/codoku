@@ -544,6 +544,21 @@ function endGameDueToTime() {
         // Reference: https://stackoverflow.com/questions/8906520
         $(this).css('pointer-events', 'none');
     });
+    // Access the setup modal element
+    const setupModalElement = document.getElementById('setup-modal');
+    // Create a new Bootstrap modal instance and display to allow the player to start over or pick a new game
+    // Reference: https://getbootstrap.com/docs/5.3/components/modal/#methods
+    const setupModalInstance = new bootstrap.Modal(setupModalElement);
+    setupModalInstance.show()
+    // When the modal is fully shown trigger the start of a new game
+    // https://getbootstrap.com/docs/5.3/components/modal/#events
+    setupModalElement.addEventListener('shown.bs.modal', () => {
+        // Call function - Start a game by providing a fresh board, resetting stats, and resetting the timer and game stats
+        startNewGame();
+    }
+        // Ensure this only runs once per modal opening
+        // Reference: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#once
+        , { once: true });
 };
 
 /**
