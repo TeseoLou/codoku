@@ -270,6 +270,17 @@ function revealHint() {
     // Reference: https://timonweb.com/javascript/how-to-get-a-random-value-from-a-javascript-array/
     const pick = blanks[Math.floor(Math.random() * blanks.length)];
     const cell = $(pick);
+    // Retrieve the row and column indices from the cell's data attributes and parseInt ensures the values are treated as base-10 integers
+    // Reference: https://stackoverflow.com/questions/34067985
+    // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+    const y = parseInt(cell.data('row'), 10);
+    const x = parseInt(cell.data('col'), 10);
+    // Use the row and column indices to access the correct answer from the solution array
+    // Reference: https://www.freecodecamp.org/news/javascript-2d-arrays/
+    const answer = currentSolution[y][x];
+    // Populate corresponding cell with the correct answer and apply hint styling
+    cell.text(answer);
+    cell.addClass('hinted').removeClass('incorrect');
 }
 
 /**
