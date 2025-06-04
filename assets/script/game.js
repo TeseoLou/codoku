@@ -535,6 +535,15 @@ function endGameDueToTime() {
     setTimeout(() => {
         alert("⏰ Time's up! Better luck next time."); // 100ms delay
     }, 100);
+    // Disable all editable cells 
+    // https://stackoverflow.com/questions/47168607
+    $('.editable').each(function () {
+        // Remove editable class
+        $(this).removeClass('editable');
+        // Make the cell unclickable
+        // Reference: https://stackoverflow.com/questions/8906520
+        $(this).css('pointer-events', 'none');
+    });
 };
 
 /**
