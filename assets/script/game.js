@@ -64,6 +64,13 @@ function renderEmptyGrid() {
 }
 
 /**
+ * Use generated sudoku grid from API Ninjas to put cell number values in board
+ */
+function populateGrid(puzzleData) {
+    
+}
+
+/**
  * Create a new Sudoku board + solution from API Ninjas according to difficulty level chosen by the user
  */
 // Reference: https://www.api-ninjas.com/api/sudoku
