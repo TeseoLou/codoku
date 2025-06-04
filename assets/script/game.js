@@ -11,6 +11,8 @@ let countdownInterval = null;
 let timeRemaining = 0;
 // Number of hints the player has used so far
 let hintsUsed = 0;
+// Flag to prevent replaying celebration more than once
+let hasCelebrated = false;
 // Sound manager for game sound effects
 // Object to store and control game sound effects
 // Reference: https://stackoverflow.com/questions/40100433
@@ -498,6 +500,8 @@ function startNewGame() {
     hintsUsed = 0;
     // Call function - Displays the current number of hints used on the screen           
     updateHintsDisplay();
+    // Reset celebration      
+    hasCelebrated = false;
 };
 
 /**
