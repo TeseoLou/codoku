@@ -144,8 +144,12 @@ function enableCellSelection() {
     // Make each editable cell selectable
     // Reference: https://stackoverflow.com/questions/47168607
     $('.editable').each(function () {
+        // Reference: https://datatables.net/forums/discussion/59126/how-to-remove-selected-class-of-row-when-clicking-outside-of-row
         $(this).on('click', function () {
-            
+            // Deselect cells that were previously selected
+            if (selectedCell) {
+                $(selectedCell).removeClass('selected');
+            }
         });
     });
 }
