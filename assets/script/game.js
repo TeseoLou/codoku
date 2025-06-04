@@ -357,6 +357,9 @@ function updateDifficultyDisplay() {
     // Find the selected radio input with the name="difficulty"
     // Reference: https://stackoverflow.com/questions/15148659
     const difficultyLevel = $('input[name="difficulty"]:checked').get(0);
+    // Ensures that a difficulty level was actually selected before trying to access properties on it
+    if (difficultyLevel) {
+    }
 }
 
 /**
