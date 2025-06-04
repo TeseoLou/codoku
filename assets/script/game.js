@@ -303,6 +303,11 @@ function startTimer() {
         // Exits without starting a countdown
         return;
     }
+    // Converts the user’s time limit from a string to an integer
+    // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+    let minutes = parseInt(timeLimit, 10);
+    // Multiplies by 60 to convert minutes to seconds
+    timeRemaining = minutes * 60;
 }
 
 /**
