@@ -256,6 +256,11 @@ function startNewGame() {
 document.addEventListener('DOMContentLoaded', function () {
     // Handle the Check button click
     const checkButton = $('#check-button');
+    // Checks whether the button exists in the DOM
+    // Reference: https://dev.to/lavary/how-to-check-if-an-element-exists-in-javascript-with-examples-4mpb#:~:text=So%20to%20check%20if%20the,ll%20get%20a%20null%20value
+    if (checkButton.length) {
+        
+    };
 }
 
 // Call function - Render a blank 9x9 Sudoku grid
