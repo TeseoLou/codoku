@@ -290,7 +290,12 @@ function isBoardCompleteAndCorrect() {
     // Exit if currentSolution is falsy meaning games solution data is not loaded or theres no valid reference to the answer grid
     if (!currentSolution) {
         return false;
-    }
+    };
+    // Selects all elements with the class .editable then converts all into an array and checks if every cell matches the correct value
+    // Reference: https://api.jquery.com/toArray/
+    // Reference: https://www.geeksforgeeks.org/javascript-array-every-method/
+    const allCorrect = $('.editable').toArray().every(cell => {
+    });
 };
 
 /**
