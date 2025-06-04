@@ -79,7 +79,11 @@ function fetchSudokuBoard() {
         headers: { 'X-Api-Key': API_KEY },
         contentType: 'application/json',#
         success: function(result) {
-            console.log(result);
+            // Extract the puzzle and its solution from the API response
+            // Reference: https://wesbos.com/destructuring-objects
+            const { puzzle, solution } = result;
+            // Save the correct solution
+            currentSolution = solution;            
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
