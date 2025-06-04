@@ -21,12 +21,22 @@ function renderEmptyGrid() {
                 .css({ width: '40px', height: '40px' }) // Fixed size
                 .attr('data-row', row) // Store vertical position
                 .attr('data-col', col); // Store horizontal position
+            // Add thicker right border every third column except the last one
+            if ((col + 1) % 3 === 0 && col < 8) {
+                cell.addClass('right-border'); // Custom class to thicken border
+            }
+            // Add thicker bottom border every third row except last row
+            if ((row + 1) % 3 === 0 && row < 8) {
+                cell.addClass('bottom-border'); // Custom class to thicken border
+            }
             rowDiv.append(cell); // Add cell to current row
-            // Join rows together
+            // Join cells together
             // Reference: https://stackoverflow.com/questions/19058606
             // Add the current cell to the row
-            gridContainer.append(rowDiv);
+            rowDiv.append(cell);
         }
+        // Once the row is built, add it to the main grid
+        gridContainer.append(rowDiv);
     }
 }
 
