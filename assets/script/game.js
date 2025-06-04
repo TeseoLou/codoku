@@ -175,6 +175,13 @@ function enableCellSelection() {
             // Reference: https://iamhuzaifa.medium.com/keyboard-event-codes-javascript-project-aec43bb7bf79
             selectedCell.textContent = event.key;
         };
+        // Allow backspace or delete
+        // Reference: https://stackoverflow.com/questions/1116244
+        else if (event.key === 'Backspace' || event.key === 'Delete') {
+            // Clear the content of the selected cell by setting it to an empty string which removes previously entered numbers
+            // Reference: https://dev.to/javascript_jeep/how-to-empty-the-dom-element-in-javascript-nf8
+            selectedCell.textContent = '';
+        }
 }
 
 /**
