@@ -205,7 +205,10 @@ function enableCellSelection() {
  * Compare the user's current inputs against the correct solution
  */
 function checkUserInput() {
-    
+    // If the solution hasn't been loaded yet skip the check
+    if (!currentSolution) {
+        return;
+    }
 }
 
 /**
