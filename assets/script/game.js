@@ -66,8 +66,11 @@ function renderEmptyGrid() {
 /**
  * Create a new Sudoku board + solution from API Ninjas according to difficulty level chosen by the user
  */
+// Reference: https://www.api-ninjas.com/api/sudoku
 function fetchSudokuBoard() {
-    
+    // Get the value of the currently selected radio button for difficulty
+    // Reference: https://stackoverflow.com/questions/15148659
+    const selectedDifficulty = document.querySelector('input[name="difficulty"]:checked').value;
 }
 
 // Call function - Render a blank 9x9 Sudoku grid
