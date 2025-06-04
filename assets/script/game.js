@@ -67,7 +67,10 @@ function renderEmptyGrid() {
  * Use generated sudoku grid from API Ninjas to put cell number values in board
  */
 function populateGrid(puzzleData) {
-
+    // Go through cells with data-row attribute
+    // Reference: https://stackoverflow.com/questions/4958081
+    $('[data-row]').each(function () {
+    }
 }
 
 /**
