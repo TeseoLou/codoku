@@ -32,36 +32,36 @@ function renderEmptyGrid() {
             // Add thicker right border every third column except the last one
             if ((col + 1) % 3 === 0 && col < 8) {
                 cell.addClass('right-border'); // Custom class to thicken border
-            }
+            };
             // Add thicker bottom border every third row except last row
             if ((row + 1) % 3 === 0 && row < 8) {
                 cell.addClass('bottom-border'); // Custom class to thicken border
-            }
+            };
             // Hide top border for first row
             if (row === 0) {
                 cell.addClass('no-border-top');
-            }
+            };
             // Hide left border for first column
             if (col === 0) {
                 cell.addClass('no-border-left');
-            }
+            };
             // Hide bottom border for last row
             if (row === 8) {
                 cell.addClass('no-border-bottom');
-            }
+            };
             // Hide right border for last column
             if (col === 8) {
                 cell.addClass('no-border-right');
-            }
+            };
             // Join cells together
             // Reference: https://stackoverflow.com/questions/19058606
             // Add the current cell to the row
             rowDiv.append(cell);
-        }
+        };
         // Once the row is built, add it to the main grid
         gridContainer.append(rowDiv);
-    }
-}
+    };
+};
 
 /**
  * Use generated sudoku grid from API Ninjas to put cell number values in board
@@ -96,11 +96,11 @@ function populateGrid(puzzleData) {
             this.classList.add('editable');
             // Show interactivity
             this.style.cursor = 'pointer';
-        }
+        };
     });
     // Call function - Allow interactivity with editable grid cells with clicking or typing
     enableCellSelection();
-}
+};
 
 /**
  * Create a new Sudoku board + solution from API Ninjas according to difficulty level chosen by the user
@@ -135,7 +135,7 @@ function fetchSudokuBoard() {
             console.error('Failed to retrieve puzzle data:', response?.responseText || 'No response text available');
         }
     });
-}
+};
 
 /**
  * Allow interactivity with editable grid cells with clicking or typing
@@ -181,12 +181,15 @@ function enableCellSelection() {
             // Clear the content of the selected cell by setting it to an empty string which removes previously entered numbers
             // Reference: https://dev.to/javascript_jeep/how-to-empty-the-dom-element-in-javascript-nf8
             selectedCell.textContent = '';
-        }
+        };
     });
     // Handle clicks on on-screen number tiles
     $('#numbers-container h2').each(function () {
-        
-    })
+        // // Attach a click event listener to the current element
+        $(this).on('click', function () {
+
+        });
+    });
 }
 
 /**
