@@ -342,6 +342,12 @@ function updateTimerDisplay() {
     const minutes = Math.floor(timeRemaining / 60);
     // Uses the modulo operator (%) to get the remaining seconds after minutes have been calculated which then gives the seconds portion of the timer in game-stats t
     const seconds = timeRemaining % 60;
+    // Always show seconds with two digits
+    // Reference: https://stackoverflow.com/questions/8043026/how-to-format-numbers-by-prepending-0-to-single-digit-numbers
+    const reformattedSeconds = seconds.toString().padStart(2, '0');
+    // Update the timer text on the page
+    // Reference: https://stackoverflow.com/questions/59747815
+    $('#timer').text(`Timer: ${minutes}:${reformattedSeconds}`);
 }
 
 /**
