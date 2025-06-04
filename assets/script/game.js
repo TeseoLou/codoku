@@ -460,21 +460,28 @@ function isBoardFilled() {
     });
     // The function returns true if all editable cells are filled and returns false if one or more cells are empty
     return allFilled;
-}
+};
+
+/**
+ * Confetti animation when board is complete
+ */
+function popConfetti() {
+
+};
 
 /**
  * Checks if the board is complete and correct
  */
 function triggerAutoWinCheck() {
 
-}
+};
 
 /**
  * Ends the game when the timer runs out, disables input, and shows the setup modal
  */
 function endGameDueToTime() {
 
-}
+};
 
 /**
  * Start a game by providing a fresh board, resetting stats, and resetting the timer and game stats.
