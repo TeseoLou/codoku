@@ -316,6 +316,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Checks whether the button exists in the DOM
     // Reference: https://dev.to/lavary/how-to-check-if-an-element-exists-in-javascript-with-examples-4mpb#:~:text=So%20to%20check%20if%20the,ll%20get%20a%20null%20value
     if (hintButton.length) {
+        // Adds a click event listener
+        // Reference: https://stackoverflow.com/questions/66144270
+        hintButton.on('click', () => {
+            setTimeout(() => {
+                // Call function - Pick one empty cell and show its correct number from the solution
+                revealHint();
+            }, 10); // After a short 10ms delay
+        });
     }
 });
 
