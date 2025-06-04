@@ -116,8 +116,9 @@ function fetchSudokuBoard() {
         method: 'GET',
         url: `https://api.api-ninjas.com/v1/sudokugenerate?difficulty=${selectedDifficulty}`,
         headers: { 'X-Api-Key': API_KEY },
-        contentType: 'application/json',#
-        success: function(result) {
+        contentType: 'application/json',
+        // Request Success
+        success: function (result) {
             // Extract the puzzle and its solution from the API response
             // Reference: https://wesbos.com/destructuring-objects
             const { puzzle, solution } = result;
@@ -126,9 +127,10 @@ function fetchSudokuBoard() {
             // Prepare a fresh grid
             renderEmptyGrid();
             // Put the cell values in the grid
-            populateGrid(puzzle);        
+            populateGrid(puzzle);
         },
-        error: function ajaxError(jqXHR) {
+        // Request failure
+        error: function (response) {
             // Show a message in the console to show failure
             console.error('Failed to retrieve puzzle data:', response?.responseText || 'No response text available');
         }
