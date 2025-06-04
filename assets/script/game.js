@@ -295,6 +295,19 @@ function isBoardCompleteAndCorrect() {
     // Reference: https://api.jquery.com/toArray/
     // Reference: https://www.geeksforgeeks.org/javascript-array-every-method/
     const allCorrect = $('.editable').toArray().every(cell => {
+        // Retrieves 'data-row' and 'data-col' attributes from each cell and changes them to integers
+        // Reference: https://stackoverflow.com/questions/34067985
+        // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+        const rowIndex = parseInt(cell.dataset.row, 10);
+        const colIndex = parseInt(cell.dataset.col, 10);
+        // Finds the correct solution value from the 2D currentSolution array and converts it to a string for comparison
+        // https://www.freecodecamp.org/news/javascript-2d-arrays/
+        const expected = String(currentSolution[rowIndex][colIndex]);
+        // Retrieves the current text inside the cell and removes whitespace
+        // Reference: https://stackoverflow.com/questions/33682536
+        const input = cell.textContent.trim();
+        // Compares the user input to the expected value and returns true if they match
+        return input === expected;
     });
 };
 
