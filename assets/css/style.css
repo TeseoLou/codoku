@@ -603,6 +603,18 @@ body.dark #grid p.bottom-border {
     border-left: 1px solid transparent !important;
 }
 
+/* Incorrect input feedback (light theme) */
+p.incorrect {
+    /* Deep red for error */
+    color: #7d2525 !important;
+}
+
+/* Incorrect input feedback override (dark mode) */
+body.dark p.incorrect {
+    /* Bright red for visibility */
+    color: #f69696 !important;
+}
+
 /* Number Keys */
 /* Number keys container */
 #numbers-container {  
