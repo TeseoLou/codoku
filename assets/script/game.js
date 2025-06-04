@@ -522,6 +522,14 @@ function endGameDueToTime() {
     // Get the preloaded alarm sound element from the HTML
     // Reference: https://stackoverflow.com/questions/21815323
     const alarmAudio = document.getElementById("alarm-sound");
+    // Make sure the element exists before trying to use it
+    if (alarmAudio) {
+        // Reset playback position to the beginning
+        // Reference: https://dev.to/pavelkeyzik/does-anyone-knows-how-to-change-current-time-of-song-correctly-in-javascript-2mkn
+        alarmAudio.currentTime = 0;
+        // Attempt to play the alarm sound
+        alarmAudio.play();
+    }
 };
 
 /**
