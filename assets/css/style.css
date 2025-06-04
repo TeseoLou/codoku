@@ -603,6 +603,20 @@ body.dark #grid p.bottom-border {
     border-left: 1px solid transparent !important;
 }
 
+/* Hover effect on non-generated cells */
+#grid p:hover:not(.generated) {
+    /* Light purple highlight */
+    background-color: #bcb6e998;
+    /* Show pointer on hover */
+    cursor: pointer;
+}
+
+/* Hover effect on non-generated cells - Dark mode */
+body.dark #grid p:hover:not(.generated) {
+    /* Gold highlight */
+    background-color: #e0b33671;
+}
+
 /* Incorrect input feedback */
 p.incorrect {
     /* Deep red for error */
