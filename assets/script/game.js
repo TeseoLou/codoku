@@ -1,3 +1,9 @@
+// Global Declarations
+// API key used to access the puzzle generator service
+const API_KEY = '6nP4AYB9ImbH8hd6Zl79tg==iJV6BjdAY08uPpZU';
+// Stores the correct solution grid returned by the API
+let currentSolution = null;
+
 /**
  * Render a blank 9x9 Sudoku grid
  */
