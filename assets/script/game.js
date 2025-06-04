@@ -351,6 +351,13 @@ function updateTimerDisplay() {
 }
 
 /**
+ * Show difficulty level in game-stats
+ */
+function updateDifficultyDisplay() {
+    
+}
+
+/**
  * Checks whether all editable cells have the correct solution values and returns true if the entire board is filled and correct
  */
 function isBoardCompleteAndCorrect() {
