@@ -141,14 +141,16 @@ function fetchSudokuBoard() {
  * Allow interactivity with editable grid cells with clicking or typing
  */
 function enableCellSelection() {
-    
+
 }
 
 /**
  * Start a game by providing a fresh board, resetting stats, and resetting the timer and game stats.
  */
+// Reference: https://www.shecodes.io/athena/60837-how-to-call-a-function-within-another-function-in-javascript
 function startNewGame() {
-
+    // Call function - Create a new Sudoku board + solution from API Ninjas according to difficulty level chosen by the user
+    fetchSudokuBoard();
 }
 
 // Call function - Render a blank 9x9 Sudoku grid
