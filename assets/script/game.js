@@ -262,6 +262,10 @@ function revealHint() {
             blanks.push(this);
         }
     });
+    // Stop if there are no empty cells are left
+    if (blanks.length === 0) {
+        return;
+    }
 }
 
 /**
