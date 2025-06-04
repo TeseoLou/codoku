@@ -502,10 +502,18 @@ function endGameDueToTime() {
         const setupModalInstance = new bootstrap.Modal(setupModal[0]);
         setupModalInstance.show();
     } // If the board is full but the user has made a mistake
-    else if (isBoardFilled() && !isBoardCompleteAndCorrect()) {
+    else (isBoardFilled() && !isBoardCompleteAndCorrect()) {
         // Get the preloaded error sound element from the HTML
         // Reference: https://stackoverflow.com/questions/21815323
         const errorAudio = document.getElementById("error-sound");
+        // Make sure the audio element exists before trying to play it
+        if (errorAudio) {
+            // Reset the audio to the start so it plays from the beginning each time
+            // Reference: https://dev.to/pavelkeyzik/does-anyone-knows-how-to-change-current-time-of-song-correctly-in-javascript-2mkn
+            errorAudio.currentTime = 0;
+            // Play the error sound
+            errorAudio.play();
+        }
     }
 };
 
