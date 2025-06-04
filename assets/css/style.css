@@ -9,6 +9,8 @@
     --color-bg-dark: #212529; /* Default dark background */   
     --color-white: #ffffff; /* White */   
     --color-black: #000000; /* Black */
+    --cell-size: 40px;
+    --cell-font-size: 1.5rem;
 }
 
 /* --- Base Styles --- */
@@ -471,6 +473,8 @@ body.dark .form-check-input[type="radio"]::before {
 /* Main */
 main {  
     flex: 1 0 auto; /* Allow main to grow and push footer to bottom */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Game stats text */
@@ -479,12 +483,21 @@ main {
     font-size: 0.8rem; /* Set small font size for stats */
 }
 
+#game {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space between children */
+    align-items: center;     /* Horizontally center contents */
+    flex-grow: 1;            /* Fill available vertical space */
+    padding: 1rem 0; /* Prevents edges from touching */
+}
+
 /* Game Section Layout */
 /* Grid container */
 #grid {
     display: flex; /* Enable flex layout */
     flex-direction: column; /* Stack grid rows vertically */
-    align-items: center; /* Center the grid horizontally */
+    justify-content: center; /* Vertically center */
 }
 
 /* Default grid cell appearance (light mode) */
@@ -518,13 +531,15 @@ body.dark #grid p {
 /* Number cells */
 #grid .number {
     /* Vertical alignment height */
-    line-height: 40px;
+    line-height: var(--cell-size); 
+    width: var(--cell-size);
+    height: var(--cell-size);
     /* Middle align text */
     vertical-align: middle;
     /* Use body font */
     font-family: var(--font-body);
     /* Set number font size */
-    font-size: 1.5rem;
+    font-size: var(--cell-font-size);
     /* Center text horizontally */
     text-align: center;
     /* Flexbox for full centering */
@@ -693,4 +708,19 @@ body.dark #numbers-container h2 {
 
 /* --- 404 Page --- */
 
+/* --- Media Queries --- */
+/* Tablets Laptop Screens */
+@media screen and (min-width: 768px) {
+    :root {
+        --cell-size: 50px;
+        --cell-font-size: 1.7rem;
+    }
+}
 
+/* Large Desktop Screens */
+@media screen and (min-width: 1500px) {
+    :root {
+        --cell-size: 55px;
+        --cell-font-size: 2.2rem;
+    }
+}

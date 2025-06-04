@@ -57,7 +57,7 @@ function renderEmptyGrid() {
             // Create a paragraph element which will act as a cell and add classes
             const cell = $('<p>')
                 .addClass('m-0 text-center number select') // Styling classes
-                .css({ width: '40px', height: '40px' }) // Fixed size
+                
                 .attr('data-row', row) // Store vertical position
                 .attr('data-col', col); // Store horizontal position
             // Create board styling on cells
