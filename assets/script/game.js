@@ -254,7 +254,8 @@ function startNewGame() {
  * Sets up button event listeners 
  */
 document.addEventListener('DOMContentLoaded', function () {
-    
+    // Handle the Check button click
+    const checkButton = $('#check-button');
 }
 
 // Call function - Render a blank 9x9 Sudoku grid
