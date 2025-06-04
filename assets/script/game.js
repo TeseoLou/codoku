@@ -311,6 +311,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 10); // After a short 10ms delay
         });
     };
+    // Handle the Hint button click
+    const hintButton = $('#hint-button');
 });
 
 // Call function - Render a blank 9x9 Sudoku grid

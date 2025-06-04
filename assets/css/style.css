@@ -603,25 +603,25 @@ body.dark #grid p.bottom-border {
     border-left: 1px solid transparent !important;
 }
 
-/* Incorrect input feedback (light theme) */
+/* Incorrect input feedback */
 p.incorrect {
     /* Deep red for error */
     color: #7d2525 !important;
 }
 
-/* Incorrect input feedback override (dark mode) */
+/* Incorrect input feedback override - Dark mode */
 body.dark p.incorrect {
     /* Bright red for visibility */
     color: #f69696 !important;
 }
 
-/* Hinted cell color (light theme) */
+/* Hinted cell color */
 p.hinted {
     /* Deep green for hint */
     color: #285228 !important;
 }
 
-/* Hinted cell color override (dark mode) */
+/* Hinted cell color override - Dark mode */
 body.dark p.hinted {
     /* Bright green for visibility */
     color: #a5f3a5 !important;
