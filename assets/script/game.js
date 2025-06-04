@@ -489,6 +489,18 @@ function endGameDueToTime() {
         soundEffects.play("applause");
         // Prevent repeated celebration
         hasCelebrated = true;
+        // Halt the countdown timer
+        // Reference: https://stackoverflow.com/questions/57860947
+        if (countdownInterval) {
+            clearInterval(countdownInterval);
+        };
+        // Access the setup modal using Bootstrap's Modal API
+        // Reference: https://getbootstrap.com/docs/5.3/components/modal/#methods
+        const setupModal = $('#setup-modal');
+        // Display the setup modal again after board completion
+        // Reference: https://stackoverflow.com/questions/62827002
+        const setupModalInstance = new bootstrap.Modal(setupModal[0]);
+        setupModalInstance.show();
     };
 };
 
