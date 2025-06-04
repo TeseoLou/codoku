@@ -13,6 +13,10 @@ function renderEmptyGrid() {
     for (let row = 0; row < 9; row++) {
         // Create a row div with Bootstrap flex class
         const rowDiv = $('<div>').addClass('d-flex');
+        // Nested for loop
+        for (let col = 0; col < 9; col++) {
+
+        }
         // Add row to grid
         gridContainer.append(rowDiv); 
     }
