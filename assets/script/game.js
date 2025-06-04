@@ -9,6 +9,8 @@ let selectedCell = null;
 let countdownInterval = null;
 // Time remaining for the current game in seconds
 let timeRemaining = 0;
+// Number of hints the player has used so far
+let hintsUsed = 0;
 
 /**
  * Render a blank 9x9 Sudoku grid
@@ -457,6 +459,8 @@ function startNewGame() {
     startTimer();
     // Call function - Show difficulty level in game-stats          
     updateDifficultyDisplay();
+    // Reset hints
+    hintsUsed = 0;
 };
 
 /**
