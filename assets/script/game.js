@@ -83,7 +83,11 @@ function fetchSudokuBoard() {
             // Reference: https://wesbos.com/destructuring-objects
             const { puzzle, solution } = result;
             // Save the correct solution
-            currentSolution = solution;            
+            currentSolution = solution;
+            // Prepare a fresh grid
+            renderEmptyGrid();
+            // Put the cell values in the grid
+            populateGrid(puzzle);        
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
