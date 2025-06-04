@@ -168,6 +168,13 @@ function enableCellSelection() {
         if (!isAllowed) {
             return;
         };
+        // Accept numbers between 1-9
+        // Reference: https://stackoverflow.com/questions/38955573
+        if (event.key >= '1' && event.key <= '9') {
+            // Set the content of the selected cell to the number key pressed by the user
+            // Reference: https://iamhuzaifa.medium.com/keyboard-event-codes-javascript-project-aec43bb7bf79
+            selectedCell.textContent = event.key;
+        };
 }
 
 /**
