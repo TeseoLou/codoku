@@ -141,6 +141,14 @@ function fetchSudokuBoard() {
  * Allow interactivity with editable grid cells with clicking or typing
  */
 function enableCellSelection() {
+    
+}
+
+/**
+ * Start a game by providing a fresh board, resetting stats, and resetting the timer and game stats.
+ */
+function startNewGame() {
+
 }
 
 // Call function - Render a blank 9x9 Sudoku grid
