@@ -287,7 +287,10 @@ function revealHint() {
  * Checks whether all editable cells have the correct solution values and returns true if the entire board is filled and correct
  */
 function isBoardCompleteAndCorrect() {
-
+    // Exit if currentSolution is falsy meaning games solution data is not loaded or theres no valid reference to the answer grid
+    if (!currentSolution) {
+        return false;
+    }
 };
 
 /**
