@@ -210,6 +210,8 @@ function enableCellSelection() {
             selectedCell.textContent = event.key;
             // Get rid of previous incorrect color
             $(selectedCell).removeClass('incorrect');
+            // Call function - Checks if the board is complete and correct
+            triggerAutoWinCheck();
             soundEffects.play("key");
         }
         // Allow backspace or delete
