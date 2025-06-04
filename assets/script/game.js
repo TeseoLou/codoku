@@ -157,6 +157,10 @@ function enableCellSelection() {
     });
     // Handle keyboard number and deletion interactions
     $(document).on('keydown', function (event) {
+        // Prevent interaction if no cell is currently selected to ensure we only proceed if a cell has been clicked
+        if (!selectedCell) {
+            return;
+        }
 }
 
 /**
