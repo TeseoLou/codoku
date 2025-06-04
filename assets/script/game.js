@@ -482,7 +482,8 @@ function triggerAutoWinCheck() {
  * Ends the game when the timer runs out, disables input, and shows the setup modal
  */
 function endGameDueToTime() {
-
+    // If the player hasn't completed yet and the answers are right
+    if (!hasCelebrated && isBoardCompleteAndCorrect()) {
 };
 
 /**
