@@ -15,10 +15,18 @@ function renderEmptyGrid() {
         const rowDiv = $('<div>').addClass('d-flex');
         // Nested for loop
         for (let col = 0; col < 9; col++) {
-
+            // Create a paragraph element which will act as a cell and add classes
+            const cell = $('<p>')
+                .addClass('m-0 text-center number select') // Styling classes
+                .css({ width: '40px', height: '40px' }) // Fixed size
+                .attr('data-row', row) // Store vertical position
+                .attr('data-col', col); // Store horizontal position
+            rowDiv.append(cell); // Add cell to current row
         }
-        // Add row to grid
-        gridContainer.append(rowDiv); 
+        // Join rows together
+        // Reference: https://stackoverflow.com/questions/19058606
+        // Add the current cell to the row
+        gridContainer.append(rowDiv);
     }
 }
 
