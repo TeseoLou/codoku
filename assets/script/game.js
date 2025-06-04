@@ -290,6 +290,12 @@ function revealHint() {
 }
 
 /**
+ * Initiates a countdown timer corresponding with the time limit set by the user
+ */
+function startTimer() {
+}
+
+/**
  * Checks whether all editable cells have the correct solution values and returns true if the entire board is filled and correct
  */
 function isBoardCompleteAndCorrect() {
