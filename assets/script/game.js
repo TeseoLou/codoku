@@ -141,7 +141,10 @@ function fetchSudokuBoard() {
  * Allow interactivity with editable grid cells with clicking or typing
  */
 function enableCellSelection() {
-
+    // Make each editable cell selectable
+    // Reference: https://stackoverflow.com/questions/47168607
+    $('.editable').each(function () {
+    });
 }
 
 /**
