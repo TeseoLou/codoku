@@ -176,7 +176,7 @@ function enableCellSelection() {
             selectedCell.textContent = event.key;
             // Get rid of previous incorrect color
             $(selectedCell).removeClass('incorrect');
-        };
+        }
         // Allow backspace or delete
         // Reference: https://stackoverflow.com/questions/1116244
         else if (event.key === 'Backspace' || event.key === 'Delete') {
@@ -242,6 +242,13 @@ function checkUserInput() {
 };
 
 /**
+ * Pick one empty cell and show its correct number from the solution
+ */
+function revealHint() {
+    
+}
+
+/**
  * Start a game by providing a fresh board, resetting stats, and resetting the timer and game stats.
  */
 // Reference: https://www.shecodes.io/athena/60837-how-to-call-a-function-within-another-function-in-javascript
@@ -269,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 10); // After a short 10ms delay
         });
     };
-};
+});
 
 // Call function - Render a blank 9x9 Sudoku grid
 $(document).ready(() => {
