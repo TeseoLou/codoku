@@ -501,7 +501,9 @@ function endGameDueToTime() {
         // Reference: https://stackoverflow.com/questions/62827002
         const setupModalInstance = new bootstrap.Modal(setupModal[0]);
         setupModalInstance.show();
-    };
+    } // If the board is full but the user has made a mistake
+    else if (isBoardFilled() && !isBoardCompleteAndCorrect()) {
+    }
 };
 
 /**
