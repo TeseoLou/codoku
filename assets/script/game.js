@@ -315,6 +315,22 @@ function startTimer() {
     if (countdownInterval) {
         clearInterval(countdownInterval);
     }
+    // Begin countdown loop every second/1000ms
+    // Reference: https://vaidehijoshi.github.io/blog/2015/01/06/the-final-countdown-using-javascripts-setinterval-plus-clearinterval-methods/
+    countdownInterval = setInterval(() => {
+        // Decrements the time
+        timeRemaining--;
+        // Call function - Show remaining time in game-stats on each tick
+        updateTimerDisplay();
+        // End game when timer reaches 00:00
+        if (timeRemaining <= 0) {
+            // Stop existing timer
+            // Reference: https://stackoverflow.com/questions/57860947
+            clearInterval(countdownInterval);
+            // Call function - Ends the game when the timer runs out, disables input, and shows the setup modal
+            endGameDueToTime();
+        }
+    }, 1000);
 }
 
 /**
