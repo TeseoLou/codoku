@@ -250,6 +250,13 @@ function startNewGame() {
     fetchSudokuBoard();
 };
 
+/**
+ * Sets up button event listeners 
+ */
+document.addEventListener('DOMContentLoaded', function () {
+    
+}
+
 // Call function - Render a blank 9x9 Sudoku grid
 $(document).ready(() => {
     renderEmptyGrid();
