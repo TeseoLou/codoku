@@ -438,6 +438,10 @@ function endGameDueToTime() {
 function startNewGame() {
     // Call function - Create a new Sudoku board + solution from API Ninjas according to difficulty level chosen by the user
     fetchSudokuBoard();
+    // Call function - Initiates a countdown timer corresponding with the time limit set by the user
+    startTimer();
+    // Call function - Show difficulty level in game-stats          
+    updateDifficultyDisplay();
 };
 
 /**
