@@ -320,6 +320,10 @@ function isBoardFilled() {
     // Grab all editable cells and make an array
     // Reference: https://api.jquery.com/toArray/
     const editableCells = $('.editable').toArray();
+    // Go through array and it is filled with numbers
+    // Reference: https://www.geeksforgeeks.org/javascript-array-every-method/
+    const allFilled = editableCells.every(cell => {
+    });
 }
 
 /**
