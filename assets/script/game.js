@@ -199,6 +199,13 @@ function enableCellSelection() {
             selectedCell.textContent = val === 'X' ? '' : val;
         });
     });
+};
+
+/**
+ * Compare the user's current inputs against the correct solution
+ */
+function checkUserInput() {
+    
 }
 
 /**
