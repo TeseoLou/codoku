@@ -160,7 +160,14 @@ function enableCellSelection() {
         // Prevent interaction if no cell is currently selected to ensure we only proceed if a cell has been clicked
         if (!selectedCell) {
             return;
-        }
+        };
+        // Check if the selected cell has the 'editable' class allowing to lock the cells with original game values
+        // Reference: https://api.jquery.com/hasClass/
+        const isAllowed = $(selectedCell).hasClass('editable');
+        // If the selected cell is not editable, exit function
+        if (!isAllowed) {
+            return;
+        };
 }
 
 /**
