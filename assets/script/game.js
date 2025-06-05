@@ -664,7 +664,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const setupModal = new bootstrap.Modal(document.getElementById('setup-modal'));
         // Opens the modal so the user can configure a new puzzle
         setupModal.show();
-    }
+        // Locate the modal element by ID
+        const congratsModal = document.getElementById('congrats-modal');
+        // Retrieve the existing Bootstrap modal instance
+        // Reference: https://getbootstrap.com/docs/5.3/components/modal/#getinstance
+        const bsCongrats = bootstrap.Modal.getInstance(congratsModal);
+        // Calls .hide() to close it
+        bsCongrats.hide();
+    })
 });
 
 // Call function - Render a blank 9x9 Sudoku grid
