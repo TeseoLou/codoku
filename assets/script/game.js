@@ -505,7 +505,7 @@ function formatElapsedTime() {
         else {
         return `${minutes}:${seconds.toString().padStart(2, '0')}`;
     } 
-}
+};
 
 /**
  * Checks if the board is complete and correct
@@ -523,7 +523,11 @@ function triggerAutoWinCheck() {
         if (countdownInterval) {
             clearInterval(countdownInterval);
         };
-
+        // Get the formatted time string showing how long the user took to solve the puzzle by calling formatElapsedTime function
+        const timeTaken = formatElapsedTime();
+        // Get the text of the label associated with the selected difficulty radio button
+        // Reference: https://stackoverflow.com/questions/9618504
+        const difficultyText = $('input[name="difficulty"]:checked').next('label').text();
     } // If the board is full but the user has made a mistake
     else if (isBoardFilled() && !isBoardCompleteAndCorrect()) {
         // Get the preloaded error sound element from the HTML
