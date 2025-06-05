@@ -487,6 +487,11 @@ function popConfetti() {
  * Calculates and formats the time elapsed since the game started and will.
  */
 function formatElapsedTime() {
+    // Get the value of the selected radio button with name time
+    // Reference: https://stackoverflow.com/questions/9618504
+    const timeLimit = $('input[name="time"]:checked').val();
+    // Determine how many seconds have passed with ternary operator if no elapsed time is set to null otherwise convert string to integer and minutes to seconds to seconds and subtract time remaining
+    const elapsed = timeLimit === 'none' ? null : parseInt(timeLimit, 10) * 60 - timeRemaining;
     
 }
 
