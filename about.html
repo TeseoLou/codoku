@@ -101,6 +101,31 @@
       <a href="https://www.alzheimers.org.uk/get-involved/make-donation" id="donate-button" class="btn btn-dark"
         target="_blank" rel="noopener noreferrer">Donate</a>
     </section>
+    <!-- Rules Modal -->
+    <section class="modal fade" id="rules-modal" tabindex="-1" role="dialog" aria-labelledby="rules-modal-label"
+        aria-modal="true" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <article class="modal-content">
+                <div id="modal-border">
+                    <header class="modal-header">
+                        <h2 class="modal-title" id="rulesModalLabel">Game Rules</h2>
+                    </header>
+                    <div class="modal-body">
+                        <p>The goal of Codoku is to complete the grid so that every row, column, and 3x3 box contains the numbers 1 through 9.</p>
+                        <ul>
+                            <li>Only use each number once per row, column, and box.</li>
+                            <li>Use the number keys below the grid to make selections.</li>
+                            <li>Choose your difficulty and time before starting a new game.</li>
+                        </ul>
+                    </div>
+                    <footer class="modal-footer">
+                        <button type="button" id="rules-back-button" class="btn btn-dark" data-bs-dismiss="modal">Back
+                            ↲</button>
+                    </footer>
+                </div>
+            </article>
+        </div>
+    </section>
     <!-- Footer Section -->
     <footer class="py-3">
         <div class="container d-flex justify-content-between align-items-center text-white">
