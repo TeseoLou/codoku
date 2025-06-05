@@ -359,7 +359,7 @@ body.dark #rules-modal .modal-content {
 }
 
 /* Modal border */
-#modal-border {
+.modal-border {
     border-radius: 0;
     /* Remove border radius */
     border: 2px solid var(--color-black);
@@ -369,7 +369,7 @@ body.dark #rules-modal .modal-content {
 }
 
 /* Modal border - Dark mode */
-body.dark #rules-modal #modal-border {
+body.dark .modal-border {
     border: 2px solid var(--color-white);
     /* White border in dark mode */
 }
@@ -491,6 +491,11 @@ body.dark footer a:hover i {
     /* Dark shadow for modal elevation */
 }
 
+#setup-modal-content {
+    padding: 0;
+    /* Remove padding */
+}
+
 /* Modal body */
 .modal-body {
     border-radius: 0;
@@ -550,13 +555,14 @@ body.dark #setup {
 }
 
 /* Legends */
-#setup legend {
+legend {
     font-family: var(--font-heading);
     /* Use space mono font */
-    font-size: 1rem;
+    font-size: 19px;
     /* Set base font size */
     text-align: center;
     /* Center text */
+    padding-top: 10px;
 }
 
 /* Radio buttons */
@@ -626,8 +632,8 @@ body.dark .form-check-input[type="radio"]::before {
 }
 
 /* Start button */
-#setup .start-button {
-    margin-top: 20px;
+#start-button {
+    margin-bottom: 20px;
     /* Space between options and start button */
 }
 
@@ -912,6 +918,33 @@ body.dark #numbers-container h2 {
     /* Slight shrink effect when pressed */
 }
 
+/* --- Congrats Modal --- */
+#congrats-modal-content {
+    padding: 0;
+}
+
+#congrats-modal-body {
+    padding: 0;
+}
+
+#congrats-modal-body #message {
+    font-family: var(--font-heading);
+}
+
+#congrats-modal-label {
+    font-size: 19px;
+    margin: 10px;
+}
+
+/* Admire Puzzle Button */
+#admire-puzzle {
+    background-color: #313335; /* Charcoal */
+}
+
+#admire-button:hover {
+    background-color: #b5b6b6; /* Even lighter on hover */
+}
+
 /* --- About Page --- */
 
 /* --- 404 Page --- */
@@ -1026,7 +1059,7 @@ body.dark #numbers-container h2 {
     :root {
         --cell-size: 60px;
         /* Set the base size for each Sudoku cell */
-        --cell-font-size: 2.2rem;
+        --cell-font-size: 2rem;
         /* Set the font size for numbers inside each cell */
     }
 
@@ -1068,7 +1101,7 @@ body.dark #numbers-container h2 {
     :root {
         --cell-size: 60px;
         /* Set the base size for each Sudoku cell */
-        --cell-font-size: 2.2rem;
+        --cell-font-size: 2rem;
         /* Set the font size for numbers inside each cell */
     }
 }
@@ -1078,7 +1111,7 @@ body.dark #numbers-container h2 {
     :root {
         --cell-size: 70px;
         /* Set the base size for each Sudoku cell */
-        --cell-font-size: 2.3rem;
+        --cell-font-size: 2rem;
         /* Set the font size for numbers inside each cell */
     }
 }
@@ -1086,45 +1119,19 @@ body.dark #numbers-container h2 {
 /* Laptops */
 @media screen and (min-width: 992px) and (orientation: landscape) {
     :root {
-        --cell-size: 40px;
+        --cell-size: 35px;
         /* Set the base size for each Sudoku cell */
         --cell-font-size: 1.7rem;
         /* Set the font size for numbers inside each cell */
-    }
-
-    /* Grid container */
-    #grid {
-        top: 55%;
-        /* Positions the grid 55% from the top */
-        left: 50%;
-        /* Positions the grid 50% from the left */
-    }
-}
-
-/* Large Laptops */
-@media screen and (min-width: 1200px) {
-    :root {
-        --cell-size: 50px;
-        /* Set the base size for each Sudoku cell */
-        --cell-font-size: 2rem;
-        /* Set the font size for numbers inside each cell */
-    }
-
-    /* Grid container */
-    #grid {
-        top: 50%;
-        /* Positions the grid 50% from the top */
-        left: 50%;
-        /* Positions the grid 50% from the left */
     }
 }
 
 /* Large Desktop Screens */
 @media screen and (min-width: 1400px) {
     :root {
-        --cell-size: 60px;
+        --cell-size: 40px;
         /* Set the base size for each Sudoku cell */
-        --cell-font-size: 2.3rem;
+        --cell-font-size: 1.9rem;
         /* Set the font size for numbers inside each cell */
     }
 }

@@ -57,7 +57,7 @@ function renderEmptyGrid() {
             // Create a paragraph element which will act as a cell and add classes
             const cell = $('<p>')
                 .addClass('m-0 text-center number select') // Styling classes
-                
+
                 .attr('data-row', row) // Store vertical position
                 .attr('data-col', col); // Store horizontal position
             // Create board styling on cells
@@ -483,6 +483,7 @@ function popConfetti() {
     });
 };
 
+
 /**
  * Checks if the board is complete and correct
  */
@@ -499,13 +500,7 @@ function triggerAutoWinCheck() {
         if (countdownInterval) {
             clearInterval(countdownInterval);
         };
-        // Access the setup modal using Bootstrap's Modal API
-        // Reference: https://getbootstrap.com/docs/5.3/components/modal/#methods
-        const setupModal = $('#setup-modal');
-        // Display the setup modal again after board completion
-        // Reference: https://stackoverflow.com/questions/62827002
-        const setupModalInstance = new bootstrap.Modal(setupModal[0]);
-        setupModalInstance.show();
+
     } // If the board is full but the user has made a mistake
     else if (isBoardFilled() && !isBoardCompleteAndCorrect()) {
         // Get the preloaded error sound element from the HTML
@@ -627,6 +622,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 10); // After a short 10ms delay
         });
     }
+
 });
 
 // Call function - Render a blank 9x9 Sudoku grid
