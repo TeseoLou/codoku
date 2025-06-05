@@ -289,7 +289,7 @@ header {
 }
 
 /* Title */
-#title {
+#title, #about-title {
     font-family: var(--font-heading);
     /* Use space mono heading font  */
     font-weight: normal;
