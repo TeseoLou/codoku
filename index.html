@@ -165,7 +165,9 @@
     <section id="setup-modal" class="modal fade" tabindex="-1" aria-labelledby="setup-modal-label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <article class="modal-content setup-modal-custom">
-                <h2 id="setup-modal-label" class="modal-title visually-hidden">Setup Game</h2>
+                <h2 id="setup-modal-label" class="modal-title visually-hidden">
+                    Setup Game
+                </h2>
                 <section id="setup-modal-content" class="modal-body">
                     <form id="setup-options" class="d-flex flex-column align-items-center"
                         aria-labelledby="setup-modal-label">
@@ -174,17 +176,17 @@
                             <section id="difficulty-options" class="d-flex flex-wrap justify-content-center gap-3">
                                 <div class="form-check">
                                     <input type="radio" id="easy" class="form-check-input" name="difficulty"
-                                        value="easy" checked>
+                                        value="easy" checked />
                                     <label for="easy" class="form-check-label">Easy</label>
                                 </div>
                                 <div class="form-check">
                                     <input type="radio" id="medium" class="form-check-input" name="difficulty"
-                                        value="medium">
+                                        value="medium" />
                                     <label for="medium" class="form-check-label">Medium</label>
                                 </div>
                                 <div class="form-check">
                                     <input type="radio" id="hard" class="form-check-input" name="difficulty"
-                                        value="hard">
+                                        value="hard" />
                                     <label for="hard" class="form-check-label">Hard</label>
                                 </div>
                             </section>
@@ -194,19 +196,19 @@
                             <section id="timer-options" class="d-flex flex-wrap justify-content-center gap-3">
                                 <div class="form-check">
                                     <input type="radio" id="time-none" class="form-check-input" name="time" value="none"
-                                        checked>
+                                        checked />
                                     <label for="time-none" class="form-check-label">None</label>
                                 </div>
                                 <div class="form-check">
-                                    <input type="radio" id="time-3" class="form-check-input" name="time" value="3">
+                                    <input type="radio" id="time-3" class="form-check-input" name="time" value="3" />
                                     <label for="time-3" class="form-check-label">3</label>
                                 </div>
                                 <div class="form-check">
-                                    <input type="radio" id="time-5" class="form-check-input" name="time" value="5">
+                                    <input type="radio" id="time-5" class="form-check-input" name="time" value="5" />
                                     <label for="time-5" class="form-check-label">5</label>
                                 </div>
                                 <div class="form-check">
-                                    <input type="radio" id="time-10" class="form-check-input" name="time" value="10">
+                                    <input type="radio" id="time-10" class="form-check-input" name="time" value="10" />
                                     <label for="time-10" class="form-check-label">10</label>
                                 </div>
                             </section>
@@ -218,6 +220,36 @@
                         </div>
                     </form>
                 </section>
+            </article>
+        </div>
+    </section>
+    <!-- Congratulations Modal -->
+    <section id="congrats-modal" class="modal fade" tabindex="-1" aria-labelledby="congrats-modal-label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <article class="modal-content text-center p-4">
+                <h2 id="congrats-modal-label" class="modal-title mb-3">
+                    🎉 Congratulations!
+                </h2>
+                <section class="modal-body">
+                    <p>You completed the puzzle!</p>
+                    <p>
+                        <strong>Difficulty:</strong>
+                        <span id="congrats-difficulty"></span>
+                    </p>
+                    <p><strong>Time:</strong> <span id="congrats-time"></span></p>
+                    <p>
+                        <strong>Hints used:</strong> <span id="congrats-hints"></span>
+                    </p>
+                </section>
+                <footer class="modal-footer d-flex justify-content-center gap-3">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        Admire Puzzle
+                    </button>
+                    <button type="button" id="congrats-new-game" class="btn btn-dark">
+                        New Game
+                    </button>
+                </footer>
             </article>
         </div>
     </section>
@@ -247,11 +279,11 @@
     </footer>
     <!-- Preload alarm sound to avoid delay on playback -->
     <audio id="alarm-sound" preload="auto">
-        <source src="assets/sounds/alarm.mp3" type="audio/mpeg">
+        <source src="assets/sounds/alarm.mp3" type="audio/mpeg" />
     </audio>
     <!-- Preload error sound too if needed -->
     <audio id="error-sound" preload="auto">
-        <source src="assets/sounds/error.mp3" type="audio/mpeg">
+        <source src="assets/sounds/error.mp3" type="audio/mpeg" />
     </audio>
     <!-- JavaScript Dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>

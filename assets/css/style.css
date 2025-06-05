@@ -895,9 +895,9 @@ body.dark p.hinted {
 }
 
 /* Number keys - Dark mode*/
-body.dark #numbers-container h2 {
-    /* Force black text in dark mode */
+body.dark #numbers-container h2 {    
     color: var(--color-black);
+    /* Force black text in dark mode */
 }
 
 /* Number keys on hover */
