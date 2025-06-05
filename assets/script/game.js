@@ -483,6 +483,12 @@ function popConfetti() {
     });
 };
 
+/**
+ * Calculates and formats the time elapsed since the game started and will.
+ */
+function formatElapsedTime() {
+    
+}
 
 /**
  * Checks if the board is complete and correct
