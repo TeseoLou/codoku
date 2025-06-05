@@ -945,6 +945,12 @@ body.dark #numbers-container h2 {
     background-color: #b5b6b6; /* Even lighter on hover */
 }
 
+/* Admire Puzzle Button - Dark mode */
+body.dark  #admire-puzzle {
+    background-color: #babcbd; /* Charcoal */
+    color: var(--color-black); /* White font */
+}
+
 /* --- About Page --- */
 
 #about-content img {
