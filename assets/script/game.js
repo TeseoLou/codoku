@@ -528,6 +528,9 @@ function triggerAutoWinCheck() {
         // Get the text of the label associated with the selected difficulty radio button
         // Reference: https://stackoverflow.com/questions/9618504
         const difficultyText = $('input[name="difficulty"]:checked').next('label').text();
+        $('#congrats-difficulty').text(difficultyText);
+        $('#congrats-time').text(timeTaken);
+        $('#congrats-hints').text(hintsUsed);
     } // If the board is full but the user has made a mistake
     else if (isBoardFilled() && !isBoardCompleteAndCorrect()) {
         // Get the preloaded error sound element from the HTML
