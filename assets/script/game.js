@@ -656,8 +656,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 soundEffects.play("hint");
             }, 10); // After a short 10ms delay
         });
+    };
+    // Handle New Game button in the congratulations modal
+    $('#congrats-new-game').on('click', () => {
+        
     }
-
 });
 
 // Call function - Render a blank 9x9 Sudoku grid
