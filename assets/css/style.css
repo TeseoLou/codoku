@@ -947,6 +947,14 @@ body.dark #numbers-container h2 {
 
 /* --- About Page --- */
 
+#about-content img {
+    border: solid 2px var(--color-black)
+}
+
+body.dark #about-content img {
+    border: solid 1px var(--color-white)
+}
+
 /* --- 404 Page --- */
 
 /* --- Media Queries --- */
@@ -1057,7 +1065,7 @@ body.dark #numbers-container h2 {
 /* Small Tablets in Portrait Mode */
 @media screen and (min-width: 768px) and (orientation: portrait) {
     :root {
-        --cell-size: 60px;
+        --cell-size: 50px;
         /* Set the base size for each Sudoku cell */
         --cell-font-size: 2rem;
         /* Set the font size for numbers inside each cell */
@@ -1081,6 +1089,20 @@ body.dark #numbers-container h2 {
         /* Increase font size of stats */
         padding: 1.2rem 0;
         /* Add vertical spacing above and below each stat */
+    }
+
+    /* Grid container */
+    #grid {
+        position: absolute;
+        /* Take out of normal flow and position it relative to the nearest positioned ancestor */
+        top: 50%;
+        /* Push down 50% from the top of its containing block */
+        left: 50%;
+        /* Push right 50% from the left of its containing block */
+        transform: translate(-50%, -45%);
+        /* Shift back by half its width and height to perfectly center it */
+        margin-bottom: 0rem;
+        /* Remove any space below */
     }
 
     /* Number key buttons */
