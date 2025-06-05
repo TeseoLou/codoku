@@ -1,46 +1,72 @@
 /* --- Global Variables --- */
 /* Typography */
 :root {
-    --font-body: "Quicksand", sans-serif; /* Main font for body text */
-    --font-heading: "Space Mono", monospace; /* Main font for headings */    
-    --color-primary: #403a6b; /* Used for dark purple accents */
-    --color-accent: #e0b336; /* Used for gold highlights */ 
-    --color-bg-light: #f8f9fa; /* Default light background */   
-    --color-bg-dark: #212529; /* Default dark background */   
-    --color-white: #ffffff; /* White */   
-    --color-black: #000000; /* Black */
-    --cell-size: 40px;
+    --font-body: "Quicksand", sans-serif;
+    /* Main font for body text */
+    --font-heading: "Space Mono", monospace;
+    /* Main font for headings */
+    --color-primary: #403a6b;
+    /* Used for dark purple accents */
+    --color-accent: #e0b336;
+    /* Used for gold highlights */
+    --color-bg-light: #f8f9fa;
+    /* Default light background */
+    --color-bg-dark: #212529;
+    /* Default dark background */
+    --color-white: #ffffff;
+    /* White */
+    --color-black: #000000;
+    /* Black */
+    --cell-size: 30px;
+    /* Set the size of each cell */
     --cell-font-size: 1.5rem;
+    /* Set the font size of cell content */
 }
 
 /* --- Base Styles --- */
 /* Page */
 html,
-body {   
-    height: 100%; /* Make the elements take up full height of the viewport */   
-    margin: 0; /* Remove default margin */   
-    padding: 0; /* Remove default padding */  
-    display: flex; /* Enable flexbox layout */  
-    flex-direction: column; /* Stack children vertically */
+body {
+    height: 100%;
+    /* Make the elements take up full height of the viewport */
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    display: flex;
+    /* Enable flexbox layout */
+    flex-direction: column;
+    /* Stack children vertically */
 }
 
 /* Background */
-body {    
-    font-family: var(--font-body); /* Apply quicksand font */ 
-    background-color: var(--color-bg-light); /* Fallback color */  
-    background-image: url(../backgrounds/light-background.png); /* Background image */ 
-    background-repeat: no-repeat; /* No image repeating */ 
-    background-position: center center; /* Center background image */  
-    background-size: cover; /* Background cover the whole screen */   
-    background-attachment: fixed; /* Keep background static */  
-    position: relative; /* Needed for layering if child elements use absolute positioning */   
-    width: 100vw; /* Full screen width */
+body {
+    font-family: var(--font-body);
+    /* Apply quicksand font */
+    background-color: var(--color-bg-light);
+    /* Fallback color */
+    background-image: url(../backgrounds/light-background.png);
+    /* Background image */
+    background-repeat: no-repeat;
+    /* No image repeating */
+    background-position: center center;
+    /* Center background image */
+    background-size: cover;
+    /* Background cover the whole screen */
+    background-attachment: fixed;
+    /* Keep background static */
+    position: relative;
+    /* Needed for layering if child elements use absolute positioning */
+    width: 100vw;
+    /* Full screen width */
 }
 
 /* Background - Dark mode */
 body.dark {
-    background-color: var(--color-bg-dark); /* Dark fallback color if background image fails */
-    background-image: url(../backgrounds/dark-background.png); /* Dark background image */
+    background-color: var(--color-bg-dark);
+    /* Dark fallback color if background image fails */
+    background-image: url(../backgrounds/dark-background.png);
+    /* Dark background image */
 }
 
 /* Headings */
@@ -49,8 +75,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {  
-    font-family: var(--font-heading); /* Apply space mono font */
+h6 {
+    font-family: var(--font-heading);
+    /* Apply space mono font */
 }
 
 /* Headings - Dark mode */
@@ -61,7 +88,8 @@ body.dark h3,
 body.dark h4,
 body.dark h5,
 body.dark h6 {
-    color: var(--color-white); /* Set text color to white in dark mode */
+    color: var(--color-white);
+    /* Set text color to white in dark mode */
 }
 
 /* Other text elements - Dark mode */
@@ -70,7 +98,8 @@ body.dark li,
 body.dark label,
 body.dark legend,
 body.dark a {
-    color: var(--color-white); /* Set text color to white in dark mode */
+    color: var(--color-white);
+    /* Set text color to white in dark mode */
 }
 
 /* Buttons */
@@ -78,255 +107,338 @@ body.dark a {
 /* General button and modal label */
 button,
 #setup-modal-label {
-    /* Use heading font */
     font-family: var(--font-heading);
-    /* Bold text for emphasis */
+    /* Use heading font */
     font-weight: bold;
-    /* Center button text */
+    /* Bold text for emphasis */
     text-align: center;
+    /* Center button text */
+
 }
 
 /* Button styling override */
 .btn {
-    /* Remove border radius for square corners */
     border-radius: 0;
+    /* Remove border radius for square corners */
 }
 
 /* Make buttons equal width */
 .equal-width-buttons {
-    /* Inline-block for layout */
     display: inline-block;
-    /* Full width by default */
+    /* Inline-block for layout */
     width: 100%;
-    /* Prevent overly wide buttons on large screens */
+    /* Full width by default */
     max-width: 70px;
-    /* Center text inside button */
+    /* Prevent overly wide buttons on large screens */
     text-align: center;
+    /* Center text inside button */
 }
 
 /* --- Navbar --- */
 /* Navbar Container */
 nav {
-    background-color: var(--color-bg-light); /* Light background color */   
-    background-image: url(../backgrounds/nav-light-background.png); /* Light background image */  
-    background-repeat: no-repeat; /* Prevent image repetition */
-    background-position: center center; /* Center the background image */  
-    background-size: cover; /* Scale image to cover the container */
+    background-color: var(--color-bg-light);
+    /* Light background color */
+    background-image: url(../backgrounds/nav-light-background.png);
+    /* Light background image */
+    background-repeat: no-repeat;
+    /* Prevent image repetition */
+    background-position: center center;
+    /* Center the background image */
+    background-size: cover;
+    /* Scale image to cover the container */
 }
 
 /* Navbar container - Dark mode */
 body.dark nav {
-    background-color: var(--color-bg-dark); /* Dark fallback color if background image fails */
-    background-image: url(../backgrounds/nav-dark-background.png); /* Dark background image */
+    background-color: var(--color-bg-dark);
+    /* Dark fallback color if background image fails */
+    background-image: url(../backgrounds/nav-dark-background.png);
+    /* Dark background image */
 }
 
 /* Collapsed navbar content */
 .navbar-collapse {
-    text-align: center; /* Align navbar content to center */
+    text-align: center;
+    /* Align navbar content to center */
 }
 
 /* Navbar navigation list */
-.navbar-nav { 
-    display: inline-block; /* Display inline-block for centering */
-    flex-direction: row !important; /* Force horizontal layout with flex */   
-    justify-content: center; /* Center items horizontally */    
-    float: none; /* Remove float behavior */
-    flex-wrap: nowrap; /* Prevent items from wrapping */
-    gap: 1rem; /* Add consistent spacing between items */
+.navbar-nav {
+    display: inline-block;
+    /* Display inline-block for centering */
+    flex-direction: row !important;
+    /* Force horizontal layout with flex */
+    justify-content: center;
+    /* Center items horizontally */
+    float: none;
+    /* Remove float behavior */
+    flex-wrap: nowrap;
+    /* Prevent items from wrapping */
+    gap: 1rem;
+    /* Add consistent spacing between items */
 }
 
 /* Nav items */
-.navbar-nav .nav-item {   
-    display: inline-block; /* Display inline for horizontal alignment */
+.navbar-nav .nav-item {
+    display: inline-block;
+    /* Display inline for horizontal alignment */
 }
 
 /* Nav links */
 .navbar-nav .nav-link {
-    font-family: var(--font-heading); /* Apply space mono heading font */
-    padding: 0 1rem; /* Add horizontal padding */ 
+    font-family: var(--font-heading);
+    /* Apply space mono heading font */
+    padding: 0 1rem;
+    /* Add horizontal padding */
 }
 
 /* Hamburger icon */
 /* Reference: https://www.geeksforgeeks.org/how-to-change-hamburger-toggler-color-in-bootstrap/ */
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* SVG icon with black strokes */
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    /* SVG icon with black strokes */
 }
 
 /* Hamburger icon - Dark mode */
 body.dark .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    /* SVG icon with black strokes */
 }
 
 /* Nav link - Dark mode */
 body.dark .nav-link {
-    color: var(--color-white) !important; /* Set text color to white */
+    color: var(--color-white) !important;
+    /* Set text color to white */
 }
 
 /* Active nav link */
 body:not(.dark) .nav-link.active {
-    color: var(--color-primary) !important; /* Use primary color */
-    text-decoration: underline; /* Underline active link */
+    color: var(--color-primary) !important;
+    /* Use primary color */
+    text-decoration: underline;
+    /* Underline active link */
 }
 
 /* Active nav link - Dark mode */
 body.dark .nav-link.active {
-    color: var(--color-accent) !important; /* Use accent color for active link */
-    text-decoration: underline; /* Underline active link */
+    color: var(--color-accent) !important;
+    /* Use accent color for active link */
+    text-decoration: underline;
+    /* Underline active link */
 }
 
 /* Theme switch */
 #theme-toggle {
     min-width: 150px;
+    /* Change toggle width */
 }
 
 /* Switch checkbox */
 body:not(.dark) .form-check-input[type="checkbox"]:checked {
-    background-color: var(--color-accent); /* Gold switch background */
-    border-color: var(--color-accent); /* Gold switch border */
-    box-shadow: 0 0 8px var(--color-primary); /* Purple glow effect */
+    background-color: var(--color-accent);
+    /* Gold switch background */
+    border-color: var(--color-accent);
+    /* Gold switch border */
+    box-shadow: 0 0 8px var(--color-primary);
+    /* Purple glow effect */
 }
 
 /* Switch checkbox - Dark mode */
 body.dark .form-check-input[type="checkbox"] {
-    background-color: var(--color-primary); /* Purple background */
-    border-color: var(--color-primary); /* Purple border */
-    box-shadow: 0 0 10px 2px var(--color-accent); /* Gold outer glow effect */
+    background-color: var(--color-primary);
+    /* Purple background */
+    border-color: var(--color-primary);
+    /* Purple border */
+    box-shadow: 0 0 10px 2px var(--color-accent);
+    /* Gold outer glow effect */
 }
 
 /* Switch thumb - Dark mode */
 /* Reference: https://stackoverflow.com/questions/57224537 */
 body.dark .form-check-input[type="checkbox"]:not(:focus)::before {
     content: "";
+    /* Inserts an empty pseudo-element */
     display: block;
+    /* Makes the pseudo-element a block-level element */
     width: 0.7rem;
+    /* Sets the width of the switch thumb */
     height: 0.7rem;
+    /* Sets the height of the switch thumb */
     background-color: white;
+    /* Colors the thumb white */
     border-radius: 50%;
+    /* Makes the thumb perfectly circular */
     transform: translateX(0.1rem) translateY(0.1rem);
+    /* Slightly positions the thumb inside the switch */
     transition: transform 2s ease;
+    /* Animates the position change smoothly over 2 seconds */
 }
 
 /* Theme toggle label */
 #theme-label span {
     font-family: var(--font-heading);
+    /* Applies the space mono font */
 }
 
 /* --- Header Section--- */
 /* Header */
 header {
-    padding-bottom: 10px; /* Add space below header */
+    padding-bottom: 10px;
+    /* Add space below header */
 }
 
 /* Title */
-#title {   
-    font-family: var(--font-heading); /* Use space mono heading font  */
-    font-weight: normal; /* Normal font weight */    
-    font-size: 2.5rem; /* Set large font size for headings */    
-    padding-top: 0rem; /* Remove top padding */
+#title {
+    font-family: var(--font-heading);
+    /* Use space mono heading font  */
+    font-weight: normal;
+    /* Normal font weight */
+    font-size: 2.5rem;
+    /* Set large font size for headings */
+    padding-top: 0rem;
+    /* Remove top padding */
 }
 
 /* --- Modals --- */
 /* Modal content - Dark mode */
 body.dark .modal-content {
-    /* Dark background color */
     background-color: var(--color-bg-dark);
-    /* Dark background image */
+    /* Dark background color */
     background-image: url(../backgrounds/dark-background.png);
-    /* White text for contrast */
+    /* Dark background image */
     color: var(--color-white);
-    /* White glow around modal */
+    /* White text for contrast */
     box-shadow: 0 0 20px 5px var(--color-white);
+    /* White glow around modal */
 }
 
 /* Modal sections - Dark mode */
 body.dark .modal-header,
 body.dark .modal-body,
 body.dark .modal-footer {
-    /* Allow background image to be visible */
     background-color: transparent;
-    /* Set text color to white for contrast */
+    /* Allow background image to be visible */
     color: var(--color-white);
+    /* Set text color to white for contrast */
 }
 
 /* --- Rules Modal --- */
 /* Modal content container */
-#rules-modal .modal-content {  
-    background-color: var(--color-bg-light); /* Light background color */
-    background-image: url(../backgrounds/light-background.png); /* Light background image */ 
-    background-repeat: no-repeat; /* Prevent image repetition */
-    background-position: center center; /* Center the background image */
-    background-size: cover; /* Scale image to cover the container */
-    border-radius: 0; /* Remove border radius */
-    color: var(--color-black); /* Set text color to black */
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.9); /* Apply dark shadow for elevation */
-    margin: 1rem; /* Add margin around modal */
+#rules-modal .modal-content {
+    background-color: var(--color-bg-light);
+    /* Light background color */
+    background-image: url(../backgrounds/light-background.png);
+    /* Light background image */
+    background-repeat: no-repeat;
+    /* Prevent image repetition */
+    background-position: center center;
+    /* Center the background image */
+    background-size: cover;
+    /* Scale image to cover the container */
+    border-radius: 0;
+    /* Remove border radius */
+    color: var(--color-black);
+    /* Set text color to black */
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.9);
+    /* Apply dark shadow for elevation */
+    margin: 1rem;
+    /* Add margin around modal */
 }
 
 /* Modal content container - Dark mode */
 body.dark #rules-modal .modal-content {
-    background-color: var(--color-bg-dark); /* Dark background color */
-    background-image: url(../backgrounds/dark-background.png); /* Dark background image */
-    color: var(--color-white); /* Set text color to white */
-    box-shadow: 0 0 20px 5px var(--color-white); /* White shadow glow */
+    background-color: var(--color-bg-dark);
+    /* Dark background color */
+    background-image: url(../backgrounds/dark-background.png);
+    /* Dark background image */
+    color: var(--color-white);
+    /* Set text color to white */
+    box-shadow: 0 0 20px 5px var(--color-white);
+    /* White shadow glow */
 }
 
 /* Modal border */
 #modal-border {
-    border-radius: 0; /* Remove border radius */
-    border: 2px solid var(--color-black); /* Matching solid black border */
-    margin: 1rem;  /* Add margin around modal border */
+    border-radius: 0;
+    /* Remove border radius */
+    border: 2px solid var(--color-black);
+    /* Matching solid black border */
+    margin: 1rem;
+    /* Add margin around modal border */
 }
 
 /* Modal border - Dark mode */
 body.dark #rules-modal #modal-border {
-    /* White border in dark mode */
     border: 2px solid var(--color-white);
+    /* White border in dark mode */
 }
 
 /* Modal header */
 #rules-modal .modal-header {
-    justify-content: center; /* Center header content */
-    border-bottom: none; /* Remove bottom border */
-    padding-bottom: 0.5rem; /* Add space below header */
+    justify-content: center;
+    /* Center header content */
+    border-bottom: none;
+    /* Remove bottom border */
+    padding-bottom: 0.5rem;
+    /* Add space below header */
 }
 
 /* Modal title */
 #rules-modal .modal-title {
-    font-family: var(--font-heading); /* Use heading font */
-    font-weight: normal; /* Normal font weight */
-    font-size: 1.2rem; /* Enlarge title font size */
-    text-align: center; /* Center text */
-    margin: 0; /* Remove default margin */
+    font-family: var(--font-heading);
+    /* Use heading font */
+    font-weight: normal;
+    /* Normal font weight */
+    font-size: 1.2rem;
+    /* Enlarge title font size */
+    text-align: center;
+    /* Center text */
+    margin: 0;
+    /* Remove default margin */
 }
 
 /* Modal body */
 #rules-modal .modal-body {
-    font-family: var(--font-body); /* Use quicksand font */
-    font-size: 0.9rem; /* Reduce text font size */ 
-    padding-top: 0; /* Remove top padding */
+    font-family: var(--font-body);
+    /* Use quicksand font */
+    font-size: 0.9rem;
+    /* Reduce text font size */
+    padding-top: 0;
+    /* Remove top padding */
 }
 
 /* Modal footer */
-#rules-modal .modal-footer {  
-    justify-content: center; /* Center footer content */   
-    border-top: none; /* Remove top border */   
-    padding-top: 0; /* Remove top padding */
+#rules-modal .modal-footer {
+    justify-content: center;
+    /* Center footer content */
+    border-top: none;
+    /* Remove top border */
+    padding-top: 0;
+    /* Remove top padding */
 }
 
 /* --- Footer Section --- */
 /* Footer */
 footer {
-    flex-shrink: 0; /* Prevent footer from shrinking when using flex layout */
-    background-color: transparent; /* Transparent background to inherit body/theme styling */
-    text-decoration: none; /* Remove underline from any text */
-    color: inherit; /* Inherit text color from parent */
+    flex-shrink: 0;
+    /* Prevent footer from shrinking when using flex layout */
+    background-color: transparent;
+    /* Transparent background to inherit body/theme styling */
+    text-decoration: none;
+    /* Remove underline from any text */
+    color: inherit;
+    /* Inherit text color from parent */
 }
 
 /* Footer links */
-footer a { 
-    text-decoration: none; /* Remove default underline from links */  
-    line-height: 1; /* Reduce vertical spacing */   
-    vertical-align: middle; /* Align icons/text vertically in line */    
+footer a {
+    text-decoration: none;
+    /* Remove default underline from links */
+    line-height: 1;
+    /* Reduce vertical spacing */
+    vertical-align: middle;
+    /* Align icons/text vertically in line */
 }
 
 /* Footer elements - Dark mode */
@@ -336,48 +448,67 @@ body.dark footer span,
 body.dark footer p,
 body.dark footer a,
 body.dark footer a i {
-    color: var(--color-white) !important; /* Override all footer content to white in dark mode */
+    color: var(--color-white) !important;
+    /* Override all footer content to white in dark mode */
 }
 
 /* Footer links on hover */
-footer a:hover {    
-    color: var(--color-primary); /* Change color on hover (light theme) */   
-    font-size: 1.2rem; /* Slight increase in font size for effect */
+footer a:hover {
+    color: var(--color-primary);
+    /* Change color on hover (light theme) */
+    font-size: 1.2rem;
+    /* Slight increase in font size for effect */
 }
 
 /* Footer links on hover*/
 body.dark footer a:hover,
 body.dark footer a:hover i {
-    color: var(--color-accent) !important; /* Gold hover color for contrast in dark mode */
+    color: var(--color-accent) !important;
+    /* Gold hover color for contrast in dark mode */
 }
 
 /* --- Game Page --- */
 /* --- Setup Modal --- */
 /* Modal content */
-.modal-content {   
-    background-color: var(--color-bg-light); /* Fallback background color */
-    background-image: url(../backgrounds/light-background.png); /* Background image path */ 
-    background-repeat: no-repeat; /* Prevent image repetition */
-    background-position: center center; /* Center background image */
-    background-size: cover; /* Scale image to cover modal */
-    border-radius: 0; /* Remove rounded corners */
-    border: none; /* Remove default border */
-    color: var(--color-black); /* Default text color */
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.9); /* Dark shadow for modal elevation */
+.modal-content {
+    background-color: var(--color-bg-light);
+    /* Fallback background color */
+    background-image: url(../backgrounds/light-background.png);
+    /* Background image path */
+    background-repeat: no-repeat;
+    /* Prevent image repetition */
+    background-position: center center;
+    /* Center background image */
+    background-size: cover;
+    /* Scale image to cover modal */
+    border-radius: 0;
+    /* Remove rounded corners */
+    border: none;
+    /* Remove default border */
+    color: var(--color-black);
+    /* Default text color */
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.9);
+    /* Dark shadow for modal elevation */
 }
 
 /* Modal body */
 .modal-body {
-    border-radius: 0; /* Force sharp corners */
+    border-radius: 0;
+    /* Force sharp corners */
 }
 
 /* Setup form container */
 #setup {
-    background-color: transparent; /* Transparent background to show modal theme */
-    border: 2px solid var(--color-bg-dark); /* Border for visibility */
-    border-radius: 0; /* Remove default border radius */
-    padding: 1.5rem; /* Inner spacing */
-    width: 100%; /* Full width to fit modal */
+    background-color: transparent;
+    /* Transparent background to show modal theme */
+    border: 2px solid var(--color-bg-dark);
+    /* Border for visibility */
+    border-radius: 0;
+    /* Remove default border radius */
+    padding: 1.5rem;
+    /* Inner spacing */
+    width: 100%;
+    /* Full width to fit modal */
 }
 
 /* Setup form container - Dark mode */
@@ -388,214 +519,270 @@ body.dark #setup {
 
 /* Full-width centering utility */
 #setup .text-center {
-    width: 100%; /* Stretch to full width */
+    width: 100%;
+    /* Stretch to full width */
 }
 
 /* Setup option groups */
-#setup .setup-options { 
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center content horizontally */
-    align-items: flex-start; /* Align content to the top */
-    gap: 40px; /* Space between option groups */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+#setup .setup-options {
+    display: flex;
+    /* Use flexbox */
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: flex-start;
+    /* Align content to the top */
+    gap: 40px;
+    /* Space between option groups */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
 }
 
 /* Fieldsets */
-#setup fieldset {  
-    border: none; /* Remove default borders */
-    text-align: center; /* Center all content */
-    min-width: 300px; /* Minimum width for layout consistency */
-    flex: 1; /* Allow flexible growth */
+#setup fieldset {
+    border: none;
+    /* Remove default borders */
+    text-align: center;
+    /* Center all content */
+    min-width: 300px;
+    /* Minimum width for layout consistency */
+    flex: 1;
+    /* Allow flexible growth */
 }
 
 /* Legends */
 #setup legend {
-    font-family: var(--font-heading); /* Use space mono font */    
-    font-size: 1rem; /* Set base font size */
-    text-align: center; /* Center text */
+    font-family: var(--font-heading);
+    /* Use space mono font */
+    font-size: 1rem;
+    /* Set base font size */
+    text-align: center;
+    /* Center text */
 }
 
 /* Radio buttons */
-body:not(.dark) .form-check-input[type="radio"] { 
-    accent-color: var(--color-primary); /* Use accent color for radio */
+body:not(.dark) .form-check-input[type="radio"] {
+    accent-color: var(--color-primary);
+    /* Use accent color for radio */
 }
 
 /* Radio buttons - Dark mode */
 body.dark .form-check-input[type="radio"] {
-    appearance: none; /* Remove default browser styling */
+    appearance: none;
+    /* Remove default browser styling */
     /* Set size of radio button */
-    width: 1rem; 
+    width: 1rem;
     height: 1rem;
-    border-radius: 50%; /* Make radio button circular */
-    border: 2px solid var(--color-white); /* White border */
-    background-color: transparent; /* Transparent background */
-    position: relative; /* Positioning context for pseudo-element */
-    cursor: pointer; /* Make clickable */
-    margin-top: 0.3rem; /* Align with label */
+    border-radius: 50%;
+    /* Make radio button circular */
+    border: 2px solid var(--color-white);
+    /* White border */
+    background-color: transparent;
+    /* Transparent background */
+    position: relative;
+    /* Positioning context for pseudo-element */
+    cursor: pointer;
+    /* Make clickable */
+    margin-top: 0.3rem;
+    /* Align with label */
 }
 
 /* Radio button checked - Dark mode */
 body.dark .form-check-input[type="radio"]:checked {
-    background-color: var(--color-accent); /* Fill color */
-    border-color: var(--color-accent); /* Border color matches fill */
+    background-color: var(--color-accent);
+    /* Fill color */
+    border-color: var(--color-accent);
+    /* Border color matches fill */
 }
 
 /* Dot inside radio button - Dark mode*/
 body.dark .form-check-input[type="radio"]::before {
-    content: ""; /* Empty content block for dot */
-    display: block; /* Render as block element */
+    content: "";
+    /* Empty content block for dot */
+    display: block;
+    /* Render as block element */
     /* Dot size */
-    width: 0.5rem; 
+    width: 0.5rem;
     height: 0.5rem;
-    margin: auto; /* Center dot horizontally */
-    
-    margin-top: 0.15rem; /* Center dot vertically */
-    background-color: var(--color-white); /* White dot */
-    border-radius: 50%; /* Circular dot */
+    margin: auto;
+    /* Center dot horizontally */
+    margin-top: 0.15rem;
+    /* Center dot vertically */
+    background-color: var(--color-white);
+    /* White dot */
+    border-radius: 50%;
+    /* Circular dot */
 }
 
 /* Form labels */
 #setup .form-check-label {
-    font-size: 0.9rem; /* Slightly smaller font */
+    font-size: 0.9rem;
+    /* Slightly smaller font */
 }
 
 /* Modal footer */
-.modal-footer {  
-    justify-content: center; /* Align footer content to center */
+.modal-footer {
+    justify-content: center;
+    /* Align footer content to center */
 }
 
 /* Start button */
 #setup .start-button {
-    margin-top: 20px; /* Space between options and start button */
+    margin-top: 20px;
+    /* Space between options and start button */
 }
 
 /* --- Main Section --- */
 /* Main */
-main {  
-    flex: 1 0 auto; /* Allow main to grow and push footer to bottom */
+main {
+    flex: 1 0 auto;
+    /* Allow main to grow and push footer to bottom */
     display: flex;
+    /* Enable flexbox layout */
     flex-direction: column;
+    /* Arrange flex items in a vertical stack */
 }
 
 /* Game stats text */
 .game-stat {
-    font-family: var(--font-heading); /* Use heading font */   
-    font-size: 0.8rem; /* Set small font size for stats */
+    font-family: var(--font-heading);
+    /* Use heading font */
+    font-size: 0.8rem;
+    /* Set small font size for stats */
+    padding-bottom: 1rem;
+    /* Add padding below stats section */
 }
 
 #game {
     display: flex;
+    /* Enable flexbox layout */
     flex-direction: column;
-    justify-content: space-between; /* Distribute space between children */
-    align-items: center;     /* Horizontally center contents */
-    flex-grow: 1;            /* Fill available vertical space */
-    padding: 1rem 0; /* Prevents edges from touching */
+    /* Stack flex items vertically */
+    justify-content: space-between;
+    /* Distribute space between children */
+    align-items: center;
+    /* Horizontally center contents */
+    flex-grow: 1;
+    /* Fill available vertical space */
+    padding: 1rem 0;
+    /* Prevent edges from touching */
 }
 
 /* Game Section Layout */
 /* Grid container */
 #grid {
-    display: flex; /* Enable flex layout */
-    flex-direction: column; /* Stack grid rows vertically */
-    justify-content: center; /* Vertically center */
+    display: flex;
+    /* Enable flex layout */
+    flex-direction: column;
+    /* Stack grid rows vertically */
+    justify-content: center;
+    /* Vertically center */
+    position: absolute;
+    /* Position the element absolutely */
+    top: 50%;
+    /* Moves the element 50% down from the top */
+    left: 50%;
+    /* Move the element 50% from the left */
+    transform: translate(-50%, -50%);
+    /* Offset the element to center it */
 }
 
 /* Default grid cell appearance (light mode) */
 #grid p {
-    /* Right border for grid lines */
     border-right: 1px solid var(--color-black);
-    /* Bottom border for grid lines */
+    /* Right border for grid lines */
     border-bottom: 1px solid var(--color-black);
-    /* No top border */
+    /* Bottom border for grid lines */
     border-top: none;
-    /* No left border */
+    /* No top border */
     border-left: none;
-    /* Default text color */
+    /* No left border */
     color: var(--color-black);
+    /* Default text color */
 }
 
 /* Dark mode override for grid cells */
 body.dark #grid p {
-    /* White right border in dark mode */
     border-right: 1px solid var(--color-white);
-    /* White bottom border in dark mode */
+    /* White right border in dark mode */
     border-bottom: 1px solid var(--color-white);
-    /* No top border */
+    /* White bottom border in dark mode */
     border-top: none;
-    /* No left border */
+    /* No top border */
     border-left: none;
-    /* White text color */
+    /* No left border */
     color: var(--color-white);
+    /* White text color */
 }
 
 /* Number cells */
 #grid .number {
+    line-height: var(--cell-size);
     /* Vertical alignment height */
-    line-height: var(--cell-size); 
+    /* Set cell size on sudoku board */
     width: var(--cell-size);
     height: var(--cell-size);
-    /* Middle align text */
     vertical-align: middle;
-    /* Use body font */
+    /* Middle align text */
     font-family: var(--font-body);
-    /* Set number font size */
+    /* Use body font */
     font-size: var(--cell-font-size);
-    /* Center text horizontally */
+    /* Set number font size */
     text-align: center;
-    /* Flexbox for full centering */
+    /* Center text horizontally */
     display: flex;
-    /* Center content horizontally */
+    /* Flexbox for full centering */
     justify-content: center;
-    /* Center content vertically */
+    /* Center content horizontally */
     align-items: center;
+    /* Center content vertically */
 }
 
 /* Background for generated cells (light mode) */
 .generated {
-    /* Semi-transparent black background */
     background-color: #00000020;
+    /* Semi-transparent black background */
 }
 
 /* Background override for dark mode */
 body.dark .generated {
-    /* Semi-transparent white background */
     background-color: #ffffff20;
+    /* Semi-transparent white background */
 }
 
 /* Selected cell styling */
 #grid .selected {
-    /* Gold highlight */
     background-color: #e0b33671;
+    /* Gold highlight */
 }
 
 /* Selected cell styling override - Dark mode */
 body.dark #grid .selected {
-    /* Light purple highlight */
     background-color: #bcb6e998;
+    /* Light purple highlight */
 }
 
 /* Thick 3x3 right borders */
 #grid p.right-border {
-    /* Thicker black border */
     border-right: 4px solid var(--color-black);
+    /* Thicker black border */
 }
 
 /* Thick 3x3 bottom borders */
 #grid p.bottom-border {
-    /* Thicker black border */
     border-bottom: 4px solid var(--color-black);
+    /* Thicker black border */
 }
 
 /* Thick 3x3 right borders - Dark mode */
 body.dark #grid p.right-border {
-    /* Thicker white border */
     border-right: 4px solid var(--color-white);
+    /* Thicker white border */
 }
 
 /* Thick 3x3 bottom borders - Dark mode */
 body.dark #grid p.bottom-border {
-    /* Thicker white border */
     border-bottom: 4px solid var(--color-white);
+    /* Thicker white border */
 }
 
 /* Hide top border for edge cleanup */
@@ -620,72 +807,91 @@ body.dark #grid p.bottom-border {
 
 /* Hover effect on non-generated cells */
 #grid p:hover:not(.generated) {
-    /* Light purple highlight */
     background-color: #bcb6e998;
-    /* Show pointer on hover */
+    /* Light purple highlight */
     cursor: pointer;
+    /* Show pointer on hover */
 }
 
 /* Hover effect on non-generated cells - Dark mode */
-body.dark #grid p:hover:not(.generated) {
-    /* Gold highlight */
+body.dark #grid p:hover:not(.generated) {    
     background-color: #e0b33671;
+    /* Gold highlight */
 }
 
 /* Incorrect input feedback */
-p.incorrect {
-    /* Deep red for error */
+p.incorrect {    
     color: #7d2525 !important;
+    /* Deep red for error */
 }
 
 /* Incorrect input feedback override - Dark mode */
-body.dark p.incorrect {
-    /* Bright red for visibility */
+body.dark p.incorrect {    
     color: #f69696 !important;
+    /* Bright red for visibility */
 }
 
 /* Hinted cell color */
-p.hinted {
-    /* Deep green for hint */
+p.hinted {    
     color: #285228 !important;
+    /* Deep green for hint */
 }
 
 /* Hinted cell color override - Dark mode */
-body.dark p.hinted {
-    /* Bright green for visibility */
+body.dark p.hinted {    
     color: #a5f3a5 !important;
+    /* Bright green for visibility */
 }
 
 /* Number Keys */
 /* Number keys container */
-#numbers-container {  
-    display: grid; /* Use CSS Grid layout */  
-    gap: 1rem; /* Space between buttons */
-    justify-content: center; /* Center the grid horizontally */
-    padding: 0 0.5rem; /* Add horizontal padding */
-    margin-top: auto; /* Push container to the bottom of the #game section */
+#numbers-container {
+    display: grid;
+    /* Use CSS Grid layout */
+    gap: 1rem;
+    /* Space between buttons */
+    justify-content: center;
+    /* Center the grid horizontally */
+    padding: 0 0.5rem;
+    /* Add horizontal padding */
+    margin-top: auto;
+    /* Push container to the bottom of the #game section */
 }
 
 /* Number keys rows */
-.number-keys {    
-    padding: 0 8px; /* Padding on left and right sides */
+.number-keys {
+    padding: 0 8px;
+    /* Padding on left and right sides */
 }
 
 /* Number keys */
-#numbers-container h2 {    
-    font-size: 1.3rem; /* Set base font size for number keys */    
-    margin: 0.1rem; /* Small margin around each tile */   
-    text-align: center; /* Center number text horizontally */    
-    min-width: 2.5rem; /* Minimum width for consistent sizing */
-    height: 45px; /* Height set to be shorter */   
-    padding: 0.6rem 0; /* Vertical padding */    
-    background-color: var(--color-bg-light); /* Light background color */    
-    border: 2px solid var(--color-black); /* Solid black border */    
-    border-radius: 6px; /* Rounded corners like keys */   
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */   
-    user-select: none; /* Prevent text from being selectable */   
-    cursor: pointer; /* Show pointer cursor on hover */   
-    transition: transform 0.1s ease-in-out; /* Smooth scale animation on press */
+#numbers-container h2 {
+    font-size: 1.3rem;
+    /* Set base font size for number keys */
+    margin: 0.1rem;
+    /* Small margin around each tile */
+    text-align: center;
+    /* Center number text horizontally */
+    min-width: 2.5rem;
+    /* Minimum width for consistent sizing */
+    height: 45px;
+    /* Height set to be shorter */
+    padding: 0.6rem 0;
+    /* Vertical padding */
+    background-color: var(--color-bg-light);
+    /* Light background color */
+    border: 2px solid var(--color-black);
+    /* Solid black border */
+    border-radius: 6px;
+    /* Rounded corners like keys */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Inner shadow for depth */
+    user-select: none;
+    /* Prevent text from being selectable */
+    cursor: pointer;
+    /* Show pointer cursor on hover */
+    transition: transform 0.1s ease-in-out;
+    /* Smooth scale animation on press */
 }
 
 /* Number keys - Dark mode*/
@@ -695,13 +901,15 @@ body.dark #numbers-container h2 {
 }
 
 /* Number keys on hover */
-#numbers-container h2:hover {   
-    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.35); /* Darker inner shadow on hover */
+#numbers-container h2:hover {
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.35);
+    /* Darker inner shadow on hover */
 }
 
 /* Number keys on press */
-#numbers-container h2:active {   
-    transform: scale(0.96); /* Slight shrink effect when pressed */
+#numbers-container h2:active {
+    transform: scale(0.96);
+    /* Slight shrink effect when pressed */
 }
 
 /* --- About Page --- */
@@ -709,18 +917,214 @@ body.dark #numbers-container h2 {
 /* --- 404 Page --- */
 
 /* --- Media Queries --- */
-/* Tablets Laptop Screens */
-@media screen and (min-width: 768px) {
+
+/* Extra Small Phone Screens */
+@media screen and (min-width: 280px) and (min-height:479px) and (orientation: portrait) {
+    :root {
+        --cell-size: 30px;
+        /* Define the base size of each Sudoku cell */
+        --cell-font-size: 1.7rem;
+        /* Define the font size for numbers inside each cell */
+    }
+
+    /* Sudoku Board */
+    #grid {
+        top: auto;
+        /* Reset top position to default */
+        left: auto;
+        /* Reset left position to default */
+        transform: none;
+        /* Remove  transformation effects */
+        position: static;
+        /* Return to the normal document flow */
+        margin-bottom: 2rem;
+        /* Add spacing below */
+
+    }
+
+    /* Game title */
+    #title {
+        font-size: 2rem;
+        /* Set smaller font size for headings */
+        padding-top: 0rem;
+        /* Remove top padding */
+    }
+
+    /* Footer elements */
+    #socials,
+    #copyright-info {
+        font-size: 12px;
+        /* Set the text size to small text */
+    }
+}
+
+/* Larger Phone Screens */
+@media screen and (min-width: 378px) and (orientation: portrait) {
+    :root {
+        --cell-size: 40px;
+        /* Set the base size for each Sudoku cell */
+        --cell-font-size: 1.7rem;
+        /* Set the font size for numbers inside each cell */
+    }
+
+    /* Grid container */
+    #grid {
+        display: flex;
+        /* Enable flex layout */
+        flex-direction: column;
+        /* Stack grid rows vertically */
+        justify-content: center;
+        /* Vertically center */
+        position: absolute;
+        /* Take out of normal flow and position it relative to the nearest positioned ancestor */
+        top: 50%;
+        /* Push down 50% from the top of its containing block */
+        left: 50%;
+        /* Push right 50% from the left of its containing block */
+        transform: translate(-50%, -50%);
+        /* Shift back by half its width and height to perfectly center it */
+        margin-bottom: 0rem;
+        /* Remove any space below */
+    }
+
+    /* Game title */
+    #title {
+        font-size: 2.5rem;
+        /* Set large font size for headings */
+    }
+
+    /* Footer elements */
+    #socials,
+    #copyright-info {
+        font-size: 16px;
+        /* Set the text size to larger text */
+    }
+}
+
+/* Extra Larger Phone Screens */
+@media screen and (min-width: 425px) and (orientation: portrait) {
+    :root {
+        --cell-size: 45px;
+        /* Set the base size for each Sudoku cell */
+        --cell-font-size: 1.9rem;
+        /* Set the font size for numbers inside each cell */
+    }
+}
+
+/* Extra Larger Phone Screens and Short*/
+@media screen and (min-width: 520px) and (min-height: 719px) and (orientation: portrait) {
+    :root {
+        --cell-size: 35px;
+        /* Set the base size for each Sudoku cell */
+        --cell-font-size: 1.7rem;
+        /* Set the font size for numbers inside each cell */
+    }
+}
+
+/* Small Tablets in Portrait Mode */
+@media screen and (min-width: 768px) and (orientation: portrait) {
+    :root {
+        --cell-size: 60px;
+        /* Set the base size for each Sudoku cell */
+        --cell-font-size: 2.2rem;
+        /* Set the font size for numbers inside each cell */
+    }
+
+    /* Game title */
+    #title {
+        padding-bottom: 1rem;
+        /* Add spacing below the title for separation from content */
+    }
+
+    /* Contol buttons */
+    .btn {
+        font-size: 1.1rem;
+        /* Slightly enlarge button text */
+    }
+
+    /* Game stats */
+    .game-stat {
+        font-size: 1.2rem;
+        /* Increase font size of stats */
+        padding: 1.2rem 0;
+        /* Add vertical spacing above and below each stat */
+    }
+
+    /* Number key buttons */
+    #numbers-container h2 {
+        font-size: 1.6rem;
+        /* Enlarge number text */
+        min-width: 3.2rem;
+        /* Increase button width */
+        height: 55px;
+        /* Increase button height */
+        padding: 0.8rem 0;
+        /* Add vertical padding inside buttons */
+    }
+}
+
+/* Tablets in Portrait Mode */
+@media screen and (min-width: 768px) and (orientation: portrait) {
+    :root {
+        --cell-size: 60px;
+        /* Set the base size for each Sudoku cell */
+        --cell-font-size: 2.2rem;
+        /* Set the font size for numbers inside each cell */
+    }
+}
+
+/* Large Tablets in Portrait Mode */
+@media screen and (min-width: 992px) and (orientation: portrait) {
+    :root {
+        --cell-size: 70px;
+        /* Set the base size for each Sudoku cell */
+        --cell-font-size: 2.3rem;
+        /* Set the font size for numbers inside each cell */
+    }
+}
+
+/* Laptops */
+@media screen and (min-width: 992px) and (orientation: landscape) {
+    :root {
+        --cell-size: 40px;
+        /* Set the base size for each Sudoku cell */
+        --cell-font-size: 1.7rem;
+        /* Set the font size for numbers inside each cell */
+    }
+
+    /* Grid container */
+    #grid {
+        top: 55%;
+        /* Positions the grid 55% from the top */
+        left: 50%;
+        /* Positions the grid 50% from the left */
+    }
+}
+
+/* Large Laptops */
+@media screen and (min-width: 1200px) {
     :root {
         --cell-size: 50px;
-        --cell-font-size: 1.7rem;
+        /* Set the base size for each Sudoku cell */
+        --cell-font-size: 2rem;
+        /* Set the font size for numbers inside each cell */
+    }
+
+    /* Grid container */
+    #grid {
+        top: 50%;
+        /* Positions the grid 50% from the top */
+        left: 50%;
+        /* Positions the grid 50% from the left */
     }
 }
 
 /* Large Desktop Screens */
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1400px) {
     :root {
-        --cell-size: 55px;
-        --cell-font-size: 2.2rem;
+        --cell-size: 60px;
+        /* Set the base size for each Sudoku cell */
+        --cell-font-size: 2.3rem;
+        /* Set the font size for numbers inside each cell */
     }
 }
