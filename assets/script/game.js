@@ -400,7 +400,7 @@ function updateTimerDisplay() {
     // Reference: https://stackoverflow.com/questions/3733227
     // Calculates the full minutes left by dividing total seconds by 60
     const minutes = Math.floor(timeRemaining / 60);
-    // Uses the modulo operator (%) to get the remaining seconds after minutes have been calculated which then gives the seconds portion of the timer in game-stats t
+    // Uses the modulo operator (%) to get the remaining seconds after minutes have been calculated which then gives the seconds portion of the timer in game-stats
     const seconds = timeRemaining % 60;
     // Always show seconds with two digits
     // Reference: https://stackoverflow.com/questions/8043026/how-to-format-numbers-by-prepending-0-to-single-digit-numbers
@@ -491,8 +491,20 @@ function formatElapsedTime() {
     // Reference: https://stackoverflow.com/questions/9618504
     const timeLimit = $('input[name="time"]:checked').val();
     // Determine how many seconds have passed with ternary operator if no elapsed time is set to null otherwise convert string to integer and minutes to seconds to seconds and subtract time remaining
-    const elapsed = timeLimit === 'none' ? null : parseInt(timeLimit, 10) * 60 - timeRemaining;
-    
+    const elapsed = timeLimit === 'none' ? 0 : parseInt(timeLimit, 10) * 60 - timeRemaining;
+    // Reference: https://stackoverflow.com/questions/3733227
+    // Calculates the full minutes left by dividing total seconds by 60
+    const minutes = Math.floor(elapsed / 60);
+    // Uses the modulo operator (%) to get the remaining seconds after minutes have been calculated which then gives the seconds portion of the timer in game-stats
+    const seconds = elapsed % 60;
+    // If no timer was selected, return a message instead of formatted time
+    if (timeLimit === 'none') {
+        return `${minutes}: Timer not selected`;
+    }   // Otherwise, return time in MM:SS format with padded seconds
+        // Reference: https://stackoverflow.com/questions/8043026
+        else {
+        return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    } 
 }
 
 /**
