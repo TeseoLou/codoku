@@ -531,6 +531,11 @@ function triggerAutoWinCheck() {
         $('#congrats-difficulty').text(difficultyText);
         $('#congrats-time').text(timeTaken);
         $('#congrats-hints').text(hintsUsed);
+        // Create a new Bootstrap Modal instance for the congratulations modal 
+        // Reference: https://getbootstrap.com/docs/5.3/components/modal/#via-javascript
+        const congratsModal = new bootstrap.Modal(document.getElementById('congrats-modal'));
+        // Display the modal using the .show() method
+        congratsModal.show();
     } // If the board is full but the user has made a mistake
     else if (isBoardFilled() && !isBoardCompleteAndCorrect()) {
         // Get the preloaded error sound element from the HTML
