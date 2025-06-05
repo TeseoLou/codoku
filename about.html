@@ -3,20 +3,61 @@
 
 <head>
     <!-- Meta Tags -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="Learn more about the Codoku Sudoku Game project and its creator." />
-  <meta name="author" content="Teseo Lou Nicholson" />
-  <title>About - Codoku</title>
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
-  <link rel="manifest" href="assets/favicons/site.webmanifest" />
-  <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Learn more about the Codoku Sudoku Game project and its creator." />
+    <meta name="author" content="Teseo Lou Nicholson" />
+    <title>About - Codoku</title>
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/favicons/site.webmanifest" />
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon" />
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous" />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body></body>
+<body>
+    <!-- Page Content -->
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-transparent sticky-top">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div id="theme-toggle" class="d-flex align-items-center">
+                <div class="form-check form-switch m-0">
+                    <label class="form-check-label d-flex align-items-center gap-2 ms-2" for="theme-switch"
+                        id="theme-label">
+                        <input class="form-check-input" type="checkbox" id="theme-switch" role="switch" checked>
+                        <i id="theme-icon" class="fa-solid fa-sun"></i>
+                        <span>Display</span>
+                    </label>
+                </div>
+            </div>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false"
+                aria-label="Toggle navigation menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-content">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-black" href="index.html">Game</a></li>
+                    <li class="nav-item"><a class="nav-link text-black active" href="about.html">About</a></li>
+                    <li class="nav-item"><button class="nav-link text-black bg-transparent border-0"
+                            data-bs-toggle="modal" data-bs-target="#rules-modal">Rules</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
 
 </html>
