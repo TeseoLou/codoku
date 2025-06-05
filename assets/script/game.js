@@ -671,7 +671,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const bsCongrats = bootstrap.Modal.getInstance(congratsModal);
         // Calls .hide() to close it
         bsCongrats.hide();
-    })
+    });
 });
 
 // Call function - Render a blank 9x9 Sudoku grid
