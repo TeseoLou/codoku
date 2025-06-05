@@ -659,7 +659,11 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     // Handle New Game button in the congratulations modal
     $('#congrats-new-game').on('click', () => {
-        
+        // Create a new Bootstrap modal instance for the setup screen
+        // Reference: https://getbootstrap.com/docs/5.3/components/modal/#via-javascript
+        const setupModal = new bootstrap.Modal(document.getElementById('setup-modal'));
+        // Opens the modal so the user can configure a new puzzle
+        setupModal.show();
     }
 });
 
