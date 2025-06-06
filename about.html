@@ -68,7 +68,7 @@
         </div>
     </nav>
     <!-- Header Section -->
-    <header class="container text-center mt-4">
+    <header class="container text-center">
         <h1 class="display-5" id="about-title"><b>About</b></h1>
     </header>
     <!-- Main Content Section -->
@@ -146,32 +146,40 @@
                 target="_blank" rel="noopener noreferrer">Donate</a>
         </section>
         <!-- Rules Modal -->
-        <section class="modal fade" id="rules-modal" tabindex="-1" role="dialog" aria-labelledby="rules-modal-label"
-            aria-modal="true" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <article class="modal-content">
-                    <div id="modal-border">
-                        <header class="modal-header">
-                            <h2 class="modal-title" id="rulesModalLabel">Game Rules</h2>
-                        </header>
-                        <div class="modal-body">
-                            <p>The goal of Codoku is to complete the grid so that every row, column, and 3x3 box
-                                contains the numbers 1 through 9.</p>
-                            <ul>
-                                <li>Only use each number once per row, column, and box.</li>
-                                <li>Use the number keys below the grid to make selections.</li>
-                                <li>Choose your difficulty and time before starting a new game.</li>
-                            </ul>
-                        </div>
-                        <footer class="modal-footer">
-                            <button type="button" id="rules-back-button" class="btn btn-dark"
-                                data-bs-dismiss="modal">Back
-                                ↲</button>
-                        </footer>
-                    </div>
-                </article>
-            </div>
-        </section>
+    <section id="rules-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rules-modal-label"
+        aria-modal="true" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <article class="modal-content">
+                <div class="modal-border">
+                    <header class="modal-header">
+                        <h2 id="rules-modal-label" class="modal-title">Game Rules</h2>
+                    </header>
+                    <section id="rules-modal-info" class="modal-body">
+                        <p>
+                            The goal of Codoku is to complete the grid so that every row,
+                            column, and 3x3 box contains the numbers 1 through 9.
+                        </p>
+                        <ul>
+                            <li>
+                                Select a cell and then select a numbers key below the grid or
+                                on your keyboard to place your answer.
+                            </li>
+                            <li>
+                                Choose your difficulty and time before starting a new game.
+                            </li>
+                            <li>If you need a hint then press the check or clue button.</li>
+                        </ul>
+                    </section>
+                    <footer class="modal-footer">
+                        <button id="rules-modal-button" class="btn btn-dark" type="button"
+                            aria-label="Close game rules and return to game" data-bs-dismiss="modal">
+                            Back ↲
+                        </button>
+                    </footer>
+                </div>
+            </article>
+        </div>
+    </section>
         <!-- Footer Section -->
         <footer class="py-3 mt-auto">
             <div class="container d-flex justify-content-between align-items-center text-white">
