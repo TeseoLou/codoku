@@ -45,7 +45,8 @@ function applyTheme(isLightMode, playSound = false) {
         $("#donate-button"),
         $("#check-button"),
         $("#hint-button"),
-        $("#congrats-new-game")
+        $("#congrats-new-game"),
+        $("#home-button")
     ];
     // Toggle Bootstrap theme classes
     // Reference: https://www.freecodecamp.org/news/javascript-array-foreach-tutorial-how-to-iterate-through-elements-in-an-array-with-map/
