@@ -14,6 +14,8 @@ Branded with the tagline _“Built with Logic”_, **Codoku** provides users wit
 
 👉 Visit the deployed site on GitHub Pages [**here**](https://teseolou.github.io/codoku/index.html).
 
+👉 You can access the full **Codoku** Project Board [**here**](https://github.com/users/TeseoLou/projects/4).
+
 ## 1.1. **Project Criteria**
 
 This project has been built to meet the following core assessment requirements:
@@ -590,7 +592,7 @@ Each feature was evaluated based on its importance to gameplay, usability, and a
 - **Section**: Features that exist within a page, like stats or rules  
 - **Elemental**: Specific interactive or visual components
 
-| Component                                             | Importance | Feasibility | Category  | Priority |
+| Component                                             | Importance | Feasibility | Scope  | Priority |
 |-------------------------------------------------------|------------|-------------|-----------|----------|
 | Navigation bar (Home, About, Rules)                   | 5          | 5           | Website   | 🟥       |
 | Responsive layout (mobile/tablet/desktop)             | 5          | 4           | Website   | 🟥       |
@@ -633,25 +635,197 @@ These core features served as a structured development blueprint, ensuring Codok
 
 ## 2.3. Structure
 
-The Structure Plane in User Experience (UX) design addresses how Codoku’s features, content, and interactions are logically arranged and experienced by users. It serves as the bridge between Codoku’s strategic aims and the interface’s visual design, ensuring that players not only understand how to navigate the application but also feel comfortable doing so—regardless of their age, ability, or device.
+The Structure Plane defines how Codoku’s content, features, and interactions are arranged to support ease of use and logical flow. It connects strategic goals with the interface’s layout, ensuring that players—regardless of age, ability, or device—can navigate and play comfortably.
 
-Structure in Codoku focuses heavily on interaction design and usability. Because it’s a game-based application rather than a content-driven site, special attention was paid to how players interact with core features such as the Sudoku grid, number inputs, validation buttons, and timers. This meant designing a layout that minimized distraction, kept functional elements within easy reach (especially on touchscreens), and presented clear, real-time feedback throughout the puzzle-solving process.
+As a game-based application, Codoku prioritizes interaction design over dense content. Key features like the grid, number inputs, validation tools, and timers are placed for intuitive access, with real-time feedback to reduce frustration and aid progression.
 
-Navigation design, though more lightweight than in multi-page websites, still plays a crucial role in Codoku. Key areas like the Home screen, About page, and Rules section are accessible through a clean top-level navigation bar, ensuring users can easily locate supporting information without leaving the game environment. Footer links also maintain consistency and provide access to external resources such as GitHub and a charitable donation page.
+Navigation remains simple but purposeful. A top nav bar provides quick access to the Home, About, and Rules pages, while the footer offers consistent links to external platforms like GitHub and the donation page.
 
-Interaction design was driven by the need for clarity and feedback. The structure includes:
-- A clearly defined Sudoku grid area with interactive cells
-- Button-based number inputs for users on touch or mouse devices
-- Difficulty and timer selectors to personalize gameplay
-- Clue and validation buttons to assist with progress and learning
-- Visual indicators and pop-ups for errors, completion, or timeouts
+The layout includes:
+- An interactive Sudoku grid
+- Touch/mouse-friendly number buttons
+- Difficulty and timer selectors
+- Clue and check buttons
+- Feedback messages and modals
 
-Information architecture was simplified to reduce cognitive load. Rather than relying on dense menus or excessive interface elements, Codoku’s structure uses semantic HTML and ARIA labels to guide screen readers and assistive technology. Elements are grouped meaningfully by function (e.g., controls, display, instructions), and consistent layout patterns help users build familiarity over time.
+Information is structured to minimize distractions and cognitive load, with semantic HTML and ARIA support for screen readers. Elements are grouped by function and follow consistent patterns to support user familiarity.
 
-Accessibility and responsive structure were also vital. Whether users access Codoku from a desktop, tablet, or smartphone, the interface adapts fluidly, maintaining usability. High-contrast modes, readable font sizes, and keyboard navigability were key design principles supporting inclusive access.
+Codoku’s responsive structure adapts seamlessly across desktop, tablet, and mobile, using scalable fonts, high-contrast visuals, and keyboard-friendly controls. Altogether, this creates an inclusive, focused space that enhances logic-based engagement and replayability.
 
-Ultimately, Codoku’s structure was crafted not only to guide users through the app, but to create a calm, supportive environment that enhances focus, supports experimentation, and rewards logical thinking. This alignment between interaction, layout, and accessibility ensures a fluid experience for first-time players, repeat puzzlers, and lifelong learners alike.
+### 2.3.1 MoSCoW Prioritization
 
+Throughout the project, effective prioritization according to business goals, user needs, and developer capabilities was crucial. With the project scoped to deliver a complete, accessible Sudoku game interface within a limited timeframe, it became essential to continually assess what was realistic and achievable based on available time, technical complexity, and learning goals.
 
+To support this, the **MoSCoW** prioritization framework was used to categorize tasks into **Must-Have**, **Should-Have**, **Could-Have**, and eventually, **Won’t-Have**. This final category emerged as development progressed and certain features though potentially valuable proved too complex, time-intensive, or peripheral for the scope of a front-end milestone project.
 
-You can access the full Codoku Project Board [here](https://github.com/users/TeseoLou/projects/4), which outlines all planned features, user stories, and development tasks organized by priority and implementation status.
+Features marked as **Won’t-Have** were not removed from consideration altogether, but rather postponed for a future iteration or stretch project once more time and experience could be dedicated to their successful implementation. Below is a summary of the features assigned to this category and the rationale for each decision:
+
+| 🟦 Feature               | Reason for Won’t-Have Status                                                                 |
+|--------------------------|---------------------------------------------------------------------------------------------|
+| **Scoreboard**           | Requires data persistence and local storage logic that proved difficult to implement in time. |
+| **Save Game**            | Though planned, saving and restoring puzzle state (including grid, timer, clues) required more advanced JavaScript than currently manageable. |
+| **Print Puzzle Button**  | Would require custom print styling and puzzle state management, which was deprioritized to focus on core interactivity. |
+| **Multimedia Instructions** | Recording, editing, and embedding accessible audio/video content exceeded the available development time and required tools outside the project scope. |
+
+These decisions helped ensure that core interactive and accessible features were delivered to a high standard, while leaving the door open for future improvements and enhancements.
+
+### 2.3.2 Site Hierarchy
+
+Site hierarchy refers to how Codoku’s content, features, and pages are logically organized and accessed by users. It shapes the user’s journey through the application, affecting clarity, efficiency, and accessibility. For a game-based web app like Codoku, hierarchy needed to support both discovery and flow, prioritizing gameplay while offering seamless access to supporting features like instructions and about information.
+
+**Aims of Codoku's Site Structure**
+
+- 🏠 Make core gameplay immediately accessible with minimal clicks  
+- ⚙️ Guide users through setup before play (difficulty and timer)  
+- ➕ Support learning and accessibility with modals and structured layout  
+
+Codoku is structured around a single-page core gameplay interface, with supplemental navigation to an About page and modal overlays that support the user without removing them from the experience. Functional elements such as the Setup Modal, Rules Modal, and Completion Feedback act as focused UI components that enhance clarity while keeping the player in flow.
+
+| Page / Modal          | Function                                             | Role in UX Journey           |
+|-----------------------|------------------------------------------------------|------------------------------|
+| **Home (Game)**    | Primary interface for Sudoku gameplay                | 🎮 Start, Play, Progress     |
+| **Setup Modal**       | Appears before game begins, lets user pick difficulty & timer | ⚙️ Customization & Onboarding |
+| **Rules Modal**       | On-demand gameplay instructions                      | 🧾 Learn & Assist            |
+| **About Page**        | Project background and donation information          | 👋 Context & Mission         |
+| **404 Error Page**    | Redirect users who hit an incorrect route            | ⚠️ Recovery & Redirection    |
+| **Completion Modal**  | Feedback, stats, and new game options post-solve     | 🏆 Success & Replay          |
+
+The structure of the Codoku site hierarchy is intentionally designed as a pyramid, placing the most essential user-facing elements at the top and progressively layering supportive or contextual features beneath.
+
+![Codoku Site Hierarchy Pyramid](docs/figures/charts/site-pyramid.webp)  
+*A pyramid diagram showing the importance and relationship between the main interface, modals, and support pages in Codoku.*
+
+**Game**  
+At the top of the hierarchy is the game itself — the Sudoku grid, number inputs, timer, and validation. It is the core experience, drawing immediate focus and requiring an uncluttered, accessible layout.
+
+**Pre-Game Modals**  
+These appear before gameplay begins.  
+- **Setup** lets users choose difficulty and timer options.  
+- **Rules** explains how to play.  
+They enhance onboarding and accessibility while staying separate from the main grid.
+
+**Post-Game Modal**  
+Triggered after a puzzle is solved.  
+- Gives success feedback and stats.  
+- Offers options to start a new game or admire the board.  
+It supports user motivation and replay.
+
+**Supplementary Pages**  
+Supportive but non-core. These are accessed less frequently but strengthen the experience.
+
+- **About** shares project purpose and links to donations.  
+- **Error** (404) redirects users from broken links.  
+
+![Codoku User Flow](docs/figures/charts/user-flow.webp)  
+*A sequential flow from Setup → Game → Completion or Support Pages.*
+
+The diagram outlines the typical user journey through Codoku. It follows a linear but flexible progression, guiding users from instruction to gameplay and through to completion, with supportive pathways for accessing additional context or handling errors.
+
+1. 🧾**Rules**  
+   - Users may begin by reviewing game instructions.  
+   - This modal ensures new players understand how to play before continuing.
+
+2. ⚙️ **Setup**  
+   - Players configure their game preferences, such as difficulty level and timer settings.  
+   - This step customizes the gameplay experience.
+
+3. 🎮 **Game**  
+   - The core phase of the app, where users interact with the Sudoku grid and input their answers.  
+   - Includes buttons for checking answers and requesting clues.
+
+4. 🏆 **Completion**  
+   - Appears once a puzzle is solved.  
+   - Displays success feedback, game statistics, and options to replay or start a new game.
+
+5. 👋 **About**  
+   - An optional informational page that shares the project's mission, purpose, and donation link.  
+   - Helps users understand the wider goals behind Codoku.
+
+6. ⚠️ **Error**  
+   - Positioned outside the main flow, the error page is triggered when users navigate to an invalid or broken route.  
+   - Acts as a safeguard across the entire site by redirecting users back to a valid entry point like the Home/Game page.  
+   - Enhances accessibility and trust by ensuring all interactions result in a usable path forward.
+
+This structure helps players remain focused on solving puzzles while providing fallback mechanisms and optional exploration without breaking flow or causing confusion.
+
+### 2.3.4 Navigation
+
+Effective navigation was essential to Codoku’s user experience (UX) design, ensuring users could move confidently between gameplay and supporting content without unnecessary complexity. Because Codoku is a game-first web app, navigation needed to feel lightweight, accessible, and non-disruptive, guiding users through core game actions while offering easy access to help, context, and redirection when needed.
+
+Codoku’s navigation follows best practices in clarity, predictability, and responsiveness:
+
+- **Predictability**: Users know where buttons and links will take them.
+- **Efficiency**: Core actions like starting a puzzle or checking the rules are one click away.
+- **Guidance**: Navigation encourages a clear journey from setup to gameplay and beyond.
+
+The navbar appears persistently across pages and includes quick access to:
+
+📌 **Home**: Puzzle interface and game logic  
+📌 **Rules**: Modal with instructions for new users  
+📌 **About**: Purpose of the project and donation link  
+
+This ensures users are never far from core functions, while modals and page transitions are used to maintain focus and flow within the single-page app experience.
+
+While gameplay is central, Codoku also includes utility pages and overlays:
+
+⚙️ **Setup Modal** — Opens at launch, allowing users to select difficulty and timer options.  
+🧾 **Rules Modal** — Available on demand for help.  
+🏆 **Completion Modal** — Triggered when the puzzle is solved, showing stats and restart options.  
+❌ **404 Error Page** — Loads when a broken or invalid URL is visited, offering return-to-home navigation.  
+
+These elements are not listed in the main navbar, but play key roles in usability and player flow.
+
+External navigation is minimal, but still present:
+
+💝 **Donation Link** – Found in the About page, linking to a trusted cognitive health charity.  
+🔗 **Social Media Links** – Displayed in the site footer for sharing and project visibility (e.g., GitHub, LinkedIn).  
+
+These external links open in new tabs to ensure users remain anchored in the Codoku experience.
+
+![Codoku Site Map Diagram](docs/figures/charts/nav-map.webp)
+_A navigation map of Codoku showing flow from the Game Page to supporting modals, About, and Error pages, with external links branching consistently._
+
+The diagram illustrates Codoku's navigation ecosystem, capturing both user-directed flows (via navbars and buttons) and automated fallbacks (like error recovery). The structure is built around three main nodes: Game, About, and Error, with consistent access to modals and external links across all routes.
+
+#### 🎮 **Game Page (Central Hub)**
+Game is the core of the user journey and central interaction point.
+- The navbar allows users to move between:
+  - Pages 
+  - Rules modal
+- Users can also navigate to:
+  - New to reset/start a new puzzle.
+  - Complete (Completion Modal) when the puzzle is solved.
+- The footer provides access to socials links:
+  - Facebook
+  - Instagram
+  - Twitter
+
+This path keeps essential puzzle actions just one step away, allowing users to stay engaged while still accessing help or restarting as needed.
+
+#### 👋 **About Page (Supportive Content)**
+The About page provides contextual information and connects users to Codoku’s mission.
+- The navbar allows users to move between:
+  - Pages 
+  - Rules modal
+- Users can also navigate to:
+  - Donate (external link to Alzheimer’s Society)
+- The footer provides access to socials links:
+  - Facebook
+  - Instagram
+  - Twitter
+
+Like the Game section, About maintains full access to supporting content and platforms without disrupting the user flow.
+
+#### ⚠️ **Error Page (Safety Net)**
+Error Page sits as a universal fallback.
+- The navbar allows users to move between:
+  - Pages 
+  - Rules modal
+- Users can also navigate to:
+  - Home Page (additional button)
+- The footer provides access to socials links:
+  - Facebook
+  - Instagram
+  - Twitter
+
+It's accessible from anywhere via broken links or redirects.
