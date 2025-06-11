@@ -1125,7 +1125,7 @@ Codoku’s surface design complements its purpose:
 
 Every interface decision was filtered through a lens of simplicity and user empathy so that nothing distracts from what really matters... the puzzle.
 
-### 2.5.1 **Branding and Aesthetic**
+### **2.5.1 Branding and Aesthetic**
 
 Codoku’s surface design draws inspiration from the clean, logic-focused visuals seen in traditional puzzle spreads—such as those found in newspapers and printed puzzle books.
 
@@ -1135,18 +1135,75 @@ Codoku’s surface design draws inspiration from the clean, logic-focused visual
 Where many puzzle apps adopt vibrant colors and gamified styles, Codoku takes a calmer, print-inspired approach. The aim is to provide a focused and thoughtful experience that evokes the feeling of solving puzzles in a newspaper or logic book.
 
 **🔘 Minimalism**  
-  Inspired by black-and-white puzzle spreads, Codoku uses a clean layout with minimal distractions to support extended concentration.
+Inspired by black-and-white puzzle spreads, Codoku uses a clean layout with minimal distractions to support extended concentration.
 
 **🧩 Puzzle-First Layout**  
-  The Sudoku grid remains the visual and functional centerpiece. Buttons, stats, and UI elements are designed to support—not compete with—it.
+The Sudoku grid remains the visual and functional centerpiece. Buttons, stats, and UI elements are designed to support—not compete with—it.
 
 **🎨 Monochrome-Inspired Theme**  
-  The light and dark modes avoid oversaturation, echoing grayscale design patterns found in print logic puzzles.
+The light and dark modes avoid oversaturation, echoing grayscale design patterns found in print logic puzzles.
 
 **🗞️ Print-to-Digital Aesthetic**  
-  Codoku brings the tactile familiarity of paper puzzles into the digital age, with responsive layouts and screen-friendly enhancements.
+Codoku brings the tactile familiarity of paper puzzles into the digital age, with responsive layouts and screen-friendly enhancements.
 
 The result is an interface that feels focused, timeless, and cognitively engaging. Codoku’s visual identity is simple yet meaningful—designed for thinkers, logic lovers, and lifelong puzzlers across all devices.
 
 >_Inspired by the pages we’ve been puzzling, poring and pencilling over for decades. Codoku puts the print tradition in your pocket._
+
+### **2.5.2 Color Scheme**
+
+Color played a crucial role in Codoku's visual identity, enhancing both user experience and accessibility across themes. As a game rooted in logic and feedback, color was used both decoratively and functionally, reinforcing gameplay and user interaction. 
+
+#### **2.5.2.a Dual Theme Design**
+
+Codoku uses two themes to support varying lighting conditions and user preference: 
+
+**☀️ Day Mode**: Light background and dark text for high readability.  
+**🌙 Night Mode**: Dark background and lighter text to reduce eye strain during extended play or night time use. 
+
+To support both modes, Codoku's color system included contrast checked tones for primary, accent and feedback-driven use cases.
+
+#### **2.5.2.b Color Selection Strategy**
+
+The color palette was curated using a combination of WCAG contrast testing and visual harmony tools like Adobe Color. The palette was validated using Contrast Checker and Pilestone’s Color Vision Simulator to check compatibility for visually impaired users.
+
+![Color Palette](docs/figures/charts/color-chart.webp)  
+*Codoku color swatches for day and night mode.*
+
+Background  
+> #F8F9FA (Off-white) ⚪   
+> #212529 (Off-black) ⚫  
+
+These tones mirror the visual softness of black-and-white newspaper prints, evoking a sense of logic, calm, and familiarity.
+
+Key Accents
+> #E0B336 (Yellow) 🟡  
+> #403A6B (Purple) 🟣 
+
+These complementary colors were selected for their strong contrast and symbolic representation of day vs. night.
+
+Feedback Colors
+> #285228 or #A5F3A5(Green) 🟢  
+> #7D2525 or #F69696 (Red) 🔴 
+
+Green will signpost numbers revealed by the Clue button, reinforcing positive feedback. Red will highlight incorrect numbers when the Check function is used. These will aid users through intuitive color cues, globally understood as correct and incorrect respectively.
+
+**Color Accessibility**
+
+To ensure Codoku’s color combinations met accessibility standards, the WCAG 2.1 guidelines were followed using a contrast checker tool. Each pair was tested to verify readability and UI clarity, especially across different lighting conditions and vision types.
+
+![Color Contrast Chart](docs/figures/charts/contrast-chart.webp)  
+*Contrast matrix showing WCAG-compliant pairings used in Codoku's UI design.*
+
+The image above displays a contrast ratio matrix, where the circled values indicate the approved combinations used throughout Codoku’s interface. These selections exceed 7:1 for enhanced clarity.
+
+To ensure Codoku's interface remained inclusive, color accessibility was tested using a color blindness simulator by Pilestone. This visual tool helped preview how the chosen palette would appear to users with different types of color vision deficiency, including:
+- Deutan (green-weak)
+- Protan (red-weak)
+- Tritan (blue-yellow deficiency)
+
+![Color Vision Simulator](docs/figures/charts/color-vision-simulator.webp)  
+*Simulated color palette display across various forms of color blindness.*
+
+This process reinforced WCAG compliance and ensured Codoku remained readable and engaging for a wide spectrum of users.
 

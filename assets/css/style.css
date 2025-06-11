@@ -39,6 +39,10 @@ body {
     /* Stack children vertically */
 }
 
+body {
+    min-height: 700px;
+}
+
 /* Background */
 body {
     font-family: var(--font-body);
