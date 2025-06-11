@@ -117,7 +117,7 @@ These creator goals acted as a guiding framework throughout development, influen
 
 Each of these goals reflects the considerations of the user perspective, helping to ensure that the final product is not just a technical success, but an experience that feels relevant, usable, and genuinely enjoyable for the people who interact with it.
 
-### 2.1.3. **Puzzler Demographics**
+### **2.1.3. Puzzler Demographics**
 
 The development of Codoku was shaped by a deeper understanding of puzzler demographics, user habits, and the cognitive benefits associated with puzzle-solving. This insight helped identify core audience segments and informed how features like accessibility, difficulty scaling, and interface design were approached.
 
@@ -157,7 +157,7 @@ According to research published in the *International Journal of Geriatric Psych
 _Pie chart illustrating the estimated distribution of Codoku’s target demographics:  
 🔵 Children (10%), 🟢 Young Adults (25%), 🟡 Adults (35%), 🔴 Older Adults (20%)._
 
-### 2.1.4. Target Audiences
+### **2.1.4. Target Audiences**
 
 The broad demographic spread of Codoku’s users highlights the need to thoughtfully accommodate diverse user types as well as age groups. While demographic analysis reveals trends in age, cognitive goals, and device preferences, effective user experience design must go further — considering not just *who* the users are, but *how* they interact with the product and *why* they return.
 
@@ -209,7 +209,7 @@ Each of these audiences spans across the previously identified age demographics,
 
 This understanding directly informed the development of user stories, which capture and prioritize the needs, behaviors, and goals of these distinct audience groups. The next section explores how Codoku's user stories shaped design and functionality decisions to serve these varied user types.
 
-### 2.1.5. User Stories
+### **2.1.5. User Stories**
 
 For this project, user stories were developed to capture the diverse needs of Codoku’s target audience, ensuring the application delivers a responsive, rewarding, and user-centric puzzle experience. The creation of user stories helped define what different user groups—such as new users, returning players, educational institutions, and older tech newcomers—expected from the platform. These stories bridged the gap between user needs and the technical development process, ensuring that every feature contributed to a smooth user experience and served as a roadmap for development and design decisions.
 
@@ -277,7 +277,7 @@ By creating and prioritizing these user stories, the Codoku project ensures a st
 
 *Bar chart illustrating the number of Codoku user stories by category: 13 Must-Have, 6 Should-Have, and 3 Could-Have.*
 
-### 2.1.6. Emerging Components
+### **2.1.6. Emerging Components**
 
 Informed by the initial vision, creator goals, user demographics, and audience needs, several critical components began to emerge early in the design process as essential to Codoku’s success. These components reflect a balance of functionality, accessibility, and user enjoyment, and were developed not only to support gameplay mechanics, but also to reinforce the project’s broader UX goals and inclusive design ethos.
 
@@ -345,7 +345,7 @@ From the outset, Codoku was designed to be accessible across a wide spectrum of 
 
 Together, these components laid the groundwork for a focused, inclusive experience that delivers both functionality and delight. They were not imagined in isolation, but directly shaped by the needs, habits, and feedback of the users Codoku aims to serve—making them fundamental to the project’s success and longevity.
 
-### 2.1.7. Feasibility / Importance
+### **2.1.7. Feasibility / Importance**
 
 The Importance/Feasibility analysis evaluated each of Codoku’s website components based on two criteria:  
 
@@ -374,7 +374,7 @@ Features such as **Progress Tracking Dashboards**, **Puzzle Score Saving**, **Au
 
 This analysis helped keep development focused and realistic, ensuring that Codoku delivered its essential features (a clean, cognitive, and user-friendly puzzle experience) while reserving room for enhancement once the foundational elements were in place.
 
-## 2.2. Scope
+## **2.2. Scope**
 
 In UX design, the Scope Plane defines the specific features and content that a product needs in order to meet its strategic aims. While the Strategy Plane outlined the purpose of Codoku and the audiences it serves, the Scope Plane clarified what the application must include to deliver on those goals.
 
@@ -382,7 +382,7 @@ For Codoku, this phase was critical in determining the game’s core functionali
 
 This process ensured that development remained tightly focused on what mattered most to users, such as usability, interactivity, and cross-device support, while setting aside lower-priority features for future iterations. 
 
-### 2.2.1. Deriving Requirements
+### **2.2.1. Deriving Requirements**
 
 The feature planning and UX analysis clearly highlighted which components were essential for Codoku to provide value to users and meet its project goals. These insights allowed requirements to be organized into three categories based on their priority and impact: **must-have**, **should-have**, and **could-have** features.
 
@@ -421,7 +421,7 @@ This structured breakdown helped ensure that development stayed focused on deliv
 
 These requirements represent a clear path from user insights to actionable development goals. By categorizing features in this way, Codoku was able to prioritize delivering a minimal viable product (MVP) that fulfilled its educational and cognitive aims while maintaining flexibility for future enhancements.
 
-### 2.2.2. Functional Requirements
+### **2.2.2. Functional Requirements**
 
 Functional requirements define how Codoku operates on a technical and interactive level, outlining the behaviors, inputs, and user flows that allow the game to deliver a smooth, rewarding experience. While UX strategy defined the *why* behind Codoku and user stories outlined the *who* and *what*, functional requirements focus on the *how*, ensuring the game responds accurately to input, renders correctly across devices, and delivers user feedback in a clear and accessible way.
 
@@ -497,7 +497,7 @@ Micro:
 
 By organizing functional requirements by scope, **Codoku** ensured that critical interactivity was developed first while reserving room for enhancements that add polish and accessibility. This approach allowed for a structured and scalable game development process, one that balances functionality, logic, and user satisfaction.
 
-### 2.2.3. Content Requirements
+### **2.2.3. Content Requirements**
 
 Content requirements identify the textual, visual, and interactive assets **Codoku** needs to effectively support its functionality and fulfill user expectations. These elements bring the site to life by guiding the user through the game interface, enhancing engagement, and supporting cognitive clarity.
 
@@ -581,7 +581,7 @@ Interactive:
 
 By defining these content requirements, **Codoku** ensures a game experience that is not only functional and interactive but also clear, visually coherent, and accessible to users of all backgrounds and abilities.
 
-### 2.2.4. Core Features
+### **2.2.4. Core Features**
 
 Core Features outlined the key components integrated into the Codoku application to ensure it fulfilled both user needs and project objectives. These features were derived directly from the UX strategy, user stories, and scope planning, allowing for the prioritization of functionality and content into clearly scoped deliverables.
 
@@ -633,7 +633,7 @@ Each feature was evaluated based on its importance to gameplay, usability, and a
 
 These core features served as a structured development blueprint, ensuring Codoku's MVP delivered essential gameplay, accessibility, and visual consistency—while leaving room for feature growth in future iterations.
 
-## 2.3. Structure
+## **2.3. Structure**
 
 The Structure Plane defines how Codoku’s content, features, and interactions are arranged to support ease of use and logical flow. It connects strategic goals with the interface’s layout, ensuring that players—regardless of age, ability, or device—can navigate and play comfortably.
 
@@ -652,7 +652,7 @@ Information is structured to minimize distractions and cognitive load, with sema
 
 Codoku’s responsive structure adapts seamlessly across desktop, tablet, and mobile, using scalable fonts, high-contrast visuals, and keyboard-friendly controls. Altogether, this creates an inclusive, focused space that enhances logic-based engagement and replayability.
 
-### 2.3.1 MoSCoW Prioritization
+### **2.3.1 MoSCoW Prioritization**
 
 Throughout the project, effective prioritization according to business goals, user needs, and developer capabilities was crucial. With the project scoped to deliver a complete, accessible Sudoku game interface within a limited timeframe, it became essential to continually assess what was realistic and achievable based on available time, technical complexity, and learning goals.
 
@@ -669,7 +669,7 @@ Features marked as **Won’t-Have** were not removed from consideration altogeth
 
 These decisions helped ensure that core interactive and accessible features were delivered to a high standard, while leaving the door open for future improvements and enhancements.
 
-### 2.3.2 Site Hierarchy
+### **2.3.2 Site Hierarchy**
 
 Site hierarchy refers to how Codoku’s content, features, and pages are logically organized and accessed by users. It shapes the user’s journey through the application, affecting clarity, efficiency, and accessibility. For a game-based web app like Codoku, hierarchy needed to support both discovery and flow, prioritizing gameplay while offering seamless access to supporting features like instructions and about information.
 
@@ -748,7 +748,7 @@ The diagram outlines the typical user journey through Codoku. It follows a linea
 
 This structure helps players remain focused on solving puzzles while providing fallback mechanisms and optional exploration without breaking flow or causing confusion.
 
-### 2.3.4 Navigation
+### **2.3.4 Navigation**
 
 Effective navigation was essential to Codoku’s user experience (UX) design, ensuring users could move confidently between gameplay and supporting content without unnecessary complexity. Because Codoku is a game-first web app, navigation needed to feel lightweight, accessible, and non-disruptive, guiding users through core game actions while offering easy access to help, context, and redirection when needed.
 
@@ -829,3 +829,99 @@ Error Page sits as a universal fallback.
   - Twitter
 
 It's accessible from anywhere via broken links or redirects.
+
+### **2.3.4 User Interaction (UI)**
+
+Interaction design in Codoku played a central role in shaping how users engaged with the interface, particularly given the puzzle-focused nature of the project. The aim was to create a game environment that felt intuitive, responsive, and rewarding across devices and skill levels.
+
+Rather than designing for content browsing or form submission (as in more traditional sites), Codoku’s UI focused on player interaction with game elements such as the Sudoku the grid, difficulty selector, feedback modals, and control buttons. Every element was implemented with usability, responsiveness, and feedback in mind.
+
+#### **Interaction Design Principles**
+
+Codoku’s interaction model followed front-end best practices:
+
+⭐ Ensured smooth, predictable input handling across keyboard, mouse, and touch devices  
+⭐ Provided real-time feedback through color changes, pop-ups, and sounds  
+⭐ Used modals instead of separate pages to keep gameplay immersive  
+⭐ Maintained consistent navigation elements (navbar and footer) for orientation  
+⭐ Applied hover/focus states to buttons and grid cells for improved accessibility  
+⭐ Focused on mobile-first responsiveness and performance  
+
+#### **2.3.4.a Navbar**
+
+The navbar remained fixed at the top of the screen and included access to:
+
+- **Home (Game)** – The main interface  
+- **About** – Navigates to a secondary page with project context and donation info  
+- **Rules** – Opens a modal explaining how to play  
+
+This persistent element ensured that players could always return to gameplay or seek guidance without losing progress or reloading the page.
+
+#### **2.3.4.b Footer Navigation**
+
+A consistent footer appeared on all main pages, providing:
+
+- External links to **Facebook**, **Instagram**, and **X (Twitter)**  
+- Copyright Message 
+
+This helped connect users to Codoku’s broader mission and developer presence while maintaining minimal screen clutter.
+
+#### **2.3.4.c Buttons**
+
+Codoku used text-based buttons to guide user interactions:
+
+- **New** – Resets the grid and starts a fresh puzzle  
+- **Check** – Validates user inputs with visual and/or sound feedback  
+- **Clue** – Reveals a correct square on demand  
+- **Submit** – Completes the puzzle if valid  
+- **Donate** – External link to a cognitive health charity  
+- **Home** – Returns users from the Error page to the Game screen  
+
+All buttons included consistent colors matching the theme hover styling and clear labels to ensure a smooth, accessible experience.
+
+#### **2.3.4.d Grid Interaction**
+
+The Sudoku grid is the core of Codoku’s interactivity. Its behavior included:
+
+- **Highlighting** active cells for both hover and selection with different colors
+- Accepting **number input** via keyboard, mouse, or touch  
+- Distinguishing between **pre-filled** (locked) and **user-entered** cells via styling  
+- Supporting input **deletion** via backspace or an erase button  
+
+This element was designed for clarity and accessibility, making it suitable for both casual and experienced puzzlers.
+
+#### **2.3.4.e Modals**
+
+Three modals were used throughout the site to avoid disruptive page loads:
+
+- **Setup Modal** – Appears after pressing New button gives game setting options
+  - Game Difficulty
+  - Time Limit
+- **Rules Modal** – On-demand access to how-to-play instructions  
+- **Completion Modal** – Displays after successful puzzle completion with:
+  - Selected Difficulty
+  - Game time 
+  - Clues used  
+  - Buttons (Admire Puzzle /  New Game)
+
+Each modal was designed for focus, clarity, and accessibility, with screen-reader-friendly headings and keyboard-trappable content.
+
+#### **2.3.4.f Sound Feedback**
+
+Codoku introduced optional sound cues to enhance interaction:
+
+- **Input sounds** for number selection and deletion 
+- **Button sounds** for game buttons only 
+- **Alert tones** for validation, errors, and completion  
+- **Theme toggling sounds** (e.g., tweet for day mode, hoot for night mode)  
+
+#### **2.3.4.g Error Page Interaction**
+
+The 404 Error Page offered:
+
+- A **Home Button** to return to the game  
+- Full access to the **Navbar** and **Footer**  
+
+This ensured users could recover from broken routes without confusion.
+
+Codoku’s interaction design centered around ease, clarity, and reward. Every input, modal, and message was implemented to keep users engaged and confident, with accessibility and cognitive focus at the heart of the design. Whether solving a puzzle, exploring the About page, or recovering from an error, the UI ensured users stayed oriented, supported, and in control.
