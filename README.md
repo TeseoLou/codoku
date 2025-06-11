@@ -836,8 +836,6 @@ Interaction design in Codoku played a central role in shaping how users engaged 
 
 Rather than designing for content browsing or form submission (as in more traditional sites), Codoku’s UI focused on player interaction with game elements such as the Sudoku the grid, difficulty selector, feedback modals, and control buttons. Every element was implemented with usability, responsiveness, and feedback in mind.
 
-#### **Interaction Design Principles**
-
 Codoku’s interaction model followed front-end best practices:
 
 ⭐ Ensured smooth, predictable input handling across keyboard, mouse, and touch devices  
@@ -847,81 +845,155 @@ Codoku’s interaction model followed front-end best practices:
 ⭐ Applied hover/focus states to buttons and grid cells for improved accessibility  
 ⭐ Focused on mobile-first responsiveness and performance  
 
-#### **2.3.4.a Navbar**
 
-The navbar remained fixed at the top of the screen and included access to:
+| Area            | Description                                                                 | Interactive Features                                                                                                   | Benefits                                                                                  |
+|-------------------------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| 🔼 **Navbar**              | Persistent top-level navigation on all pages                                | Links to Game (Home), Rules (Modal), About Page                                                                       | Fast access to core features; supports wayfinding             |
+| 🔽 **Footer Navigation**   | Fixed at the bottom of each page                                            | Social links (Facebook, Instagram, X), consistent site presence                                                       | Promotes brand presence            |
+| 🎛️ **Game Buttons**        | Key inputs that control gameplay                                            | New, Enter, Donate, Home (404 only); styled with hover & focus feedback                                 | Encourages clear actions                  |
+| 🔲 **Sudoku Grid**         | Core interaction space of the game                                          | Click/tap or keyboard input, cell highlighting, editable cells, locked cells, input deletion                          | Provides a focused, interactive puzzle experience     |
+| 🔢 **Number Keys**         | Number pad for easy input                                                   | Click/tap digit → apply to grid, visual highlight for selected number, reset via deselection                          | Enhances accessibility (esp. touchscreen)                      |
+| 🪟 **Modals**              | Lightweight overlays for key flows                                          | Setup (difficulty/time), Rules (instructions), Completion (feedback & stats), keyboard-trappable                      | Keeps users in flow; avoids disruptive page loads; supports onboarding and feedback       |
+| 🔊 **Sound Feedback**      | Audio cues linked to interaction                                            | Button sounds, alert tones, theme change sounds (hoot/tweet), input sounds                                            | Reinforces interaction feedback          |
+| ❓ **Check Button**        | On-demand input validation                                                  | Highlights incorrect cells; disables input temporarily during check                                                    | Promotes learning without punishment              |
+| 🔎 **Clue Button**         | Optional assistive feature                                                  | Fills in one correct cell, updates clue counter, supports keyboard and tap                                            | Encourages confidence                    |
+| ℹ️ **About Page**          | Secondary page with project info and donation link                          | Scrollable layout, external donation button, consistent nav/footer                                                    | Encourages community support                             |
+| ⚠️ **404 Error Page**      | Fallback screen for broken/invalid links                                    | Clear error message, Home Button, consistent nav and footer                                                           | Preserves user flow                       |
 
-- **Home (Game)** – The main interface  
-- **About** – Navigates to a secondary page with project context and donation info  
-- **Rules** – Opens a modal explaining how to play  
+This table outlines the key interactive components of the Codoku website, breaking down their purpose, how users engage with them, and the specific benefits each offers in terms of user experience. 
 
-This persistent element ensured that players could always return to gameplay or seek guidance without losing progress or reloading the page.
+By organizing interface elements this way, it became easier to assess their role in supporting accessibility, clarity, and user satisfaction. This also helped prioritize development tasks based on user value and interaction impact.
 
-#### **2.3.4.b Footer Navigation**
+### **2.3.5. Information Architecture (IA)**
 
-A consistent footer appeared on all main pages, providing:
+Codoku’s information architecture defines how all pages, components, and links are organized to support smooth navigation and intuitive interaction across the game-focused site. This structure ensures that users, regardless of age, ability, or device, can locate core features, learn the rules, complete a puzzle, and explore the project’s background without confusion.
 
-- External links to **Facebook**, **Instagram**, and **X (Twitter)**  
-- Copyright Message 
+![Codoku Information Architecture Diagram](docs/figures/charts/information-architecture.webp)  
+*A visual breakdown of Codoku’s site structure, including interactive components, pages, buttons, and external destinations.*
 
-This helped connect users to Codoku’s broader mission and developer presence while maintaining minimal screen clutter.
+The diagram below visualizes Codoku’s IA, showing how the site’s core page (Game) branches into modals, buttons, and links, with secondary and fallback pages connected via navbar and footer elements.
 
-#### **2.3.4.c Buttons**
+#### **Core Pages & Components**
 
-Codoku used text-based buttons to guide user interactions:
+| Page / Section  | Purpose |
+|-----------------|---------|
+| 🎮 **Game Page**   | Central UI for puzzle solving. Contains the grid, input buttons, completion modal, and stats section. |
+| 👋 **About Page**  | Provides project background, accessibility focus, and donation call-to-action. |
+| ⚠️ **Error Page**  | Catches invalid URLs and redirects users to safe navigation points. |
 
-- **New** – Resets the grid and starts a fresh puzzle  
-- **Check** – Validates user inputs with visual and/or sound feedback  
-- **Clue** – Reveals a correct square on demand  
-- **Submit** – Completes the puzzle if valid  
-- **Donate** – External link to a cognitive health charity  
-- **Home** – Returns users from the Error page to the Game screen  
+#### **Navigation & Linking**
 
-All buttons included consistent colors matching the theme hover styling and clear labels to ensure a smooth, accessible experience.
+| Type               | Implementation |
+|--------------------|----------------|
+| 🔼 **Primary Nav (Navbar)** | Links to Home, Rules (Modal), and About. Always visible and fixed. |
+| 🔽 **Secondary Nav (Footer)** | Includes social links: Facebook, Instagram, and X (Twitter). |
+| 🔗 **External Linking** | Donation Button opens a trusted charity in a new tab. Footer links direct to social platforms. |
 
-#### **2.3.4.d Grid Interaction**
+#### **Interactive Elements**
 
-The Sudoku grid is the core of Codoku’s interactivity. Its behavior included:
+| Modal / Element      | Description |
+|----------------------|-------------|
+| ⚙️ **Setup Modal**      | Launch modal where users choose difficulty and timer. |
+| 📃 **Rules Modal**      | Offers gameplay instructions at any time. |
+| 🏆 **Completion Modal** | Triggered upon successful puzzle completion. Displays stats and replay options. |
+| 🎛️ **Buttons**          | Include New, Check, Clue, Donate, and Home. These are styled consistently and offer instant feedback. |
+| 🔢 **Grid & Number Keys** | Accept interactive input via keyboard, mouse, or touchscreen. |
 
-- **Highlighting** active cells for both hover and selection with different colors
-- Accepting **number input** via keyboard, mouse, or touch  
-- Distinguishing between **pre-filled** (locked) and **user-entered** cells via styling  
-- Supporting input **deletion** via backspace or an erase button  
+#### **Static Elements**
 
-This element was designed for clarity and accessibility, making it suitable for both casual and experienced puzzlers.
+| **Element Type** | **Examples**                                                                 | **Purpose**                                                                 |
+|------------------|------------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| 📝 **Text**       | - Game instructions (Rules Modal) - About content - Completion messages - Error explanation | Provides clarity, context, and guidance across key parts of the experience. |
+| 🖼️ **Images**     | - 404 page cartoon - About page imagery - Iconography (e.g., donation, social media) | Enhances visual engagement, improves comprehension, and supports UX tone.   |
 
-#### **2.3.4.e Modals**
+The IA design followed UX best practices:
+- **Hierarchy & Organization** – Pages are structured with the Game Page at the top, while modals, informational content, and fallback routes flow outward in logical layers.
+- **Logical Flow** – The architecture mirrors the user journey: setup → game → completion → external exploration.
+- **Accessibility** – Key features like Rules, Setup, and Game Stats are accessible in one click from or less from the navbar or modals.
+- **Consistency** – The same footer and navbar structure appear across Game, About, and Error pages.
+- **Scalability** – The modular structure allows for future enhancements like new modals, features, or external integrations without disrupting the experience.
 
-Three modals were used throughout the site to avoid disruptive page loads:
+## 2.4 Skeleton
 
-- **Setup Modal** – Appears after pressing New button gives game setting options
-  - Game Difficulty
-  - Time Limit
-- **Rules Modal** – On-demand access to how-to-play instructions  
-- **Completion Modal** – Displays after successful puzzle completion with:
-  - Selected Difficulty
-  - Game time 
-  - Clues used  
-  - Buttons (Admire Puzzle /  New Game)
+The Skeleton Plane for **Codoku** translates the conceptual structure of the site into a tangible, interactive layout that users can navigate with ease. While the Structure Plane established how key components such as gameplay, guidance, and content were organized, the Skeleton Plane focused on refining the placement, flow, and usability of those elements within the browser viewport.
 
-Each modal was designed for focus, clarity, and accessibility, with screen-reader-friendly headings and keyboard-trappable content.
+At this stage, interface interactions were visually defined, ensuring that the user journey from puzzle setup to completion felt seamless, intuitive, and consistent across all devices.
 
-#### **2.3.4.f Sound Feedback**
+This addressed three main areas of user experience:
 
-Codoku introduced optional sound cues to enhance interaction:
+1. **Interface Design**: Focuses on arranging buttons, controls, images, and other interactive components to make navigation simple and intuitive for users.
+2. **Information Design**: Structures content in a clear, accessible, and well-organized format to support readability and logical flow.
+3. **Responsiveness**: Ensures layouts and interactive features automatically adjust to different screen sizes (desktop, tablet, or mobile) for a smooth and consistent user experience.
 
-- **Input sounds** for number selection and deletion 
-- **Button sounds** for game buttons only 
-- **Alert tones** for validation, errors, and completion  
-- **Theme toggling sounds** (e.g., tweet for day mode, hoot for night mode)  
+### 2.4.1 Navigation Design
 
-#### **2.3.4.g Error Page Interaction**
+A clear and consistent navigation system was essential in Codoku to support both ease of use and player engagement. While the Structure Plane defined the relationships between pages and content areas, the Skeleton Plane transformed that framework into an interactive visual system guiding users across gameplay and support areas.
 
-The 404 Error Page offered:
+#### **2.4.1.a Navbar**
 
-- A **Home Button** to return to the game  
-- Full access to the **Navbar** and **Footer**  
+The **main navbar** remained visible at the top of every page.
 
-This ensured users could recover from broken routes without confusion.
+![Wireframe of Codoku navigation bar](docs/figures/wireframes/navbar.webp)
+*Wireframe mockup of the Codoku navigation bar showing both the mobile (collapsed menu) and desktop (expanded links) states.*
 
-Codoku’s interaction design centered around ease, clarity, and reward. Every input, modal, and message was implemented to keep users engaged and confident, with accessibility and cognitive focus at the heart of the design. Whether solving a puzzle, exploring the About page, or recovering from an error, the UI ensured users stayed oriented, supported, and in control.
+🎨 **Theme Toggle** - Switch between light and dark mode 
+🏠 **Game (Home)** – The central hub of user interaction  
+📃 **Rules** – A modal with gameplay instructions  
+👋 **About** – A page with background, project rationale, and donation link  
+
+This ensured users could always find help, return to the game, or explore the site’s mission. Anchor links change color on hover and underline on active page. 
+
+#### **2.4.1.b Footer Navigation**
+
+The **footer** also appeared consistently across all pages.
+
+![Wireframe of Codoku footer layout](docs/figures/wireframes/footer.webp)
+*Wireframe mockup of the Codoku footer showing both mobile and desktop layouts.*
+
+🔗 **Social Media Links**: Facebook, Instagram, and X (Twitter) icons that enlarge on hover
+©️ **Copyright Message**: The footer remained compact and uncluttered to preserve focus on the game interface.
+
+#### **2.4.1.c Navigation Buttons**
+
+Interactive buttons acted as immediate access points to key actions and locations.
+
+![Wireframe of Codoku navigation buttons](docs/figures/wireframes/buttons.webp)
+*Wireframe of Codoku’s navigation buttons — New, Donate, and Home.*
+
+➕ **New Button**: Resets the grid and launches the Setup Modal  
+🏠 **Home Button**: Visible on the Error page to guide users back to the Game page  
+💸 **Donate Button**: Located on the About page and links externally to a cognitive health charity in a new tab  
+
+All buttons included consistent styling that contrast the background colors and include hover feedback to reinforce interactivity. 
+
+#### **2.4.1.d Modals**
+
+Modals allowed users to complete important tasks without navigating away from the core game screen.
+
+![Wireframes of Codoku's Setup, Rules, and Completion Modals](docs/figures/wireframes/modals.webp)
+*Wireframe mockups of Codoku's modal interfaces. From left to right: Setup Modal , Rules Modal, and Completion Modal.*
+
+⚙️ **Setup Modal**: Appears when starting a new puzzle using 'New' button. 'Enter' proceeds to game page with board loaded.   
+📃 **Rules Modal**: Accessible from both the navbar and Game page. 'Back' closes the modal.  
+🏆 **Completion Modal**: Triggers after puzzle completion, providing options to start a new game or review the solved grid with 'Admire' and 'New' respectively.
+
+These modals were focus-trappable, styled for contrast, and screen-reader friendly.
+
+#### **2.4.1.e Alerts**
+
+Feedback mechanisms played a critical role in guiding and informing users during gameplay. Codoku incorporated several alert types.
+
+![Codoku Alert Modals](docs/figures/wireframes/alerts.webp)
+*Wireframes of Codoku’s alert pop-ups. From left to right: Navigation alert, error alert, timeout alert.*
+
+⚠️ **Navigation Alert**: Appears when user presses 'About' in navbar while on homepage. 'OK' proceeds user to next page and 'Cancel' calls off the navigation.   
+⏰ **Timeout Alert**: Appears when the timer reaches zero; displays a message and option to try again  
+🔎 **Incorrect Puzzle Alert**: Notifies users when they submit a grid that is fully filled but contains errors. 'OK' returns user to puzzle.
+
+These alerts were designed to provide non-intrusive, multi-sensory feedback that enhanced usability without overwhelming the user.
+
+The navigation design followed UX best practices, focusing on:
+
+- **Clarity & Simplicity**: Only essential items were placed in the navbar to reduce cognitive load during gameplay.  
+- **Persistent Access**: Both the navigation bar and footer remained fixed across pages for easy access.  
+- **Predictable Flow**: Users could navigate from the game to support content (e.g., rules or about) without disrupting progress.
