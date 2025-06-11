@@ -913,7 +913,7 @@ The IA design followed UX best practices:
 - **Consistency** – The same footer and navbar structure appear across Game, About, and Error pages.
 - **Scalability** – The modular structure allows for future enhancements like new modals, features, or external integrations without disrupting the experience.
 
-## 2.4 Skeleton
+## **2.4 Skeleton**
 
 The Skeleton Plane for **Codoku** translates the conceptual structure of the site into a tangible, interactive layout that users can navigate with ease. While the Structure Plane established how key components such as gameplay, guidance, and content were organized, the Skeleton Plane focused on refining the placement, flow, and usability of those elements within the browser viewport.
 
@@ -925,7 +925,7 @@ This addressed three main areas of user experience:
 2. **Information Design**: Structures content in a clear, accessible, and well-organized format to support readability and logical flow.
 3. **Responsiveness**: Ensures layouts and interactive features automatically adjust to different screen sizes (desktop, tablet, or mobile) for a smooth and consistent user experience.
 
-### 2.4.1 Navigation Design
+### **2.4.1 Navigation Design**
 
 A clear and consistent navigation system was essential in Codoku to support both ease of use and player engagement. While the Structure Plane defined the relationships between pages and content areas, the Skeleton Plane transformed that framework into an interactive visual system guiding users across gameplay and support areas.
 
@@ -987,7 +987,7 @@ Feedback mechanisms played a critical role in guiding and informing users during
 *Wireframes of Codoku’s alert pop-ups. From left to right: Navigation alert, error alert, timeout alert.*
 
 ⚠️ **Navigation Alert**: Appears when user presses 'About' in navbar while on homepage. 'OK' proceeds user to next page and 'Cancel' calls off the navigation.   
-⏰ **Timeout Alert**: Appears when the timer reaches zero; displays a message and option to try again  
+⏰ **Timeout Alert**: Appears when the timer reaches zero and displays a message with option to try again  
 🔎 **Incorrect Puzzle Alert**: Notifies users when they submit a grid that is fully filled but contains errors. 'OK' returns user to puzzle.
 
 These alerts were designed to provide non-intrusive, multi-sensory feedback that enhanced usability without overwhelming the user.
@@ -997,3 +997,156 @@ The navigation design followed UX best practices, focusing on:
 - **Clarity & Simplicity**: Only essential items were placed in the navbar to reduce cognitive load during gameplay.  
 - **Persistent Access**: Both the navigation bar and footer remained fixed across pages for easy access.  
 - **Predictable Flow**: Users could navigate from the game to support content (e.g., rules or about) without disrupting progress.
+
+### **2.4.2 Interface & Information Design**
+
+Codoku’s interface and information design were shaped by a mobile-first approach, ensuring that the application was intuitive, accessible, and visually coherent on smaller screens before scaling up to desktops. Given that many users engage with puzzles via mobile devices, the site was optimized for vertical flow, touch-friendly inputs, and minimal distraction.
+
+Interface Design focused on how users interact with elements such as the grid, number keys, buttons, and modals. Components were spaced for easy tapping and logically placed to maintain focus on gameplay.
+
+Information Design guided how content was structured and displayed. Readability, visual hierarchy, and grouping were used to deliver instructions, game stats, and support content in a smooth, non-intrusive format. 
+
+#### 🎮 **2.4.2.a Game Page**
+
+The Game Page is the central hub and default landing view for Codoku. It prioritizes functionality and minimalism. 
+
+![Codoku Game UI Mobile Wireframe](docs/figures/wireframes/interface-design-game.webp)  
+*Game UI wireframe on mobile showing grid, controls, and footer*
+
+- A fixed **Navbar** includes a hamburger menu and a theme toggle switch. 
+- **New**, **Check**, and **Clue** buttons appear above the grid for instant access.   
+- **Game Stats Panel** is below buttons so user can track how they are doing. 
+- The **Game grid** is clearly defined and centrally aligned.  
+- **Number keys** below the grid support touch and mouse input.  
+- The **Footer** provides persistent access to social links and copyright info.
+
+#### 👋 **2.4.2.b About Page**
+
+This page shares Codoku’s purpose, accessibility considerations, and educational goals. The layout is scroll-friendly, guiding users through alternating blocks of text and visuals.
+
+![Codoku About Page Wireframe](docs/figures/wireframes/interface-design-about.webp)  
+*About Page wireframe with image/text structure and footer*
+
+- Informational content is split into digestible chunks.  
+- Supportive images enhance narrative and keep users engaged.  
+- The **Donate button** is prominently placed toward the end.  
+- The navbar and footer remain visible for seamless return to gameplay.
+
+#### ⚠️ **2.4.2.c Error Page**
+
+The Error Page provides a fallback for broken or invalid links, guiding users back to the game without confusion:
+
+![Codoku Error Page Wireframe](docs/figures/wireframes/interface-design-error.webp)  
+*Error page wireframe with navigation and Home button*
+
+- A short, humorous message reassures the user.  
+- A **Home button** enables immediate return to the Game Page.  
+- Footer and navbar remain consistent to reinforce user control.
+
+## 2.4.5. Responsiveness
+
+Responsive design is essential to Codoku’s usability and success. As a logic-based puzzle app, Codoku prioritizes interaction and accessibility across all devices—especially smartphones and tablets, where users often play on the go. A mobile-first approach ensures smooth gameplay, adaptable layouts, and a consistent interface regardless of screen size.
+
+Responsive Design Principles Applied in Codoku:
+- **Mobile-First Development:** Layouts are designed first for small screens to ensure accessibility on mobile. Touch-friendly interactions are prioritized from the start.
+- **Flexible Layouts:** CSS Grid and Flexbox allow UI components like the grid, number keys, and buttons to rearrange themselves based on screen size.
+- **Media Queries:** Responsive breakpoints allow seamless transitions between mobile, tablet, and desktop views while preserving structure.
+- **Optimized Navigation:** A collapsible hamburger menu is used on smaller screens, and fixed nav/footer bars help with orientation.
+- **Accessibility:** All buttons are comfortably spaced, font sizes scale with viewport changes, and icons remain easily tappable across devices.
+
+Codoku takes advantage of Bootstrap 5 to manage layout responsiveness. The framework's default breakpoints help scale content across viewports:
+
+| Breakpoint | Label     | Range              | Example Device        |
+|------------|-----------|--------------------|------------------------|
+| `xs`       | Extra Small | `<576px`          | Small phones           |
+| `sm`       | Small      | `≥576px`           | Larger phones          |
+| `md`       | Medium     | `≥768px`           | Tablets                |
+| `lg`       | Large      | `≥992px`           | Laptops                |
+| `xl`       | Extra Large| `≥1200px`          | Desktops               |
+| `xxl`      | XXL        | `≥1400px`          | Large desktops         |
+
+Codoku’s design targets the `sm` breakpoints first, gradually enhancing layout and content presentation for `md`, `lg`, and `xl` screens.
+
+#### **2.4.5.a. Game Page Responsiveness**
+
+![Codoku Game Page Responsive Layouts](docs/figures/wireframes/responsiveness-game.webp)  
+*Responsive wireframes of the Codoku game page across mobile, tablet, and desktop.*
+
+- **Mobile View:** Game elements are stacked vertically with clear separation between controls, game stats, grid and number keys. Number keys span to rows to ensure they are not small.
+- **Tablet View:** Slightly expanded layout with more space between buttons, larger grid cells and number keys span one row only. Larger text and more generous spacing for buttons and paragraphs improved clarity and reduced user frustration.
+- **Desktop View:** Central alignment with broader margins, allowing room for future enhancements (e.g., a scoreboard or puzzle history). Larger text and more generous spacing for buttons and paragraphs improved clarity and reduced user frustration.
+
+#### **2.4.5.b. About Page Responsiveness**
+
+![Codoku About Page Responsive Layouts](docs/figures/wireframes/responsiveness-about.webp)  
+*Wireframes showing content scalability and layout shift across devices.*
+
+- **Mobile:** Text and images stack in a scrollable column with ample white space.
+- **Tablet & Desktop:** Larger text and more generous spacing for buttons and paragraphs improved clarity and reduced user frustration.
+
+#### **2.4.5.c. 404 Page Responsiveness**
+
+![Codoku Error Page Responsiveness](docs/figures/wireframes/responsiveness-error.webp)  
+*Responsive error page with fallback navigation.*
+
+- **All Screens:** The page maintains consistent branding and includes a "Home" button and helpful visual cue.
+- **Mobile:** Content is centered and compact, reducing bounce rates from accidental page errors.
+- **Tablet & Desktop:** Larger and more generous spacing for buttons and texted improved clarity and reduced user frustration.
+
+The Codoku site follows current responsive design best practices, ensuring that all interactions—from tapping a clue button to navigating the rules—are fluid, intuitive, and accessible.
+
+## **2.5 Surface**
+
+The **Surface Plane** represents the final layer of Codoku’s UX process—where layout, functionality, and interaction meet a cohesive and refined visual design. While previous stages focused on how the application worked and guided users through content and interactions, the surface focuses on how everything *looks* and *feels*.
+
+For **Codoku**, the surface wasn’t simply about styling—it was about creating an accessible, calming, and logic-focused environment that supports player focus and cognitive engagement. Since Sudoku is an activity grounded in mental clarity, Codoku’s interface was designed to be free from distraction while reinforcing thoughtful play.
+
+Rather than adopting complex patterns or overly decorative elements, Codoku’s aesthetic was intentionally minimal, intuitive, and built around:
+
+- Neutral Color Palette  
+- Functional Typography  
+- Grid-Driven Layout  
+- Familiarity & Ergonomics 
+
+Principles That Guided the Surface Design
+
+| Principle            | Application in Codoku                                   |
+|----------------------|----------------------------------------------------------|
+| **Visual Hierarchy** | Clear typography and spacing prioritize gameplay actions (e.g., New, Check, Clue buttons). |
+| **Consistency**      | Repeated layout rules and component styling across modals, buttons, and navigation. |
+| **Accessibility**    | High contrast text, large interactive elements, and keyboard/touch compatibility. |
+| **Minimal Distraction** | Simple backgrounds and generous white space allow users to focus solely on solving the puzzle. |
+| **Subtle Feedback**  | Light hover animations, sound cues, and modals guide without overwhelming. |
+
+Codoku’s surface design complements its purpose: 
+- foster logical thinking
+- encourage user flow
+- create an environment that feels both intelligent and approachable
+
+Every interface decision was filtered through a lens of simplicity and user empathy so that nothing distracts from what really matters... the puzzle.
+
+### 2.5.1 **Branding and Aesthetic**
+
+Codoku’s surface design draws inspiration from the clean, logic-focused visuals seen in traditional puzzle spreads—such as those found in newspapers and printed puzzle books.
+
+![Newspaper puzzle spread reference](docs/figures/images/newspaper-puzzle-page.webp)  
+*Reference image showing traditional print puzzles like Sudoku, Codeword, and Kakuro.*
+
+Where many puzzle apps adopt vibrant colors and gamified styles, Codoku takes a calmer, print-inspired approach. The aim is to provide a focused and thoughtful experience that evokes the feeling of solving puzzles in a newspaper or logic book.
+
+**🔘 Minimalism**  
+  Inspired by black-and-white puzzle spreads, Codoku uses a clean layout with minimal distractions to support extended concentration.
+
+**🧩 Puzzle-First Layout**  
+  The Sudoku grid remains the visual and functional centerpiece. Buttons, stats, and UI elements are designed to support—not compete with—it.
+
+**🎨 Monochrome-Inspired Theme**  
+  The light and dark modes avoid oversaturation, echoing grayscale design patterns found in print logic puzzles.
+
+**🗞️ Print-to-Digital Aesthetic**  
+  Codoku brings the tactile familiarity of paper puzzles into the digital age, with responsive layouts and screen-friendly enhancements.
+
+The result is an interface that feels focused, timeless, and cognitively engaging. Codoku’s visual identity is simple yet meaningful—designed for thinkers, logic lovers, and lifelong puzzlers across all devices.
+
+>_Inspired by the pages we’ve been puzzling, poring and pencilling over for decades. Codoku puts the print tradition in your pocket._
+
