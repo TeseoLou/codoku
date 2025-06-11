@@ -499,7 +499,7 @@ function formatElapsedTime() {
     const seconds = elapsed % 60;
     // If no timer was selected, return a message instead of formatted time
     if (timeLimit === 'none') {
-        return `${minutes}: Timer not selected`;
+        return `--:--`;
     }   // Otherwise, return time in MM:SS format with padded seconds
         // Reference: https://stackoverflow.com/questions/8043026
         else {
