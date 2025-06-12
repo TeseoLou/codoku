@@ -1228,8 +1228,11 @@ According to FontForge:
 -	**Readability**: Performs well in longer-form content like rules explanations or modal descriptions. Its soft geometry complements the rigid forms of Space Mono.
 -	**Visual Fatigue & Adaptability**: Well-suited to both mobile and desktop reading. Maintains clarity at small sizes with low eye strain for prolonged reading.
 
-| **Space Mono** | Headings, Game Stats Panel, Modals | Monospaced, retro-futuristic, print-style with fixed-width. Emphasizes logic and precision. |
-| **Quicksand** | Paragraph Text, Grid Cells, Number Keys | Rounded, geometric sans-serif with a friendly tone. Optimized for readability and visual warmth. |
+| Font        | Usage                            | Characteristics                                                                                   |
+|-------------|----------------------------------|----------------------------------------------------------------------------------------------------|
+| Space Mono  | Headings, Game Stats Panel, Modals | Monospaced, retro-futuristic, print-style with fixed-width. Emphasizes logic and precision.        |
+| Quicksand   | Paragraph Text, Grid Cells, Number Keys | Rounded, geometric sans-serif with a friendly tone. Optimized for readability and visual warmth.   |
+
 
 #### **2.5.3.c Font Pairing Strategy**
 The combination of Space Mono and Quicksand establishes a clear typographic hierarchy:
@@ -1243,3 +1246,11 @@ The combination of Space Mono and Quicksand establishes a clear typographic hier
 *Screenshots of font previews on Google Fonts. From top to bottom: Space Mono, Quicksand.*
 
 Font delivery was handled via Google Fonts, ensuring fast loading and cross-platform rendering. The font sizes were responsive and set using rem units to adapt across screen sizes. Bootstrap’s base typography classes (e.g., .display-6, .lead, .fw-bold) were layered on top of these fonts for scalable responsiveness and accessibility compliance.
+
+### **2.5.4 Backgrounds**
+
+### **2.5.5 Imagery**
+
+### **2.5.6 Buttons**
+
+### **2.5.7 Iconography**

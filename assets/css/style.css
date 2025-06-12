@@ -49,7 +49,7 @@ body {
     /* Apply quicksand font */
     background-color: var(--color-bg-light);
     /* Fallback color */
-    background-image: url(../backgrounds/light-background.png);
+    background-image: url(../backgrounds/light-background.webp);
     /* Background image */
     background-repeat: no-repeat;
     /* No image repeating */
@@ -69,7 +69,7 @@ body {
 body.dark {
     background-color: var(--color-bg-dark);
     /* Dark fallback color if background image fails */
-    background-image: url(../backgrounds/dark-background.png);
+    background-image: url(../backgrounds/dark-background.webp);
     /* Dark background image */
 }
 
@@ -143,7 +143,7 @@ button,
 nav {
     background-color: var(--color-bg-light);
     /* Light background color */
-    background-image: url(../backgrounds/nav-light-background.png);
+    background-image: url(../backgrounds/nav-light-background.webp);
     /* Light background image */
     background-repeat: no-repeat;
     /* Prevent image repetition */
@@ -157,7 +157,7 @@ nav {
 body.dark nav {
     background-color: var(--color-bg-dark);
     /* Dark fallback color if background image fails */
-    background-image: url(../backgrounds/nav-dark-background.png);
+    background-image: url(../backgrounds/nav-dark-background.webp);
     /* Dark background image */
 }
 
