@@ -1207,3 +1207,39 @@ To ensure Codoku's interface remained inclusive, color accessibility was tested 
 
 This process reinforced WCAG compliance and ensured Codoku remained readable and engaging for a wide spectrum of users.
 
+### **2.5.3. Typography**
+
+Typography played a critical role in Codoku’s design, shaping both visual personality and readability. The typefaces were selected to reflect the project’s brand aesthetic, emphasizing clarity, a retro-futuristic style, and an inviting tone for users across devices.
+
+#### **2.5.3.a Primary Typeface: Space Mono**
+Space Mono was selected as Codoku’s primary typeface for headings, navigation, and puzzle-related labels. Its monospaced design and geometric structure align with the game’s logical nature and retro-code aesthetic.
+
+According to FontForge:
+-	**Legibility**: Fixed-width character spacing improves alignment in puzzle grid labels and form elements. High x-height and clear character differentiation ensure clarity, especially when displaying digits or similar characters like 1, l, and I.
+-	**Readability**: While not ideal for dense text passages, Space Mono excels in short strings, buttons, and UI labels. Its distinct, tech-inspired appearance evokes the aesthetic of vintage programming environments.
+-	**Visual Character**: The font’s design is influenced by early computer interfaces, lending Codoku a futuristic and playful edge.
+-	**Accessibility Recommendations**: Space Mono performs best in bold weights and high-contrast settings. It’s complemented with sufficient font size and spacing to reduce visual fatigue in puzzle grids and modal interactions.
+
+#### **2.5.3.b Secondary Typeface: Quicksand**
+Quicksand was chosen for body text and supportive content such as instructions, tooltips, and alert messages. Its open forms create a friendly and accessible tone that contrasts Space Mono’s technical precision.
+
+According to FontForge:
+-	**Legibility**: Balanced x-height and smooth strokes improve readability across sizes, particularly in paragraph and label text.
+-	**Readability**: Performs well in longer-form content like rules explanations or modal descriptions. Its soft geometry complements the rigid forms of Space Mono.
+-	**Visual Fatigue & Adaptability**: Well-suited to both mobile and desktop reading. Maintains clarity at small sizes with low eye strain for prolonged reading.
+
+| **Space Mono** | Headings, Game Stats Panel, Modals | Monospaced, retro-futuristic, print-style with fixed-width. Emphasizes logic and precision. |
+| **Quicksand** | Paragraph Text, Grid Cells, Number Keys | Rounded, geometric sans-serif with a friendly tone. Optimized for readability and visual warmth. |
+
+#### **2.5.3.c Font Pairing Strategy**
+The combination of Space Mono and Quicksand establishes a clear typographic hierarchy:
+
+-	**Contrast in Structure**: Space Mono has sharp, structured letterforms with equal spacing, which pairs well with Quicksand’s smooth, rounded curves. This visual balance creates both hierarchy and harmony.
+-	**Tone Balance**: Space Mono conveys logic, precision, and “puzzle energy,” while Quicksand adds friendliness, softness, and approachability. This balance reflects Codoku’s design ethos—challenging but calming.
+-	**Legibility Across Contexts**: Space Mono is ideal for the grid and number interactions due to its monospaced structure. Quicksand shines in paragraphs and UI content, where open shapes and generous spacing support accessibility.
+-	**Functional Contrast**: Their stylistic differences make transitions between header and body text visually distinct, helping users quickly scan, navigate, and absorb content.  
+
+![Font Pairings](docs/figures/typography/fonts.webp)  
+*Screenshots of font previews on Google Fonts. From top to bottom: Space Mono, Quicksand.*
+
+Font delivery was handled via Google Fonts, ensuring fast loading and cross-platform rendering. The font sizes were responsive and set using rem units to adapt across screen sizes. Bootstrap’s base typography classes (e.g., .display-6, .lead, .fw-bold) were layered on top of these fonts for scalable responsiveness and accessibility compliance.
