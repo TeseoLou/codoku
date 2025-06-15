@@ -17,6 +17,25 @@ const navSounds = {
 };
 
 /**
+ * Toggles visibility of the settings dropdown on smaller screens when the settings cog button is clicked.
+ * This enables users to access theme and sound toggles via an overlay menu on small viewports (≤ 992px).
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  // Get the cog icon button element that opens the settings dropdown
+  const settingsToggleBtn = document.getElementById('settings-toggle');
+
+  // Get the hidden dropdown container element that holds the toggles
+  const settingsDropdown = document.getElementById('settings-dropdown');
+
+  // When the cog icon is clicked, toggle the dropdown visibility
+  settingsToggleBtn.addEventListener('click', () => {
+    // Toggles the Bootstrap utility class 'd-none' to show/hide the settings menu
+    settingsDropdown.classList.toggle('d-none');
+  });
+});
+
+
+/**
  * Collapse the Bootstrap navbar when clicking outside of the open menu
  */
 // Reference: https://stackoverflow.com/questions/74670132

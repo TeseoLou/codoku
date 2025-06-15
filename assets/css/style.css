@@ -232,15 +232,36 @@ body.dark .nav-link.active {
     /* Underline active link */
 }
 
-/* Theme switch */
-#theme-toggle {
-    min-width: 150px;
-    /* Change toggle width */
+#theme-toggle,
+#sound-toggle {
+    min-width: auto;
+    font-size: 0.75rem;
+    /* smaller font */
+}
+
+#theme-toggle .form-check-label,
+#sound-toggle .form-check-label {
+    font-size: 0.75rem;
+    /* smaller label text */
+}
+
+#theme-toggle .form-check-input,
+#sound-toggle .form-check-input {
+    transform: scale(0.8);
+    /* smaller switch size */
+}
+
+#theme-toggle,
+#sound-toggle {
+    flex-shrink: 1;
+    white-space: nowrap;
 }
 
 #sound-toggle {
-  min-width: 150px;
-} 
+  min-width: auto;
+  font-size: 0.75rem;
+  margin-left: 0.5rem; /* Reduce space between toggles */
+}
 
 /* Switch checkbox */
 body:not(.dark) .form-check-input[type="checkbox"]:checked {
@@ -284,21 +305,23 @@ body.dark #theme-toggle .form-check-input[type="checkbox"]:not(:focus)::before {
 }
 
 /* Theme toggle label */
-#theme-label span, #sound-label span {
+#theme-label span,
+#sound-label span {
     font-family: var(--font-heading);
     /* Applies the space mono font */
 }
 
 /* Sound switch ON (green)*/
 #sound-switch:checked {
-    background-color: #a5f3a5 !important; 
+    background-color: #a5f3a5 !important;
     border-color: #a5f3a5 !important;
     box-shadow: 0 0 8px #f69696 !important;
 }
 
 /* Sound switch OFF (red)*/
 #sound-switch:not(:checked) {
-    background-color: #f69696 !important; /* Red */
+    background-color: #f69696 !important;
+    /* Red */
     border-color: #f69696 !important;
     box-shadow: 0 0 8px #a5f3a5;
 }
@@ -332,7 +355,8 @@ header {
 }
 
 /* Title */
-#title, #about-title {
+#title,
+#about-title {
     font-family: var(--font-heading);
     /* Use space mono heading font  */
     font-weight: normal;
@@ -367,7 +391,7 @@ body.dark .modal-footer {
 }
 
 .modal-header {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 /* --- Rules Modal --- */
@@ -867,31 +891,31 @@ body.dark #grid p.bottom-border {
 }
 
 /* Hover effect on non-generated cells - Dark mode */
-body.dark #grid p:hover:not(.generated) {    
+body.dark #grid p:hover:not(.generated) {
     background-color: #e0b33671;
     /* Gold highlight */
 }
 
 /* Incorrect input feedback */
-p.incorrect {    
+p.incorrect {
     color: #7d2525 !important;
     /* Deep red for error */
 }
 
 /* Incorrect input feedback override - Dark mode */
-body.dark p.incorrect {    
+body.dark p.incorrect {
     color: #f69696 !important;
     /* Bright red for visibility */
 }
 
 /* Hinted cell color */
-p.hinted {    
+p.hinted {
     color: #285228 !important;
     /* Deep green for hint */
 }
 
 /* Hinted cell color override - Dark mode */
-body.dark p.hinted {    
+body.dark p.hinted {
     color: #a5f3a5 !important;
     /* Bright green for visibility */
 }
@@ -948,7 +972,7 @@ body.dark p.hinted {
 }
 
 /* Number keys - Dark mode*/
-body.dark #numbers-container h2 {    
+body.dark #numbers-container h2 {
     color: var(--color-black);
     /* Force black text in dark mode */
 }
@@ -985,22 +1009,28 @@ body.dark #numbers-container h2 {
 
 /* Admire Puzzle Button */
 #admire-puzzle {
-    background-color: #313335; /* Charcoal */
+    background-color: #313335;
+    /* Charcoal */
 }
 
 #admire-button:hover {
-    background-color: #b5b6b6; /* Even lighter on hover */
+    background-color: #b5b6b6;
+    /* Even lighter on hover */
 }
 
 /* Admire Puzzle Button - Dark mode */
-body.dark  #admire-puzzle {
-    background-color: #babcbd; /* Ash */
-    color: var(--color-black); /* White font */
+body.dark #admire-puzzle {
+    background-color: #babcbd;
+    /* Ash */
+    color: var(--color-black);
+    /* White font */
 }
 
-body.dark  #admire-puzzle:hover {
-    background-color: #e3e3e4; /* Lighter on hover */
-    color: var(--color-black); /* White font */
+body.dark #admire-puzzle:hover {
+    background-color: #e3e3e4;
+    /* Lighter on hover */
+    color: var(--color-black);
+    /* White font */
 }
 
 /* --- About Page --- */
@@ -1106,6 +1136,21 @@ body.dark #about-content img {
         --cell-font-size: 1.9rem;
         /* Set the font size for numbers inside each cell */
     }
+
+    #theme-toggle,
+    #sound-toggle {
+        font-size: 0.85rem;
+    }
+
+    #theme-toggle .form-check-label,
+    #sound-toggle .form-check-label {
+        font-size: 0.85rem;
+    }
+
+    #theme-toggle .form-check-input,
+    #sound-toggle .form-check-input {
+        transform: scale(0.9);
+    }
 }
 
 /* Extra Larger Phone Screens and Short*/
@@ -1182,6 +1227,29 @@ body.dark #about-content img {
         --cell-font-size: 2rem;
         /* Set the font size for numbers inside each cell */
     }
+}
+
+/* Larger toggles and labels on wider screens */
+@media screen and (min-width: 768px) {
+  #theme-toggle,
+  #sound-toggle {
+    font-size: 1rem;
+  }
+
+  #theme-toggle .form-check-label,
+  #sound-toggle .form-check-label {
+    font-size: 1rem;
+  }
+
+  #theme-toggle .form-check-input,
+  #sound-toggle .form-check-input {
+    transform: scale(1.1);
+  }
+
+  #theme-icon,
+  #sound-icon {
+    font-size: 1rem;
+  }
 }
 
 /* Large Tablets in Portrait Mode */
