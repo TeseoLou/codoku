@@ -501,10 +501,10 @@ function formatElapsedTime() {
     if (timeLimit === 'none') {
         return `--:--`;
     }   // Otherwise, return time in MM:SS format with padded seconds
-        // Reference: https://stackoverflow.com/questions/8043026
-        else {
+    // Reference: https://stackoverflow.com/questions/8043026
+    else {
         return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-    } 
+    }
 };
 
 /**
@@ -620,6 +620,8 @@ function startNewGame() {
     updateHintsDisplay();
     // Reset celebration      
     hasCelebrated = false;
+    // Show Cancel button on modal reopening
+    document.getElementById('cancel-button').style.display = 'inline-block';
 };
 
 /**
