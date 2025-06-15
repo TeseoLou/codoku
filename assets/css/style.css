@@ -309,7 +309,7 @@ header {
 body.dark .modal-content {
     background-color: var(--color-bg-dark);
     /* Dark background color */
-    background-image: url(../backgrounds/dark-background.png);
+    background-image: url(../backgrounds/dark-background.webp);
     /* Dark background image */
     color: var(--color-white);
     /* White text for contrast */

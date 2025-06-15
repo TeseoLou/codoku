@@ -46,15 +46,16 @@ function applyTheme(isLightMode, playSound = false) {
         $("#check-button"),
         $("#hint-button"),
         $("#congrats-new-game"),
-        $("#home-button")
+        $("#home-button"),
+        $("#confirm-leave-btn"),
+        $("#ok-button")
     ];
     // Toggle Bootstrap theme classes
     // Reference: https://www.freecodecamp.org/news/javascript-array-foreach-tutorial-how-to-iterate-through-elements-in-an-array-with-map/
     themeButtons.forEach($btn => {
         if ($btn.length) {
-            $btn
-                .toggleClass("btn-light", !isLightMode)
-                .toggleClass("btn-dark", isLightMode);
+            $btn.removeClass("btn-light btn-dark");
+            $btn.addClass(isLightMode ? "btn-dark" : "btn-light");
         }
     });
     // Save theme preference to localStorage
