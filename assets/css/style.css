@@ -332,7 +332,7 @@ body.dark .modal-footer {
 #rules-modal .modal-content {
     background-color: var(--color-bg-light);
     /* Light background color */
-    background-image: url(../backgrounds/light-background.png);
+    background-image: url(../backgrounds/light-background.webp);
     /* Light background image */
     background-repeat: no-repeat;
     /* Prevent image repetition */
@@ -354,7 +354,7 @@ body.dark .modal-footer {
 body.dark #rules-modal .modal-content {
     background-color: var(--color-bg-dark);
     /* Dark background color */
-    background-image: url(../backgrounds/dark-background.png);
+    background-image: url(../backgrounds/dark-background.webp);
     /* Dark background image */
     color: var(--color-white);
     /* Set text color to white */
@@ -477,7 +477,7 @@ body.dark footer a:hover i {
 .modal-content {
     background-color: var(--color-bg-light);
     /* Fallback background color */
-    background-image: url(../backgrounds/light-background.png);
+    background-image: url(../backgrounds/light-background.webp);
     /* Background image path */
     background-repeat: no-repeat;
     /* Prevent image repetition */

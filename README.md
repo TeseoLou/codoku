@@ -1249,8 +1249,127 @@ Font delivery was handled via Google Fonts, ensuring fast loading and cross-plat
 
 ### **2.5.4 Backgrounds**
 
+In Codoku, background design plays a vital role in enhancing both aesthetic appeal and usability across themes. Two primary background textures are used. One for Day Mode and one for Night Mode, ensuring each theme provides visual consistency and immersive contrast.
+
+![Day mode background](assets/backgrounds/light-background.webp)
+*Subtle, tactile paper texture reinforces clarity and approachability.*
+
+![Night mode background](assets/backgrounds/dark-background.webp)
+*Soft charcoal texture simulates print paper for a soothing dark theme.*
+
+These backgrounds were sourced from the Unsplash Creative Photo Community and chosen for their subtle, paper-like textures. They evoke the familiar feel of traditional printed puzzles, aligning with Codoku's branding as a calming, cognitively engaging digital experience.
+
+Both backgrounds are static (non-scrolling) to minimize motion distractions and preserve a sense of stability throughout gameplay. This static design choice reflects the calming, analog qualities of a physical Sudoku grid—grounding users in the puzzle-solving experience.
+
+#### **2.5.4.a Design Application**
+**Body**: Acts as the foundation of the user interface, providing consistent tactile background context.
+
+**Navbar & Footer**: These structural elements inherit the background texture to reinforce thematic coherence.
+
+**Modals**: Setup, Rules, and Completion modals blend with the background while remaining clearly defined using inner container styling.
+
+The visual contrast between the soft off-white paper texture and the charcoal fiber pattern ensures each mode feels distinct but consistent in tone, emphasizing calmness, focus, and logic-driven thinking.
+
+By using grounded textures over flat colors, Codoku's interface subtly reinforces the tactile satisfaction of pen-and-paper puzzle-solving—bridging the nostalgia of analog games with the accessibility of digital design.
+
+#### **2.5.4.b Fallback Color Support**  
+To support environments where background images may not load or where high-contrast settings are enabled, fallback colors were defined in the CSS using values from Codoku’s palette:
+
+> #F8F9FA (Off-white) ⚪ for Day Mode  
+> #212529 (Off-black) ⚫ for Night Mode
+
+These shades were chosen not only to preserve contrast and readability in the absence of textures, but also to mimic the soft greyscale tones of printed newspaper pages.
+
+This approach ensures WCAG-compliant contrast across modes while staying true to the project's visual identity. Even in simplified rendering environments, the fallback maintains Codoku’s minimalist, calming feel, supporting a broad range of accessibility needs and device capabilities.
+
 ### **2.5.5 Imagery**
+
+Visual storytelling played a subtle but important role in shaping Codoku’s surface layer. A small collection of hand-picked images and a bespoke illustration were used across the site to support branding and reinforce user engagement through tone, familiarity, and theme.
+
+#### **2.5.5.a About Page Imagery** 
+The first three images were selected or created specifically for the About page, where they helped communicate Codoku’s purpose and tone of voice. These image blocks were inserted between paragraphs to offer breathing space, aesthetic variety, and subtle visual storytelling.
+
+📰 **Newspaper Sudoku Puzzle** photograph (sourced from the Unsplash) evokes the tactile, analog origins of logic games, grounding Codoku in a familiar and nostalgic context.
+
+![Sudoku Puzzle in Newspaper](assets/images/about-sudoku.webp)
+*Photograph of a section of a Sudoku Puzzle from a newspaper puzzle page.*
+
+⌨️ **Keyboard Rubik’s Cube** image (also from Unsplash) symbolically bridges logic, interactivity, and tech, an ideal visual metaphor for the type of experience Codoku provides.
+
+![Sudoku Rubik's Cube in Use](assets/images/sudoku-rubiks.webp)
+*Photograph of a Rubik's Cube created with computer keyboard tiles.*
+
+📱 **Child and Adult on Tablet** was generated using ChatGPT’s image tools and edited on Pixlr, designed to represent a realistic scenario where digital puzzle play is used for focus, education, and quiet engagement.
+
+![Child and Older Adult playing Sudoku on tablet](assets/images/sudoku-tablet.webp)
+*Photograph of a child and older adult working together to solve a Codoku puzzle on tablet.*
+
+Together, these visuals help convey that Codoku is more than just a game—it’s a cognitive, accessible, and multi-generational tool for mindful play.
+
+#### **2.5.5.b 404 Page Illustration**
+To maintain brand consistency and a sense of humor, a custom hand-drawn illustration was created for the 404 Error page. Styled like a vintage newspaper comic strip with a headline proclaiming a "404 Alert," the image places a missing puzzle grid front and center. The image was then edited in Sketchbook to refine and digitize. This approach:
+
+![Person reading newspaper with front page message describing 404 alert](assets/images/breaking-news.webp)
+*Illustration of a person in business attire reading the news paper with 404 message alert on front page.*
+
+- Reinforces the printed-paper puzzle theme used across the site
+- Keeps the user experience light and on-brand even during navigation errors
+- Adds personality while subtly guiding users back to the main game
+
+This design was deliberately playful, matching the tone of Codoku without compromising usability or clarity.
+
+All imagery, both photographic and illustrated, was intentionally presented in black and white. This stylistic decision was made to maintain visual cohesion across both day and night themes, reinforce the print-inspired aesthetic, and reduce visual noise to keep focus on the puzzle interface itself. 
 
 ### **2.5.6 Buttons**
 
+The buttons and number keys on Codoku were designed to enhance clarity, accessibility, and tactile feedback across both themes. Inspired by physical interactions, their visual style was developed to feel familiar, playful, and functional.
+
+All **core interactive buttons** (New, Check, Clue, etc.) share a consistent layout and structure, but invert color schemes between Day and Night Mode:
+
+![Wireframe GIF showing button styling](docs/figures/gifs/buttons.gif)
+*GIF to illustrate the hover affects and styling for the buttons. Left to Right: Day Mode, Night Mode.*
+
+The goal was to offer high contrast and accessibility in both visual environments, while also providing a satisfying user experience through visual feedback. Button text uses Space Mono for its clean, bold styling and coding-inspired tone.
+
+The **number keys** (1–9 and ⨉ for erase) are exclusive to the Game page. These were styled to resemble raised keyboard keys with:
+
+![Wireframe GIF showing number keys styling](docs/figures/gifs/number-keys.gif)
+*GIF to illustrate the hover affects and styling for the Number keys.*
+
+- A monochrome color palette remains consistent for both themes
+- Bold outlines to reinforce the tactile quality
+- Hover effects that lighten or darken depending on the mode
+- Click feedback using subtle animations and shadows
+
+These keys provide an alternative to typing, making Codoku accessible for touch users and enhancing the physicality of the digital experience.
+
 ### **2.5.7 Iconography**
+Icons played a subtle but important role, serving as recognizable micro-interactions for navigation, feedback, and brand presence. Their inclusion helped create an intuitive UI by reducing the cognitive load needed to interpret functional elements.
+
+#### **2.5.7.a Favicon**
+A custom site favicon was created using Canva and exported as an .ico file using an online favicon generator. This was added to the site’s <head> element, allowing Codoku to have a recognizable tab icon and establishing a subtle brand identity in browser environments.
+
+![Codoku Favicon](assets/favicons/android-chrome-192x192.png)   
+*Codoku Favicon Preview*
+
+#### **2.5.7.b Font Awesome Integration**
+All functional icons in Codoku were provided by Font Awesome to ensure clarity and visual consistency. These included:
+- Theme toggle icon (sun/moon)
+- Back and Enter arrows on modal and alert buttons
+- Social media logos in the footer (Facebook, Instagram, X/Twitter)
+
+These vector icons are scalable and accessible, improving responsiveness and load times while supporting screen reader compatibility.
+
+#### **2.5.7.c Hover Effects & Feedback**
+To enhance interactivity, hover styles were applied to all clickable icons, especially the social media links in the footer. On hover, each icon:
+- Enlarges slightly with a soft transform scale
+- Gains a subtle drop shadow or brightness change
+- Uses a cursor pointer to reinforce clickability
+
+![Wireframe GIF to show navbar hover effects for icons](docs/figures/gifs/socials.gif)   
+*GIF to illustrate the hover affects and styling for the social media icons in the site footer.*
+
+These animations provide intuitive feedback, inviting users to engage with external content without the need for additional explanatory text.
+
+Icons were styled using either the light (#F8F9FA) or dark (#212529) theme colors, depending on the mode selected. They dynamically inverted based on the theme toggle to maintain contrast and legibility.
+
