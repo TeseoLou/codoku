@@ -513,13 +513,32 @@ function formatElapsedTime() {
 function triggerAutoWinCheck() {
     // If the player hasn't completed yet and the answers are right
     if (!hasCelebrated && isBoardCompleteAndCorrect()) {
-        // Call function - Confetti animation when board is complete
+        // Count hinted editable cells (hinted class)
+        const hintedCount = $('.editable.hinted').length;
+        // Count total editable cells
+        const totalEditable = $('.editable').length;
+        // Count of user-filled (non-hinted) editable cells
+        const unhintedCount = totalEditable - hintedCount;
+        // NEW: Check if puzzle was solved using hints
+        // Reference: https://api.jquery.com/length/
+        const solvedWithHints = hintedCount > 0 && (hintedCount >= unhintedCount);
+        // If hints were heavily used, show a different modal
+        if (solvedWithHints) {
+            // Show alternative modal encouraging fewer hints
+            // Reference: https://getbootstrap.com/docs/5.3/components/modal/#via-javascript
+            const hintedModal = new bootstrap.Modal(document.getElementById('hinted-win-modal'));
+            hintedModal.show();
+            hasCelebrated = true; // prevent this from triggering again
+            // Optional: stop timer if running
+            if (countdownInterval) {
+                clearInterval(countdownInterval);
+            }
+            return; // Exit early — don't show the standard modal
+        }
+        // 🎉 Otherwise: Normal win with confetti and celebration modal
         popConfetti();
         soundEffects.play("applause");
-        // Prevent repeated celebration
         hasCelebrated = true;
-        // Halt the countdown timer
-        // Reference: https://stackoverflow.com/questions/57860947
         if (countdownInterval) {
             clearInterval(countdownInterval);
         };
@@ -534,28 +553,27 @@ function triggerAutoWinCheck() {
         // Create a new Bootstrap Modal instance for the congratulations modal 
         // Reference: https://getbootstrap.com/docs/5.3/components/modal/#via-javascript
         const congratsModal = new bootstrap.Modal(document.getElementById('congrats-modal'));
-        // Display the modal using the .show() method
         congratsModal.show();
-    } // If the board is full but the user has made a mistake
+    }
+    // If board is full but incorrect
     else if (isBoardFilled() && !isBoardCompleteAndCorrect()) {
-        // Get the preloaded error sound element from the HTML
-        // Reference: https://stackoverflow.com/questions/21815323
+        // Create a new Bootstrap Modal instance for the congratulations modal 
+        // Reference: https://getbootstrap.com/docs/5.3/components/modal/#via-javascript
         const errorAudio = document.getElementById("error-sound");
         // Make sure the audio element exists before trying to play it
         if (errorAudio) {
             // Reset the audio to the start so it plays from the beginning each time
             // Reference: https://dev.to/pavelkeyzik/does-anyone-knows-how-to-change-current-time-of-song-correctly-in-javascript-2mkn
             errorAudio.currentTime = 0;
-            // Play the error sound
             errorAudio.play();
         };
         // Delay the alert slightly so the sound can begin playing before the blocking alert appears
         // Reference: https://stackoverflow.com/questions/65764348
         setTimeout(() => {
             showAlertModal("🔍 Try again! It looks like there's an error somewhere!");
-        }, 100); // 0.1second/100ms delay
-    };
-};
+        }, 100);
+    }
+}
 
 /**
  * Ends the game when the timer runs out, disables input, and shows the setup modal
@@ -586,21 +604,6 @@ function endGameDueToTime() {
         // Reference: https://stackoverflow.com/questions/8906520
         $(this).css('pointer-events', 'none');
     });
-    // Access the setup modal element
-    const setupModalElement = document.getElementById('setup-modal');
-    // Create a new Bootstrap modal instance and display to allow the player to start over or pick a new game
-    // Reference: https://getbootstrap.com/docs/5.3/components/modal/#methods
-    const setupModalInstance = new bootstrap.Modal(setupModalElement);
-    setupModalInstance.show()
-    // When the modal is fully shown trigger the start of a new game
-    // https://getbootstrap.com/docs/5.3/components/modal/#events
-    setupModalElement.addEventListener('shown.bs.modal', () => {
-        // Call function - Start a game by providing a fresh board, resetting stats, and resetting the timer and game stats
-        startNewGame();
-    }
-        // Ensure this only runs once per modal opening
-        // Reference: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#once
-        , { once: true });
 };
 
 /**
@@ -655,25 +658,46 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 // Call function - Pick one empty cell and show its correct number from the solution
                 revealHint();
+                // Check for win immediately after hint
+                triggerAutoWinCheck();
                 soundEffects.play("hint");
             }, 10); // After a short 10ms delay
         });
     };
     // Handle New Game button in the congratulations modal
-    $('#congrats-new-game').on('click', () => {
-        // Create a new Bootstrap modal instance for the setup screen
-        // Reference: https://getbootstrap.com/docs/5.3/components/modal/#via-javascript
-        const setupModal = new bootstrap.Modal(document.getElementById('setup-modal'));
-        // Opens the modal so the user can configure a new puzzle
+    document.getElementById("congrats-new-game").addEventListener("click", function () {
+        // Hide the congratulations modal
+        const congratsModalElement = document.getElementById("congrats-modal");
+        const bsCongratsModal = bootstrap.Modal.getInstance(congratsModalElement);
+        if (bsCongratsModal) {
+            bsCongratsModal.hide();
+        }
+        // Show the setup modal
+        const setupModal = new bootstrap.Modal(document.getElementById("setup-modal"));
         setupModal.show();
-        // Locate the modal element by ID
-        const congratsModal = document.getElementById('congrats-modal');
-        // Retrieve the existing Bootstrap modal instance
-        // Reference: https://getbootstrap.com/docs/5.3/components/modal/#getinstance
-        const bsCongrats = bootstrap.Modal.getInstance(congratsModal);
-        // Calls .hide() to close it
-        bsCongrats.hide();
     });
+    // Handle New Game button in the hinted win modal
+    document.getElementById("completed-new-game").addEventListener("click", function () {
+        // Hide the hinted win modal
+        const hintedWinModalElement = document.getElementById("hinted-win-modal");
+        const bsHintedWinModal = bootstrap.Modal.getInstance(hintedWinModalElement);
+        if (bsHintedWinModal) {
+            bsHintedWinModal.hide();
+        }
+        // Show the setup modal
+        const setupModal = new bootstrap.Modal(document.getElementById("setup-modal"));
+        setupModal.show();
+    });
+    // Optional: Update the ID if your timeout modal's button is something else
+    document.getElementById("ok-button").addEventListener("click", function () {
+        const setupModal = new bootstrap.Modal(document.getElementById("setup-modal"));
+        setupModal.show();
+        // Only start a new game when the setup modal is fully visible
+        document.getElementById("setup-modal").addEventListener("shown.bs.modal", () => {
+            startNewGame();
+        }, { once: true });
+    });
+
 });
 
 // Call function - Render a blank 9x9 Sudoku grid

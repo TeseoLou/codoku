@@ -30,31 +30,33 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-transparent sticky-top">
-        <div class="container d-flex align-items-center justify-content-between">
-            <!-- Theme toggle -->
-            <div id="theme-toggle" class="d-flex align-items-center">
-                <div class="form-check form-switch m-0">
-                    <label class="form-check-label d-flex align-items-center gap-2 ms-2" for="theme-switch"
-                        id="theme-label">
-                        <input class="form-check-input" type="checkbox" id="theme-switch" role="switch" checked />
-                        <i id="theme-icon" class="fa-solid fa-sun"></i>
-                        <span>Display</span>
-                    </label>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-transparent sticky-top pt-3">
+        <section class="container d-flex align-items-center justify-content-between">
+            <aside class="d-flex align-items-center gap-1">
+                <!-- Theme toggle -->
+                <div id="theme-toggle" class="d-flex align-items-center">
+                    <div class="form-check form-switch m-0">
+                        <label class="form-check-label d-flex align-items-center gap-2 ms-1" for="theme-switch"
+                            id="theme-label">
+                            <input class="form-check-input" type="checkbox" id="theme-switch" role="switch" checked />
+                            <i id="theme-icon" class="fa-solid fa-sun"></i>
+                            <span>Display</span>
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <!-- Sound toggle -->
-            <div id="sound-toggle" class="d-flex align-items-center ms-3">
-                <div class="form-check form-switch m-0">
-                    <label class="form-check-label d-flex align-items-center gap-2 ms-2" for="sound-switch"
-                        id="sound-label">
-                        <input class="form-check-input" type="checkbox" id="sound-switch" role="switch" />
-                        <i id="sound-icon" class="fa-solid fa-volume-xmark"></i>
-                        <span>Sound</span>
-                    </label>
+                <!-- Sound toggle -->
+                <div id="sound-toggle" class="d-flex align-items-center ms-1">
+                    <div class="form-check form-switch m-0">
+                        <label class="form-check-label d-flex align-items-center gap-2 ms-1 for=" sound-switch"
+                            id="sound-label">
+                            <input class="form-check-input" type="checkbox" id="sound-switch" role="switch" />
+                            <i id="sound-icon" class="fa-solid fa-volume-xmark"></i>
+                            <span>Sound</span>
+                        </label>
+                    </div>
                 </div>
-            </div>
+            </aside>
             <!-- Hamburger -->
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false"
@@ -65,7 +67,7 @@
             <div class="collapse navbar-collapse" id="navbar-content">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-black" href="index.html">Game</a>
+                        <a class="nav-link text-black active" aria-current="page" href="index.html">Game</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-black" href="about.html">About</a>
@@ -78,7 +80,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </section>
     </nav>
     <!-- 404 Main Content -->
     <main class="container text-center" id="not-found">
