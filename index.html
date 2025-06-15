@@ -218,6 +218,9 @@
                                 </section>
                             </fieldset>
                             <div class="text-center mt-4">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+                                    Cancel
+                                </button>
                                 <button type="button" id="start-button" class="btn btn-dark">
                                     Enter ↲
                                 </button>
@@ -261,7 +264,8 @@
         </div>
     </section>
     <!-- Reusable Alert Modal -->
-    <section id="alert-modal" class="modal fade" tabindex="-1" aria-labelledby="alert-modal-label" aria-hidden="true">
+    <section id="alert-modal" class="modal fade" tabindex="-1" aria-labelledby="alert-modal-label" aria-hidden="true"
+        data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-dialog-centered">
             <article class="modal-content">
                 <div class="modal-border">
@@ -286,7 +290,7 @@
     </section>
     <!-- Confirm Navigation Modal -->
     <section id="confirm-leave-modal" class="modal fade" tabindex="-1" aria-labelledby="confirm-leave-label"
-        aria-hidden="true">
+        aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-dialog-centered">
             <article class="modal-content">
                 <div class="modal-border">
