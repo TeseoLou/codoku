@@ -639,10 +639,10 @@ body.dark .form-check-input[type="radio"]::before {
     /* Align footer content to center */
 }
 
-/* Start button */
-#start-button {
-    margin-bottom: 20px;
-    /* Space between options and start button */
+/* Setup Modal buttons */
+#start-button,
+#cancel-button {
+    margin: 0 10px 20px;
 }
 
 /* --- Main Section --- */
