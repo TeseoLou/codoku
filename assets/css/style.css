@@ -327,6 +327,10 @@ body.dark .modal-footer {
     /* Set text color to white for contrast */
 }
 
+.modal-header {
+  border-bottom: none;
+}
+
 /* --- Rules Modal --- */
 /* Modal content container */
 #rules-modal .modal-content {
