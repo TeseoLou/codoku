@@ -264,7 +264,7 @@ body.dark .form-check-input[type="checkbox"] {
 
 /* Switch thumb - Dark mode */
 /* Reference: https://stackoverflow.com/questions/57224537 */
-body.dark .form-check-input[type="checkbox"]:not(:focus)::before {
+body.dark #theme-toggle .form-check-input[type="checkbox"]:not(:focus)::before {
     content: "";
     /* Inserts an empty pseudo-element */
     display: block;
@@ -284,9 +284,44 @@ body.dark .form-check-input[type="checkbox"]:not(:focus)::before {
 }
 
 /* Theme toggle label */
-#theme-label span {
+#theme-label span, #sound-label span {
     font-family: var(--font-heading);
     /* Applies the space mono font */
+}
+
+/* Sound switch ON (green)*/
+#sound-switch:checked {
+    background-color: #a5f3a5 !important; 
+    border-color: #a5f3a5 !important;
+    box-shadow: 0 0 8px #f69696 !important;
+}
+
+/* Sound switch OFF (red)*/
+#sound-switch:not(:checked) {
+    background-color: #f69696 !important; /* Red */
+    border-color: #f69696 !important;
+    box-shadow: 0 0 8px #a5f3a5;
+}
+
+/* Switch thumb - Mute mode */
+/* Reference: https://stackoverflow.com/questions/57224537 */
+body.dark #sound-toggle .form-check-input[type="checkbox"]:not(:focus)::before {
+    content: "";
+    /* Inserts an empty pseudo-element */
+    display: block;
+    /* Makes the pseudo-element a block-level element */
+    width: 0.7rem;
+    /* Sets the width of the switch thumb */
+    height: 0.7rem;
+    /* Sets the height of the switch thumb */
+    background-color: white;
+    /* Colors the thumb white */
+    border-radius: 50%;
+    /* Makes the thumb perfectly circular */
+    transform: translateX(0.1rem) translateY(0.1rem);
+    /* Slightly positions the thumb inside the switch */
+    transition: transform 2s ease;
+    /* Animates the position change smoothly over 2 seconds */
 }
 
 /* --- Header Section--- */
