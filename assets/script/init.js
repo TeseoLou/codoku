@@ -9,6 +9,18 @@ function initPage() {
     setupThemeSwitch();
     // Call function - Close the setup modal when the Enter button is clicked
     setupStartButton();
+    if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
+        const setupModalElement = document.getElementById("setup-modal");
+        if (setupModalElement) {
+            // Create Bootstrap modal instance with optional config
+            const setupModal = new bootstrap.Modal(setupModalElement, {
+                backdrop: 'static', // Prevent clicking outside to close
+                keyboard: false     // Prevent Esc key from closing
+            });
+            // Show the setup modal
+            setupModal.show();
+        }
+    }
 }
 
 // Run everything once the page is fully loaded
