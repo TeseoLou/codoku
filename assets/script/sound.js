@@ -7,10 +7,12 @@ let isSoundEnabled = false;
 function applySoundSetting(playToggleSound = false) {
   const soundSwitch = document.getElementById("sound-switch");
   const soundIcon = document.getElementById("sound-icon");
-  // Update icon and checkbox
-  soundSwitch.checked = isSoundEnabled;
-  soundIcon.className = isSoundEnabled ? "fa-solid fa-volume-high" : "fa-solid fa-volume-xmark";
-  // Save setting to localStorage
+  if (soundSwitch) {
+    soundSwitch.checked = isSoundEnabled;
+  }
+  if (soundIcon) {
+    soundIcon.className = isSoundEnabled ? "fa-solid fa-volume-high" : "fa-solid fa-volume-xmark";
+  }
   localStorage.setItem("sound", isSoundEnabled ? "on" : "off");
 }
 
@@ -21,10 +23,15 @@ function setupSoundToggle() {
   const savedSoundSetting = localStorage.getItem("sound");
   isSoundEnabled = savedSoundSetting === "on";
   applySoundSetting(false);
-  // Add toggle listener
   const soundSwitch = document.getElementById("sound-switch");
-  soundSwitch.addEventListener("change", function () {
-    isSoundEnabled = this.checked;
-    applySoundSetting(true);
-  });
+  if (soundSwitch) {
+    soundSwitch.addEventListener("change", function () {
+      isSoundEnabled = this.checked;
+      applySoundSetting(true);
+    });
+  }
 }
+
+// Run setup on page load
+document.addEventListener("DOMContentLoaded", setupSoundToggle);
+
