@@ -1,4 +1,14 @@
 /**
+ * Display a custom Bootstrap alert modal with a message
+ * @param {string} message - The message to display
+ */
+function showAlertModal(message) {
+    $('#alert-modal-message').text(message);
+    const modal = new bootstrap.Modal(document.getElementById('alert-modal'));
+    modal.show();
+}
+
+/**
  * Initialize all interactive features when the page loads
  */
 // Reference: https://www.shecodes.io/athena/60837-how-to-call-a-function-within-another-function-in-javascript

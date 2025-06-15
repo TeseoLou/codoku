@@ -260,6 +260,44 @@
             </article>
         </div>
     </section>
+    <!-- Reusable Alert Modal -->
+    <section id="alert-modal" class="modal fade" tabindex="-1" aria-labelledby="alert-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <article class="modal-content">
+                <div class="modal-border">
+                    <header class="modal-header">
+                        <h2 id="alert-modal-label" class="modal-title">Notice</h2>
+                    </header>
+                    <section class="modal-body">
+                        <p id="alert-modal-message">This is an alert message.</p>
+                    </section>
+                    <footer class="modal-footer d-flex justify-content-center border-0">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">OK ↲</button>
+                    </footer>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- Confirm Navigation Modal -->
+    <section id="confirm-leave-modal" class="modal fade" tabindex="-1" aria-labelledby="confirm-leave-label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <article class="modal-content">
+                <div class="modal-border">
+                    <header class="modal-header">
+                        <h2 id="confirm-leave-label" class="modal-title">Leave Game?</h2>
+                    </header>
+                    <section class="modal-body">
+                        <p>Your current game will be lost. Are you sure you want to leave?</p>
+                    </section>
+                    <footer class="modal-footer d-flex justify-content-center gap-3 border-0">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                        <button id="confirm-leave-btn" type="button" class="btn btn-dark">Confirm</button>
+                    </footer>
+                </div>
+            </article>
+        </div>
+    </section>
     <!-- Footer Section -->
     <footer>
         <div id="footer-content" class="container d-flex justify-content-between align-items-center text-white">

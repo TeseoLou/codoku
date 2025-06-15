@@ -552,7 +552,7 @@ function triggerAutoWinCheck() {
         // Delay the alert slightly so the sound can begin playing before the blocking alert appears
         // Reference: https://stackoverflow.com/questions/65764348
         setTimeout(() => {
-            alert("🔍 Try again! It looks like there's an error somewhere!");
+            showAlertModal("🔍 Try again! It looks like there's an error somewhere!");
         }, 100); // 0.1second/100ms delay
     };
 };
@@ -575,7 +575,7 @@ function endGameDueToTime() {
     // Slightly delay the alert so the alarm sound has time to begin playing
     // Reference: https://stackoverflow.com/questions/65764348
     setTimeout(() => {
-        alert("⏰ Time's up! Better luck next time."); // 100ms delay
+        showAlertModal("⏰ Time's up! Better luck next time.");
     }, 100);
     // Disable all editable cells 
     // https://stackoverflow.com/questions/47168607
