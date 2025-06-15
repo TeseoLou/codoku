@@ -337,25 +337,25 @@ function startTimer() {
     // Get the time limit set by the user in the setup modal
     // Reference: https://stackoverflow.com/questions/15148659
     const timeLimit = $('input[name="time"]:checked').val();
+    // Stop any existing timer before starting a new one
+    // Reference: https://stackoverflow.com/questions/57860947
+    if (countdownInterval) {
+        clearInterval(countdownInterval);
+        countdownInterval = null; // Clear the interval reference
+    }
     // If the user selects no timer
     if (timeLimit === "none") {
-        // Clear timer in game-stats div if no time is selected
-        $('#timer').text("Timer: None");
-        // Exits without starting a countdown
-        return;
+        timeRemaining = 0; // Reset timeRemaining for a clean state
+        $('#timer').text("Timer: None"); // Clear timer in game-stats div if no time is selected
+        return; // Exits without starting a countdown
     }
     // Converts the user’s time limit from a string to an integer
     // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
     let minutes = parseInt(timeLimit, 10);
     // Multiplies by 60 to convert minutes to seconds
     timeRemaining = minutes * 60;
-    // Call function- Show remaining time in game-stats
+    // Call function - Show remaining time in game-stats
     updateTimerDisplay();
-    // Stop any existing timer before starting a new one
-    // Reference: https://stackoverflow.com/questions/57860947
-    if (countdownInterval) {
-        clearInterval(countdownInterval);
-    }
     // Begin countdown loop every second/1000ms
     // Reference: https://vaidehijoshi.github.io/blog/2015/01/06/the-final-countdown-using-javascripts-setinterval-plus-clearinterval-methods/
     countdownInterval = setInterval(() => {
@@ -363,16 +363,18 @@ function startTimer() {
         timeRemaining--;
         // Call function - Show remaining time in game-stats on each tick
         updateTimerDisplay();
+
         // End game when timer reaches 00:00
         if (timeRemaining <= 0) {
             // Stop existing timer
             // Reference: https://stackoverflow.com/questions/57860947
             clearInterval(countdownInterval);
+            countdownInterval = null; // Clear the interval reference
             // Call function - Ends the game when the timer runs out, disables input, and shows the setup modal
             endGameDueToTime();
         }
     }, 1000);
-};
+}
 
 /**
  * Show difficulty level in game-stats
