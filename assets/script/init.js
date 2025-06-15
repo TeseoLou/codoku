@@ -19,6 +19,7 @@ function initPage() {
     setupThemeSwitch();
     // Call function - Close the setup modal when the Enter button is clicked
     setupStartButton();
+    setupSoundToggle();
     if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
         const setupModalElement = document.getElementById("setup-modal");
         if (setupModalElement) {

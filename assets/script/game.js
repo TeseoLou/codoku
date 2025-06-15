@@ -28,10 +28,8 @@ const soundEffects = {
         // Retrieve the sound object matching the given name from the themeToggleSounds object
         const sound = this[name];
         // Check if a valid sound was found for the given name
-        if (sound) {
-            // Restart sound
+        if (isSoundEnabled && sound) {
             sound.currentTime = 0;
-            // Play the sound
             sound.play();
         }
     }

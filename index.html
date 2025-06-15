@@ -45,6 +45,17 @@
                     </label>
                 </div>
             </div>
+            <!-- Sound toggle -->
+            <div id="sound-toggle" class="d-flex align-items-center ms-3">
+                <div class="form-check form-switch m-0">
+                    <label class="form-check-label d-flex align-items-center gap-2 ms-2" for="sound-switch"
+                        id="sound-label">
+                        <input class="form-check-input" type="checkbox" id="sound-switch" role="switch" />
+                        <i id="sound-icon" class="fa-solid fa-volume-xmark"></i>
+                        <span>Sound</span>
+                    </label>
+                </div>
+            </div>
             <!-- Hamburger -->
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false"
@@ -219,7 +230,7 @@
                             </fieldset>
                             <div class="text-center mt-4">
                                 <button type="button" id="cancel-button" class="btn btn-light" data-bs-dismiss="modal"
-                                    style="display: none;">
+                                    style="display: none">
                                     Cancel
                                 </button>
                                 <button type="button" id="start-button" class="btn btn-dark">
@@ -358,6 +369,7 @@
     <!-- Javascript Files -->
     <script src="assets/script/navbar.js"></script>
     <script src="assets/script/theme.js"></script>
+    <script src="assets/script/sound.js"></script>
     <script src="assets/script/setup-modal.js"></script>
     <script src="assets/script/init.js"></script>
     <script src="assets/script/game.js"></script>

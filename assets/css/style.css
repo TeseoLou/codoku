@@ -238,6 +238,10 @@ body.dark .nav-link.active {
     /* Change toggle width */
 }
 
+#sound-toggle {
+  min-width: 150px;
+} 
+
 /* Switch checkbox */
 body:not(.dark) .form-check-input[type="checkbox"]:checked {
     background-color: var(--color-accent);
