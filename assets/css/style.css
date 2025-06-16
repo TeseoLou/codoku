@@ -328,7 +328,7 @@ body.dark #theme-toggle .form-check-input[type="checkbox"]:not(:focus)::before {
 
 /* Switch thumb - Mute mode */
 /* Reference: https://stackoverflow.com/questions/57224537 */
-body.dark #sound-toggle .form-check-input[type="checkbox"]:not(:focus)::before {
+body.dark #sound-toggle .form-check-input[type="checkbox"]:not(:checked):not(:focus)::before {
     content: "";
     /* Inserts an empty pseudo-element */
     display: block;
