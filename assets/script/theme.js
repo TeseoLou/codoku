@@ -9,13 +9,10 @@ const themeToggleSounds = {
     // Method that plays a sound effect by name 
     // Reference: https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement
     play(name) {
-        // Retrieve the sound object matching the given name from the themeToggleSounds object
         const sound = this[name];
-        // Check if a valid sound was found for the given name
-        if (sound) {
-            // Restart sound
+        // Check if sound is enabled globally before playing
+        if (isSoundEnabled && sound) {
             sound.currentTime = 0;
-            // Play the sound
             sound.play();
         }
     }
