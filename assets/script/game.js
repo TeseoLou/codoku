@@ -25,8 +25,15 @@ const soundEffects = {
 };
 
 /**
- * Render a blank 9x9 Sudoku grid
+ * Creates and renders a clean 9x9 Sudoku grid inside the #grid container.
+ * Dynamically generates a row of 9 <p> elements per row, each marked with 
+ * data attributes for its position. Classes are applied to style the grid 
+ * structure visually, including thicker borders for 3x3 boxes.
+ * This approach avoids hardcoded HTML, makes it easy to reset or rebuild
+ * the board on new game start, and keeps the layout modular and flexible.
+ * Used before populating the grid with puzzle data from the API.
  */
+
 // Reference: https://www.geeksforgeeks.org/create-a-sudoku-puzzle-using-html-css-javascript/
 function renderEmptyGrid() {
     const gridContainer = $('#grid');
@@ -67,7 +74,13 @@ function renderEmptyGrid() {
 };
 
 /**
- * Use generated sudoku grid from API Ninjas to put cell number values in board
+ * Fills the grid with values from the API-generated puzzle data.
+ * Loops through each cell using its row and column data attributes,
+ * placing the correct number where provided. Fixed numbers are styled 
+ * as bold and locked, while empty cells are made editable for user input.
+ * Keeps the grid dynamic and easy to repopulate on each new game.
+ * Also triggers cell interactivity setup so players can start interacting
+ * with the puzzle immediately.
  */
 function populateGrid(puzzleData) {
     // Reference: https://stackoverflow.com/questions/4958081
@@ -92,7 +105,13 @@ function populateGrid(puzzleData) {
 };
 
 /**
- * Create a new Sudoku board + solution from API Ninjas according to difficulty level chosen by the user
+ * Fetches a new Sudoku puzzle and solution from the API based on user-selected difficulty.
+ * Sends a GET request to the API Ninjas Sudoku endpoint using the selected difficulty.
+ * On success, stores the solution for future validation, then renders a fresh grid
+ * and populates it with the puzzle data.
+ * This keeps the game fully dynamic, allowing new puzzles to be generated 
+ * on demand without hardcoding any layouts. Also ensures consistency between
+ * the rendered puzzle and its solution for accurate checking later.
  */
 // Reference: https://www.api-ninjas.com/api/sudoku
 function fetchSudokuBoard() {
@@ -118,7 +137,13 @@ function fetchSudokuBoard() {
 };
 
 /**
- * Allow interactivity with editable grid cells with clicking or typing
+ * Enables interaction with user-editable cells via clicks, keyboard input, and number buttons.
+ * Clicking a cell highlights it as the active selection. Users can then type numbers 1–9 or use 
+ * on-screen keys to fill it in. Backspace/Delete clears the content. 
+ * Interactions are restricted to cells marked as editable to prevent tampering with fixed puzzle values.
+ * This modular setup keeps the input system flexible, supports real-time error highlighting, 
+ * and triggers auto-win checks after every valid input. Also integrates tap and key sound effects
+ * to enhance feedback.
  */
 function enableCellSelection() {
     // Reference: https://stackoverflow.com/questions/47168607
@@ -175,7 +200,12 @@ function enableCellSelection() {
 };
 
 /**
- * Compare the user's current inputs against the correct solution
+ * Compares the player's current input with the solution and highlights any incorrect entries.
+ * Loops through all editable cells and checks each value against the correct answer.
+ * Incorrect inputs are visually marked to guide the player without revealing the solution.
+ * Increments the hint counter and updates the hint display to track usage.
+ * This feedback system helps users learn through trial and error,
+ * without penalizing empty cells or prematurely ending the game.
  */
 function checkUserInput() {
     hintsUsed++;
@@ -203,7 +233,12 @@ function checkUserInput() {
 };
 
 /**
- * Pick one empty cell and show its correct number from the solution
+ * Reveals the correct number in a random empty cell as a hint.
+ * Scans all editable cells for blanks, picks one at random, and fills it 
+ * with the correct value from the solution. Marks the cell as 'hinted' for 
+ * tracking and visual feedback.
+ * This helps users when stuck, supports gradual problem-solving, 
+ * and integrates with win condition logic that tracks hint usage.
  */
 function revealHint() {
     hintsUsed++;
@@ -237,7 +272,13 @@ function revealHint() {
 }
 
 /**
- * Initiates a countdown timer corresponding with the time limit set by the user
+ * Starts the countdown timer based on the time limit selected by the user.
+ * Converts the selected time into seconds and updates the timer display every second.
+ * If "None" is selected, the timer is disabled. Automatically ends the game
+ * and triggers a modal when time runs out.
+ * Uses setInterval for consistent timing and clears any previous intervals 
+ * to avoid duplicate timers. Tightly integrated with visual feedback and 
+ * the timed game mode logic.
  */
 function startTimer() {
     // Reference: https://stackoverflow.com/questions/15148659
@@ -270,7 +311,11 @@ function startTimer() {
 }
 
 /**
- * Show difficulty level in game-stats
+ * Updates the on-screen difficulty label to reflect the user’s selected level.
+ * Reads the currently checked radio button and pulls the label text from its sibling element.
+ * This keeps the UI in sync with the user’s game setup and provides immediate visual feedback
+ * in the stats panel.
+ * Keeps things dynamic without hardcoding label values or duplicating logic.
  */
 function updateDifficultyDisplay() {
     // Reference: https://stackoverflow.com/questions/15148659
@@ -283,7 +328,11 @@ function updateDifficultyDisplay() {
 };
 
 /**
- * Show remaining time in game-stats
+ * Updates the timer display in the game stats area with the current countdown value.
+ * Converts total remaining time in seconds to a MM:SS format for clarity.
+ * Ensures single-digit seconds are padded with a leading zero for consistency.
+ * Called once per second by the countdown interval to give players real-time
+ * feedback on how much time they have left.
  */
 function updateTimerDisplay() {
     // Reference: https://stackoverflow.com/questions/3733227
@@ -296,14 +345,21 @@ function updateTimerDisplay() {
 };
 
 /**
- * Displays the current number of hints used on the screen
+ * Updates the hint counter in the game stats to show how many hints the player has used.
+ * Called whenever a hint is revealed or the board is checked, so players can
+ * keep track of how often they rely on help. Useful for feedback and post-game summaries.
  */
 function updateHintsDisplay() {
     $('#hints').text(`Hints: ${hintsUsed}`);
 }
 
 /**
- * Checks whether all editable cells have the correct solution values and returns true if the entire board is filled and correct
+ * Validates whether all editable cells contain the correct values from the solution.
+ * Loops through each cell marked editable and compares its content against the
+ * corresponding entry in the current solution array. Returns true only if the entire
+ * board is correctly filled, otherwise false.
+ * Used as a trigger condition for winning the game, and works closely with
+ * `triggerAutoWinCheck()` to handle end-of-game logic.
  */
 function isBoardCompleteAndCorrect() {
     if (!currentSolution) {
@@ -326,7 +382,11 @@ function isBoardCompleteAndCorrect() {
 };
 
 /**
- * Checks if every editable cell on the board has some value entered
+ * Checks whether every editable cell has some input, regardless of correctness.
+ * Useful for detecting when a player has filled the entire board, which then
+ * triggers a final correctness check. Complements `isBoardCompleteAndCorrect()` 
+ * as part of the game's win detection logic.
+ * Helps prevent premature victory prompts by confirming the board is visually complete first.
  */
 function isBoardFilled() {
     // Reference: https://api.jquery.com/toArray/
@@ -341,7 +401,10 @@ function isBoardFilled() {
 };
 
 /**
- * Confetti animation when board is complete
+ * Triggers a confetti animation to celebrate the player completing the puzzle.
+ * Adds visual animation and positive feedback when the player successfully solves
+ * the board without relying too heavily on hints. Typically called by the
+ * win-check logic in `triggerAutoWinCheck()`.
  */
 function popConfetti() {
     // Reference: https://www.kirilv.com/canvas-confetti/
@@ -353,7 +416,10 @@ function popConfetti() {
 };
 
 /**
- * Calculates and formats the time elapsed since the game started and will.
+ * Calculates and formats how much time has passed since the game started.
+ * Used to display the final time in the "Congratulations" modal.
+ * Accounts for games with and without timers, formatting the result
+ * into a user-friendly MM:SS string or `--:--` if no timer was used.
  */
 function formatElapsedTime() {
     // Reference: https://stackoverflow.com/questions/9618504
@@ -372,7 +438,13 @@ function formatElapsedTime() {
 };
 
 /**
- * Checks if the board is complete and correct
+ * Looks at the board state to find out if the player has won or made an error.
+ * If the board is completely and correctly filled, it shows a congratulatory modal—
+ * with a different version if the player relied heavily on hints. It stops the timer,
+ * plays a sound, and displays final stats like difficulty, time, and hints used.
+ * If the board is full but contains mistakes, it plays an error sound and displays a helpful modal.
+ * This central check ensures the game reacts in real time to player progress, tying together
+ * input validation, hint tracking, and win feedback.
  */
 function triggerAutoWinCheck() {
     if (!hasCelebrated && isBoardCompleteAndCorrect()) {
@@ -423,7 +495,12 @@ function triggerAutoWinCheck() {
 }
 
 /**
- * Ends the game when the timer runs out, disables input, and shows the setup modal
+ * Handles the end-of-game scenario when the timer reaches zero.
+ * Plays an alarm sound, displays a timeout alert modal, and disables
+ * further interaction with the puzzle by removing 'editable' status 
+ * and pointer events from all user-input cells.
+ * Ensures the player can't continue entering values after time expires,
+ * and provides immediate feedback to mark the game over clearly.
  */
 function endGameDueToTime() {
     // Reference: https://stackoverflow.com/questions/21815323
@@ -446,7 +523,11 @@ function endGameDueToTime() {
 };
 
 /**
- * Start a game by providing a fresh board, resetting stats, and resetting the timer and game stats.
+ * Starts a new game by generating a fresh board and resetting game state.
+ * Fetches a new puzzle and solution, resets the hint counter, timer, and win flag,
+ * and updates the UI to match the selected difficulty level.
+ * Called when the player begins or restarts a game. Keeps all game logic modular 
+ * and ensures a consistent, clean slate each time.
  */
 // Reference: https://www.shecodes.io/athena/60837-how-to-call-a-function-within-another-function-in-javascript
 function startNewGame() {
@@ -460,7 +541,13 @@ function startNewGame() {
 };
 
 /**
- * Sets up button event listeners and sound triggers
+ * Sets up core event listeners for game control buttons and sound triggers.
+ * Handles logic for "Check" and "Hint" buttons, including delayed execution to allow
+ * modal rendering and sound to sync smoothly. Also wires up modal buttons like 
+ * "New Game" and "OK" to reset the board and relaunch the setup modal.
+ * Wrapping this in `DOMContentLoaded` ensures all elements are available in the DOM 
+ * before attaching listeners. Helps connect UI interactions to their game logic 
+ * counterparts in a modular and reliable way.
  */
 document.addEventListener('DOMContentLoaded', function () {
     const checkButton = $('#check-button');
@@ -514,7 +601,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-// Call function - Render a blank 9x9 Sudoku grid
+/**
+ * Initializes the UI with an empty Sudoku grid once the DOM is fully loaded.
+ * Ensures the board structure is rendered even before puzzle data is fetched.
+ */
 $(document).ready(() => {
     renderEmptyGrid();
 });
