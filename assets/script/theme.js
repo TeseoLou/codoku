@@ -34,7 +34,7 @@ function applyTheme(isLightMode, playSound = false) {
     const themeButtons = [
         $('button[data-bs-target="#setup-modal"]'),
         $("#start-button"),
-        $("#rules-back-button"),
+        $("#rules-modal-button"),
         $("#donate-button"),
         $("#check-button"),
         $("#hint-button"),

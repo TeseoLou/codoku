@@ -2,25 +2,15 @@
 /* Typography */
 :root {
     --font-body: "Quicksand", sans-serif;
-    /* Main font for body text */
     --font-heading: "Space Mono", monospace;
-    /* Main font for headings */
     --color-primary: #403a6b;
-    /* Used for dark purple accents */
     --color-accent: #e0b336;
-    /* Used for gold highlights */
     --color-bg-light: #f8f9fa;
-    /* Default light background */
     --color-bg-dark: #212529;
-    /* Default dark background */
     --color-white: #ffffff;
-    /* White */
     --color-black: #000000;
-    /* Black */
     --cell-size: 30px;
-    /* Set the size of each cell */
     --cell-font-size: 1.5rem;
-    /* Set the font size of cell content */
 }
 
 /* --- Base Styles --- */
@@ -28,15 +18,10 @@
 html,
 body {
     height: 100%;
-    /* Make the elements take up full height of the viewport */
     margin: 0;
-    /* Remove default margin */
     padding: 0;
-    /* Remove default padding */
     display: flex;
-    /* Enable flexbox layout */
     flex-direction: column;
-    /* Stack children vertically */
 }
 
 body {
@@ -46,31 +31,20 @@ body {
 /* Background */
 body {
     font-family: var(--font-body);
-    /* Apply quicksand font */
     background-color: var(--color-bg-light);
-    /* Fallback color */
     background-image: url(../backgrounds/light-background.webp);
-    /* Background image */
     background-repeat: no-repeat;
-    /* No image repeating */
     background-position: center center;
-    /* Center background image */
     background-size: cover;
-    /* Background cover the whole screen */
     background-attachment: fixed;
-    /* Keep background static */
-    position: relative;
-    /* Needed for layering if child elements use absolute positioning */
+    position: relative; /* Needed for layering if child elements use absolute positioning */
     width: 100vw;
-    /* Full screen width */
 }
 
 /* Background - Dark mode */
 body.dark {
     background-color: var(--color-bg-dark);
-    /* Dark fallback color if background image fails */
     background-image: url(../backgrounds/dark-background.webp);
-    /* Dark background image */
 }
 
 /* Headings */
@@ -81,7 +55,6 @@ h4,
 h5,
 h6 {
     font-family: var(--font-heading);
-    /* Apply space mono font */
 }
 
 /* Headings - Dark mode */
@@ -93,7 +66,6 @@ body.dark h4,
 body.dark h5,
 body.dark h6 {
     color: var(--color-white);
-    /* Set text color to white in dark mode */
 }
 
 /* Other text elements - Dark mode */
@@ -103,7 +75,6 @@ body.dark label,
 body.dark legend,
 body.dark a {
     color: var(--color-white);
-    /* Set text color to white in dark mode */
 }
 
 /* Buttons */
@@ -112,143 +83,107 @@ body.dark a {
 button,
 #setup-modal-label {
     font-family: var(--font-heading);
-    /* Use heading font */
     font-weight: bold;
-    /* Bold text for emphasis */
     text-align: center;
-    /* Center button text */
-
 }
 
 /* Button styling override */
 .btn {
     border-radius: 0;
-    /* Remove border radius for square corners */
 }
 
 /* Make buttons equal width */
 .equal-width-buttons {
     display: inline-block;
-    /* Inline-block for layout */
     width: 100%;
-    /* Full width by default */
     max-width: 70px;
-    /* Prevent overly wide buttons on large screens */
     text-align: center;
-    /* Center text inside button */
 }
 
 /* --- Navbar --- */
 /* Navbar Container */
 nav {
     background-color: var(--color-bg-light);
-    /* Light background color */
     background-image: url(../backgrounds/nav-light-background.webp);
-    /* Light background image */
     background-repeat: no-repeat;
-    /* Prevent image repetition */
     background-position: center center;
-    /* Center the background image */
     background-size: cover;
-    /* Scale image to cover the container */
 }
 
 /* Navbar container - Dark mode */
 body.dark nav {
     background-color: var(--color-bg-dark);
-    /* Dark fallback color if background image fails */
     background-image: url(../backgrounds/nav-dark-background.webp);
-    /* Dark background image */
 }
 
 /* Collapsed navbar content */
 .navbar-collapse {
     text-align: center;
-    /* Align navbar content to center */
 }
 
 /* Navbar navigation list */
 .navbar-nav {
     display: inline-block;
-    /* Display inline-block for centering */
     flex-direction: row !important;
-    /* Force horizontal layout with flex */
     justify-content: center;
-    /* Center items horizontally */
     float: none;
-    /* Remove float behavior */
     flex-wrap: nowrap;
-    /* Prevent items from wrapping */
     gap: 1rem;
-    /* Add consistent spacing between items */
 }
 
 /* Nav items */
 .navbar-nav .nav-item {
     display: inline-block;
-    /* Display inline for horizontal alignment */
 }
 
 /* Nav links */
 .navbar-nav .nav-link {
     font-family: var(--font-heading);
-    /* Apply space mono heading font */
     padding: 0 1rem;
-    /* Add horizontal padding */
 }
 
 /* Hamburger icon */
 /* Reference: https://www.geeksforgeeks.org/how-to-change-hamburger-toggler-color-in-bootstrap/ */
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    /* SVG icon with black strokes */
 }
 
 /* Hamburger icon - Dark mode */
 body.dark .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    /* SVG icon with black strokes */
 }
 
 /* Nav link - Dark mode */
 body.dark .nav-link {
     color: var(--color-white) !important;
-    /* Set text color to white */
 }
 
 /* Active nav link */
 body:not(.dark) .nav-link.active {
     color: var(--color-primary) !important;
-    /* Use primary color */
     text-decoration: underline;
-    /* Underline active link */
 }
 
 /* Active nav link - Dark mode */
 body.dark .nav-link.active {
     color: var(--color-accent) !important;
-    /* Use accent color for active link */
     text-decoration: underline;
-    /* Underline active link */
 }
 
 #theme-toggle,
 #sound-toggle {
     min-width: auto;
     font-size: 0.75rem;
-    /* smaller font */
 }
 
 #theme-toggle .form-check-label,
 #sound-toggle .form-check-label {
     font-size: 0.75rem;
-    /* smaller label text */
 }
 
 #theme-toggle .form-check-input,
 #sound-toggle .form-check-input {
     transform: scale(0.8);
-    /* smaller switch size */
 }
 
 #theme-toggle,
@@ -260,124 +195,91 @@ body.dark .nav-link.active {
 #sound-toggle {
   min-width: auto;
   font-size: 0.75rem;
-  margin-left: 0.5rem; /* Reduce space between toggles */
+  margin-left: 0.5rem; 
 }
 
 /* Switch checkbox */
 body:not(.dark) .form-check-input[type="checkbox"]:checked {
     background-color: var(--color-accent);
-    /* Gold switch background */
     border-color: var(--color-accent);
-    /* Gold switch border */
     box-shadow: 0 0 8px var(--color-primary);
-    /* Purple glow effect */
 }
 
 /* Switch checkbox - Dark mode */
 body.dark .form-check-input[type="checkbox"] {
     background-color: var(--color-primary);
-    /* Purple background */
     border-color: var(--color-primary);
-    /* Purple border */
     box-shadow: 0 0 10px 2px var(--color-accent);
-    /* Gold outer glow effect */
 }
 
 /* Switch thumb - Dark mode */
 /* Reference: https://stackoverflow.com/questions/57224537 */
 body.dark #theme-toggle .form-check-input[type="checkbox"]:not(:focus)::before {
     content: "";
-    /* Inserts an empty pseudo-element */
     display: block;
-    /* Makes the pseudo-element a block-level element */
     width: 0.7rem;
-    /* Sets the width of the switch thumb */
     height: 0.7rem;
-    /* Sets the height of the switch thumb */
     background-color: white;
-    /* Colors the thumb white */
     border-radius: 50%;
-    /* Makes the thumb perfectly circular */
     transform: translateX(0.1rem) translateY(0.1rem);
-    /* Slightly positions the thumb inside the switch */
     transition: transform 2s ease;
-    /* Animates the position change smoothly over 2 seconds */
 }
 
 /* Theme toggle label */
 #theme-label span,
 #sound-label span {
     font-family: var(--font-heading);
-    /* Applies the space mono font */
 }
 
-/* Sound switch ON (green)*/
+/* Sound switch ON (green) */
 #sound-switch:checked {
     background-color: #a5f3a5 !important;
     border-color: #a5f3a5 !important;
     box-shadow: 0 0 8px #f69696 !important;
 }
 
-/* Sound switch OFF (red)*/
+/* Sound switch OFF (red) */
 #sound-switch:not(:checked) {
     background-color: #f69696 !important;
-    /* Red */
     border-color: #f69696 !important;
     box-shadow: 0 0 8px #a5f3a5;
 }
 
 /* Switch thumb - Mute mode */
 /* Reference: https://stackoverflow.com/questions/57224537 */
-body.dark #sound-toggle .form-check-input[type="checkbox"]:not(:checked):not(:focus)::before {
+#sound-toggle .form-check-input[type="checkbox"]:not(:checked):not(:focus)::before {
     content: "";
-    /* Inserts an empty pseudo-element */
     display: block;
-    /* Makes the pseudo-element a block-level element */
     width: 0.7rem;
-    /* Sets the width of the switch thumb */
     height: 0.7rem;
-    /* Sets the height of the switch thumb */
     background-color: white;
-    /* Colors the thumb white */
     border-radius: 50%;
-    /* Makes the thumb perfectly circular */
     transform: translateX(0.1rem) translateY(0.1rem);
-    /* Slightly positions the thumb inside the switch */
     transition: transform 2s ease;
-    /* Animates the position change smoothly over 2 seconds */
 }
 
 /* --- Header Section--- */
 /* Header */
 header {
     padding-bottom: 10px;
-    /* Add space below header */
 }
 
 /* Title */
 #title,
 #about-title {
     font-family: var(--font-heading);
-    /* Use space mono heading font  */
     font-weight: normal;
-    /* Normal font weight */
     font-size: 2.5rem;
-    /* Set large font size for headings */
     padding-top: 0rem;
-    /* Remove top padding */
 }
 
 /* --- Modals --- */
 /* Modal content - Dark mode */
 body.dark .modal-content {
     background-color: var(--color-bg-dark);
-    /* Dark background color */
     background-image: url(../backgrounds/dark-background.webp);
-    /* Dark background image */
     color: var(--color-white);
-    /* White text for contrast */
     box-shadow: 0 0 20px 5px var(--color-white);
-    /* White glow around modal */
 }
 
 /* Modal sections - Dark mode */
@@ -385,9 +287,7 @@ body.dark .modal-header,
 body.dark .modal-body,
 body.dark .modal-footer {
     background-color: transparent;
-    /* Allow background image to be visible */
     color: var(--color-white);
-    /* Set text color to white for contrast */
 }
 
 .modal-header {
@@ -398,118 +298,80 @@ body.dark .modal-footer {
 /* Modal content container */
 #rules-modal .modal-content {
     background-color: var(--color-bg-light);
-    /* Light background color */
     background-image: url(../backgrounds/light-background.webp);
-    /* Light background image */
     background-repeat: no-repeat;
-    /* Prevent image repetition */
     background-position: center center;
-    /* Center the background image */
     background-size: cover;
-    /* Scale image to cover the container */
     border-radius: 0;
-    /* Remove border radius */
     color: var(--color-black);
-    /* Set text color to black */
     box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.9);
-    /* Apply dark shadow for elevation */
     margin: 1rem;
-    /* Add margin around modal */
 }
 
 /* Modal content container - Dark mode */
 body.dark #rules-modal .modal-content {
     background-color: var(--color-bg-dark);
-    /* Dark background color */
     background-image: url(../backgrounds/dark-background.webp);
-    /* Dark background image */
     color: var(--color-white);
-    /* Set text color to white */
     box-shadow: 0 0 20px 5px var(--color-white);
-    /* White shadow glow */
 }
 
 /* Modal border */
 .modal-border {
     border-radius: 0;
-    /* Remove border radius */
     border: 2px solid var(--color-black);
-    /* Matching solid black border */
     margin: 1rem;
-    /* Add margin around modal border */
 }
 
 /* Modal border - Dark mode */
 body.dark .modal-border {
     border: 2px solid var(--color-white);
-    /* White border in dark mode */
 }
 
 /* Modal header */
 #rules-modal .modal-header {
     justify-content: center;
-    /* Center header content */
     border-bottom: none;
-    /* Remove bottom border */
     padding-bottom: 0.5rem;
-    /* Add space below header */
 }
 
 /* Modal title */
 #rules-modal .modal-title {
     font-family: var(--font-heading);
-    /* Use heading font */
     font-weight: normal;
-    /* Normal font weight */
     font-size: 1.2rem;
-    /* Enlarge title font size */
     text-align: center;
-    /* Center text */
     margin: 0;
-    /* Remove default margin */
 }
 
 /* Modal body */
 #rules-modal .modal-body {
     font-family: var(--font-body);
-    /* Use quicksand font */
     font-size: 0.9rem;
-    /* Reduce text font size */
     padding-top: 0;
-    /* Remove top padding */
 }
 
 /* Modal footer */
 #rules-modal .modal-footer {
     justify-content: center;
-    /* Center footer content */
     border-top: none;
-    /* Remove top border */
     padding-top: 0;
-    /* Remove top padding */
 }
 
 /* --- Footer Section --- */
 /* Footer */
 footer {
     flex-shrink: 0;
-    /* Prevent footer from shrinking when using flex layout */
     background-color: transparent;
-    /* Transparent background to inherit body/theme styling */
     text-decoration: none;
-    /* Remove underline from any text */
     color: inherit;
-    /* Inherit text color from parent */
 }
 
 /* Footer links */
 footer a {
     text-decoration: none;
-    /* Remove default underline from links */
     line-height: 1;
-    /* Reduce vertical spacing */
     vertical-align: middle;
-    /* Align icons/text vertically in line */
 }
 
 /* Footer elements - Dark mode */
@@ -520,22 +382,18 @@ body.dark footer p,
 body.dark footer a,
 body.dark footer a i {
     color: var(--color-white) !important;
-    /* Override all footer content to white in dark mode */
 }
 
 /* Footer links on hover */
 footer a:hover {
     color: var(--color-primary);
-    /* Change color on hover (light theme) */
     font-size: 1.2rem;
-    /* Slight increase in font size for effect */
 }
 
-/* Footer links on hover*/
+/* Footer links on hover */
 body.dark footer a:hover,
 body.dark footer a:hover i {
     color: var(--color-accent) !important;
-    /* Gold hover color for contrast in dark mode */
 }
 
 /* --- Game Page --- */
