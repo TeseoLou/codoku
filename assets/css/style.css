@@ -37,7 +37,8 @@ body {
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
-    position: relative; /* Needed for layering if child elements use absolute positioning */
+    position: relative;
+    /* Needed for layering if child elements use absolute positioning */
     width: 100vw;
 }
 
@@ -193,9 +194,9 @@ body.dark .nav-link.active {
 }
 
 #sound-toggle {
-  min-width: auto;
-  font-size: 0.75rem;
-  margin-left: 0.5rem; 
+    min-width: auto;
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
 }
 
 /* Switch checkbox */
@@ -807,6 +808,10 @@ body.dark #about-content img {
         --cell-font-size: 1.7rem;
     }
 
+    body {
+        min-height: 765px;
+    }
+
     /* Grid container */
     #grid {
         display: flex;
@@ -838,6 +843,10 @@ body.dark #about-content img {
         --cell-font-size: 1.9rem;
     }
 
+    body {
+        min-height: 803px;
+    }
+
     #theme-toggle,
     #sound-toggle {
         font-size: 0.85rem;
@@ -857,7 +866,7 @@ body.dark #about-content img {
 /* Extra Larger Phone Screens and Short */
 @media screen and (min-width: 520px) and (min-height: 719px) and (orientation: portrait) {
     :root {
-        --cell-size: 35px;
+        --cell-size: 40px;
         --cell-font-size: 1.7rem;
     }
 }
@@ -865,8 +874,32 @@ body.dark #about-content img {
 /* Small Tablets in Portrait Mode */
 @media screen and (min-width: 768px) and (orientation: portrait) {
     :root {
-        --cell-size: 50px;
+        --cell-size: 60px;
         --cell-font-size: 2rem;
+    }
+
+    body {
+        min-height: 1044px;
+    }
+
+    #theme-toggle,
+    #sound-toggle {
+        font-size: 1rem;
+    }
+
+    #theme-toggle .form-check-label,
+    #sound-toggle .form-check-label {
+        font-size: 1rem;
+    }
+
+    #theme-toggle .form-check-input,
+    #sound-toggle .form-check-input {
+        transform: scale(1.1);
+    }
+
+    #theme-icon,
+    #sound-icon {
+        font-size: 1rem;
     }
 
     /* Game title */
@@ -903,57 +936,38 @@ body.dark #about-content img {
     }
 }
 
-/* Tablets in Portrait Mode */
-@media screen and (min-width: 768px) and (orientation: portrait) {
+/* Tablets in Landscape Mode */
+@media screen and (min-width: 768px) and (orientation: landscape) {
     :root {
-        --cell-size: 60px;
-        --cell-font-size: 2rem;
+        --cell-size: 35px;
+        --cell-font-size: 1.5rem;
     }
-}
 
-/* Larger toggles and labels on wider screens */
-@media screen and (min-width: 768px) {
-  #theme-toggle,
-  #sound-toggle {
-    font-size: 1rem;
-  }
-
-  #theme-toggle .form-check-label,
-  #sound-toggle .form-check-label {
-    font-size: 1rem;
-  }
-
-  #theme-toggle .form-check-input,
-  #sound-toggle .form-check-input {
-    transform: scale(1.1);
-  }
-
-  #theme-icon,
-  #sound-icon {
-    font-size: 1rem;
-  }
+    body {
+        min-height: 698px;
+    }
 }
 
 /* Large Tablets in Portrait Mode */
 @media screen and (min-width: 992px) and (orientation: portrait) {
     :root {
-        --cell-size: 60px;
+        --cell-size: 70px;
         --cell-font-size: 2rem;
+    }
+
+    body {
+        min-height: 1044px;
     }
 }
 
 /* Laptops */
 @media screen and (min-width: 992px) and (orientation: landscape) {
     :root {
-        --cell-size: 35px;
+        --cell-size: 50px;
         --cell-font-size: 1.7rem;
     }
-}
 
-/* Large Desktop Screens */
-@media screen and (min-width: 1400px) {
-    :root {
-        --cell-size: 50px;
-        --cell-font-size: 1.9rem;
+    body {
+        min-height: 805px;
     }
 }
