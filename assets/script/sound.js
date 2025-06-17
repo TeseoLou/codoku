@@ -47,4 +47,5 @@ function setupSoundToggle() {
  * Ensures sound preferences are loaded and applied as soon as the DOM is ready.
  * This guarantees the toggle reflects the user's saved setting before any interaction occurs.
  */
+// Reference: https://builtin.com/articles/document-ready-javascript
 document.addEventListener("DOMContentLoaded", setupSoundToggle);

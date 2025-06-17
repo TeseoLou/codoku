@@ -14,7 +14,13 @@ const themeToggleSounds = {
 };
 
 /**
- * Apply the theme settings to the Dom
+ * Applies the selected visual theme and updates the UI accordingly.
+ * This function toggles the `dark` class on the body element, updates the theme
+ * toggle switch and icon, and adjusts button styles to match the selected mode.
+ * It optionally plays a sound when the theme is switched (if `playSound` is true),
+ * and saves the user’s choice to localStorage for persistence across sessions.
+ * This approach keeps theme changes fast and consistent throughout the app while
+ * ensuring user preferences are remembered and respected on future visits.
  */
 function applyTheme(isLightMode, playSound = false) {
     // Reference: https://stackoverflow.com/questions/60469551
@@ -49,7 +55,13 @@ function applyTheme(isLightMode, playSound = false) {
 }
 
 /**
- * Setup the theme switch logic on page load and user interaction.
+ * Initializes the theme toggle on page load and sets up interaction behavior.
+ * Loads the saved theme preference from localStorage and applies it immediately,
+ * ensuring a consistent user experience from the start. Also adds a change listener
+ * to the theme switch that updates the theme, plays a toggle sound, and sets
+ * ARIA attributes for accessibility.
+ * This setup keeps the UI responsive to user actions while maintaining 
+ * persistence and accessibility best practices.
  */
 function setupThemeSwitch() {
     const themeSwitch = document.getElementById("theme-switch");
@@ -66,7 +78,11 @@ function setupThemeSwitch() {
     });
 }
 
-// Run setupThemeSwitch when DOM is ready
+/**
+ * Ensures the theme setup runs after the DOM is fully loaded.
+ * This guarantees that the theme toggle is correctly initialized before user interaction.
+ * It uses a conditional check on `document.readyState` to support both early and late script loads.
+ */
 // Reference: https://builtin.com/articles/document-ready-javascript
 if (document.readyState !== "loading") {
     setupThemeSwitch();
