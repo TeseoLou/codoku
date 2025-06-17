@@ -218,8 +218,8 @@ body.dark .form-check-input[type="checkbox"] {
 body.dark #theme-toggle .form-check-input[type="checkbox"]:not(:focus)::before {
     content: "";
     display: block;
-    width: 0.7rem;
-    height: 0.7rem;
+    width: 0.5rem;
+    height: 0.5rem;
     background-color: white;
     border-radius: 50%;
     transform: translateX(0.1rem) translateY(0.1rem);
@@ -251,8 +251,8 @@ body.dark #theme-toggle .form-check-input[type="checkbox"]:not(:focus)::before {
 #sound-toggle .form-check-input[type="checkbox"]:not(:checked):not(:focus)::before {
     content: "";
     display: block;
-    width: 0.7rem;
-    height: 0.7rem;
+    width: 0.5rem;
+    height: 0.5rem;
     background-color: white;
     border-radius: 50%;
     transform: translateX(0.1rem) translateY(0.1rem);
@@ -861,6 +861,16 @@ body.dark #about-content img {
     #sound-toggle .form-check-input {
         transform: scale(0.9);
     }
+
+    body.dark #theme-toggle .form-check-input[type="checkbox"]:not(:focus)::before {
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+
+    #sound-toggle .form-check-input[type="checkbox"]:not(:checked):not(:focus)::before {
+        width: 0.6rem;
+        height: 0.6rem;
+    }
 }
 
 /* Extra Larger Phone Screens and Short */
@@ -900,6 +910,16 @@ body.dark #about-content img {
     #theme-icon,
     #sound-icon {
         font-size: 1rem;
+    }
+
+    body.dark #theme-toggle .form-check-input[type="checkbox"]:not(:focus)::before {
+        width: 0.7rem;
+        height: 0.7rem;
+    }
+
+    #sound-toggle .form-check-input[type="checkbox"]:not(:checked):not(:focus)::before {
+        width: 0.7rem;
+        height: 0.7rem;
     }
 
     /* Game title */
@@ -945,6 +965,36 @@ body.dark #about-content img {
 
     body {
         min-height: 698px;
+    }
+
+    #theme-toggle,
+    #sound-toggle {
+        font-size: 1rem;
+    }
+
+    #theme-toggle .form-check-label,
+    #sound-toggle .form-check-label {
+        font-size: 1rem;
+    }
+
+    #theme-toggle .form-check-input,
+    #sound-toggle .form-check-input {
+        transform: scale(1.1);
+    }
+
+    #theme-icon,
+    #sound-icon {
+        font-size: 1rem;
+    }
+
+    body.dark #theme-toggle .form-check-input[type="checkbox"]:not(:focus)::before {
+        width: 0.7rem;
+        height: 0.7rem;
+    }
+
+    #sound-toggle .form-check-input[type="checkbox"]:not(:checked):not(:focus)::before {
+        width: 0.7rem;
+        height: 0.7rem;
     }
 }
 
