@@ -1,5 +1,10 @@
 /**
- * Close the setup modal when the Enter button is clicked
+ * Handles the setup modal's "Start" button click event.
+ * When clicked, this function closes the setup modal using Bootstrap’s modal instance
+ * and then starts a new game session by resetting the board, stats, and timer.
+ * This method ensures the player only begins the game after confirming their settings,
+ * providing a clean and controlled transition into gameplay. jQuery is used here for 
+ * consistency with other DOM manipulations across the codebase.
  */
 function setupStartButton() {
     // Reference: https://stackoverflow.com/questions/61793029
