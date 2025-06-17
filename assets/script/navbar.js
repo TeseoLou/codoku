@@ -12,19 +12,14 @@ const navSounds = {
 };
 
 /**
- * Toggles visibility of the settings dropdown on smaller screens when the settings cog button is clicked.
- * This enables users to access theme and sound toggles via an overlay menu on small viewports (≤ 992px).
- */
-document.addEventListener('DOMContentLoaded', () => {
-    const settingsToggleBtn = document.getElementById('settings-toggle');
-    const settingsDropdown = document.getElementById('settings-dropdown');
-    settingsToggleBtn.addEventListener('click', () => {
-        settingsDropdown.classList.toggle('d-none');
-    });
-});
-
-/**
- * Collapse the Bootstrap navbar when clicking outside of the open menu
+ * Closes the mobile navbar menu when clicking outside of it.
+ * Listens for clicks on the document and checks if the user clicked 
+ * outside both the open menu and the hamburger toggle. If so, and if 
+ * the navbar is currently expanded, it collapses it.
+ * This improves mobile usability by mimicking native app behavior and 
+ * prevents the menu from staying open unnecessarily. It uses Bootstrap's 
+ * Collapse API to cleanly hide the menu and ties in with the responsive 
+ * navigation system already in place.
  */
 // Reference: https://stackoverflow.com/questions/74670132
 function setupOutsideNavbarCollapse() {
@@ -47,7 +42,14 @@ function setupOutsideNavbarCollapse() {
 };
 
 /**
- * Sets up button event listeners, sound triggers, and navigation handling once the page is fully loaded
+ * Handles UI interactions and navigation events once the DOM is ready.
+ * Adds sound effects to all Bootstrap modals (open/close) to enhance feedback.
+ * Intercepts link clicks to show a confirmation modal when leaving an active game,
+ * helping prevent accidental progress loss.
+ * Delays navigation slightly to allow sound to play before redirecting.
+ * Designed to hook into Bootstrap's modal system and core navigation links, this setup
+ * ensures consistent UX across page transitions while supporting audio feedback toggled 
+ * elsewhere in the app.
  */
 document.addEventListener('DOMContentLoaded', function () {
     // Reference: https://getbootstrap.com/docs/5.3/components/modal/
