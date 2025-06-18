@@ -1373,3 +1373,254 @@ These animations provide intuitive feedback, inviting users to engage with exter
 
 Icons were styled using either the light (#F8F9FA) or dark (#212529) theme colors, depending on the mode selected. They dynamically inverted based on the theme toggle to maintain contrast and legibility.
 
+# 4. **Process and Methodology**
+The development of Codoku followed a structured, iterative methodology rooted in best practices for front-end application design. Unlike content-driven websites, Codoku’s success depended on thoughtful logic flow, modular scripting, and reactive feedback systems. This section outlines the processes and architectural strategies used from scoped feature planning and code mapping to milestone-based development tracked through Git commits.
+
+## **4.1 Approach**
+This section outlines the key development principles applied, each of which helped ensure accessibility, maintainability, and user-centered design. Additionally, it highlights how I mapped my JavaScript logic ahead of time to define reusable functions and avoid duplication before building the final game logic.
+
+###  **4.1.1 Mobile-First Development** 📱
+Codoku was designed first and foremost for mobile interaction, following a mobile-first development strategy rooted in accessibility and real-device testing.
+
+All core components including the Sudoku grid, number buttons, modals, and feedback controls — were initially developed using a `max-width: 100%` and `flex-column` layout to suit small screens. Button sizing and spacing were optimized for touch interaction, with minimal reliance on hover states (which are not accessible on mobile). Early styling choices prioritized clarity, spacing, and responsiveness to short viewports and portrait orientation.
+
+Accessibility on mobile was a key priority from the start. I followed WCAG 2.1 mobile compliance guidelines by:
+- Ensuring sufficient contrast between foreground and background (especially in dark mode),
+- Keeping interactive touch targets at least 48x48 pixels where possible although challenging for the grid cells
+- Avoiding absolute positioning of buttons that could become unreachable in smaller viewports,
+- Adding focus states and semantic ARIA labels for users relying on screen readers or tab navigation on mobile assistive devices.
+
+To ensure the UI worked in real-world scenarios, I tested the early game build using Chrome DevTools’ device emulation and on multiple real mobile devices, including phones loaned by family and friends. This helped uncover layout quirks that wouldn’t have appeared in simulated testing environments, such as spacing bugs or clipped elements in landscape mode.
+
+Once the mobile version was fully functional and accessible, I scaled the design upward using custom media queries and Bootstrap breakpoints. These breakpoints progressively adjusted:
+- Grid size and padding
+- Number key spacing
+- Font sizes and modal widths
+- Button layout
+
+This approach allowed Codoku to adapt fluidly to tablets, laptops, and desktop environments without compromising the core mobile experience. The result is a site that feels native on phones but scales gracefully to larger screens, maintaining accessibility and ease of use across all devices.
+
+### **4.1.2 Minimum Viable Product (MVP) Model** 🎯
+To ensure focus and structure throughout development, I followed the MVP (Minimum Viable Product) model — delivering core features first before progressing to enhancements. This strategy helped avoid feature creep and ensured that the game would remain usable, responsive, and testable at every stage of development.
+
+To facilitate this, I used a [GitHub Project Board](https://github.com/users/TeseoLou/projects/4/views/1) to: 
+
+- Map the full scope of the project at the beginning, breaking it down into manageable tasks like "Grid Generation", "Check Button", and "Difficulty Selector".
+- Use the Must-Have label to mark core features that the game couldn’t function without (e.g., interactive grid, puzzle generation, input validation).
+- Use Should-Have and Could-Have labels for enhancements that could be deferred until after the core logic was complete (e.g., sound effects, social links, animations).
+- Help define chronological order: For example, the game couldn’t be validated until the puzzle grid was generated, so “Grid Generation” was placed before “Check Button” or “Clue Button”.
+- Ensure I was never overwhelmed: each “Done” task gave me visible progress, and I could easily reprioritize if something proved more complex than expected.
+
+### **4.1.3 Semantic HTML** 🌐
+Codoku was built using semantic HTML to ensure the structure of the application was both meaningful and accessible. Structural elements like `<main>`, `<section>`, `<header>`, `<footer>`, `<nav>`, and `<button>` were consistently used to define the layout and purpose of each section. 
+
+Semantic accuracy was especially critical for a game interface like Codoku, where dynamic interaction is constant. ARIA attributes such as `aria-labelledby`, `aria-modal`, and `role="dialog"` were used to improve modal accessibility, ensuring that screen readers could announce modal headings and lock focus appropriately when active. Elements like game controls and toggle switches were built using `<input type="checkbox">` and `<button>` instead of `<div>` or `<span>` to retain their native keyboard and accessibility behavior.
+
+| Tool                          | Purpose                                     | How It Helped                                                                                                      |
+|-------------------------------|---------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| **WAVE**                      | Tested HTML semantics, ARIA usage, contrast | Identified missing labels, improper heading nesting, ARIA misuse, and contrast warnings during development.        |
+| **axe DevTools**              | Automated accessibility testing extension   | Performed audits with actionable feedback, including structure, contrast, and semantic hierarchy checks.  |
+| **W3Schools + MDN Web Docs**  | Semantic element reference                  | Helped validate correct use of elements (e.g., `fieldset` + `legend`, `button`), improving form semantics.        |
+| **Lighthouse**               | Accessibility and performance auditing   | Verified semantic layout, heading order, and ARIA use. Contributed to Codoku’s accessibility score.               |
+| **NVDA**                      | Screen reader testing                       | Used to test navigation and modal behavior from a non-visual perspective, ensuring ARIA and heading structures worked as expected. |
+
+These helped enforce best practices throughout the project lifecycle. Every key element was evaluated to ensure it conveyed meaning not only visually, but programmatically — a core principle of accessible web design.
+
+### **4.1.4 CSS Styling & Methodology** 🎨  
+Codoku’s visual design was constructed using a modular, layered CSS approach — combining a custom `style.css` file with the Bootstrap 5.3 framework. Styling prioritized mobile-first responsiveness, dark/light theming, accessibility, and clean layout management across game views and modal components.
+
+The `style.css` file was clearly organized using section headers and comment blocks to guide readability and maintainability. Notable sections included:
+- Grid and board styling (`#grid`, `.number`, `.bottom-border`, `.right-border`)
+- Modal styling (`.modal-content`, `.modal-border`, custom `#setup-modal`, `#rules-modal`)
+- Theme-aware components using `.dark` modifiers
+- Toggle switch customization (`#theme-switch`, `#sound-switch`)
+- Responsive layout tuning for header, footer, and game containers
+
+Bootstrap was used primarily to:
+- Create a responsive grid system
+- Style forms, buttons, modals, and navbars
+- Add consistent spacing, typography, and button states
+- Provide ARIA-compatible components out of the box
+
+Codoku supports **light and dark themes**, toggled via a switch stored in `localStorage`. The `applyTheme()` function in `theme.js` applied CSS class `.dark` to `<body>` when appropriate, and the stylesheet handled visual differences using the `body.dark` selector prefix.
+
+| Tool / Resource              | Purpose                                                                 |
+|-----------------------------|-------------------------------------------------------------------------|
+| **Bootstrap 5.3**           | Core responsive layout, modals, buttons, spacing, grid helpers          |
+| **W3Schools + MDN**         | Confirming correct CSS syntax, selectors, and specificity management     |
+| **Can I use**               | Verified browser compatibility for newer CSS properties (e.g., `gap`)   |
+| **Chrome DevTools**         | Live-editing CSS during development to test responsiveness              |
+| **Specificity Calculator**  | Helped analyze and balance selector weight to avoid using `!important` where possible  |
+
+These helped ensure responsive design principles were applied correctly, selectors remained efficient and conflict-free, and the styling remained compatible across modern browsers.
+
+### **4.1.5 JavaScript Architecture & Development** 📝
+Codoku’s interactivity is powered by a modular, planned JavaScript architecture spread across clearly scoped files. These scripts drive puzzle logic, input handling, interface feedback, modals, and user settings such as theme and sound.
+
+Before coding, I mapped out the core logic required to power the game, breaking down each feature into core and helper functions. This pre-planning ensured every piece of logic had a clear role and avoided repetition.
+
+#### **4.1.5.a Puzzle Flow**
+fetchSudokuBoard()  
+├── renderEmptyGrid()  
+└── populateGrid()  
+└── enableCellSelection()  
+
+triggerAutoWinCheck()  
+├── isBoardCompleteAndCorrect()  
+├── isBoardFilled()  
+├── formatElapsedTime()  
+├── popConfetti()  
+└── showAlertModal()  
+
+This section is the backbone of the game logic. It handles fetching puzzles from the API, rendering them on the board, and checking for win conditions. It ensures a start-to-end experience as users solve the Sudoku grid.
+
+#### **4.1.5.b User Interaction & Input**
+enableCellSelection()  
+├── handleClick()  
+├── handleKeyboardInput()  
+└── handleNumberKeyClick()  
+└── triggerAutoWinCheck()  
+
+checkUserInput()  
+└── updateHintsDisplay()  
+
+revealHint()  
+├── updateHintsDisplay()  
+└── triggerAutoWinCheck() 
+
+This group of functions manage how users interact with the board, selecting cells, entering numbers, and getting clues or feedback. Real-time checking helps maintain engagement, while the modular hinting system supports player learning without spoiling the challenge.
+
+#### **4.1.5.c Setup & Game State**
+startNewGame()  
+├── fetchSudokuBoard()  
+├── startTimer()  
+├── updateDifficultyDisplay()  
+├── updateHintsDisplay()  
+└── reset hasCelebrated flag
+
+startTimer()  
+└── updateTimerDisplay()
+
+setupThemeSwitch()  
+└── applyTheme()
+
+applyTheme(isLightMode)  
+└── Save to localStorage
+
+setupSoundToggle()  
+└── applySoundSetting()
+
+applySoundSetting()  
+└── Update UI icons and switch state
+
+setupStartButton()  
+└── startNewGame()
+
+showAlertModal(message)  
+└── Show Bootstrap modal
+
+initPage()  
+├── setupOutsideNavbarCollapse()  
+├── setupThemeSwitch()  
+├── setupStartButton()  
+└── setupSoundToggle()  
+
+This group manages the game’s structure and settings. It controls how the game is initialized, how timers run, and how theme and sound preferences persist between sessions. All logic here ensures continuity and accessibility without requiring user repetition or manual resets.
+
+The following tools and references were used to streamline JavaScript writing, debugging, and testing throughout the development process. These supported everything from logic planning and DOM interaction to code quality checks and browser-side inspection.
+
+| Tool/Resource          | Purpose                                                                 |
+|------------------------|-------------------------------------------------------------------------|
+| **jQuery**                 | Simplified DOM manipulation, AJAX requests, and event handling          |
+| **Bootstrap (JS)**         | Provided modal, collapse, and accessibility-friendly component behavior |
+| **API Ninjas**             | Delivered Sudoku puzzles and solutions via `fetchSudokuBoard()`         |
+| **DevTools Console**       | Used for inspecting object structures, errors, and live debugging       |
+| **W3Schools & MDN**        | Referenced regularly for syntax, best practices, and event flow patterns|
+| **Stack Overflow**         | Troubleshooting edge cases and searching community-tested patterns      |
+| **JS Hint**                | Provided static code analysis to flag potential issues                  |
+| **Static App JS Formatter**| Used to clean up and consistently format JavaScript code                |
+| **Diff Checker**           | Helped compare and revert to previous working versions of JavaScript    |
+
+These tools were instrumental in maintaining high code quality, preventing bugs, and speeding up the process of writing interactive features. Real-time testing using DevTools and jQuery also helped ensure consistent behavior across different browsers and devices.
+
+### **4.1.6 Code Documentation & Commenting** 💬
+---
+
+### **4.1.6 Code Documentation & Commenting** 💬
+
+Codoku's JavaScript files in particular were structured with consistent documentation, especially at the function level. Each significant function includes a **multi-line docstring** that outlines:
+
+- The purpose of the function
+- Return values or expected outcome
+- Related or dependent function calls
+
+This style supported maintainability, quick debugging, and clarity when retracing logic across files.
+
+As someone who is neurodivergent, writing code in small, clearly defined steps was key to staying focused and reducing cognitive load. During early development, I commented nearly every line of code to help structure my thought process. This became a form of pseudocode planning, which allowed me to:
+
+- Map logic before implementing functionality
+- Visually track how variables and flows connected
+- Reframe the code in plain language to reinforce understanding
+- Easily return to code after taking breaks
+
+Once features were stable and tested, I returned to each file to remove redundant comments, leaving behind only meaningful, non-obvious explanations. This kept the final version clean but still richly documented.
+
+| Tool / Extension             | Purpose & Role in Development |
+|-----------------------------|-------------------------------|
+| **VS Code Comment Shortcuts** | Used `Ctrl + /` (Windows) or `Cmd + /` (Mac) to quickly toggle comments. Referenced the [VSCode Comment Guide](https://vscode.one/comment-vscode/) for best practices. |
+| **Block Comment Shortcuts**  | Used `Shift + Alt + A` (Windows) for commenting multi-line logic or disabling sections during debugging. |
+| **Auto Comment Extension**   | Aided in rewording overly descriptive comment lines using AI for selected JavaScript snippets. | 
+| **Code Spell Checker**       | Prevented typos in explanatory comments and headers. Useful for maintaining professionalism. |
+
+Using tools like Auto Comment was particularly helpful when I needed to describe logic I had already written but found hard to summarize later. It provided concise, relevant suggestions that I could either keep as-is or adapt.
+
+The combination of structured documentation, pseudocode-style commenting, and AI-powered support tools helped transform my workflow. Commenting wasn’t just for others—it became an essential bridge between logic and language for myself throughout development.
+
+### **4.1.7 SMART Objectives** 📌 
+To manage Codoku's feature development effectively, I used the SMART framework ensuring that every development task was:
+
+- **S**pecific: Clearly defined with a known purpose  
+- **M**easurable: Could be tested or verified  
+- **A**chievable: Realistic within my current skill level  
+- **R**ealistic: Appropriate in scope and timing  
+- **T**ime-bound: Could be scoped within a focused session or day
+
+This structure helped me work efficiently through the most critical tasks first, using my GitHub Project Board to track each milestone. Below is a breakdown of SMART objectives, ordered by priority and development sequence, beginning with layout and structure, then followed by interactivity and enhancement.
+
+| Objective                                            | Specific                                              | Measurable                                        | Achievable                                                                     | Realistic                                                                     | Time-Bound                                                 |
+| ---------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Create basic HTML page structure (index, about, 404) | Set up semantic page structure and routing fallback   | Each page loads with expected structure and style | Pages followed HTML5 and Bootstrap layout patterns I had learned               | Required no libraries outside the tools I was already using (HTML, Bootstrap) | Completed during week 1 setup phase                        |
+| Apply mobile-first layout and base styling           | Prioritize small screens and layout readability first | Grid and buttons usable on 320px screen           | Using rem-based styling and CSS Flexbox, I could test layout changes early     | Focused on simplest layout first and iterated later using DevTools            | Completed over 2 days after base structure                 |
+| Create interactive Sudoku grid                       | Generate board dynamically with 9x9 structure         | Grid renders on load with empty cells             | Based on class material and JS logic flow I understood from the CI walkthrough | No animation or advanced state management needed just DOM manipulation        | Implemented early in JS setup (week 2)                     |
+| Fetch puzzles via API with difficulty selection      | Retrieve data from API Ninjas on selected difficulty  | Puzzle data populates correctly by difficulty     | API offered simple endpoint and I was familiar with AJAX calls                 | Data was structured and consistent, and API required no auth complexity       | Integrated within 2 sessions with testing                  |
+| Add number input via keyboard and touch              | Enable dual input method for editing cells            | Numbers update cell content correctly             | Used jQuery and key/touch events from previous coursework                      | Interaction logic was similar to previous projects, just applied to a grid    | Completed same day as grid rendering logic                 |
+| Implement hint and check feedback                    | Validate and provide feedback on user inputs          | Clue and check provide real-time response         | JS control flow logic was broken into helper functions for manageability       | Only basic conditional checks and DOM updates needed per input                | Refined mid-project after input validation logic was ready |
+| Add game stats display (time, difficulty, hints)     | Update DOM dynamically with current game data         | Stats section shows updated info per round        | DOM manipulation using .text()/.val() was already in use                       | Game state was already tracked, so just needed to update UI                   | Added before win-check logic so stats were fresh           |
+| Build timer with visual countdown and timeout logic  | Create timer tied to difficulty with countdown logic  | Timer counts down and ends with modal             | I had already used setInterval in practice challenges                          | Tied to setup modal settings; logic was scoped cleanly per game               | Built over 2 days along with timeout handlers              |
+| Show modal on game completion with stats             | Display popup stats upon puzzle completion            | Stats modal displays all data at game end         | Used Bootstrap modal template and updated text dynamically                     | Modal already existed, just needed to display variables on completion         | Added at same time as win-check functionality              |
+| Enable dark/light theme toggle with sound            | Toggle theme and sync UI and localStorage             | Toggle switches theme and icon accurately         | Theme toggle reused sound toggle structure, so logic was repeatable            | The toggle just changed classes and saved a flag; visual logic reused         | Completed in final week after sound toggle                 |
+| Build modal-based navigation and rules section       | Provide instructions in modal without leaving game    | Rules modal shows/hides without reload            | Bootstrap modal and jQuery made show/hide logic simple                         | Kept users on one page, so modals were the best approach                      | Completed alongside layout setup and first game round      |
+| Ensure 100% responsiveness across viewports          | Use media queries and rems to scale content           | Game grid and UI rearrange smoothly               | Media queries were part of my design practice from start                       | CSS structure allowed reuse across breakpoints and screen widths              | Completed in final stretch with Lighthouse tests           |
+| Link buttons to functions and bind interactions      | Assign each control button its correct logic          | All buttons perform correct function on click     | Each button had a known function and mapped clearly to logic I'd written       | All logic already existed, just needed linking and click handlers             | Polished alongside testing and modal finishing             |
+
+### **4.1.8 Git Version Control with Purposeful Commits** 💾
+Throughout Codoku’s development, Git and GitHub were used as the backbone of version control. Commit messages were written intentionally and descriptively, forming a timeline of the project’s evolution.
+
+This structure supported:
+- **Traceability** – With an aim to ensure every feature or fix was committed individually 
+- **Problem Solving** – I was able to compare earlier versions of files when debugging logic, checking modal behavior, or reverting styling.
+- **Safe Experimentation** – With frequent commits, rollbacks were quick, letting me test sound, timer, and theme interactions without risk.
+
+To complement GitHub’s interface and VS Code’s built-in Git tools, I used the Git History to gain deeper visibility into my project’s evolution:
+
+| Tool / Platform             | Purpose |
+|----------------------------|---------|
+| **VS Code Git Integration**| Inline commit, diff view, and staging for small code changes. |
+| **GitHub Desktop**         | Visual UI for managing branches, syncing, and commit diffs. |
+| **GitHub Projects**        | Kanban-style board used to track features, fixes, and priorities. |
+| **Diffchecker.com**        | Helped with comparing long JS/CSS files before and after refactors. |
+| **Git History (VS Code Extension)** | Viewed line-by-line changes, commit trees, file histories, and comparisons directly in VS Code. |
+| **Conventional Commit Structure** | Messages followed a “what, where, why” pattern for clarity and traceability. |
+
+Using these tools helped ensure every change was documented and intentional. This approach hoped to not only improve my personal development discipline, but also create a clean, professional commit history useful for tutors and my future self.
+
