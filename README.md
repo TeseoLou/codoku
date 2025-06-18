@@ -1544,9 +1544,6 @@ The following tools and references were used to streamline JavaScript writing, d
 These tools were instrumental in maintaining high code quality, preventing bugs, and speeding up the process of writing interactive features. Real-time testing using DevTools and jQuery also helped ensure consistent behavior across different browsers and devices.
 
 ### **4.1.6 Code Documentation & Commenting** 💬
----
-
-### **4.1.6 Code Documentation & Commenting** 💬
 
 Codoku's JavaScript files in particular were structured with consistent documentation, especially at the function level. Each significant function includes a **multi-line docstring** that outlines:
 
@@ -1623,4 +1620,60 @@ To complement GitHub’s interface and VS Code’s built-in Git tools, I used th
 | **Conventional Commit Structure** | Messages followed a “what, where, why” pattern for clarity and traceability. |
 
 Using these tools helped ensure every change was documented and intentional. This approach hoped to not only improve my personal development discipline, but also create a clean, professional commit history useful for tutors and my future self.
+
+## **4.2 Initial Setup**
+
+The early stages of Codoku's development focused on laying a solid foundation for a responsive, accessible, and interactive single-page web application. This involved establishing essential HTML structure, linking key stylesheets and scripts, and preparing the project for scalable logic integration.
+
+### **4.2.1 HTML Scaffold & Metadata**
+
+The first few commits established the semantic base of the website:
+- 🏗️ Added basic HTML pages (`index.html`, `about.html`, and `404.html`)
+- 📦 Included meta tags for:
+  - Character encoding
+  - Viewport settings for responsive scaling
+  - Author info
+  - SEO and social sharing compatibility
+- 🔗 Connected external resources:
+  - Bootstrap (via CDN)
+  - Google Fonts
+  - Font Awesome
+  - Favicon
+
+### **4.2.2 Responsive Navigation & Structure**
+
+Once base pages were in place, I moved to layout and navigation:
+- 🔁 Implemented a responsive Bootstrap **navbar** with:
+  - Theme toggle switch
+  - Rules modal trigger
+  - Collapsible hamburger menu
+- ⚙️ Created placeholder sections for:
+  - Game grid
+  - Number input keys
+  - Game stats
+  - Footer content with social links
+
+### **4.2.3 Base CSS and Dark Mode Architecture**
+
+The stylesheet was scaffolded to reflect consistent visual identity and support theme switching:
+- 🎨 Declared CSS custom properties for:
+  - Font family (`Space Mono`)
+  - Backgrounds and foregrounds
+  - Accent colors for light/dark modes
+- 🧩 Structured style sections by:
+  - Layout containers
+  - Typography
+  - Custom components (modals, grid, buttons)
+- 🌒 `body.dark` class styling to prepare for dark mode theming across all major elements.
+
+### **4.2.4 JavaScript File Architecture & Linking**
+
+To keep logic modular, I created the following JS files early:
+> `game.js` – Core gameplay and board logic
+> `init.js` – Page lifecycle and modal boot logic
+> `theme.js` – Dark/light mode and localStorage persistence
+> `setup-modal.js` – Start game logic and modal behavior
+> `navbar.js` – Navbar behavior and navigation safeguards
+
+These were linked at the bottom of `index.html` to avoid DOM timing issues and wrapped in `DOMContentLoaded` guards.
 
