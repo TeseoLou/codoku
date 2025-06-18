@@ -48,7 +48,7 @@
                 <!-- Sound toggle -->
                 <div id="sound-toggle" class="d-flex align-items-center ms-1">
                     <div class="form-check form-switch m-0">
-                        <label class="form-check-label d-flex align-items-center gap-2 ms-1 for=" sound-switch"
+                        <label class="form-check-label d-flex align-items-center gap-2 ms-1" for="sound-switch"
                             id="sound-label">
                             <input class="form-check-input" type="checkbox" id="sound-switch" role="switch" />
                             <i id="sound-icon" class="fa-solid fa-volume-xmark"></i>
@@ -83,8 +83,8 @@
         </section>
     </nav>
     <!-- 404 Main Content -->
-    <main class="container text-center" id="not-found">
-        <h1 class="display-4 fw-bold">Page Undefined</h1>
+    <main class="container text-center" id="not-found" role="main" aria-labelledby="error-heading">
+        <h1 id="error-heading" class="display-4 fw-bold">Page Undefined</h1>
         <div class="d-flex justify-content-center">
             <img id="error-image" src="assets/images/breaking-news.webp"
                 alt="Person reading a newspaper with a headline about a missing page" class="img-fluid my-4"
@@ -98,6 +98,7 @@
         </div>
         <p>
             How... puzzling! Looks like you've been taken off-grid. Head back to the homepage for a fresh start.
+        </p>
     </main>
     <!-- Rules Modal -->
     <section id="rules-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rules-modal-label"

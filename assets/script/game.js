@@ -44,15 +44,15 @@ function renderEmptyGrid() {
         const rowDiv = $('<div>').addClass('d-flex');
         for (let col = 0; col < 9; col++) {
             const cell = $('<p>')
-                .addClass('m-0 text-center number select') 
-                .attr('data-row', row) 
-                .attr('data-col', col); 
+                .addClass('m-0 text-center number select')
+                .attr('data-row', row)
+                .attr('data-col', col);
             // Reference: https://stackoverflow.com/questions/31231945
             if ((col + 1) % 3 === 0 && col < 8) {
-                cell.addClass('right-border'); 
+                cell.addClass('right-border');
             };
             if ((row + 1) % 3 === 0 && row < 8) {
-                cell.addClass('bottom-border'); 
+                cell.addClass('bottom-border');
             };
             if (row === 0) {
                 cell.addClass('no-border-top');
@@ -289,9 +289,9 @@ function startTimer() {
         countdownInterval = null; // Clear the interval reference
     }
     if (timeLimit === "none") {
-        timeRemaining = 0; 
-        $('#timer').text("Timer: None"); 
-        return; 
+        timeRemaining = 0;
+        $('#timer').text("Timer: None");
+        return;
     }
     // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
     let minutes = parseInt(timeLimit, 10);
@@ -304,7 +304,7 @@ function startTimer() {
         if (timeRemaining <= 0) {
             // Reference: https://stackoverflow.com/questions/57860947
             clearInterval(countdownInterval);
-            countdownInterval = null; 
+            countdownInterval = null;
             endGameDueToTime();
         }
     }, 1000);
@@ -430,7 +430,7 @@ function formatElapsedTime() {
     const seconds = elapsed % 60;
     if (timeLimit === 'none') {
         return `--:--`;
-    }   
+    }
     // Reference: https://stackoverflow.com/questions/8043026
     else {
         return `${minutes}:${seconds.toString().padStart(2, '0')}`;
@@ -454,14 +454,17 @@ function triggerAutoWinCheck() {
         // Reference: https://api.jquery.com/length/
         const solvedWithHints = hintedCount > 0 && (hintedCount >= unhintedCount);
         if (solvedWithHints) {
+            $('#hinted-difficulty').text($('input[name="difficulty"]:checked').next('label').text());
+            $('#hinted-time').text(formatElapsedTime());
+            $('#hinted-hints').text(hintsUsed);
             // Reference: https://getbootstrap.com/docs/5.3/components/modal/#via-javascript
             const hintedModal = new bootstrap.Modal(document.getElementById('hinted-win-modal'));
             hintedModal.show();
-            hasCelebrated = true; 
+            hasCelebrated = true;
             if (countdownInterval) {
                 clearInterval(countdownInterval);
             }
-            return; 
+            return;
         }
         popConfetti();
         soundEffects.play("applause");
@@ -558,7 +561,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 checkUserInput();
                 soundEffects.play("hint");
-            }, 10); 
+            }, 10);
         });
     };
     const hintButton = $('#hint-button');
@@ -570,7 +573,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 revealHint();
                 triggerAutoWinCheck();
                 soundEffects.play("hint");
-            }, 10); 
+            }, 10);
         });
     };
     document.getElementById("congrats-new-game").addEventListener("click", function () {

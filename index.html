@@ -49,7 +49,7 @@
                 <!-- Sound toggle -->
                 <div id="sound-toggle" class="d-flex align-items-center ms-1">
                     <div class="form-check form-switch m-0">
-                        <label class="form-check-label d-flex align-items-center gap-2 ms-1 for=" sound-switch"
+                        <label class="form-check-label d-flex align-items-center gap-2 ms-1" for="sound-switch"
                             id="sound-label">
                             <input class="form-check-input" type="checkbox" id="sound-switch" role="switch" />
                             <i id="sound-icon" class="fa-solid fa-volume-xmark"></i>
@@ -287,9 +287,11 @@
                         <h2 id="hinted-win-label" class="modal-title text-center w-100">Puzzle Completed!</h2>
                     </header>
                     <section class="modal-body text-center">
-                        <p>You solved the puzzle with... some help.<br>
-                            Great job! Next time, try using fewer hints for an extra challenge!
-                        </p>
+                        <p id="hinted-message">You solved the puzzle with... some help.<br>
+                            Great job! Next time, try using fewer hints for an extra challenge!</p>
+                        <p><strong>Difficulty:</strong> <span id="hinted-difficulty"></span></p>
+                        <p><strong>Time:</strong> <span id="hinted-time"></span></p>
+                        <p><strong>Hints used:</strong> <span id="hinted-hints"></span></p>
                     </section>
                     <footer class="modal-footer d-flex justify-content-center border-0">
                         <button type="button" id="dismiss" class="btn btn-dark" data-bs-dismiss="modal">
@@ -397,7 +399,7 @@
     <!-- Javascript Files -->
     <script src="assets/script/navbar.js"></script>
     <script src="assets/script/sound.js"></script>
-    <script src="assets/script/theme.js"></script>  
+    <script src="assets/script/theme.js"></script>
     <script src="assets/script/setup-modal.js"></script>
     <script src="assets/script/init.js"></script>
     <script src="assets/script/game.js"></script>
