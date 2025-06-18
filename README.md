@@ -1644,7 +1644,6 @@ The first few commits established the semantic base of the website:
 
 Once base pages were in place, I moved to layout and navigation:
 - 🔁 Implemented a responsive Bootstrap **navbar** with:
-  - Theme toggle switch
   - Rules modal trigger
   - Collapsible hamburger menu
 - ⚙️ Created placeholder sections for:
@@ -1652,6 +1651,9 @@ Once base pages were in place, I moved to layout and navigation:
   - Number input keys
   - Game stats
   - Footer content with social links
+
+![Early HTML output without styling](docs/figures/screenshots/basic-html-structure.webp)  
+*Basic HTML layout rendered in browser before any CSS styling was applied.*
 
 ### **4.2.3 Base CSS and Dark Mode Architecture**
 
@@ -1676,6 +1678,9 @@ To keep logic modular, I created the following JS files early:
 > `init.js` – Page lifecycle and modal boot logic 
 
 These were linked at the bottom of `index.html` to avoid DOM timing issues.
+
+![Codoku Repository Structure – Expanded](docs/figures/screenshots/repository-setup.webp)  
+*Expanded repository view showing modular JavaScript files, HTML pages, and the core stylesheet for Codoku.*
 
 ## **4.3 Page Template**
 Once the initial project folder and file structure was in place, the next step was to establish a universal page template that could be reused across all HTML pages. This involved building out shared structural components and styling elements that define Codoku’s visual identity and layout consistency.
@@ -1707,6 +1712,9 @@ Thematic Styling Foundations
 
 Once complete, this template structure was cloned into each page and slightly modified based on purpose.
 
+![Codoku Page Template Preview](docs/figures/screenshots/template-preview.webp)  
+*Example of the universal page template featuring toggles, navbar, and footer with background texture styling.*
+
 From this point on, any correction, accessibility fix, or layout tweak made to the shared features (navbar, footer, modals, toggles, etc.) had to be applied across every HTML page to maintain consistency.
 
 This modular and scalable structure ensured:
@@ -1714,3 +1722,99 @@ This modular and scalable structure ensured:
 - Easier integration of JS logic across pages  
 - Faster adaptation of updates (like styling refinements or theme adjustments)
 
+## **4.4 Workflow**
+After establishing the reusable page template (with shared HTML layout, background styling, navbar, footer, and toggle elements), development progressed through a deliberate, layered sequence, gradually building structure, style, interactivity and logic while ensuring each feature worked independently before being integrated.
+
+### **4.4.1. Refining Structural HTML Elements**
+Page titles, headers, button containers, and stat panels were added to define clear visual anchors for gameplay.
+
+Additional semantic containers like `<section>`, `<main>`, `<aside>`, and ARIA landmarks were incorporated for accessibility.
+
+Boilerplate copies of this layout were added to `about.html` and `404.html`, ensuring consistency across all pages.
+
+![Screenshot of early HTML layout with some styling components.](docs/figures/screenshots/headings.webp)  
+*Early HTML scaffold showing the Codoku title, action buttons, and placeholder sections.*
+
+### **4.4.2. Laying Out Core Visual Components**
+The Sudoku grid container and number input area were blocked out using `<div>` and `<p>` elements.
+
+Placeholder IDs and class names were applied to each structural element to link them to CSS and JS logic later.
+
+The "Game Stats" section was scaffolded beneath the header, ready to display live game data such as timer, difficulty, and hint usage.
+
+![HTML structure for Codoku’s number input controls with semantic tags and Bootstrap classes](docs/figures/screenshots/game-section-html-structure.webp)  
+*HTML scaffold for the Sudoku board and number keys, using semantic elements.*
+
+### 4.4.3 Creating the Rules and Setup Modals (Basic Structure) 🧱
+I laid the groundwork for Codoku’s two primary modals: the Rules Modal and the Setup Modal.
+
+These modals were essential to guiding users into the game and explaining how to play, without overwhelming them.
+
+![Bootstrap modal shells created for Setup and Rules](docs/figures/screenshots/basic-modal-structure.webp)  
+*Initial modal markup for the Setup and Rules components before styling or logic was applied.*
+
+### **4.4.4 Adding Theme and Sound**
+
+I integrated the interface toggle for Theme (light/dark mode) and added sounds to be utilized in user feedback logic. 
+
+This was the first time user preferences were stored persistently, marking a shift toward a more state-aware application. 
+
+The JavaScript file `theme.js` modularized this behavior and encapsulated logic for play states, icon updates, and ARIA roles for accessibility.
+
+![Theme and Sound Toggles in Light and Dark Mode with Audio File Directory](docs/figures/screenshots/theme-toggle-and-sound.webp)  
+*Theme and sound toggles shown in both dark and light modes (left), alongside the full list of mp3 sound files used in the Codoku project (right).*
+
+### **4.4.5 Rendering the Sudoku Grid**
+`renderEmptyGrid()` was created to build a 9×9 structure with data attributes for row/col tracking and styling hooks.
+
+The outer cell borders and 3×3 box markers were conditionally applied using modular CSS classes.
+
+![Initial empty Sudoku grid rendered via JavaScript](docs/figures/screenshots/empty-grid.webp)  
+*The rendered empty Sudoku board.*
+
+### **4.4.6 Puzzle Generation & Population**
+`fetchSudokuBoard()` was implemented to retrieve puzzles from the API Ninjas service.
+- A test AJAX request retrieved sample puzzles and solutions.
+- `populateGrid()` then looped through API data to:
+  - Fill fixed cells (bolded, uneditable).
+  - Mark editable cells as user-modifiable with hover styles and pointer cursors.
+
+### **4.4.7 Enabling User Input**
+- `enableCellSelection()` was developed to:
+  - Highlight clicked cells.
+  - Accept number input via keyboard or on-screen key taps.
+  - Support clearing via backspace/delete or the "X" button.
+- `checkUserInput()` and `revealHint()` functions added interactive error detection and helper logic.
+
+### **4.4.8 Game State Management**
+- Core game loop built around `startNewGame()`:
+  - Called the puzzle generator.
+  - Started/reset the timer.
+  - Tracked hints and difficulty.
+- Additional helper functions updated live UI elements via DOM manipulation (`updateTimerDisplay()`, `updateHintsDisplay()`, etc.).
+
+### **4.4.9 Visual Feedback & Win Conditions**
+- `triggerAutoWinCheck()` was implemented to:
+  - Detect puzzle completion (with or without hints).
+  - Display the correct modal and play celebration or error sounds accordingly.
+- Visual feedback was enhanced with:
+  - `popConfetti()` function (using the canvas-confetti library).
+  - Bootstrap modals styled based on theme mode and puzzle outcome.
+
+### **4.4.10 Enhancing Accessibility & Feedback**
+- Custom alert modals were implemented in place of native JS alerts.
+- Dark mode and sound toggles were added and persisted via `localStorage`.
+- Interactive elements used ARIA labels and visually hidden instructions for screen readers.
+
+### **4.4.11 Adding Navigation Safeguards**
+- Navigation events were managed via `navbar.js`:
+  - Clicking “About” while playing prompts an alert message.
+  - Bootstrap collapse behavior was added to auto-close nav menus on mobile after interaction.
+
+### **4.4.12 Final Polish & Responsive Testing**
+- Fonts and spacing were refined for consistency across viewports.
+- Live responsiveness testing was done in DevTools and on physical devices.
+- Redundant comments were stripped after all core features stabilized.
+- Sound preferences, theme memory, and error edge-cases were thoroughly tested before deployment.
+
+This progressive flow ensured each core component was completed before moving on, and that structural foundations supported growing complexity without sacrificing clarity or control.
