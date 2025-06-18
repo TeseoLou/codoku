@@ -1669,11 +1669,48 @@ The stylesheet was scaffolded to reflect consistent visual identity and support 
 ### **4.2.4 JavaScript File Architecture & Linking**
 
 To keep logic modular, I created the following JS files early:
-> `game.js` – Core gameplay and board logic
-> `init.js` – Page lifecycle and modal boot logic
-> `theme.js` – Dark/light mode and localStorage persistence
-> `setup-modal.js` – Start game logic and modal behavior
-> `navbar.js` – Navbar behavior and navigation safeguards
+> `game.js` – Core gameplay and board logic  
+> `theme.js` – Dark/light mode and localStorage persistence  
+> `setup-modal.js` – Start game logic and modal behavior  
+> `navbar.js` – Navbar behavior and navigation safeguards  
+> `init.js` – Page lifecycle and modal boot logic 
 
-These were linked at the bottom of `index.html` to avoid DOM timing issues and wrapped in `DOMContentLoaded` guards.
+These were linked at the bottom of `index.html` to avoid DOM timing issues.
+
+## **4.3 Page Template**
+Once the initial project folder and file structure was in place, the next step was to establish a universal page template that could be reused across all HTML pages. This involved building out shared structural components and styling elements that define Codoku’s visual identity and layout consistency.
+
+The goal was to create a flexible yet robust HTML + CSS foundation that could be duplicated into every page and would only require page-specific content edits going forward.
+
+**Key Components of the Universal Template:**  
+
+`<head>` Metadata and Dependencies
+  - Meta tags for viewport, character encoding, and accessibility  
+  - Google Fonts for typography  
+  - Boodstrap 5.3 CDN for layout and component responsiveness  
+  - FontAwesome for icons  
+  - Favicon links  
+  - `style.css` for custom styling  
+
+Semantic Layout Structure   
+- The `<body>` included structural landmarks shared by all pages:
+  - `nav` – responsive Bootstrap navbar with theme and sound toggles  
+  - `main` – the central content area, customized per page  
+  - `footer` – consistent copyright and social  
+
+Thematic Styling Foundations
+- The global CSS file `style.css` handled:
+  - Typography hierarchy using `--font-heading` and `--font-body` variables  
+  - Color variables for light/dark modes and accessibility contrast  
+  - Background textures for day and night themes  
+  - Base styling for navigation, modals, grid containers, and responsive layout  
+
+Once complete, this template structure was cloned into each page and slightly modified based on purpose.
+
+From this point on, any correction, accessibility fix, or layout tweak made to the shared features (navbar, footer, modals, toggles, etc.) had to be applied across every HTML page to maintain consistency.
+
+This modular and scalable structure ensured:
+- Fewer bugs during UI changes  
+- Easier integration of JS logic across pages  
+- Faster adaptation of updates (like styling refinements or theme adjustments)
 
