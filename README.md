@@ -1875,7 +1875,7 @@ To fix this I:
 - Ensured the display updates to show no time remaining when appropriate.
 
 ![Timer Reset Fix](docs/figures/gifs/timer-reset-fix.gif)  
-*When starting a new game without a timer, any previous countdown now stops correctly—ensuring clean and clear game sessions.*
+*When starting a new game without a timer, any previous countdown now stops correctly, ensuring clean and clear game sessions.*
 
 These changes ensured that each game session begins cleanly, regardless of the timer settings used in the previous round.
 
@@ -1887,8 +1887,116 @@ In order to address this I:
 - Ensured the game board, controls, and footer had adequate vertical breathing space.
 
 ![Overlap Fix](docs/figures/gifs/overlap-fix.gif)  
-*Responsive min-height values ensure the board never overlaps the footer—maintaining visual clarity across all screen sizes.*
+*Responsive min-height values ensure the board never overlaps the footer, maintaining visual clarity across all screen sizes.*
 
 This fix prevents content from being squashed or hidden on smaller screens, making gameplay consistent across devices.
 
-# **5. Features**
+# **5. Feature Set & User Capabilities**
+This section highlights the complete functionality of Codoku in its final state, organized by the user journey. It covers everything from universal components to page-specific features and thoughtful enhancements. 
+
+Each entry outlines what users can do, the benefits those features provide, and the technologies that power them. This helps both developers and users understand how the project works, what makes it accessible, and where it shines in terms of user experience and technical design.
+
+## **5.1 Universal Features**
+These features form the core structure of the Codoku website and are consistently available to all users throughout their experience.
+
+### **5.1.1 Theme Toggle** 
+
+The theme toggle allows users to switch between light and dark display modes instantly, improving comfort and accessibility.
+
+Users can switch between visually distinct themes.A soft light theme for clarity, and a darker theme for reduced glare and low-light usability.
+
+**Benefits**:
+- Enhances usability for users in different lighting conditions.
+- Supports user autonomy and personalization.
+- Visually reinforces state changes with clear feedback (e.g. icon and toggle color shift).
+
+**Technical Aspects**:
+- CSS Variables define color schemes that are dynamically updated.
+- A `dark` class is toggled on the `<body>` tag.
+- User preference is persisted with `localStorage`, ensuring the chosen theme remains consistent across sessions.
+- Styled toggle switch with accessible label for clarity.
+- Icons and buttons are updated dynamically:
+  - Button backgrounds and text colors adapt to the selected theme.
+  - Icons swap between light and dark mode variants where applicable, including the theme toggle itself and modal backgrounds.
+
+![Theme Toggle Demo](docs/figures/gifs/theme-toggle.gif)  
+*Theme toggle in action — toggling between light and dark UI modes.*
+
+### **5.1.2 Sound Toggle** 
+
+The sound toggle gives users complete control over Codoku’s audio feedback, ensuring a more inclusive and accessible experience.
+
+This allows users to enable or mute all game-related sounds (e.g. button clicks, win/lose alerts, clue triggers) using a clearly labeled toggle.
+
+**Benefits**:
+- Prevents unexpected or jarring sounds on page load.
+- Offers sensory-friendly options for neurodivergent users or those in shared/quiet environments.
+- Gives returning users a persistent setting tailored to their preference.
+
+**Technical Aspects**:
+- Implemented using a custom switch input paired with a clear text label (Sound) and an accessible mute icon.
+- Visual feedback includes dynamic color changes:  
+  - 🔴 Red (Muted)  
+  - 🟢 Green (Active)
+- State is stored in `localStorage`, so user choice remains even after browser refresh or revisit.
+- Integrated logic ensures sound-related functions respect the toggle state (e.g., theme-switch sound won’t play if sound is off).
+
+![Sound Toggle Demo](docs/figures/gifs/sound-toggle.gif)
+*Demonstration of the sound toggle controlling global audio state across the site.*
+
+### **5.1.3 Navigation Bar**
+
+The navigation bar allows users to access the Game, About, and Rules pages easily from any part of the site. It adapts to different screen sizes, ensuring optimal usability across devices.
+
+**Benefits:**
+- Quick and intuitive access to all main sections of the site  
+- Mobile-first design enhances user experience on phones and tablets  
+- Centralized location for theme and sound toggle controls  
+
+**Technical Aspects:**
+- Responsive Bootstrap navbar with collapsible functionality  
+- `navbar-toggler` component with ARIA labels for accessibility  
+- JavaScript handles auto-collapse behavior via `setupNavLinkCollapse()`  
+- Toggle switches embedded in the nav bar, styled with CSS and synced via `localStorage`  
+- `position: sticky` keeps navigation fixed to the top for persistent visibility  
+
+![Navigation Bar in Action](docs/figures/gifs/navbar.gif)  
+*Demonstration of the responsive navigation bar, complete with toggle collapse functionality and embedded display controls.*
+
+### 5.1.4 Rules Modal
+
+The rules modal provides in-page instructions via an accessible overlay, helping users understand the game without navigating away from the interface.
+
+**Benefits:**
+- Offers clear gameplay guidance in a non-intrusive format  
+- Prevents user disorientation by avoiding page changes  
+- Styled to match light/dark themes for visual consistency  
+
+**Technical Aspects:**
+- Built with Bootstrap’s modal component  
+- Uses semantic HTML (e.g., `<section>`, `<p>`, `<ul>`) for clarity and accessibility  
+- ARIA labels and roles improve screen reader support  
+- Linked to the navigation bar and auto-focuses for usability  
+
+![Rules Modal Preview](docs/figures/gifs/rules-modal.gif)
+*The rules modal explains the Codoku objective and user controls directly within the game view.*
+
+### 5.1.5 Sticky Footer
+
+The sticky footer provides persistent access to key information and social links, visible on every page regardless of scroll position.
+
+**Benefits:**
+- Ensures users can easily navigate to external resources like social media  
+- Displays copyright and site identity for user trust  
+- Footer icons enhance visual interest and recognizability  
+
+**Technical Aspects:**
+- Implemented using CSS Flexbox for alignment  
+- Positioned with `flex-shrink: 0` and placed at the bottom using `min-height` layout strategy  
+- Hover effects styled for both light and dark themes to expand icons
+- Includes icon fonts from Font Awesome for compact and readable navigation 
+- External links use `target="_blank"` for safe access in new tabs   
+ 
+![Sticky Footer Preview](docs/figures/gifs/footer.gif)  
+*The sticky footer remains fixed across pages, offering quick access to external links and consistent branding.*
+
