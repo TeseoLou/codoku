@@ -1735,7 +1735,7 @@ The Sudoku grid container and number input area were blocked out. The "Game Stat
 ![HTML structure for Codoku’s number input controls with semantic tags and Bootstrap classes](docs/figures/screenshots/game-section-html-structure.webp)  
 *HTML scaffold for the Sudoku board and number keys, using semantic elements.*
 
-### 4.4.3 Creating the Rules and Setup Modals (Basic Structure) 🧱
+### **4.4.3 Creating the Rules and Setup Modals**
 I laid the groundwork for Codoku’s two primary modals: the Rules Modal and the Setup Modal.
 
 ![Bootstrap modal shells created for Setup and Rules](docs/figures/screenshots/basic-modal-structure.webp)  
@@ -1794,9 +1794,101 @@ A custom 404 page was added to improve the user experience when a non-existent r
 ![404 Page Animation](docs/figures/gifs/404-page.gif)   
 *Preview of Codoku’s custom 404 page, styled with themed typography and a hand-drawn comic-style illustration.*
 
-### **4.4.13 Final Polish & Responsive Testing**
+### **4.4.13 Responsive Implementations with Testing**
 Text, grid sizing, and spacing were adjusted to stay consistent on all screen sizes, using DevTools and real devices for live responsiveness testing.
 
 ![Codoku Responsiveness Demonstration](docs/figures/gifs/responsiveness.gif)  
 *Responsive design adapting fluidly to tablet, desktop, and mobile viewports.*
 
+## **4.5 Feedback and Refinement**
+Following a detailed mid-project review, a number of constructive suggestions were offered that significantly helped fine-tune the Codoku experience. 
+
+### **4.5.1 Interface & Usability Enhancements**
+Mentor feedback highlighted the need for more polished and modern interaction elements. The most impactful updates were as follows:
+
+#### **4.5.1.a New Game Modal on Page Load**
+During feedback review, it was highlighted that new users landing on the game page were left without clear guidance on how to begin playing. This initial confusion stemmed from the lack of a structured introduction or setup flow.
+
+To address this:
+- A New Game Setup Modal was introduced to automatically appear on page load.
+- It prompts users to choose difficulty and timer settings before accessing the puzzle.
+- The Cancel button was removed to prevent players from accidentally closing the modal without making a selection.
+- The modal was configured to disable dismissal via clicking outside or pressing Esc, using Bootstrap’s backdrop and keyboard options.
+
+![Initial Setup Modal](docs/figures/screenshots/start-up-modal.webp)  
+*The modal guides users through difficulty and timer selection upon first visiting the site, improving orientation and reducing confusion.*
+
+This change significantly improved onboarding clarity by ensuring players are properly introduced to the game mechanics every time they load the page.
+
+#### **4.5.1.b Improved Modals for Feedback**
+Initial user feedback and accessibility best practices highlighted that native alert boxes, while functional, pose several usability and design limitations, particularly in modern web applications.
+
+To address this:
+- All alerts were replaced with Bootstrap modals.
+- Used for timeout warnings, invalid input, and hint-based wins.
+- The modals respect dark/light themes and support keyboard navigation.
+
+![Puzzle Feedback Modals](docs/figures/screenshots/new-modals.webp)  
+*Custom Bootstrap modals provide consistent styling and clearer user feedback for puzzle outcomes, invalid actions, and timeouts.*
+
+This overhaul brought consistency and visual cohesion to how feedback is presented, ensuring that players remain immersed in the game environment while still receiving clear, accessible notifications.
+
+#### **4.5.1.c ⌫ "Clear" Button Enhancement**
+The original “X” icon used for clearing a selected Sudoku cell was ambiguous. Users, especially those less familiar with interface conventions, might confuse it with a close or cancel action. This ambiguity posed a usability and accessibility challenge, particularly for users relying on screen readers or cognitive clarity.
+
+To improve clarity and inclusivity, the following changes were made:
+- Replaced the icon with a different button reading “⌫”.
+- Styled the button to visually resemble a physical delete key (like Shift/Delete on a keyboard).
+
+![Clear Button Redesign](docs/figures/screenshots/new-clear-button.webp)  
+*A styled “Clear” button that resembles a physical delete key improves clarity and accessibility, replacing the ambiguous “X” icon.*
+
+This adjustment improved user understanding, reduced interaction errors, and enhanced overall accessibility.
+
+### **4.5.2 Accessibility Considerations**
+To enhance inclusivity and align with accessibility standards, several thoughtful changes were implemented:
+
+#### **4.5.2.a Sound Toggle for Sensory Consideration**
+Originally, the game featured sounds for feedback (e.g., errors, confirmations) that played automatically. The lack of user control over audio also conflicted with WCAG accessibility guidelines.
+
+To ensure a more inclusive and respectful experience, a dedicated Sound Toggle was implemented:
+- Defaults to "off" on first page load to avoid unexpected sound.
+- Stores the user’s choice using localStorage, preserving their preference across sessions.
+- Visual indicators show the current state:
+  - Red for muted 🔴 
+  - Green for sound on 🟢
+  
+![Sound Toggle](docs/figures/screenshots/new-sound-toggle.webp)  
+*The sound toggle defaults to muted on page load—supporting sensory-friendly design.*
+
+This improvement gave users full control over audio feedback, aligning with sensory-friendly design standards.
+
+### **4.5.3 Functional Refinements**
+Feedback also highlighted subtle functional issues that were quickly addressed to improve overall gameplay flow:
+
+#### **4.5.3.a Timer Reset Fix**
+During feedback, it was discovered that when starting a new game with “No Timer” selected, the countdown from a previous timed game would sometimes continue running. This caused confusion and led to inconsistent gameplay experiences.
+
+To fix this I: 
+- Cleared any existing countdown intervals before starting a new game.
+- Verified that selecting “No Timer” halts the countdown logic entirely.
+- Ensured the display updates to show no time remaining when appropriate.
+
+![Timer Reset Fix](docs/figures/gifs/timer-reset-fix.gif)  
+*When starting a new game without a timer, any previous countdown now stops correctly—ensuring clean and clear game sessions.*
+
+These changes ensured that each game session begins cleanly, regardless of the timer settings used in the previous round.
+
+#### **4.5.3.b Board Overlap on different Screens**
+On some mobile devices and rotated tablet screens, the Sudoku grid occasionally overlapped with the footer or was partially cut off, affecting usability and visual clarity.
+
+In order to address this I: 
+- Added min-height values within responsive media queries for different screen sizes and orientations.
+- Ensured the game board, controls, and footer had adequate vertical breathing space.
+
+![Overlap Fix](docs/figures/gifs/overlap-fix.gif)  
+*Responsive min-height values ensure the board never overlaps the footer—maintaining visual clarity across all screen sizes.*
+
+This fix prevents content from being squashed or hidden on smaller screens, making gameplay consistent across devices.
+
+# **5. Features**
