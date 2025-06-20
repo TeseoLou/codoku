@@ -1564,8 +1564,7 @@ Once features were stable and tested, I returned to each file to remove redundan
 
 | Tool / Extension             | Purpose & Role in Development |
 |-----------------------------|-------------------------------|
-| **VS Code Comment Shortcuts** | Used `Ctrl + /` (Windows) or `Cmd + /` (Mac) to quickly toggle comments. Referenced the [VSCode Comment Guide](https://vscode.one/comment-vscode/) for best practices. |
-| **Block Comment Shortcuts**  | Used `Shift + Alt + A` (Windows) for commenting multi-line logic or disabling sections during debugging. |
+| **VS Code Comment Shortcuts** | Referenced the [VSCode Comment Guide](https://vscode.one/comment-vscode/) for best practices. |
 | **Auto Comment Extension**   | Aided in rewording overly descriptive comment lines using AI for selected JavaScript snippets. | 
 | **Code Spell Checker**       | Prevented typos in explanatory comments and headers. Useful for maintaining professionalism. |
 
@@ -1612,12 +1611,9 @@ To complement GitHub’s interface and VS Code’s built-in Git tools, I used th
 
 | Tool / Platform             | Purpose |
 |----------------------------|---------|
-| **VS Code Git Integration**| Inline commit, diff view, and staging for small code changes. |
-| **GitHub Desktop**         | Visual UI for managing branches, syncing, and commit diffs. |
-| **GitHub Projects**        | Kanban-style board used to track features, fixes, and priorities. |
-| **Diffchecker.com**        | Helped with comparing long JS/CSS files before and after refactors. |
+| **Diff Checker**       | Helped with comparing long JS/CSS files before and after refactors. |
 | **Git History (VS Code Extension)** | Viewed line-by-line changes, commit trees, file histories, and comparisons directly in VS Code. |
-| **Conventional Commit Structure** | Messages followed a “what, where, why” pattern for clarity and traceability. |
+| **Conventional Commit Structure** | Messages attempted to followed a “what, where, why” pattern for clarity and traceability. |
 
 Using these tools helped ensure every change was documented and intentional. This approach hoped to not only improve my personal development discipline, but also create a clean, professional commit history useful for tutors and my future self.
 
@@ -1689,7 +1685,7 @@ The goal was to create a flexible yet robust HTML + CSS foundation that could be
 
 **Key Components of the Universal Template:**  
 
-`<head>` Metadata and Dependencies
+Metadata and Dependencies
   - Meta tags for viewport, character encoding, and accessibility  
   - Google Fonts for typography  
   - Boodstrap 5.3 CDN for layout and component responsiveness  
@@ -1698,14 +1694,14 @@ The goal was to create a flexible yet robust HTML + CSS foundation that could be
   - `style.css` for custom styling  
 
 Semantic Layout Structure   
-- The `<body>` included structural landmarks shared by all pages:
-  - `nav` – responsive Bootstrap navbar with theme and sound toggles  
-  - `main` – the central content area, customized per page  
-  - `footer` – consistent copyright and social  
+- Structural landmarks shared by all pages:
+  - Responsive Bootstrap navbar with theme and sound toggles  
+  - The central content area, customized per page  
+  - Footer with copyright and social  
 
 Thematic Styling Foundations
-- The global CSS file `style.css` handled:
-  - Typography hierarchy using `--font-heading` and `--font-body` variables  
+- The global CSS file handled:
+  - Typography hierarchy 
   - Color variables for light/dark modes and accessibility contrast  
   - Background textures for day and night themes  
   - Base styling for navigation, modals, grid containers, and responsive layout  
@@ -1726,9 +1722,7 @@ This modular and scalable structure ensured:
 After establishing the reusable page template (with shared HTML layout, background styling, navbar, footer, and toggle elements), development progressed through a deliberate, layered sequence, gradually building structure, style, interactivity and logic while ensuring each feature worked independently before being integrated.
 
 ### **4.4.1. Refining Structural HTML Elements**
-Page titles, headers, button containers, and stat panels were added to define clear visual anchors for gameplay.
-
-Additional semantic containers like `<section>`, `<main>`, `<aside>`, and ARIA landmarks were incorporated for accessibility.
+Page titles, headers, button containers, and stat panels were added to define clear visual anchors for gameplay. Additional semantic containers and ARIA landmarks were incorporated.
 
 Boilerplate copies of this layout were added to `about.html` and `404.html`, ensuring consistency across all pages.
 
@@ -1736,11 +1730,7 @@ Boilerplate copies of this layout were added to `about.html` and `404.html`, ens
 *Early HTML scaffold showing the Codoku title, action buttons, and placeholder sections.*
 
 ### **4.4.2. Laying Out Core Visual Components**
-The Sudoku grid container and number input area were blocked out using `<div>` and `<p>` elements.
-
-Placeholder IDs and class names were applied to each structural element to link them to CSS and JS logic later.
-
-The "Game Stats" section was scaffolded beneath the header, ready to display live game data such as timer, difficulty, and hint usage.
+The Sudoku grid container and number input area were blocked out. The "Game Stats" section was also scaffolded beneath the header.
 
 ![HTML structure for Codoku’s number input controls with semantic tags and Bootstrap classes](docs/figures/screenshots/game-section-html-structure.webp)  
 *HTML scaffold for the Sudoku board and number keys, using semantic elements.*
@@ -1748,73 +1738,65 @@ The "Game Stats" section was scaffolded beneath the header, ready to display liv
 ### 4.4.3 Creating the Rules and Setup Modals (Basic Structure) 🧱
 I laid the groundwork for Codoku’s two primary modals: the Rules Modal and the Setup Modal.
 
-These modals were essential to guiding users into the game and explaining how to play, without overwhelming them.
-
 ![Bootstrap modal shells created for Setup and Rules](docs/figures/screenshots/basic-modal-structure.webp)  
 *Initial modal markup for the Setup and Rules components before styling or logic was applied.*
 
 ### **4.4.4 Adding Theme and Sound**
 
-I integrated the interface toggle for Theme (light/dark mode) and added sounds to be utilized in user feedback logic. 
-
-This was the first time user preferences were stored persistently, marking a shift toward a more state-aware application. 
-
-The JavaScript file `theme.js` modularized this behavior and encapsulated logic for play states, icon updates, and ARIA roles for accessibility.
+I integrated the interface toggle for Theme (light/dark mode) and added sounds to be utilized in user feedback logic. This was the first time user preferences were stored persistently, marking a shift toward a more state-aware application. 
 
 ![Theme and Sound Toggles in Light and Dark Mode with Audio File Directory](docs/figures/screenshots/theme-toggle-and-sound.webp)  
 *Theme and sound toggles shown in both dark and light modes (left), alongside the full list of mp3 sound files used in the Codoku project (right).*
 
 ### **4.4.5 Rendering the Sudoku Grid**
-`renderEmptyGrid()` was created to build a 9×9 structure with data attributes for row/col tracking and styling hooks.
-
-The outer cell borders and 3×3 box markers were conditionally applied using modular CSS classes.
+The logic for rendering an empty sudoku grid was created to build a 9×9 structure with data attributes for row/col tracking and styling.
 
 ![Initial empty Sudoku grid rendered via JavaScript](docs/figures/screenshots/empty-grid.webp)  
 *The rendered empty Sudoku board.*
 
 ### **4.4.6 Puzzle Generation & Population**
-`fetchSudokuBoard()` was implemented to retrieve puzzles from the API Ninjas service.
-- A test AJAX request retrieved sample puzzles and solutions.
-- `populateGrid()` then looped through API data to:
-  - Fill fixed cells (bolded, uneditable).
-  - Mark editable cells as user-modifiable with hover styles and pointer cursors.
+The game connected to an online puzzle generator, API Ninjas, to load Sudoku boards. Fixed numbers were filled in automatically, while the rest were styled to show they could be edited by the player.
+![Generated Sudoku grid from API Ninjas](docs/figures/screenshots/generated-grid.webp)  
+*An example of a dynamically generated Sudoku puzzle retrieved from the API and rendered on the board.*
 
 ### **4.4.7 Enabling User Input**
-- `enableCellSelection()` was developed to:
-  - Highlight clicked cells.
-  - Accept number input via keyboard or on-screen key taps.
-  - Support clearing via backspace/delete or the "X" button.
-- `checkUserInput()` and `revealHint()` functions added interactive error detection and helper logic.
+The board was made interactive so players could click cells, type numbers, and use on-screen buttons. Extra features were added to highlight mistakes and give hints when needed.
+![Interactive cell selection and entry on Sudoku grid](docs/figures/gifs/user-input.gif)  
+*A screen recording showing user input interaction — selecting a cell and entering numbers either via keyboard or on-screen buttons.*
+
 
 ### **4.4.8 Game State Management**
-- Core game loop built around `startNewGame()`:
-  - Called the puzzle generator.
-  - Started/reset the timer.
-  - Tracked hints and difficulty.
-- Additional helper functions updated live UI elements via DOM manipulation (`updateTimerDisplay()`, `updateHintsDisplay()`, etc.).
+The main game logic was set up to load a new puzzle, start the timer, and track things like hints and difficulty. The interface updated live as the game progressed to keep the player informed.
+![Game stats panel which updates with countdown and on check and clue reveal button interaction](docs/figures/screenshots/game-stat-panel.webp)  
+*The game stats panel tracks the selected difficulty, elapsed time, and number of hints used in real-time.*
 
 ### **4.4.9 Visual Feedback & Win Conditions**
-- `triggerAutoWinCheck()` was implemented to:
-  - Detect puzzle completion (with or without hints).
-  - Display the correct modal and play celebration or error sounds accordingly.
-- Visual feedback was enhanced with:
-  - `popConfetti()` function (using the canvas-confetti library).
-  - Bootstrap modals styled based on theme mode and puzzle outcome.
+A system was added to check if the puzzle was complete, show a win or error message, and play matching sound effects. Confetti was added for wins, and modals were styled to match the theme and outcome.
 
-### **4.4.10 Enhancing Accessibility & Feedback**
-- Custom alert modals were implemented in place of native JS alerts.
-- Dark mode and sound toggles were added and persisted via `localStorage`.
-- Interactive elements used ARIA labels and visually hidden instructions for screen readers.
+![Game Completion Celebration](docs/figures/gifs/game-win.gif)  
+*A successful puzzle completion triggers the celebration modal and visual feedback, including confetti and game stats.*
 
-### **4.4.11 Adding Navigation Safeguards**
-- Navigation events were managed via `navbar.js`:
-  - Clicking “About” while playing prompts an alert message.
-  - Bootstrap collapse behavior was added to auto-close nav menus on mobile after interaction.
+### **4.4.10 Adding Navigation Safeguards**
+Navigation was improved to alert users before leaving an active game and to automatically close the menu on mobile after clicks for a smoother experience.
 
-### **4.4.12 Final Polish & Responsive Testing**
-- Fonts and spacing were refined for consistency across viewports.
-- Live responsiveness testing was done in DevTools and on physical devices.
-- Redundant comments were stripped after all core features stabilized.
-- Sound preferences, theme memory, and error edge-cases were thoroughly tested before deployment.
+![Navigation Safeguard Modal](docs/figures/gifs/navigation-safeguard.gif)    
+*A safeguard modal prevents accidental navigation away from the game mid-session, reinforcing user flow and focus.*
 
-This progressive flow ensured each core component was completed before moving on, and that structural foundations supported growing complexity without sacrificing clarity or control.
+### **4.4.11 Creating the About Page**
+The About page was designed as a static section to explain Codoku’s concept and goals. Shared layout elements like the header, footer, theme toggle, and navbar were reused for consistency. 
+
+![About Page Preview](docs/figures/gifs/about-page.gif)  
+*The completed About page, featuring clear typography, thematic styling, and accessible layout.*
+
+### **4.4.12 Implementing the 404 Error Page**
+A custom 404 page was added to improve the user experience when a non-existent route is accessed. It reused the existing styling framework and followed semantic structure and accessibility best practices. 
+
+![404 Page Animation](docs/figures/gifs/404-page.gif)   
+*Preview of Codoku’s custom 404 page, styled with themed typography and a hand-drawn comic-style illustration.*
+
+### **4.4.13 Final Polish & Responsive Testing**
+Text, grid sizing, and spacing were adjusted to stay consistent on all screen sizes, using DevTools and real devices for live responsiveness testing.
+
+![Codoku Responsiveness Demonstration](docs/figures/gifs/responsiveness.gif)  
+*Responsive design adapting fluidly to tablet, desktop, and mobile viewports.*
+
