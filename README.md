@@ -87,30 +87,30 @@ In short, my goal was to create something familiar. A simple, satisfying game wi
 
 ### **2.1.2. Creator Targets**
 
-Following the initial vision, several specific goals were established to shape how Codoku would serve its users and stand out as a thoughtfully developed interactive application.
+Following the initial vision, several specific goals were established to shape how **Codoku** would serve its users and stand out as a thoughtfully developed interactive application.
 
  🎯 **Maintain a classic, uncluttered aesthetic**  
-  Sudoku is a timeless puzzle, and part of its appeal lies in its simplicity. Codoku embraces that tradition by presenting a clean, focused interface that reflects the classic Sudoku grid style users are already familiar with. This minimalist design avoids unnecessary complexity and distractions.  
+  Sudoku is a timeless puzzle, and part of its appeal lies in its simplicity. **Codoku** embraces that tradition by presenting a clean, focused interface that reflects the classic Sudoku grid style users are already familiar with. This minimalist design avoids unnecessary complexity and distractions.  
   Call to Action: _“Sit back, clear your mind, and enjoy a focused puzzle experience, no clutter, just clarity.”_
 
  🎯 **Ensure accessibility**  
-  Recognising the diversity in players’ experience levels, Codoku offers multiple difficulty settings and straightforward controls. Font sizes, color contrast, spacing, and button placement have all been considered to create an experience that is easy to use across different devices and abilities.  
-  Call to Action: _“Choose the level that fits your pace, Codoku adapts to your comfort, not the other way around.”_
+  Recognising the diversity in players’ experience levels, **Codoku** offers multiple difficulty settings and straightforward controls. Font sizes, color contrast, spacing, and button placement have all been considered to create an experience that is easy to use across different devices and abilities.  
+  Call to Action: _“Choose the level that fits your pace, **Codoku** adapts to your comfort, not the other way around.”_
 
  🎯 **Provide unlimited engagement**  
-  With a puzzle-generating API integrated into the application, Codoku delivers a fresh, unique puzzle every time a user plays. This supports long-term engagement and ensures the game never feels repetitive.  
+  With a puzzle-generating API integrated into the application, **Codoku** delivers a fresh, unique puzzle every time a user plays. This supports long-term engagement and ensures the game never feels repetitive.  
   Call to Action: _“Refresh and replay, no two games are ever the same.”_
 
  🎯 **Encourage return visits**  
   By combining unlimited puzzles, a clean and calming layout, and user-friendly features, the game is designed to be something users enjoy coming back to — whether as a daily brain challenge or a relaxing break.  
-  Call to Action: _“Come back anytime, Codoku is your go-to space for daily logic and calm.”_
+  Call to Action: _“Come back anytime, **Codoku** is your go-to space for daily logic and calm.”_
 
  🎯 **Attract new users**  
-  A polished interface, responsive layout, and intuitive game mechanics help position Codoku as a welcoming space for new users — whether they’re casual players, puzzle lovers, or visitors exploring logic games.  
+  A polished interface, responsive layout, and intuitive game mechanics help position **Codoku** as a welcoming space for new users — whether they’re casual players, puzzle lovers, or visitors exploring logic games.  
   Call to Action: _“Discover the joy of problem solving in a space made for everyone.”_
 
  🎯 **Establish a distinct identity**  
-  While maintaining familiar Sudoku mechanics, Codoku sets itself apart through its branding, visual tone, and modern minimalist approach. The goal was to create a game that not only functions well but feels like a refined and standalone product.  
+  While maintaining familiar Sudoku mechanics, **Codoku** sets itself apart through its branding, visual tone, and modern minimalist approach. The goal was to create a game that not only functions well but feels like a refined and standalone product.  
   Call to Action: _“Enjoy the charm of the daily puzzle page, without the ink stains or wasted paper.”_
 
 These creator goals acted as a guiding framework throughout development, influencing both small interface details and overarching design decisions. Ultimately, the aim was to build something simple, smart, and satisfying. A game that users would remember, enjoy, and return to.
@@ -119,7 +119,7 @@ Each of these goals reflects the considerations of the user perspective, helping
 
 ### **2.1.3. Puzzler Demographics**
 
-The development of Codoku was shaped by a deeper understanding of puzzler demographics, user habits, and the cognitive benefits associated with puzzle-solving. This insight helped identify core audience segments and informed how features like accessibility, difficulty scaling, and interface design were approached.
+The development of **Codoku** was shaped by a deeper understanding of puzzler demographics, user habits, and the cognitive benefits associated with puzzle-solving. This insight helped identify core audience segments and informed how features like accessibility, difficulty scaling, and interface design were approached.
 
 Each audience group aligns with specific user goals (from mental engagement to learning, relaxation, or habit-forming gameplay) ensuring Codoku is both relevant and rewarding to a broad spectrum of users.
 
@@ -127,13 +127,13 @@ Each audience group aligns with specific user goals (from mental engagement to l
 Young learners engaging with puzzles to develop important cognitive skills, including mathematics, pattern recognition, and memory. Sudoku is especially suitable for children aged 8 and up, as it promotes logical thinking and concentration—key for academic and cognitive development. While specific statistics on Sudoku usage within schools are limited, the puzzles are widely recognized for their educational benefits. Research, including findings from the University of Cambridge, supports the use of puzzles like Sudoku in classrooms to enhance focus, logic, and brain development, making it a valuable educational tool for kids.
 
 **Young Adults (Digital First)**  
-Curious, mobile-savvy users who enjoy quick access to games that stimulate their minds. Puzzle-solving remains popular with younger demographics, with 34% of 18–24-year-olds reported engaging with tactile logic games like the Rubik’s Cube. While many still enjoy physical puzzles, this group increasingly prefers sleek, digital formats. Codoku caters to them by offering a responsive, accessible interface that captures the feel of classic Sudoku without the clutter or paper waste.
+Curious, mobile-savvy users who enjoy quick access to games that stimulate their minds. Puzzle-solving remains popular with younger demographics, with 34% of 18–24-year-olds reported engaging with tactile logic games like the Rubik’s Cube. While many still enjoy physical puzzles, this group increasingly prefers sleek, digital formats. **Codoku** caters to them by offering a responsive, accessible interface that captures the feel of classic Sudoku without the clutter or paper waste.
 
 **Adults (Habitual Puzzlers & Cognitive Health Seekers)**  
-Everyday adult users who enjoy puzzles as part of their routine — including the 84% of UK adults who describe themselves as puzzlers. This group tackles Sudoku regularly for enjoyment, stress relief, or as a light mental workout. Additionally, it includes adults seeking activities that promote long-term brain health, such as those with a personal or family connection to dementia. Research shows that puzzle-solving can help maintain mental agility and slow cognitive decline, making it a meaningful demographic for Codoku’s quiet, stimulating gameplay.
+Everyday adult users who enjoy puzzles as part of their routine — including the 84% of UK adults who describe themselves as puzzlers. This group tackles Sudoku regularly for enjoyment, stress relief, or as a light mental workout. Additionally, it includes adults seeking activities that promote long-term brain health, such as those with a personal or family connection to dementia. Research shows that puzzle-solving can help maintain mental agility and slow cognitive decline, making it a meaningful demographic for **Codoku’s** quiet, stimulating gameplay.
 
 **Older Adults (Technology Newcomers)**  
-According to research published in the *International Journal of Geriatric Psychiatry*, the more people over 50 engage in games such as Sudoku and crosswords, the better their brains function. This group includes older adults who may not be as comfortable with technology but still enjoy puzzles for mental stimulation. They value simple, easy-to-navigate interfaces and puzzles that help maintain cognitive function. Codoku is designed to be intuitive and accessible, offering clear controls and minimal distractions — making it a suitable choice for those who prefer an uncomplicated digital experience.
+According to research published in the *International Journal of Geriatric Psychiatry*, the more people over 50 engage in games such as Sudoku and crosswords, the better their brains function. This group includes older adults who may not be as comfortable with technology but still enjoy puzzles for mental stimulation. They value simple, easy-to-navigate interfaces and puzzles that help maintain cognitive function. **Codoku** is designed to be intuitive and accessible, offering clear controls and minimal distractions — making it a suitable choice for those who prefer an uncomplicated digital experience.
 
 **Estimated Demographic Breakdown for Codoku Users**
 
@@ -154,7 +154,7 @@ According to research published in the *International Journal of Geriatric Psych
 
 ![Codoku Audience Demographics Pie Chart Estimations](docs/figures/charts/demographics.png)
 
-_Pie chart illustrating the estimated distribution of Codoku’s target demographics:  
+_Pie chart illustrating the estimated distribution of **Codoku’s** target demographics:  
 🔵 Children (10%), 🟢 Young Adults (25%), 🟡 Adults (35%), 🔴 Older Adults (20%)._
 
 ### **2.1.4. Target Audiences**
@@ -164,42 +164,42 @@ The broad demographic spread of Codoku’s users highlights the need to thoughtf
 Codoku was designed with the following key audience groups in mind:
 
 👋 **New Users**  
-Newcomers to Sudoku or puzzle games require a clear, intuitive onboarding experience. Whether they are children encountering logic puzzles in an educational context or older adults using digital puzzles for the first time, Codoku must communicate rules, controls, and game flow effortlessly. This includes:
+Newcomers to Sudoku or puzzle games require a clear, intuitive onboarding experience. Whether they are children encountering logic puzzles in an educational context or older adults using digital puzzles for the first time, **Codoku** must communicate rules, controls, and game flow effortlessly. This includes:
 - Simple, welcoming UI and layout
 - Clear feedback on input (correct/incorrect)
 - Minimal distractions
 - Device-agnostic accessibility
 
 🔁 **Repeat Users**  
-Many users return to puzzles regularly for stress relief, mental stimulation, or routine. For this group, Codoku emphasizes:
+Many users return to puzzles regularly for stress relief, mental stimulation, or routine. For this group, **Codoku** emphasizes:
 - Puzzle variety via dynamic generation (no two games the same)
 - A soothing visual experience for repeated use
 - Difficulty selection to match changing moods or goals
 - Instant, frictionless replayability
 
 🏫 **Educational Organisations**
-For schools, teachers, or parents using Codoku as a learning tool, clarity and focus are essential. Codoku supports these users by:
+For schools, teachers, or parents using **Codoku** as a learning tool, clarity and focus are essential. **Codoku** supports these users by:
 - Promoting concentration and logical reasoning
 - Minimizing unnecessary UI complexity
 - Offering challenge scaling suitable for a range of learning levels
 - Functioning seamlessly across desktops and tablets
 
 👤 **Individual Casual Users**
-This includes mobile-savvy young adults and hobbyist puzzlers who seek brief but satisfying experiences. Codoku’s modern, responsive interface supports:
+This includes mobile-savvy young adults and hobbyist puzzlers who seek brief but satisfying experiences. **Codoku’s** modern, responsive interface supports:
 - Quick game sessions on-the-go
 - Accessible play without account creation
 - Immediate, rewarding interactions
 - A clean, ad-free experience focused on mental play
 
 💡 **Tech-Savvy Users**  
-Users already familiar with digital games — especially puzzle enthusiasts — expect responsive design, clean performance, and subtle polish. Codoku appeals to this group through:
+Users already familiar with digital games — especially puzzle enthusiasts — expect responsive design, clean performance, and subtle polish. **Codoku** appeals to this group through:
 - Mobile responsiveness and touch optimization
 - Fast load times
 - Fluid input handling and keyboard shortcuts (where applicable)
 - Structured, elegant game flow
 
 🤝 **Tech Newbies**  
-Older users or digital newcomers may be less confident with device interfaces. For them, Codoku intentionally avoids overwhelm by:
+Older users or digital newcomers may be less confident with device interfaces. For them, **Codoku** intentionally avoids overwhelm by:
 - Using familiar visual metaphors (like a paper Sudoku grid)
 - Enlarged touch targets
 - Clear game progression with no unnecessary features
@@ -207,15 +207,15 @@ Older users or digital newcomers may be less confident with device interfaces. F
 
 Each of these audiences spans across the previously identified age demographics, reinforcing the importance of inclusive design that scales by ability, comfort, and purpose — not just age alone.
 
-This understanding directly informed the development of user stories, which capture and prioritize the needs, behaviors, and goals of these distinct audience groups. The next section explores how Codoku's user stories shaped design and functionality decisions to serve these varied user types.
+This understanding directly informed the development of user stories, which capture and prioritize the needs, behaviors, and goals of these distinct audience groups. The next section explores how **Codoku**'s user stories shaped design and functionality decisions to serve these varied user types.
 
 ### **2.1.5. User Stories**
 
-For this project, user stories were developed to capture the diverse needs of Codoku’s target audience, ensuring the application delivers a responsive, rewarding, and user-centric puzzle experience. The creation of user stories helped define what different user groups—such as new users, returning players, educational institutions, and older tech newcomers—expected from the platform. These stories bridged the gap between user needs and the technical development process, ensuring that every feature contributed to a smooth user experience and served as a roadmap for development and design decisions.
+For this project, user stories were developed to capture the diverse needs of **Codoku’s** target audience, ensuring the application delivers a responsive, rewarding, and user-centric puzzle experience. The creation of user stories helped define what different user groups—such as new users, returning players, educational institutions, and older tech newcomers—expected from the platform. These stories bridged the gap between user needs and the technical development process, ensuring that every feature contributed to a smooth user experience and served as a roadmap for development and design decisions.
 
 To ensure effective and timely delivery, the user stories were divided into three priority categories. These categories reflect essential, important, and desirable features respectively:
 
-🟥 **Must-Have** stories represent the core features Codoku cannot function without. These include elements like puzzle interactivity, user input, feedback systems, and accessibility design.  
+🟥 **Must-Have** stories represent the core features **Codoku** cannot function without. These include elements like puzzle interactivity, user input, feedback systems, and accessibility design.  
 🟨 **Should-Have** stories focus on improving the experience for specific audiences, such as offering difficulty levels or enhancing usability across devices.  
 🟩 **Could-Have** stories introduce advanced or bonus functionality that, while not essential, would significantly enhance the experience if time and resources allow.
 
@@ -257,31 +257,31 @@ _As a **student**, I want puzzles to help me build logic and pattern recognition
 
  _As a **returning player**, I want a timer feature so that I can track how quickly I complete puzzles._
 
-_As a **curious new user**, I want to view an About section that explains the purpose and inspiration behind Codoku, so that I can understand the intent and values behind the game._
+_As a **curious new user**, I want to view an About section that explains the purpose and inspiration behind **Codoku**, so that I can understand the intent and values behind the game._
 
 _As a **sensory-oriented user**, I want optional sound effects for actions like correct entries or puzzle completion, so that I receive auditory feedback that enhances engagement._
 
-_As a **returning user**, I want to find social media links in the footer so that I can follow Codoku updates, share the game with others, and stay connected with new features or challenges._
+_As a **returning user**, I want to find social media links in the footer so that I can follow **Codoku** updates, share the game with others, and stay connected with new features or challenges._
 
 🟩 **Could-Have**
 
 _As a **competitive user**, I want to save my best times so that I can track personal progress._
 
-_As an **educational facilitator**, I want printable puzzle sheets so that I can use Codoku in classrooms with limited digital access._
+_As an **educational facilitator**, I want printable puzzle sheets so that I can use **Codoku** in classrooms with limited digital access._
 
 _As a **user who prefers auditory learning**, I want audio instructions so that I can engage through sound rather than reading._
 
-By creating and prioritizing these user stories, the Codoku project ensures a structured, inclusive, and scalable development process. The application addresses the core needs of all user types while leaving space for innovation and enhancement. Each story links directly back to the user personas and demographics explored in earlier sections, reinforcing the project’s commitment to delivering thoughtful, user-centered design.
+By creating and prioritizing these user stories, the **Codoku** project ensures a structured, inclusive, and scalable development process. The application addresses the core needs of all user types while leaving space for innovation and enhancement. Each story links directly back to the user personas and demographics explored in earlier sections, reinforcing the project’s commitment to delivering thoughtful, user-centered design.
 
 ![Bar chart showing user story distribution by priority](docs/figures/charts/user-stories.webp)
 
-*Bar chart illustrating the number of Codoku user stories by category: 13 Must-Have, 6 Should-Have, and 3 Could-Have.*
+*Bar chart illustrating the number of **Codoku** user stories by category: 13 Must-Have, 6 Should-Have, and 3 Could-Have.*
 
 ### **2.1.6. Emerging Components**
 
 Informed by the initial vision, creator goals, user demographics, and audience needs, several critical components began to emerge early in the design process as essential to Codoku’s success. These components reflect a balance of functionality, accessibility, and user enjoyment, and were developed not only to support gameplay mechanics, but also to reinforce the project’s broader UX goals and inclusive design ethos.
 
-Each element stems from a combination of logical necessity and user-centered design thinking, ensuring Codoku remains simple to use, yet rich in value.
+Each element stems from a combination of logical necessity and user-centered design thinking, ensuring **Codoku** remains simple to use, yet rich in value.
 
 🧠 **Core Gameplay Logic**  
 At the heart of the application is the interactive Sudoku grid. This had to:
@@ -292,7 +292,7 @@ At the heart of the application is the interactive Sudoku grid. This had to:
 This grid was the anchor of every design decision, requiring structure that felt familiar yet modern, and mechanics that were responsive and accessible.
 
 📲 **Responsive Interface**  
-Given the wide-ranging demographics and device preferences, Codoku needed a layout that automatically adapted to:
+Given the wide-ranging demographics and device preferences, **Codoku** needed a layout that automatically adapted to:
 - Mobile, tablet, and desktop screens
 - Touch interaction as well as keyboard input
 - Larger fonts and high contrast for readability
@@ -314,7 +314,7 @@ Clear feedback was essential to support learning and engagement. Early planning 
 This ensured every move felt meaningful and users were motivated to improve over time.
 
 🌐 **Navigation & Page Flow**  
-While Codoku is a single-page game experience, it still required intuitive navigation, including:
+While **Codoku** is a single-page game experience, it still required intuitive navigation, including:
 - An accessible homepage layout with logical content flow
 - A persistent footer with social media links and accessibility tools
 - A custom 404 page to guide users who stray from the main path
@@ -325,10 +325,10 @@ Emerging from the creator’s personal motivation, the *About* section provides 
 - Build trust with new users
 - Highlight educational and cognitive benefits  
 
-Though not central to gameplay, it reflects Codoku’s intention as more than just a game—it’s a purposeful tool for mental wellness.
+Though not central to gameplay, it reflects **Codoku’s** intention as more than just a game—it’s a purposeful tool for mental wellness.
 
 📖 **Rules & How-To-Play Section**  
-From the beginning, it was clear that Codoku needed to cater to a wide range of familiarity levels with Sudoku — including complete beginners. A dedicated rules component was identified early on as a key tool to:
+From the beginning, it was clear that **Codoku** needed to cater to a wide range of familiarity levels with Sudoku — including complete beginners. A dedicated rules component was identified early on as a key tool to:
 
 - Educate new users about Sudoku gameplay and objectives
 - Reduce barriers for first-time players across all ages
@@ -337,17 +337,17 @@ From the beginning, it was clear that Codoku needed to cater to a wide range of 
 This component ensures that anyone, regardless of experience or background, can confidently begin playing. It also aligns with the project’s commitment to accessibility and lifelong learning by promoting inclusive, self-directed exploration.
 
 🎚️ **Accessibility Tools**  
-From the outset, Codoku was designed to be accessible across a wide spectrum of abilities. Core accessibility components include:
+From the outset, **Codoku** was designed to be accessible across a wide spectrum of abilities. Core accessibility components include:
 - A toggleable dark mode for visual comfort
 - Keyboard support for users without a mouse
 - Large, clearly labeled buttons with adequate spacing
 - Semantic HTML and screen-reader-friendly structure
 
-Together, these components laid the groundwork for a focused, inclusive experience that delivers both functionality and delight. They were not imagined in isolation, but directly shaped by the needs, habits, and feedback of the users Codoku aims to serve—making them fundamental to the project’s success and longevity.
+Together, these components laid the groundwork for a focused, inclusive experience that delivers both functionality and delight. They were not imagined in isolation, but directly shaped by the needs, habits, and feedback of the users **Codoku** aims to serve—making them fundamental to the project’s success and longevity.
 
 ### **2.1.7. Feasibility / Importance**
 
-The Importance/Feasibility analysis evaluated each of Codoku’s website components based on two criteria:  
+The Importance/Feasibility analysis evaluated each of **Codoku’s** website components based on two criteria:  
 
 - **Feasibility** measures the practicality of implementation within the project’s constraints, such as development time, resources, and technical complexity.
 - **Importance** refers to how essential a feature is for delivering value to users and supporting the project’s goals of accessibility, engagement, and cognitive benefit. 
@@ -372,19 +372,18 @@ Items such as the **About & Purpose Section** and **Celebration Pop-Up** offer a
 🟣 Low Importance & Low Feasibility    
 Features such as **Progress Tracking Dashboards**, **Puzzle Score Saving**, **Audio/Video Instructions**, and **Puzzle PDF Exporting** were ranked lowest in priority. These additions offer niche or future-facing value but would require significantly more work to implement (e.g., local storage, printing logic, or media handling). As such, they are considered stretch goals and not part of the initial MVP.
 
-This analysis helped keep development focused and realistic, ensuring that Codoku delivered its essential features (a clean, cognitive, and user-friendly puzzle experience) while reserving room for enhancement once the foundational elements were in place.
+This analysis helped keep development focused and realistic, ensuring that **Codoku** delivered its essential features (a clean, cognitive, and user-friendly puzzle experience) while reserving room for enhancement once the foundational elements were in place.
 
 ## **2.2. Scope**
 
-In UX design, the Scope Plane defines the specific features and content that a product needs in order to meet its strategic aims. While the Strategy Plane outlined the purpose of Codoku and the audiences it serves, the Scope Plane clarified what the application must include to deliver on those goals.
+In UX design, the Scope Plane defines the specific features and content that a product needs in order to meet its strategic aims. While the Strategy Plane outlined the purpose of **Codoku** and the audiences it serves, the Scope Plane clarified what the application must include to deliver on those goals.
 
-For Codoku, this phase was critical in determining the game’s core functionality and content structure. It helped translate the broader vision of creating an accessible, mentally stimulating puzzle game into clear, actionable requirements. The features identified through emerging components, user stories, and demographic analysis provided a foundation for prioritizing what needed to be built.
+For **Codoku**, this phase was critical in determining the game’s core functionality and content structure. It helped translate the broader vision of creating an accessible, mentally stimulating puzzle game into clear, actionable requirements. The features identified through emerging components, user stories, and demographic analysis provided a foundation for prioritizing what needed to be built.
 
 This process ensured that development remained tightly focused on what mattered most to users, such as usability, interactivity, and cross-device support, while setting aside lower-priority features for future iterations. 
 
 ### **2.2.1. Deriving Requirements**
-
-The feature planning and UX analysis clearly highlighted which components were essential for Codoku to provide value to users and meet its project goals. These insights allowed requirements to be organized into three categories based on their priority and impact: **must-have**, **should-have**, and **could-have** features.
+The feature planning and UX analysis clearly highlighted which components were essential for **Codoku** to provide value to users and meet its project goals. These insights allowed requirements to be organized into three categories based on their priority and impact: **must-have**, **should-have**, and **could-have** features.
 
 This structured breakdown helped ensure that development stayed focused on delivering a usable, engaging, and scalable Sudoku experience — while leaving room for future improvements once the core functionality was in place.
 
@@ -423,9 +422,9 @@ These requirements represent a clear path from user insights to actionable devel
 
 ### **2.2.2. Functional Requirements**
 
-Functional requirements define how Codoku operates on a technical and interactive level, outlining the behaviors, inputs, and user flows that allow the game to deliver a smooth, rewarding experience. While UX strategy defined the *why* behind Codoku and user stories outlined the *who* and *what*, functional requirements focus on the *how*, ensuring the game responds accurately to input, renders correctly across devices, and delivers user feedback in a clear and accessible way.
+Functional requirements define how **Codoku** operates on a technical and interactive level, outlining the behaviors, inputs, and user flows that allow the game to deliver a smooth, rewarding experience. While UX strategy defined the *why* behind **Codoku** and user stories outlined the *who* and *what*, functional requirements focus on the *how*, ensuring the game responds accurately to input, renders correctly across devices, and delivers user feedback in a clear and accessible way.
 
-Because Codoku is a fully interactive, logic-driven game rather than a static content site, this section plays a more prominent role than it did in other project types ([Milestone Project 1](https://github.com/TeseoLou/clancy-nook-walking-tours)). Interactivity is not just a feature of Codoku, it's the foundation. These functional elements power the game experience, define progression and reward, and ensure the site meets the goals of accessibility, replayability, and mental stimulation.
+Because **Codoku** is a fully interactive, logic-driven game rather than a static content site, this section plays a more prominent role than it did in other project types ([Milestone Project 1](https://github.com/TeseoLou/clancy-nook-walking-tours)). Interactivity is not just a feature of Codoku, it's the foundation. These functional elements power the game experience, define progression and reward, and ensure the site meets the goals of accessibility, replayability, and mental stimulation.
 
 Functional requirements were derived from user stories, accessibility considerations, and the emerging UX components. They are categorized here by their level of scope:
 
@@ -514,12 +513,12 @@ To support a smooth and organized development process, content was broken into t
 
 ![Icons representing textual, graphic, aesthetic, and interactive content types](docs/figures/charts/content-features.webp)
 
-_Visual icons representing Codoku’s four content categories, textual, graphic, aesthetic, and interactive._
+_Visual icons representing **Codoku’s** four content categories, textual, graphic, aesthetic, and interactive._
 
 #### 🟥 **Must-Have**
 
 Graphic:
-- Codoku logo (for header and favicon)  
+- **Codoku** logo (for header and favicon)  
 
 Textual:
 - Game instructions (how to play, rules, controls)  
@@ -557,7 +556,7 @@ Graphic:
 - Images for About Section
 
 Textual:
-- About section content describing the purpose and development of Codoku  
+- About section content describing the purpose and development of **Codoku**  
 - Game statistics summary (time, difficulty, hints used) in completion popup 
 
 Aesthetic: 
@@ -583,7 +582,7 @@ By defining these content requirements, **Codoku** ensures a game experience tha
 
 ### **2.2.4. Core Features**
 
-Core Features outlined the key components integrated into the Codoku application to ensure it fulfilled both user needs and project objectives. These features were derived directly from the UX strategy, user stories, and scope planning, allowing for the prioritization of functionality and content into clearly scoped deliverables.
+Core Features outlined the key components integrated into the **Codoku** application to ensure it fulfilled both user needs and project objectives. These features were derived directly from the UX strategy, user stories, and scope planning, allowing for the prioritization of functionality and content into clearly scoped deliverables.
 
 Each feature was evaluated based on its importance to gameplay, usability, and accessibility, as well as its feasibility within the project timeline. Features were categorized as **Must-Have**, **Should-Have**, or **Could-Have**, and further classified by their scope of implementation:
 
@@ -631,13 +630,13 @@ Each feature was evaluated based on its importance to gameplay, usability, and a
 - 🟨 **Should-Have** → Valuable enhancements, not vital for MVP  
 - 🟩 **Could-Have** → Nice-to-have features for future development
 
-These core features served as a structured development blueprint, ensuring Codoku's MVP delivered essential gameplay, accessibility, and visual consistency—while leaving room for feature growth in future iterations.
+These core features served as a structured development blueprint, ensuring **Codoku's** MVP delivered essential gameplay, accessibility, and visual consistency—while leaving room for feature growth in future iterations.
 
 ## **2.3. Structure**
 
-The Structure Plane defines how Codoku’s content, features, and interactions are arranged to support ease of use and logical flow. It connects strategic goals with the interface’s layout, ensuring that players—regardless of age, ability, or device—can navigate and play comfortably.
+The Structure Plane defines how **Codoku’s** content, features, and interactions are arranged to support ease of use and logical flow. It connects strategic goals with the interface’s layout, ensuring that players—regardless of age, ability, or device—can navigate and play comfortably.
 
-As a game-based application, Codoku prioritizes interaction design over dense content. Key features like the grid, number inputs, validation tools, and timers are placed for intuitive access, with real-time feedback to reduce frustration and aid progression.
+As a game-based application, **Codoku** prioritizes interaction design over dense content. Key features like the grid, number inputs, validation tools, and timers are placed for intuitive access, with real-time feedback to reduce frustration and aid progression.
 
 Navigation remains simple but purposeful. A top nav bar provides quick access to the Home, About, and Rules pages, while the footer offers consistent links to external platforms like GitHub and the donation page.
 
@@ -650,7 +649,7 @@ The layout includes:
 
 Information is structured to minimize distractions and cognitive load, with semantic HTML and ARIA support for screen readers. Elements are grouped by function and follow consistent patterns to support user familiarity.
 
-Codoku’s responsive structure adapts seamlessly across desktop, tablet, and mobile, using scalable fonts, high-contrast visuals, and keyboard-friendly controls. Altogether, this creates an inclusive, focused space that enhances logic-based engagement and replayability.
+**Codoku’s** responsive structure adapts seamlessly across desktop, tablet, and mobile, using scalable fonts, high-contrast visuals, and keyboard-friendly controls. Altogether, this creates an inclusive, focused space that enhances logic-based engagement and replayability.
 
 ### **2.3.1 MoSCoW Prioritization**
 
@@ -671,7 +670,7 @@ These decisions helped ensure that core interactive and accessible features were
 
 ### **2.3.2 Site Hierarchy**
 
-Site hierarchy refers to how Codoku’s content, features, and pages are logically organized and accessed by users. It shapes the user’s journey through the application, affecting clarity, efficiency, and accessibility. For a game-based web app like Codoku, hierarchy needed to support both discovery and flow, prioritizing gameplay while offering seamless access to supporting features like instructions and about information.
+Site hierarchy refers to how **Codoku’s** content, features, and pages are logically organized and accessed by users. It shapes the user’s journey through the application, affecting clarity, efficiency, and accessibility. For a game-based web app like **Codoku**, hierarchy needed to support both discovery and flow, prioritizing gameplay while offering seamless access to supporting features like instructions and about information.
 
 **Aims of Codoku's Site Structure**
 
@@ -679,7 +678,7 @@ Site hierarchy refers to how Codoku’s content, features, and pages are logical
 - ⚙️ Guide users through setup before play (difficulty and timer)  
 - ➕ Support learning and accessibility with modals and structured layout  
 
-Codoku is structured around a single-page core gameplay interface, with supplemental navigation to an About page and modal overlays that support the user without removing them from the experience. Functional elements such as the Setup Modal, Rules Modal, and Completion Feedback act as focused UI components that enhance clarity while keeping the player in flow.
+**Codoku** is structured around a single-page core gameplay interface, with supplemental navigation to an About page and modal overlays that support the user without removing them from the experience. Functional elements such as the Setup Modal, Rules Modal, and Completion Feedback act as focused UI components that enhance clarity while keeping the player in flow.
 
 | Page / Modal          | Function                                             | Role in UX Journey           |
 |-----------------------|------------------------------------------------------|------------------------------|
@@ -693,7 +692,7 @@ Codoku is structured around a single-page core gameplay interface, with suppleme
 The structure of the Codoku site hierarchy is intentionally designed as a pyramid, placing the most essential user-facing elements at the top and progressively layering supportive or contextual features beneath.
 
 ![Codoku Site Hierarchy Pyramid](docs/figures/charts/site-pyramid.webp)  
-*A pyramid diagram showing the importance and relationship between the main interface, modals, and support pages in Codoku.*
+*A pyramid diagram showing the importance and relationship between the main interface, modals, and support pages in **Codoku**.*
 
 **Game**  
 At the top of the hierarchy is the game itself — the Sudoku grid, number inputs, timer, and validation. It is the core experience, drawing immediate focus and requiring an uncluttered, accessible layout.
@@ -719,7 +718,7 @@ Supportive but non-core. These are accessed less frequently but strengthen the e
 ![Codoku User Flow](docs/figures/charts/user-flow.webp)  
 *A sequential flow from Setup → Game → Completion or Support Pages.*
 
-The diagram outlines the typical user journey through Codoku. It follows a linear but flexible progression, guiding users from instruction to gameplay and through to completion, with supportive pathways for accessing additional context or handling errors.
+The diagram outlines the typical user journey through **Codoku**. It follows a linear but flexible progression, guiding users from instruction to gameplay and through to completion, with supportive pathways for accessing additional context or handling errors.
 
 1. 🧾**Rules**  
    - Users may begin by reviewing game instructions.  
@@ -739,7 +738,7 @@ The diagram outlines the typical user journey through Codoku. It follows a linea
 
 5. 👋 **About**  
    - An optional informational page that shares the project's mission, purpose, and donation link.  
-   - Helps users understand the wider goals behind Codoku.
+   - Helps users understand the wider goals behind **Codoku**.
 
 6. ⚠️ **Error**  
    - Positioned outside the main flow, the error page is triggered when users navigate to an invalid or broken route.  
@@ -750,9 +749,9 @@ This structure helps players remain focused on solving puzzles while providing f
 
 ### **2.3.4 Navigation**
 
-Effective navigation was essential to Codoku’s user experience (UX) design, ensuring users could move confidently between gameplay and supporting content without unnecessary complexity. Because Codoku is a game-first web app, navigation needed to feel lightweight, accessible, and non-disruptive, guiding users through core game actions while offering easy access to help, context, and redirection when needed.
+Effective navigation was essential to **Codoku’s** user experience (UX) design, ensuring users could move confidently between gameplay and supporting content without unnecessary complexity. Because **Codoku** is a game-first web app, navigation needed to feel lightweight, accessible, and non-disruptive, guiding users through core game actions while offering easy access to help, context, and redirection when needed.
 
-Codoku’s navigation follows best practices in clarity, predictability, and responsiveness:
+**Codoku’s** navigation follows best practices in clarity, predictability, and responsiveness:
 
 - **Predictability**: Users know where buttons and links will take them.
 - **Efficiency**: Core actions like starting a puzzle or checking the rules are one click away.
@@ -766,7 +765,7 @@ The navbar appears persistently across pages and includes quick access to:
 
 This ensures users are never far from core functions, while modals and page transitions are used to maintain focus and flow within the single-page app experience.
 
-While gameplay is central, Codoku also includes utility pages and overlays:
+While gameplay is central, **Codoku** also includes utility pages and overlays:
 
 ⚙️ **Setup Modal** — Opens at launch, allowing users to select difficulty and timer options.  
 🧾 **Rules Modal** — Available on demand for help.  
@@ -780,12 +779,12 @@ External navigation is minimal, but still present:
 💝 **Donation Link** – Found in the About page, linking to a trusted cognitive health charity.  
 🔗 **Social Media Links** – Displayed in the site footer for sharing and project visibility (e.g., GitHub, LinkedIn).  
 
-These external links open in new tabs to ensure users remain anchored in the Codoku experience.
+These external links open in new tabs to ensure users remain anchored in the **Codoku** experience.
 
 ![Codoku Site Map Diagram](docs/figures/charts/nav-map.webp)
-_A navigation map of Codoku showing flow from the Game Page to supporting modals, About, and Error pages, with external links branching consistently._
+_A navigation map of **Codoku** showing flow from the Game Page to supporting modals, About, and Error pages, with external links branching consistently._
 
-The diagram illustrates Codoku's navigation ecosystem, capturing both user-directed flows (via navbars and buttons) and automated fallbacks (like error recovery). The structure is built around three main nodes: Game, About, and Error, with consistent access to modals and external links across all routes.
+The diagram illustrates **Codoku's** navigation ecosystem, capturing both user-directed flows (via navbars and buttons) and automated fallbacks (like error recovery). The structure is built around three main nodes: Game, About, and Error, with consistent access to modals and external links across all routes.
 
 #### 🎮 **Game Page (Central Hub)**
 Game is the core of the user journey and central interaction point.
@@ -803,7 +802,7 @@ Game is the core of the user journey and central interaction point.
 This path keeps essential puzzle actions just one step away, allowing users to stay engaged while still accessing help or restarting as needed.
 
 #### 👋 **About Page (Supportive Content)**
-The About page provides contextual information and connects users to Codoku’s mission.
+The About page provides contextual information and connects users to **Codoku’s** mission.
 - The navbar allows users to move between:
   - Pages 
   - Rules modal
@@ -832,11 +831,11 @@ It's accessible from anywhere via broken links or redirects.
 
 ### **2.3.4 User Interaction (UI)**
 
-Interaction design in Codoku played a central role in shaping how users engaged with the interface, particularly given the puzzle-focused nature of the project. The aim was to create a game environment that felt intuitive, responsive, and rewarding across devices and skill levels.
+Interaction design in **Codoku** played a central role in shaping how users engaged with the interface, particularly given the puzzle-focused nature of the project. The aim was to create a game environment that felt intuitive, responsive, and rewarding across devices and skill levels.
 
-Rather than designing for content browsing or form submission (as in more traditional sites), Codoku’s UI focused on player interaction with game elements such as the Sudoku the grid, difficulty selector, feedback modals, and control buttons. Every element was implemented with usability, responsiveness, and feedback in mind.
+Rather than designing for content browsing or form submission (as in more traditional sites), **Codoku’s** UI focused on player interaction with game elements such as the Sudoku the grid, difficulty selector, feedback modals, and control buttons. Every element was implemented with usability, responsiveness, and feedback in mind.
 
-Codoku’s interaction model followed front-end best practices:
+**Codoku’s** interaction model followed front-end best practices:
 
 ⭐ Ensured smooth, predictable input handling across keyboard, mouse, and touch devices  
 ⭐ Provided real-time feedback through color changes, pop-ups, and sounds  
@@ -860,18 +859,18 @@ Codoku’s interaction model followed front-end best practices:
 | ℹ️ **About Page**          | Secondary page with project info and donation link                          | Scrollable layout, external donation button, consistent nav/footer                                                    | Encourages community support                             |
 | ⚠️ **404 Error Page**      | Fallback screen for broken/invalid links                                    | Clear error message, Home Button, consistent nav and footer                                                           | Preserves user flow                       |
 
-This table outlines the key interactive components of the Codoku website, breaking down their purpose, how users engage with them, and the specific benefits each offers in terms of user experience. 
+This table outlines the key interactive components of the **Codoku** website, breaking down their purpose, how users engage with them, and the specific benefits each offers in terms of user experience. 
 
 By organizing interface elements this way, it became easier to assess their role in supporting accessibility, clarity, and user satisfaction. This also helped prioritize development tasks based on user value and interaction impact.
 
 ### **2.3.5. Information Architecture (IA)**
 
-Codoku’s information architecture defines how all pages, components, and links are organized to support smooth navigation and intuitive interaction across the game-focused site. This structure ensures that users, regardless of age, ability, or device, can locate core features, learn the rules, complete a puzzle, and explore the project’s background without confusion.
+**Codoku’s** information architecture defines how all pages, components, and links are organized to support smooth navigation and intuitive interaction across the game-focused site. This structure ensures that users, regardless of age, ability, or device, can locate core features, learn the rules, complete a puzzle, and explore the project’s background without confusion.
 
 ![Codoku Information Architecture Diagram](docs/figures/charts/information-architecture.webp)  
-*A visual breakdown of Codoku’s site structure, including interactive components, pages, buttons, and external destinations.*
+*A visual breakdown of **Codoku’s** site structure, including interactive components, pages, buttons, and external destinations.*
 
-The diagram below visualizes Codoku’s IA, showing how the site’s core page (Game) branches into modals, buttons, and links, with secondary and fallback pages connected via navbar and footer elements.
+The diagram below visualizes **Codoku’s** IA, showing how the site’s core page (Game) branches into modals, buttons, and links, with secondary and fallback pages connected via navbar and footer elements.
 
 #### **Core Pages & Components**
 
@@ -927,14 +926,14 @@ This addressed three main areas of user experience:
 
 ### **2.4.1 Navigation Design**
 
-A clear and consistent navigation system was essential in Codoku to support both ease of use and player engagement. While the Structure Plane defined the relationships between pages and content areas, the Skeleton Plane transformed that framework into an interactive visual system guiding users across gameplay and support areas.
+A clear and consistent navigation system was essential in **Codoku** to support both ease of use and player engagement. While the Structure Plane defined the relationships between pages and content areas, the Skeleton Plane transformed that framework into an interactive visual system guiding users across gameplay and support areas.
 
 #### **2.4.1.a Navbar**
 
 The **main navbar** remained visible at the top of every page.
 
 ![Wireframe of Codoku navigation bar](docs/figures/wireframes/navbar.webp)
-*Wireframe mockup of the Codoku navigation bar showing both the mobile (collapsed menu) and desktop (expanded links) states.*
+*Wireframe mockup of the **Codoku** navigation bar showing both the mobile (collapsed menu) and desktop (expanded links) states.*
 
 🎨 **Theme Toggle** - Switch between light and dark mode 
 🏠 **Game (Home)** – The central hub of user interaction  
@@ -948,7 +947,7 @@ This ensured users could always find help, return to the game, or explore the si
 The **footer** also appeared consistently across all pages.
 
 ![Wireframe of Codoku footer layout](docs/figures/wireframes/footer.webp)
-*Wireframe mockup of the Codoku footer showing both mobile and desktop layouts.*
+*Wireframe mockup of the **Codoku** footer showing both mobile and desktop layouts.*
 
 🔗 **Social Media Links**: Facebook, Instagram, and X (Twitter) icons that enlarge on hover
 ©️ **Copyright Message**: The footer remained compact and uncluttered to preserve focus on the game interface.
@@ -958,7 +957,7 @@ The **footer** also appeared consistently across all pages.
 Interactive buttons acted as immediate access points to key actions and locations.
 
 ![Wireframe of Codoku navigation buttons](docs/figures/wireframes/buttons.webp)
-*Wireframe of Codoku’s navigation buttons — New, Donate, and Home.*
+*Wireframe of **Codoku’s** navigation buttons — New, Donate, and Home.*
 
 ➕ **New Button**: Resets the grid and launches the Setup Modal  
 🏠 **Home Button**: Visible on the Error page to guide users back to the Game page  
@@ -971,7 +970,7 @@ All buttons included consistent styling that contrast the background colors and 
 Modals allowed users to complete important tasks without navigating away from the core game screen.
 
 ![Wireframes of Codoku's Setup, Rules, and Completion Modals](docs/figures/wireframes/modals.webp)
-*Wireframe mockups of Codoku's modal interfaces. From left to right: Setup Modal , Rules Modal, and Completion Modal.*
+*Wireframe mockups of **Codoku's** modal interfaces. From left to right: Setup Modal , Rules Modal, and Completion Modal.*
 
 ⚙️ **Setup Modal**: Appears when starting a new puzzle using 'New' button. 'Enter' proceeds to game page with board loaded.   
 📃 **Rules Modal**: Accessible from both the navbar and Game page. 'Back' closes the modal.  
@@ -981,10 +980,10 @@ These modals were focus-trappable, styled for contrast, and screen-reader friend
 
 #### **2.4.1.e Alerts**
 
-Feedback mechanisms played a critical role in guiding and informing users during gameplay. Codoku incorporated several alert types.
+Feedback mechanisms played a critical role in guiding and informing users during gameplay. **Codoku** incorporated several alert types.
 
 ![Codoku Alert Modals](docs/figures/wireframes/alerts.webp)
-*Wireframes of Codoku’s alert pop-ups. From left to right: Navigation alert, error alert, timeout alert.*
+*Wireframes of **Codoku’s** alert pop-ups. From left to right: Navigation alert, error alert, timeout alert.*
 
 ⚠️ **Navigation Alert**: Appears when user presses 'About' in navbar while on homepage. 'OK' proceeds user to next page and 'Cancel' calls off the navigation.   
 ⏰ **Timeout Alert**: Appears when the timer reaches zero and displays a message with option to try again  
@@ -1000,7 +999,7 @@ The navigation design followed UX best practices, focusing on:
 
 ### **2.4.2 Interface & Information Design**
 
-Codoku’s interface and information design were shaped by a mobile-first approach, ensuring that the application was intuitive, accessible, and visually coherent on smaller screens before scaling up to desktops. Given that many users engage with puzzles via mobile devices, the site was optimized for vertical flow, touch-friendly inputs, and minimal distraction.
+**Codoku’s** interface and information design were shaped by a mobile-first approach, ensuring that the application was intuitive, accessible, and visually coherent on smaller screens before scaling up to desktops. Given that many users engage with puzzles via mobile devices, the site was optimized for vertical flow, touch-friendly inputs, and minimal distraction.
 
 Interface Design focused on how users interact with elements such as the grid, number keys, buttons, and modals. Components were spaced for easy tapping and logically placed to maintain focus on gameplay.
 
@@ -1008,7 +1007,7 @@ Information Design guided how content was structured and displayed. Readability,
 
 #### 🎮 **2.4.2.a Game Page**
 
-The Game Page is the central hub and default landing view for Codoku. It prioritizes functionality and minimalism. 
+The Game Page is the central hub and default landing view for **Codoku**. It prioritizes functionality and minimalism. 
 
 ![Codoku Game UI Mobile Wireframe](docs/figures/wireframes/interface-design-game.webp)  
 *Game UI wireframe on mobile showing grid, controls, and footer*
@@ -1022,7 +1021,7 @@ The Game Page is the central hub and default landing view for Codoku. It priorit
 
 #### 👋 **2.4.2.b About Page**
 
-This page shares Codoku’s purpose, accessibility considerations, and educational goals. The layout is scroll-friendly, guiding users through alternating blocks of text and visuals.
+This page shares **Codoku’s** purpose, accessibility considerations, and educational goals. The layout is scroll-friendly, guiding users through alternating blocks of text and visuals.
 
 ![Codoku About Page Wireframe](docs/figures/wireframes/interface-design-about.webp)  
 *About Page wireframe with image/text structure and footer*
@@ -1045,16 +1044,16 @@ The Error Page provides a fallback for broken or invalid links, guiding users ba
 
 ## 2.4.5. Responsiveness
 
-Responsive design is essential to Codoku’s usability and success. As a logic-based puzzle app, Codoku prioritizes interaction and accessibility across all devices—especially smartphones and tablets, where users often play on the go. A mobile-first approach ensures smooth gameplay, adaptable layouts, and a consistent interface regardless of screen size.
+Responsive design is essential to **Codoku’s** usability and success. As a logic-based puzzle app, **Codoku** prioritizes interaction and accessibility across all devices—especially smartphones and tablets, where users often play on the go. A mobile-first approach ensures smooth gameplay, adaptable layouts, and a consistent interface regardless of screen size.
 
-Responsive Design Principles Applied in Codoku:
+Responsive Design Principles Applied in **Codoku**:
 - **Mobile-First Development:** Layouts are designed first for small screens to ensure accessibility on mobile. Touch-friendly interactions are prioritized from the start.
 - **Flexible Layouts:** CSS Grid and Flexbox allow UI components like the grid, number keys, and buttons to rearrange themselves based on screen size.
 - **Media Queries:** Responsive breakpoints allow seamless transitions between mobile, tablet, and desktop views while preserving structure.
 - **Optimized Navigation:** A collapsible hamburger menu is used on smaller screens, and fixed nav/footer bars help with orientation.
 - **Accessibility:** All buttons are comfortably spaced, font sizes scale with viewport changes, and icons remain easily tappable across devices.
 
-Codoku takes advantage of Bootstrap 5 to manage layout responsiveness. The framework's default breakpoints help scale content across viewports:
+**Codoku** takes advantage of Bootstrap 5 to manage layout responsiveness. The framework's default breakpoints help scale content across viewports:
 
 | Breakpoint | Label     | Range              | Example Device        |
 |------------|-----------|--------------------|------------------------|
@@ -1065,12 +1064,12 @@ Codoku takes advantage of Bootstrap 5 to manage layout responsiveness. The frame
 | `xl`       | Extra Large| `≥1200px`          | Desktops               |
 | `xxl`      | XXL        | `≥1400px`          | Large desktops         |
 
-Codoku’s design targets the `sm` breakpoints first, gradually enhancing layout and content presentation for `md`, `lg`, and `xl` screens.
+**Codoku’s** design targets the `sm` breakpoints first, gradually enhancing layout and content presentation for `md`, `lg`, and `xl` screens.
 
 #### **2.4.5.a. Game Page Responsiveness**
 
 ![Codoku Game Page Responsive Layouts](docs/figures/wireframes/responsiveness-game.webp)  
-*Responsive wireframes of the Codoku game page across mobile, tablet, and desktop.*
+*Responsive wireframes of the **Codoku** game page across mobile, tablet, and desktop.*
 
 - **Mobile View:** Game elements are stacked vertically with clear separation between controls, game stats, grid and number keys. Number keys span to rows to ensure they are not small.
 - **Tablet View:** Slightly expanded layout with more space between buttons, larger grid cells and number keys span one row only. Larger text and more generous spacing for buttons and paragraphs improved clarity and reduced user frustration.
@@ -1093,15 +1092,15 @@ Codoku’s design targets the `sm` breakpoints first, gradually enhancing layout
 - **Mobile:** Content is centered and compact, reducing bounce rates from accidental page errors.
 - **Tablet & Desktop:** Larger and more generous spacing for buttons and texted improved clarity and reduced user frustration.
 
-The Codoku site follows current responsive design best practices, ensuring that all interactions—from tapping a clue button to navigating the rules—are fluid, intuitive, and accessible.
+The **Codoku** site follows current responsive design best practices, ensuring that all interactions—from tapping a clue button to navigating the rules—are fluid, intuitive, and accessible.
 
 ## **2.5 Surface**
 
-The **Surface Plane** represents the final layer of Codoku’s UX process—where layout, functionality, and interaction meet a cohesive and refined visual design. While previous stages focused on how the application worked and guided users through content and interactions, the surface focuses on how everything *looks* and *feels*.
+The **Surface Plane** represents the final layer of **Codoku’s** UX process—where layout, functionality, and interaction meet a cohesive and refined visual design. While previous stages focused on how the application worked and guided users through content and interactions, the surface focuses on how everything *looks* and *feels*.
 
-For **Codoku**, the surface wasn’t simply about styling—it was about creating an accessible, calming, and logic-focused environment that supports player focus and cognitive engagement. Since Sudoku is an activity grounded in mental clarity, Codoku’s interface was designed to be free from distraction while reinforcing thoughtful play.
+For **Codoku**, the surface wasn’t simply about styling—it was about creating an accessible, calming, and logic-focused environment that supports player focus and cognitive engagement. Since Sudoku is an activity grounded in mental clarity, **Codoku’s** interface was designed to be free from distraction while reinforcing thoughtful play.
 
-Rather than adopting complex patterns or overly decorative elements, Codoku’s aesthetic was intentionally minimal, intuitive, and built around:
+Rather than adopting complex patterns or overly decorative elements, **Codoku’s** aesthetic was intentionally minimal, intuitive, and built around:
 
 - Neutral Color Palette  
 - Functional Typography  
@@ -1110,7 +1109,7 @@ Rather than adopting complex patterns or overly decorative elements, Codoku’s 
 
 Principles That Guided the Surface Design
 
-| Principle            | Application in Codoku                                   |
+| Principle            | Application in **Codoku**                                   |
 |----------------------|----------------------------------------------------------|
 | **Visual Hierarchy** | Clear typography and spacing prioritize gameplay actions (e.g., New, Check, Clue buttons). |
 | **Consistency**      | Repeated layout rules and component styling across modals, buttons, and navigation. |
@@ -1118,7 +1117,7 @@ Principles That Guided the Surface Design
 | **Minimal Distraction** | Simple backgrounds and generous white space allow users to focus solely on solving the puzzle. |
 | **Subtle Feedback**  | Light hover animations, sound cues, and modals guide without overwhelming. |
 
-Codoku’s surface design complements its purpose: 
+**Codoku’s** surface design complements its purpose: 
 - foster logical thinking
 - encourage user flow
 - create an environment that feels both intelligent and approachable
@@ -1127,15 +1126,15 @@ Every interface decision was filtered through a lens of simplicity and user empa
 
 ### **2.5.1 Branding and Aesthetic**
 
-Codoku’s surface design draws inspiration from the clean, logic-focused visuals seen in traditional puzzle spreads—such as those found in newspapers and printed puzzle books.
+**Codoku’s** surface design draws inspiration from the clean, logic-focused visuals seen in traditional puzzle spreads—such as those found in newspapers and printed puzzle books.
 
 ![Newspaper puzzle spread reference](docs/figures/images/newspaper-puzzle-page.webp)  
 *Reference image showing traditional print puzzles like Sudoku, Codeword, and Kakuro.*
 
-Where many puzzle apps adopt vibrant colors and gamified styles, Codoku takes a calmer, print-inspired approach. The aim is to provide a focused and thoughtful experience that evokes the feeling of solving puzzles in a newspaper or logic book.
+Where many puzzle apps adopt vibrant colors and gamified styles, **Codoku** takes a calmer, print-inspired approach. The aim is to provide a focused and thoughtful experience that evokes the feeling of solving puzzles in a newspaper or logic book.
 
 **🔘 Minimalism**  
-Inspired by black-and-white puzzle spreads, Codoku uses a clean layout with minimal distractions to support extended concentration.
+Inspired by black-and-white puzzle spreads, **Codoku** uses a clean layout with minimal distractions to support extended concentration.
 
 **🧩 Puzzle-First Layout**  
 The Sudoku grid remains the visual and functional centerpiece. Buttons, stats, and UI elements are designed to support—not compete with—it.
@@ -1144,31 +1143,31 @@ The Sudoku grid remains the visual and functional centerpiece. Buttons, stats, a
 The light and dark modes avoid oversaturation, echoing grayscale design patterns found in print logic puzzles.
 
 **🗞️ Print-to-Digital Aesthetic**  
-Codoku brings the tactile familiarity of paper puzzles into the digital age, with responsive layouts and screen-friendly enhancements.
+**Codoku** brings the tactile familiarity of paper puzzles into the digital age, with responsive layouts and screen-friendly enhancements.
 
-The result is an interface that feels focused, timeless, and cognitively engaging. Codoku’s visual identity is simple yet meaningful—designed for thinkers, logic lovers, and lifelong puzzlers across all devices.
+The result is an interface that feels focused, timeless, and cognitively engaging. **Codoku’s** visual identity is simple yet meaningful—designed for thinkers, logic lovers, and lifelong puzzlers across all devices.
 
->_Inspired by the pages we’ve been puzzling, poring and pencilling over for decades. Codoku puts the print tradition in your pocket._
+>_Inspired by the pages we’ve been puzzling, poring and pencilling over for decades. **Codoku** puts the print tradition in your pocket._
 
 ### **2.5.2 Color Scheme**
 
-Color played a crucial role in Codoku's visual identity, enhancing both user experience and accessibility across themes. As a game rooted in logic and feedback, color was used both decoratively and functionally, reinforcing gameplay and user interaction. 
+Color played a crucial role in **Codoku's** visual identity, enhancing both user experience and accessibility across themes. As a game rooted in logic and feedback, color was used both decoratively and functionally, reinforcing gameplay and user interaction. 
 
 #### **2.5.2.a Dual Theme Design**
 
-Codoku uses two themes to support varying lighting conditions and user preference: 
+**Codoku** uses two themes to support varying lighting conditions and user preference: 
 
 **☀️ Day Mode**: Light background and dark text for high readability.  
 **🌙 Night Mode**: Dark background and lighter text to reduce eye strain during extended play or night time use. 
 
-To support both modes, Codoku's color system included contrast checked tones for primary, accent and feedback-driven use cases.
+To support both modes, **Codoku's** color system included contrast checked tones for primary, accent and feedback-driven use cases.
 
 #### **2.5.2.b Color Selection Strategy**
 
 The color palette was curated using a combination of WCAG contrast testing and visual harmony tools like Adobe Color. The palette was validated using Contrast Checker and Pilestone’s Color Vision Simulator to check compatibility for visually impaired users.
 
 ![Color Palette](docs/figures/charts/color-chart.webp)  
-*Codoku color swatches for day and night mode.*
+***Codoku** color swatches for day and night mode.*
 
 Background  
 > #F8F9FA (Off-white) ⚪   
@@ -1190,14 +1189,14 @@ Green will signpost numbers revealed by the Clue button, reinforcing positive fe
 
 **Color Accessibility**
 
-To ensure Codoku’s color combinations met accessibility standards, the WCAG 2.1 guidelines were followed using a contrast checker tool. Each pair was tested to verify readability and UI clarity, especially across different lighting conditions and vision types.
+To ensure **Codoku’s** color combinations met accessibility standards, the WCAG 2.1 guidelines were followed using a contrast checker tool. Each pair was tested to verify readability and UI clarity, especially across different lighting conditions and vision types.
 
 ![Color Contrast Chart](docs/figures/charts/contrast-chart.webp)  
-*Contrast matrix showing WCAG-compliant pairings used in Codoku's UI design.*
+*Contrast matrix showing WCAG-compliant pairings used in **Codoku's** UI design.*
 
-The image above displays a contrast ratio matrix, where the circled values indicate the approved combinations used throughout Codoku’s interface. These selections exceed 7:1 for enhanced clarity.
+The image above displays a contrast ratio matrix, where the circled values indicate the approved combinations used throughout **Codoku’s** interface. These selections exceed 7:1 for enhanced clarity.
 
-To ensure Codoku's interface remained inclusive, color accessibility was tested using a color blindness simulator by Pilestone. This visual tool helped preview how the chosen palette would appear to users with different types of color vision deficiency, including:
+To ensure **Codoku's** interface remained inclusive, color accessibility was tested using a color blindness simulator by Pilestone. This visual tool helped preview how the chosen palette would appear to users with different types of color vision deficiency, including:
 - Deutan (green-weak)
 - Protan (red-weak)
 - Tritan (blue-yellow deficiency)
@@ -1205,19 +1204,19 @@ To ensure Codoku's interface remained inclusive, color accessibility was tested 
 ![Color Vision Simulator](docs/figures/charts/color-vision-simulator.webp)  
 *Simulated color palette display across various forms of color blindness.*
 
-This process reinforced WCAG compliance and ensured Codoku remained readable and engaging for a wide spectrum of users.
+This process reinforced WCAG compliance and ensured **Codoku** remained readable and engaging for a wide spectrum of users.
 
 ### **2.5.3. Typography**
 
-Typography played a critical role in Codoku’s design, shaping both visual personality and readability. The typefaces were selected to reflect the project’s brand aesthetic, emphasizing clarity, a retro-futuristic style, and an inviting tone for users across devices.
+Typography played a critical role in **Codoku’s** design, shaping both visual personality and readability. The typefaces were selected to reflect the project’s brand aesthetic, emphasizing clarity, a retro-futuristic style, and an inviting tone for users across devices.
 
 #### **2.5.3.a Primary Typeface: Space Mono**
-Space Mono was selected as Codoku’s primary typeface for headings, navigation, and puzzle-related labels. Its monospaced design and geometric structure align with the game’s logical nature and retro-code aesthetic.
+Space Mono was selected as **Codoku’s** primary typeface for headings, navigation, and puzzle-related labels. Its monospaced design and geometric structure align with the game’s logical nature and retro-code aesthetic.
 
 According to FontForge:
 -	**Legibility**: Fixed-width character spacing improves alignment in puzzle grid labels and form elements. High x-height and clear character differentiation ensure clarity, especially when displaying digits or similar characters like 1, l, and I.
 -	**Readability**: While not ideal for dense text passages, Space Mono excels in short strings, buttons, and UI labels. Its distinct, tech-inspired appearance evokes the aesthetic of vintage programming environments.
--	**Visual Character**: The font’s design is influenced by early computer interfaces, lending Codoku a futuristic and playful edge.
+-	**Visual Character**: The font’s design is influenced by early computer interfaces, lending **Codoku** a futuristic and playful edge.
 -	**Accessibility Recommendations**: Space Mono performs best in bold weights and high-contrast settings. It’s complemented with sufficient font size and spacing to reduce visual fatigue in puzzle grids and modal interactions.
 
 #### **2.5.3.b Secondary Typeface: Quicksand**
@@ -1238,7 +1237,7 @@ According to FontForge:
 The combination of Space Mono and Quicksand establishes a clear typographic hierarchy:
 
 -	**Contrast in Structure**: Space Mono has sharp, structured letterforms with equal spacing, which pairs well with Quicksand’s smooth, rounded curves. This visual balance creates both hierarchy and harmony.
--	**Tone Balance**: Space Mono conveys logic, precision, and “puzzle energy,” while Quicksand adds friendliness, softness, and approachability. This balance reflects Codoku’s design ethos—challenging but calming.
+-	**Tone Balance**: Space Mono conveys logic, precision, and “puzzle energy,” while Quicksand adds friendliness, softness, and approachability. This balance reflects **Codoku’s** design ethos—challenging but calming.
 -	**Legibility Across Contexts**: Space Mono is ideal for the grid and number interactions due to its monospaced structure. Quicksand shines in paragraphs and UI content, where open shapes and generous spacing support accessibility.
 -	**Functional Contrast**: Their stylistic differences make transitions between header and body text visually distinct, helping users quickly scan, navigate, and absorb content.  
 
@@ -1249,7 +1248,7 @@ Font delivery was handled via Google Fonts, ensuring fast loading and cross-plat
 
 ### **2.5.4 Backgrounds**
 
-In Codoku, background design plays a vital role in enhancing both aesthetic appeal and usability across themes. Two primary background textures are used. One for Day Mode and one for Night Mode, ensuring each theme provides visual consistency and immersive contrast.
+In **Codoku**, background design plays a vital role in enhancing both aesthetic appeal and usability across themes. Two primary background textures are used. One for Day Mode and one for Night Mode, ensuring each theme provides visual consistency and immersive contrast.
 
 ![Day mode background](assets/backgrounds/light-background.webp)
 *Subtle, tactile paper texture reinforces clarity and approachability.*
@@ -1257,7 +1256,7 @@ In Codoku, background design plays a vital role in enhancing both aesthetic appe
 ![Night mode background](assets/backgrounds/dark-background.webp)
 *Soft charcoal texture simulates print paper for a soothing dark theme.*
 
-These backgrounds were sourced from the Unsplash Creative Photo Community and chosen for their subtle, paper-like textures. They evoke the familiar feel of traditional printed puzzles, aligning with Codoku's branding as a calming, cognitively engaging digital experience.
+These backgrounds were sourced from the Unsplash Creative Photo Community and chosen for their subtle, paper-like textures. They evoke the familiar feel of traditional printed puzzles, aligning with **Codoku's** branding as a calming, cognitively engaging digital experience.
 
 Both backgrounds are static (non-scrolling) to minimize motion distractions and preserve a sense of stability throughout gameplay. This static design choice reflects the calming, analog qualities of a physical Sudoku grid—grounding users in the puzzle-solving experience.
 
@@ -1270,31 +1269,31 @@ Both backgrounds are static (non-scrolling) to minimize motion distractions and 
 
 The visual contrast between the soft off-white paper texture and the charcoal fiber pattern ensures each mode feels distinct but consistent in tone, emphasizing calmness, focus, and logic-driven thinking.
 
-By using grounded textures over flat colors, Codoku's interface subtly reinforces the tactile satisfaction of pen-and-paper puzzle-solving—bridging the nostalgia of analog games with the accessibility of digital design.
+By using grounded textures over flat colors, **Codoku's** interface subtly reinforces the tactile satisfaction of pen-and-paper puzzle-solving—bridging the nostalgia of analog games with the accessibility of digital design.
 
 #### **2.5.4.b Fallback Color Support**  
-To support environments where background images may not load or where high-contrast settings are enabled, fallback colors were defined in the CSS using values from Codoku’s palette:
+To support environments where background images may not load or where high-contrast settings are enabled, fallback colors were defined in the CSS using values from **Codoku’s** palette:
 
 > #F8F9FA (Off-white) ⚪ for Day Mode  
 > #212529 (Off-black) ⚫ for Night Mode
 
 These shades were chosen not only to preserve contrast and readability in the absence of textures, but also to mimic the soft greyscale tones of printed newspaper pages.
 
-This approach ensures WCAG-compliant contrast across modes while staying true to the project's visual identity. Even in simplified rendering environments, the fallback maintains Codoku’s minimalist, calming feel, supporting a broad range of accessibility needs and device capabilities.
+This approach ensures WCAG-compliant contrast across modes while staying true to the project's visual identity. Even in simplified rendering environments, the fallback maintains **Codoku’s** minimalist, calming feel, supporting a broad range of accessibility needs and device capabilities.
 
 ### **2.5.5 Imagery**
 
-Visual storytelling played a subtle but important role in shaping Codoku’s surface layer. A small collection of hand-picked images and a bespoke illustration were used across the site to support branding and reinforce user engagement through tone, familiarity, and theme.
+Visual storytelling played a subtle but important role in shaping **Codoku’s** surface layer. A small collection of hand-picked images and a bespoke illustration were used across the site to support branding and reinforce user engagement through tone, familiarity, and theme.
 
 #### **2.5.5.a About Page Imagery** 
-The first three images were selected or created specifically for the About page, where they helped communicate Codoku’s purpose and tone of voice. These image blocks were inserted between paragraphs to offer breathing space, aesthetic variety, and subtle visual storytelling.
+The first three images were selected or created specifically for the About page, where they helped communicate **Codoku’s** purpose and tone of voice. These image blocks were inserted between paragraphs to offer breathing space, aesthetic variety, and subtle visual storytelling.
 
-📰 **Newspaper Sudoku Puzzle** photograph (sourced from the Unsplash) evokes the tactile, analog origins of logic games, grounding Codoku in a familiar and nostalgic context.
+📰 **Newspaper Sudoku Puzzle** photograph (sourced from the Unsplash) evokes the tactile, analog origins of logic games, grounding **Codoku** in a familiar and nostalgic context.
 
 ![Sudoku Puzzle in Newspaper](assets/images/about-sudoku.webp)
 *Photograph of a section of a Sudoku Puzzle from a newspaper puzzle page.*
 
-⌨️ **Keyboard Rubik’s Cube** image (also from Unsplash) symbolically bridges logic, interactivity, and tech, an ideal visual metaphor for the type of experience Codoku provides.
+⌨️ **Keyboard Rubik’s Cube** image (also from Unsplash) symbolically bridges logic, interactivity, and tech, an ideal visual metaphor for the type of experience **Codoku** provides.
 
 ![Sudoku Rubik's Cube in Use](assets/images/sudoku-rubiks.webp)
 *Photograph of a Rubik's Cube created with computer keyboard tiles.*
@@ -1302,9 +1301,9 @@ The first three images were selected or created specifically for the About page,
 📱 **Child and Adult on Tablet** was generated using ChatGPT’s image tools and edited on Pixlr, designed to represent a realistic scenario where digital puzzle play is used for focus, education, and quiet engagement.
 
 ![Child and Older Adult playing Sudoku on tablet](assets/images/sudoku-tablet.webp)
-*Photograph of a child and older adult working together to solve a Codoku puzzle on tablet.*
+*Photograph of a child and older adult working together to solve a **Codoku** puzzle on tablet.*
 
-Together, these visuals help convey that Codoku is more than just a game—it’s a cognitive, accessible, and multi-generational tool for mindful play.
+Together, these visuals help convey that **Codoku** is more than just a game—it’s a cognitive, accessible, and multi-generational tool for mindful play.
 
 #### **2.5.5.b 404 Page Illustration**
 To maintain brand consistency and a sense of humor, a custom hand-drawn illustration was created for the 404 Error page. Styled like a vintage newspaper comic strip with a headline proclaiming a "404 Alert," the image places a missing puzzle grid front and center. The image was then edited in Sketchbook to refine and digitize. This approach:
@@ -1316,13 +1315,13 @@ To maintain brand consistency and a sense of humor, a custom hand-drawn illustra
 - Keeps the user experience light and on-brand even during navigation errors
 - Adds personality while subtly guiding users back to the main game
 
-This design was deliberately playful, matching the tone of Codoku without compromising usability or clarity.
+This design was deliberately playful, matching the tone of **Codoku** without compromising usability or clarity.
 
 All imagery, both photographic and illustrated, was intentionally presented in black and white. This stylistic decision was made to maintain visual cohesion across both day and night themes, reinforce the print-inspired aesthetic, and reduce visual noise to keep focus on the puzzle interface itself. 
 
 ### **2.5.6 Buttons**
 
-The buttons and number keys on Codoku were designed to enhance clarity, accessibility, and tactile feedback across both themes. Inspired by physical interactions, their visual style was developed to feel familiar, playful, and functional.
+The buttons and number keys on **Codoku** were designed to enhance clarity, accessibility, and tactile feedback across both themes. Inspired by physical interactions, their visual style was developed to feel familiar, playful, and functional.
 
 All **core interactive buttons** (New, Check, Clue, etc.) share a consistent layout and structure, but invert color schemes between Day and Night Mode:
 
@@ -1341,19 +1340,19 @@ The **number keys** (1–9 and ⨉ for erase) are exclusive to the Game page. Th
 - Hover effects that lighten or darken depending on the mode
 - Click feedback using subtle animations and shadows
 
-These keys provide an alternative to typing, making Codoku accessible for touch users and enhancing the physicality of the digital experience.
+These keys provide an alternative to typing, making **Codoku** accessible for touch users and enhancing the physicality of the digital experience.
 
 ### **2.5.7 Iconography**
 Icons played a subtle but important role, serving as recognizable micro-interactions for navigation, feedback, and brand presence. Their inclusion helped create an intuitive UI by reducing the cognitive load needed to interpret functional elements.
 
 #### **2.5.7.a Favicon**
-A custom site favicon was created using Canva and exported as an .ico file using an online favicon generator. This was added to the site’s <head> element, allowing Codoku to have a recognizable tab icon and establishing a subtle brand identity in browser environments.
+A custom site favicon was created using Canva and exported as an .ico file using an online favicon generator. This was added to the site’s <head> element, allowing **Codoku** to have a recognizable tab icon and establishing a subtle brand identity in browser environments.
 
 ![Codoku Favicon](assets/favicons/android-chrome-192x192.png)   
-*Codoku Favicon Preview*
+***Codoku** Favicon Preview*
 
 #### **2.5.7.b Font Awesome Integration**
-All functional icons in Codoku were provided by Font Awesome to ensure clarity and visual consistency. These included:
+All functional icons in **Codoku** were provided by Font Awesome to ensure clarity and visual consistency. These included:
 - Theme toggle icon (sun/moon)
 - Back and Enter arrows on modal and alert buttons
 - Social media logos in the footer (Facebook, Instagram, X/Twitter)
@@ -1374,13 +1373,13 @@ These animations provide intuitive feedback, inviting users to engage with exter
 Icons were styled using either the light (#F8F9FA) or dark (#212529) theme colors, depending on the mode selected. They dynamically inverted based on the theme toggle to maintain contrast and legibility.
 
 # 4. **Process and Methodology**
-The development of Codoku followed a structured, iterative methodology rooted in best practices for front-end application design. Unlike content-driven websites, Codoku’s success depended on thoughtful logic flow, modular scripting, and reactive feedback systems. This section outlines the processes and architectural strategies used from scoped feature planning and code mapping to milestone-based development tracked through Git commits.
+The development of **Codoku** followed a structured, iterative methodology rooted in best practices for front-end application design. Unlike content-driven websites, **Codoku’s** success depended on thoughtful logic flow, modular scripting, and reactive feedback systems. This section outlines the processes and architectural strategies used from scoped feature planning and code mapping to milestone-based development tracked through Git commits.
 
 ## **4.1 Approach**
 This section outlines the key development principles applied, each of which helped ensure accessibility, maintainability, and user-centered design. Additionally, it highlights how I mapped my JavaScript logic ahead of time to define reusable functions and avoid duplication before building the final game logic.
 
 ###  **4.1.1 Mobile-First Development** 📱
-Codoku was designed first and foremost for mobile interaction, following a mobile-first development strategy rooted in accessibility and real-device testing.
+**Codoku** was designed first and foremost for mobile interaction, following a mobile-first development strategy rooted in accessibility and real-device testing.
 
 All core components including the Sudoku grid, number buttons, modals, and feedback controls — were initially developed using a `max-width: 100%` and `flex-column` layout to suit small screens. Button sizing and spacing were optimized for touch interaction, with minimal reliance on hover states (which are not accessible on mobile). Early styling choices prioritized clarity, spacing, and responsiveness to short viewports and portrait orientation.
 
@@ -1398,7 +1397,7 @@ Once the mobile version was fully functional and accessible, I scaled the design
 - Font sizes and modal widths
 - Button layout
 
-This approach allowed Codoku to adapt fluidly to tablets, laptops, and desktop environments without compromising the core mobile experience. The result is a site that feels native on phones but scales gracefully to larger screens, maintaining accessibility and ease of use across all devices.
+This approach allowed **Codoku** to adapt fluidly to tablets, laptops, and desktop environments without compromising the core mobile experience. The result is a site that feels native on phones but scales gracefully to larger screens, maintaining accessibility and ease of use across all devices.
 
 ### **4.1.2 Minimum Viable Product (MVP) Model** 🎯
 To ensure focus and structure throughout development, I followed the MVP (Minimum Viable Product) model — delivering core features first before progressing to enhancements. This strategy helped avoid feature creep and ensured that the game would remain usable, responsive, and testable at every stage of development.
@@ -1412,9 +1411,9 @@ To facilitate this, I used a [GitHub Project Board](https://github.com/users/Tes
 - Ensure I was never overwhelmed: each “Done” task gave me visible progress, and I could easily reprioritize if something proved more complex than expected.
 
 ### **4.1.3 Semantic HTML** 🌐
-Codoku was built using semantic HTML to ensure the structure of the application was both meaningful and accessible. Structural elements like `<main>`, `<section>`, `<header>`, `<footer>`, `<nav>`, and `<button>` were consistently used to define the layout and purpose of each section. 
+**Codoku** was built using semantic HTML to ensure the structure of the application was both meaningful and accessible. Structural elements like `<main>`, `<section>`, `<header>`, `<footer>`, `<nav>`, and `<button>` were consistently used to define the layout and purpose of each section. 
 
-Semantic accuracy was especially critical for a game interface like Codoku, where dynamic interaction is constant. ARIA attributes such as `aria-labelledby`, `aria-modal`, and `role="dialog"` were used to improve modal accessibility, ensuring that screen readers could announce modal headings and lock focus appropriately when active. Elements like game controls and toggle switches were built using `<input type="checkbox">` and `<button>` instead of `<div>` or `<span>` to retain their native keyboard and accessibility behavior.
+Semantic accuracy was especially critical for a game interface like **Codoku**, where dynamic interaction is constant. ARIA attributes such as `aria-labelledby`, `aria-modal`, and `role="dialog"` were used to improve modal accessibility, ensuring that screen readers could announce modal headings and lock focus appropriately when active. Elements like game controls and toggle switches were built using `<input type="checkbox">` and `<button>` instead of `<div>` or `<span>` to retain their native keyboard and accessibility behavior.
 
 | Tool                          | Purpose                                     | How It Helped                                                                                                      |
 |-------------------------------|---------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
@@ -1427,7 +1426,7 @@ Semantic accuracy was especially critical for a game interface like Codoku, wher
 These helped enforce best practices throughout the project lifecycle. Every key element was evaluated to ensure it conveyed meaning not only visually, but programmatically — a core principle of accessible web design.
 
 ### **4.1.4 CSS Styling & Methodology** 🎨  
-Codoku’s visual design was constructed using a modular, layered CSS approach — combining a custom `style.css` file with the Bootstrap 5.3 framework. Styling prioritized mobile-first responsiveness, dark/light theming, accessibility, and clean layout management across game views and modal components.
+**Codoku’s** visual design was constructed using a modular, layered CSS approach — combining a custom `style.css` file with the Bootstrap 5.3 framework. Styling prioritized mobile-first responsiveness, dark/light theming, accessibility, and clean layout management across game views and modal components.
 
 The `style.css` file was clearly organized using section headers and comment blocks to guide readability and maintainability. Notable sections included:
 - Grid and board styling (`#grid`, `.number`, `.bottom-border`, `.right-border`)
@@ -1442,7 +1441,7 @@ Bootstrap was used primarily to:
 - Add consistent spacing, typography, and button states
 - Provide ARIA-compatible components out of the box
 
-Codoku supports **light and dark themes**, toggled via a switch stored in `localStorage`. The `applyTheme()` function in `theme.js` applied CSS class `.dark` to `<body>` when appropriate, and the stylesheet handled visual differences using the `body.dark` selector prefix.
+**Codoku** supports **light and dark themes**, toggled via a switch stored in `localStorage`. The `applyTheme()` function in `theme.js` applied CSS class `.dark` to `<body>` when appropriate, and the stylesheet handled visual differences using the `body.dark` selector prefix.
 
 | Tool / Resource              | Purpose                                                                 |
 |-----------------------------|-------------------------------------------------------------------------|
@@ -1455,7 +1454,7 @@ Codoku supports **light and dark themes**, toggled via a switch stored in `local
 These helped ensure responsive design principles were applied correctly, selectors remained efficient and conflict-free, and the styling remained compatible across modern browsers.
 
 ### **4.1.5 JavaScript Architecture & Development** 📝
-Codoku’s interactivity is powered by a modular, planned JavaScript architecture spread across clearly scoped files. These scripts drive puzzle logic, input handling, interface feedback, modals, and user settings such as theme and sound.
+**Codoku’s** interactivity is powered by a modular, planned JavaScript architecture spread across clearly scoped files. These scripts drive puzzle logic, input handling, interface feedback, modals, and user settings such as theme and sound.
 
 Before coding, I mapped out the core logic required to power the game, breaking down each feature into core and helper functions. This pre-planning ensured every piece of logic had a clear role and avoided repetition.
 
@@ -1545,7 +1544,7 @@ These tools were instrumental in maintaining high code quality, preventing bugs,
 
 ### **4.1.6 Code Documentation & Commenting** 💬
 
-Codoku's JavaScript files in particular were structured with consistent documentation, especially at the function level. Each significant function includes a **multi-line docstring** that outlines:
+**Codoku's** JavaScript files in particular were structured with consistent documentation, especially at the function level. Each significant function includes a **multi-line docstring** that outlines:
 
 - The purpose of the function
 - Return values or expected outcome
@@ -1573,7 +1572,7 @@ Using tools like Auto Comment was particularly helpful when I needed to describe
 The combination of structured documentation, pseudocode-style commenting, and AI-powered support tools helped transform my workflow. Commenting wasn’t just for others—it became an essential bridge between logic and language for myself throughout development.
 
 ### **4.1.7 SMART Objectives** 📌 
-To manage Codoku's feature development effectively, I used the SMART framework ensuring that every development task was:
+To manage **Codoku's** feature development effectively, I used the SMART framework ensuring that every development task was:
 
 - **S**pecific: Clearly defined with a known purpose  
 - **M**easurable: Could be tested or verified  
@@ -1600,7 +1599,7 @@ This structure helped me work efficiently through the most critical tasks first,
 | Link buttons to functions and bind interactions      | Assign each control button its correct logic          | All buttons perform correct function on click     | Each button had a known function and mapped clearly to logic I'd written       | All logic already existed, just needed linking and click handlers             | Polished alongside testing and modal finishing             |
 
 ### **4.1.8 Git Version Control with Purposeful Commits** 💾
-Throughout Codoku’s development, Git and GitHub were used as the backbone of version control. Commit messages were written intentionally and descriptively, forming a timeline of the project’s evolution.
+Throughout **Codoku’s** development, Git and GitHub were used as the backbone of version control. Commit messages were written intentionally and descriptively, forming a timeline of the project’s evolution.
 
 This structure supported:
 - **Traceability** – With an aim to ensure every feature or fix was committed individually 
@@ -1619,7 +1618,7 @@ Using these tools helped ensure every change was documented and intentional. Thi
 
 ## **4.2 Initial Setup**
 
-The early stages of Codoku's development focused on laying a solid foundation for a responsive, accessible, and interactive single-page web application. This involved establishing essential HTML structure, linking key stylesheets and scripts, and preparing the project for scalable logic integration.
+The early stages of **Codoku's** development focused on laying a solid foundation for a responsive, accessible, and interactive single-page web application. This involved establishing essential HTML structure, linking key stylesheets and scripts, and preparing the project for scalable logic integration.
 
 ### **4.2.1 HTML Scaffold & Metadata**
 
@@ -1676,10 +1675,10 @@ To keep logic modular, I created the following JS files early:
 These were linked at the bottom of `index.html` to avoid DOM timing issues.
 
 ![Codoku Repository Structure – Expanded](docs/figures/screenshots/repository-setup.webp)  
-*Expanded repository view showing modular JavaScript files, HTML pages, and the core stylesheet for Codoku.*
+*Expanded repository view showing modular JavaScript files, HTML pages, and the core stylesheet for **Codoku**.*
 
 ## **4.3 Page Template**
-Once the initial project folder and file structure was in place, the next step was to establish a universal page template that could be reused across all HTML pages. This involved building out shared structural components and styling elements that define Codoku’s visual identity and layout consistency.
+Once the initial project folder and file structure was in place, the next step was to establish a universal page template that could be reused across all HTML pages. This involved building out shared structural components and styling elements that define **Codoku’s** visual identity and layout consistency.
 
 The goal was to create a flexible yet robust HTML + CSS foundation that could be duplicated into every page and would only require page-specific content edits going forward.
 
@@ -1727,7 +1726,7 @@ Page titles, headers, button containers, and stat panels were added to define cl
 Boilerplate copies of this layout were added to `about.html` and `404.html`, ensuring consistency across all pages.
 
 ![Screenshot of early HTML layout with some styling components.](docs/figures/screenshots/headings.webp)  
-*Early HTML scaffold showing the Codoku title, action buttons, and placeholder sections.*
+*Early HTML scaffold showing the **Codoku** title, action buttons, and placeholder sections.*
 
 ### **4.4.2. Laying Out Core Visual Components**
 The Sudoku grid container and number input area were blocked out. The "Game Stats" section was also scaffolded beneath the header.
@@ -1736,17 +1735,16 @@ The Sudoku grid container and number input area were blocked out. The "Game Stat
 *HTML scaffold for the Sudoku board and number keys, using semantic elements.*
 
 ### **4.4.3 Creating the Rules and Setup Modals**
-I laid the groundwork for Codoku’s two primary modals: the Rules Modal and the Setup Modal.
+I laid the groundwork for **Codoku’s** two primary modals: the Rules Modal and the Setup Modal.
 
 ![Bootstrap modal shells created for Setup and Rules](docs/figures/screenshots/basic-modal-structure.webp)  
 *Initial modal markup for the Setup and Rules components before styling or logic was applied.*
 
 ### **4.4.4 Adding Theme and Sound**
-
 I integrated the interface toggle for Theme (light/dark mode) and added sounds to be utilized in user feedback logic. This was the first time user preferences were stored persistently, marking a shift toward a more state-aware application. 
 
 ![Theme and Sound Toggles in Light and Dark Mode with Audio File Directory](docs/figures/screenshots/theme-toggle-and-sound.webp)  
-*Theme and sound toggles shown in both dark and light modes (left), alongside the full list of mp3 sound files used in the Codoku project (right).*
+*Theme and sound toggles shown in both dark and light modes (left), alongside the full list of mp3 sound files used in the **Codoku** project (right).*
 
 ### **4.4.5 Rendering the Sudoku Grid**
 The logic for rendering an empty sudoku grid was created to build a 9×9 structure with data attributes for row/col tracking and styling.
@@ -1783,7 +1781,7 @@ Navigation was improved to alert users before leaving an active game and to auto
 *A safeguard modal prevents accidental navigation away from the game mid-session, reinforcing user flow and focus.*
 
 ### **4.4.11 Creating the About Page**
-The About page was designed as a static section to explain Codoku’s concept and goals. Shared layout elements like the header, footer, theme toggle, and navbar were reused for consistency. 
+The About page was designed as a static section to explain **Codoku’s** concept and goals. Shared layout elements like the header, footer, theme toggle, and navbar were reused for consistency. 
 
 ![About Page Preview](docs/figures/gifs/about-page.gif)  
 *The completed About page, featuring clear typography, thematic styling, and accessible layout.*
@@ -1792,7 +1790,7 @@ The About page was designed as a static section to explain Codoku’s concept an
 A custom 404 page was added to improve the user experience when a non-existent route is accessed. It reused the existing styling framework and followed semantic structure and accessibility best practices. 
 
 ![404 Page Animation](docs/figures/gifs/404-page.gif)   
-*Preview of Codoku’s custom 404 page, styled with themed typography and a hand-drawn comic-style illustration.*
+*Preview of **Codoku’s** custom 404 page, styled with themed typography and a hand-drawn comic-style illustration.*
 
 ### **4.4.13 Responsive Implementations with Testing**
 Text, grid sizing, and spacing were adjusted to stay consistent on all screen sizes, using DevTools and real devices for live responsiveness testing.
@@ -1801,7 +1799,7 @@ Text, grid sizing, and spacing were adjusted to stay consistent on all screen si
 *Responsive design adapting fluidly to tablet, desktop, and mobile viewports.*
 
 ## **4.5 Feedback and Refinement**
-Following a detailed mid-project review, a number of constructive suggestions were offered that significantly helped fine-tune the Codoku experience. 
+Following a detailed mid-project review, a number of constructive suggestions were offered that significantly helped fine-tune the **Codoku** experience. 
 
 ### **4.5.1 Interface & Usability Enhancements**
 Mentor feedback highlighted the need for more polished and modern interaction elements. The most impactful updates were as follows:
@@ -1892,12 +1890,12 @@ In order to address this I:
 This fix prevents content from being squashed or hidden on smaller screens, making gameplay consistent across devices.
 
 # **5. Feature Set & User Capabilities**
-This section highlights the complete functionality of Codoku in its final state, organized by the user journey. It covers everything from universal components to page-specific features and thoughtful enhancements. 
+This section highlights the complete functionality of **Codoku** in its final state, organized by the user journey. It covers everything from universal components to page-specific features and thoughtful enhancements. 
 
 Each entry outlines what users can do, the benefits those features provide, and the technologies that power them. This helps both developers and users understand how the project works, what makes it accessible, and where it shines in terms of user experience and technical design.
 
 ## **5.1 Universal Features**
-These features form the core structure of the Codoku website and are consistently available to all users throughout their experience.
+These features form the core structure of the **Codoku** website and are consistently available to all users throughout their experience.
 
 ### **5.1.1 Theme Toggle** 
 
@@ -1924,7 +1922,7 @@ Users can switch between visually distinct themes.A soft light theme for clarity
 
 ### **5.1.2 Sound Toggle** 
 
-The sound toggle gives users complete control over Codoku’s audio feedback, ensuring a more inclusive and accessible experience.
+The sound toggle gives users complete control over **Codoku’s** audio feedback, ensuring a more inclusive and accessible experience.
 
 This allows users to enable or mute all game-related sounds (e.g. button clicks, win/lose alerts, clue triggers) using a clearly labeled toggle.
 
@@ -1941,7 +1939,7 @@ This allows users to enable or mute all game-related sounds (e.g. button clicks,
 - State is stored in `localStorage`, so user choice remains even after browser refresh or revisit.
 - Integrated logic ensures sound-related functions respect the toggle state (e.g., theme-switch sound won’t play if sound is off).
 
-![Sound Toggle Demo](docs/figures/gifs/sound-toggle.gif)
+![Sound Toggle Demo](docs/figures/gifs/sound-toggle.gif)  
 *Demonstration of the sound toggle controlling global audio state across the site.*
 
 ### **5.1.3 Navigation Bar**
@@ -1978,8 +1976,8 @@ The rules modal provides in-page instructions via an accessible overlay, helping
 - ARIA labels and roles improve screen reader support  
 - Linked to the navigation bar and auto-focuses for usability  
 
-![Rules Modal Preview](docs/figures/gifs/rules-modal.gif)
-*The rules modal explains the Codoku objective and user controls directly within the game view.*
+![Rules Modal Preview](docs/figures/gifs/rules-modal.gif)  
+*The rules modal explains the **Codoku** objective and user controls directly within the game view.*
 
 ### 5.1.5 Sticky Footer
 
@@ -2000,3 +1998,226 @@ The sticky footer provides persistent access to key information and social links
 ![Sticky Footer Preview](docs/figures/gifs/footer.gif)  
 *The sticky footer remains fixed across pages, offering quick access to external links and consistent branding.*
 
+## **5.2 Game Features**
+The game page is the interactive core of **Codoku**, where users engage with the Sudoku puzzle. This section reviews the features users experience from the moment gameplay begins, from puzzle setup through to feedback, interactivity, and win conditions.
+
+Each feature below contributes to a smoother, more enjoyable, and responsive gameplay experience.
+
+### **5.2.1 Setup Modal**
+This is an introductory modal that configures difficulty and timer settings before gameplay begins. It streamlines user onboarding and ensures the game starts with a known configuration, acting as a game settings section. This modal appears on first load, upon pressing 'New', and after puzzle completion. Users select options and click 'Enter' to begin. After first game is played, a 'Cancel' button becomes visible to players. 
+
+![Setup modal on ](docs/figures/gifs/setup-modal.gif)
+
+**Benefits:**
+- Provides clarity on starting the game  
+- Prevents unintentional gameplay without selected preferences  
+- Improves UX by offering visual onboarding  
+
+**Technical Aspects:**
+- Bootstrap modal launched via `setupModal.show()` on page load or restart.
+- Implemented using Bootstrap’s modal component with `data-bs-backdrop="static"` and no keyboard dismissal to enforce attention.
+- Uses custom styling for accessibility and theme matching.
+- The Cancel button is programmatically hidden (`display: none`) on first load using JavaScript and only becomes visible on subsequent visits, making the setup modal mandatory on initial page load.
+- Difficulty and time selections are captured from radio inputs inside the modal form.
+- `<fieldset>` and `<legend>` elements used for grouped settings (timer and difficulty).
+- Upon pressing 'Enter ↲', selections are validated and passed to the game logic via startNewGame(), which triggers puzzle fetching, timer initialization, and stat panel updates.
+- Modal aesthetics dynamically match theme mode (light/dark) using CSS class switching.
+
+### **5.2.2 Sudoku Puzzle Generation**
+Sudoku puzzles are dynamically generated based on the user’s selected difficulty level. It enables players to play unique puzzles every session. The generated board is validated and complete, avoiding repetition. 
+
+Upon starting a game from the setup modal, the board is rendered with a mix of fixed (numbered) and editable (empty) cells. 
+
+![](docs/figures/gifs/puzzle-generation.gif)
+
+**Benefits:**
+- Offers replayability with randomized puzzle boards  
+- Encourages continued play across difficulty levels  
+- Prevents repetition or pattern memorization  
+
+**Technical Aspects:**
+- Uses the `/v1/sudokugenerate` endpoint from API Ninjas
+  - Parameters: `difficulty` (easy, medium, hard); defaults to “medium”
+  - Method: `GET` with secure `X-Api-Key` in headers
+  - Monthly quota: 10,000 API calls
+- AJAX logic built with `$.ajax()` (jQuery) retrieves puzzle and solution from the response
+- The response is destructured (`const { puzzle, solution }`) for internal use
+- The `renderEmptyGrid()` function dynamically creates the HTML grid
+- `populateGrid()` maps the puzzle data to the board:
+  - Fixed cells get `.generated` and `fw-bold` styling
+  - Empty cells are tagged `.editable` and made interactive via `enableCellSelection()`
+- Each puzzle has a matching solution stored in `currentSolution` for live validation
+- Failover handling: displays error in the console if the API fails
+
+### **5.2.3 Grid Interaction System**
+This feature creates a live sudoku board where players are able to input numbers using mouse, touchscreen or keyboard. This feature specifically enables cell selection and number-only user inputs for interactive puzzle solving. Users can engage with this feature with a mouse to hover over editable cells, clicking on one to select it and then entering numbers via keyboard or tapping on number buttons in the numbers container. Users can clear entries with the 'Delete' or 'Backspace' keyboard button or ⌫ button. 
+
+![](docs/figures/gifs/grid-interaction.gif)
+
+**Benefits:**
+- Enhances accessibility with multi-input support  
+- Allows both mouse and keyboard control  
+- Supports cell highlighting for better spatial awareness  
+
+**Technical Aspects:**
+- Each `<p>` tag representing a cell includes `data-row` and `data-col` attributes for logical mapping.
+- CSS Classes & Visual Feedback:
+  - `.editable`: Marks cells the user can interact with.
+  - `.selected`: Highlights the currently focused cell (yellow for day mode/blue for night mode).
+  - Hover states (blue for day mode/yellow for night mode) and pointer styles are managed using `:hover` selectors and jQuery `.hover()` logic.
+- `enableCellSelection()` binds event listeners to all `.editable` cells.
+- Click events use `.on('click')` to assign `.selected` and set `selectedCell`
+- Keyboard events are globally captured with `document.on('keydown')`:
+  - `1–9`: Inserts the number into the selected cell
+  - `Backspace` / `Delete`: Clears the cell
+- On-screen number buttons are `<h2>` elements, bound via `.on('click')` to populate the selected cell.
+- Rules Modal instructions explain interaction steps clearly.
+- All interactive elements use standard HTML or ARIA-compliant components.
+- JS directly modifies the class lists (`classList.add/remove`) and inline styles (`style.cursor`) for state transitions.
+
+### **5.2.4 Check Button**
+This is a user activated button that verifies their current board inputs. It gives feedback on whether entries are incorrect. When the user presses 'Check' at any point, errors are highlighted in red, correct entries stay the same.  
+
+![](docs/figures/gifs/check-button.gif)
+
+**Benefits:**
+- Encourages learning and error correction  
+- Reduces frustration by offering non-final feedback  
+- Prevents accidental incorrect submission  
+
+**Technical Aspects:**
+- Tied to the `check-button` ID in the DOM and bound via jQuery’s `.on('click')` inside `DOMContentLoaded`
+- Calls the `checkUserInput()` function:
+  - Iterates through each `.editable` cell using jQuery’s `.each()`
+  - Fetches its coordinates via `data-row` and `data-col` attributes
+  - Compares content against `currentSolution[][]` for accuracy
+  - Adds `.incorrect` class (CSS-colored red) if mismatched; removes it otherwise
+- Increments `hintsUsed` and updates the display using `updateHintsDisplay()`
+- Triggers sound feedback via `soundEffects.play("hint")` to reinforce interaction if sound is toggled on
+- Designed not to alter empty or untouched cells—errors only appear where input exists
+- Impacts the logic of `triggerAutoWinCheck()` — heavily hinted completions show an alternate win modal
+
+### **5.2.5 Clue Button**
+This feature provides a single correct number in a random empty cell. It helps users to move forward in the game when stuck, without providing the solution to the whole puzzle. When a user clicks the 'Clue' button, it reveals one cell answer. 
+
+![](docs/figures/gifs/clue-button.gif)
+
+**Benefits:**
+- Assists new players without giving away full solutions  
+- Allows strategic help for difficult puzzles  
+- Increases accessibility for casual users  
+
+**Technical Aspects:**
+- Binds to the `hint-button` ID in the DOM using jQuery `.on('click')` within `DOMContentLoaded` 
+- Calls the `revealHint()` function:
+  - Scans `.editable` cells for blanks (`.text().trim() === ""`)
+  - Selects one at random using `Math.random()` 
+  - Retrieves the correct value from `currentSolution[row][col]`
+  - Inserts the value directly and applies `.hinted` class for green-styled visual cue
+- Hints are not replayed or stacked—once revealed, cells are marked and preserved
+- Updates `hintsUsed` and reflects count via `updateHintsDisplay()`
+- Impacts the logic of `triggerAutoWinCheck()` — heavily hinted completions show an alternate win modal
+
+### **5.2.6 Optional Game Timer**
+This is a countdown timer feature that is configurable at the beginning of each game in the Setup Modal. This adds a time constraint for an increased challenge. User's interact with this feature by selecting a time limit or 'None' for no countdown. The timer then counds down visibly in the game stats panel. 
+
+![](docs/figures/gifs/game-timer.gif)
+
+When the player runs out of time, an alert modal is triggered with alarm sound and the board is disabled from further interaction. 
+
+![](docs/figures/gifs/timeout-trigger.gif)
+
+**Benefits:**
+- Adds time-based challenge for competitive or advanced play  
+- Creates tension and urgency, mimicking real-time puzzles  
+- Optional for casual users  
+
+**Technical Aspects:**
+- Timer logic handled by `startTimer()`:
+  - Parses the user’s time selection from `$('input[name="time"]:checked').val()`
+  - Initializes countdown using `setInterval()` and stores reference in `countdownInterval`
+- `updateTimerDisplay()` formats seconds to `MM:SS` using `Math.floor()` and `padStart()`
+- On timeout, `endGameDueToTime()` is triggered:
+  - Plays a preloaded `alarm` sound if sound toggle is on
+  - Locks the board (`.editable` cells disabled via `pointer-events: none`)
+  - Displays a Timeout modal 
+- Countdown is paused or cleared with `clearInterval()` on:
+  - Win condition
+  - Manual restart via the Setup Modal
+- Timer label is dynamically injected into `timer` id in the stats panel using jQuery
+- State logic ensures timer resets correctly between sessions (fixes applied based on user feedback)
+
+### **Error Detection on Filled Puzzle**
+This feature is a built in safeguard for accuracy when the sudoku grid is fully filled by the user but not correctly solved. **Codoku** detects the mismatch and gives immediate, constructive feedback.
+
+![](docs/figures/gifs/error.gif)
+
+Benefits:
+- Prevents accidental false completion
+- Offers gentle correction without revealing the solution
+- Keeps the challenge intact while providing helpful feedback
+
+Technical Aspects: 
+- The system continuously monitors game state via the `triggerAutoWinCheck()` function. This is called:
+  - After every valid cell input (keyboard or tap)
+  - After use of the 'Check' or 'Clue' buttons
+- Conditions checked:
+  - `isBoardFilled()` 
+    - Uses jQuery to collect all `.editable` cells
+    - Checks each one for non-empty `textContent`
+    - Returns `true` only if all user-input cells are filled
+  - `isBoardCompleteAndCorrect()` 
+    - Iterates each editable cell and compares its value to the matching value in `currentSolution`, which was stored at the time of board generation
+    - If all values match, the board is considered solved
+- If `isBoardFilled()` returns `true` but `isBoardCompleteAndCorrect()` returns `false`
+  - A friendly Bootstrap modal (`#alert-modal`) is triggered using `bootstrap.Modal.show()`:
+    - 🔍 Try again! It looks like there's an error somewhere!
+  - An `<audio>` element (`#error-sound`) is included in the HTML and preloaded
+  - No cells are locked or penalized—users can immediately begin fixing their entries
+
+### **5.2.8 Win Detection System**
+This feature detects when the puzzle is solved correctly and celebrates the win with feedback, sound and a summary modal. When all user input cells match the solution, Codoku displays a Congratulations modal with game stats and visual affects (confetti and applause if sound is toggled on). 
+
+![](docs/figures/gifs/game-win.gif)
+
+If hints were used heavily an alternate Hinted Win modal provides a different message without celebration effects encouraging the user to be more independent in their puzzle solving. 
+
+![](docs/figures/gifs/hinted-win.gif)
+
+**Benefits:**
+- Offers clear, rewarding feedback at the end of a game
+- Confirms completion through visual and auditory cues
+- Adapts messaging based on clue usage, reinforcing user effort
+- Encourages replay with challenge-based encouragement
+
+**Technical Aspects:**
+- Win logic handled by `triggerAutoWinCheck()`:
+  - Runs after each valid cell input or clue insertion
+  - Tied to `isBoardFilled()` to confirm grid completion
+  - If `true`, it then confirms correctness via `isBoardCompleteAndCorrect()` by comparing each user entry against `currentSolution`
+- Based on hint usage different outcomes occur:
+  - If the board is complete and few or no hints were used:
+    - A visual celebration is triggered by the `popConfetti()` function, which uses the Canvas-Confetti library to render falling confetti in the center of the screen.
+    - The sound effect `applause` is played using `soundEffects.play("applause")`, a modular system controlling audio playback.
+    - The standard win modal (`#congrats-modal`) is opened using Bootstrap’s JS API (`bootstrap.Modal.show()`).
+    - The player stats are dynamically inserted using jQuery DOM manipulation.
+  - If the user relied heavily on hints (e.g. more hint cells than user-filled cells):
+    - A different modal (`#hinted-win-modal`) is shown instead, displaying a more encouraging message.
+    - Stats are again filled dynamically using jQuery selectors, but the tone of messaging shifts to emphasize future improvement.
+- Regardless of win type:
+  - The game timer is cleared (`clearInterval(countdownInterval)`) to prevent it from running after win state.
+  - A `hasCelebrated` flag ensures the modal and effects are only triggered once per game session.
+  - The win modal contains options to start a new game or admire the finished puzzle.
+
+### **5.2.8 Stats Panel**
+A compact stats panel tracks difficulty, timer status, and hints used.
+
+**Benefits:**
+- Keeps players informed of current settings and progress  
+- Enhances engagement by displaying useful metrics  
+- Promotes replay with visible challenge conditions  
+
+**Technical Aspects:**
+- Live updates through jQuery DOM manipulation  
+- Integrates tightly with timer, clues, and setup data  
+- Styled for legibility across screen sizes  
