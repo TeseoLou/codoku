@@ -2214,7 +2214,7 @@ Technical Aspects:
 This feature detects when the puzzle is solved correctly and celebrates the win with feedback, sound and a summary modal. When all user input cells match the solution, Codoku displays a Congratulations modal with game stats and visual affects (confetti and applause if sound is toggled on). 
 
 ![Congrats modal preview](docs/figures/gifs/game-win.gif)  
-*If a player completes the puzzle without using too many clues a congratulations modal will appear with confetti and applause.*
+*If a player completes the puzzle without using too many hints, a congratulations modal will appear with confetti and applause.*
 
 If hints were used heavily an alternate Hinted Win modal provides a different message without celebration effects encouraging the user to be more independent in their puzzle solving. 
 
@@ -2281,7 +2281,9 @@ The About Page in **Codoku** offers users insight into the game’s purpose, des
 Each feature is designed to reflect the project's minimalist philosophy while remaining accessible and visually consistent with the rest of the application.
 
 ### **5.3.1 Accessible Introduction Content**
-This section outlines **Codoku’s** origins, goals, and audience. It is presented with simple, readable copy, structured for assistive technologies.
+This section outlines **Codoku’s** philosophy, development goals, and intended audience. It introduces the project in a way that is welcoming and inclusive for all users — especially those using assistive technologies.
+
+Users scroll this section on the About page to learn about **Codokus** purpose and design. The layout encourages exploration with clean headings and concise paragraphs. No clicks are required to access this content, it is immediately visible upon page load. Screen reader users benefit from correctly labeled landmarks and logical reading order, allowing them to navigate using headings and skip links if needed.
 
 ![About page preview](docs/figures/screenshots/about-text.webp)  
 *A walkthrough of the About section featuring readable, accessible text blocks.*
@@ -2298,7 +2300,9 @@ This section outlines **Codoku’s** origins, goals, and audience. It is present
 - Custom padding/margins applied to improve visual clarity  
 
 ### **5.3.2 Theme-Compatible Visuals**
-The About page contains a hero image styled to match the site’s current theme, maintaining visual cohesion across modes.
+The About page features images that adjusts their styling to match **Codoku’s** selected theme mode — either light or dark. This maintains visual cohesion and ensures the interface remains aesthetically balanced regardless of user preference.
+
+The images are static and purely decorative but enhances engagement by reinforcing the site’s tone and personality.  
 
 ![About page imagery](docs/figures/screenshots/about-visuals.webp)  
 *A collage showing **Codoku**’s visual imagery.*
@@ -2315,7 +2319,9 @@ The About page contains a hero image styled to match the site’s current theme,
 - Styled to stay within a max-width for performance and layout control   
 
 ### **5.3.3 Donate Button**
-A donate or support button is included for users who wish to support the chosen charity.
+A donate button is prominently placed on the **About** page to encourage users to support a designated charity aligned with **Codoku’s** values.
+
+Users can click or tap the button labeled “Donate” to open the charity’s donation page in a new browser tab. The button stands out visually through themed styling and is accessible via keyboard and screen readers.
 
 ![Donate Button in Action](docs/figures/gifs/donate-button.gif)  
 *The Donate button links users to Alzheimer’s Society, connecting **Codoku**’s theme of mental agility with real-world impact.*
@@ -2330,3 +2336,66 @@ A donate or support button is included for users who wish to support the chosen 
 - Hover and focus states improve usability (`:hover`, `:focus-visible`)  
 - External link uses `target="_blank"` and `rel="noopener noreferrer"` for security and accessibility  
 - Can be conditionally rendered via JavaScript in future versions if a payment gateway is integrated  
+
+## **5.4 Error Page Features**
+The custom 404 Error Page provides a user-friendly fallback experience for when visitors navigate to an invalid or missing route. Rather than presenting a generic browser error, **Codoku**’s 404 page reinforces branding and theme consistency, while offering a quick way to recover and return to the main game.
+
+### **5.4.1 Custom Illustration**
+A stylized image and quirky message present the 404 page as an extension of the site's playful, puzzle-themed tone. The design reinforces **Codoku’s** branding while making the error experience more engaging.
+
+Users land on this page automatically if they navigate to a non-existent route. The illustration captures attention, and the accompanying text gently redirects them without confusion or frustration.
+
+![404 Illustration Preview](docs/figures/screenshots/error-illustration.webp)    
+*A custom newspaper-themed illustration gives **Codoku**’s error page personality and charm.*
+
+**Benefits**:
+- Keeps the tone light and on-brand even when something goes wrong  
+- Offers visual consistency with the site’s aesthetic  
+- Reassures users they’re still within the same experience  
+
+**Technical Aspects**:
+- HTML structure uses `<main>` with proper semantic tags (`<h1>`, `<p>`, `aria-labelledby="error-heading"`)  
+- Image (`breaking-news.webp`) styled responsively using Bootstrap’s `.img-fluid`  
+- Typography matches the rest of the site via shared Google Fonts and CSS classes (`display-4`, `fw-bold`)  
+- Page uses `<meta name="description">` and `<title>` for SEO and accessibility clarity  
+
+### **5.4.2 Accessible, Humorous Content**
+The error message was crafted to match **Codoku’s** puzzle-centric theme, combining humor with clarity to reduce user frustration. It supports both usability and SEO by presenting helpful, branded content in a structured format.
+
+Users see the message upon arriving at a broken or mistyped link. The wording "**puzzling**" and "**off-grid**" adds a lighthearted tone while clearly suggesting next steps.
+
+![Humorous 404 Text Preview](docs/figures/screenshots/error-text.webp)     
+*Message below the return button reads “How... puzzling! Looks like you've been taken off-grid.” — reinforcing the site’s branding with a playful tone.*
+
+**Benefits**:
+- Keeps user engagement even during errors  
+- Adds light-hearted personality and brand identity  
+- Reinforces puzzle theme with phrases like “off-grid” and “puzzling”  
+
+**Technical Aspects**:
+- Custom `<meta name="description">` describes the error page content for search engines  
+- Uses screen reader-friendly markup:  
+  - `<h2 class="visually-hidden">404 Error - Page Not Found</h2>`  
+- Page includes all standard layout elements (navbar, rules modal, footer) for continuity  
+- Footer and toggles remain usable even on the error page (`navbar.js`, `theme.js`, and `sound.js` initialized normally)  
+- Site-wide scripts are loaded to maintain interactive behavior on `error.html`  
+
+### **5.4.3 Return Button (Home)**
+A prominent button labeled 'Home' provides users with a clear path back to the main puzzle interface after encountering a 404 error. This button acts as a recovery tool to keep users engaged and reduce frustration from navigation issues.
+
+Users click or tap the “Home” button to return to `index.html` (the Game page). The button is styled with high contrast and centered layout to ensure visibility and ease of access.
+
+![Return Button Preview](docs/figures/gifs/return-to-home.gif)    
+*Large dark button labeled "Home" is centered below the error image, styled to be easily clickable on all devices.*
+
+**Benefits**:
+- Offers a clear call to action to recover from an error  
+- Minimizes frustration with a one-click route back to gameplay  
+- Improves usability on both desktop and mobile  
+
+**Technical Aspects**:
+- Implemented as a `<button>` element with a `btn-dark` class and `onclick="window.location.href='index.html'"`  
+- Accessibility is ensured with `aria-label="Return to homepage"`  
+- Visually consistent button sizing and border styles applied with `.equal-width-buttons`  
+- Positioned using Bootstrap’s utility classes for spacing (`mb-4`) and alignment (`d-flex justify-content-center`)  
+
