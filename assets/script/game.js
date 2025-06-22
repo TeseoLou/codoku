@@ -595,13 +595,22 @@ document.addEventListener('DOMContentLoaded', function () {
         setupModal.show();
     });
     document.getElementById("ok-button").addEventListener("click", function () {
-        const setupModal = new bootstrap.Modal(document.getElementById("setup-modal"));
-        setupModal.show();
-        document.getElementById("setup-modal").addEventListener("shown.bs.modal", () => {
-            startNewGame();
-        }, { once: true });
+        const alertModalElement = document.getElementById("alert-modal");
+        const bsAlertModal = bootstrap.Modal.getInstance(alertModalElement);
+        if (bsAlertModal) {
+            bsAlertModal.hide();
+        }
+        const message = document.getElementById("alert-modal-message").textContent;
+        const isTimeout = message.includes("Time's up");
+        if (isTimeout) {
+            const setupModal = new bootstrap.Modal(document.getElementById("setup-modal"));
+            const cancelButton = document.getElementById("cancel-button");
+            if (cancelButton) {
+                cancelButton.style.display = "none";
+            }
+            setupModal.show();
+        }
     });
-
 });
 
 /**
