@@ -132,6 +132,7 @@ function fetchSudokuBoard() {
         },
         error: function (response) {
             console.error('Failed to retrieve puzzle data:', response?.responseText || 'No response text available');
+            showAlertModal("❌ Could not fetch a new puzzle. Please check your internet connection or try again later.");
         }
     });
 };
@@ -181,7 +182,9 @@ function enableCellSelection() {
             selectedCell.textContent = '';
             $(selectedCell).removeClass('incorrect');
             soundEffects.play("key");
-        };
+        } else {
+            event.preventDefault();
+        }
     });
     $('#numbers-container h2').each(function () {
         $(this).on('click', function () {
@@ -439,15 +442,25 @@ function formatElapsedTime() {
 
 /**
  * Disables all user interaction with the Sudoku grid after puzzle completion.
- * This function removes the 'editable' class from all cells that allowed input
- * and sets their pointer events to 'none' to prevent any further mouse or keyboard interaction.
- * It is typically called when the user presses the "Admire Puzzle" button after winning,
- * ensuring the completed grid is view-only and cannot be altered post-victory.
+ * This function targets all cells marked as 'editable' and:
+ * - Removes the 'editable' class to prevent game logic from interacting with them
+ * - Sets 'pointer-events: none' to block mouse interaction
+ * - Adds 'aria-disabled="true"' for screen reader accessibility
+ * - Sets 'tabindex="-1"' to remove keyboard focusability
+ * Although `.prop('disabled', true)` is included for completeness, it has no effect 
+ * on non-form elements like <p>. The ARIA and tabindex adjustments ensure 
+ * that all users — including those using assistive technologies — 
+ * are prevented from editing the puzzle once it's marked as complete.
+ * Typically triggered when the user clicks "Admire Puzzle" after a win.
  */
 function disablePuzzleInteraction() {
     $('.editable').each(function () {
-        $(this).removeClass('editable');
-        $(this).css('pointer-events', 'none');
+        $(this)
+            .removeClass('editable')
+            .prop('disabled', true)                      
+            .attr('aria-disabled', 'true')               
+            .attr('tabindex', '-1')                      
+            .css('pointer-events', 'none');              
     });
 }
 
