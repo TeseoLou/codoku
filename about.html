@@ -41,7 +41,7 @@
                             id="theme-label">
                             <input class="form-check-input" type="checkbox" id="theme-switch" role="switch"
                                 aria-labelledby="theme-label" checked />
-                            <i id="theme-icon" class="fa-solid fa-sun"></i>
+                            <i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i>
                             <span>Display</span>
                         </label>
                     </div>
@@ -53,14 +53,14 @@
                             id="sound-label">
                             <input class="form-check-input" type="checkbox" id="sound-switch" role="switch"
                                 aria-labelledby="sound-label" />
-                            <i id="sound-icon" class="fa-solid fa-volume-xmark"></i>
+                            <i id="sound-icon" class="fa-solid fa-volume-xmark" aria-hidden="true"></i>
                             <span>Sound</span>
                         </label>
                     </div>
                 </div>
             </aside>
             <!-- Hamburger -->
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+            <button class="navbar-toggler border-0" aria-expanded="false" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false"
                 aria-label="Toggle navigation menu">
                 <span class="navbar-toggler-icon"></span>
@@ -68,11 +68,11 @@
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbar-content">
                 <ul class="navbar-nav ms-auto">
-                    <li role="button" class="nav-item">
-                        <a class="nav-link text-black" href="index.html">Game</a>
+                    <li class="nav-item">
+                        <a role="button" tabindex="0" class="nav-link text-black" href="index.html">Game</a>
                     </li>
                     <li class="nav-item">
-                        <a role="button" class="nav-link text-black active" aria-current="page"
+                        <a role="button" tabindex="0" class="nav-link text-black active" aria-current="page"
                             href="about.html">About</a>
                     </li>
                     <li class="nav-item">
@@ -163,14 +163,14 @@
                 donating to
                 Alzheimer’s Society.
             </p>
-            <button id="donate-button" class="btn btn-dark"
+            <button id="donate-button" class="btn btn-dark" aria-label="Donate to Alzheimer’s Society"
                 onclick="window.open('http://www.alzheimers.org.uk/get-involved/make-donation', '_blank', 'noopener,noreferrer')">
                 Donate
             </button>
         </section>
         <!-- Rules Modal -->
-        <section id="rules-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rules-modal-label"
-            aria-modal="true" aria-hidden="true">
+        <section id="rules-modal" class="modal fade" tabindex="-1" role="dialog" aria-describedby="rules-modal-info" aria-labelledby="rules-modal-label"
+            aria-describedby="rules-modal-info" aria-modal="true" aria-hidden="true" data-bs-backdrop="static">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <article class="modal-content">
                     <div class="modal-border">
