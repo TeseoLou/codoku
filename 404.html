@@ -40,7 +40,8 @@
                     <div class="form-check form-switch m-0">
                         <label class="form-check-label d-flex align-items-center gap-2 ms-1" for="theme-switch"
                             id="theme-label">
-                            <input class="form-check-input" type="checkbox" id="theme-switch" role="switch" aria-labelledby="theme-label" checked/>
+                            <input class="form-check-input" type="checkbox" id="theme-switch" role="switch"
+                                aria-labelledby="theme-label" checked />
                             <i id="theme-icon" class="fa-solid fa-sun"></i>
                             <span>Display</span>
                         </label>
@@ -51,7 +52,8 @@
                     <div class="form-check form-switch m-0">
                         <label class="form-check-label d-flex align-items-center gap-2 ms-1" for="sound-switch"
                             id="sound-label">
-                            <input class="form-check-input" type="checkbox" id="sound-switch" role="switch" aria-labelledby="sound-label"/>
+                            <input class="form-check-input" type="checkbox" id="sound-switch" role="switch"
+                                aria-labelledby="sound-label" />
                             <i id="sound-icon" class="fa-solid fa-volume-xmark"></i>
                             <span>Sound</span>
                         </label>
@@ -75,7 +77,8 @@
                     </li>
                     <li class="nav-item">
                         <button role="button" class="nav-link text-black bg-transparent border-0" data-bs-toggle="modal"
-                            data-bs-target="#rules-modal" aria-controls="rules-modal" aria-haspopup="dialog" aria-expanded="false">
+                            data-bs-target="#rules-modal" aria-controls="rules-modal" aria-haspopup="dialog"
+                            aria-expanded="false">
                             Rules
                         </button>
                     </li>
@@ -139,17 +142,27 @@
     <!-- Footer -->
     <footer class="py-3">
         <div class="container d-flex justify-content-between align-items-center text-white">
-            <div>
-                <a href="https://www.facebook.com" target="_blank" class="text-black me-3" aria-label="Facebook"><i
-                        class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com" target="_blank" class="text-black me-3" aria-label="Instagram"><i
-                        class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.twitter.com" target="_blank" class="text-black" aria-label="X"><i
-                        class="fa-brands fa-x-twitter"></i></a>
-            </div>
-            <div class="small text-black text-end">
-                &copy; 2025 Codoku Game Project
-            </div>
+            <section id="socials" class="my-2">
+                <a href="https://www.facebook.com" target="_blank" id="facebook-link" class="text-black me-3"
+                    aria-label="Facebook Page">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <span class="visually-hidden">Facebook</span>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" id="instagram-link" class="text-black me-3"
+                    aria-label="Instagram Page">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span class="visually-hidden">Instagram</span>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" id="x-link" class="text-black me-3"
+                    aria-label="X Page">
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <span class="visually-hidden">X</span>
+                </a>
+            </section>
+            <!-- Copyright Message -->
+            <aside id="copyright-info" class="small text-black text-end">
+                <p class="my-2">&copy; 2025 Codoku Game Project</p>
+            </aside>
         </div>
     </footer>
     <!-- JavaScript Dependencies -->
@@ -159,7 +172,7 @@
     <!-- Modular JavaScript Files -->
     <script src="assets/script/navbar.js"></script>
     <script src="assets/script/sound.js"></script>
-    <script src="assets/script/theme.js"></script>   
+    <script src="assets/script/theme.js"></script>
     <script src="assets/script/init.js"></script>
     <script src="assets/script/game.js"></script>
     <!-- Font Awesome -->
