@@ -438,6 +438,20 @@ function formatElapsedTime() {
 };
 
 /**
+ * Disables all user interaction with the Sudoku grid after puzzle completion.
+ * This function removes the 'editable' class from all cells that allowed input
+ * and sets their pointer events to 'none' to prevent any further mouse or keyboard interaction.
+ * It is typically called when the user presses the "Admire Puzzle" button after winning,
+ * ensuring the completed grid is view-only and cannot be altered post-victory.
+ */
+function disablePuzzleInteraction() {
+    $('.editable').each(function () {
+        $(this).removeClass('editable');
+        $(this).css('pointer-events', 'none');
+    });
+}
+
+/**
  * Looks at the board state to find out if the player has won or made an error.
  * If the board is completely and correctly filled, it shows a congratulatory modal—
  * with a different version if the player relied heavily on hints. It stops the timer,
@@ -544,13 +558,20 @@ function startNewGame() {
 };
 
 /**
- * Sets up core event listeners for game control buttons and sound triggers.
- * Handles logic for "Check" and "Hint" buttons, including delayed execution to allow
- * modal rendering and sound to sync smoothly. Also wires up modal buttons like 
- * "New Game" and "OK" to reset the board and relaunch the setup modal.
- * Wrapping this in `DOMContentLoaded` ensures all elements are available in the DOM 
- * before attaching listeners. Helps connect UI interactions to their game logic 
- * counterparts in a modular and reliable way.
+ * Sets up all core event listeners once the DOM is fully loaded.
+ * This function connects various UI controls to their corresponding game logic:
+ * - "Check" button: Triggers input validation with a short delay and plays a sound.
+ * - "Hint" button: Reveals a correct number in a random empty cell, checks for win conditions,
+ *   and plays a sound.
+ * - "New Game" buttons (from both win modals): Hides the modal and launches the setup modal.
+ * - "OK" button (from alert modal):
+ *     - If triggered by timeout ("Time's up!"), opens the setup modal with the cancel button hidden.
+ *     - Otherwise, simply hides the alert without resetting the game.
+ * - "Admire Puzzle" buttons (from both win types): Disables further interaction with the grid so 
+ *   players can view the completed puzzle without modifying it.
+ * All listeners are wrapped inside `DOMContentLoaded` to ensure DOM elements exist
+ * before event binding. This centralizes event logic and ensures UI behavior remains modular, 
+ * interactive, and consistent across game states.
  */
 document.addEventListener('DOMContentLoaded', function () {
     const checkButton = $('#check-button');
@@ -610,6 +631,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             setupModal.show();
         }
+    });
+    document.getElementById("admire-button").addEventListener("click", () => {
+        disablePuzzleInteraction();
+    });
+    document.getElementById("admire-button-hinted").addEventListener("click", () => {
+        disablePuzzleInteraction();
     });
 });
 
