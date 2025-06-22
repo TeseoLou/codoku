@@ -1889,7 +1889,7 @@ In order to address this I:
 
 This fix prevents content from being squashed or hidden on smaller screens, making gameplay consistent across devices.
 
-# **5. Feature Set & User Capabilities**
+# **5. Feature Set**
 This section highlights the complete functionality of **Codoku** in its final state, organized by the user journey. It covers everything from universal components to page-specific features and thoughtful enhancements. 
 
 Each entry outlines what users can do, the benefits those features provide, and the technologies that power them. This helps both developers and users understand how the project works, what makes it accessible, and where it shines in terms of user experience and technical design.
@@ -1898,10 +1898,9 @@ Each entry outlines what users can do, the benefits those features provide, and 
 These features form the core structure of the **Codoku** website and are consistently available to all users throughout their experience.
 
 ### **5.1.1 Theme Toggle** 
+The Theme Toggle permits users to switch between light and dark visual modes based on preference or ambient lighting conditions. It promotes accessibility and personalization by offering visually distinct styles for different contexts.
 
-The theme toggle allows users to switch between light and dark display modes instantly, improving comfort and accessibility.
-
-Users can switch between visually distinct themes.A soft light theme for clarity, and a darker theme for reduced glare and low-light usability.
+Users can select a soft, high-contrast light theme or a glare-reducing dark mode, making Codoku more usable across environments, from bright classrooms to late-night settings. This is done when you click or tap the switch labeled 'Display' in the navigation bar to toggle modes. Icons and label colors update dynamically to indicate the current state.
 
 **Benefits**:
 - Enhances usability for users in different lighting conditions.
@@ -1912,19 +1911,25 @@ Users can switch between visually distinct themes.A soft light theme for clarity
 *Theme toggle in action, toggling between light and dark UI modes.*
 
 **Technical Aspects**:
-- CSS Variables define color schemes that are dynamically updated.
-- A `dark` class is toggled on the `<body>` tag.
-- User preference is persisted with `localStorage`, ensuring the chosen theme remains consistent across sessions.
+- Uses `:root` CSS variables (`--color-bg-light`, `--color-bg-dark`, etc.) to define themable values
+- A `.dark` class is toggled on the `<body>` tag.
+- Background images and icon colors change conditionally using nested CSS selectors (`body.dark .nav-link`, `body.dark #grid p`, etc.)
+- Toggle logic is handled via `theme.js`, which listens for changes on the `#theme-switch` input
+  - Adds or removes the `dark` class from `<body>` to trigger theme shift
+  - User preference is persisted with `localStorage`, ensuring the chosen theme remains consistent across sessions.
+  - On page load, the stored theme preference is applied automatically to ensure consistency
 - Styled toggle switch with accessible label for clarity.
-- Icons and buttons are updated dynamically:
-  - Button backgrounds and text colors adapt to the selected theme.
-  - Icons swap between light and dark mode variants where applicable, including the theme toggle itself and modal backgrounds.
+  - Includes visible label 'Display' and icon (`fa-sun` / `fa-moon`) for users with varying abilities
+  - Modal overlays, alerts, buttons, and input elements also adopt the current theme to ensure visual continuity
+- If sound is enabled (`isSoundEnabled === true`), switching the theme triggers one of two brief, distinctive audio clips:
+  - Light mode: 'Tweet'
+  - Dark mode: 'Hoot'
+  - Played using `soundEffects.play("tweet")` or `soundEffects.play("hoot")` inside the toggle logic using a ternary operator
+
 
 ### **5.1.2 Sound Toggle** 
 
-The sound toggle gives users complete control over **Codoku’s** audio feedback, ensuring a more inclusive and accessible experience.
-
-This allows users to enable or mute all game-related sounds (e.g. button clicks, win/lose alerts, clue triggers) using a clearly labeled toggle.
+The Sound Toggle is an accessibility-focused control that lets users mute or enable Codoku’s in-game sound effects. It enhances user autonomy and caters to sensory-sensitive individuals by ensuring all audio is opt-in. This toggle manages feedback sounds like clue activations, number selections, page changes, win animations, and errors. By default, sound is muted on first visit to support inclusive design. Users can click or tap the switch labeled "Sound" in the navbar to toggle between muted and active states. Color and icon updates provide immediate visual feedback.
 
 ![Sound Toggle Demo](docs/figures/gifs/sound-toggle.gif)  
 *Demonstration of the sound toggle controlling global audio state across the site.*
@@ -1935,31 +1940,45 @@ This allows users to enable or mute all game-related sounds (e.g. button clicks,
 - Gives returning users a persistent setting tailored to their preference.
 
 **Technical Aspects**:
-- Implemented using a custom switch input paired with a clear text label (Sound) and an accessible mute icon.
-- Visual feedback includes dynamic color changes:  
+- Built using a Bootstrap `form-switch` input and `<label>` for accessibility
+- The icon (`fa-volume-xmark` or `fa-volume-high`) updates dynamically based on state in `applySoundSetting()`
+- Visual feedback includes dynamic color changes via `.form-check-input` custom styles:  
   - 🔴 Red (Muted)  
   - 🟢 Green (Active)
-- State is stored in `localStorage`, so user choice remains even after browser refresh or revisit.
-- Integrated logic ensures sound-related functions respect the toggle state (e.g., theme-switch sound won’t play if sound is off).
+- Toggle logic is handled via `sound.js`, which listens for changes on the `#sound-switch` input
+  - The toggle listens for change events and updates a global boolean `isSoundEnabled` using a ternary operator
+  - State is stored in `localStorage`, so user choice remains even after browser refresh or revisit.
+- A global `soundEffects` object manages all sound files using HTML `<audio>` elements preloaded into memory
+  - The `soundEffects.play()` method (used throughout game logic) respects the current toggle state to prevent unwanted playback
+- `aria-label` and semantic form structure ensure screen reader compatibility
+- Tightly coupled with all core game actions like `enableCellSelection()`, `revealHint()`, `startTimer()`, and `triggerAutoWinCheck()`
 
 ### **5.1.3 Navigation Bar**
-
-The navigation bar allows users to access the Game, About, and Rules pages easily from any part of the site. It adapts to different screen sizes, ensuring optimal usability across devices.
+A responsive, sticky top navigation panel that gives users immediate access to key areas of the **Codoku** website: the Game, About, and Rules pages. This feature ensures easy movement with embedded toggles for user preferences (theme and sound), and auto-collapses on mobile to maximize screen real estate. Users can click or tap page links directly, or open the hamburger menu on smaller devices. Toggle switches for Display (theme) and Sound are always accessible within the navbar.
 
 ![Navigation Bar in Action](docs/figures/gifs/navbar.gif)  
 *Demonstration of the responsive navigation bar, complete with toggle collapse functionality and embedded display controls.*
 
 **Benefits:**
-- Quick and intuitive access to all main sections of the site  
-- Mobile-first design enhances user experience on phones and tablets  
-- Centralized location for theme and sound toggle controls  
+- Provides quick access to core site areas from anywhere on the site
+- Mobile-first design offers seamless navigation on phones and tablets
+- Centralizes user preference controls (sound/theme toggles)
+- Maintains user context with a persistent top-bar layout 
 
 **Technical Aspects:**
-- Responsive Bootstrap navbar with collapsible functionality  
-- `navbar-toggler` component with ARIA labels for accessibility  
-- JavaScript handles auto-collapse behavior via `setupNavLinkCollapse()`  
-- Toggle switches embedded in the nav bar, styled with CSS and synced via `localStorage`  
-- `position: sticky` keeps navigation fixed to the top for persistent visibility  
+- Responsive design
+  - Built using the Bootstrap 5 `navbar` component with `navbar-expand-lg` and collapse classes for fluid responsiveness.
+  - On smaller viewports, the menu collapses into a hamburger toggler (`navbar-toggler`), controlled via `data-bs-toggle` and `data-bs-target`
+- A custom function `setupNavLinkCollapse()` in `navbar.js` ensures that once a nav link is clicked on mobile, the dropdown menu auto-collapses for better UX. 
+- Toggle Integrations
+  - The theme and sound toggles are embedded within the navbar and use `<input type="checkbox" class="form-check-input">`.
+  - Each toggle syncs with `localStorage` to persist user choices across sessions
+  - Toggle icons and colors update based on theme or sound status in `theme.js` and `sound.js` and conditional use CSS classes
+  - If sound toggle is set to unmuted, 'Hoot' and 'Tweet' sounds are played when the theme switch is toggled
+- Accessibility Enhancements
+  - ARIA attributes like `aria-label` and `aria-controls` ensure the menu is screen reader-friendly.
+- The navbar inherits background images that match the current theme (`nav-light-background.webp` or `nav-dark-background.webp`), maintaining stylistic continuity across the site.
+  - These backgrounds have a transparent bottom to create a fade when users scroll down on a page.
 
 ### 5.1.4 Rules Modal
 The rules modal is an accessible pop-up interface that presents the game rules in a concise, readable format using modal design patterns. It delivers game instructions in a way that doesn’t interrupt flow or require a separate page load. It educates users while keeping them immersed in the puzzle interface. Users open the modal by clicking 'Rules'”' in the navbar. It can be dismissed via a clearly labeled 'Back ↲' button. 
@@ -2012,7 +2031,8 @@ Each feature below contributes to a smoother, more enjoyable, and responsive gam
 ### **5.2.1 Setup Modal**
 This is an introductory modal that configures difficulty and timer settings before gameplay begins. It streamlines user onboarding and ensures the game starts with a known configuration, acting as a game settings section. This modal appears on first load, upon pressing 'New', and after puzzle completion. Users select options and click 'Enter' to begin. After first game is played, a 'Cancel' button becomes visible to players. 
 
-![Setup Modal Preview](docs/figures/gifs/setup-modal.gif)
+![Setup modal preview](docs/figures/gifs/setup-modal.gif)
+*User configuring difficulty and timer settings before starting a game in **Codoku***
 
 **Benefits:**
 - Provides clarity on starting the game  
@@ -2034,7 +2054,8 @@ Sudoku puzzles are dynamically generated based on the user’s selected difficul
 
 Upon starting a game from the setup modal, the board is rendered with a mix of fixed (numbered) and editable (empty) cells. 
 
-![Generated Puzzle Preview](docs/figures/gifs/puzzle-generation.gif)
+![Generated puzzle preview](docs/figures/gifs/puzzle-generation.gif)  
+*After confirming settings, **Codoku** dynamically fetches and renders a Sudoku puzzle from the API.*
 
 **Benefits:**
 - Offers replayability with randomized puzzle boards  
@@ -2058,7 +2079,8 @@ Upon starting a game from the setup modal, the board is rendered with a mix of f
 ### **5.2.3 Grid Interaction System**
 This feature creates a live sudoku board where players are able to input numbers using mouse, touchscreen or keyboard. This feature specifically enables cell selection and number-only user inputs for interactive puzzle solving. Users can engage with this feature with a mouse to hover over editable cells, clicking on one to select it and then entering numbers via keyboard or tapping on number buttons in the numbers container. Users can clear entries with the 'Delete' or 'Backspace' keyboard button or ⌫ button. 
 
-![Grid interaction preview](docs/figures/gifs/grid-interaction.gif)
+![Grid interaction preview](docs/figures/gifs/grid-interaction.gif)  
+*Players interact with the Sudoku board in **Codoku** via keyboard or on-screen buttons to input or clear numbers.*
 
 **Benefits:**
 - Enhances accessibility with multi-input support  
@@ -2084,7 +2106,8 @@ This feature creates a live sudoku board where players are able to input numbers
 ### **5.2.4 Check Button**
 This is a user activated button that verifies their current board inputs. It gives feedback on whether entries are incorrect. When the user presses 'Check' at any point, errors are highlighted in red, correct entries stay the same.  
 
-![Check button usage preview](docs/figures/gifs/check-button.gif)
+![Check button usage preview](docs/figures/gifs/check-button.gif)   
+*Incorrect entries are marked in red after validation.*
 
 **Benefits:**
 - Encourages learning and error correction  
@@ -2106,7 +2129,8 @@ This is a user activated button that verifies their current board inputs. It giv
 ### **5.2.5 Clue Button**
 This feature provides a single correct number in a random empty cell. It helps users to move forward in the game when stuck, without providing the solution to the whole puzzle. When a user clicks the 'Clue' button, it reveals one cell answer. 
 
-![Clue button usage preview](docs/figures/gifs/clue-button.gif)
+![Clue button usage preview](docs/figures/gifs/clue-button.gif)   
+*A correct number is revealed in a blank cell and colored green.*
 
 **Benefits:**
 - Assists new players without giving away full solutions  
@@ -2120,18 +2144,20 @@ This feature provides a single correct number in a random empty cell. It helps u
   - Selects one at random using `Math.random()` 
   - Retrieves the correct value from `currentSolution[row][col]`
   - Inserts the value directly and applies `.hinted` class for green-styled visual cue
-- Hints are not replayed or stacked—once revealed, cells are marked and preserved
+- Hints are not replayed or stacked, once revealed, cells are marked and preserved
 - Updates `hintsUsed` and reflects count via `updateHintsDisplay()`
-- Impacts the logic of `triggerAutoWinCheck()` — heavily hinted completions show an alternate win modal
+- Impacts the logic of `triggerAutoWinCheck()`, heavily hinted completions show an alternate win modal
 
 ### **5.2.6 Optional Game Timer**
 This is a countdown timer feature that is configurable at the beginning of each game in the Setup Modal. This adds a time constraint for an increased challenge. User's interact with this feature by selecting a time limit or 'None' for no countdown. The timer then counds down visibly in the game stats panel. 
 
-![Game timer preview](docs/figures/gifs/game-timer.gif)
+![Game timer preview](docs/figures/gifs/game-timer.gif)  
+*Timer counts down visibly while the puzzle is being solved.*
 
 When the player runs out of time, an alert modal is triggered with alarm sound and the board is disabled from further interaction. 
 
-![Timeout modal preview](docs/figures/gifs/timeout-trigger.gif)
+![Timeout modal preview](docs/figures/gifs/timeout-trigger.gif)  
+*Puzzle filled incorrectly triggers visual and auditory feedback.*
 
 **Benefits:**
 - Adds time-based challenge for competitive or advanced play  
@@ -2153,10 +2179,11 @@ When the player runs out of time, an alert modal is triggered with alarm sound a
 - Timer label is dynamically injected into `timer` id in the stats panel using jQuery
 - State logic ensures timer resets correctly between sessions (fixes applied based on user feedback)
 
-### **Error Detection on Filled Puzzle**
+### **5.2.7 Error Detection on Filled Puzzle**
 This feature is a built in safeguard for accuracy when the sudoku grid is fully filled by the user but not correctly solved. **Codoku** detects the mismatch and gives immediate, constructive feedback.
 
-![Error modal preview](docs/figures/gifs/error.gif)
+![Error modal preview](docs/figures/gifs/error.gif)  
+*If the board is full but incorrect an error sound and modal will appear.*
 
 Benefits:
 - Prevents accidental false completion
@@ -2184,11 +2211,13 @@ Technical Aspects:
 ### **5.2.8 Win Detection System**
 This feature detects when the puzzle is solved correctly and celebrates the win with feedback, sound and a summary modal. When all user input cells match the solution, Codoku displays a Congratulations modal with game stats and visual affects (confetti and applause if sound is toggled on). 
 
-![Congrats modal preview](docs/figures/gifs/game-win.gif)
+![Congrats modal preview](docs/figures/gifs/game-win.gif)  
+*If a player completes the puzzle without using too many clues a congratulations modal will appear with confetti and applause.*
 
 If hints were used heavily an alternate Hinted Win modal provides a different message without celebration effects encouraging the user to be more independent in their puzzle solving. 
 
-![Hinted win modal preview](docs/figures/gifs/hinted-win.gif)
+![Hinted win modal preview](docs/figures/gifs/hinted-win.gif)  
+*If a player completes the puzzle but uses too many hints an alternate hinted win modal will appear.*
 
 **Benefits:**
 - Offers clear, rewarding feedback at the end of a game
@@ -2218,7 +2247,8 @@ If hints were used heavily an alternate Hinted Win modal provides a different me
 ### **5.2.8 Stats Panel**
 This feature displays live, non-interactive information about the game: current difficulty, countdown timer (if active), and hints used. It is located directly above the puzzle grid and helps users stay informed about their progress and game settings. It has a read-only display and keeps players oriented by showing real-time updates that reflect user actions and setup choices. Users interact with this feature indirectly as changes to the stats panel occur as a result of player inputs or events such as starting a new game, setting the difficulty and timer, pressing 'Clue' or 'Check' and timer counting down every second (if enabled). 
 
-![Stats panel preview](docs/figures/gifs/stats-panel.gif)
+![Stats panel preview](docs/figures/gifs/stats-panel.gif)  
+*Live panel updates during gameplay, reflecting selected difficulty, time and number of hints used.*
 
 **Benefits:**
 - Keeps players informed of current settings and progress  

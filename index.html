@@ -32,7 +32,7 @@
 <body>
     <!-- Page Content -->
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg bg-transparent sticky-top pt-3">
+    <nav class="navbar navbar-expand-lg bg-transparent sticky-top pt-3" role="navigation" aria-label="Main Navigation">
         <section class="container d-flex align-items-center justify-content-between">
             <aside class="d-flex align-items-center gap-1">
                 <!-- Theme toggle -->
@@ -40,7 +40,7 @@
                     <div class="form-check form-switch m-0">
                         <label class="form-check-label d-flex align-items-center gap-2 ms-1" for="theme-switch"
                             id="theme-label">
-                            <input class="form-check-input" type="checkbox" id="theme-switch" role="switch" checked />
+                            <input class="form-check-input" type="checkbox" id="theme-switch" role="switch" aria-labelledby="theme-label" checked/>
                             <i id="theme-icon" class="fa-solid fa-sun"></i>
                             <span>Display</span>
                         </label>
@@ -51,7 +51,7 @@
                     <div class="form-check form-switch m-0">
                         <label class="form-check-label d-flex align-items-center gap-2 ms-1" for="sound-switch"
                             id="sound-label">
-                            <input class="form-check-input" type="checkbox" id="sound-switch" role="switch" />
+                            <input class="form-check-input" type="checkbox" id="sound-switch" role="switch" aria-labelledby="sound-label"/>
                             <i id="sound-icon" class="fa-solid fa-volume-xmark"></i>
                             <span>Sound</span>
                         </label>
@@ -68,13 +68,13 @@
             <div class="collapse navbar-collapse" id="navbar-content">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-black active" aria-current="page" href="index.html">Game</a>
+                        <a  role="button" class="nav-link text-black active" aria-current="page" href="index.html">Game</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-black" href="about.html">About</a>
+                        <a  role="button" class="nav-link text-black" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link text-black bg-transparent border-0" data-bs-toggle="modal"
+                        <button role="button" class="nav-link text-black bg-transparent border-0" data-bs-toggle="modal"
                             data-bs-target="#rules-modal">
                             Rules
                         </button>
