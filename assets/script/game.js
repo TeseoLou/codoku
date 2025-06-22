@@ -485,7 +485,7 @@ function triggerAutoWinCheck() {
     else if (isBoardFilled() && !isBoardCompleteAndCorrect()) {
         // Reference: https://getbootstrap.com/docs/5.3/components/modal/#via-javascript
         const errorAudio = document.getElementById("error-sound");
-        if (errorAudio) {
+        if (isSoundEnabled && errorAudio) {
             // Reference: https://dev.to/pavelkeyzik/does-anyone-knows-how-to-change-current-time-of-song-correctly-in-javascript-2mkn
             errorAudio.currentTime = 0;
             errorAudio.play();
@@ -508,7 +508,7 @@ function triggerAutoWinCheck() {
 function endGameDueToTime() {
     // Reference: https://stackoverflow.com/questions/21815323
     const alarmAudio = document.getElementById("alarm-sound");
-    if (alarmAudio) {
+    if (isSoundEnabled && alarmAudio) {
         // Reference: https://dev.to/pavelkeyzik/does-anyone-knows-how-to-change-current-time-of-song-correctly-in-javascript-2mkn
         alarmAudio.currentTime = 0;
         alarmAudio.play();
