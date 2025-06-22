@@ -10,9 +10,9 @@ _Project Milestone 2_
 
 **Codoku** is a responsive, interactive Sudoku game application built to offer a dynamic and user-centric experience. Developed as part of Project Milestone 2 for the Code Institute's Full Stack Software Development programme, the project encourages logical thinking through engaging gameplay, where each move is driven by the user and validated through real-time interactivity.
 
-Branded with the tagline _“Built with Logic”_, **Codoku** provides users with the ability to select their preferred difficulty level, complete a timed puzzle, receive instant feedback on incorrect entries, and track progress toward solving the grid. The project serves as a practical demonstration of modern front-end development skills, showcasing interactive JavaScript functionality, structured layout through HTML and CSS, and a strong focus on accessibility and user experience design.
+Branded with the tagline _“Built with Logic”_, **Codoku** provides users with the ability to select their preferred difficulty level, complete a timed puzzle, receive instant feedback on incorrect entries, and track progress toward solving the grid. The project serves as a practical demonstration of modern front-end development skills, showcasing interactive `JavaScript` functionality, structured layout through `HTML` and `CSS`, and a strong focus on accessibility and user experience design.
 
-👉 Visit the deployed site on GitHub Pages [**here**](https://teseolou.github.io/codoku/index.html).
+👉 Visit the deployed site on `GitHub` Pages [**here**](https://teseolou.github.io/codoku/index.html).
 
 👉 You can access the full **Codoku** Project Board [**here**](https://github.com/users/TeseoLou/projects/4).
 
@@ -20,11 +20,11 @@ Branded with the tagline _“Built with Logic”_, **Codoku** provides users wit
 
 This project has been built to meet the following core assessment requirements:
 
-✔️ Develop a dynamic front-end web application using custom HTML, CSS, and JavaScript.  
+✔️ Develop a dynamic front-end web application using custom `HTML`, `CSS`, and `JavaScript`.  
 ✔️ Implement interactivity that allows users to initiate actions (e.g., entering numbers, selecting difficulty) and receive clear, immediate feedback.  
 ✔️ Follow UX design principles and accessibility guidelines, ensuring intuitive navigation and a clear, structured layout.  
 ✔️ Create a fully responsive interface compatible across mobile, tablet, and desktop devices.  
-✔️ Apply version control through Git and GitHub, documenting progress via consistent and meaningful commits.  
+✔️ Apply version control through `Git` and `GitHub`, documenting progress via consistent and meaningful commits.  
 ✔️ Provide comprehensive documentation in a `README.md` file, covering project rationale, UX strategy, features, testing processes, and deployment steps.  
 ✔️ Deploy the final site using a cloud-based platform (GitHub Pages), ensuring clean code, working links, and no errors.  
 ✔️ Clearly attribute any external resources or third-party code in both the codebase and `README.md`.
@@ -33,15 +33,15 @@ This project has been built to meet the following core assessment requirements:
 
 As a developer in training, **Codoku** is a platform through which I have demonstrated the following skills:
 
-⭐ Writing clean, semantic HTML and modular CSS, including use of CSS variables, media queries, and reusable styling classes.  
-⭐ Building interactive functionality with JavaScript, including puzzle logic, input validation, feedback handling, and a working timer.  
+⭐ Writing clean, semantic `HTML` and modular `CSS`, including use of `CSS` variables, media queries, and reusable styling classes.  
+⭐ Building interactive functionality with `JavaScript`, including puzzle logic, input validation, feedback handling, and a working timer.  
 ⭐ Integrating a third-party API to dynamically generate Sudoku puzzles based on selected difficulty, handling asynchronous requests and data rendering.  
-⭐ Enhancing development efficiency and user experience using jQuery for streamlined DOM manipulation and responsive UI behavior.  
-⭐ Implementing an accessible, responsive layout using custom CSS and Bootstrap 5 grid components.  
+⭐ Enhancing development efficiency and user experience using `jQuery` for streamlined DOM manipulation and responsive UI behavior.  
+⭐ Implementing an accessible, responsive layout using custom `CSS` and `Bootstrap 5` grid components.  
 ⭐ Applying UX and accessibility best practices, such as visual hierarchy, color contrast, keyboard navigation, and clear user feedback.  
-⭐ Structuring JavaScript code with well-defined functions and control logic to manage game states and user interaction.  
-⭐ Maintaining a clear, scalable project file structure, separating concerns between HTML, CSS, and JavaScript assets.  
-⭐ Using Git and GitHub for full project life cycle management, with detailed and descriptive commit messages for traceability.  
+⭐ Structuring `JavaScript` code with well-defined functions and control logic to manage game states and user interaction.  
+⭐ Maintaining a clear, scalable project file structure, separating concerns between `HTML`, `CSS`, and `JavaScript` assets.  
+⭐ Using `Git` and `GitHub` for full project life cycle management, with detailed and descriptive commit messages for traceability.  
 ⭐ Conducting manual and automated testing, using validators, Lighthouse, and device emulation to ensure performance, accessibility, and error-free code.
 
 ## **1.3. Key Goals**
@@ -52,7 +52,7 @@ The **Codoku** project focuses on achieving the following:
 ⚽ Empower users with interactive control, allowing them to input, erase, and validate moves based on real-time feedback.  
 ⚽ Provide intuitive visual responses, from input error indicators to successful puzzle completion alerts.  
 ⚽ Ensure broad accessibility, offering responsive design, high contrast UI, and keyboard-friendly features.  
-⚽ Demonstrate front-end development proficiency, particularly in implementing dynamic logic through JavaScript and integrating API data.  
+⚽ Demonstrate front-end development proficiency, particularly in implementing dynamic logic through `JavaScript` and integrating API data.  
 ⚽ Document the full development journey, from initial planning through to testing and deployment, showcasing a clear and structured workflow in this README.  
 
 # 2. **User Experience**
@@ -341,7 +341,7 @@ From the outset, **Codoku** was designed to be accessible across a wide spectrum
 - A toggleable dark mode for visual comfort
 - Keyboard support for users without a mouse
 - Large, clearly labeled buttons with adequate spacing
-- Semantic HTML and screen-reader-friendly structure
+- Semantic `HTML` and screen-reader-friendly structure
 
 Together, these components laid the groundwork for a focused, inclusive experience that delivers both functionality and delight. They were not imagined in isolation, but directly shaped by the needs, habits, and feedback of the users **Codoku** aims to serve—making them fundamental to the project’s success and longevity.
 
@@ -468,7 +468,7 @@ Micro:
 _Visual breakdown of **Codoku’s** Should-Have features, categorized by functional scope._  
 
 Macro:
-- Footer with links to GitHub and optional social media accounts
+- Footer with links to `GitHub` and optional social media accounts
 
 Meso:
 - Game stats tracker for difficulty, time, and hint usage  
@@ -518,7 +518,7 @@ _Visual icons representing **Codoku’s** four content categories, textual, grap
 #### 🟥 **Must-Have**
 
 Graphic:
-- **Codoku** logo (for header and favicon)  
+- **Codoku** logo (for `header` and favicon)  
 
 Textual:
 - Game instructions (how to play, rules, controls)  
@@ -541,7 +541,7 @@ Interactive:
 - Start/reset buttons  
 - Difficulty selector  
 - Visual feedback effects
-- Ckeck and Clue buttons 
+- Check and Clue buttons 
 - Timer display  
 - Theme Toggle
 - Navigation between Game and About pages  
@@ -620,7 +620,7 @@ Each feature was evaluated based on its importance to gameplay, usability, and a
 | About page images (branding or purpose visual support)| 3          | 5           | Graphic   | 🟨       |
 | Donation button (linking to external charity site)    | 3          | 5           | Elemental | 🟨       |
 | Sound feedback toggle (input, error, win sounds)      | 3          | 3           | Elemental | 🟨       |
-| Social media / GitHub links in footer                 | 3          | 5           | Elemental | 🟨       |
+| Social media / `GitHub` links in footer                 | 3          | 5           | Elemental | 🟨       |
 | Printable puzzle feature                              | 2          | 2           | Elemental | 🟩       |
 | Audio instructions or narration                       | 2          | 3           | Section   | 🟩       |
 | Save best time to local storage                       | 2          | 2           | Elemental | 🟩       |
@@ -638,7 +638,7 @@ The Structure Plane defines how **Codoku’s** content, features, and interactio
 
 As a game-based application, **Codoku** prioritizes interaction design over dense content. Key features like the grid, number inputs, validation tools, and timers are placed for intuitive access, with real-time feedback to reduce frustration and aid progression.
 
-Navigation remains simple but purposeful. A top nav bar provides quick access to the Home, About, and Rules pages, while the footer offers consistent links to external platforms like GitHub and the donation page.
+Navigation remains simple but purposeful. A top nav bar provides quick access to the Home, About, and Rules pages, while the footer offers consistent links to external platforms like `GitHub` and the donation page.
 
 The layout includes:
 - An interactive Sudoku grid
@@ -647,7 +647,7 @@ The layout includes:
 - Clue and check buttons
 - Feedback messages and modals
 
-Information is structured to minimize distractions and cognitive load, with semantic HTML and ARIA support for screen readers. Elements are grouped by function and follow consistent patterns to support user familiarity.
+Information is structured to minimize distractions and cognitive load, with semantic `HTML` and `ARIA` support for screen readers. Elements are grouped by function and follow consistent patterns to support user familiarity.
 
 **Codoku’s** responsive structure adapts seamlessly across desktop, tablet, and mobile, using scalable fonts, high-contrast visuals, and keyboard-friendly controls. Altogether, this creates an inclusive, focused space that enhances logic-based engagement and replayability.
 
@@ -662,7 +662,7 @@ Features marked as **Won’t-Have** were not removed from consideration altogeth
 | 🟦 Feature               | Reason for Won’t-Have Status                                                                 |
 |--------------------------|---------------------------------------------------------------------------------------------|
 | **Scoreboard**           | Requires data persistence and local storage logic that proved difficult to implement in time. |
-| **Save Game**            | Though planned, saving and restoring puzzle state (including grid, timer, clues) required more advanced JavaScript than currently manageable. |
+| **Save Game**            | Though planned, saving and restoring puzzle state (including grid, timer, clues) required more advanced `JavaScript` than currently manageable. |
 | **Print Puzzle Button**  | Would require custom print styling and puzzle state management, which was deprioritized to focus on core interactivity. |
 | **Multimedia Instructions** | Recording, editing, and embedding accessible audio/video content exceeded the available development time and required tools outside the project scope. |
 
@@ -777,7 +777,7 @@ These elements are not listed in the main navbar, but play key roles in usabilit
 External navigation is minimal, but still present:
 
 💝 **Donation Link** – Found in the About page, linking to a trusted cognitive health charity.  
-🔗 **Social Media Links** – Displayed in the site footer for sharing and project visibility (e.g., GitHub, LinkedIn).  
+🔗 **Social Media Links** – Displayed in the site footer for sharing and project visibility (e.g., `GitHub`, LinkedIn).  
 
 These external links open in new tabs to ensure users remain anchored in the **Codoku** experience.
 
@@ -1048,12 +1048,12 @@ Responsive design is essential to **Codoku’s** usability and success. As a log
 
 Responsive Design Principles Applied in **Codoku**:
 - **Mobile-First Development:** Layouts are designed first for small screens to ensure accessibility on mobile. Touch-friendly interactions are prioritized from the start.
-- **Flexible Layouts:** CSS Grid and Flexbox allow UI components like the grid, number keys, and buttons to rearrange themselves based on screen size.
+- **Flexible Layouts:** `CSS` Grid and Flexbox allow UI components like the grid, number keys, and buttons to rearrange themselves based on screen size.
 - **Media Queries:** Responsive breakpoints allow seamless transitions between mobile, tablet, and desktop views while preserving structure.
 - **Optimized Navigation:** A collapsible hamburger menu is used on smaller screens, and fixed nav/footer bars help with orientation.
 - **Accessibility:** All buttons are comfortably spaced, font sizes scale with viewport changes, and icons remain easily tappable across devices.
 
-**Codoku** takes advantage of Bootstrap 5 to manage layout responsiveness. The framework's default breakpoints help scale content across viewports:
+**Codoku** takes advantage of `Bootstrap 5` to manage layout responsiveness. The framework's default breakpoints help scale content across viewports:
 
 | Breakpoint | Label     | Range              | Example Device        |
 |------------|-----------|--------------------|------------------------|
@@ -1088,7 +1088,7 @@ Responsive Design Principles Applied in **Codoku**:
 ![Codoku Error Page Responsiveness](docs/figures/wireframes/responsiveness-error.webp)  
 *Responsive error page with fallback navigation.*
 
-- **All Screens:** The page maintains consistent branding and includes a "Home" button and helpful visual cue.
+- **All Screens:** The page maintains consistent branding and includes a 'Home' button and helpful visual cue.
 - **Mobile:** Content is centered and compact, reducing bounce rates from accidental page errors.
 - **Tablet & Desktop:** Larger and more generous spacing for buttons and texted improved clarity and reduced user frustration.
 
@@ -1244,7 +1244,7 @@ The combination of Space Mono and Quicksand establishes a clear typographic hier
 ![Font Pairings](docs/figures/typography/fonts.webp)  
 *Screenshots of font previews on Google Fonts. From top to bottom: Space Mono, Quicksand.*
 
-Font delivery was handled via Google Fonts, ensuring fast loading and cross-platform rendering. The font sizes were responsive and set using rem units to adapt across screen sizes. Bootstrap’s base typography classes (e.g., .display-6, .lead, .fw-bold) were layered on top of these fonts for scalable responsiveness and accessibility compliance.
+Font delivery was handled via Google Fonts, ensuring fast loading and cross-platform rendering. The font sizes were responsive and set using rem units to adapt across screen sizes. `Bootstrap`’s base typography classes (e.g., .display-6, .lead, .fw-bold) were layered on top of these fonts for scalable responsiveness and accessibility compliance.
 
 ### **2.5.4 Backgrounds**
 
@@ -1272,7 +1272,7 @@ The visual contrast between the soft off-white paper texture and the charcoal fi
 By using grounded textures over flat colors, **Codoku's** interface subtly reinforces the tactile satisfaction of pen-and-paper puzzle-solving—bridging the nostalgia of analog games with the accessibility of digital design.
 
 #### **2.5.4.b Fallback Color Support**  
-To support environments where background images may not load or where high-contrast settings are enabled, fallback colors were defined in the CSS using values from **Codoku’s** palette:
+To support environments where background images may not load or where high-contrast settings are enabled, fallback colors were defined in the `CSS` using values from **Codoku’s** palette:
 
 > #F8F9FA (Off-white) ⚪ for Day Mode  
 > #212529 (Off-black) ⚫ for Night Mode
@@ -1306,7 +1306,7 @@ The first three images were selected or created specifically for the About page,
 Together, these visuals help convey that **Codoku** is more than just a game—it’s a cognitive, accessible, and multi-generational tool for mindful play.
 
 #### **2.5.5.b 404 Page Illustration**
-To maintain brand consistency and a sense of humor, a custom hand-drawn illustration was created for the 404 Error page. Styled like a vintage newspaper comic strip with a headline proclaiming a "404 Alert," the image places a missing puzzle grid front and center. The image was then edited in Sketchbook to refine and digitize. This approach:
+To maintain brand consistency and a sense of humor, a custom hand-drawn illustration was created for the 404 Error page. Styled like a vintage newspaper comic strip with a headline proclaiming a '404 Alert' the image places a missing puzzle grid front and center. The image was then edited in Sketchbook to refine and digitize. This approach:
 
 ![Person reading newspaper with front page message describing 404 alert](assets/images/breaking-news.webp)
 *Illustration of a person in business attire reading the news paper with 404 message alert on front page.*
@@ -1373,10 +1373,10 @@ These animations provide intuitive feedback, inviting users to engage with exter
 Icons were styled using either the light (#F8F9FA) or dark (#212529) theme colors, depending on the mode selected. They dynamically inverted based on the theme toggle to maintain contrast and legibility.
 
 # 4. **Process and Methodology**
-The development of **Codoku** followed a structured, iterative methodology rooted in best practices for front-end application design. Unlike content-driven websites, **Codoku’s** success depended on thoughtful logic flow, modular scripting, and reactive feedback systems. This section outlines the processes and architectural strategies used from scoped feature planning and code mapping to milestone-based development tracked through Git commits.
+The development of **Codoku** followed a structured, iterative methodology rooted in best practices for front-end application design. Unlike content-driven websites, **Codoku’s** success depended on thoughtful logic flow, modular scripting, and reactive feedback systems. This section outlines the processes and architectural strategies used from scoped feature planning and code mapping to milestone-based development tracked through `Git` commits.
 
 ## **4.1 Approach**
-This section outlines the key development principles applied, each of which helped ensure accessibility, maintainability, and user-centered design. Additionally, it highlights how I mapped my JavaScript logic ahead of time to define reusable functions and avoid duplication before building the final game logic.
+This section outlines the key development principles applied, each of which helped ensure accessibility, maintainability, and user-centered design. Additionally, it highlights how I mapped my `JavaScript` logic ahead of time to define reusable functions and avoid duplication before building the final game logic.
 
 ###  **4.1.1 Mobile-First Development** 📱
 **Codoku** was designed first and foremost for mobile interaction, following a mobile-first development strategy rooted in accessibility and real-device testing.
@@ -1391,7 +1391,7 @@ Accessibility on mobile was a key priority from the start. I followed WCAG 2.1 m
 
 To ensure the UI worked in real-world scenarios, I tested the early game build using Chrome DevTools’ device emulation and on multiple real mobile devices, including phones loaned by family and friends. This helped uncover layout quirks that wouldn’t have appeared in simulated testing environments, such as spacing bugs or clipped elements in landscape mode.
 
-Once the mobile version was fully functional and accessible, I scaled the design upward using custom media queries and Bootstrap breakpoints. These breakpoints progressively adjusted:
+Once the mobile version was fully functional and accessible, I scaled the design upward using custom media queries and `Bootstrap` breakpoints. These breakpoints progressively adjusted:
 - Grid size and padding
 - Number key spacing
 - Font sizes and modal widths
@@ -1404,14 +1404,14 @@ To ensure focus and structure throughout development, I followed the MVP (Minimu
 
 To facilitate this, I used a [GitHub Project Board](https://github.com/users/TeseoLou/projects/4/views/1) to: 
 
-- Map the full scope of the project at the beginning, breaking it down into manageable tasks like "Grid Generation", "Check Button", and "Difficulty Selector".
+- Map the full scope of the project at the beginning, breaking it down into manageable tasks like 'Grid Generation', 'Check' Button, and 'Difficulty Selector'.
 - Use the Must-Have label to mark core features that the game couldn’t function without (e.g., interactive grid, puzzle generation, input validation).
 - Use Should-Have and Could-Have labels for enhancements that could be deferred until after the core logic was complete (e.g., sound effects, social links, animations).
-- Help define chronological order: For example, the game couldn’t be validated until the puzzle grid was generated, so “Grid Generation” was placed before “Check Button” or “Clue Button”.
+- Help define chronological order: For example, the game couldn’t be validated until the puzzle grid was generated, so 'Grid Generation' was placed before 'Check' Button or 'Clue' Button.
 - Ensure I was never overwhelmed: each “Done” task gave me visible progress, and I could easily reprioritize if something proved more complex than expected.
 
 ### **4.1.3 Semantic HTML** 🌐
-**Codoku** was built using semantic HTML to ensure the structure of the application was both meaningful and accessible. Structural elements like `<main>`, `<section>`, `<header>`, `<footer>`, `<nav>`, and `<button>` were consistently used to define the layout and purpose of each section. 
+**Codoku** was built using semantic `HTML` to ensure the structure of the application was both meaningful and accessible. Structural elements like `<main>`, `<section>`, `<header>`, `<footer>`, `<nav>`, and `<button>` were consistently used to define the layout and purpose of each section. 
 
 Semantic accuracy was especially critical for a game interface like **Codoku**, where dynamic interaction is constant. ARIA attributes such as `aria-labelledby`, `aria-modal`, and `role="dialog"` were used to improve modal accessibility, ensuring that screen readers could announce modal headings and lock focus appropriately when active. Elements like game controls and toggle switches were built using `<input type="checkbox">` and `<button>` instead of `<div>` or `<span>` to retain their native keyboard and accessibility behavior.
 
@@ -1426,7 +1426,7 @@ Semantic accuracy was especially critical for a game interface like **Codoku**, 
 These helped enforce best practices throughout the project lifecycle. Every key element was evaluated to ensure it conveyed meaning not only visually, but programmatically — a core principle of accessible web design.
 
 ### **4.1.4 CSS Styling & Methodology** 🎨  
-**Codoku’s** visual design was constructed using a modular, layered CSS approach — combining a custom `style.css` file with the Bootstrap 5.3 framework. Styling prioritized mobile-first responsiveness, dark/light theming, accessibility, and clean layout management across game views and modal components.
+**Codoku’s** visual design was constructed using a modular, layered `CSS` approach — combining a custom `style.css` file with the `Bootstrap 5`.3 framework. Styling prioritized mobile-first responsiveness, dark/light theming, accessibility, and clean layout management across game views and modal components.
 
 The `style.css` file was clearly organized using section headers and comment blocks to guide readability and maintainability. Notable sections included:
 - Grid and board styling (`#grid`, `.number`, `.bottom-border`, `.right-border`)
@@ -1435,98 +1435,98 @@ The `style.css` file was clearly organized using section headers and comment blo
 - Toggle switch customization (`#theme-switch`, `#sound-switch`)
 - Responsive layout tuning for header, footer, and game containers
 
-Bootstrap was used primarily to:
+`Bootstrap` was used primarily to:
 - Create a responsive grid system
 - Style forms, buttons, modals, and navbars
 - Add consistent spacing, typography, and button states
 - Provide ARIA-compatible components out of the box
 
-**Codoku** supports **light and dark themes**, toggled via a switch stored in `localStorage`. The `applyTheme()` function in `theme.js` applied CSS class `.dark` to `<body>` when appropriate, and the stylesheet handled visual differences using the `body.dark` selector prefix.
+**Codoku** supports **light and dark themes**, toggled via a switch stored in `localStorage`. The `applyTheme()` function in `theme.js` applied `CSS` class `.dark` to `<body>` when appropriate, and the stylesheet handled visual differences using the `body.dark` selector prefix.
 
 | Tool / Resource              | Purpose                                                                 |
 |-----------------------------|-------------------------------------------------------------------------|
 | **Bootstrap 5.3**           | Core responsive layout, modals, buttons, spacing, grid helpers          |
-| **W3Schools + MDN**         | Confirming correct CSS syntax, selectors, and specificity management     |
-| **Can I use**               | Verified browser compatibility for newer CSS properties (e.g., `gap`)   |
-| **Chrome DevTools**         | Live-editing CSS during development to test responsiveness              |
+| **W3Schools + MDN**         | Confirming correct `CSS` syntax, selectors, and specificity management     |
+| **Can I use**               | Verified browser compatibility for newer `CSS` properties (e.g., `gap`)   |
+| **Chrome DevTools**         | Live-editing `CSS` during development to test responsiveness              |
 | **Specificity Calculator**  | Helped analyze and balance selector weight to avoid using `!important` where possible  |
 
 These helped ensure responsive design principles were applied correctly, selectors remained efficient and conflict-free, and the styling remained compatible across modern browsers.
 
 ### **4.1.5 JavaScript Architecture & Development** 📝
-**Codoku’s** interactivity is powered by a modular, planned JavaScript architecture spread across clearly scoped files. These scripts drive puzzle logic, input handling, interface feedback, modals, and user settings such as theme and sound.
+**Codoku’s** interactivity is powered by a modular, planned `JavaScript` architecture spread across clearly scoped files. These scripts drive puzzle logic, input handling, interface feedback, modals, and user settings such as theme and sound.
 
 Before coding, I mapped out the core logic required to power the game, breaking down each feature into core and helper functions. This pre-planning ensured every piece of logic had a clear role and avoided repetition.
 
 #### **4.1.5.a Puzzle Flow**
-fetchSudokuBoard()  
-├── renderEmptyGrid()  
-└── populateGrid()  
-└── enableCellSelection()  
+`fetchSudokuBoard()  `
+├── `renderEmptyGrid() ` 
+└── `populateGrid()`  
+└── `enableCellSelection()`  
 
-triggerAutoWinCheck()  
-├── isBoardCompleteAndCorrect()  
-├── isBoardFilled()  
-├── formatElapsedTime()  
-├── popConfetti()  
-└── showAlertModal()  
+`triggerAutoWinCheck() ` 
+├── `isBoardCompleteAndCorrect()`  
+├── `isBoardFilled()`  
+├── `formatElapsedTime()`  
+├── `popConfetti()`  
+└── `showAlertModal()`  
 
 This section is the backbone of the game logic. It handles fetching puzzles from the API, rendering them on the board, and checking for win conditions. It ensures a start-to-end experience as users solve the Sudoku grid.
 
 #### **4.1.5.b User Interaction & Input**
-enableCellSelection()  
-├── handleClick()  
-├── handleKeyboardInput()  
-└── handleNumberKeyClick()  
-└── triggerAutoWinCheck()  
+`enableCellSelection()`  
+├── `handleClick()`  
+├── `handleKeyboardInput()`  
+└── `handleNumberKeyClick()`  
+└── `triggerAutoWinCheck()`  
 
-checkUserInput()  
-└── updateHintsDisplay()  
+`checkUserInput()`  
+└── `updateHintsDisplay()`  
 
-revealHint()  
-├── updateHintsDisplay()  
-└── triggerAutoWinCheck() 
+`revealHint()`  
+├── `updateHintsDisplay()`  
+└── `triggerAutoWinCheck()` 
 
 This group of functions manage how users interact with the board, selecting cells, entering numbers, and getting clues or feedback. Real-time checking helps maintain engagement, while the modular hinting system supports player learning without spoiling the challenge.
 
 #### **4.1.5.c Setup & Game State**
-startNewGame()  
-├── fetchSudokuBoard()  
-├── startTimer()  
-├── updateDifficultyDisplay()  
-├── updateHintsDisplay()  
-└── reset hasCelebrated flag
+`startNewGame()`  
+├── `fetchSudokuBoard()`  
+├── `startTimer()  `
+├── `updateDifficultyDisplay()`  
+├── `updateHintsDisplay()`  
+└── reset `hasCelebrated` flag
 
-startTimer()  
-└── updateTimerDisplay()
+`startTimer()`  
+└── `updateTimerDisplay()`
 
-setupThemeSwitch()  
-└── applyTheme()
+`setupThemeSwitch()`  
+└── `applyTheme()`
 
-applyTheme(isLightMode)  
-└── Save to localStorage
+`applyTheme(isLightMode)`  
+└── Save to `localStorage`
 
-setupSoundToggle()  
-└── applySoundSetting()
+`setupSoundToggle()`  
+└── `applySoundSetting()`
 
-applySoundSetting()  
+`applySoundSetting()`  
 └── Update UI icons and switch state
 
-setupStartButton()  
-└── startNewGame()
+`setupStartButton()`  
+└── `startNewGame()`
 
-showAlertModal(message)  
-└── Show Bootstrap modal
+`showAlertModal(message)`  
+└── Show `Bootstrap` modal
 
-initPage()  
-├── setupOutsideNavbarCollapse()  
-├── setupThemeSwitch()  
-├── setupStartButton()  
-└── setupSoundToggle()  
+`initPage() ` 
+├── `setupOutsideNavbarCollapse()`  
+├── `setupThemeSwitch()`  
+├── `setupStartButton()`  
+└── `setupSoundToggle()`  
 
 This group manages the game’s structure and settings. It controls how the game is initialized, how timers run, and how theme and sound preferences persist between sessions. All logic here ensures continuity and accessibility without requiring user repetition or manual resets.
 
-The following tools and references were used to streamline JavaScript writing, debugging, and testing throughout the development process. These supported everything from logic planning and DOM interaction to code quality checks and browser-side inspection.
+The following tools and references were used to streamline `JavaScript` writing, debugging, and testing throughout the development process. These supported everything from logic planning and DOM interaction to code quality checks and browser-side inspection.
 
 | Tool/Resource          | Purpose                                                                 |
 |------------------------|-------------------------------------------------------------------------|
@@ -1537,14 +1537,14 @@ The following tools and references were used to streamline JavaScript writing, d
 | **W3Schools & MDN**        | Referenced regularly for syntax, best practices, and event flow patterns|
 | **Stack Overflow**         | Troubleshooting edge cases and searching community-tested patterns      |
 | **JS Hint**                | Provided static code analysis to flag potential issues                  |
-| **Static App JS Formatter**| Used to clean up and consistently format JavaScript code                |
-| **Diff Checker**           | Helped compare and revert to previous working versions of JavaScript    |
+| **Static App JS Formatter**| Used to clean up and consistently format `JavaScript` code                |
+| **Diff Checker**           | Helped compare and revert to previous working versions of `JavaScript`    |
 
-These tools were instrumental in maintaining high code quality, preventing bugs, and speeding up the process of writing interactive features. Real-time testing using DevTools and jQuery also helped ensure consistent behavior across different browsers and devices.
+These tools were instrumental in maintaining high code quality, preventing bugs, and speeding up the process of writing interactive features. Real-time testing using DevTools and `jQuery` also helped ensure consistent behavior across different browsers and devices.
 
 ### **4.1.6 Code Documentation & Commenting** 💬
 
-**Codoku's** JavaScript files in particular were structured with consistent documentation, especially at the function level. Each significant function includes a **multi-line docstring** that outlines:
+**Codoku's** `JavaScript` files in particular were structured with consistent documentation, especially at the function level. Each significant function includes a **multi-line docstring** that outlines:
 
 - The purpose of the function
 - Return values or expected outcome
@@ -1564,7 +1564,7 @@ Once features were stable and tested, I returned to each file to remove redundan
 | Tool / Extension             | Purpose & Role in Development |
 |-----------------------------|-------------------------------|
 | **VS Code Comment Shortcuts** | Referenced the [VSCode Comment Guide](https://vscode.one/comment-vscode/) for best practices. |
-| **Auto Comment Extension**   | Aided in rewording overly descriptive comment lines using AI for selected JavaScript snippets. | 
+| **Auto Comment Extension**   | Aided in rewording overly descriptive comment lines using AI for selected `JavaScript` snippets. | 
 | **Code Spell Checker**       | Prevented typos in explanatory comments and headers. Useful for maintaining professionalism. |
 
 Using tools like Auto Comment was particularly helpful when I needed to describe logic I had already written but found hard to summarize later. It provided concise, relevant suggestions that I could either keep as-is or adapt.
@@ -1580,57 +1580,57 @@ To manage **Codoku's** feature development effectively, I used the SMART framewo
 - **R**ealistic: Appropriate in scope and timing  
 - **T**ime-bound: Could be scoped within a focused session or day
 
-This structure helped me work efficiently through the most critical tasks first, using my GitHub Project Board to track each milestone. Below is a breakdown of SMART objectives, ordered by priority and development sequence, beginning with layout and structure, then followed by interactivity and enhancement.
+This structure helped me work efficiently through the most critical tasks first, using my `GitHub` Project Board to track each milestone. Below is a breakdown of SMART objectives, ordered by priority and development sequence, beginning with layout and structure, then followed by interactivity and enhancement.
 
 | Objective                                            | Specific                                              | Measurable                                        | Achievable                                                                     | Realistic                                                                     | Time-Bound                                                 |
 | ---------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| Create basic HTML page structure (index, about, 404) | Set up semantic page structure and routing fallback   | Each page loads with expected structure and style | Pages followed HTML5 and Bootstrap layout patterns I had learned               | Required no libraries outside the tools I was already using (HTML, Bootstrap) | Completed during week 1 setup phase                        |
-| Apply mobile-first layout and base styling           | Prioritize small screens and layout readability first | Grid and buttons usable on 320px screen           | Using rem-based styling and CSS Flexbox, I could test layout changes early     | Focused on simplest layout first and iterated later using DevTools            | Completed over 2 days after base structure                 |
+| Create basic HTML page structure (index, about, 404) | Set up semantic page structure and routing fallback   | Each page loads with expected structure and style | Pages followed `HTML5` and `Bootstrap` layout patterns I had learned               | Required no libraries outside the tools I was already using (`HTML`, `Bootstrap`) | Completed during week 1 setup phase                        |
+| Apply mobile-first layout and base styling           | Prioritize small screens and layout readability first | Grid and buttons usable on 320px screen           | Using rem-based styling and `CSS` Flexbox, I could test layout changes early     | Focused on simplest layout first and iterated later using DevTools            | Completed over 2 days after base structure                 |
 | Create interactive Sudoku grid                       | Generate board dynamically with 9x9 structure         | Grid renders on load with empty cells             | Based on class material and JS logic flow I understood from the CI walkthrough | No animation or advanced state management needed just DOM manipulation        | Implemented early in JS setup (week 2)                     |
 | Fetch puzzles via API with difficulty selection      | Retrieve data from API Ninjas on selected difficulty  | Puzzle data populates correctly by difficulty     | API offered simple endpoint and I was familiar with AJAX calls                 | Data was structured and consistent, and API required no auth complexity       | Integrated within 2 sessions with testing                  |
-| Add number input via keyboard and touch              | Enable dual input method for editing cells            | Numbers update cell content correctly             | Used jQuery and key/touch events from previous coursework                      | Interaction logic was similar to previous projects, just applied to a grid    | Completed same day as grid rendering logic                 |
+| Add number input via keyboard and touch              | Enable dual input method for editing cells            | Numbers update cell content correctly             | Used `jQuery` and key/touch events from previous coursework                      | Interaction logic was similar to previous projects, just applied to a grid    | Completed same day as grid rendering logic                 |
 | Implement hint and check feedback                    | Validate and provide feedback on user inputs          | Clue and check provide real-time response         | JS control flow logic was broken into helper functions for manageability       | Only basic conditional checks and DOM updates needed per input                | Refined mid-project after input validation logic was ready |
 | Add game stats display (time, difficulty, hints)     | Update DOM dynamically with current game data         | Stats section shows updated info per round        | DOM manipulation using .text()/.val() was already in use                       | Game state was already tracked, so just needed to update UI                   | Added before win-check logic so stats were fresh           |
 | Build timer with visual countdown and timeout logic  | Create timer tied to difficulty with countdown logic  | Timer counts down and ends with modal             | I had already used setInterval in practice challenges                          | Tied to setup modal settings; logic was scoped cleanly per game               | Built over 2 days along with timeout handlers              |
-| Show modal on game completion with stats             | Display popup stats upon puzzle completion            | Stats modal displays all data at game end         | Used Bootstrap modal template and updated text dynamically                     | Modal already existed, just needed to display variables on completion         | Added at same time as win-check functionality              |
+| Show modal on game completion with stats             | Display popup stats upon puzzle completion            | Stats modal displays all data at game end         | Used `Bootstrap` modal template and updated text dynamically                     | Modal already existed, just needed to display variables on completion         | Added at same time as win-check functionality              |
 | Enable dark/light theme toggle with sound            | Toggle theme and sync UI and localStorage             | Toggle switches theme and icon accurately         | Theme toggle reused sound toggle structure, so logic was repeatable            | The toggle just changed classes and saved a flag; visual logic reused         | Completed in final week after sound toggle                 |
-| Build modal-based navigation and rules section       | Provide instructions in modal without leaving game    | Rules modal shows/hides without reload            | Bootstrap modal and jQuery made show/hide logic simple                         | Kept users on one page, so modals were the best approach                      | Completed alongside layout setup and first game round      |
-| Ensure 100% responsiveness across viewports          | Use media queries and rems to scale content           | Game grid and UI rearrange smoothly               | Media queries were part of my design practice from start                       | CSS structure allowed reuse across breakpoints and screen widths              | Completed in final stretch with Lighthouse tests           |
+| Build modal-based navigation and rules section       | Provide instructions in modal without leaving game    | Rules modal shows/hides without reload            | `Bootstrap` modal and `jQuery` made show/hide logic simple                         | Kept users on one page, so modals were the best approach                      | Completed alongside layout setup and first game round      |
+| Ensure 100% responsiveness across viewports          | Use media queries and rems to scale content           | Game grid and UI rearrange smoothly               | Media queries were part of my design practice from start                       | `CSS` structure allowed reuse across breakpoints and screen widths              | Completed in final stretch with Lighthouse tests           |
 | Link buttons to functions and bind interactions      | Assign each control button its correct logic          | All buttons perform correct function on click     | Each button had a known function and mapped clearly to logic I'd written       | All logic already existed, just needed linking and click handlers             | Polished alongside testing and modal finishing             |
 
 ### **4.1.8 Git Version Control with Purposeful Commits** 💾
-Throughout **Codoku’s** development, Git and GitHub were used as the backbone of version control. Commit messages were written intentionally and descriptively, forming a timeline of the project’s evolution.
+Throughout **Codoku’s** development, `Git` and `GitHub` were used as the backbone of version control. Commit messages were written intentionally and descriptively, forming a timeline of the project’s evolution.
 
 This structure supported:
 - **Traceability** – With an aim to ensure every feature or fix was committed individually 
 - **Problem Solving** – I was able to compare earlier versions of files when debugging logic, checking modal behavior, or reverting styling.
 - **Safe Experimentation** – With frequent commits, rollbacks were quick, letting me test sound, timer, and theme interactions without risk.
 
-To complement GitHub’s interface and VS Code’s built-in Git tools, I used the Git History to gain deeper visibility into my project’s evolution:
+To complement `GitHub`'s interface and VS Code’s built-in `Git` tools, I used the `Git` History to gain deeper visibility into my project’s evolution:
 
 | Tool / Platform             | Purpose |
 |----------------------------|---------|
-| **Diff Checker**       | Helped with comparing long JS/CSS files before and after refactors. |
-| **Git History (VS Code Extension)** | Viewed line-by-line changes, commit trees, file histories, and comparisons directly in VS Code. |
+| **Diff Checker**       | Helped with comparing long `JavaScript`/`CSS` files before and after refactors. |
+| **Git History (VS Code Extension)** | Viewed line-by-line changes, commit trees, file histories, and comparisons directly in `VS Code`. |
 | **Conventional Commit Structure** | Messages attempted to followed a “what, where, why” pattern for clarity and traceability. |
 
 Using these tools helped ensure every change was documented and intentional. This approach hoped to not only improve my personal development discipline, but also create a clean, professional commit history useful for tutors and my future self.
 
 ## **4.2 Initial Setup**
 
-The early stages of **Codoku's** development focused on laying a solid foundation for a responsive, accessible, and interactive single-page web application. This involved establishing essential HTML structure, linking key stylesheets and scripts, and preparing the project for scalable logic integration.
+The early stages of **Codoku's** development focused on laying a solid foundation for a responsive, accessible, and interactive single-page web application. This involved establishing essential `HTML` structure, linking key stylesheets and scripts, and preparing the project for scalable logic integration.
 
 ### **4.2.1 HTML Scaffold & Metadata**
 
 The first few commits established the semantic base of the website:
-- 🏗️ Added basic HTML pages (`index.html`, `about.html`, and `404.html`)
+- 🏗️ Added basic `HTML` pages (`index.html`, `about.html`, and `404.html`)
 - 📦 Included meta tags for:
   - Character encoding
   - Viewport settings for responsive scaling
   - Author info
   - SEO and social sharing compatibility
 - 🔗 Connected external resources:
-  - Bootstrap (via CDN)
+  - `Bootstrap` (via CDN)
   - Google Fonts
   - Font Awesome
   - Favicon
@@ -1638,7 +1638,7 @@ The first few commits established the semantic base of the website:
 ### **4.2.2 Responsive Navigation & Structure**
 
 Once base pages were in place, I moved to layout and navigation:
-- 🔁 Implemented a responsive Bootstrap **navbar** with:
+- 🔁 Implemented a responsive `Bootstrap` **navbar** with:
   - Rules modal trigger
   - Collapsible hamburger menu
 - ⚙️ Created placeholder sections for:
@@ -1653,7 +1653,7 @@ Once base pages were in place, I moved to layout and navigation:
 ### **4.2.3 Base CSS and Dark Mode Architecture**
 
 The stylesheet was scaffolded to reflect consistent visual identity and support theme switching:
-- 🎨 Declared CSS custom properties for:
+- 🎨 Declared `CSS` custom properties for:
   - Font family (`Space Mono`)
   - Backgrounds and foregrounds
   - Accent colors for light/dark modes
@@ -1678,28 +1678,28 @@ These were linked at the bottom of `index.html` to avoid DOM timing issues.
 *Expanded repository view showing modular JavaScript files, HTML pages, and the core stylesheet for **Codoku**.*
 
 ## **4.3 Page Template**
-Once the initial project folder and file structure was in place, the next step was to establish a universal page template that could be reused across all HTML pages. This involved building out shared structural components and styling elements that define **Codoku’s** visual identity and layout consistency.
+Once the initial project folder and file structure was in place, the next step was to establish a universal page template that could be reused across all `HTML` pages. This involved building out shared structural components and styling elements that define **Codoku’s** visual identity and layout consistency.
 
-The goal was to create a flexible yet robust HTML + CSS foundation that could be duplicated into every page and would only require page-specific content edits going forward.
+The goal was to create a flexible yet robust `HTML` + `CSS` foundation that could be duplicated into every page and would only require page-specific content edits going forward.
 
 **Key Components of the Universal Template:**  
 
 Metadata and Dependencies
   - Meta tags for viewport, character encoding, and accessibility  
   - Google Fonts for typography  
-  - Boodstrap 5.3 CDN for layout and component responsiveness  
+  - `Bootstrap 5.3` CDN for layout and component responsiveness  
   - FontAwesome for icons  
   - Favicon links  
   - `style.css` for custom styling  
 
 Semantic Layout Structure   
 - Structural landmarks shared by all pages:
-  - Responsive Bootstrap navbar with theme and sound toggles  
+  - Responsive `Bootstrap` navbar with theme and sound toggles  
   - The central content area, customized per page  
   - Footer with copyright and social  
 
 Thematic Styling Foundations
-- The global CSS file handled:
+- The global `CSS` file handled:
   - Typography hierarchy 
   - Color variables for light/dark modes and accessibility contrast  
   - Background textures for day and night themes  
@@ -1710,7 +1710,7 @@ Once complete, this template structure was cloned into each page and slightly mo
 ![Codoku Page Template Preview](docs/figures/screenshots/template-preview.webp)  
 *Example of the universal page template featuring toggles, navbar, and footer with background texture styling.*
 
-From this point on, any correction, accessibility fix, or layout tweak made to the shared features (navbar, footer, modals, toggles, etc.) had to be applied across every HTML page to maintain consistency.
+From this point on, any correction, accessibility fix, or layout tweak made to the shared features (navbar, footer, modals, toggles, etc.) had to be applied across every `HTML` page to maintain consistency.
 
 This modular and scalable structure ensured:
 - Fewer bugs during UI changes  
@@ -1718,7 +1718,7 @@ This modular and scalable structure ensured:
 - Faster adaptation of updates (like styling refinements or theme adjustments)
 
 ## **4.4 Workflow**
-After establishing the reusable page template (with shared HTML layout, background styling, navbar, footer, and toggle elements), development progressed through a deliberate, layered sequence, gradually building structure, style, interactivity and logic while ensuring each feature worked independently before being integrated.
+After establishing the reusable page template (with shared `HTML` layout, background styling, navbar, footer, and toggle elements), development progressed through a deliberate, layered sequence, gradually building structure, style, interactivity and logic while ensuring each feature worked independently before being integrated.
 
 ### **4.4.1. Refining Structural HTML Elements**
 Page titles, headers, button containers, and stat panels were added to define clear visual anchors for gameplay. Additional semantic containers and ARIA landmarks were incorporated.
@@ -1729,7 +1729,7 @@ Boilerplate copies of this layout were added to `about.html` and `404.html`, ens
 *Early HTML scaffold showing the **Codoku** title, action buttons, and placeholder sections.*
 
 ### **4.4.2. Laying Out Core Visual Components**
-The Sudoku grid container and number input area were blocked out. The "Game Stats" section was also scaffolded beneath the header.
+The Sudoku grid container and number input area were blocked out. The 'Game Stats' section was also scaffolded beneath the header.
 
 ![HTML structure for Codoku’s number input controls with semantic tags and Bootstrap classes](docs/figures/screenshots/game-section-html-structure.webp)  
 *HTML scaffold for the Sudoku board and number keys, using semantic elements.*
@@ -1811,7 +1811,7 @@ To address this:
 - A New Game Setup Modal was introduced to automatically appear on page load.
 - It prompts users to choose difficulty and timer settings before accessing the puzzle.
 - The Cancel button was removed to prevent players from accidentally closing the modal without making a selection.
-- The modal was configured to disable dismissal via clicking outside or pressing Esc, using Bootstrap’s backdrop and keyboard options.
+- The modal was configured to disable dismissal via clicking outside or pressing Esc, using `Bootstrap`’s backdrop and keyboard options.
 
 ![Initial Setup Modal](docs/figures/screenshots/start-up-modal.webp)  
 *The modal guides users through difficulty and timer selection upon first visiting the site, improving orientation and reducing confusion.*
@@ -1822,7 +1822,7 @@ This change significantly improved onboarding clarity by ensuring players are pr
 Initial user feedback and accessibility best practices highlighted that native alert boxes, while functional, pose several usability and design limitations, particularly in modern web applications.
 
 To address this:
-- All alerts were replaced with Bootstrap modals.
+- All alerts were replaced with `Bootstrap` modals.
 - Used for timeout warnings, invalid input, and hint-based wins.
 - The modals respect dark/light themes and support keyboard navigation.
 
@@ -1831,8 +1831,8 @@ To address this:
 
 This overhaul brought consistency and visual cohesion to how feedback is presented, ensuring that players remain immersed in the game environment while still receiving clear, accessible notifications.
 
-#### **4.5.1.c ⌫ "Clear" Button Enhancement**
-The original “X” icon used for clearing a selected Sudoku cell was ambiguous. Users, especially those less familiar with interface conventions, might confuse it with a close or cancel action. This ambiguity posed a usability and accessibility challenge, particularly for users relying on screen readers or cognitive clarity.
+#### **4.5.1.c ⌫ 'Clear' Button Enhancement**
+The original 'X' icon used for clearing a selected Sudoku cell was ambiguous. Users, especially those less familiar with interface conventions, might confuse it with a close or cancel action. This ambiguity posed a usability and accessibility challenge, particularly for users relying on screen readers or cognitive clarity.
 
 To improve clarity and inclusivity, the following changes were made:
 - Replaced the icon with a different button reading “⌫”.
@@ -1911,9 +1911,9 @@ Users can select a soft, high-contrast light theme or a glare-reducing dark mode
 *Theme toggle in action, toggling between light and dark UI modes.*
 
 **Technical Aspects**:
-- Uses `:root` CSS variables (`--color-bg-light`, `--color-bg-dark`, etc.) to define themable values
+- Uses `:root` `CSS` variables (`--color-bg-light`, `--color-bg-dark`, etc.) to define themable values
 - A `.dark` class is toggled on the `<body>` tag.
-- Background images and icon colors change conditionally using nested CSS selectors (`body.dark .nav-link`, `body.dark #grid p`, etc.)
+- Background images and icon colors change conditionally using nested `CSS` selectors (`body.dark .nav-link`, `body.dark #grid p`, etc.)
 - Toggle logic is handled via `theme.js`, which listens for changes on the `#theme-switch` input
   - Adds or removes the `dark` class from `<body>` to trigger theme shift
   - User preference is persisted with `localStorage`, ensuring the chosen theme remains consistent across sessions.
@@ -1928,7 +1928,7 @@ Users can select a soft, high-contrast light theme or a glare-reducing dark mode
 
 ### **5.1.2 Sound Toggle** 
 
-The Sound Toggle is an accessibility-focused control that lets users mute or enable Codoku’s in-game sound effects. It enhances user autonomy and caters to sensory-sensitive individuals by ensuring all audio is opt-in. This toggle manages feedback sounds like clue activations, number selections, page changes, win animations, and errors. By default, sound is muted on first visit to support inclusive design. Users can click or tap the switch labeled "Sound" in the navbar to toggle between muted and active states. Color and icon updates provide immediate visual feedback.
+The Sound Toggle is an accessibility-focused control that lets users mute or enable Codoku’s in-game sound effects. It enhances user autonomy and caters to sensory-sensitive individuals by ensuring all audio is opt-in. This toggle manages feedback sounds like clue activations, number selections, page changes, win animations, and errors. By default, sound is muted on first visit to support inclusive design. Users can click or tap the switch labeled 'Sound' in the navbar to toggle between muted and active states. Color and icon updates provide immediate visual feedback.
 
 ![Sound Toggle Demo](docs/figures/gifs/sound-toggle.gif)  
 *Demonstration of the sound toggle controlling global audio state across the site.*
@@ -1939,7 +1939,7 @@ The Sound Toggle is an accessibility-focused control that lets users mute or ena
 - Gives returning users a persistent setting tailored to their preference.
 
 **Technical Aspects**:
-- Built using a Bootstrap `form-switch` input and `<label>` for accessibility
+- Built using a `Bootstrap` `form-switch` input and `<label>` for accessibility
 - The icon (`fa-volume-xmark` or `fa-volume-high`) updates dynamically based on state in `applySoundSetting()`
 - Visual feedback includes dynamic color changes via `.form-check-input` custom styles:  
   - 🔴 Red (Muted)  
@@ -1966,13 +1966,13 @@ A responsive, sticky top navigation panel that gives users immediate access to k
 
 **Technical Aspects:**
 - Responsive design
-  - Built using the Bootstrap 5 `navbar` component with `navbar-expand-lg` and collapse classes for fluid responsiveness.
+  - Built using the `Bootstrap 5` `navbar` component with `navbar-expand-lg` and collapse classes for fluid responsiveness.
   - On smaller viewports, the menu collapses into a hamburger toggler (`navbar-toggler`), controlled via `data-bs-toggle` and `data-bs-target`
 - A custom function `setupNavLinkCollapse()` in `navbar.js` ensures that once a nav link is clicked on mobile, the dropdown menu auto-collapses for better UX. 
 - Toggle Integrations
   - The theme and sound toggles are embedded within the navbar and use `<input type="checkbox" class="form-check-input">`.
   - Each toggle syncs with `localStorage` to persist user choices across sessions
-  - Toggle icons and colors update based on theme or sound status in `theme.js` and `sound.js` and conditional use CSS classes
+  - Toggle icons and colors update based on theme or sound status in `theme.js` and `sound.js` and conditional use `CSS` classes
   - If sound toggle is set to unmuted, 'Hoot' and 'Tweet' sounds are played when the theme switch is toggled
 - Accessibility Enhancements
   - ARIA attributes like `aria-label` and `aria-controls` ensure the menu is screen reader-friendly.
@@ -1991,10 +1991,10 @@ The rules modal is an accessible pop-up interface that presents the game rules i
 - Styled to match light/dark themes for visual consistency  
 
 **Technical Aspects:**
-- Built with Bootstrap
-  - Implemented using Bootstrap’s `.modal` structure with `data-bs-toggle="modal"` and `data-bs-target` bindings.
+- Built with `Bootstrap`
+  - Implemented using `Bootstrap`’s `.modal` structure with `data-bs-toggle="modal"` and `data-bs-target` bindings.
   - `tabindex="-1"` and ARIA attributes (`aria-labelledby`, `aria-hidden`) improve keyboard navigation and screen reader announcements.
-- Uses semantic HTML to ensure proper reading order and landmark tagging for assistive technologies
+- Uses semantic `HTML` to ensure proper reading order and landmark tagging for assistive technologies
   - `<section>`, `<ul>`, `<p>` for structural clarity
   - `<legend>` and `<button>` for accessible form navigation
 - Inherits the same font families and border styles (`modal-border`) to maintain design consistency.
@@ -2012,14 +2012,14 @@ The sticky footer is a persistent feature that appears at the bottom of every pa
 - Footer icons enhance visual interest and recognizability  
 
 **Technical Aspects:**
-- Implemented using CSS Flexbox for alignment
+- Implemented using `CSS` Flexbox for alignment
   - The footer uses a Flexbox `container` to horizontally distribute social icons and copyright.
   - It is styled with `flex-shrink: 0` to ensure it doesn't collapse and placed at the bottom via layout-driven `min-height` strategy in the `<body>`
 - Media queries scale up font and icon sizes on larger viewports
 - Footer elements adapt to the theme via conditional class-based styling (e.g., `.dark` applies white text).
 - Social icons sourced from Font Awesome, included via CDN for performance and scalability.
 - `:hover` effects slightly enlarge icons and change their color for feedback
-- All anchor elements include `aria-label`s for screen reader context (e.g., "Facebook Page")
+- All anchor elements include `aria-label`s for screen reader context (e.g., 'Facebook')
 - External links use `target="_blank"` for safe access in new tabs   
 
 ## **5.2 Game Features**
@@ -2039,14 +2039,14 @@ This is an introductory modal that configures difficulty and timer settings befo
 - Improves UX by offering visual onboarding  
 
 **Technical Aspects:**
-- Bootstrap modal launched via `setupModal.show()` on page load or restart.
-- Implemented using Bootstrap’s modal component with `data-bs-backdrop="static"` and no keyboard dismissal to enforce attention.
+- `Bootstrap` modal launched via `setupModal.show()` on page load or restart.
+- Implemented using `Bootstrap`’s modal component with `data-bs-backdrop="static"` and no keyboard dismissal to enforce attention.
 - Uses custom styling for accessibility and theme matching.
-- The Cancel button is programmatically hidden (`display: none`) on first load using JavaScript and only becomes visible on subsequent visits, making the setup modal mandatory on initial page load.
+- The Cancel button is programmatically hidden (`display: none`) on first load using `JavaScript` and only becomes visible on subsequent visits, making the setup modal mandatory on initial page load.
 - Difficulty and time selections are captured from radio inputs inside the modal form.
 - `<fieldset>` and `<legend>` elements used for grouped settings (timer and difficulty).
 - Upon pressing 'Enter ↲', selections are validated and passed to the game logic via startNewGame(), which triggers puzzle fetching, timer initialization, and stat panel updates.
-- Modal aesthetics dynamically match theme mode (light/dark) using CSS class switching.
+- Modal aesthetics dynamically match theme mode (light/dark) using `CSS` class switching.
 - If a game has not yet been played (`hasPlayed === false`), the Cancel button is hidden on load with `$('#cancel-button').hide()`.
 - Once a game has started, `hasPlayed` is set to `true`, and future modal triggers will show the Cancel button, giving users freedom to abandon setup later.
 
@@ -2068,9 +2068,9 @@ Upon starting a game from the setup modal, the board is rendered with a mix of f
   - Parameters: `difficulty` (easy, medium, hard); defaults to “medium”
   - Method: `GET` with secure `X-Api-Key` in headers
   - Monthly quota: 10,000 API calls
-- AJAX logic built with `$.ajax()` (jQuery) retrieves puzzle and solution from the response
+- AJAX logic built with `$.ajax()` (`jQuery`) retrieves puzzle and solution from the response
 - The response is destructured (`const { puzzle, solution }`) for internal use
-- The `renderEmptyGrid()` function dynamically creates the HTML grid
+- The `renderEmptyGrid()` function dynamically creates the `HTML` grid
 - `populateGrid()` maps the puzzle data to the board:
   - Fixed cells get `.generated` and `fw-bold` styling
   - Empty cells are tagged `.editable` and made interactive via `enableCellSelection()`
@@ -2091,10 +2091,10 @@ This feature creates a live sudoku board where players are able to input numbers
 
 **Technical Aspects:**
 - Each `<p>` tag representing a cell includes `data-row` and `data-col` attributes for logical mapping.
-- CSS Classes & Visual Feedback:
+- `CSS` Classes & Visual Feedback:
   - `.editable`: Marks cells the user can interact with.
   - `.selected`: Highlights the currently focused cell (yellow for day mode/blue for night mode).
-  - Hover states (blue for day mode/yellow for night mode) and pointer styles are managed using `:hover` selectors and jQuery `.hover()` logic.
+  - Hover states (blue for day mode/yellow for night mode) and pointer styles are managed using `:hover` selectors and `jQuery` `.hover()` logic.
 - `enableCellSelection()` binds event listeners to all `.editable` cells.
 - Click events use `.on('click')` to assign `.selected` and set `selectedCell`
 - Keyboard events are globally captured with `document.on('keydown')`:
@@ -2102,7 +2102,7 @@ This feature creates a live sudoku board where players are able to input numbers
   - `Backspace` / `Delete`: Clears the cell
 - On-screen number buttons are `<h2>` elements, bound via `.on('click')` to populate the selected cell.
 - Rules Modal instructions explain interaction steps clearly.
-- All interactive elements use standard HTML or ARIA-compliant components.
+- All interactive elements use standard `HTML` or `ARIA`-compliant components.
 - JS directly modifies the class lists (`classList.add/remove`) and inline styles (`style.cursor`) for state transitions.
 
 ### **5.2.4 Check Button**
@@ -2117,12 +2117,12 @@ This is a user activated button that verifies their current board inputs. It giv
 - Prevents accidental incorrect submission  
 
 **Technical Aspects:**
-- Tied to the `check-button` ID in the DOM and bound via jQuery’s `.on('click')` inside `DOMContentLoaded`
+- Tied to the `check-button` ID in the DOM and bound via `jQuery`’s `.on('click')` inside `DOMContentLoaded`
 - Calls the `checkUserInput()` function:
-  - Iterates through each `.editable` cell using jQuery’s `.each()`
+  - Iterates through each `.editable` cell using `jQuery`’s `.each()`
   - Fetches its coordinates via `data-row` and `data-col` attributes
   - Compares content against `currentSolution[][]` for accuracy
-  - Adds `.incorrect` class (CSS-colored red) if mismatched; removes it otherwise
+  - Adds `.incorrect` class (`CSS`-colored red) if mismatched; removes it otherwise
 - Increments `hintsUsed` and updates the display using `updateHintsDisplay()`
 - Triggers sound feedback via `soundEffects.play("hint")` to reinforce interaction if sound is toggled on
 - Designed not to alter empty or untouched cells—errors only appear where input exists
@@ -2140,7 +2140,7 @@ This feature provides a single correct number in a random empty cell. It helps u
 - Increases accessibility for casual users  
 
 **Technical Aspects:**
-- Binds to the `hint-button` ID in the DOM using jQuery `.on('click')` within `DOMContentLoaded` 
+- Binds to the `hint-button` ID in the DOM using `jQuery` `.on('click')` within `DOMContentLoaded` 
 - Calls the `revealHint()` function:
   - Scans `.editable` cells for blanks (`.text().trim() === ""`)
   - Selects one at random using `Math.random()` 
@@ -2178,7 +2178,7 @@ When the player runs out of time, an alert modal is triggered with alarm sound a
 - Countdown is paused or cleared with `clearInterval()` on:
   - Win condition
   - Manual restart via the Setup Modal
-- Timer label is dynamically injected into `timer` id in the stats panel using jQuery
+- Timer label is dynamically injected into `timer` id in the stats panel using `jQuery`
 - State logic ensures timer resets correctly between sessions (fixes applied based on user feedback)
 
 ### **5.2.7 Error Detection on Filled Puzzle**
@@ -2198,16 +2198,16 @@ Technical Aspects:
   - After use of the 'Check' or 'Clue' buttons
 - Conditions checked:
   - `isBoardFilled()` 
-    - Uses jQuery to collect all `.editable` cells
+    - Uses `jQuery` to collect all `.editable` cells
     - Checks each one for non-empty `textContent`
     - Returns `true` only if all user-input cells are filled
   - `isBoardCompleteAndCorrect()` 
     - Iterates each editable cell and compares its value to the matching value in `currentSolution`, which was stored at the time of board generation
     - If all values match, the board is considered solved
 - If `isBoardFilled()` returns `true` but `isBoardCompleteAndCorrect()` returns `false`
-  - A friendly Bootstrap modal (`#alert-modal`) is triggered using `bootstrap.Modal.show()`:
+  - A friendly `Bootstrap` modal (`#alert-modal`) is triggered using `bootstrap.Modal.show()`:
     - 🔍 Try again! It looks like there's an error somewhere!
-  - An `<audio>` element (`#error-sound`) is included in the HTML and preloaded
+  - An `<audio>` element (`#error-sound`) is included in the `HTML` and preloaded
   - No cells are locked or penalized—users can immediately begin fixing their entries
 
 ### **5.2.8 Win Detection System**
@@ -2236,11 +2236,11 @@ If hints were used heavily an alternate Hinted Win modal provides a different me
   - If the board is complete and few or no hints were used:
     - A visual celebration is triggered by the `popConfetti()` function, which uses the Canvas-Confetti library to render falling confetti in the center of the screen.
     - The sound effect `applause` is played using `soundEffects.play("applause")`, a modular system controlling audio playback.
-    - The standard win modal (`#congrats-modal`) is opened using Bootstrap’s JS API (`bootstrap.Modal.show()`).
-    - The player stats are dynamically inserted using jQuery DOM manipulation.
+    - The standard win modal (`#congrats-modal`) is opened using `Bootstrap`’s JS API (`bootstrap.Modal.show()`).
+    - The player stats are dynamically inserted using `jQuery` DOM manipulation.
   - If the user relied heavily on hints (e.g. more hint cells than user-filled cells):
     - A different modal (`#hinted-win-modal`) is shown instead, displaying a more encouraging message.
-    - Stats are again filled dynamically using jQuery selectors, but the tone of messaging shifts to emphasize future improvement.
+    - Stats are again filled dynamically using `jQuery` selectors, but the tone of messaging shifts to emphasize future improvement.
 - Regardless of win type:
   - The game timer is cleared (`clearInterval(countdownInterval)`) to prevent it from running after win state.
   - A `hasCelebrated` flag ensures the modal and effects are only triggered once per game session.
@@ -2259,7 +2259,7 @@ This feature displays live, non-interactive information about the game: current 
 - Promotes replay with visible challenge conditions  
 
 **Technical Aspects:**
-- The panel updates are handled by specific helper functions that manipulate the DOM directly using jQuery:
+- The panel updates are handled by specific helper functions that manipulate the DOM directly using `jQuery`:
   - `updateDifficultyDisplay()` – triggered on game start
   - `updateTimerDisplay()` – runs once per second using `setInterval()`
   - `updateHintsDisplay()` – updates after each clue or check
@@ -2314,7 +2314,7 @@ The images are static and purely decorative but enhances engagement by reinforci
 
 **Technical Aspects:**
 - Uses the `<img>` tag with a `.hero-img` class and `alt` attribute for accessibility  
-- Theme-specific CSS targets `body.dark .hero-img` to adjust contrast and brightness  
+- Theme-specific `CSS` targets `body.dark .hero-img` to adjust contrast and brightness  
 - Border and shadow properties vary between light/dark themes to retain visibility  
 - Styled to stay within a max-width for performance and layout control   
 
@@ -2335,7 +2335,7 @@ Users can click or tap the button labeled “Donate” to open the charity’s d
 - Button is responsive and adapts to theme mode using class toggling  
 - Hover and focus states improve usability (`:hover`, `:focus-visible`)  
 - External link uses `target="_blank"` and `rel="noopener noreferrer"` for security and accessibility  
-- Can be conditionally rendered via JavaScript in future versions if a payment gateway is integrated  
+- Can be conditionally rendered via `JavaScript` in future versions if a payment gateway is integrated  
 
 ## **5.4 Error Page Features**
 The custom 404 Error Page provides a user-friendly fallback experience for when visitors navigate to an invalid or missing route. Rather than presenting a generic browser error, **Codoku**’s 404 page reinforces branding and theme consistency, while offering a quick way to recover and return to the main game.
@@ -2354,9 +2354,9 @@ Users land on this page automatically if they navigate to a non-existent route. 
 - Reassures users they’re still within the same experience  
 
 **Technical Aspects**:
-- HTML structure uses `<main>` with proper semantic tags (`<h1>`, `<p>`, `aria-labelledby="error-heading"`)  
-- Image (`breaking-news.webp`) styled responsively using Bootstrap’s `.img-fluid`  
-- Typography matches the rest of the site via shared Google Fonts and CSS classes (`display-4`, `fw-bold`)  
+- `HTML` structure uses `<main>` with proper semantic tags (`<h1>`, `<p>`, `aria-labelledby="error-heading"`)  
+- Image (`breaking-news.webp`) styled responsively using `Bootstrap`’s `.img-fluid`  
+- Typography matches the rest of the site via shared Google Fonts and `CSS` classes (`display-4`, `fw-bold`)  
 - Page uses `<meta name="description">` and `<title>` for SEO and accessibility clarity  
 
 ### **5.4.2 Accessible, Humorous Content**
@@ -2397,5 +2397,5 @@ Users click or tap the “Home” button to return to `index.html` (the Game pag
 - Implemented as a `<button>` element with a `btn-dark` class and `onclick="window.location.href='index.html'"`  
 - Accessibility is ensured with `aria-label="Return to homepage"`  
 - Visually consistent button sizing and border styles applied with `.equal-width-buttons`  
-- Positioned using Bootstrap’s utility classes for spacing (`mb-4`) and alignment (`d-flex justify-content-center`)  
+- Positioned using `Bootstrap`’s utility classes for spacing (`mb-4`) and alignment (`d-flex justify-content-center`)  
 
