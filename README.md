@@ -1926,7 +1926,6 @@ Users can select a soft, high-contrast light theme or a glare-reducing dark mode
   - Dark mode: 'Hoot'
   - Played using `soundEffects.play("tweet")` or `soundEffects.play("hoot")` inside the toggle logic using a ternary operator
 
-
 ### **5.1.2 Sound Toggle** 
 
 The Sound Toggle is an accessibility-focused control that lets users mute or enable Codoku’s in-game sound effects. It enhances user autonomy and caters to sensory-sensitive individuals by ensuring all audio is opt-in. This toggle manages feedback sounds like clue activations, number selections, page changes, win animations, and errors. By default, sound is muted on first visit to support inclusive design. Users can click or tap the switch labeled "Sound" in the navbar to toggle between muted and active states. Color and icon updates provide immediate visual feedback.
@@ -2048,6 +2047,8 @@ This is an introductory modal that configures difficulty and timer settings befo
 - `<fieldset>` and `<legend>` elements used for grouped settings (timer and difficulty).
 - Upon pressing 'Enter ↲', selections are validated and passed to the game logic via startNewGame(), which triggers puzzle fetching, timer initialization, and stat panel updates.
 - Modal aesthetics dynamically match theme mode (light/dark) using CSS class switching.
+- If a game has not yet been played (`hasPlayed === false`), the Cancel button is hidden on load with `$('#cancel-button').hide()`.
+- Once a game has started, `hasPlayed` is set to `true`, and future modal triggers will show the Cancel button, giving users freedom to abandon setup later.
 
 ### **5.2.2 Sudoku Puzzle Generation**
 Sudoku puzzles are dynamically generated based on the user’s selected difficulty level. It enables players to play unique puzzles every session. The generated board is validated and complete, avoiding repetition. 
@@ -2075,6 +2076,7 @@ Upon starting a game from the setup modal, the board is rendered with a mix of f
   - Empty cells are tagged `.editable` and made interactive via `enableCellSelection()`
 - Each puzzle has a matching solution stored in `currentSolution` for live validation
 - Failover handling: displays error in the console if the API fails
+- A fallback message or retry logic is included if the API returns an error, ensuring a smooth UX.
 
 ### **5.2.3 Grid Interaction System**
 This feature creates a live sudoku board where players are able to input numbers using mouse, touchscreen or keyboard. This feature specifically enables cell selection and number-only user inputs for interactive puzzle solving. Users can engage with this feature with a mouse to hover over editable cells, clicking on one to select it and then entering numbers via keyboard or tapping on number buttons in the numbers container. Users can clear entries with the 'Delete' or 'Backspace' keyboard button or ⌫ button. 
@@ -2272,3 +2274,59 @@ This feature displays live, non-interactive information about the game: current 
   - `#congrats-difficulty`, `#congrats-time`, `#congrats-hints`
   - `#hinted-difficulty`, `#hinted-time`, `#hinted-hints`
 - Font sizes and layout spacing scale across breakpoints using media queries (`.game-stat` class) to maintain readability on all devices.
+
+## **5.3 About Page Features**
+The About Page in **Codoku** offers users insight into the game’s purpose, design values, and inclusive intentions. It balances aesthetics with clarity and responsiveness to ensure a positive experience across all devices. This section also invites user engagement beyond the game via optional support or feedback.
+
+Each feature is designed to reflect the project's minimalist philosophy while remaining accessible and visually consistent with the rest of the application.
+
+### **5.3.1 Accessible Introduction Content**
+This section outlines **Codoku’s** origins, goals, and audience. It is presented with simple, readable copy, structured for assistive technologies.
+
+![About page preview](docs/figures/screenshots/about-text.webp)  
+*A walkthrough of the About section featuring readable, accessible text blocks.*
+
+**Benefits:**
+- Shares the project’s background and goals to build user trust  
+- Appeals to multiple audiences (newcomers, neurodivergent users, casual players)  
+- Improves SEO and screen reader usability  
+
+**Technical Aspects:**
+- Content is wrapped in semantic tags: `<section>`, `<h2>`, and `<p>` for meaningful hierarchy  
+- Uses system-friendly fonts for legibility  
+- Proper heading structure (e.g., `h1`, `h2`) supports screen reader parsing  
+- Custom padding/margins applied to improve visual clarity  
+
+### **5.3.2 Theme-Compatible Visuals**
+The About page contains a hero image styled to match the site’s current theme, maintaining visual cohesion across modes.
+
+![About page imagery](docs/figures/screenshots/about-visuals.webp)  
+*A collage showing **Codoku**’s visual imagery.*
+
+**Benefits:**
+- Prevents visual clashes or readability issues between elements and backgrounds  
+- Enhances consistency and professionalism  
+- Improves user confidence in polished presentation  
+
+**Technical Aspects:**
+- Uses the `<img>` tag with a `.hero-img` class and `alt` attribute for accessibility  
+- Theme-specific CSS targets `body.dark .hero-img` to adjust contrast and brightness  
+- Border and shadow properties vary between light/dark themes to retain visibility  
+- Styled to stay within a max-width for performance and layout control   
+
+### **5.3.3 Donate Button**
+A donate or support button is included for users who wish to support the chosen charity.
+
+![Donate Button in Action](docs/figures/gifs/donate-button.gif)  
+*The Donate button links users to Alzheimer’s Society, connecting **Codoku**’s theme of mental agility with real-world impact.*
+
+**Benefits:**
+- Encourages community involvement or appreciation  
+- Provides a direct action for satisfied users  
+
+**Technical Aspects:**
+- Styled `<a>` tag with `btn-donate` class  
+- Button is responsive and adapts to theme mode using class toggling  
+- Hover and focus states improve usability (`:hover`, `:focus-visible`)  
+- External link uses `target="_blank"` and `rel="noopener noreferrer"` for security and accessibility  
+- Can be conditionally rendered via JavaScript in future versions if a payment gateway is integrated  
