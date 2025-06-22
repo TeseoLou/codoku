@@ -23,14 +23,17 @@ function initPage() {
     setupThemeSwitch();
     setupStartButton();
     setupSoundToggle();
-    const setupModalElement = document.getElementById("setup-modal");
-    if (setupModalElement) {
-        // Reference: https://stackoverflow.com/questions/16152073
-        const setupModal = new bootstrap.Modal(setupModalElement, {
-            backdrop: 'static', 
-            keyboard: false     
-        });
-        setupModal.show();
+    const hasGridContent = $('#grid p').length > 0;
+    if (!hasGridContent) {
+        const setupModalElement = document.getElementById("setup-modal");
+        if (setupModalElement) {
+            const setupModal = new bootstrap.Modal(setupModalElement, {
+                backdrop: 'static',
+                keyboard: false
+            });
+            setupModal.show();
+            return;
+        }
     }
 }
 
