@@ -3,37 +3,37 @@
 
 <head>
     <!-- Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description"
-        content="Play and solve Sudoku puzzles with this interactive Sudoku game demo. Includes easy, medium, and hard levels." />
-    <meta name="author" content="Teseo Lou Nicholson" />
+        content="Play and solve Sudoku puzzles with this interactive Sudoku game demo. Includes easy, medium, and hard levels.">
+    <meta name="author" content="Teseo Lou Nicholson">
     <title>Codoku Game</title>
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="assets/favicons/site.webmanifest" />
-    <link rel="shortcut-icon" href="assets/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="shortcut-icon" href="assets/favicons/favicon.ico">
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <!-- Page Content -->
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg bg-transparent sticky-top pt-3" role="navigation" aria-label="Main Navigation">
+    <nav class="navbar navbar-expand-lg bg-transparent sticky-top pt-3" aria-label="Main Navigation">
         <section class="container d-flex align-items-center justify-content-between">
+            <h2 class="visually-hidden">Menu</h2>
             <aside class="d-flex align-items-center gap-1">
                 <!-- Theme toggle -->
                 <div id="theme-toggle" class="d-flex align-items-center">
@@ -41,7 +41,7 @@
                         <label class="form-check-label d-flex align-items-center gap-2 ms-1" for="theme-switch"
                             id="theme-label">
                             <input class="form-check-input" type="checkbox" id="theme-switch" role="switch"
-                                aria-labelledby="theme-label" checked />
+                                aria-labelledby="theme-label" checked>
                             <i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i>
                             <span>Display</span>
                         </label>
@@ -53,7 +53,7 @@
                         <label class="form-check-label d-flex align-items-center gap-2 ms-1" for="sound-switch"
                             id="sound-label">
                             <input class="form-check-input" type="checkbox" id="sound-switch" role="switch"
-                                aria-labelledby="sound-label" />
+                                aria-labelledby="sound-label">
                             <i id="sound-icon" class="fa-solid fa-volume-xmark" aria-hidden="true"></i>
                             <span>Sound</span>
                         </label>
@@ -62,8 +62,7 @@
             </aside>
             <!-- Hamburger -->
             <button class="navbar-toggler border-0" aria-expanded="false" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false"
-                aria-label="Toggle navigation menu">
+                data-bs-target="#navbar-content" aria-controls="navbar-content" aria-label="Toggle navigation menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- Navbar links -->
@@ -77,7 +76,7 @@
                         <a role="button" tabindex="0" class="nav-link text-black" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <button role="button" class="nav-link text-black bg-transparent border-0" data-bs-toggle="modal"
+                        <button class="nav-link text-black bg-transparent border-0" data-bs-toggle="modal"
                             data-bs-target="#rules-modal">
                             Rules
                         </button>
@@ -117,6 +116,7 @@
         </section>
         <!-- Game -->
         <section id="game" class="container">
+            <h2 class="visually-hiddan">Game Area</h2>
             <!-- Board-->
             <div id="grid"></div>
             <!-- Controls -->
@@ -136,7 +136,8 @@
                         <h2 id="seven">7</h2>
                         <h2 id="eight">8</h2>
                         <h2 id="nine">9</h2>
-                        <h2 id="clear"><i class="fa-solid fa-delete-left"></i></h2>
+                        <h2 id="clear"><i class="fa-solid fa-delete-left"></i><span class="visually-hidden">Clear
+                                Cell</span></h2>
                     </div>
                 </aside>
             </fieldset>
@@ -145,6 +146,7 @@
     <!-- Rules Modal -->
     <section id="rules-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rules-modal-label"
         aria-modal="true" aria-hidden="true" data-bs-backdrop="static">
+        <h2 class="visually-hiddan">Rules Modal</h2>
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <article class="modal-content">
                 <div class="modal-border">
@@ -152,6 +154,7 @@
                         <h2 id="rules-modal-label" class="modal-title">Game Rules</h2>
                     </header>
                     <section id="rules-modal-info" class="modal-body">
+                        <h2 class="visually-hiddan">Game Rules</h2>
                         <p>
                             The goal of Codoku is to complete the grid so that every row,
                             column, and 3x3 box contains the numbers 1 through 9.
@@ -180,31 +183,34 @@
     <!-- Setup Modal -->
     <section id="setup-modal" class="modal fade" tabindex="-1" aria-labelledby="setup-modal-label"
         aria-describedby="setup-modal-content" aria-hidden="true">
+        <h2 class="visually-hiddan">Setup Modal</h2>
         <div class="modal-dialog modal-dialog-centered">
             <article class="modal-content setup-modal-custom">
                 <h2 id="setup-modal-label" class="modal-title visually-hidden">
                     Setup Game
                 </h2>
                 <section id="setup-modal-content" class="modal-body">
+                    <h2 class="visually-hiddan">Game Setup</h2>
                     <div class="modal-border">
                         <form id="setup-options" class="d-flex flex-column align-items-center"
                             aria-labelledby="setup-modal-label">
                             <fieldset id="difficulty-level" class="text-center mb-4 w-100">
                                 <legend>Difficulty Level</legend>
                                 <section id="difficulty-options" class="d-flex flex-wrap justify-content-center gap-3">
+                                    <h2 class="visually-hiddan">Game Difficulty</h2>
                                     <div class="form-check">
                                         <input type="radio" id="easy" class="form-check-input" name="difficulty"
-                                            value="easy" checked />
+                                            value="easy" checked>
                                         <label for="easy" class="form-check-label">Easy</label>
                                     </div>
                                     <div class="form-check">
                                         <input type="radio" id="medium" class="form-check-input" name="difficulty"
-                                            value="medium" />
+                                            value="medium">
                                         <label for="medium" class="form-check-label">Medium</label>
                                     </div>
                                     <div class="form-check">
                                         <input type="radio" id="hard" class="form-check-input" name="difficulty"
-                                            value="hard" />
+                                            value="hard">
                                         <label for="hard" class="form-check-label">Hard</label>
                                     </div>
                                 </section>
@@ -212,24 +218,25 @@
                             <fieldset id="time-countdown" class="text-center w-100">
                                 <legend>Timer (Minutes)</legend>
                                 <section id="timer-options" class="d-flex flex-wrap justify-content-center gap-3">
+                                    <h2 class="visually-hiddan">Game Time</h2>
                                     <div class="form-check">
                                         <input type="radio" id="time-none" class="form-check-input" name="time"
-                                            value="none" checked />
+                                            value="none" checked>
                                         <label for="time-none" class="form-check-label">None</label>
                                     </div>
                                     <div class="form-check">
                                         <input type="radio" id="time-3" class="form-check-input" name="time"
-                                            value="3" />
+                                            value="3">
                                         <label for="time-3" class="form-check-label">3</label>
                                     </div>
                                     <div class="form-check">
                                         <input type="radio" id="time-5" class="form-check-input" name="time"
-                                            value="5" />
+                                            value="5">
                                         <label for="time-5" class="form-check-label">5</label>
                                     </div>
                                     <div class="form-check">
                                         <input type="radio" id="time-10" class="form-check-input" name="time"
-                                            value="10" />
+                                            value="10">
                                         <label for="time-10" class="form-check-label">10</label>
                                     </div>
                                 </section>
@@ -252,6 +259,7 @@
     <!-- Congratulations Modal -->
     <section id="congrats-modal" class="modal fade" tabindex="-1" aria-labelledby="congrats-modal-label"
         aria-describedby="congrats-modal-body" aria-hidden="true">
+        <h2 class="visually-hiddan">Congratulations Modal</h2>
         <div class="modal-dialog modal-dialog-centered">
             <article id="congrats-modal-content" class="modal-content text-center">
                 <div class="modal-border">
@@ -259,6 +267,7 @@
                         🎉 Congratulations!
                     </h2>
                     <section id="congrats-modal-body" class="modal-body">
+                        <h2 class="visually-hiddan">Game Celebration</h2>
                         <p id="message">You completed the puzzle!</p>
                         <p>
                             <strong>Difficulty:</strong>
@@ -284,6 +293,7 @@
     <!-- Hinted Win Modal -->
     <section id="hinted-win-modal" class="modal fade" tabindex="-1" aria-labelledby="hinted-win-label"
         aria-describedby="hinted-message" aria-hidden="true">
+        <h2 class="visually-hiddan">Hinted Win Modal</h2>
         <div class="modal-dialog modal-dialog-centered">
             <article class="modal-content">
                 <div class="modal-border">
@@ -291,6 +301,7 @@
                         <h2 id="hinted-win-label" class="modal-title text-center w-100">Puzzle Completed!</h2>
                     </header>
                     <section class="modal-body text-center">
+                        <h2 class="visually-hiddan">Game Feedback</h2>
                         <p id="hinted-message">You solved the puzzle with... some help.<br>
                             Great job! Next time, try using fewer hints for an extra challenge!</p>
                         <p><strong>Difficulty:</strong> <span id="hinted-difficulty"></span></p>
@@ -312,15 +323,17 @@
     <!-- Reusable Alert Modal -->
     <section id="alert-modal" class="modal fade" tabindex="-1" aria-labelledby="alert-modal-label"
         aria-describedby="alert-modal-message" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <h2 class="visually-hiddan">Alert Modal</h2>
         <div class="modal-dialog modal-dialog-centered">
             <article class="modal-content">
                 <div class="modal-border">
                     <header class="modal-header">
-                        <h2 id="calert-modal-label" class="modal-title text-center w-100">
+                        <h2 id="alert-modal-label" class="modal-title text-center w-100">
                             Notice
                         </h2>
                     </header>
                     <section class="modal-body">
+                        <h2 class="visually-hiddan">Notification Message</h2>
                         <p id="alert-modal-message" class="text-center">
                             This is an alert message.
                         </p>
@@ -337,6 +350,7 @@
     <!-- Confirm Navigation Modal -->
     <section id="confirm-leave-modal" class="modal fade" tabindex="-1" aria-labelledby="confirm-leave-label"
         aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <h2 class="visually-hiddan">Navigation Modal</h2>
         <div class="modal-dialog modal-dialog-centered">
             <article class="modal-content">
                 <div class="modal-border">
@@ -346,6 +360,7 @@
                         </h2>
                     </header>
                     <section class="modal-body text-center">
+                        <h2 class="visually-hiddan">Navigation Message</h2>
                         <p>
                             Your current game will be lost. Are you sure you want to leave?
                         </p>
@@ -363,10 +378,11 @@
         </div>
     </section>
     <!-- Footer Section -->
-    <footer role="contentinfo">
+    <footer>
         <div id="footer-content" class="container d-flex justify-content-between align-items-center text-white">
             <!-- Social Media Icons -->
             <section id="socials" class="my-2">
+                <h2 class="visually-hiddan">Game Socials</h2>
                 <a href="https://www.facebook.com" target="_blank" id="facebook-link" class="text-black me-3"
                     aria-label="Facebook Page">
                     <i class="fa-brands fa-facebook-f"></i>
@@ -391,11 +407,11 @@
     </footer>
     <!-- Preload alarm sound to avoid delay on playback -->
     <audio id="alarm-sound" preload="auto">
-        <source src="assets/sounds/alarm.mp3" type="audio/mpeg" />
+        <source src="assets/sounds/alarm.mp3" type="audio/mpeg">
     </audio>
     <!-- Preload error sound too if needed -->
     <audio id="error-sound" preload="auto">
-        <source src="assets/sounds/error.mp3" type="audio/mpeg" />
+        <source src="assets/sounds/error.mp3" type="audio/mpeg">
     </audio>
     <!-- JavaScript Dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
