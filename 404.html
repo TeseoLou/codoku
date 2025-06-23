@@ -3,37 +3,37 @@
 
 <head>
     <!-- Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description"
-        content="Oops! The page you're looking for isn't here. Looks like you're a bit... puzzled." />
-    <meta name="author" content="Teseo Lou Nicholson" />
+        content="Oops! The page you're looking for isn't here. Looks like you're a bit... puzzled.">
+    <meta name="author" content="Teseo Lou Nicholson">
     <title>404 - Page Not Found | Codoku</title>
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="assets/favicons/site.webmanifest" />
-    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Space+Mono:wght@400;700&display=swap"
-        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        crossorigin="anonymous" />
+        crossorigin="anonymous">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <!-- Page Content -->
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg bg-transparent sticky-top pt-3" role="navigation" aria-label="Main Navigation">
+    <nav class="navbar navbar-expand-lg bg-transparent sticky-top pt-3" aria-label="Main Navigation">
         <section class="container d-flex align-items-center justify-content-between">
+            <h2 class="visually-hidden">Menu</h2>
             <aside class="d-flex align-items-center gap-1">
                 <!-- Theme toggle -->
                 <div id="theme-toggle" class="d-flex align-items-center">
@@ -41,7 +41,7 @@
                         <label class="form-check-label d-flex align-items-center gap-2 ms-1" for="theme-switch"
                             id="theme-label">
                             <input class="form-check-input" type="checkbox" id="theme-switch" role="switch"
-                                aria-labelledby="theme-label" checked />
+                                aria-labelledby="theme-label" checked>
                             <i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i>
                             <span>Display</span>
                         </label>
@@ -53,7 +53,7 @@
                         <label class="form-check-label d-flex align-items-center gap-2 ms-1" for="sound-switch"
                             id="sound-label">
                             <input class="form-check-input" type="checkbox" id="sound-switch" role="switch"
-                                aria-labelledby="sound-label" />
+                                aria-labelledby="sound-label">
                             <i id="sound-icon" class="fa-solid fa-volume-xmark" aria-hidden="true"></i>
                             <span>Sound</span>
                         </label>
@@ -62,7 +62,7 @@
             </aside>
             <!-- Hamburger -->
             <button class="navbar-toggler border-0" aria-expanded="false" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false"
+                data-bs-target="#navbar-content" aria-controls="navbar-content"
                 aria-label="Toggle navigation menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -76,7 +76,7 @@
                         <a role="button" tabindex="0" class="nav-link text-black" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <button role="button" class="nav-link text-black bg-transparent border-0" data-bs-toggle="modal"
+                        <button class="nav-link text-black bg-transparent border-0" data-bs-toggle="modal"
                             data-bs-target="#rules-modal" aria-controls="rules-modal" aria-haspopup="dialog"
                             aria-expanded="false">
                             Rules
@@ -87,13 +87,13 @@
         </section>
     </nav>
     <!-- 404 Main Content -->
-    <main class="container text-center" id="not-found" role="main" aria-labelledby="error-heading">
+    <main class="container text-center" id="not-found" aria-labelledby="error-heading">
         <h1 id="error-heading" class="display-4 fw-bold">Page Undefined</h1>
         <h2 class="visually-hidden">404 Error - Page Not Found</h2>
         <div class="d-flex justify-content-center">
             <img id="error-image" src="assets/images/breaking-news.webp"
                 alt="Person reading a newspaper with a headline about a missing page" class="img-fluid my-4"
-                width="200" />
+                width="200">
         </div>
         <div class="d-flex justify-content-center">
             <button id="home-button" class="btn btn-dark equal-width-buttons mb-4"
@@ -108,6 +108,7 @@
     <!-- Rules Modal -->
     <section id="rules-modal" class="modal fade" tabindex="-1" role="dialog" aria-describedby="rules-modal-info"
         aria-labelledby="rules-modal-label" aria-modal="true" aria-hidden="true" data-bs-backdrop="static">
+        <h2 class="visually-hidden">Rules Modal</h2>
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <article class="modal-content">
                 <div class="modal-border">
@@ -115,6 +116,7 @@
                         <h2 id="rules-modal-label" class="modal-title">Game Rules</h2>
                     </header>
                     <section id="rules-modal-info" class="modal-body">
+                        <h2 class="visually-hidden">How to Play</h2>
                         <p>
                             The goal of Codoku is to complete the grid so that every row,
                             column, and 3x3 box contains the numbers 1 through 9.
@@ -141,9 +143,10 @@
         </div>
     </section>
     <!-- Footer -->
-    <footer class="py-3" role="contentinfo">
+    <footer class="py-3">
         <div class="container d-flex justify-content-between align-items-center text-white">
             <section id="socials" class="my-2">
+            <h2 class="visually-hidden">Game Socials</h2>
                 <a href="https://www.facebook.com" target="_blank" id="facebook-link" class="text-black me-3"
                     aria-label="Facebook Page">
                     <i class="fa-brands fa-facebook-f"></i>

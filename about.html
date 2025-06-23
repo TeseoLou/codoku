@@ -3,36 +3,37 @@
 
 <head>
     <!-- Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Learn more about the Codoku Sudoku Game project and its creator." />
-    <meta name="author" content="Teseo Lou Nicholson" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Learn more about the Codoku Sudoku Game project and its creator.">
+    <meta name="author" content="Teseo Lou Nicholson">
     <title>About - Codoku</title>
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="assets/favicons/site.webmanifest" />
-    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico" type="image/x-icon">
     <!-- Google Fonts Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet" />
+        rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        crossorigin="anonymous" />
+        crossorigin="anonymous">
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
     <!-- Page Content -->
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg bg-transparent sticky-top pt-3" role="navigation" aria-label="Main Navigation">
+    <nav class="navbar navbar-expand-lg bg-transparent sticky-top pt-3" aria-label="Main Navigation">
         <section class="container d-flex align-items-center justify-content-between">
+            <h2 class="visually-hidden">Menu</h2>
             <aside class="d-flex align-items-center gap-1">
                 <!-- Theme toggle -->
                 <div id="theme-toggle" class="d-flex align-items-center">
@@ -40,7 +41,7 @@
                         <label class="form-check-label d-flex align-items-center gap-2 ms-1" for="theme-switch"
                             id="theme-label">
                             <input class="form-check-input" type="checkbox" id="theme-switch" role="switch"
-                                aria-labelledby="theme-label" checked />
+                                aria-labelledby="theme-label" checked>
                             <i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i>
                             <span>Display</span>
                         </label>
@@ -52,7 +53,7 @@
                         <label class="form-check-label d-flex align-items-center gap-2 ms-1" for="sound-switch"
                             id="sound-label">
                             <input class="form-check-input" type="checkbox" id="sound-switch" role="switch"
-                                aria-labelledby="sound-label" />
+                                aria-labelledby="sound-label">
                             <i id="sound-icon" class="fa-solid fa-volume-xmark" aria-hidden="true"></i>
                             <span>Sound</span>
                         </label>
@@ -61,8 +62,7 @@
             </aside>
             <!-- Hamburger -->
             <button class="navbar-toggler border-0" aria-expanded="false" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false"
-                aria-label="Toggle navigation menu">
+                data-bs-target="#navbar-content" aria-controls="navbar-content">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- Navbar links -->
@@ -76,7 +76,7 @@
                             href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <button role="button" class="nav-link text-black bg-transparent border-0" data-bs-toggle="modal"
+                        <button class="nav-link text-black bg-transparent border-0" data-bs-toggle="modal"
                             data-bs-target="#rules-modal" aria-controls="rules-modal" aria-haspopup="dialog"
                             aria-expanded="false">
                             Rules
@@ -94,7 +94,7 @@
     <main id="about-content" class="container flex-grow-1">
         <section class="mb-2 text-center">
             <img src="assets/images/about-sudoku.webp" alt="Photograph of a Sudoku puzzle in a newspaper"
-                id="sudoku-in-newspaper" class="img-fluid mx-auto d-block mb-3" width="390" height="auto" />
+                id="sudoku-in-newspaper" class="img-fluid mx-auto d-block mb-3" width="390">
             <h2 class="h5">Sharpen Your Logic</h2>
             <p>
                 <strong>Codoku</strong> is a browser-based Sudoku game designed to engage your mind, challenge your
@@ -121,7 +121,7 @@
         <section class="mb-2 text-center">
             <img src="assets/images/sudoku-rubiks.webp"
                 alt="A visual mashup of a Sudoku grid and a Rubik's Cube symbolizing logic and challenge"
-                class="img-fluid mx-auto d-block mb-3" width="390" height="auto" />
+                class="img-fluid mx-auto d-block mb-3" width="390">
             <h2 class="h5">Where Code Meets Puzzle</h2>
             <p>
                 The name <strong>Codoku</strong> is a playful twist on "Code" and "Sudoku", inspired by the intersection
@@ -147,7 +147,7 @@
         <section class="mb-2 text-center">
             <img src="assets/images/sudoku-tablet.webp"
                 alt="Photo of a child and elderly person looking at a Sudoku game on a tablet"
-                class="img-fluid mx-auto d-block mb-3" width="390" height="auto" />
+                class="img-fluid mx-auto d-block mb-3" width="390">
             <h2 class="h5">A Puzzle With Purpose</h2>
             <p>
                 This project is also about more than just code. It’s a tribute to cognitive health and mental agility —
@@ -168,80 +168,84 @@
                 Donate
             </button>
         </section>
-        <!-- Rules Modal -->
-        <section id="rules-modal" class="modal fade" tabindex="-1" role="dialog" aria-describedby="rules-modal-info" aria-labelledby="rules-modal-label"
-            aria-modal="true" aria-hidden="true" data-bs-backdrop="static">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <article class="modal-content">
-                    <div class="modal-border">
-                        <header class="modal-header">
-                            <h2 id="rules-modal-label" class="modal-title">Game Rules</h2>
-                        </header>
-                        <section id="rules-modal-info" class="modal-body">
-                            <p>
-                                The goal of Codoku is to complete the grid so that every row,
-                                column, and 3x3 box contains the numbers 1 through 9.
-                            </p>
-                            <ul>
-                                <li>
-                                    Select a cell and then select a numbers key below the grid or
-                                    on your keyboard to place your answer.
-                                </li>
-                                <li>
-                                    Choose your difficulty and time before starting a new game.
-                                </li>
-                                <li>If you need a hint then press the check or clue button.</li>
-                            </ul>
-                        </section>
-                        <footer class="modal-footer">
-                            <button id="rules-modal-button" class="btn btn-dark" type="button"
-                                aria-label="Close game rules and return to game" data-bs-dismiss="modal">
-                                Back ↲
-                            </button>
-                        </footer>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <!-- Footer Section -->
-        <footer class="py-3 mt-auto" role="contentinfo">
-            <div class="container d-flex justify-content-between align-items-center text-white">
-                <!-- Social Media Icons -->
-                <section id="socials" class="my-2">
-                    <a href="https://www.facebook.com" target="_blank" id="facebook-link" class="text-black me-3"
-                        aria-label="Facebook Page">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <span class="visually-hidden">Facebook</span>
-                    </a>
-                    <a href="https://www.instagram.com" target="_blank" id="instagram-link" class="text-black me-3"
-                        aria-label="Instagram Page">
-                        <i class="fa-brands fa-instagram"></i>
-                        <span class="visually-hidden">Instagram</span>
-                    </a>
-                    <a href="https://www.twitter.com" target="_blank" id="x-link" class="text-black me-3"
-                        aria-label="X Page">
-                        <i class="fa-brands fa-x-twitter"></i>
-                        <span class="visually-hidden">X</span>
-                    </a>
-                </section>
-                <!-- Copyright Message -->
-                <aside id="copyright-info" class="small text-black text-end">
-                    <p class="my-2">&copy; 2025 Codoku Game Project</p>
-                </aside>
-            </div>
-        </footer>
-        <!-- JavaScript Dependencies -->
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-            crossorigin="anonymous"></script>
-        <!-- Modular JavaScript Files -->
-        <script src="assets/script/navbar.js"></script>
-        <script src="assets/script/sound.js"></script>
-        <script src="assets/script/theme.js"></script>
-        <script src="assets/script/init.js"></script>
-        <script src="assets/script/game.js"></script>
-        <!-- Font Awesome -->
-        <script src="https://kit.fontawesome.com/00ece23e82.js" crossorigin="anonymous"></script>
+    </main>
+    <!-- Rules Modal -->
+    <section id="rules-modal" class="modal fade" tabindex="-1" role="dialog" aria-describedby="rules-modal-info"
+        aria-labelledby="rules-modal-label" aria-modal="true" aria-hidden="true" data-bs-backdrop="static">
+        <h2 class="visually-hidden">Rules Modal</h2>
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <article class="modal-content">
+                <div class="modal-border">
+                    <header class="modal-header">
+                        <h2 id="rules-modal-label" class="modal-title">Game Rules</h2>
+                    </header>
+                    <section id="rules-modal-info" class="modal-body">
+                        <h2 class="visually-hidden">How to Play</h2>
+                        <p>
+                            The goal of Codoku is to complete the grid so that every row,
+                            column, and 3x3 box contains the numbers 1 through 9.
+                        </p>
+                        <ul>
+                            <li>
+                                Select a cell and then select a numbers key below the grid or
+                                on your keyboard to place your answer.
+                            </li>
+                            <li>
+                                Choose your difficulty and time before starting a new game.
+                            </li>
+                            <li>If you need a hint then press the check or clue button.</li>
+                        </ul>
+                    </section>
+                    <footer class="modal-footer">
+                        <button id="rules-modal-button" class="btn btn-dark" type="button"
+                            aria-label="Close game rules and return to game" data-bs-dismiss="modal">
+                            Back ↲
+                        </button>
+                    </footer>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="py-3 mt-auto">
+        <div class="container d-flex justify-content-between align-items-center text-white">
+            <!-- Social Media Icons -->
+            <section id="socials" class="my-2">
+                <h2 class="visually-hidden">Game Socials</h2>
+                <a href="https://www.facebook.com" target="_blank" id="facebook-link" class="text-black me-3"
+                    aria-label="Facebook Page">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <span class="visually-hidden">Facebook</span>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" id="instagram-link" class="text-black me-3"
+                    aria-label="Instagram Page">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span class="visually-hidden">Instagram</span>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" id="x-link" class="text-black me-3"
+                    aria-label="X Page">
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <span class="visually-hidden">X</span>
+                </a>
+            </section>
+            <!-- Copyright Message -->
+            <aside id="copyright-info" class="small text-black text-end">
+                <p class="my-2">&copy; 2025 Codoku Game Project</p>
+            </aside>
+        </div>
+    </footer>
+    <!-- JavaScript Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <!-- Modular JavaScript Files -->
+    <script src="assets/script/navbar.js"></script>
+    <script src="assets/script/sound.js"></script>
+    <script src="assets/script/theme.js"></script>
+    <script src="assets/script/init.js"></script>
+    <script src="assets/script/game.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/00ece23e82.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
