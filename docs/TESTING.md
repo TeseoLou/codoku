@@ -581,3 +581,51 @@ The color contrast checker in WAVE verified that all text met the WCAG 2.1 minim
 *Strong contrast between foreground and background ensures readability for visually impaired users.*
 
 This ensures the page remains accessible to users with low vision or color blindness.
+
+### **6.2.2 Accessibility Checker Testing**
+
+To further ensure Codoku’s compliance with WCAG 2.2 accessibility standards, automated testing was conducted using [AccessibilityChecker.org](https://www.accessibilitychecker.org/). This tool scans pages for common accessibility issues across categories including semantic structure, ARIA usage, visual contrast, interaction behavior, and assistive technology compatibility.
+
+AccessibilityChecker evaluates each page against critical and non-critical criteria, assigning an audit score and flagging required manual audits. It is particularly useful for identifying violations that may affect screen reader users, keyboard-only navigation, and overall structural clarity.
+
+The audit includes:
+- **Automated checks**: e.g., landmark nesting, heading structure, focusable elements, ARIA attribute validation.
+- **Manual audit prompts**: e.g., screen reader behavior, dynamic content focus, and visible focus indicators.
+- **Severity grading**: Issues are classified as critical, passed, manual, or not applicable based on WCAG 2.2.
+
+Each page was tested individually and iteratively updated based on feedback until a **100% audit score** was achieved. The following subsections document findings and resolutions for each HTML file.
+
+#### **`index.html` Results**
+
+The `index.html` page was audited using and the initial scan reported 4 critical issues, placing the page in a *Not Compliant* state with an audit score of 89%.
+
+![AccessibilityChecker initial audit – index.html scored 89% and flagged 4 critical WCAG 2.2 issues]()
+*Initial audit result showing non-compliance due to 4 critical issues and a score below the recommended accessibility threshold.*
+
+#### ⚠️ Flagged Issues and Fixes
+
+**1. Complementary Landmarks Nested Incorrectly**  
+- **Issue**: Three `<aside>` elements were improperly nested inside other ARIA landmarks such as `<main>` or `<footer>`.  
+- **Why It Matters**: The `<aside>` element represents complementary content and must not be nested within primary content regions. Nesting it incorrectly can confuse screen reader users who rely on proper landmark structure.  
+- **Fix Applied**: Each `<aside>` was changed to a `<div>` element.
+
+**2. Heading Lacked Discernible Text**  
+- **Issue**: A heading (`<h2 id="clear">`) only contained an icon with no readable or spoken text.  
+- **Why It Matters**: All headings must include meaningful content that is either visually visible or screen-reader accessible. This helps users understand page hierarchy and purpose.  
+- **Fix Applied**: A visually hidden but screen-readable span was added:
+  ```html
+  <h2 id="clear">
+    <i class="fa-solid fa-delete-left" aria-hidden="true"></i>
+    <span class="visually-hidden">Clear Cell</span>
+  </h2>
+  ```
+This ensures assistive technology can read the heading without affecting the visual design.
+
+#### ✅ Final Result: Compliant
+
+After applying the necessary changes, the page was re-tested and passed all criteria, achieving a 100% audit score and full WCAG 2.2 compliance.
+
+![AccessibilityChecker audit result – index.html passed with 100% compliance](figures)
+*Audit confirmation showing full compliance with WCAG 2.2 standards and a perfect accessibility score.*
+
+The `index.html` page is now **fully compliant**, scoring **100%** in both automated and manual accessibility audits.
