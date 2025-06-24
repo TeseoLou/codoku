@@ -320,3 +320,121 @@ The script is clean, well-commented, and uses modular logic to keep the theme fu
 
 ![JSHint result for theme.js](figures/validation/theme.webp)  
 *JSHint analysis of `theme.js` confirming one globally declared dependency and otherwise sound, accessible logic*
+
+### **6.2 Accessibility Testing**
+
+Accessibility is a core consideration in the development of Codoku, ensuring that the game is usable by people of all abilities and assistive technologies. The goal was to create an inclusive experience by following the principles of WCAG 2.1 (Web Content Accessibility Guidelines), focusing on perceivability, operability, understandability, and robustness.
+
+Accessibility testing was conducted using both **automated tools** and **manual techniques** to evaluate:
+
+- **Semantic HTML structure** - Ensuring that elements such as headings, landmarks, and lists follow a logical order and meaningful structure.
+
+- **ARIA roles and labels** - Verifying that interactive components (e.g. modals, toggles, buttons) use appropriate `aria-*` attributes for screen reader compatibility.
+
+- **Keyboard navigation** - Manually testing tab order, focus states, and accessibility of all interactive elements without using a mouse.
+
+- **Color contrast and visual clarity** - Validated via automated tools and manual inspection to meet contrast ratio requirements, especially between text and background in both light and dark modes.
+
+- **Alt text for images** - Confirming that all decorative and informative images include appropriate `alt` attributes to provide context to screen reader users.
+
+- **Screen reader simulation** - Using NVDA to assess how the application content is announced and navigated.
+
+#### **Tools Used for Accessibility Testing**
+
+| Tool | Description |
+|------|-------------|
+| [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) | Identifies structural and semantic issues, including missing alt attributes, headings, and ARIA landmarks. |
+| [Accessibility Checker by CKSource](https://www.accessibilitychecker.org/) | Provides quick audits and visual feedback on accessibility issues in real time. |
+| [Google Chrome Lighthouse](https://developer.chrome.com/docs/lighthouse) | Generates automated accessibility reports covering contrast, ARIA usage, keyboard support, and more. |
+| [axe DevTools (Deque Systems)](https://axe.deque.com/install-success) | Browser extension used in developer tools to find and explain WCAG violations within the app. |
+| [NVDA (NonVisual Desktop Access)](https://www.nvaccess.org/about-nvda/) | Screen reader for Windows used to test how visually impaired users experience and navigate the app. |
+
+### **6.2.1 WAVE Accessibility Testing**
+
+[WAVE](https://wave.webaim.org/) (Web Accessibility Evaluation Tool) is an automated tool developed by WebAIM for assessing accessibility issues directly within web pages. It identifies errors, warnings (alerts), structural elements, and ARIA usage while visually overlaying them on the interface for quick interpretation.
+
+#### **`index.html` Results**
+
+The following results summarize the evaluation of `index.html` using WAVE, along with screenshots that document the results and key observations.
+
+![WAVE summary result](figures/wave/summary.webp)   
+*WAVE accessibility summary for index.html showing no errors and several structural or semantic suggestions*
+
+#### ⚠️ Alerts
+The majority of alerts were related to *Possible heading* issues.
+
+WAVE flagged 61 elements due to the use of visually prominent styles (e.g. bold or larger text inside `<p>` tags) in the Sudoku grid. These elements were interpreted as potential headings even though they were intentionally not semantic headings.
+
+![Cell grid elements flagged by wave](figures/wave/alerts.webp)  
+*WAVE accessibility scan showing multiple "possible heading" alerts (orange h? icons) across a Sudoku grid.*
+
+These alerts do not indicate code errors but are suggestions to assess whether additional heading structure might benefit assistive technology users. In this case, the elements should not be semantic headings, as they represent game data and not content sections. The alert was reviewed and accepted as not requiring a change.
+
+Wave also flagged 2 *HTML5 audio/video* alerts. These refer to the use of `<audio>` elements. WAVE flags these to ensure that alternative content is present for users with hearing impairments or that audio is not played automatically. In **Codoku** these `<audio>` tags are responsible for the `error` and `timeout` alert sounds which are non-autoplay and do not contain controls as they are programmatically operated.
+
+#### ✅ Accessibility Enhancements
+| Feature Type   | Count | Explanation                                                                 |
+|----------------|-------|-----------------------------------------------------------------------------|
+| Form Labels    | 9     | Each toggle or radio input has an associated `<label>`.                     |
+| Fieldsets      | 3     | Radio inputs (difficulty, timer) are grouped in `<fieldset>` containers.   |
+| Language       | 1     | `lang="en"` is declared in the `<html>` tag for screen reader compatibility.|
+
+![13 features identified by wave](figures/wave/features.webp)  
+*Accessibility features detected by WAVE such as labels, fieldsets, and language setting.*
+
+These features improve screen reader interpretation, group related content meaningfully, and promote proper pronunciation of content.
+
+#### 🧱 Semantic Layout
+| Element Type       | Count | Purpose                                                                   |
+|--------------------|-------|---------------------------------------------------------------------------|
+| Heading Level 1    | 2     | Used for top-level titles (e.g., modals or main page header).             |
+| Heading Level 2    | 36    | Used for modal titles, section headers, and UI labels.                    |
+| Unordered Lists    | 2     | Represent bullet points or grouped navigation content.                    |
+| **Semantic Landmarks** |||
+| - Header           | 1     | Defines site or app banner at top of page.                                |
+| - Navigation       | 1     | Provides primary nav links for the app.                                   |
+| - Main             | 1     | Contains central game content.                                            |
+| - Footer           | 1     | Houses credits and external links.                                        |
+| - Aside            | 3     | Includes supporting areas like settings, rules, or instructions.          |
+
+![Semantic headings and structural elements](figures/wave/structural-elements.webp)   
+*Clear document structure with semantic use of headers, landmarks, and layout roles enhancing screen reader performance.*
+
+These elements support keyboard and screen reader navigation by defining meaningful page structure.
+
+#### 🗣️ Assistive Tech Support
+A total of 53 ARIA attributes were identified, used appropriately across the interface.
+
+| ARIA Type             | Example Use                                         |
+|-----------------------|-----------------------------------------------------|
+| `aria-label` / `aria-labelledby` | Describes toggles and modal labels               |
+| `aria-describedby`    | Links inputs or modals to descriptions               |
+| `aria-hidden`         | Hides decorative or duplicate elements               |
+| `aria-expanded`       | Indicates state of collapsible content               |
+| `aria-controls`       | Links toggles to their target elements               |
+| `aria-live`           | Ensures dynamic feedback is announced                |
+| `aria-tabindex`       | Manages keyboard focus behavior                      |
+
+![ARIA attributes identified in WAVE](figures/wave/aria.webp)  
+*WAVE detected 53 properly used ARIA attributes supporting accessibility, including labels, hidden states, and live regions.*
+
+No misuse, duplication, or inconsistencies were found during the ARIA attribute audit. These attributes significantly improve context for users relying on screen readers.
+
+#### ⌨️ Keyboard Accessibility
+Using WAVE’s Order panel, the keyboard tab order was confirmed to be logical, linear, and intuitive. The navigation follows a top-to-bottom, left-to-right flow that matches the visible layout.
+
+![Navigation order panel showing tab sequence](figures/wave/navigation-order.webp)  
+*Logical and sequential keyboard navigation order as tested through WAVE’s Order panel, ensuring user-friendly interaction.*
+
+This ensures that users navigating by keyboard or screen reader can access all functions without confusion or disorientation.
+
+#### **👁️ Contrast Validation**
+The WAVE contrast checker evaluates color pairings against the [WCAG 2.1](https://www.w3.org/WAI/WCAG21/quickref/) contrast criteria:
+
+- **WCAG AA**: Minimum contrast ratio of **4.5:1** for normal text
+- **WCAG AAA**: Minimum contrast ratio of **7:1** for enhanced accessibility
+
+![Contrast test result](figures/wave/contrast.webp)  
+*WAVE contrast checker result for Codoku showing high readability and full WCAG compliance*
+
+This result indicates that the interface text meets both standard and enhanced guidelines for readability.
