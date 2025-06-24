@@ -321,7 +321,7 @@ The script is clean, well-commented, and uses modular logic to keep the theme fu
 ![JSHint result for theme.js](figures/validation/theme.webp)  
 *JSHint analysis of `theme.js` confirming one globally declared dependency and otherwise sound, accessible logic*
 
-### **6.2 Accessibility Testing**
+## **6.2 Accessibility Testing**
 
 Accessibility is a core consideration in the development of Codoku, ensuring that the game is usable by people of all abilities and assistive technologies. The goal was to create an inclusive experience by following the principles of WCAG 2.1 (Web Content Accessibility Guidelines), focusing on perceivability, operability, understandability, and robustness.
 
@@ -438,3 +438,146 @@ The WAVE contrast checker evaluates color pairings against the [WCAG 2.1](https:
 *WAVE contrast checker result for Codoku showing high readability and full WCAG compliance*
 
 This result indicates that the interface text meets both standard and enhanced guidelines for readability.
+
+#### **`about.html` Results**
+
+The following results summarize the WAVE accessibility evaluation of the `about.html` page. 
+
+![WAVE summary result for about.html](figures/wave/summary-about.webp)  
+*Accessibility summary from WAVE showing no errors, no contrast issues, and several positive features.*
+
+#### ✅ Accessibility Enhancements
+| Feature Type     | Count | Explanation                                                                            |
+|------------------|-------|----------------------------------------------------------------------------------------|
+| Alternative Text | 3     | All decorative and content images include descriptive `alt` text for screen readers.  |
+| Form Labels      | 2     | Inputs and controls (if any) are correctly labeled with `<label>` elements.           |
+| Language         | 1     | The document includes a `lang="en"` attribute to assist with pronunciation.           |
+
+![Features panel](figures/wave/features-about.webp)  
+*WAVE reports all form labels, image alt text, and language metadata are properly implemented.*
+
+#### 🧱 Semantic Layout
+| Element Type       | Count | Purpose                                                                  |
+|--------------------|-------|--------------------------------------------------------------------------|
+| Heading Level 1    | 1     | Used for the main page heading (“About”).                                |
+| Heading Level 2    | 8     | Applied to each major section (e.g., content segments, modals).          |
+| Unordered Lists    | 2     | Used to present bullet point information.                                |
+| **Semantic Landmarks** |||
+| - Header           | 1     | Contains branding and page title.                                        |
+| - Navigation       | 1     | Provides primary links to other parts of the site.                        |
+| - Main             | 1     | Wraps the primary content of the about page.                             |
+| - Footer           | 1     | Includes social links and acknowledgements.                              |
+| - Aside            | 2     | Houses supporting content like rules and accessibility notices.          |
+
+![Structural layout screenshot](figures/wave/structural-elements-about.webp)  
+*Clear heading structure and proper use of semantic regions enhance screen reader and keyboard navigation.*
+
+#### 🗣️ Assistive Tech Support
+A total of 32 ARIA attributes were identified and correctly applied throughout the page.
+
+| ARIA Type           | Example Use                                                |
+|---------------------|------------------------------------------------------------|
+| `aria-label`        | Identifies buttons and landmarks (e.g., menu toggle).      |
+| `aria-description`  | Supports screen readers by giving context to complex items.|
+| `aria-hidden`       | Hides non-essential or visual-only elements from AT users. |
+| `aria-tabindex`     | Maintains accessible focus order for modals and controls.  |
+| `aria-expanded`     | Indicates open/close state of collapsible UI elements.     |
+| `aria-popup`        | Alerts assistive tools about modal behavior when triggered.|
+
+![ARIA results for about.html](figures/wave/aria-about.webp)  
+*WAVE detected structured and properly scoped ARIA usage supporting screen reader accuracy and dynamic UI interaction.*
+
+No errors or duplications were flagged, and all ARIA implementations followed best practice.
+
+#### ⌨️ Keyboard Accessibility
+The tab order was linear, logical, and matched the visual layout of the page. No keyboard traps were found, and the order prioritized major sections first (theme/sound switches, main nav, content, then external links).
+
+![Keyboard tab sequence](figures/wave/navigation-order-about.webp)  
+*Sequential keyboard navigation order ensuring smooth screen reader and tabbing behavior.*
+
+#### 👁️ Contrast Validation
+Contrast checks performed on the `about.html` page yielded **no failures**. All text foreground/background color pairings meet or exceed WCAG 2.1 AA and AAA standards.
+
+![Contrast checker result](figures/wave/contrast-about.webp)  
+*Text contrast meets accessibility standards for all text sizes and themes.*
+
+#### **`error.html` Results**
+
+The following results summarize the WAVE accessibility evaluation of `error.html`, Codoku’s 404 error page. 
+
+![WAVE summary result for error.html](figures/wave/summary-404.webp)  
+*WAVE accessibility summary showing zero errors and a well-structured layout.*
+
+#### ✅ Accessibility Enhancements
+| Feature Type   | Count | Explanation                                                             |
+|----------------|-------|-------------------------------------------------------------------------|
+| Alternative Text | 1   | All relevant images include descriptive alt text for screen readers.   |
+| Form Labels    | 2     | Form inputs (e.g., toggle switches) are correctly associated with labels.|
+| Language       | 1     | `lang="en"` is declared in the `<html>` element for screen reader support.|
+
+![WAVE features - error.html](figures/wave/features-404.webp)  
+*Detected accessibility features including form labels, language attribute, and appropriate image alt text.*
+
+These enhancements help ensure compatibility with screen readers and improve usability for users with assistive technology.
+
+#### 🧱 Semantic Layout
+| Element Type       | Count | Purpose                                                             |
+|--------------------|-------|---------------------------------------------------------------------|
+| Heading Level 1    | 1     | Defines the main title of the error message.                        |
+| Heading Level 2    | 6     | Used to label sections or explain content visually.                 |
+| Unordered Lists    | 2     | Present grouped navigation or links.                                |
+| **Semantic Landmarks** |||
+| - Navigation       | 1     | Contains main navigation links.                                     |
+| - Main             | 1     | Hosts the central content and visual of the error message.          |
+| - Footer           | 1     | Provides social links and site credits.                             |
+| - Aside            | 2     | Includes supporting details such as rules or extra messages.        |
+
+![WAVE structural elements - error.html](figures/wave/structural-elements-404.webp)  
+*Logical semantic structure with proper landmarks and header levels enhances navigability.*
+
+This structure improves orientation, keyboard navigation, and screen reader parsing by following a meaningful page hierarchy.
+
+#### 🗣️ Assistive Tech Support
+A total of 32 ARIA attributes were identified on the page, applied appropriately to enrich accessibility.
+
+| ARIA Type             | Example Use                                            |
+|-----------------------|--------------------------------------------------------|
+| `aria-label`          | Provides names for toggles and links.                  |
+| `aria-describedby`    | Connects interactive elements to additional instructions. |
+| `aria-hidden`         | Hides decorative icons from assistive tech.            |
+| `aria-expanded`       | Indicates visibility status of collapsible content.    |
+| `aria-tabindex`       | Controls keyboard tab flow.                            |
+| `aria-popup`          | Describes elements that trigger popups or modals.      |
+
+![ARIA attributes in error.html](figures/wave/aria-404.webp)  
+*WAVE audit showing extensive, correctly used ARIA attributes for screen reader compatibility.*
+
+No issues or redundant uses were detected, confirming a well-implemented ARIA layer.
+
+#### ⌨️ Keyboard Accessibility
+WAVE’s Order panel confirmed that tab navigation flows in a logical and predictable manner. The sequence reflects visual positioning and groups related items logically.
+
+| Tab Order | Element Description                     |
+|-----------|------------------------------------------|
+| 1         | Switch: Display                          |
+| 2         | Switch: Sound                            |
+| 3         | Button: Game                             |
+| 4         | Button: About                            |
+| 5         | Button: Rules (links to rules modal)     |
+| 6         | Button: Return to homepage               |
+| 7         | Link: Facebook Page                      |
+| 8         | Link: Instagram Page                     |
+| 9         | Link: X Page                             |
+
+![WAVE tab order - error.html](figures/wave/navigation-order-404.webp)  
+*Keyboard tab order confirmation showing clear and linear focus path.*
+
+This helps keyboard users reach all interactive content without confusion or barriers.
+
+#### **👁️ Contrast Validation**
+The color contrast checker in WAVE verified that all text met the WCAG 2.1 minimum standards:
+
+![Contrast result for error.html](figures/wave/contrast-404.webp)  
+*Strong contrast between foreground and background ensures readability for visually impaired users.*
+
+This ensures the page remains accessible to users with low vision or color blindness.
