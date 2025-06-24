@@ -17,10 +17,14 @@ Codoku was tested using a combination of **automated tools** and **manual techni
 
 All issues discovered during testing were documented and resolved, and results are detailed in this document along with screenshots to verify successful validation.
 
-
 ## **6.1 Code Validation**
+Validation ensures that the code behind Codoku adheres to current web standards and best practices, helping improve reliability, maintainability, and browser compatibility. 
 
-### **6.1.2 HTML Validation**
+All HTML, CSS, and JavaScript files were passed through official validation tools such as the [W3C Markup Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), and [JSHint](https://jshint.com/). 
+
+This process helped identify and resolve syntax errors, semantic issues, accessibility oversights, and outdated or unsupported syntax ensuring the final product is stable, clean, and standards-compliant.
+
+### **6.1.1 HTML Validation**
 
 All HTML files (`index.html`, `about.html`, and `404.html`) were validated using the [W3C Markup Validation Service](https://validator.w3.org/). This process checks for syntax errors, deprecated tags, improperly nested elements, and other violations of the HTML5 specification.
 
@@ -196,7 +200,7 @@ The `init.js` file contains logic related to page initialization and UI setup. I
 
 No functional or structural issues were flagged, and the code was confirmed as valid and browser-ready.
 
-![JSHint result for init.js](./assets/testing/init-js-jshint.png)  
+![JSHint result for init.js](figures/validation/init.webp)  
 *JSHint analysis summary for `init.js` showing no major issues and clean logic structure*
 
 #### **`game.js` Results**
@@ -240,7 +244,7 @@ if (response && response.responseText) {
 
 This alternative performs the same check in a way that is compatible with ES5/ES6 environments. It ensures the error message is displayed correctly without relying on modern syntax. This change was made specifically in the `fetchSudokuBoard()` function to ensure broader browser support.
 
-![JSHint result for game.js](./assets/testing/game-js-jshint.png)  
+![JSHint result for game.js](figures/validation/game.webp)  
 *JSHint validation for `game.js` showing clean structure, modular logic, and minor contextual warnings*
 
 #### **`navbar.js` - Results**
@@ -261,7 +265,7 @@ These warnings are considered **contextually valid**:
 
 No syntax errors or structural flaws were found. The logic follows best practices for DOM event handling, modal interaction, and clean integration with Bootstrap’s JavaScript components.
 
-![JSHint result for navbar.js](./assets/testing/navbar-js-jshint.png)  
+![JSHint result for navbar.js](figures/validation/navbar.webp)  
 *JSHint validation for `navbar.js` showing minor external reference warnings and otherwise clean structure*
 
 #### **`setup-modal.js` - Results**
@@ -283,7 +287,7 @@ These undefined variables are expected in this context:
 
 JSHint flagged no functional errors or warnings in this file. The script is clean, minimal, and integrates well with the wider codebase.
 
-![JSHint result for setup-modal.js](./assets/testing/setup-modal-js-jshint.png)  
+![JSHint result for setup-modal.js](figures/validation/setup-modal.webp)  
 *JSHint validation for `setup-modal.js` confirming clean logic, appropriate modularity, and no critical issues*
 
 #### **`sound.js` - Results**
@@ -298,7 +302,7 @@ The `sound.js` file manages the user’s sound preferences for the application. 
 
 All logic is encapsulated and cleanly separated into modular functions (`applySoundSetting`, `setupSoundToggle`), enhancing maintainability and ensuring predictable behavior across the app. The `DOMContentLoaded` listener ensures correct initialization before any interaction can occur.
 
-![JSHint result for sound.js](./assets/testing/sound-js-jshint.png)  
+![JSHint result for sound.js](figures/validation/sound.webp)  
 *JSHint output for `sound.js` confirming clean, modular sound preference logic and no issues detected*
 
 #### **`theme.js` - Results**
@@ -314,5 +318,5 @@ The `theme.js` script is responsible for managing the application's visual theme
 
 The script is clean, well-commented, and uses modular logic to keep the theme functionality separated from the rest of the app. jQuery is used to streamline DOM manipulation, and the script also incorporates audio feedback through conditional playback of themed sound effects ("tweet" for light, "hoot" for dark).
 
-![JSHint result for theme.js](./assets/testing/theme-js-jshint.png)  
+![JSHint result for theme.js](figures/validation/theme.webp)  
 *JSHint analysis of `theme.js` confirming one globally declared dependency and otherwise sound, accessible logic*
