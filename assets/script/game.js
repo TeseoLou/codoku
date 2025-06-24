@@ -50,28 +50,28 @@ function renderEmptyGrid() {
             // Reference: https://stackoverflow.com/questions/31231945
             if ((col + 1) % 3 === 0 && col < 8) {
                 cell.addClass('right-border');
-            };
+            }
             if ((row + 1) % 3 === 0 && row < 8) {
                 cell.addClass('bottom-border');
-            };
+            }
             if (row === 0) {
                 cell.addClass('no-border-top');
-            };
+            }
             if (col === 0) {
                 cell.addClass('no-border-left');
-            };
+            }
             if (row === 8) {
                 cell.addClass('no-border-bottom');
-            };
+            }
             if (col === 8) {
                 cell.addClass('no-border-right');
-            };
+            }
             // Reference: https://stackoverflow.com/questions/19058606
             rowDiv.append(cell);
-        };
+        }
         gridContainer.append(rowDiv);
-    };
-};
+    }
+}
 
 /**
  * Fills the grid with values from the API-generated puzzle data.
@@ -99,10 +99,10 @@ function populateGrid(puzzleData) {
             this.textContent = '';
             this.classList.add('editable');
             this.style.cursor = 'pointer';
-        };
+        }
     });
     enableCellSelection();
-};
+}
 
 /**
  * Fetches a new Sudoku puzzle and solution from the API based on user-selected difficulty.
@@ -131,11 +131,15 @@ function fetchSudokuBoard() {
             populateGrid(puzzle);
         },
         error: function (response) {
-            console.error('Failed to retrieve puzzle data:', response?.responseText || 'No response text available');
+            if (response && response.responseText) {
+                console.error('Error:', response.responseText);
+            } else {
+                console.error('Error: No response');
+            }
             showAlertModal("❌ Could not fetch a new puzzle. Please check your internet connection or try again later.");
         }
     });
-};
+}
 
 /**
  * Enables interaction with user-editable cells via clicks, keyboard input, and number buttons.
@@ -162,12 +166,12 @@ function enableCellSelection() {
     $(document).on('keydown', function (event) {
         if (!selectedCell) {
             return;
-        };
+        }
         // Reference: https://api.jquery.com/hasClass/
         const isAllowed = $(selectedCell).hasClass('editable');
         if (!isAllowed) {
             return;
-        };
+        }
         // Reference: https://stackoverflow.com/questions/38955573
         if (event.key >= '1' && event.key <= '9') {
             // Reference: https://iamhuzaifa.medium.com/keyboard-event-codes-javascript-project-aec43bb7bf79
@@ -190,7 +194,7 @@ function enableCellSelection() {
         $(this).on('click', function () {
             if (!selectedCell || !$(selectedCell).hasClass('editable')) {
                 return;
-            };
+            }
             // Reference: https://www.tutorialrepublic.com/jquery-tutorial/jquery-getter-and-setter.php
             const val = $(this).text();
             // Reference: https://forum.freecodecamp.org/t/need-help-on-step-70-javascript/695562
@@ -200,7 +204,7 @@ function enableCellSelection() {
             soundEffects.play("key");
         });
     });
-};
+}
 
 /**
  * Compares the player's current input with the solution and highlights any incorrect entries.
@@ -215,7 +219,7 @@ function checkUserInput() {
     updateHintsDisplay();
     if (!currentSolution) {
         return;
-    };
+    }
     // Reference: https://stackoverflow.com/questions/47168607
     $('.editable').each(function () {
         const cell = $(this);
@@ -231,9 +235,9 @@ function checkUserInput() {
             cell.removeClass('incorrect');
         } else {
             cell.addClass('incorrect');
-        };
+        }
     });
-};
+}
 
 /**
  * Reveals the correct number in a random empty cell as a hint.
@@ -260,7 +264,7 @@ function revealHint() {
     });
     if (blanks.length === 0) {
         return;
-    };
+    }
     // Reference: https://timonweb.com/javascript/how-to-get-a-random-value-from-a-javascript-array/
     const pick = blanks[Math.floor(Math.random() * blanks.length)];
     const cell = $(pick);
@@ -327,8 +331,8 @@ function updateDifficultyDisplay() {
         // Reference: https://accreditly.io/articles/how-to-get-the-sibling-or-next-element-in-javascript
         const level = difficultyLevel.nextElementSibling.textContent;
         $('#difficulty').text(`Difficulty: ${level}`);
-    };
-};
+    }
+}
 
 /**
  * Updates the timer display in the game stats area with the current countdown value.
@@ -345,7 +349,7 @@ function updateTimerDisplay() {
     const reformattedSeconds = seconds.toString().padStart(2, '0');
     // Reference: https://stackoverflow.com/questions/59747815
     $('#timer').text(`Timer: ${minutes}:${reformattedSeconds}`);
-};
+}
 
 /**
  * Updates the hint counter in the game stats to show how many hints the player has used.
@@ -367,7 +371,7 @@ function updateHintsDisplay() {
 function isBoardCompleteAndCorrect() {
     if (!currentSolution) {
         return false;
-    };
+    }
     // Reference: https://api.jquery.com/toArray/
     // Reference: https://www.geeksforgeeks.org/javascript-array-every-method/
     const allCorrect = $('.editable').toArray().every(cell => {
@@ -382,7 +386,7 @@ function isBoardCompleteAndCorrect() {
         return input === expected;
     });
     return allCorrect;
-};
+}
 
 /**
  * Checks whether every editable cell has some input, regardless of correctness.
@@ -401,7 +405,7 @@ function isBoardFilled() {
         return value !== '';
     });
     return allFilled;
-};
+}
 
 /**
  * Triggers a confetti animation to celebrate the player completing the puzzle.
@@ -416,7 +420,7 @@ function popConfetti() {
         spread: 100,
         origin: { y: 0.5 }
     });
-};
+}
 
 /**
  * Calculates and formats how much time has passed since the game started.
@@ -438,7 +442,7 @@ function formatElapsedTime() {
     else {
         return `${minutes}:${seconds.toString().padStart(2, '0')}`;
     }
-};
+}
 
 /**
  * Disables all user interaction with the Sudoku grid after puzzle completion.
@@ -457,10 +461,10 @@ function disablePuzzleInteraction() {
     $('.editable').each(function () {
         $(this)
             .removeClass('editable')
-            .prop('disabled', true)                      
-            .attr('aria-disabled', 'true')               
-            .attr('tabindex', '-1')                      
-            .css('pointer-events', 'none');              
+            .prop('disabled', true)
+            .attr('aria-disabled', 'true')
+            .attr('tabindex', '-1')
+            .css('pointer-events', 'none');
     });
 }
 
@@ -498,7 +502,7 @@ function triggerAutoWinCheck() {
         hasCelebrated = true;
         if (countdownInterval) {
             clearInterval(countdownInterval);
-        };
+        }
         const timeTaken = formatElapsedTime();
         // Reference: https://stackoverflow.com/questions/9618504
         const difficultyText = $('input[name="difficulty"]:checked').next('label').text();
@@ -516,7 +520,7 @@ function triggerAutoWinCheck() {
             // Reference: https://dev.to/pavelkeyzik/does-anyone-knows-how-to-change-current-time-of-song-correctly-in-javascript-2mkn
             errorAudio.currentTime = 0;
             errorAudio.play();
-        };
+        }
         // Reference: https://stackoverflow.com/questions/65764348
         setTimeout(() => {
             showAlertModal("🔍 Try again! It looks like there's an error somewhere!");
@@ -539,7 +543,7 @@ function endGameDueToTime() {
         // Reference: https://dev.to/pavelkeyzik/does-anyone-knows-how-to-change-current-time-of-song-correctly-in-javascript-2mkn
         alarmAudio.currentTime = 0;
         alarmAudio.play();
-    };
+    }
     // Reference: https://stackoverflow.com/questions/65764348
     setTimeout(() => {
         showAlertModal("⏰ Time's up! Better luck next time.");
@@ -550,7 +554,7 @@ function endGameDueToTime() {
         // Reference: https://stackoverflow.com/questions/8906520
         $(this).css('pointer-events', 'none');
     });
-};
+}
 
 /**
  * Starts a new game by generating a fresh board and resetting game state.
@@ -568,7 +572,7 @@ function startNewGame() {
     updateHintsDisplay();
     hasCelebrated = false;
     document.getElementById('cancel-button').style.display = 'inline-block';
-};
+}
 
 /**
  * Sets up all core event listeners once the DOM is fully loaded.
@@ -597,7 +601,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 soundEffects.play("hint");
             }, 10);
         });
-    };
+    }
     const hintButton = $('#hint-button');
     // Reference: https://dev.to/lavary/how-to-check-if-an-element-exists-in-javascript-with-examples-4mpb#:~:text=So%20to%20check%20if%20the,ll%20get%20a%20null%20value
     if (hintButton.length) {
@@ -609,7 +613,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 soundEffects.play("hint");
             }, 10);
         });
-    };
+    }
     document.getElementById("congrats-new-game").addEventListener("click", function () {
         const congratsModalElement = document.getElementById("congrats-modal");
         const bsCongratsModal = bootstrap.Modal.getInstance(congratsModalElement);

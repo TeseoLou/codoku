@@ -33,7 +33,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg bg-transparent sticky-top pt-3" aria-label="Main Navigation">
         <section class="container d-flex align-items-center justify-content-between">
-            <h2 class="visually-hidden">Menu</h2>
+            <h2 class="d-none">Menu</h2>
             <aside class="d-flex align-items-center gap-1">
                 <!-- Theme toggle -->
                 <div id="theme-toggle" class="d-flex align-items-center">
@@ -108,7 +108,7 @@
     <!-- Main Content -->
     <main class="flex-grow-1 d-flex flex-column justify-content-between">
         <!-- Game Stats -->
-        <h1 id="game-stats" class="visually-hidden">Game Stats</h1>
+        <h1 id="game-stats" class="d-none">Game Stats</h1>
         <section id="stats" class="d-flex justify-content-center gap-4">
             <h2 id="difficulty" class="game-stat" aria-live="polite">Difficulty:</h2>
             <h2 id="timer" class="game-stat" aria-live="polite">Timer:</h2>
@@ -116,12 +116,12 @@
         </section>
         <!-- Game -->
         <section id="game" class="container">
-            <h2 class="visually-hiddan">Game Area</h2>
+            <h2 class="d-none">Game Area</h2>
             <!-- Board-->
             <div id="grid"></div>
             <!-- Controls -->
             <fieldset id="numbers-container" class="border-0">
-                <legend class="visually-hidden">Select a Number</legend>
+                <legend class="d-none">Select a Number</legend>
                 <aside id="number-buttons" class="row justify-content-center">
                     <div id="buttons-below-6" class="d-flex justify-content-center col-12 col-md-6 gap-3 number-keys">
                         <h2 id="one">1</h2>
@@ -136,7 +136,7 @@
                         <h2 id="seven">7</h2>
                         <h2 id="eight">8</h2>
                         <h2 id="nine">9</h2>
-                        <h2 id="clear"><i class="fa-solid fa-delete-left"></i><span class="visually-hidden">Clear
+                        <h2 id="clear"><i class="fa-solid fa-delete-left"></i><span class="d-none">Clear
                                 Cell</span></h2>
                     </div>
                 </aside>
@@ -146,7 +146,7 @@
     <!-- Rules Modal -->
     <section id="rules-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rules-modal-label"
         aria-modal="true" aria-hidden="true" data-bs-backdrop="static">
-        <h2 class="visually-hiddan">Rules Modal</h2>
+        <h2 class="d-none">Rules Modal</h2>
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <article class="modal-content">
                 <div class="modal-border">
@@ -154,7 +154,7 @@
                         <h2 id="rules-modal-label" class="modal-title">Game Rules</h2>
                     </header>
                     <section id="rules-modal-info" class="modal-body">
-                        <h2 class="visually-hiddan">Game Rules</h2>
+                        <h2 class="d-none">Game Rules</h2>
                         <p>
                             The goal of Codoku is to complete the grid so that every row,
                             column, and 3x3 box contains the numbers 1 through 9.
@@ -183,21 +183,21 @@
     <!-- Setup Modal -->
     <section id="setup-modal" class="modal fade" tabindex="-1" aria-labelledby="setup-modal-label"
         aria-describedby="setup-modal-content" aria-hidden="true">
-        <h2 class="visually-hiddan">Setup Modal</h2>
+        <h2 class="d-none">Setup Modal</h2>
         <div class="modal-dialog modal-dialog-centered">
             <article class="modal-content setup-modal-custom">
-                <h2 id="setup-modal-label" class="modal-title visually-hidden">
+                <h2 id="setup-modal-label" class="modal-title d-none">
                     Setup Game
                 </h2>
                 <section id="setup-modal-content" class="modal-body">
-                    <h2 class="visually-hiddan">Game Setup</h2>
+                    <h2 class="d-none">Game Setup</h2>
                     <div class="modal-border">
                         <form id="setup-options" class="d-flex flex-column align-items-center"
                             aria-labelledby="setup-modal-label">
                             <fieldset id="difficulty-level" class="text-center mb-4 w-100">
                                 <legend>Difficulty Level</legend>
                                 <section id="difficulty-options" class="d-flex flex-wrap justify-content-center gap-3">
-                                    <h2 class="visually-hiddan">Game Difficulty</h2>
+                                    <h2 class="d-none">Game Difficulty</h2>
                                     <div class="form-check">
                                         <input type="radio" id="easy" class="form-check-input" name="difficulty"
                                             value="easy" checked>
@@ -218,7 +218,7 @@
                             <fieldset id="time-countdown" class="text-center w-100">
                                 <legend>Timer (Minutes)</legend>
                                 <section id="timer-options" class="d-flex flex-wrap justify-content-center gap-3">
-                                    <h2 class="visually-hiddan">Game Time</h2>
+                                    <h2 class="d-none">Game Time</h2>
                                     <div class="form-check">
                                         <input type="radio" id="time-none" class="form-check-input" name="time"
                                             value="none" checked>
@@ -259,7 +259,7 @@
     <!-- Congratulations Modal -->
     <section id="congrats-modal" class="modal fade" tabindex="-1" aria-labelledby="congrats-modal-label"
         aria-describedby="congrats-modal-body" aria-hidden="true">
-        <h2 class="visually-hiddan">Congratulations Modal</h2>
+        <h2 class="d-none">Congratulations Modal</h2>
         <div class="modal-dialog modal-dialog-centered">
             <article id="congrats-modal-content" class="modal-content text-center">
                 <div class="modal-border">
@@ -267,7 +267,7 @@
                         🎉 Congratulations!
                     </h2>
                     <section id="congrats-modal-body" class="modal-body">
-                        <h2 class="visually-hiddan">Game Celebration</h2>
+                        <h2 class="d-none">Game Celebration</h2>
                         <p id="message">You completed the puzzle!</p>
                         <p>
                             <strong>Difficulty:</strong>
@@ -293,7 +293,7 @@
     <!-- Hinted Win Modal -->
     <section id="hinted-win-modal" class="modal fade" tabindex="-1" aria-labelledby="hinted-win-label"
         aria-describedby="hinted-message" aria-hidden="true">
-        <h2 class="visually-hiddan">Hinted Win Modal</h2>
+        <h2 class="d-none">Hinted Win Modal</h2>
         <div class="modal-dialog modal-dialog-centered">
             <article class="modal-content">
                 <div class="modal-border">
@@ -301,7 +301,7 @@
                         <h2 id="hinted-win-label" class="modal-title text-center w-100">Puzzle Completed!</h2>
                     </header>
                     <section class="modal-body text-center">
-                        <h2 class="visually-hiddan">Game Feedback</h2>
+                        <h2 class="d-none">Game Feedback</h2>
                         <p id="hinted-message">You solved the puzzle with... some help.<br>
                             Great job! Next time, try using fewer hints for an extra challenge!</p>
                         <p><strong>Difficulty:</strong> <span id="hinted-difficulty"></span></p>
@@ -323,7 +323,7 @@
     <!-- Reusable Alert Modal -->
     <section id="alert-modal" class="modal fade" tabindex="-1" aria-labelledby="alert-modal-label"
         aria-describedby="alert-modal-message" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-        <h2 class="visually-hiddan">Alert Modal</h2>
+        <h2 class="d-none">Alert Modal</h2>
         <div class="modal-dialog modal-dialog-centered">
             <article class="modal-content">
                 <div class="modal-border">
@@ -333,7 +333,7 @@
                         </h2>
                     </header>
                     <section class="modal-body">
-                        <h2 class="visually-hiddan">Notification Message</h2>
+                        <h2 class="d-none">Notification Message</h2>
                         <p id="alert-modal-message" class="text-center">
                             This is an alert message.
                         </p>
@@ -350,7 +350,7 @@
     <!-- Confirm Navigation Modal -->
     <section id="confirm-leave-modal" class="modal fade" tabindex="-1" aria-labelledby="confirm-leave-label"
         aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-        <h2 class="visually-hiddan">Navigation Modal</h2>
+        <h2 class="d-none">Navigation Modal</h2>
         <div class="modal-dialog modal-dialog-centered">
             <article class="modal-content">
                 <div class="modal-border">
@@ -360,7 +360,7 @@
                         </h2>
                     </header>
                     <section class="modal-body text-center">
-                        <h2 class="visually-hiddan">Navigation Message</h2>
+                        <h2 class="d-none">Navigation Message</h2>
                         <p>
                             Your current game will be lost. Are you sure you want to leave?
                         </p>
@@ -382,21 +382,21 @@
         <div id="footer-content" class="container d-flex justify-content-between align-items-center text-white">
             <!-- Social Media Icons -->
             <section id="socials" class="my-2">
-                <h2 class="visually-hiddan">Game Socials</h2>
+                <h2 class="d-none">Game Socials</h2>
                 <a href="https://www.facebook.com" target="_blank" id="facebook-link" class="text-black me-3"
                     aria-label="Facebook Page">
                     <i class="fa-brands fa-facebook-f"></i>
-                    <span class="visually-hidden">Facebook</span>
+                    <span class="d-none">Facebook</span>
                 </a>
                 <a href="https://www.instagram.com" target="_blank" id="instagram-link" class="text-black me-3"
                     aria-label="Instagram Page">
                     <i class="fa-brands fa-instagram"></i>
-                    <span class="visually-hidden">Instagram</span>
+                    <span class="d-none">Instagram</span>
                 </a>
                 <a href="https://www.twitter.com" target="_blank" id="x-link" class="text-black me-3"
                     aria-label="X Page">
                     <i class="fa-brands fa-x-twitter"></i>
-                    <span class="visually-hidden">X</span>
+                    <span class="d-none">X</span>
                 </a>
             </section>
             <!-- Copyright Message -->

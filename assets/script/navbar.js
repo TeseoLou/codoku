@@ -39,7 +39,7 @@ function setupOutsideNavbarCollapse() {
             }
         }
     });
-};
+}
 
 /**
  * Handles UI interactions and navigation events once the DOM is ready.
@@ -87,6 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
                 window.location.href = href;
             }, 300);
-        })
-    })
-})
+        });
+    });
+});

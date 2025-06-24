@@ -11,7 +11,7 @@ function setupStartButton() {
     const startButton = document.getElementById("start-button");
     if (!startButton) {
         return;
-    };
+    }
     startButton.addEventListener("click", function () {
         const setupModal = $("#setup-modal");
         // Reference: https://getbootstrap.com/docs/5.3/components/modal/#methods
@@ -19,7 +19,7 @@ function setupStartButton() {
         if (setupModalBootstrap) {
             // Reference: https://getbootstrap.com/docs/5.0/components/modal/#hide
             setupModalBootstrap.hide();
-        };
+        }
         startNewGame();
     });
 }
