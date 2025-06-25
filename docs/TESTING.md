@@ -599,7 +599,7 @@ Each page was tested individually and iteratively updated based on feedback unti
 
 The `index.html` page was audited using and the initial scan reported 4 critical issues, placing the page in a *Not Compliant* state with an audit score of 89%.
 
-![AccessibilityChecker initial audit – index.html scored 89% and flagged 4 critical WCAG 2.2 issues]()
+![AccessibilityChecker initial audit scored 89% and flagged 4 critical WCAG 2.2 issues](figures/accessibilitychecker/index-initial.webp)
 *Initial audit result showing non-compliance due to 4 critical issues and a score below the recommended accessibility threshold.*
 
 #### ⚠️ Flagged Issues and Fixes
@@ -625,7 +625,7 @@ This ensures assistive technology can read the heading without affecting the vis
 
 After applying the necessary changes, the page was re-tested and passed all criteria, achieving a 100% audit score and full WCAG 2.2 compliance.
 
-![AccessibilityChecker audit result – index.html passed with 100% compliance](figures)
+![AccessibilityChecker audit result passed with 100% compliance](figures/accessibilitychecker/index-final.webp)
 *Audit confirmation showing full compliance with WCAG 2.2 standards and a perfect accessibility score.*
 
-The `index.html` page is now **fully compliant**, scoring **100%** in both automated and manual accessibility audits.
+The `index.html` page is now fully compliant, scoring 100% in both automated and manual accessibility audits.
