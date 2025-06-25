@@ -953,7 +953,7 @@ Desktop Performance:
 
 | Metric                        | Score / Time | Comments                                                  |
 |------------------------------|--------------|-----------------------------------------------------------|
-| **Performance Score**        | 96           | High score with fast load times and minimal blocking      |
+| **Performance Score**        | 94           | High score with fast load times and minimal blocking      |
 | **First Contentful Paint**   | 0.6s         | Quick time to initial content rendering                   |
 | **Largest Contentful Paint** | 1.5s         | Slight delay due to modal component; still performant     |
 | **Total Blocking Time**      | 0ms          | Excellent interactivity, no long script blocking          |
@@ -961,6 +961,14 @@ Desktop Performance:
 | **Speed Index**              | 0.8s         | Efficient rendering of above-the-fold content             |
 
 Mobile Performance:
+| Metric                        | Score / Time | Comments                                                                 |
+|------------------------------|--------------|--------------------------------------------------------------------------|
+| **Performance Score**        | 75           | Lower than desktop; expected due to mobile constraints and throttling    |
+| **First Contentful Paint**   | 1.9s         | Slightly delayed; Google Fonts and Bootstrap CSS contribute to this      |
+| **Largest Contentful Paint** | 5.5s         | Significantly delayed by modal rendering and font loading                |
+| **Total Blocking Time**      | 30ms         | Very low; good script deferral helped reduce interaction delays          |
+| **Cumulative Layout Shift**  | 0.033        | Very minimal; layout remains stable on mobile                            |
+| **Speed Index**              | 1.9s         | Acceptable but slowed slightly by font and image rendering               |
 
 
 Treemap Diagnostics:
@@ -1007,7 +1015,7 @@ While the overall performance of the site is strong, Lighthouse identified sever
      <script src="https://kit.fontawesome.com/00ece23e82.js" crossorigin="anonymous" async></script>
      ```
    - **Outcome:**  
-   After making these changes, my Lighthouse performance score improved from 96 to 97, showing a clear benefit to reducing render-blocking resources.
+   After making these changes, my Lighthouse performance score improved from 94 to 97, showing a clear benefit to reducing render-blocking resources.
 
 3. **LCP Image Not Preloaded**  
    - **Issue:** The background image used in the modal setup (which is the Largest Contentful Paint element) was not being preloaded.  
@@ -1030,4 +1038,42 @@ While the overall performance of the site is strong, Lighthouse identified sever
    - **Future Consideration:**  
      If this project were to move into a production environment, integrating a minified version of `game.js` using a simple tool like **MinifierJS** would be a quick win to further optimize load performance.
 
-Each of these improvements targets either load time, stability, or user safety — and offers clear next steps for future optimization cycles.
+4. **Loading Scripts**
+   - **Issue:** Initial load blocking caused by synchronous scripts on mobile.
+   - **Impact:** JavaScript delayed HTML parsing and DOM rendering.
+   - **My Research & Proposed Solution:**  
+     I found that using the `defer` attribute on all scripts ensures they load after the HTML is parsed, which improves interactivity without blocking rendering. This is especially beneficial for devices with lower CPU power like mobile phones.
+   - **Action Taken:**  
+     I updated all DOM-dependent scripts to use `defer`.
+   - **Outcome:**  
+     This slightly improved Total Blocking Time and was retained in the final code.
+
+5. **Loading Font Awesome**
+   - **Issue:** Third-party scripts were loading synchronously.
+   - **Impact:** Increased page load time without contributing to critical path rendering.
+   - **My Research & Proposed Solution:**  
+     I learned that Font Awesome can be loaded using `async` since it's non-blocking and doesn't rely on other scripts or DOM elements.
+   - **Action Taken:**  
+     Applied the `async` attribute to the Font Awesome CDN script.
+   - **Outcome:**  
+     Helped reduce render delay without affecting visual rendering.
+
+6. **LCP Image File Size**
+   - **Issue:** The LCP image was fairly large for mobile.
+   - **Impact:** Increased load time, especially under 4G throttling.
+   - **Action Taken:**  
+     I compressed the LCP background image and reduced the image size for the image modal.
+   - **Outcome:**  
+     Helped slightly, but render delay (not just size) was the main problem.
+
+7. **Modal as LCP Structure Limitation**
+   - **Issue:** The modal remains the largest element and is not above-the-fold initially.
+   - **Impact:** Browser delays rendering it, severely affecting LCP.
+   - **Reflection:**  
+     While optimizing the LCP image helped, the structural choice to make a modal the LCP element inherently limits performance on mobile.
+   - **Future Note:**  
+     A redesign that moves important visual elements into the visible area earlier may resolve this more effectively.
+
+The performance audit of `index.html` revealed strong results on desktop with a high Lighthouse score of 96, fast load times, and excellent interactivity. On mobile, performance was predictably lower, 75, due to render-blocking resources and the modal acting as the Largest Contentful Paint (LCP) element.
+
+Numerous optimizations were explored — including script deferral, font preloading, LCP image compression, and preload strategies — which marginally improved performance. These actions collectively increased the desktop performance score from 94 to 98 and the mobile score from 75 to 79. While some attempts (e.g., deferring Bootstrap CSS) negatively impacted mobile performance and were reverted, others (like deferring scripts and async-loading non-critical assets) provided measurable benefits.
