@@ -603,7 +603,6 @@ The `index.html` page was audited using and the initial scan reported 4 critical
 *Initial audit result showing non-compliance due to 4 critical issues and a score below the recommended accessibility threshold.*
 
 #### ⚠️ Flagged Issues and Fixes
-
 **1. Complementary Landmarks Nested Incorrectly**  
 - **Issue**: Three `<aside>` elements were improperly nested inside other ARIA landmarks such as `<main>` or `<footer>`.  
 - **Why It Matters**: The `<aside>` element represents complementary content and must not be nested within primary content regions. Nesting it incorrectly can confuse screen reader users who rely on proper landmark structure.  
@@ -622,10 +621,40 @@ The `index.html` page was audited using and the initial scan reported 4 critical
 This ensures assistive technology can read the heading without affecting the visual design.
 
 #### ✅ Final Result: Compliant
-
 After applying the necessary changes, the page was re-tested and passed all criteria, achieving a 100% audit score and full WCAG 2.2 compliance.
 
 ![AccessibilityChecker audit result passed with 100% compliance](figures/accessibilitychecker/index-final.webp)
 *Audit confirmation showing full compliance with WCAG 2.2 standards and a perfect accessibility score.*
 
-The `index.html` page is now fully compliant, scoring 100% in both automated and manual accessibility audits.
+### **`about.html` Results**
+
+Following the initial audit of `about.html`, the page scored **95%** due to two flagged issues involving improperly nested `<aside>` landmarks.
+
+![Automated Tests Passed – Initial Audit Result (95% Score)](figures/accessibilitychecker/about-initial.webp)  
+*Automated audit of `about.html` shows a 95% score with 2 critical issues pending resolution.*
+
+#### ⚠️ Flagged Issues and Fixes
+- **Issue**: The audit detected two `<aside>` elements that were incorrectly nested within `<main>` and `<footer>` regions. This violated the WCAG 2.2 guideline requiring that complementary landmarks (e.g. `<aside>`) not be nested inside other landmark roles such as `main`, `contentinfo`, or `banner`.
+
+- **Why It Matters**: Improper nesting can cause confusion for screen reader users, who rely on a clear and predictable landmark structure for navigating the page semantically.
+
+- **Fix Applied**: To resolve this issue, both `<aside>` elements were refactored into `<div>` elements. Since the affected containers did not function as true complementary regions—i.e., they didn't hold standalone supplemental content—the semantic role of `<aside>` was unnecessary and incorrectly applied.
+
+**Before:**
+```html
+<aside class="d-flex align-items-center gap-1">...</aside>
+<aside id="copyright-info">© 2025 Codoku Game Project</aside>
+```
+
+**After:**
+```html
+<div class="d-flex align-items-center gap-1">...</div>
+<div id="copyright-info">© 2025 Codoku Game Project</div>
+```
+This change preserved the visual and functional layout while restoring semantic correctness for assistive technologies.
+
+#### ✅ Final Result: Compliant
+After applying the fix, about.html was rescanned and passed all tests with a perfect 100% audit score, confirming full compliance with WCAG 2.2.
+
+![Final Accessibility Audit – 100% Compliant](figures/accessibilitychecker/about-final.webp)  
+*After addressing structural landmark issues, the `about.html` page achieved full WCAG 2.2 compliance with a perfect score.*
