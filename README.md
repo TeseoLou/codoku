@@ -2404,11 +2404,10 @@ Users click or tap the “Home” button to return to `index.html` (the Game pag
 Thorough testing was conducted to ensure that the Codoku game functions reliably, is accessible to a wide range of users, and performs well across devices and browsers. This process involved a combination of automated tools and manual testing techniques to validate the code, check for accessibility compliance, assess performance, and confirm that all features behave as expected.
 
 Key testing areas include:
-- Code validation (HTML, CSS, JavaScript)
-- Accessibility testing (automated and manual)
-- Lighthouse performance and best practices auditing
-- Feature functionality testing
-- Responsiveness across device sizes
-- Cross-browser compatibility
+- Code validation
+- Accessibility testing 
+- Performance Testing
+- Responsiveness and Cross-Browser Compatibility
+- User Stories and Feature Functionality
 
 For a full breakdown of all testing processes, tools used, and results, please refer to this [TESTING](docs/TESTING.md) document.

@@ -860,3 +860,122 @@ Key Passed Checks:
 
 ![Lighthouse 404 Accessibility Score 100](figures/lighthouse/404-desktop.webp)
 
+### 6.2.5 Screen Reader Accessibility Testing 
+
+Screen reader testing is a critical manual process to ensure that users relying on auditory feedback can navigate and understand a website's structure, content, and interactive features. While automated tools can check for technical correctness, they cannot evaluate usability from a blind user's perspective. 
+
+To thoroughly assess screen reader compatibility, I used NVDA (NonVisual Desktop Access), a free and widely respected screen reader for Windows, combined with keyboard-only navigation.
+
+| Test Area                             | Outcome | Notes                                                                 |
+|--------------------------------------|---------|-----------------------------------------------------------------------|
+| Headings are semantically structured | ✅      | Headings follow logical hierarchy (h1 → h2 → h3…)                     |
+| Links are descriptive                | ✅      | No "click here" or ambiguous links; all convey purpose independently |
+| Buttons have accessible labels       | ✅      | Buttons include visible text or `aria-label` when needed             |
+| Forms have associated labels         | ✅      | All input fields announced with their corresponding labels           |
+| Landmarks announced and navigable    | ✅      | NVDA recognized `<header>`, `<nav>`, `<main>`, `<footer>` etc.       |
+| Modals announce content on open      | ✅      | Focus moves to modal; content is announced properly                  |
+| Focus returns to trigger on close    | ✅      | After closing modals, focus returns to the last trigger              |
+| Grid cells readable to screen readers| ⚠️      | Grid cell values are read aloud, but cells lack semantic structure and labels for navigation |
+
+
+⚠️ **Grid Cell Screen Readability**:  
+Special attention was given to the Sudoku grid and number selection container, as these are inherently visual features. The grid is composed of `<p>` elements and styled containers to represent cells, which are not natively semantic. Screen readers interpret these elements based on their HTML role, not their visual layout.
+This presented a unique challenge:
+- Grid cells could be misinterpreted as headings due to visual styling (large font, bold text).
+- Interactive number buttons needed to be announced clearly with their role and label.
+
+To resolve this clear ARIA roles and `aria-label` attributes were added where possible and visually hidden text (`.visually-hidden`) was used to describe buttons. The result is a Sudoku grid that is screen reader-friendly without exposing unnecessary layout noise, allowing non-visual users to understand what is happening contextually when numbers are selected or errors occur. 
+
+The NVDA screen reader test confirmed that all key elements, headings, links, buttons, forms, and landmarks, were properly recognized and navigable. Additional effort was applied to optimize the grid and number selection areas, which were successfully adapted to ensure clarity and usability for screen reader users.
+
+### 6.2.6 Keyboard Navigation & Focus Management Testing
+
+Keyboard navigation is critical for ensuring that all users — including those with mobility impairments or who prefer not to use a mouse — can interact with a website effectively. This section tests that **Codoku** is fully navigable using only the keyboard through standard inputs like `Tab`, `Shift+Tab`, `Enter`, `Escape`, and the arrow keys.
+
+To conduct this test, the mouse was disabled, and the interface was explored solely using the keyboard. These checks help ensure a consistent, frustration-free experience for all users, especially those relying on assistive technologies.
+
+| Test Area                                | Outcome | Notes                                                                 |
+|------------------------------------------|---------|-----------------------------------------------------------------------|
+| `Tab` key reaches all focusable items    | ✅      | Navigation covers all buttons, toggles, links, and modals            |
+| `Shift+Tab` allows backward navigation   | ✅      | Reverse tabbing worked consistently                                  |
+| `Enter`/`Space` activates components     | ✅      | Buttons and links trigger actions as expected                        |
+| Arrow key navigation in controls         | ✅      | Used for toggling radio options like difficulty and timer            |
+| Modals can be exited with `Escape`       | ✅      | All modals close correctly and restore focus                         |
+| Focus order is logical and follows DOM   | ✅      | Navigation sequence matches visual layout                            |
+| Focus indicators are visible             | ✅      | Each interactive item shows clear visual focus cues                  |
+| No keyboard traps                        | ✅      | User can freely enter and exit all interactive regions               |
+| Skip link is present and functional      | ✅      | `Skip to content` link jumps directly to the main section            |
+| Keyboard interaction with toggle switches | ✅     | Theme and sound switches are now fully keyboard-operable with `Space`|
+| Inputting Sudoku numbers via keyboard    | ✅      | Once a cell is selected, number keys can input values as intended    |
+| Selecting individual Sudoku cells        | ❌      | Grid cells are not directly focusable or selectable via keyboard     |
+
+⚠️ **Grid Cell Selection via Keyboard**:   
+Although entering numbers works perfectly once a cell is selected, the cells themselves are not accessible via keyboard focus. They currently cannot be selected without a mouse. A suggested improvement in future development would be to implement each cell as a focusable element (e.g. a `<button>` or `<input>`), or apply `tabindex="0"` with keyboard event listeners and accessible `aria-label`'s. This would enable seamless keyboard interaction for grid navigation. Due to the limited time scope of the project, implementing full keyboard-accessible grid navigation was not feasible within the available development window. However, it remains a strong candidate for future accessibility enhancements, as the task involves significant structural and ARIA rewiring of the Sudoku grid.
+ 
+**Codoku** performs well in keyboard accessibility testing. Navigation order, focus indicators, modals, and interactive controls function as expected. With toggle switches fully operable and number inputs working, the main limitation is keyboard-based grid cell selection — resolving this would ensure full parity for non-pointer users.
+
+### **6.2.7 Interactive Accessibility Testing**
+Interactive accessibility testing focuses on how well dynamic and user-driven components function across different contexts and devices — especially for users with motor, cognitive, or sensory impairments. While screen readers and keyboard tests assess static and navigational content, this step ensures interactive experiences like modals, media, and mobile inputs behave accessibly.
+
+Testing included audio control accessibility, mobile responsiveness, touch target sizing, and support for accessibility-friendly zooming and gestures.
+
+| Test Area                        | Description                                                                                   | Result |
+|----------------------------------|-----------------------------------------------------------------------------------------------|--------|
+| Video/audio controls         | Ensure media is accessible, captions provided or non-critical (Codoku uses non-visible `<audio>`) | ✅     |
+| Media pause/play support     | No autoplaying media; all audio triggered intentionally via UI                               | ✅     |
+| Touch target sizing          | All interactive elements met WCAG recommended minimum of 44×44 pixels                         | ✅     |
+| Touchscreen gestures         | Tap, zoom, and scroll actions worked as expected on mobile                                   | ✅     |
+| Hover interactions           | All hover-dependent elements had fallback click interactions                                 | ✅     |
+| Zooming & scaling            | Layout retained structure and legibility at 200% text zoom and pinch-to-zoom                 | ✅     |
+| CAPTCHA accessibility        | No CAPTCHA used                                                                               | ✅     |
+| Error message readability    | Alert messages triggered via modals are screen-reader accessible                             | ✅     |
+
+All interactive features of Codoku, including modals, controls, and responsive layouts, functioned correctly with both keyboard and touch input. The game's `<audio>` elements are non-autoplay and used for feedback only, posing no barriers. The site’s responsiveness, zoom support, and absence of inaccessible CAPTCHA-style content confirm its usability across a variety of devices and assistive configurations.
+
+## 6.3 Performance Testing
+Performance testing ensures that the Codoku project provides a fast and responsive experience across a range of devices and networks. Fast load times and efficient code execution directly impact usability, user satisfaction, and search engine rankings. Performance is particularly important for mobile users and those on limited connections.
+
+To assess performance, a combination of automated tools were used:
+| Tool                             | Purpose                                                                 |
+|----------------------------------|-------------------------------------------------------------------------|
+| **Google Lighthouse**            | Repeatable audits for key performance metrics on desktop and mobile    |
+| **PageSpeed Insights**           | Live Google performance data and opportunities from real-world usage   |
+| **WebPageTest**                  | Detailed load sequence, filmstrip views, and HTTP waterfall diagnostics|
+| **Chrome DevTools (Network tab)**| Identify render-blocking resources, asset loading, and throttling tests|
+
+### **6.3.1 Lighthouse Testing**
+Lighthouse is an open-source, automated tool developed by Google to audit web performance, accessibility, SEO, and adherence to best practices. It simulates real-world conditions such as throttled mobile networks and underpowered devices, providing a repeatable, objective way to evaluate web experiences.
+
+For this project, Lighthouse was run in Chrome DevTools using desktop emulation and custom throttling settings. Additional diagnostics were explored through the Lighthouse Treemap Viewer to assess script weight and third-party contributions.
+
+#### **`index.html` Results**
+Performance:
+
+| Metric                        | Score / Time | Comments                                                  |
+|------------------------------|--------------|-----------------------------------------------------------|
+| **Performance Score**        | 94           | High score with fast load times and minimal blocking      |
+| **First Contentful Paint**   | 0.7s         | Quick time to initial content rendering                   |
+| **Largest Contentful Paint** | 1.5s         | Slight delay due to modal component; still performant     |
+| **Total Blocking Time**      | 0ms          | Excellent interactivity, no long script blocking          |
+| **Cumulative Layout Shift**  | 0.049        | Minimal shifting; layout is visually stable               |
+| **Speed Index**              | 0.8s         | Efficient rendering of above-the-fold content             |
+
+Treemap Diagnostics:
+- **Heaviest Asset:** jQuery (`28.9 KiB`) and Bootstrap bundle were the most significant scripts.
+- **Custom Game Logic:** Only `8.4 KiB`, very lightweight and efficient.
+- **Font Awesome Kit:** Moderate load time impact (~4.8 KiB JavaScript + fonts).
+- **No Main-Thread Blocking by Third Parties:** All third-party scripts were loaded asynchronously or deferred.
+
+Best Practices & SEO Summary:
+
+| Category           | Score | Comments                                                                 |
+|--------------------|-------|--------------------------------------------------------------------------|
+| **Best Practices** | 96    | Only minor issue: `play()` on audio failed without prior user interaction |
+| **SEO**            | 100   | Fully compliant; titles, descriptions, and semantic markup were present  |
+
+Additional best practices that passed:
+- Page uses HTTPS and avoids deprecated APIs
+- Images are displayed at correct aspect ratios
+- Inputs allow pasting and do not auto-request geolocation or notifications
+- HTML contains valid `viewport`, `doctype`, `charset`, and structured layout
+
