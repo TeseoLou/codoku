@@ -949,16 +949,19 @@ Lighthouse is an open-source, automated tool developed by Google to audit web pe
 For this project, Lighthouse was run in Chrome DevTools using desktop emulation and custom throttling settings. Additional diagnostics were explored through the Lighthouse Treemap Viewer to assess script weight and third-party contributions.
 
 #### **`index.html` Results**
-Performance:
+Desktop Performance:
 
 | Metric                        | Score / Time | Comments                                                  |
 |------------------------------|--------------|-----------------------------------------------------------|
-| **Performance Score**        | 94           | High score with fast load times and minimal blocking      |
-| **First Contentful Paint**   | 0.7s         | Quick time to initial content rendering                   |
+| **Performance Score**        | 96           | High score with fast load times and minimal blocking      |
+| **First Contentful Paint**   | 0.6s         | Quick time to initial content rendering                   |
 | **Largest Contentful Paint** | 1.5s         | Slight delay due to modal component; still performant     |
 | **Total Blocking Time**      | 0ms          | Excellent interactivity, no long script blocking          |
 | **Cumulative Layout Shift**  | 0.049        | Minimal shifting; layout is visually stable               |
 | **Speed Index**              | 0.8s         | Efficient rendering of above-the-fold content             |
+
+Mobile Performance:
+
 
 Treemap Diagnostics:
 - **Heaviest Asset:** jQuery (`28.9 KiB`) and Bootstrap bundle were the most significant scripts.
@@ -967,7 +970,6 @@ Treemap Diagnostics:
 - **No Main-Thread Blocking by Third Parties:** All third-party scripts were loaded asynchronously or deferred.
 
 Best Practices & SEO Summary:
-
 | Category           | Score | Comments                                                                 |
 |--------------------|-------|--------------------------------------------------------------------------|
 | **Best Practices** | 96    | Only minor issue: `play()` on audio failed without prior user interaction |
@@ -982,9 +984,27 @@ Additional best practices that passed:
 ⚠️ **Flagged Performance Issues & Recommendations**:  
 While the overall performance of the site is strong, Lighthouse identified several areas for optimization. These are outlined below with actionable recommendations for improvement:
 
-1. **🔧 Unused CSS Detected**
+1. **Unused CSS Detected**
     - **Issue:** Approx. `44 KiB` of Bootstrap CSS is unused on initial load.
     - **Impact:** Increases CSS payload unnecessarily, slowing render time.
-    - **Suggested Solution:** 
-    Create a **custom Bootstrap build** that includes only the utility classes and components your project uses. This method drastically reduces unused styles and improves load performance — especially helpful with large frameworks like Bootstrap.
-    - **Note:** While this is a highly effective optimization technique, it currently falls outside the scope of this project due to time constraints and limited experience customizing Bootstrap’s build process. This is acknowledged as a future enhancement opportunity for performance-focused development.
+    - **My Research & Proposed Solution:** Through research, I discovered that I could significantly reduce this overhead by creating a custom Bootstrap build containing only the specific utility classes and components used in my project. This technique is well-documented and widely recommended for optimizing performance when using large CSS frameworks.
+    - **Limitation:** While this would be an effective enhancement, I was not able to implement it due to limited experience with Bootstrap’s source compilation and the time constraints of the project. I have noted this as a valuable area for future development once time and familiarity with the Bootstrap build tools allow.
+
+2. **Render-Blocking Resources**
+   - **Issue:** jQuery and Bootstrap CSS were blocking the First Contentful Paint (FCP).
+   - **Impact:** Slowed down the browser's ability to display content quickly, affecting perceived performance and FCP scores.
+   - **My Research & Proposed Solution:** I researched techniques to reduce render-blocking behavior and found that non-critical JavaScript should be deferred, and independent third-party scripts can be asynchronously loaded. This allows the HTML parser to build the DOM without being interrupted by resource downloads.
+   - **Action Taken:** I applied the `defer` attribute to all DOM-dependent scripts and used `async` for the Font Awesome script, as it does not rely on the DOM or other scripts. This included:
+     ```html
+     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" defer></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" defer></script>
+     <script src="assets/script/navbar.js" defer></script>
+     <script src="assets/script/sound.js" defer></script>
+     <script src="assets/script/theme.js" defer></script>
+     <script src="assets/script/setup-modal.js" defer></script>
+     <script src="assets/script/init.js" defer></script>
+     <script src="assets/script/game.js" defer></script>
+     <script src="https://kit.fontawesome.com/00ece23e82.js" crossorigin="anonymous" async></script>
+     ```
+   - **Outcome:**  
+   After making these changes, my Lighthouse performance score improved from **96 to 98**, showing a clear benefit to reducing render-blocking resources.
