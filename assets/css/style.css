@@ -406,7 +406,6 @@ body.dark footer a:hover i {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    border-radius: 0;
     border: none;
     color: var(--color-black);
     box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.9);
