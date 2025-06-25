@@ -343,11 +343,11 @@ Accessibility testing was conducted using both **automated tools** and **manual 
 
 | Tool | Description |
 |------|-------------|
-| [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) | Identifies structural and semantic issues, including missing alt attributes, headings, and ARIA landmarks. |
-| [Accessibility Checker by CKSource](https://www.accessibilitychecker.org/) | Provides quick audits and visual feedback on accessibility issues in real time. |
-| [Google Chrome Lighthouse](https://developer.chrome.com/docs/lighthouse) | Generates automated accessibility reports covering contrast, ARIA usage, keyboard support, and more. |
-| [axe DevTools (Deque Systems)](https://axe.deque.com/install-success) | Browser extension used in developer tools to find and explain WCAG violations within the app. |
-| [NVDA (NonVisual Desktop Access)](https://www.nvaccess.org/about-nvda/) | Screen reader for Windows used to test how visually impaired users experience and navigate the app. |
+| WAVE Web Accessibility Evaluation Tool | Identifies structural and semantic issues, including missing alt attributes, headings, and ARIA landmarks. |
+| Accessibility Checker by CKSource | Provides quick audits and visual feedback on accessibility issues in real time. |
+| axe DevTools (Deque Systems) | Browser extension used in developer tools to find and explain WCAG violations within the app. |
+| Google Chrome Lighthouse | Generates automated accessibility reports covering contrast, ARIA usage, keyboard support, and more. |
+| NVDA (NonVisual Desktop Access) | Screen reader for Windows used to test how visually impaired users experience and navigate the app. |
 
 ### **6.2.1 WAVE Accessibility Testing**
 
@@ -582,7 +582,7 @@ The color contrast checker in WAVE verified that all text met the WCAG 2.1 minim
 
 This ensures the page remains accessible to users with low vision or color blindness.
 
-### **6.2.2 Accessibility Checker Testing**
+### **6.2.2 AccessibilityChecker Testing**
 
 To further ensure Codoku’s compliance with WCAG 2.2 accessibility standards, automated testing was conducted using [AccessibilityChecker.org](https://www.accessibilitychecker.org/). This tool scans pages for common accessibility issues across categories including semantic structure, ARIA usage, visual contrast, interaction behavior, and assistive technology compatibility.
 
@@ -602,38 +602,41 @@ The `index.html` page was audited using and the initial scan reported 4 critical
 ![AccessibilityChecker initial audit scored 89% and flagged 4 critical WCAG 2.2 issues](figures/accessibilitychecker/index-initial.webp)
 *Initial audit result showing non-compliance due to 4 critical issues and a score below the recommended accessibility threshold.*
 
-#### ⚠️ Flagged Issues and Fixes
-**1. Complementary Landmarks Nested Incorrectly**  
-- **Issue**: Three `<aside>` elements were improperly nested inside other ARIA landmarks such as `<main>` or `<footer>`.  
-- **Why It Matters**: The `<aside>` element represents complementary content and must not be nested within primary content regions. Nesting it incorrectly can confuse screen reader users who rely on proper landmark structure.  
-- **Fix Applied**: Each `<aside>` was changed to a `<div>` element.
+⚠️ Flagged Issues and Fixes
 
-**2. Heading Lacked Discernible Text**  
-- **Issue**: A heading (`<h2 id="clear">`) only contained an icon with no readable or spoken text.  
-- **Why It Matters**: All headings must include meaningful content that is either visually visible or screen-reader accessible. This helps users understand page hierarchy and purpose.  
-- **Fix Applied**: A visually hidden but screen-readable span was added:
-  ```html
-  <h2 id="clear">
-    <i class="fa-solid fa-delete-left" aria-hidden="true"></i>
-    <span class="visually-hidden">Clear Cell</span>
-  </h2>
-  ```
-This ensures assistive technology can read the heading without affecting the visual design.
+1. Complementary Landmarks Nested Incorrectly  
+    - **Issue**: Three `<aside>` elements were improperly nested inside other ARIA landmarks such as `<main>` or `<footer>`.  
+    - **Why It Matters**: The `<aside>` element represents complementary content and must not be nested within primary content regions. Nesting it incorrectly can confuse screen reader users who rely on proper landmark structure.  
+    - **Fix Applied**: Each `<aside>` was changed to a `<div>` element.
 
-#### ✅ Final Result: Compliant
+2. Heading Lacked Discernible Text 
+    - **Issue**: A heading (`<h2 id="clear">`) only contained an icon with no readable or spoken text.  
+    - **Why It Matters**: All headings must include meaningful content that is either visually visible or screen-reader accessible. This helps users understand page hierarchy and purpose.  
+    - **Fix Applied**: A visually hidden but screen-readable span was added:
+        ```html
+        <h2 id="clear">
+            <i class="fa-solid fa-delete-left" aria-hidden="true"></i>
+            <span class="visually-hidden">Clear Cell</span>
+       </h2>
+        ```   
+        This ensures assistive technology can read the heading without affecting the visual design.
+
+✅ Final Result: Compliant
+
 After applying the necessary changes, the page was re-tested and passed all criteria, achieving a 100% audit score and full WCAG 2.2 compliance.
 
 ![AccessibilityChecker audit result passed with 100% compliance](figures/accessibilitychecker/index-final.webp)
 *Audit confirmation showing full compliance with WCAG 2.2 standards and a perfect accessibility score.*
 
-### **`about.html` Results**
+#### **`about.html` Results**
 
 Following the initial audit of `about.html`, the page scored **95%** due to two flagged issues involving improperly nested `<aside>` landmarks.
 
 ![Automated Tests Passed – Initial Audit Result (95% Score)](figures/accessibilitychecker/about-initial.webp)  
 *Automated audit of `about.html` shows a 95% score with 2 critical issues pending resolution.*
 
-#### ⚠️ Flagged Issues and Fixes
+⚠️ Flagged Issues and Fixes
+
 - **Issue**: The audit detected two `<aside>` elements that were incorrectly nested within `<main>` and `<footer>` regions. This violated the WCAG 2.2 guideline requiring that complementary landmarks (e.g. `<aside>`) not be nested inside other landmark roles such as `main`, `contentinfo`, or `banner`.
 
 - **Why It Matters**: Improper nesting can cause confusion for screen reader users, who rely on a clear and predictable landmark structure for navigating the page semantically.
@@ -653,8 +656,207 @@ Following the initial audit of `about.html`, the page scored **95%** due to two 
 ```
 This change preserved the visual and functional layout while restoring semantic correctness for assistive technologies.
 
-#### ✅ Final Result: Compliant
+✅ Final Result: Compliant  
+
 After applying the fix, about.html was rescanned and passed all tests with a perfect 100% audit score, confirming full compliance with WCAG 2.2.
 
 ![Final Accessibility Audit – 100% Compliant](figures/accessibilitychecker/about-final.webp)  
 *After addressing structural landmark issues, the `about.html` page achieved full WCAG 2.2 compliance with a perfect score.*
+
+**Accessibility Certification**
+
+While the individual `error.html` (404 error page) could not be directly scanned using AccessibilityChecker, a full domain audit was conducted on `teseolou.github.io`. The domain as a whole passed all manual and automated accessibility checks.
+
+![Accessibility Checker Certificate – WCAG 2.2 Compliance](figures/accessibilitychecker/domain-certification.webp)  
+*AccessibilityChecker.org certificate confirming full compliance with WCAG 2.1 A/AA/AAA and WCAG 2.2 A/AA standards.*
+
+This certificate confirms that the domain complies with:
+
+- **WCAG 2.1 A, AA, AAA**
+- **WCAG 2.2 A, AA**
+
+This suggests that all accessible content served from the domain, including the `error.html` page, meets stringent accessibility criteria, even if the 404 page itself could not be isolated for testing. As a result, the `error.html` page can be considered implicitly compliant within the validated context of the domain.
+
+### **6.2.3 Axe DevTools Testing**
+
+axe DevTools is a professional-grade accessibility auditing solution developed by Deque Systems. It integrates with browser developer tools (e.g., Chrome DevTools) to automatically detect WCAG 2.1/2.2 violations during live site usage. It supports static page scans and monitors dynamic content changes such as modal openings, page transitions, and UI state updates.
+
+#### **User Flow Audit**
+
+On **June 25, 2025**, a full interactive session was recorded and audited using axe DevTools. This test followed the typical user journey from the homepage through multiple interface states, modal interactions, navigation to the About page, a 404 error test, and return navigation, all while monitoring for accessibility violations.
+
+Test Configuration:
+- **Starting URL**: [https://teseolou.github.io/codoku/index.html](https://teseolou.github.io/codoku/index.html)
+- **WCAG Conformance Level**: 2.1 AA
+- **Total Unique Issues Found**: `0`
+- **Total Critical/Serious/Minor Issues**: `0`
+
+Recorded User Flow:
+
+1. Load index.html (landing page)
+2. Interact with game toggles (Display, Sound)
+3. Open each modal (Game, About, Rules)
+4. Trigger game UI interactions (e.g., New Game, Check Grid)
+5. Navigate to about.html via in-app link
+6. Test interaction elements on about.html
+7. Manually input an incorrect URL to trigger 404 page (aout.html)
+8. Interact with elements on 404 page
+9. Return to homepage (index.html)
+
+Each dynamic state transition and page navigation was scanned in real time. All transitions, including the fallback 404 error route, returned zero accessibility issues.
+
+![axe DevTools WCAG 2.1 AA audit](figures/axe/user-flow.webp)  
+*axe DevTools WCAG 2.1 AA audit confirming zero accessibility issues across full user interaction flow.*
+
+This confirms that the Codoku project’s interactive experience is robust, inclusive, and compliant under thorough state-based accessibility testing.
+
+#### **Axe DevTools Page Scans**
+
+Axe DevTools was used to run automated accessibility scans on individual pages of the Codoku project to confirm compliance with WCAG 2.1 AA standards and best practices.
+
+Each page was scanned using default rulesets with “Best Practices” enabled, ensuring broad and thorough testing of accessibility issues, including structural semantics, ARIA, color contrast, keyboard focus, and content labeling.
+
+`index.html` Results
+
+![Index Page Axe Results](figures/axe/index.webp)
+
+*The main Codoku game interface was scanned and no issues were found. All automated, guided, and manual tests returned zero critical, serious, moderate, or minor issues.*
+
+`about.html` Results
+
+![About Page Axe Results](figures/axe/about.webp)
+
+*The About page passed the audit with zero detected issues, confirming correct heading structure, semantic elements, and accessible content flow.*
+
+`404.html` Results
+
+![404 Page Axe Results](figures/axe/404.webp)
+
+*404 error page was scanned to ensure users who land on broken URLs are met with a page that meets accessibility standards.*
+
+All three tested pages, `index.html`, `about.html`, and the `404.html` page, scored zero total issues, with no violations detected across automatic, guided, or manual checks. The scans confirmed full conformance with WCAG 2.1 AA standards and accessibility best practices, demonstrating a consistent and inclusive design throughout the domain. 
+
+### **6.2.4 Lighthouse Accessibility Testing**
+
+Lighthouse is an automated tool integrated into Chrome DevTools used to audit web pages for performance, SEO, best practices, and accessibility. This section documents Lighthouse’s accessibility evaluation of the Codoku project under both desktop and mobile conditions.
+
+#### **`index.html` Results**
+
+Desktop Audit:
+- **Score:** 100
+- **Captured:** June 25, 2025 – 12:12 PM GMT+1
+- **Environment:** Emulated Desktop (Custom throttling)
+- **Passed Audits (25)**:
+  - Valid ARIA roles and attribute usage
+  - No deprecated or misused ARIA roles
+  - Buttons and links include accessible names
+  - Sufficient contrast between foreground and background colors
+  - Document contains a valid `<title>` and `<html lang>`
+  - Touch targets are appropriately sized
+  - Semantic HTML structure with correct heading order
+  - No `[tabindex]` values greater than 0
+  - All form elements have associated labels
+
+Mobile Audit:
+- **Score:** 100
+- **Captured:** June 25, 2025 – 12:15 PM GMT+1
+- **Device:** Emulated Moto G Power
+- **Network:** Slow 4G throttling
+- **Passed Audits (23)**:
+  - All ARIA and semantic structure checks also passed on mobile
+  - Touch targets verified under mobile constraints
+  - Accessibility maintained under reduced screen size
+
+Key Passed Checks:
+| Audit Category                          | Result |
+|----------------------------------------|--------|
+| ARIA roles and attribute usage         | ✅  |
+| Labels for form controls               | ✅  |
+| Contrast ratio (foreground/background) | ✅  |
+| Heading order and semantics            | ✅  |
+| Keyboard navigation and focus order    | ✅  |
+| Touch target spacing                   | ✅  |
+| `<html lang>` and `<title>` present    | ✅  |
+
+![Lighthouse Accessibility Score 100](figures/lighthouse/index-desktop.webp)
+
+#### **`about.html` Results**
+
+Desktop Audit:
+- **Score:** 100  
+- **Captured:** June 25, 2025 – 12:24 PM GMT+1  
+- **Environment:** Emulated Desktop (Custom throttling)  
+- **Passed Audits (27)**:
+  - Valid ARIA roles and attribute usage
+  - No deprecated or misused ARIA roles
+  - Buttons and links include accessible names
+  - Sufficient contrast between foreground and background colors
+  - Document contains a valid `<title>` and `<html lang>`
+  - Touch targets are appropriately sized
+  - Semantic HTML structure with correct heading order
+  - No `[tabindex]` values greater than 0
+  - Image elements use appropriate `alt` text
+  - Links are distinguishable without relying solely on color
+
+Mobile Audit:
+- **Score:** 100  
+- **Captured:** June 25, 2025 – 12:26 PM GMT+1  
+- **Device:** Emulated Moto G Power  
+- **Network:** Slow 4G throttling  
+- **Passed Audits (24)**:
+  - All ARIA and semantic structure checks also passed on mobile
+  - Touch targets verified under mobile constraints
+  - Image alt text and link accessibility confirmed under mobile display
+  - Accessibility maintained under reduced screen size
+
+Key Passed Checks:
+| Audit Category                          | Result |
+|----------------------------------------|--------|
+| ARIA roles and attribute usage         | ✅     |
+| Labels for form controls               | ✅     |
+| Contrast ratio (foreground/background) | ✅     |
+| Heading order and semantics            | ✅     |
+| Keyboard navigation and focus order    | ✅     |
+| Touch target spacing                   | ✅     |
+| `<html lang>` and `<title>` present    | ✅     |
+| Accessible image `alt` text            | ✅     |
+
+![Lighthouse Accessibility Score 100](figures/lighthouse/about-desktop.webp)
+
+#### **`404.html` Results**
+
+Lighthouse displayed a warning due to the test being run on a mistyped URL (`inex.html`) which returned a 404 status. Despite the error, the 404 page itself loaded correctly and was evaluated.
+
+Desktop Audit:
+- **Score:** 100
+- **Captured:** June 25, 2025 – 12:30 PM GMT+1
+- **Environment:** Emulated Desktop (Custom throttling)
+- **Passed Audits (26)**:
+  - ARIA attributes are valid and correctly used
+  - Buttons and images have accessible names
+  - Sufficient contrast and semantic structure
+  - No `[tabindex]` greater than 0
+  - Correct use of `<title>`, `<html lang>`, and heading order
+
+Mobile Audit:
+- **Score:** 100
+- **Captured:** June 25, 2025 – 12:28 PM GMT+1
+- **Device:** Emulated Moto G Power
+- **Network:** Slow 4G throttling
+- **Passed Audits (23)**:
+  - Accessibility maintained under reduced viewport
+  - Focusable elements and roles confirmed to be valid
+  - No errors or violations found under mobile testing conditions
+
+Key Passed Checks:
+| Audit Category                          | Result |
+|----------------------------------------|--------|
+| ARIA roles and attribute usage         | ✅     |
+| Accessible names for controls and media| ✅     |
+| Contrast ratio (foreground/background) | ✅     |
+| Heading structure and semantics        | ✅     |
+| Touch targets and keyboard navigation  | ✅     |
+| `<html lang>` and `<title>` present    | ✅     |
+
+![Lighthouse 404 Accessibility Score 100](figures/lighthouse/404-desktop.webp)
+
