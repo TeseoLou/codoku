@@ -1007,4 +1007,27 @@ While the overall performance of the site is strong, Lighthouse identified sever
      <script src="https://kit.fontawesome.com/00ece23e82.js" crossorigin="anonymous" async></script>
      ```
    - **Outcome:**  
-   After making these changes, my Lighthouse performance score improved from **96 to 98**, showing a clear benefit to reducing render-blocking resources.
+   After making these changes, my Lighthouse performance score improved from 96 to 97, showing a clear benefit to reducing render-blocking resources.
+
+3. **LCP Image Not Preloaded**  
+   - **Issue:** The background image used in the modal setup (which is the Largest Contentful Paint element) was not being preloaded.  
+   - **Impact:** This caused a delay in rendering the LCP element, which negatively impacted the LCP metric and overall performance score.  
+   - **My Research & Proposed Solution:** I researched how LCP images affect web performance and discovered that adding a `<link rel="preload">` directive in the `<head>` can give the browser an early signal to fetch the image before layout. This ensures the LCP resource is prioritized in the loading sequence.  
+   - **Action Taken:** I added the following preload tag to the top of the `<head>` in `index.html`:
+     ```html
+     <link rel="preload" as="image" href="assets/backgrounds/light-background.webp" type="image/webp">
+     ```
+   - **Outcome:**  
+     This change contributed to a performance score improvement from 97 to 98 in Lighthouse, confirming that preloading the LCP image helped optimize the visual loading experience.
+
+3. **📉 Unminified JavaScript**
+   - **Issue:** The `game.js` file was identified as having approximately **6 KiB** of unnecessary whitespace and formatting.
+   - **Impact:** Slightly increases payload size and JavaScript parse time, though minimal in real-world impact.
+   - **My Research & Proposed Solution:**  
+     I explored minification options using MinifierJS, an online tool that can compress JavaScript while preserving its functionality. This would be a suitable solution for reducing file size prior to deployment.
+   - **Decision Rationale:**  
+     While I could have minified the file, I opted not to in this case because the `game.js` file forms a core part of my code assessment. Maintaining full readability and structure was important to clearly showcase my logic and implementation skills. Additionally, with a high Lighthouse performance score already achieved, the performance benefit of minifying this particular file was marginal.
+   - **Future Consideration:**  
+     If this project were to move into a production environment, integrating a minified version of `game.js` using a simple tool like **MinifierJS** would be a quick win to further optimize load performance.
+
+Each of these improvements targets either load time, stability, or user safety — and offers clear next steps for future optimization cycles.

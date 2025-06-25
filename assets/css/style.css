@@ -278,7 +278,7 @@ header {
 /* Modal content - Dark mode */
 body.dark .modal-content {
     background-color: var(--color-bg-dark);
-    background-image: url(../backgrounds/dark-background.webp);
+    background-image: url(../backgrounds/dark-background-modal.webp);
     color: var(--color-white);
     box-shadow: 0 0 20px 5px var(--color-white);
 }
@@ -299,7 +299,7 @@ body.dark .modal-footer {
 /* Modal content container */
 #rules-modal .modal-content {
     background-color: var(--color-bg-light);
-    background-image: url(../backgrounds/light-background.webp);
+    background-image: url(../backgrounds/light-background-modal.webp);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -312,7 +312,7 @@ body.dark .modal-footer {
 /* Modal content container - Dark mode */
 body.dark #rules-modal .modal-content {
     background-color: var(--color-bg-dark);
-    background-image: url(../backgrounds/dark-background.webp);
+    background-image: url(../backgrounds/dark-background-modal.webp);
     color: var(--color-white);
     box-shadow: 0 0 20px 5px var(--color-white);
 }
@@ -402,7 +402,7 @@ body.dark footer a:hover i {
 /* Modal content */
 .modal-content {
     background-color: var(--color-bg-light);
-    background-image: url(../backgrounds/light-background.webp);
+    background-image: url(../backgrounds/light-background-modal.webp);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
