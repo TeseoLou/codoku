@@ -941,7 +941,6 @@ To assess performance, a combination of automated tools were used:
 | **Google Lighthouse**            | Repeatable audits for key performance metrics on desktop and mobile    |
 | **PageSpeed Insights**           | Live Google performance data and opportunities from real-world usage   |
 | **WebPageTest**                  | Detailed load sequence, filmstrip views, and HTTP waterfall diagnostics|
-| **Chrome DevTools (Network tab)**| Identify render-blocking resources, asset loading, and throttling tests|
 
 ### **6.3.1 Lighthouse Testing**
 Lighthouse is an open-source, automated tool developed by Google to audit web performance, accessibility, SEO, and adherence to best practices. It simulates real-world conditions such as throttled mobile networks and underpowered devices, providing a repeatable, objective way to evaluate web experiences.
@@ -975,13 +974,7 @@ For this project, Lighthouse was run in Chrome DevTools using desktop emulation 
 | **Cumulative Layout Shift**  | 0.033        | Very minimal; layout remains stable on mobile                            |
 | **Speed Index**              | 1.9s         | Acceptable but slowed slightly by font and image rendering               |
 
-Treemap Diagnostics:
-- **Heaviest Asset:** jQuery (`28.9 KiB`) and Bootstrap bundle were the most significant scripts.
-- **Custom Game Logic:** Only `8.4 KiB`, very lightweight and efficient.
-- **Font Awesome Kit:** Moderate load time impact (~4.8 KiB JavaScript + fonts).
-- **No Main-Thread Blocking by Third Parties:** All third-party scripts were loaded asynchronously or deferred.
-
-Best Practices & SEO Summary:
+**Best Practices & SEO Summary**:
 | Category           | Score | Comments                                                                 |
 |--------------------|-------|--------------------------------------------------------------------------|
 | **Best Practices** | 96    | Only minor issue: `play()` on audio failed without prior user interaction |
@@ -1018,8 +1011,7 @@ While the overall performance of the site is strong, Lighthouse identified sever
      <script src="assets/script/game.js" defer></script>
      <script src="https://kit.fontawesome.com/00ece23e82.js" crossorigin="anonymous" async></script>
      ```
-   - **Outcome:**  
-   After making these changes, my Lighthouse performance score improved from 94 to 97, showing a clear benefit to reducing render-blocking resources.
+   - **Outcome:** After making these changes, my Lighthouse performance score improved from 94 to 97, showing a clear benefit to reducing render-blocking resources.
 
 3. **LCP Image Not Preloaded**  
    - **Issue:** The background image used in the modal setup (which is the Largest Contentful Paint element) was not being preloaded.  
@@ -1029,8 +1021,7 @@ While the overall performance of the site is strong, Lighthouse identified sever
      ```html
      <link rel="preload" as="image" href="assets/backgrounds/light-background.webp" type="image/webp">
      ```
-   - **Outcome:**  
-     This change contributed to a performance score improvement from 97 to 98 in Lighthouse, confirming that preloading the LCP image helped optimize the visual loading experience.
+   - **Outcome:** This change contributed to a performance score improvement from 97 to 98 in Lighthouse, confirming that preloading the LCP image helped optimize the visual loading experience.
 
 >>![Desktop Score After – 98](figures/performance-lighthouse/index-final.webp)  
 *Post-optimisation desktop score improved to 98 following script deferral, image preload, and font adjustments.*
@@ -1040,20 +1031,15 @@ While the overall performance of the site is strong, Lighthouse identified sever
    - **Impact:** Slightly increases payload size and JavaScript parse time, though minimal in real-world impact.
    - **My Research & Proposed Solution:**  
      I explored minification options using MinifierJS, an online tool that can compress JavaScript while preserving its functionality. This would be a suitable solution for reducing file size prior to deployment.
-   - **Decision Rationale:**  
-     While I could have minified the file, I opted not to in this case because the `game.js` file forms a core part of my code assessment. Maintaining full readability and structure was important to clearly showcase my logic and implementation skills. Additionally, with a high Lighthouse performance score already achieved, the performance benefit of minifying this particular file was marginal.
-   - **Future Consideration:**  
-     If this project were to move into a production environment, integrating a minified version of `game.js` using a simple tool like **MinifierJS** would be a quick win to further optimize load performance.
+   - **Decision Rationale:** While I could have minified the file, I opted not to in this case because the `game.js` file forms a core part of my code assessment. Maintaining full readability and structure was important to clearly showcase my logic and implementation skills. Additionally, with a high Lighthouse performance score already achieved, the performance benefit of minifying this particular file was marginal.
 
 4. **Loading Scripts**
    - **Issue:** Initial load blocking caused by synchronous scripts on mobile.
    - **Impact:** JavaScript delayed HTML parsing and DOM rendering.
    - **My Research & Proposed Solution:**  
      I found that using the `defer` attribute on all scripts ensures they load after the HTML is parsed, which improves interactivity without blocking rendering. This is especially beneficial for devices with lower CPU power like mobile phones.
-   - **Action Taken:**  
-     I updated all DOM-dependent scripts to use `defer`.
-   - **Outcome:**  
-     This slightly improved Total Blocking Time and was retained in the final code.
+   - **Action Taken:** I updated all DOM-dependent scripts to use `defer`.
+   - **Outcome:** This slightly improved Total Blocking Time and was retained in the final code.
 
 5. **Loading Font Awesome**
    - **Issue:** Third-party scripts were loading synchronously.
@@ -1062,28 +1048,201 @@ While the overall performance of the site is strong, Lighthouse identified sever
      I learned that Font Awesome can be loaded using `async` since it's non-blocking and doesn't rely on other scripts or DOM elements.
    - **Action Taken:**  
      Applied the `async` attribute to the Font Awesome CDN script.
-   - **Outcome:**  
-     Helped reduce render delay without affecting visual rendering.
+   - **Outcome:** Helped reduce render delay without affecting visual rendering.
 
 6. **LCP Image File Size**
    - **Issue:** The LCP image was fairly large for mobile.
    - **Impact:** Increased load time, especially under 4G throttling.
    - **Action Taken:**  
      I compressed the LCP background image and reduced the image size for the image modal.
-   - **Outcome:**  
-     Helped slightly, but render delay (not just size) was the main problem.
+   - **Outcome:** Helped slightly, but render delay (not just size) was the main problem.
 
 7. **Modal as LCP Structure Limitation**
    - **Issue:** The modal remains the largest element and is not above-the-fold initially.
    - **Impact:** Browser delays rendering it, severely affecting LCP.
-   - **Reflection:**  
-     While optimizing the LCP image helped, the structural choice to make a modal the LCP element inherently limits performance on mobile.
-   - **Future Note:**  
-     A redesign that moves important visual elements into the visible area earlier may resolve this more effectively.
+   - **Reflection:** While optimizing the LCP image helped, the structural choice to make a modal the LCP element inherently limits performance on mobile.
 
->>![Mobile Score After – 79](figures/performance-lighthouse/index-mobile-final.webp  
+>>![Mobile Score After – 79](figures/performance-lighthouse/index-mobile-final.webp)    
 *Incremental improvement to 79 achieved after deferring scripts and compressing LCP background image.*
 
 The performance audit of `index.html` revealed strong results on desktop with a high Lighthouse score of 96, fast load times, and excellent interactivity. On mobile, performance was predictably lower, 75, due to render-blocking resources and the modal acting as the Largest Contentful Paint (LCP) element.
 
 Numerous optimizations were explored, including script deferral, font preloading, LCP image compression, and preload strategies, which marginally improved performance. These actions collectively increased the desktop performance score from 94 -> 98 and the mobile score from 75 -> 79. 
+
+#### **`about.html` Results**
+**Desktop Performance**:
+
+![Desktop Score – 99](figures/performance-lighthouse/about-desktop.webp)  
+*Excellent desktop score of 99 for the About page, showing efficient loading and minimal blocking.*
+
+| Metric                        | Score / Time | Comments                                                        |
+|------------------------------|--------------|-----------------------------------------------------------------|
+| **Performance Score**        | 99           | Near-perfect performance with no major issues                   |
+| **First Contentful Paint**   | 0.6s         | Fast initial render of content                                  |
+| **Largest Contentful Paint** | 0.9s         | Rendered promptly; well-optimized structure and image sizes     |
+| **Total Blocking Time**      | 0ms          | No blocking during script execution                             |
+| **Cumulative Layout Shift**  | 0.028        | Minor CLS due to unscaled images, but still within good range   |
+| **Speed Index**              | 0.6s         | Very quick visual load                                           |
+
+**Mobile Performance**:
+
+![Mobile Score – 92](figures/performance-lighthouse/about-mobile-initial.webp)  
+*About page achieved a strong mobile Lighthouse score of 92 with good layout stability and interactivity.*
+
+| Metric                        | Score / Time | Comments                                                                 |
+|------------------------------|--------------|--------------------------------------------------------------------------|
+| **Performance Score**        | 92           | High score; mobile optimizations are largely effective                   |
+| **First Contentful Paint**   | 2.0s         | Slightly delayed due to font and stylesheet loading                      |
+| **Largest Contentful Paint** | 3.1s         | Acceptable, but could improve with reduced image size and preload        |
+| **Total Blocking Time**      | 20ms         | Very low blocking; effective use of `defer` and `async` attributes       |
+| **Cumulative Layout Shift**  | 0.032        | Visually stable layout with minor improvements possible                  |
+| **Speed Index**              | 2.0s         | Reasonable speed despite some render delay from images and styles        |
+
+**Best Practices & SEO Summary**:
+
+| Category           | Score | Comments                                                                 |
+|--------------------|-------|--------------------------------------------------------------------------|
+| **Best Practices** | 96    | Minor warning regarding `play()` on audio element before user interaction |
+| **SEO**            | 100   | Fully optimized with semantic structure and metadata                     |
+
+**Performance Warnings and Opportunities**:  
+The overall performance of `about.html` was strong, especially on desktop. A few minor issues were highlighted during the Lighthouse audit, and are outlined below along with reflections and next steps:
+
+1. **Image Optimization**
+   - **Issue:** Several images (e.g., `sudoku-tablet.webp`, `about-sudoku.webp`) were significantly larger than necessary for their display dimensions.
+   - **Impact:** Increased total page weight and delayed the Largest Contentful Paint (LCP), particularly on mobile.
+   - **Action Taken:**  
+     I re-encoded and compressed the primary images on the About page using `.webp` format and adjusted them to better match actual display sizes.
+   - **Outcome:** This successfully improved the **mobile performance score from 92 to 94**. Desktop performance remained at 99, suggesting further image savings would not make a substantial difference for desktop users.
+   - **Future Note:** I could add explicit `width` and `height` attributes on all `<img>` elements to prevent layout shift and enhance CLS scores.
+>>![Mobile Score After – 94](figures/performance-lighthouse/about-mobile-final.webp)  
+*Final mobile audit for `about.html`, showing an improved performance score of 94 after image optimizations.*
+
+2. **Unused CSS Rules**
+   - **Issue:** Bootstrap’s bundled CSS included approximately **44 KiB** of unused styles.
+   - **Impact:** Extra network payload and unnecessary CSS parsing time, especially costly on mobile networks.
+   - **Reflection:** I explored creating a custom Bootstrap build tailored only to the components in use. However, this would have introduced significant complexity and risked disrupting the current layout.
+   - **Future Note:** Implementing a tree-shaken or Sass-based custom build in a production scenario could drastically reduce CSS load and improve both performance and maintainability.
+
+3. **Render-Blocking CSS and Fonts**
+   - **Issue:** Google Fonts and Bootstrap CSS were render-blocking and delayed First Contentful Paint (FCP).
+   - **Impact:** Blocked rendering paths on mobile, contributing to slower visual readiness.
+   - **Reflection:** I experimented with deferring non-critical styles using `media="print"` and `onload`, but this resulted in broken styling and visual regressions.
+   - **Outcome:** The technique was rolled back. The fonts and Bootstrap CSS are still loaded early but are now accepted trade-offs for visual consistency.
+
+The `about.html` page got a great desktop performance with a score of 99, and a strong mobile score that improved from 92 -> 94 after optimizations. Key metrics such as Total Blocking Time (0ms) and Cumulative Layout Shift (0.028 desktop / 0.032 mobile) show excellent responsiveness and visual stability.
+
+Several enhancements were made, including image compression (yielding a +2 mobile score boost), script deferral, and structured loading of assets. Opportunities remain in minifying JavaScript and customizing CSS builds, which could further benefit mobile load times in production environments.
+
+#### **`404.html` Results**
+
+**Desktop Performance**:
+
+![Desktop Score – 100](figures/performance-lighthouse/error-desktop.webp)  
+*Exceptional performance score of 100 on desktop for the 404 page, indicating perfect visual load and responsiveness.*
+
+| Metric                        | Score / Time | Comments                                                    |
+|------------------------------|--------------|-------------------------------------------------------------|
+| **Performance Score**        | 100          | Max score; minimal layout and fast-loading components       |
+| **First Contentful Paint**   | 0.6s         | Very fast initial content render                            |
+| **Largest Contentful Paint** | 0.6s         | Instant rendering of image and content                      |
+| **Total Blocking Time**      | 0ms          | No blocking scripts detected                                |
+| **Cumulative Layout Shift**  | 0.003        | Practically no visual layout shifting                       |
+| **Speed Index**              | 0.6s         | Content appears very quickly in the viewport                |
+
+**Mobile Performance**:
+
+![Mobile Score – 94](figures/performance-lighthouse/error-mobile-initial.webp)  
+*Strong mobile performance score of 95 for the 404 page, with some room for optimization.*
+
+| Metric                        | Score / Time | Comments                                                                |
+|------------------------------|--------------|-------------------------------------------------------------------------|
+| **Performance Score**        | 95           | Excellent, with only minor delays due to render-blocking styles         |
+| **First Contentful Paint**   | 2.0s         | Slight delay caused by Google Fonts and Bootstrap CSS                   |
+| **Largest Contentful Paint** | 3.1s         | Still within acceptable range, but could benefit from font deferral     |
+| **Total Blocking Time**      | 20ms         | Very low, thanks to script deferral                                     |
+| **Cumulative Layout Shift**  | 0.003        | Extremely stable layout                                                 |
+| **Speed Index**              | 2.0s         | Generally fast, although fonts/images affect perceived speed            |
+
+**Best Practices & SEO Summary**:
+| Category           | Score | Comments                                                                 |
+|--------------------|-------|--------------------------------------------------------------------------|
+| **Best Practices** | 96    | Minor issue: audio play() warning without user interaction               |
+| **SEO**            | 91    | Slightly reduced due to 404 status preventing full crawlability          |
+
+**Performance Warnings & Optimizations Applied**:
+1. **Image Optimization**
+   - **Issue:** The image `breaking-news.webp` was larger than necessary.
+   - **Impact:** Slight increase in LCP on mobile and added bandwidth usage.
+   - **Action Taken:**  
+     Explicitly declaring `width` and `height`.
+   - **Outcome:**  
+     Helped reduce LCP by ~400ms and brought mobile score up to 99.
+
+>>![404 Page – Desktop Performance Score: 99](figures/performance-lighthouse/error-mobile-final.webp)  
+*Final mobile Lighthouse audit for `404.html` with a strong performance score of 99. A minor issue was flagged regarding the page returning a 404 status, which is expected for this type of page.*
+
+2. **Render-Blocking Resources**
+   - **Issue:** Google Fonts and Bootstrap CSS were render-blocking.
+   - **Impact:** Added ~860ms to FCP and LCP.
+   - **Reflection:** Defer strategies were tested, but fallback content or layout flash occurred.
+
+3. **Unused CSS**
+   - **Issue:** Bootstrap included ~44 KiB of unused CSS rules.
+   - **Impact:** Increased CSS load unnecessarily.
+   - **Reflection:** Optimizing Bootstrap with a custom build was considered but not implemented.
+
+4. **404 Status Limitation**
+   - **Issue:** Lighthouse detected a 404 status, which blocks back/forward cache and SEO crawling.
+   - **Impact:** Reduces SEO effectiveness and perceived navigation speed.
+   - **Reflection:** Expected for a 404 page but noted as a technical limitation in Lighthouse scoring.
+
+The performance audit of `404.html` revealed outstanding results, especially on desktop where it achieved a perfect score of 100. Mobile performance was also strong, improving from 95 to 99 after image dimension optimizations. Due to the simple structure of the page, metrics like Total Blocking Time (0ms) and CLS (0.003) were excellent across both views. 
+
+Minor limitations were observed, such as render-blocking styles and a non-cacheable 404 status, but these are expected for an error page. Overall, the 404 page demonstrated excellent efficiency and minimal visual disruption.
+
+### **6.3.2 PageSpeed Insights Testing**
+PageSpeed Insights is a performance diagnostic tool developed by Google that combines field data and lab metrics powered by Lighthouse. Unlike Lighthouse testing, which was run locally with Chrome DevTools, PageSpeed Insights provides audits using emulated devices. .
+
+By the time PageSpeed Insights testing was conducted, all major performance optimisations, such as script deferral, font loading strategies, and image compression, had already been implemented. Therefore, no further changes were made in response to this audit.
+
+#### **`index.html` Results**
+**Desktop Performance:**
+
+![PageSpeed Desktop – Score 97](figures/performance-lighthouse/index-pagespeed-desktop.webp)  
+*Desktop audit revealed an excellent performance score of 97, with full marks in Accessibility, Best Practices, and SEO.*
+
+| Metric                        | Score / Time | Comments                                                    |
+|------------------------------|--------------|-------------------------------------------------------------|
+| **Performance Score**        | 97           | High score with negligible room for further improvement     |
+| **First Contentful Paint**   | 0.7s         | Quick visual response; no blocking                          |
+| **Largest Contentful Paint** | 1.2s         | Optimised modal render with compressed background image     |
+| **Total Blocking Time**      | 0ms          | JavaScript loaded via `defer`; no script delays             |
+| **Cumulative Layout Shift**  | 0.039        | Stable layout with minor CLS from unscaled image loads      |
+| **Speed Index**              | 0.7s         | Fast content rendering in viewport                          |
+
+**Mobile Performance**:
+
+![PageSpeed Mobile – Score 74](figures/performance-lighthouse/index-pagespeed-mobile.webp)  
+*Mobile audit returned a lower performance score of 74, primarily due to render-blocking CSS and font loading.*
+
+| Metric                        | Score / Time | Comments                                                                 |
+|------------------------------|--------------|--------------------------------------------------------------------------|
+| **Performance Score**        | 74           | Lower score due to mobile constraints and LCP penalties                  |
+| **First Contentful Paint**   | 2.6s         | Slower render caused by blocking stylesheets and font requests          |
+| **Largest Contentful Paint** | 6.3s         | Significantly delayed by modal image loading and render delay           |
+| **Total Blocking Time**      | 0ms          | Good interactivity with deferred JavaScript                             |
+| **Cumulative Layout Shift**  | 0.032        | Layout remains stable during interaction                                |
+| **Speed Index**              | 2.6s         | Affected by font, CSS, and modal rendering pipeline                      |
+
+**Performance Constraints on Mobile (PSI Diagnostic Insights):**
+- **Modal as LCP Element**  
+  The modal component was the Largest Contentful Paint element on mobile, accounting for over 90% of LCP delay. Because it isn't above the fold initially, rendering is postponed.
+- **Render-Blocking Resources**  
+  Google Fonts and Bootstrap CSS caused up to 1.8s of delay, blocking the First Contentful Paint and slowing LCP. Deferred styles were previously tested but reverted to maintain visual integrity.
+- **Unused CSS**  
+  Approximately **44 KiB** of unused CSS was identified in Bootstrap. While a custom build would reduce payload, it was not implemented due to risk of layout regression.
+- **Unminified JavaScript**  
+  The `game.js` script remains unminified for readability. In production, minification would reduce parsing time further.
+
+Despite the lower mobile performance score, no new changes were introduced, as all reasonable optimizations were already in place. The findings reaffirmed that mobile Lighthouse and PageSpeed audits consistently flag modal structure and render-blocking styles as limiting factors.
