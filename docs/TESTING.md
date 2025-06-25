@@ -949,8 +949,10 @@ Lighthouse is an open-source, automated tool developed by Google to audit web pe
 For this project, Lighthouse was run in Chrome DevTools using desktop emulation and custom throttling settings. Additional diagnostics were explored through the Lighthouse Treemap Viewer to assess script weight and third-party contributions.
 
 #### **`index.html` Results**
-Desktop Performance:
+**Desktop**: 
 
+![Desktop Score Before – 94](figures/performance-lighthouse/index-initial.webp)  
+*Initial desktop performance audit showing a score of 94 prior to applying optimisations.*
 | Metric                        | Score / Time | Comments                                                  |
 |------------------------------|--------------|-----------------------------------------------------------|
 | **Performance Score**        | 94           | High score with fast load times and minimal blocking      |
@@ -960,7 +962,10 @@ Desktop Performance:
 | **Cumulative Layout Shift**  | 0.049        | Minimal shifting; layout is visually stable               |
 | **Speed Index**              | 0.8s         | Efficient rendering of above-the-fold content             |
 
-Mobile Performance:
+**Mobile Performance**:  
+
+![Mobile Score Before – 75](figures/performance-lighthouse/index-mobile-initial.webp)  
+*Mobile performance was significantly lower at 75 due to render-blocking resources and modal LCP.*
 | Metric                        | Score / Time | Comments                                                                 |
 |------------------------------|--------------|--------------------------------------------------------------------------|
 | **Performance Score**        | 75           | Lower than desktop; expected due to mobile constraints and throttling    |
@@ -969,7 +974,6 @@ Mobile Performance:
 | **Total Blocking Time**      | 30ms         | Very low; good script deferral helped reduce interaction delays          |
 | **Cumulative Layout Shift**  | 0.033        | Very minimal; layout remains stable on mobile                            |
 | **Speed Index**              | 1.9s         | Acceptable but slowed slightly by font and image rendering               |
-
 
 Treemap Diagnostics:
 - **Heaviest Asset:** jQuery (`28.9 KiB`) and Bootstrap bundle were the most significant scripts.
@@ -1028,7 +1032,10 @@ While the overall performance of the site is strong, Lighthouse identified sever
    - **Outcome:**  
      This change contributed to a performance score improvement from 97 to 98 in Lighthouse, confirming that preloading the LCP image helped optimize the visual loading experience.
 
-3. **📉 Unminified JavaScript**
+>>![Desktop Score After – 98](figures/performance-lighthouse/index-final.webp)  
+*Post-optimisation desktop score improved to 98 following script deferral, image preload, and font adjustments.*
+
+3. **Unminified JavaScript**
    - **Issue:** The `game.js` file was identified as having approximately **6 KiB** of unnecessary whitespace and formatting.
    - **Impact:** Slightly increases payload size and JavaScript parse time, though minimal in real-world impact.
    - **My Research & Proposed Solution:**  
@@ -1074,6 +1081,9 @@ While the overall performance of the site is strong, Lighthouse identified sever
    - **Future Note:**  
      A redesign that moves important visual elements into the visible area earlier may resolve this more effectively.
 
+>>![Mobile Score After – 79](figures/performance-lighthouse/index-mobile-final.webp  
+*Incremental improvement to 79 achieved after deferring scripts and compressing LCP background image.*
+
 The performance audit of `index.html` revealed strong results on desktop with a high Lighthouse score of 96, fast load times, and excellent interactivity. On mobile, performance was predictably lower, 75, due to render-blocking resources and the modal acting as the Largest Contentful Paint (LCP) element.
 
-Numerous optimizations were explored — including script deferral, font preloading, LCP image compression, and preload strategies — which marginally improved performance. These actions collectively increased the desktop performance score from 94 to 98 and the mobile score from 75 to 79. While some attempts (e.g., deferring Bootstrap CSS) negatively impacted mobile performance and were reverted, others (like deferring scripts and async-loading non-critical assets) provided measurable benefits.
+Numerous optimizations were explored, including script deferral, font preloading, LCP image compression, and preload strategies, which marginally improved performance. These actions collectively increased the desktop performance score from 94 -> 98 and the mobile score from 75 -> 79. 
