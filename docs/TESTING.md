@@ -979,3 +979,12 @@ Additional best practices that passed:
 - Inputs allow pasting and do not auto-request geolocation or notifications
 - HTML contains valid `viewport`, `doctype`, `charset`, and structured layout
 
+⚠️ **Flagged Performance Issues & Recommendations**:  
+While the overall performance of the site is strong, Lighthouse identified several areas for optimization. These are outlined below with actionable recommendations for improvement:
+
+1. **🔧 Unused CSS Detected**
+    - **Issue:** Approx. `44 KiB` of Bootstrap CSS is unused on initial load.
+    - **Impact:** Increases CSS payload unnecessarily, slowing render time.
+    - **Suggested Solution:** 
+    Create a **custom Bootstrap build** that includes only the utility classes and components your project uses. This method drastically reduces unused styles and improves load performance — especially helpful with large frameworks like Bootstrap.
+    - **Note:** While this is a highly effective optimization technique, it currently falls outside the scope of this project due to time constraints and limited experience customizing Bootstrap’s build process. This is acknowledged as a future enhancement opportunity for performance-focused development.
