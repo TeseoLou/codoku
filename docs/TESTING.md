@@ -8,25 +8,25 @@ Testing is a critical component of the development lifecycle and plays an essent
 
 Codoku was tested using a combination of **automated tools** and **manual techniques** across multiple categories:
 
-- **Code validation** to check compliance with HTML and CSS standards
-- **Accessibility evaluation** using tools and hands-on navigation testing
-- **Performance and SEO auditing** using Lighthouse
-- **Manual interaction testing** for gameplay features
-- **Responsive design checks** across a variety of screen sizes
+- **Code validation** 
+- **Accessibility evaluation** 
+- **Performance and SEO auditing** 
+- **Responsive design checks** 
 - **Cross-browser compatibility testing**
+- **Manual interaction testing** 
 
 All issues discovered during testing were documented and resolved, and results are detailed in this document along with screenshots to verify successful validation.
 
 ## **6.1 Code Validation**
 Validation ensures that the code behind Codoku adheres to current web standards and best practices, helping improve reliability, maintainability, and browser compatibility. 
 
-All HTML, CSS, and JavaScript files were passed through official validation tools such as the [W3C Markup Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), and [JSHint](https://jshint.com/). 
+All HTML, CSS, and JavaScript files were passed through official validation tools such as the W3C Markup Validator, W3C CSS Validator, and JSHint. 
 
 This process helped identify and resolve syntax errors, semantic issues, accessibility oversights, and outdated or unsupported syntax ensuring the final product is stable, clean, and standards-compliant.
 
 ### **6.1.1 HTML Validation**
 
-All HTML files (`index.html`, `about.html`, and `404.html`) were validated using the [W3C Markup Validation Service](https://validator.w3.org/). This process checks for syntax errors, deprecated tags, improperly nested elements, and other violations of the HTML5 specification.
+All HTML files (`index.html`, `about.html`, and `404.html`) were validated using the W3C Markup Validation Service. This process checks for syntax errors, deprecated tags, improperly nested elements, and other violations of the HTML5 specification.
 
 #### **`index.html` - Results**
 The `index.html` file serves as the main interactive hub of Codoku, housing the Sudoku grid, control buttons, difficulty and timer setup, and all associated modals. It also links to all the key JavaScript and CSS files that power the app’s functionality.
@@ -136,7 +136,7 @@ After resolving all of the above issues, the `404.html` file now passes validati
 
 ### **6.1.2 CSS Validation**
 
-The primary stylesheet `style.css` was tested using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). The validator analyzes the stylesheet for syntax errors, unsupported properties, and incorrect value usage across various levels of CSS.
+The primary stylesheet `style.css` was tested using the W3C CSS Validation Service. The validator analyzes the stylesheet for syntax errors, unsupported properties, and incorrect value usage across various levels of CSS.
 
 #### **`style.css` Results**
 The style.css file contains all the core styling rules for Codoku, including custom variables, responsive layout structures, theme toggling, dark mode overrides, and component-level styling for modals, the grid, and controls. It supports both light and dark themes and integrates cleanly with Bootstrap to enhance UI consistency and accessibility across screen sizes and devices.
@@ -172,7 +172,7 @@ These warnings were primarily related to:
 
 ### **6.1.3 JavaScript Validation**
 
-All JavaScript files used in Codoku were validated using [JSHint](https://jshint.com/), a popular static code analysis tool designed to detect errors and potential problems in JavaScript code. The goal of this validation was to ensure that the scripts are syntactically correct, logically sound, and compatible with modern browser environments.
+All JavaScript files used in Codoku were validated using JSHint, a popular static code analysis tool designed to detect errors and potential problems in JavaScript code. The goal of this validation was to ensure that the scripts are syntactically correct, logically sound, and compatible with modern browser environments.
 
 JSHint was configured to evaluate:
 - **Cyclomatic complexity**
@@ -351,7 +351,7 @@ Accessibility testing was conducted using both **automated tools** and **manual 
 
 ### **6.2.1 WAVE Accessibility Testing**
 
-[WAVE](https://wave.webaim.org/) (Web Accessibility Evaluation Tool) is an automated tool developed by WebAIM for assessing accessibility issues directly within web pages. It identifies errors, warnings (alerts), structural elements, and ARIA usage while visually overlaying them on the interface for quick interpretation.
+WAVE (Web Accessibility Evaluation Tool) is an automated tool developed by WebAIM for assessing accessibility issues directly within web pages. It identifies errors, warnings (alerts), structural elements, and ARIA usage while visually overlaying them on the interface for quick interpretation.
 
 #### **`index.html` Results**
 
@@ -557,18 +557,6 @@ No issues or redundant uses were detected, confirming a well-implemented ARIA la
 #### ⌨️ Keyboard Accessibility
 WAVE’s Order panel confirmed that tab navigation flows in a logical and predictable manner. The sequence reflects visual positioning and groups related items logically.
 
-| Tab Order | Element Description                     |
-|-----------|------------------------------------------|
-| 1         | Switch: Display                          |
-| 2         | Switch: Sound                            |
-| 3         | Button: Game                             |
-| 4         | Button: About                            |
-| 5         | Button: Rules (links to rules modal)     |
-| 6         | Button: Return to homepage               |
-| 7         | Link: Facebook Page                      |
-| 8         | Link: Instagram Page                     |
-| 9         | Link: X Page                             |
-
 ![WAVE tab order - error.html](figures/wave/navigation-order-404.webp)  
 *Keyboard tab order confirmation showing clear and linear focus path.*
 
@@ -584,7 +572,7 @@ This ensures the page remains accessible to users with low vision or color blind
 
 ### **6.2.2 AccessibilityChecker Testing**
 
-To further ensure Codoku’s compliance with WCAG 2.2 accessibility standards, automated testing was conducted using [AccessibilityChecker.org](https://www.accessibilitychecker.org/). This tool scans pages for common accessibility issues across categories including semantic structure, ARIA usage, visual contrast, interaction behavior, and assistive technology compatibility.
+To further ensure Codoku’s compliance with WCAG 2.2 accessibility standards, automated testing was conducted using AccessibilityChecker. This tool scans pages for common accessibility issues across categories including semantic structure, ARIA usage, visual contrast, interaction behavior, and assistive technology compatibility.
 
 AccessibilityChecker evaluates each page against critical and non-critical criteria, assigning an audit score and flagging required manual audits. It is particularly useful for identifying violations that may affect screen reader users, keyboard-only navigation, and overall structural clarity.
 
@@ -940,7 +928,6 @@ To assess performance, a combination of automated tools were used:
 |----------------------------------|-------------------------------------------------------------------------|
 | **Google Lighthouse**            | Repeatable audits for key performance metrics on desktop and mobile    |
 | **PageSpeed Insights**           | Live Google performance data and opportunities from real-world usage   |
-| **WebPageTest**                  | Detailed load sequence, filmstrip views, and HTTP waterfall diagnostics|
 
 ### **6.3.1 Lighthouse Testing**
 Lighthouse is an open-source, automated tool developed by Google to audit web performance, accessibility, SEO, and adherence to best practices. It simulates real-world conditions such as throttled mobile networks and underpowered devices, providing a repeatable, objective way to evaluate web experiences.
@@ -1201,48 +1188,96 @@ The performance audit of `404.html` revealed outstanding results, especially on 
 
 Minor limitations were observed, such as render-blocking styles and a non-cacheable 404 status, but these are expected for an error page. Overall, the 404 page demonstrated excellent efficiency and minimal visual disruption.
 
-### **6.3.2 PageSpeed Insights Testing**
-PageSpeed Insights is a performance diagnostic tool developed by Google that combines field data and lab metrics powered by Lighthouse. Unlike Lighthouse testing, which was run locally with Chrome DevTools, PageSpeed Insights provides audits using emulated devices. .
+## **6.3.2 PageSpeed Insights Testing**
 
-By the time PageSpeed Insights testing was conducted, all major performance optimisations, such as script deferral, font loading strategies, and image compression, had already been implemented. Therefore, no further changes were made in response to this audit.
+To validate Lighthouse testing results and ensure optimizations were effective across real-world conditions, PageSpeed Insights was used to audit performance using Google’s emulated desktop and mobile environments.
+
+No changes were made following these audits, as all major optimizations had already been applied during Lighthouse testing.
 
 #### **`index.html` Results**
-**Desktop Performance:**
 
-![PageSpeed Desktop – Score 97](figures/performance-lighthouse/index-pagespeed-desktop.webp)  
-*Desktop audit revealed an excellent performance score of 97, with full marks in Accessibility, Best Practices, and SEO.*
+**Desktop**:  
+![Desktop Score – 97](figures/pagespeed-insights/index-desktop.webp)  
+*High desktop score confirming optimised layout and script execution.*
 
-| Metric                        | Score / Time | Comments                                                    |
-|------------------------------|--------------|-------------------------------------------------------------|
-| **Performance Score**        | 97           | High score with negligible room for further improvement     |
-| **First Contentful Paint**   | 0.7s         | Quick visual response; no blocking                          |
-| **Largest Contentful Paint** | 1.2s         | Optimised modal render with compressed background image     |
-| **Total Blocking Time**      | 0ms          | JavaScript loaded via `defer`; no script delays             |
-| **Cumulative Layout Shift**  | 0.039        | Stable layout with minor CLS from unscaled image loads      |
-| **Speed Index**              | 0.7s         | Fast content rendering in viewport                          |
+| Metric                        | Score / Time | Comments                                                   |
+|------------------------------|--------------|------------------------------------------------------------|
+| **Performance Score**        | 97           | Excellent, with very fast load speed and zero blocking     |
+| **First Contentful Paint**   | 0.7s         | Immediate visual rendering                                 |
+| **Largest Contentful Paint** | 1.2s         | Optimised modal image and preload tags helped here         |
+| **Total Blocking Time**      | 0ms          | All scripts deferred or async-loaded                       |
+| **Cumulative Layout Shift**  | 0.039        | Slight movement, mostly due to modal animation             |
+| **Speed Index**              | 0.7s         | Page appears fully loaded very quickly                     |
 
-**Mobile Performance**:
+**Mobile**:  
+![Mobile Score – 74](figures/pagespeed-insights/index-mobile.webp)  
+*Lower score on mobile primarily due to render-blocking CSS and LCP structure.*
 
-![PageSpeed Mobile – Score 74](figures/performance-lighthouse/index-pagespeed-mobile.webp)  
-*Mobile audit returned a lower performance score of 74, primarily due to render-blocking CSS and font loading.*
+| Metric                        | Score / Time | Comments                                                             |
+|------------------------------|--------------|----------------------------------------------------------------------|
+| **Performance Score**        | 74           | Affected by modal structure and render-blocking styles               |
+| **First Contentful Paint**   | 2.6s         | Google Fonts and Bootstrap styles delayed paint                      |
+| **Largest Contentful Paint** | 6.3s         | Modal being offscreen delayed visibility                             |
+| **Total Blocking Time**      | 0ms          | JavaScript loads efficiently with defer/async                        |
+| **Cumulative Layout Shift**  | 0.032        | Very stable overall                                                  |
+| **Speed Index**              | 2.6s         | Fonts and modal loading introduce delay                              |
 
-| Metric                        | Score / Time | Comments                                                                 |
-|------------------------------|--------------|--------------------------------------------------------------------------|
-| **Performance Score**        | 74           | Lower score due to mobile constraints and LCP penalties                  |
-| **First Contentful Paint**   | 2.6s         | Slower render caused by blocking stylesheets and font requests          |
-| **Largest Contentful Paint** | 6.3s         | Significantly delayed by modal image loading and render delay           |
-| **Total Blocking Time**      | 0ms          | Good interactivity with deferred JavaScript                             |
-| **Cumulative Layout Shift**  | 0.032        | Layout remains stable during interaction                                |
-| **Speed Index**              | 2.6s         | Affected by font, CSS, and modal rendering pipeline                      |
+#### **`about.html` Results**
 
-**Performance Constraints on Mobile (PSI Diagnostic Insights):**
-- **Modal as LCP Element**  
-  The modal component was the Largest Contentful Paint element on mobile, accounting for over 90% of LCP delay. Because it isn't above the fold initially, rendering is postponed.
-- **Render-Blocking Resources**  
-  Google Fonts and Bootstrap CSS caused up to 1.8s of delay, blocking the First Contentful Paint and slowing LCP. Deferred styles were previously tested but reverted to maintain visual integrity.
-- **Unused CSS**  
-  Approximately **44 KiB** of unused CSS was identified in Bootstrap. While a custom build would reduce payload, it was not implemented due to risk of layout regression.
-- **Unminified JavaScript**  
-  The `game.js` script remains unminified for readability. In production, minification would reduce parsing time further.
+**Desktop**:  
+![Desktop Score – 97](figures/pagespeed-insights/about-desktop.webp)  
+*Strong result across the board with fast rendering and low layout shift.*
 
-Despite the lower mobile performance score, no new changes were introduced, as all reasonable optimizations were already in place. The findings reaffirmed that mobile Lighthouse and PageSpeed audits consistently flag modal structure and render-blocking styles as limiting factors.
+| Metric                        | Score / Time | Comments                                                   |
+|------------------------------|--------------|------------------------------------------------------------|
+| **Performance Score**        | 97           | Confirms Lighthouse result consistency                     |
+| **First Contentful Paint**   | 0.8s         | Very quick initial render                                  |
+| **Largest Contentful Paint** | 1.2s         | Promptly displays largest element                          |
+| **Total Blocking Time**      | 0ms          | Script loading optimized via `defer`                       |
+| **Cumulative Layout Shift**  | 0.024        | Image sizing improvements paid off                         |
+| **Speed Index**              | 0.8s         | Content perceived as visually complete rapidly             |
+
+**Mobile**:  
+![Mobile Score – 87](figures/pagespeed-insights/about-mobile.webp)  
+*Mobile score slightly below optimal range due to LCP render delay.*
+
+| Metric                        | Score / Time | Comments                                                            |
+|------------------------------|--------------|---------------------------------------------------------------------|
+| **Performance Score**        | 87           | Strong but affected by image rendering time                         |
+| **First Contentful Paint**   | 2.6s         | Slight delay from Bootstrap and fonts                               |
+| **Largest Contentful Paint** | 3.5s         | Further delay from `<img>` inside article modal                     |
+| **Total Blocking Time**      | 0ms          | Scripts properly optimised                                          |
+| **Cumulative Layout Shift**  | 0.038        | Layout remains stable, no shifting on mobile view                   |
+| **Speed Index**              | 2.6s         | Slightly slowed by image and font downloads                         |
+
+#### **`404.html` Results**
+
+**Desktop**:  
+![Desktop Score – 99](figures/pagespeed-insights/error-desktop.webp)  
+*Minimal content and optimized asset loading produced near-perfect score.*
+
+| Metric                        | Score / Time | Comments                                                   |
+|------------------------------|--------------|------------------------------------------------------------|
+| **Performance Score**        | 99           | Practically instant loading                                |
+| **First Contentful Paint**   | 0.7s         | Image and text rendered quickly                            |
+| **Largest Contentful Paint** | 0.7s         | Small image loads instantly                                |
+| **Total Blocking Time**      | 0ms          | No delays due to synchronous script execution              |
+| **Cumulative Layout Shift**  | 0.002        | No perceptible layout movement                             |
+| **Speed Index**              | 0.7s         | Strong visual completion time                              |
+
+**Mobile**:  
+![Mobile Score – 92](figures/pagespeed-insights/error-mobile.webp)  
+*Efficiently structured page with low layout shift and minimal blocking.*
+
+| Metric                        | Score / Time | Comments                                                             |
+|------------------------------|--------------|----------------------------------------------------------------------|
+| **Performance Score**        | 92           | Excellent result for a fallback page                                 |
+| **First Contentful Paint**   | 2.6s         | Slight delay from Google Fonts and CSS                               |
+| **Largest Contentful Paint** | 2.8s         | Primary image rendering slightly delayed                             |
+| **Total Blocking Time**      | 0ms          | No blocking scripts present                                          |
+| **Cumulative Layout Shift**  | 0.002        | Exceptionally stable page layout                                     |
+| **Speed Index**              | 2.6s         | Efficient perceived load, despite font/image network delay           |
+
+**Summary**:  
+PageSpeed Insights results aligned closely with the earlier Lighthouse audits. Pages loaded quickly on desktop across the board, and while mobile performance was slightly lower due to render-blocking styles and delayed LCP rendering (especially on `index.html`), no further changes were required. Key assets had already been compressed, scripts deferred, and layout shifts mitigated during initial performance optimization work.
+

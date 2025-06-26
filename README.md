@@ -1459,12 +1459,12 @@ These helped ensure responsive design principles were applied correctly, selecto
 Before coding, I mapped out the core logic required to power the game, breaking down each feature into core and helper functions. This pre-planning ensured every piece of logic had a clear role and avoided repetition.
 
 #### **4.1.5.a Puzzle Flow**
-`fetchSudokuBoard()  `
-├── `renderEmptyGrid() ` 
+`fetchSudokuBoard()`  
+├── `renderEmptyGrid()`   
 └── `populateGrid()`  
 └── `enableCellSelection()`  
 
-`triggerAutoWinCheck() ` 
+`triggerAutoWinCheck()`  
 ├── `isBoardCompleteAndCorrect()`  
 ├── `isBoardFilled()`  
 ├── `formatElapsedTime()`  
@@ -1476,12 +1476,12 @@ This section is the backbone of the game logic. It handles fetching puzzles from
 #### **4.1.5.b User Interaction & Input**
 `enableCellSelection()`  
 ├── `handleClick()`  
-├── `handleKeyboardInput()`  
-└── `handleNumberKeyClick()`  
-└── `triggerAutoWinCheck()`  
+├── `handleKeyboardInput()`   
+└── `handleNumberKeyClick()`   
+└── `triggerAutoWinCheck()`   
 
-`checkUserInput()`  
-└── `updateHintsDisplay()`  
+`checkUserInput()`   
+└── `updateHintsDisplay()`   
 
 `revealHint()`  
 ├── `updateHintsDisplay()`  
@@ -1492,7 +1492,7 @@ This group of functions manage how users interact with the board, selecting cell
 #### **4.1.5.c Setup & Game State**
 `startNewGame()`  
 ├── `fetchSudokuBoard()`  
-├── `startTimer()  `
+├── `startTimer()`  
 ├── `updateDifficultyDisplay()`  
 ├── `updateHintsDisplay()`  
 └── reset `hasCelebrated` flag
