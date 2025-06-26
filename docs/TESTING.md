@@ -928,8 +928,9 @@ To assess performance, a combination of automated tools were used:
 |----------------------------------|-------------------------------------------------------------------------|
 | **Google Lighthouse**            | Repeatable audits for key performance metrics on desktop and mobile    |
 | **PageSpeed Insights**           | Live Google performance data and opportunities from real-world usage   |
+| **Detailed SEO Extension**       | Real-time browser-based inspection of SEO metadata, robots tags, and structural issues |
 
-### **6.3.1 Lighthouse Testing**
+### **6.3.1 Lighthouse Performance Testing**
 Lighthouse is an open-source, automated tool developed by Google to audit web performance, accessibility, SEO, and adherence to best practices. It simulates real-world conditions such as throttled mobile networks and underpowered devices, providing a repeatable, objective way to evaluate web experiences.
 
 For this project, Lighthouse was run in Chrome DevTools using desktop emulation and custom throttling settings. Additional diagnostics were explored through the Lighthouse Treemap Viewer to assess script weight and third-party contributions.
@@ -1188,7 +1189,7 @@ The performance audit of `404.html` revealed outstanding results, especially on 
 
 Minor limitations were observed, such as render-blocking styles and a non-cacheable 404 status, but these are expected for an error page. Overall, the 404 page demonstrated excellent efficiency and minimal visual disruption.
 
-## **6.3.2 PageSpeed Insights Testing**
+## **6.3.2 PageSpeed Insights Performance Testing**
 
 To validate Lighthouse testing results and ensure optimizations were effective across real-world conditions, PageSpeed Insights was used to audit performance using Google’s emulated desktop and mobile environments.
 
@@ -1280,4 +1281,36 @@ No changes were made following these audits, as all major optimizations had alre
 
 **Summary**:  
 PageSpeed Insights results aligned closely with the earlier Lighthouse audits. Pages loaded quickly on desktop across the board, and while mobile performance was slightly lower due to render-blocking styles and delayed LCP rendering (especially on `index.html`), no further changes were required. Key assets had already been compressed, scripts deferred, and layout shifts mitigated during initial performance optimization work.
+
+### **6.3.3 Detailed SEO Performance Testing**
+
+Although Google Lighthouse flagged no SEO issues and awarded perfect SEO scores to all site pages, the Detailed SEO Extension was used as a secondary layer of validation to ensure no subtle metadata or structural oversights were missed. This tool provides a real-time, in-browser SEO audit of HTML metadata and helps identify key areas often overlooked by automated test suites.
+
+The initial inspection with the Detailed SEO Extension flagged several missing or suboptimal SEO elements across `index.html`, `about.html`, and `404.html`:
+
+- ❌ **Missing Robots Meta Tags**  
+  Initially, none of the pages contained `<meta name="robots">` directives. These were added to explicitly control indexation:  
+  - `index, follow` for `index.html` and `about.html`  
+  - `noindex, nofollow` for `404.html`
+
+- ❌ **Missing Keywords Meta Tags**  
+  The extension highlighted the absence of `<meta name="keywords">`. Although no longer prioritized by most modern search engines, these tags were added for completeness and backward compatibility.
+
+- ❌ **Missing Canonical Tags**  
+  No `<link rel="canonical">` tags were present. These were not added during this phase but logged as a **future enhancement** to help prevent duplicate content issues.
+
+- ❌ **Missing X-Robots-Tag HTTP Headers**  
+  Server-level directives were not set. This is a known limitation of GitHub Pages, which does not allow custom HTTP headers. This would be addressed in a production deployment environment.
+
+- ❌ **Missing Publisher Metadata**  
+  No `<meta name="publisher">` or structured organization data was found. This is optional but beneficial for brand visibility in rich search results and will be considered in future iterations.
+
+Following the audit, the following SEO features were implemented and confirmed using the Detailed SEO Extension:
+
+- Accurate `<title>` and `<meta name="description">` on all pages  
+- Valid and purposeful `<meta name="robots">` and `<meta name="keywords">` tags  
+- Semantic HTML structure with logical heading levels (`<h1>`–`<h3>`)  
+- Proper use of `alt` attributes on all images for accessibility and indexing
+
+The Detailed SEO Extension played a vital role in elevating Codoku’s on-page SEO. It helped surface overlooked issues like missing `robots` and `keywords` tags early in development and guided their resolution. While canonical links, `x-robots-tag` headers, and publisher metadata remain future opportunities, the project now offers a solid and semantically optimized foundation for search engines.
 
