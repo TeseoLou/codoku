@@ -2410,6 +2410,171 @@ Key testing areas include:
 - Responsiveness and Cross-Browser Compatibility
 - User Stories and Feature Functionality
 
+Testing was a continuous and multi-faceted process throughout the development of Codoku, ensuring a stable, accessible, and user-friendly experience. A combination of automated tools and manual techniques were employed to evaluate code quality, accessibility, performance, responsiveness, and feature reliability.
+
+Across all pages (`index.html`, `about.html`, `404.html`), `HTML` and `CSS` passed validation after iterative refinements, while `JavaScript` was modular, clean, and passed linting with only minor contextual warnings. Accessibility conformance was verified against WCAG 2.2 using multiple tools, confirming semantic structure, ARIA usage, keyboard operability, and screen reader support. A 100% accessibility score was achieved across all Lighthouse, Axe, and AccessibilityChecker audits.
+
+Performance testing highlighted high scores on desktop (96–100) and strong mobile scores (75–94), with optimizations applied to defer scripts, preload LCP images, compress assets, and improve layout stability. Responsive design was confirmed through emulation, BrowserStack, and real-device feedback from 12 users across phones, tablets, and desktops, all reporting a functional, adaptive interface.
+
+A detailed usability survey guided structured testing of 20+ interactive features, including theme and sound toggles, puzzle logic, stats tracking, navigation, accessibility modals, and error handling. Each feature was tested against specific user stories and acceptance criteria, with feedback captured through yes/no questions and optional comments. Testers who encountered unexpected results were encouraged to provide contextual insights.
+
+Overall, Codoku performed reliably and consistently across devices and browsers. Minor enhancements (e.g., stronger visual cues, better mobile contrast, and full keyboard cell navigation) were identified as future improvement areas. The project meets high standards of accessibility, user-centered design, and performance, backed by thorough testing and real user feedback.
+
 For a full breakdown of all testing processes, tools used, and results, please refer to this [TESTING](docs/TESTING.md) document.
 
-## 7. **Bugs and Fixes**
+## **7. Bugs and Fixes**
+Throughout the development of **Codoku**, a wide range of issues were identified and addressed to improve functionality, performance, accessibility, validation, and maintainability. These bugs emerged from multiple sources: real-time testing, code validation, design reviews, and user interaction testing.
+
+The Codoku application was thoroughly tested and iteratively debugged through manual QA, accessibility audits, performance checks, and standards. Below is a categorized summary of issues encountered, their root causes, and the technical resolutions applied.
+
+Many issues were caught and resolved proactively during development thanks to:
+
+- Browser developer tools  
+- Logical reasoning and iterative testing  
+- External research and documentation (e.g., MDN, Bootstrap docs, Stack Overflow, W3C guidelines, and peer/mentor discourse)
+
+This combination of analysis and research was instrumental in shaping Codoku into a performant, accessible, and responsive application.
+
+The issues are categorized below for clarity and include technical causes, fixes, and results.
+
+### **7.1 Functional Issues**
+
+| **Bug** | **Cause** | **Fix** | **Result** |
+|--------|-----------|---------|------------|
+| Grid still active after puzzle solved | Input events not removed after win modal triggered | Removed `editable` class and unbound event listeners | Grid fully locks after win |
+| Error modal reset game | Shared logic triggered `startNewGame()` incorrectly | Used contextual modal types to separate modal actions | Error modal no longer restarts puzzle |
+| Timer didn’t reset properly | `setInterval()` persisted across games | Centralized timer logic and ensured `clearInterval` runs on reset | Timer works independently across game sessions |
+| Sounds played when muted | Audio triggers lacked mute check | Wrapped playback calls with `if (soundEnabled)` | Mute toggle now respected throughout the app |
+| Navbar didn’t collapse on link click | Bootstrap requires manual `.hide()` call | Added `Bootstrap.Collapse.getInstance(...).hide()` to links | Navbar collapses automatically on mobile |
+
+### **7.2 Styling & Layout Issues**
+
+| **Bug** | **Cause** | **Fix** | **Result** |
+|--------|-----------|---------|------------|
+| Grid overflowed on small screens | Used `px` units instead of responsive ones | Converted to `vw`, `vh`, `clamp()`, added media queries | Grid scales properly on all viewports |
+| Toggle thumb duplicated in dark mode | Poor targeting of `::before` with custom CSS | Used `:not(:focus)` and improved selector scope | Toggle renders consistently |
+| Modal content too wide on mobile | Static widths with no wrapping | Used `max-width`, `overflow-wrap`, and responsive `font-size` | Content wraps and resizes properly |
+| Footer overlapped game grid | Incomplete layout structure and no flex-grow | Applied `flex-column`, `min-height`, and auto margin pushing | Footer behaves as intended across page types |
+| Theming conflicts | Bootstrap styles overrode custom theme logic | Used `body.dark` wrappers and CSS variables for consistent scoping | Uniform styling across light/dark themes |
+
+### **7.3 Accessibility Issues**
+
+| **Bug** | **Cause** | **Fix** | **Result** |
+|--------|-----------|---------|------------|
+| Modals weren’t announced | Missing ARIA structure and focus management | Added `role="dialog"`, `aria-*` attributes, and lifecycle hooks | Modals are screen reader-friendly |
+| No skip navigation | No way to bypass header/nav via keyboard | Added skip link to `<main>` with `.sr-only` and focus styles | Users can quickly jump to content |
+| Icon-only headings caused confusion | Visual icons lacked screen-readable context | Added `<span class="sr-only">` with descriptive text | Headings are semantically clear |
+| Toggle lacked state indication | No `aria-checked`, poor labeling | Implemented ARIA live region and dynamic `aria-checked` updates | Screen readers correctly track toggle status |
+| Drift in ARIA during iterations | Refactors removed important attributes | Performed regression testing with axe + keyboard nav | Restored and reinforced semantic structure |
+
+### **7.4 Performance Issues**
+
+| **Bug** | **Cause** | **Fix** | **Result** |
+|--------|-----------|---------|------------|
+| Heavy modal backgrounds | Uncompressed `.png` files | Converted to `.webp` and resized to max 1200px | Faster image load, smaller footprint |
+| Scripts blocked interactivity | Loaded without `defer`, before DOM ready | Moved to end of body and added `defer` | Page becomes interactive faster |
+| Async script race conditions | Script order broke dependent code | Reverted to `defer` and used `DOMContentLoaded` for init | Reliable script execution order |
+| Bootstrap bundle mostly unused | Full library included, unused styles flagged | Accepted for dev speed; noted `PurgeCSS` for future | Optimization opportunity identified, not critical |
+
+### **7.5 Validation Issues**
+
+| **Issue** | **Cause** | **Fix** | **Result** |
+|----------|-----------|---------|------------|
+| XHTML-style self-closing tags | Used `<img />` instead of `<img>` in HTML5 | Removed trailing slashes from void elements | HTML passes W3C validator |
+| Invalid use of `height="auto"` | Used non-standard value in inline HTML | Moved to CSS with `height: auto;` | Fixed rendering and validation |
+| Duplicate IDs in modals | Dynamically generated elements reused `id` | Applied scoped or indexed `id` values | Unique DOM structure |
+| Redundant ARIA roles | Used roles that were implicit in element types | Removed `role="button"` on `<button>`, etc. | Cleaner, standards-compliant markup |
+| Missing alt text on images | Some decorative elements weren’t labelled | Added `alt=""` or appropriate alt text where needed | All images validated and semantically correct |
+
+### **7.6 Other Development Challenges**
+
+| **Issue** | **Cause** | **Fix** | **Result** |
+|----------|-----------|---------|------------|
+| Script execution order broke logic | `async` used where `defer` or load-timing needed | Replaced `async` with `defer`, scoped init logic to `DOMContentLoaded` | Reliable script sequencing |
+| Inconsistent state reset | `startNewGame()` did not fully clear board or timer | Centralized reset logic inside one encapsulated function | Game starts fresh with every reset |
+| Styling and theme conflicts | Bootstrap and custom styles clashed | Created global CSS variables and used `body.dark` scoping | Consistent styling across all modes |
+| Accessibility regression during UI changes | Refactors removed important ARIA/tabs logic | Added automated axe rechecks + manual keyboard testing | Accessibility consistently maintained |
+| Multiple minor layout bugs during refactor | HTML structure changed without updating IDs/classes | Used dev tools + research to realign layout structure | Layouts corrected and modularized |
+
+### **7.7 Unresolved Issues**
+
+Despite considerable effort and testing, a few issues remain unresolved:
+
+| **Issue** | **Cause** | **Attempts** | **Why It Remains Unresolved** |
+|----------|-----------|--------------|-------------------------------|
+| Keyboard navigation for grid cell selection | The puzzle grid is implemented using paragraph tags inside a flex-based div structure, which lacks inherent focusability or keyboard control | Tried using `tabindex`, JS focus handling, and keydown listeners, but ran into complex coordination issues with grid selection state | No reliable or consistent way to manage focus order, ARIA roles, and editing behavior across all browsers without fully reengineering grid as a `table` or interactive form-based structure |
+| JavaScript files not minified | Development prioritized readability, debuggability, and modular documentation through clear file structures and docstrings | Considered using build tools (e.g., Webpack, esbuild, or Terser), but was outside the scope of this project’s manual-first workflow | Minification would reduce load time but was traded for human readability and easier code review during development |
+
+The debugging and testing process was core to Codoku’s evolution. Nearly all major issues across layout, accessibility, interactivity, and validation were resolved through proactive strategies, technical research, and tool-assisted refinement. A small number of issues — notably keyboard grid navigation and JavaScript minification — remain, with clear rationales documented for future enhancement. These do not critically impair usability or functionality and were consciously deferred for maintainability, scope, and clarity.
+
+## **8. Deployment**
+
+The **Codoku** project was deployed using GitHub Pages, allowing the live version of the site to be accessed directly through a browser without the need for additional server configuration.
+
+To publish the site via GitHub Pages, I followed these steps:
+
+1. Navigated to the GitHub repository for the Codoku project.
+2. Clicked on the Settings tab at the top of the repository.
+3. In the left-hand sidebar, I selected the Pages section.
+4. Under the Source dropdown menu:
+   - I chose the `main` branch as the publishing source.
+   - I selected the `/ (root)` folder as the deployment directory.
+   - I then clicked Save.
+5. GitHub automatically generated a public URL for the live site, which appeared as a success banner.
+
+The deployed site is now live and accessible at:[https://teseolou.github.io/codoku/](https://teseolou.github.io/codoku/)
+
+Additionally, I will fork this repository so that it can be cloned for future use and development.
+
+## 9. Future Developments
+
+While the current version of **Codoku** is fully functional, responsive, and accessible, there are a number of enhancements planned for future releases. These improvements aim to build upon the strong foundation established during development and address certain technical limitations, stretch goals, and performance opportunities.
+
+### 9.1 Accessibility Improvements
+
+Although Codoku performs well in screen reader and keyboard testing, one accessibility limitation remains:
+
+#### 🧩 Grid Cell Keyboard Navigation (Unresolved)
+- **Issue**: Currently, individual Sudoku cells cannot be selected using the keyboard alone. Users must click a cell with a mouse before entering a number.
+- **Cause**: The grid cells are built with `<p>` tags for semantic flexibility and style control but are not focusable elements by default.
+- **Barrier**: To fully support keyboard-based play, each cell would need to be restructured as a `tabindex="0"` focusable element or rendered as a `<button>` or `<input>`, with custom event handling and ARIA labels.
+- **Status**: This enhancement was scoped out of the current project due to time and complexity, but remains a top priority for future releases.
+
+### 9.2 JavaScript Optimization
+
+#### 🔧 Unminified JavaScript Files
+- **Context**: Lighthouse flagged `game.js` as non-minified, resulting in a marginally larger bundle.
+- **Reason**: The JavaScript has been left in an uncompressed, well-commented state to preserve readability and support assessment.
+- **Planned**: For a production release, all JavaScript files will be minified using tools like Terser or integrated into a build process for optimized delivery.
+
+### 9.3 Performance Enhancements
+
+#### ⏱ Purging Unused CSS
+- **Issue**: Bootstrap’s full bundle is currently used, which includes many unused styles.
+- **Solution (Future)**:
+  - Explore **PurgeCSS** to eliminate unused selectors in production.
+  - Consider creating a **custom Bootstrap build** tailored to Codoku’s components.
+- **Goal**: Reduce CSS payload size to improve load times and maintain cleaner source code.
+
+#### 🖼 LCP Optimization (Largest Contentful Paint)
+- **Observation**: Modal backgrounds and large `.webp` images slightly delay LCP scores on mobile.
+- **Plan**: Conduct further research into image compression tools and responsive asset strategies to optimize visual assets without compromising clarity or theme cohesion.
+
+### 9.4 Feature Extensions
+
+#### 📮 Backend Integration for Score Saving
+- **Idea**: Implement optional backend functionality to allow players to submit scores and track high scores over time.
+- **Tools Considered**:
+  - Firebase for lightweight database and auth
+  - Node.js/Express for server setup
+- **Timeline**: Future addition as full-stack knowledge progresses.
+
+#### ♿ Enhanced Visual Feedback for Clues and Errors
+- **Observation**: Current clue reveals and incorrect inputs are styled using color changes alone (green and red text), which may be insufficient for users with color vision deficiencies or low vision.
+- **Planned Improvements**:
+  - Add icon indicators (e.g., ❌ for errors, 🛈 for hints)
+  - Introduce accessible patterns (e.g., dashed borders for hints, underlines for incorrect entries)
+  - Use ARIA live regions or inline screen reader announcements to describe changes
+- **Goal**: Ensure feedback from the "Check" and "Clue" buttons is perceivable to all users regardless of color perception.
+
+Codoku represents a strong foundation in front-end logic, accessibility, and responsive design. Its future will focus on expanding functionality, refining performance, and enhancing interactivity for all users. Accessibility and user experience will remain at the core of every future iteration.
