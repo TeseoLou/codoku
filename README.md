@@ -2399,7 +2399,7 @@ Users click or tap the “Home” button to return to `index.html` (the Game pag
 - Visually consistent button sizing and border styles applied with `.equal-width-buttons`  
 - Positioned using `Bootstrap`’s utility classes for spacing (`mb-4`) and alignment (`d-flex justify-content-center`)  
 
-## 6. Testing
+## **6. Testing**
 
 Thorough testing was conducted to ensure that the Codoku game functions reliably, is accessible to a wide range of users, and performs well across devices and browsers. This process involved a combination of automated tools and manual testing techniques to validate the code, check for accessibility compliance, assess performance, and confirm that all features behave as expected.
 
@@ -2411,3 +2411,5 @@ Key testing areas include:
 - User Stories and Feature Functionality
 
 For a full breakdown of all testing processes, tools used, and results, please refer to this [TESTING](docs/TESTING.md) document.
+
+## 7. **Bugs and Fixes**
