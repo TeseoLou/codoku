@@ -1314,3 +1314,234 @@ Following the audit, the following SEO features were implemented and confirmed u
 
 The Detailed SEO Extension played a vital role in elevating Codoku’s on-page SEO. It helped surface overlooked issues like missing `robots` and `keywords` tags early in development and guided their resolution. While canonical links, `x-robots-tag` headers, and publisher metadata remain future opportunities, the project now offers a solid and semantically optimized foundation for search engines.
 
+## **6.4 Responsiveness & Browser Compatibility Testing**
+
+Ensuring that **Codoku** delivers a smooth and accessible experience across a variety of devices was essential to creating an inclusive and user-friendly interface. Responsive testing was conducted through emulation, browser-based tools, and real-world user feedback. This approach verified not just layout stability, but also the usability of controls, modals, and navigation across multiple screen types and interaction models.
+
+### 6.4.1 **DevTools Responsive Mode**
+
+The Responsive Mode in Chrome DevTools was used to simulate a wide range of real-world devices and screen resolutions. This enabled testing across smartphones, tablets, foldables, and smart displays with varying aspect ratios and pixel densities.
+
+![Responsive testing across multiple emulated devices](figures/gifs/device-emulation.gif)  
+*Animated walkthrough of Codoku being tested across multiple device profiles using Chrome DevTools' Responsive Mode. This validated layout adaptability, touch interaction, and modal scaling across various screen sizes.*
+
+The table below summarizes manual device testing results from survey participants. Each device was evaluated against four key responsive behavior criteria.
+
+| Device                  | Grid Scaling ✅ | Modal Centering ✅ | Touch Accessibility ✅ | Orientation Tested ✅ |
+|-------------------------|----------------|--------------------|------------------------|-----------------------|
+| iPhone XR               | ✅             | ✅                 | ✅                     | ✅                    |
+| iPhone 12 Pro           | ✅             | ✅                 | ✅                     | ✅                    |
+| iPhone SE               | ✅             | ✅                 | ✅                     | ✅                    |
+| iPad Air                | ✅             | ✅                 | ✅                     | ✅                    |
+| Samsung Galaxy A71      | ✅             | ✅                 | ✅                     | ✅                    |
+| Samsung Galaxy S20 Ultra| ✅             | ✅                 | ✅                     | ✅                    |
+| MacBook Air             | ✅             | ✅                 | ✅                     | ✅                    |
+| Surface Pro 7           | ✅             | ✅                 | ✅                     | ✅                    |
+| Windows 11 Laptop       | ✅             | ✅                 | ✅                     |                       | 
+| Nest Hub Display        | ✅             | ✅                 | ✅                     |                       |
+| Android Tablet          | ✅             | ✅                 | ✅                     |                       |
+  
+All surveyed devices passed the four core responsiveness checks: grid scaling, modal positioning, touch usability, and orientation flexibility. The results confirmed consistent performance and a smooth user experience across phones, tablets, laptops, and smart displays.
+
+### **6.4.2 Responsive Viewer**
+
+To supplement Chrome DevTools and real-device feedback, the **Responsive Viewer** Chrome extension was used to test Codoku across a wide variety of virtual devices and screen resolutions. This tool allowed for side-by-side previews of different viewport sizes and helped validate UI behavior across phones, tablets, laptops, and large desktop screens.
+
+![Responsive Viewer Multi-Device Emulation](figures/gifs/sync-device-emulator.gif)  
+*Responsive Viewer used to simulate multiple devices side-by-side (iPhone 12 Mini, iPad Air, and MacBook Air) confirming consistent layout, modal behavior, and grid alignment.*
+
+**Responsiveness Test Results by UI Component:**
+
+| Device              | Navbar Toggle ✅ | Modal View ✅ | Grid Alignment ✅ | Number Key Panel ✅ | General Layout ✅ |
+|---------------------|------------------|----------------|--------------------|----------------------|--------------------|
+| Galaxy S20          | ✅               | ✅             | ✅                 | ✅                   | ✅                 |
+| iPhone 12 Mini      | ✅               | ✅             | ✅                 | ✅                   | ✅                 |
+| iPhone 14 Pro       | ✅               | ✅             | ✅                 | ✅                   | ✅                 |
+| Pixel 7 Pro         | ✅               | ✅             | ✅                 | ✅                   | ✅                 |
+| Galaxy Tab S7       | ✅               | ✅             | ✅                 | ✅                   | ✅                 |
+| Pixel Slate         | ✅               | ✅             | ✅                 | ✅                   | ✅                 |
+| Fire HD 10          | ✅               | ✅             | ✅                 | ✅                   | ✅                 |
+| Surface Pro X       | ✅               | ✅             | ✅                 | ✅                   | ✅                 |
+| MacBook Air         | ✅               | ✅             | ✅                 | ✅                   | ✅                 |
+| Pixelbook Go        | ✅               | ✅             | ✅                 | ✅                   | ✅                 |
+| Studio Display      | ✅               | ✅             | ✅                 | ✅                   | ✅                 |
+| Pro Display XDR     | ✅               | ✅             | ✅                 | ✅                   | ✅                 |
+
+**Observations:**
+
+- ✅ **Navbar:** Collapses into a hamburger menu on narrow screens and expands correctly on wider displays.
+- ✅ **Modal Window:** Maintained perfect centering and readable scale across all resolutions, with no cropping or overflow.
+- ✅ **Sudoku Grid:** Aligned consistently, with no warping, shifting, or broken borders on any screen size.
+- ✅ **Number Key Input Panel:** Touch spacing was preserved, with each number remaining easy to press even on smaller phones.
+- ✅ **Overall Layout:** Visual hierarchy remained intact; footer icons, toggles, and navigation links scaled properly.
+- ⚠️ **Minor Variation:** On ultra-narrow mobile viewports, the modal text scaled down slightly but stayed readable and functional.
+
+No major issues were found during these checks. Layouts adjusted responsively, maintaining usability and visual consistency across all tested devices. The Responsive Viewer provided rapid cross-device simulation and confirmed the robustness of Codoku’s responsive design system. It helped ensure the interface is both visually consistent and functionally intuitive across a range of modern hardware profiles.
+
+### **6.4.4 Responsiveness User Feedback**
+
+To validate how Codoku performs across real-world screen sizes and devices, I conducted a Google Forms-based survey with 12 participants. Testers were given direct links to the following pages:
+
+- `index.html` (Game page)
+- `about.html` (About page)
+- `404.html` (Error page – tested by visiting a non-existent route)
+
+Each participant accessed the site on a different physical device and was asked to assess the interface for responsiveness, readability, layout behavior, and usability across the three core pages.
+
+#### Responsiveness Questions
+**Device & Environment Info**
+- What type of device did you use? (Phone / Tablet / Laptop/Desktop)
+- What is the name/model of your device?
+- Which browser did you use?
+
+**Visual Layout & Responsiveness**
+Each participant answered the following YES / NO / NA questions:
+
+| # | Question                                                                 |
+|---|--------------------------------------------------------------------------|
+| 1 | Was the Sudoku grid fully visible without scrolling?                    |
+| 2 | Did the modal window (difficulty & timer) appear centered and readable? |
+| 3 | Was the navigation menu accessible and functional?                      |
+| 4 | Were all buttons and touch controls easy to press?                      |
+| 5 | Did the site adapt properly to your screen size without overlap?        |
+| 6 | Did you experience any broken layout or misalignment?                   |
+| 7 | Were all page elements legible at your default zoom level?              |
+| 8 | Did the footer content display properly (icons, copyright)?             |
+| 9 | Was the About page readable and properly formatted on your device?      |
+| 10| Did the 404 Error page display a clear message and usable layout?       |
+
+#### **Results**
+Out of 12 total testers:
+- 🔵 **Phones**: 4 users  
+  *(e.g. iPhone 14, Galaxy S22, Google Pixel 7, OnePlus 12)*
+- 🟠 **Tablets**: 4 users  
+  *(e.g. iPad Air, Surface Pro 6, Galaxy Tab S6, Lenovo Tab M10)*
+- 🟣 **Laptops/Desktop**: 4 users  
+  *(e.g. MacBook Pro 14", Surface Laptop 5, Lenovo ThinkPad L13, Acer Aspire)*
+
+These testers were selected to evenly split pool allowed for accurate comparison across different screen categories and interaction types.
+
+The chart below illustrates the number of 'YES' responses per device type for each responsiveness feature tested. Each bar reflects how many participants (out of 4 in each group) confirmed a positive experience for that specific aspect of the site:
+
+![Responsive Testing Chart](figures/user-survey-results/responsiveness.webp)
+*Number of “YES” responses per device group for each responsive feature.*
+
+This visualization clearly shows that:
+- ✅ The majority of features performed well across all devices.
+- ⚠️ Slight drops in 'YES' responses for grid visibility and text legibility were noted on phones, aligning with minor user feedback explained below.
+
+**Q1 – Grid Visibility (1 phone user):**  
+The tester using an iPhone 14 with system font scaling noted that part of the grid was clipped in landscape orientation, requiring slight scrolling.
+
+**Q7 – Text Legibility (1 phone user):**  
+The Pixel 7 user noted that the body text in the stats panel felt a bit small under default system font settings.
+
+These observations did not prevent any testers from using the application successfully, but they help identify areas for further improvement. Especially for smaller mobile screens and narrow browser window sizes.
+
+### **6.4.5 BrowserStack Compatibility Testing**
+
+To verify that **Codoku** functions reliably across the most widely used browsers, I conducted live browser testing using BrowserStack. BrowserStack is a cross-browser testing platform that allows developers to test websites and web apps on real browsers and devices without needing local installations. Its Live Testing (App View) was used.
+
+This covered interaction testing across:
+- **Safari (macOS)**
+- **Opera (Windows)**
+- **Firefox (Windows)**
+- **Chrome (Windows)**
+- **Edge (Windows)**
+
+Each browser was tested at 1504x834 resolution, with a focus on layout rendering, modal display, input handling, and responsiveness of interactive elements like the sound toggle and game controls.
+
+| Feature                     | Safari | Opera | Firefox | Chrome | Edge |
+|----------------------------|--------|--------|---------|--------|------|
+| Layout renders correctly   | ✅     | ✅     | ✅      | ✅     | ✅   |
+| Modal displays correctly   | ✅     | ✅     | ✅      | ✅     | ✅   |
+| Navbar & links functional  | ✅     | ✅     | ✅      | ✅     | ✅   |
+| Buttons/toggles responsive | ✅     | ✅     | ✅      | ✅     | ✅   |
+| Sound toggle worked        | ⚠️ Delay | ✅     | ✅      | ✅     | ⚠️ Delay |
+| General page interaction   | ✅     | ✅     | ✅      | ✅     | ⚠️ Slight lag |
+
+#### ⚠️ Observations
+
+- **Safari**  
+  - All features worked reliably, but the sound toggle triggered audio playback with a brief delay.  
+  - Safari is known to defer Web Audio playback on initial page load or during light CPU load, especially when toggled without a user gesture. Apple prioritizes battery and privacy, which can result in delayed or throttled audio processing when autoplay or programmatic audio is triggered.
+
+- **Edge**  
+  - Also experienced a minor delay when toggling sound on.  
+  - General page interaction (e.g. modal response, button clicks) felt slightly slower than in other browsers, but all functionality remained intact.
+  - While Edge shares rendering logic with Chrome, it includes additional security layers and privacy controls. These enhancements can sometimes slightly delay audio playback or script execution.
+
+These issues were subtle and did not impact functionality, but they reflect slight variations in how browsers process event-driven JavaScript actions (like sound playback).
+
+![Safari Test](figures/gifs/safari.gif)  
+*Interaction tested on Safari (macOS Ventura).*
+
+![Opera Test](figures/gifs/opera.gif)  
+*Opera browser test.*
+  
+![Firefox Test](figures/gifs/firefox.gif)  
+*Firefox session.*
+ 
+![Chrome Test](figures/gifs/chrome.gif)  
+*Chrome test run.*
+  
+![Edge Test](figures/gifs/edge.gif)  
+*Microsoft Edge test.*
+
+These screen recordings demonstrate Codoku’s consistent layout rendering and interactive performance across modern browsers. Despite minor audio delays in Safari and Edge, all core features—modals, navigation, controls—functioned as expected.
+
+### **6.4.6 Browser Compatibility User Feedback**
+To complement responsive layout testing, browser compatibility was also assessed through the same Google Forms survey used in section 6.4.4. The same **12 participants** accessed the Codoku site on their respective **physical devices** (4 phones, 4 tablets, 4 laptops/desktops), and were asked to report on their **browser environment** and any compatibility issues they observed while interacting with the three tested pages:
+
+- `index.html` (Game page)  
+- `about.html` (About page)  
+- `404.html` (Error page)
+
+> **Note:** To ensure a representative sample across major browsers, participants were asked to use specific ones depending. This helped diversify the browser pool, as many Android users typically default to Chrome.
+
+#### Browser Compatibility Questions
+**Device & Environment Info**
+- What type of device did you use? (Phone / Tablet / Laptop/Desktop)
+- What is the name/model of your device?
+- Which browser did you use?
+
+**Browser Compatibility**
+Each participant answered the following YES / NO / NA questions:
+
+| # | Question                                                                 |
+|---|--------------------------------------------------------------------------|
+| 1 | Did the site load without errors in your browser?                        |
+| 2 | Did the sound toggle work and play feedback as expected?                 |
+| 3 | Did the modal function consistently when triggered (open/close)?         |
+| 4 | Did you experience any delays or lag in button responsiveness?           |
+| 5 | Did animations (modal fade, theme toggle, confetti) work smoothly?       |
+| 6 | Did the theme toggle (light/dark mode) work as expected?                 |
+| 7 | Were there any visible browser-specific rendering issues?                |
+| 8 | Did all three pages behave consistently in your browser?                 |
+
+#### **Results**
+
+- 🔵 **Phones**: 4 users  
+  *(Chrome on Android, Safari on iOS, Firefox on Android, Edge on Android)*  
+- 🟠 **Tablets**: 4 users  
+  *(Safari on iPad, Chrome on Android tablet, Edge on Surface Pro, Firefox on Lenovo Tab)*  
+- 🟣 **Laptops/Desktop**: 4 users  
+  *(Chrome on Windows, Edge on Windows, Safari on macOS, Opera on Linux)*
+
+The graph below visualizes how many users (out of 4 per device group) reported successful behavior for each tested browser compatibility element:
+
+![Browser Compatibility Survey Chart](figures/user-survey-results/browser-compatibility.webp)  
+*Survey responses showing number of "YES" answers across phones, tablets, and desktops for each browser compatibility feature.*
+
+**Key Observations**:
+- ⚠️ **Sound Toggle** Slight delay sound effects was reported by:  
+  - Safari   
+  - Edge
+
+- ⚠️ **Theme Toggle** A minor lag between toggle activation and visible theme change was reported by:  
+  - Safari   
+  - Edge
+
+These issues are likely the result of how Safari and Edge handle media playback and UI updates. Both browsers have stricter autoplay and performance throttling policies, particularly on mobile and low-power devices. However, due to project time constraints and the minor nature of these issues, enhancement is considered outside the scope of the current development phase.
+
+Despite these minor discrepancies, no functionality was broken, and all browsers successfully displayed and interacted with the game features. This confirms that Codoku is functionally compatible across major modern browsers and platforms.
