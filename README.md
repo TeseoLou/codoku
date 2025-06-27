@@ -3089,70 +3089,66 @@ The deployed site is now live and accessible at:[https://teseolou.github.io/codo
 
 Additionally, I will fork this repository so that it can be cloned for future use and development.
 
-## **9. Future Developments**
+# 9. Future Developments
 While the current version of **Codoku** is fully functional, responsive, and accessible, several enhancements are planned for future releases. These improvements aim to build upon the strong foundation established during development and address performance optimizations, accessibility refinements, and extended functionality.
 
-## 9. Future Developments
-
-While the current version of **Codoku** is fully functional, responsive, and accessible, several enhancements are planned for future releases. These improvements aim to build upon the strong foundation established during development and address performance optimizations, accessibility refinements, and extended functionality.
-
-### **9.1 Accessibility Improvements**
+## **9.1 Accessibility Improvements**
 Codoku prioritizes accessibility, but several enhancements remain to support full keyboard control and screen reader interaction. These changes will help ensure a more inclusive experience for users with diverse needs.
 
-#### **9.1.1 Grid Cell Keyboard Navigation**
+### **9.1.1 Grid Cell Keyboard Navigation**
 - **Issue**: Currently, users must use a mouse or touchscreen to select grid cells; full keyboard-only gameplay isn’t supported.
 - **Cause**: The grid uses `<p>` elements, which are not focusable by default.
 - **Barrier**: True keyboard navigation would require restructuring the grid using `<button>` or `<input>` elements or implementing a roving `tabindex` system with ARIA labels.
 - **Status**: This was scoped out for this version due to time constraints and complexity but is a priority for future accessibility enhancements.
 
-#### **9.1.2 Improved Screen Reader Support**
+### **9.1.2 Improved Screen Reader Support**
 - **Observation**: Although modals and toggles are announced properly, screen reader users cannot currently interact with or understand the state of the Sudoku grid itself.
 - **Plan**: Restructure the grid with semantic roles, possibly using ARIA `grid`, `row`, and `cell` roles or a native HTML `<table>` structure to support narrated navigation.
 - **Goal**: Ensure screen reader users receive meaningful cues while moving across the grid and entering values.
 
-### **9.2 JavaScript Optimization**
+## **9.2 JavaScript Optimization**
 To improve loading time and production efficiency, Codoku will eventually move toward minified and modular JavaScript. This ensures maintainability during development while enabling performance improvements for deployment.
 
-#### **9.2.1 Unminified JavaScript Files**
+### **9.2.1 Unminified JavaScript Files**
 - **Context**: Lighthouse flagged JavaScript files as unminified.
 - **Reason**: Code was intentionally left readable and commented for learning and assessment.
 - **Planned**: Introduce minification via Terser or integrate a build process using Webpack or Parcel to optimize delivery for production use.
 
-### **9.3 Performance Enhancements**
+## **9.3 Performance Enhancements**
 Performance tuning is a key focus for future iterations. Planned improvements include stripping unused styles and optimizing visual content to ensure smoother gameplay, especially on mobile devices.
 
-#### **9.3.1 Purging Unused CSS**
+### **9.3.1 Purging Unused CSS**
 - **Issue**: Bootstrap and Font Awesome include many unused styles, increasing CSS payload size.
 - **Future Strategy**:
   - Use **PurgeCSS** to strip unused selectors in production builds.
   - Consider creating a **custom Bootstrap build** limited to Codoku's required components.
 
-#### **9.3.2 LCP Optimization (Largest Contentful Paint)**
+### **9.3.2 LCP Optimization (Largest Contentful Paint)**
 - **Observation**: Large `.webp` assets, especially modal and page backgrounds, can slightly delay LCP performance on mobile devices.
 - **Future Plan**: Experiment with further compression tools and consider lazy loading or image swapping based on screen resolution.
 
-### **9.4 Feature Extensions**
+## **9.4 Feature Extensions**
 A number of planned gameplay and interface enhancements will deepen player engagement and improve overall UX, including progress tracking, persistent score storage, and offline support.
 
-#### **9.4.1 Backend Integration for Score Saving**
+### **9.4.1 Backend Integration for Score Saving**
 - **Goal**: Allow users to save their game progress or submit scores.
 - **Future Tools**:
   - Use Firebase or Supabase for real-time databases.
   - Build a REST API using Node.js and Express for authentication and data storage.
 
-#### **9.4.2 Enhanced Visual Feedback for Clues and Errors**
+### **9.4.2 Enhanced Visual Feedback for Clues and Errors**
 - **Current Limitation**: Feedback for hints and incorrect answers relies on color alone (green/red).
 - **Future Improvements**:
   - Add semantic icons or symbols
   - Include screen reader alerts via ARIA live regions
   - Use patterns or outlines to distinguish hint and error states
 
-#### **9.4.3 Progress Bar for Game Completion**
+### **9.4.3 Progress Bar for Game Completion**
 - **Planned Feature**: Add a visual progress bar showing how much of the puzzle is complete.
 - **Benefits**: Gives real-time feedback, helps motivate players, and supports cognitive accessibility.
 - **Approach**: Track filled cells vs total editable cells and update the bar dynamically using Bootstrap or custom styling.
 
-#### **9.4.4 Offline Play Support**
+### **9.4.4 Offline Play Support**
 - **Goal**: Allow Codoku to function without an internet connection.
 - **Cause**: Currently, all assets load from the network and are not cached for offline use.
 - **Planned Solution**:
@@ -3160,3 +3156,5 @@ A number of planned gameplay and interface enhancements will deepen player engag
   - Add a manifest file to support installability and offline behavior.
 - **Barrier**: Offline support would require significant JavaScript changes and testing workflows, which are currently beyond the scope of this project.
 - **Future Plan**: Investigate using Workbox in a future module and progressively enhance the site toward full PWA support.
+
+#
