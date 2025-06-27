@@ -2422,93 +2422,656 @@ Overall, Codoku performed reliably and consistently across devices and browsers.
 
 For a full breakdown of all testing processes, tools used, and results, please refer to this [TESTING](docs/TESTING.md) document.
 
-## **7. Bugs and Fixes**
-Throughout the development of **Codoku**, a wide range of issues were identified and addressed to improve functionality, performance, accessibility, validation, and maintainability. These bugs emerged from multiple sources: real-time testing, code validation, design reviews, and user interaction testing.
+# **7. Bugs and Fixes**  
+Throughout the development of Codoku, various issues surfaced across functionality, styling, accessibility, validation, and performance. These were resolved through a combination of real-time testing, research, accessibility audits, and peer feedback.
 
-The Codoku application was thoroughly tested and iteratively debugged through manual QA, accessibility audits, performance checks, and standards. Below is a categorized summary of issues encountered, their root causes, and the technical resolutions applied.
+Each issue is outlined with a breakdown of what went wrong, its cause, consequence, what research informed the fix, and how it was resolved. While not every single bug or tweak is listed, as would be unrealistic for any development project, I’ve selected issues that stood out for their learning value. These include both common pitfalls and more complex challenges I was proud to overcome. This selection reflects my growth as a developer and the thoughtful problem-solving that shaped the final product.
 
-Many issues were caught and resolved proactively during development thanks to:
+## **7.1 Functional Issues**  
+Functional issues refer to problems that affected how core features of the **Codoku** game and site operated. These bugs typically impacted the logic, interactivity, and behavior of the application, such as how the puzzle grid responded, how the timer worked, how audio was controlled, and how the game reset conditions were triggered. Resolving these issues was essential to ensure a smooth, intuitive, and bug-free experience for the user. Each fix aimed to reinforce correct state management, predictable responses to user input, and a seamless gameplay loop from start to finish.
 
-- Browser developer tools  
-- Logical reasoning and iterative testing  
-- External research and documentation (e.g., MDN, Bootstrap docs, Stack Overflow, W3C guidelines, and peer/mentor discourse)
+### **7.1.1. Grid Still Active After Puzzle Solved**  
+During development, I noticed that even after solving the puzzle, users were still able to click on the grid and input new numbers. This undermined the sense of completion and allowed players to accidentally overwrite correct answers, making the win feel unfinished.
 
-This combination of analysis and research was instrumental in shaping Codoku into a performant, accessible, and responsive application.
+**Cause of the Issue:**  
+- The grid cells kept their `editable` class even after the puzzle was completed.
+- Event listeners and pointer interactivity remained active.
+- There was no formal locking mechanism tied to the game’s win condition.
 
-The issues are categorized below for clarity and include technical causes, fixes, and results.
+**How I Solved It:**  
+To address this, I created a dedicated `disablePuzzleInteraction()` function. This function loops through every cell marked as `editable` and:
 
-### **7.1 Functional Issues**
+- Removes the `editable` class.
+- Sets `pointer-events: none` to block mouse input.
+- Adds `aria-disabled="true"` and `tabindex="-1"` for accessibility and keyboard lockout.
+- Uses `.prop('disabled', true)` for consistency, even though `<p>` elements don’t require it.
 
-| **Bug** | **Cause** | **Fix** | **Result** |
-|--------|-----------|---------|------------|
-| Grid still active after puzzle solved | Input events not removed after win modal triggered | Removed `editable` class and unbound event listeners | Grid fully locks after win |
-| Error modal reset game | Shared logic triggered `startNewGame()` incorrectly | Used contextual modal types to separate modal actions | Error modal no longer restarts puzzle |
-| Timer didn’t reset properly | `setInterval()` persisted across games | Centralized timer logic and ensured `clearInterval` runs on reset | Timer works independently across game sessions |
-| Sounds played when muted | Audio triggers lacked mute check | Wrapped playback calls with `if (soundEnabled)` | Mute toggle now respected throughout the app |
-| Navbar didn’t collapse on link click | Bootstrap requires manual `.hide()` call | Added `Bootstrap.Collapse.getInstance(...).hide()` to links | Navbar collapses automatically on mobile |
+This function is triggered when the user clicks “Admire Puzzle” after completing the game, allowing players to celebrate their win without modifying the board.
 
-### **7.2 Styling & Layout Issues**
+**Reference Materials:**   
+- [MDN: pointer-events](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events)
+- [WAI-ARIA: aria-disabled](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/)
+- [Stack Overflow: How to disable and then enable onclick event on <div> with javascript](https://stackoverflow.com/questions/18982642)
 
-| **Bug** | **Cause** | **Fix** | **Result** |
-|--------|-----------|---------|------------|
-| Grid overflowed on small screens | Used `px` units instead of responsive ones | Converted to `vw`, `vh`, `clamp()`, added media queries | Grid scales properly on all viewports |
-| Toggle thumb duplicated in dark mode | Poor targeting of `::before` with custom CSS | Used `:not(:focus)` and improved selector scope | Toggle renders consistently |
-| Modal content too wide on mobile | Static widths with no wrapping | Used `max-width`, `overflow-wrap`, and responsive `font-size` | Content wraps and resizes properly |
-| Footer overlapped game grid | Incomplete layout structure and no flex-grow | Applied `flex-column`, `min-height`, and auto margin pushing | Footer behaves as intended across page types |
-| Theming conflicts | Bootstrap styles overrode custom theme logic | Used `body.dark` wrappers and CSS variables for consistent scoping | Uniform styling across light/dark themes |
+**The Result:**  
+Once the puzzle is solved, players can no longer interact with the grid. This preserves the final state, avoids accidental edits, and enhances both the accessibility and polish of the win experience.
 
-### **7.3 Accessibility Issues**
+### **7.1.2. Error Modal Triggered Game Reset**  
+While testing incorrect input scenarios, I noticed that the error modal, intended to give players feedback on mistakes, was inadvertently restarting the game. This was especially frustrating for users who wanted to return to the board and fix their errors without losing progress.
 
-| **Bug** | **Cause** | **Fix** | **Result** |
-|--------|-----------|---------|------------|
-| Modals weren’t announced | Missing ARIA structure and focus management | Added `role="dialog"`, `aria-*` attributes, and lifecycle hooks | Modals are screen reader-friendly |
-| No skip navigation | No way to bypass header/nav via keyboard | Added skip link to `<main>` with `.sr-only` and focus styles | Users can quickly jump to content |
-| Icon-only headings caused confusion | Visual icons lacked screen-readable context | Added `<span class="sr-only">` with descriptive text | Headings are semantically clear |
-| Toggle lacked state indication | No `aria-checked`, poor labeling | Implemented ARIA live region and dynamic `aria-checked` updates | Screen readers correctly track toggle status |
-| Drift in ARIA during iterations | Refactors removed important attributes | Performed regression testing with axe + keyboard nav | Restored and reinforced semantic structure |
+**Cause of the Issue:**  
+- A single handler controlled the "OK" button in the alert modal, regardless of context.
+- The game logic did not distinguish between different alert types, so the reset modal logic was applied universally, including for standard input errors.
 
-### **7.4 Performance Issues**
+**How I Solved It:**  
+To fix this, I rewrote the logic for the “OK” button inside the `DOMContentLoaded` event. I used `textContent` to check the actual message shown in the alert modal. If the message contained the phrase “Time’s up,” then the game logic triggered the setup modal and hid the cancel button. Otherwise, it simply dismissed the alert without resetting the game or altering the board.
 
-| **Bug** | **Cause** | **Fix** | **Result** |
-|--------|-----------|---------|------------|
-| Heavy modal backgrounds | Uncompressed `.png` files | Converted to `.webp` and resized to max 1200px | Faster image load, smaller footprint |
-| Scripts blocked interactivity | Loaded without `defer`, before DOM ready | Moved to end of body and added `defer` | Page becomes interactive faster |
-| Async script race conditions | Script order broke dependent code | Reverted to `defer` and used `DOMContentLoaded` for init | Reliable script execution order |
-| Bootstrap bundle mostly unused | Full library included, unused styles flagged | Accepted for dev speed; noted `PurgeCSS` for future | Optimization opportunity identified, not critical |
+This approach let me maintain a single modal element for all alerts while applying different behaviors based on the message content. Console logs helped confirm that only the timeout scenario triggered a game restart.
 
-### **7.5 Validation Issues**
+**Reference Materials:**  
+- [Bootstrap 5 Modal JavaScript API](https://getbootstrap.com/docs/5.0/components/modal/#via-javascript)
+- [Stack Overflow: Check if there's some text inside an element](https://stackoverflow.com/questions/28327989)
 
-| **Issue** | **Cause** | **Fix** | **Result** |
-|----------|-----------|---------|------------|
-| XHTML-style self-closing tags | Used `<img />` instead of `<img>` in HTML5 | Removed trailing slashes from void elements | HTML passes W3C validator |
-| Invalid use of `height="auto"` | Used non-standard value in inline HTML | Moved to CSS with `height: auto;` | Fixed rendering and validation |
-| Duplicate IDs in modals | Dynamically generated elements reused `id` | Applied scoped or indexed `id` values | Unique DOM structure |
-| Redundant ARIA roles | Used roles that were implicit in element types | Removed `role="button"` on `<button>`, etc. | Cleaner, standards-compliant markup |
-| Missing alt text on images | Some decorative elements weren’t labelled | Added `alt=""` or appropriate alt text where needed | All images validated and semantically correct |
+**The Result:**  
+Error feedback is now cleanly separated from game resets. Players can receive input-related alerts and return to the puzzle without losing progress, while time-based alerts still guide the player back to the setup screen as intended.
 
-### **7.6 Other Development Challenges**
+### **7.1.3. Timer Did Not Reset Properly**  
+While testing multiple rounds of the game, I discovered that the timer sometimes continued running after a game ended or overlapped with a new session. In certain cases, the countdown appeared to speed up or run multiple instances at once, disrupting the experience.
 
-| **Issue** | **Cause** | **Fix** | **Result** |
-|----------|-----------|---------|------------|
-| Script execution order broke logic | `async` used where `defer` or load-timing needed | Replaced `async` with `defer`, scoped init logic to `DOMContentLoaded` | Reliable script sequencing |
-| Inconsistent state reset | `startNewGame()` did not fully clear board or timer | Centralized reset logic inside one encapsulated function | Game starts fresh with every reset |
-| Styling and theme conflicts | Bootstrap and custom styles clashed | Created global CSS variables and used `body.dark` scoping | Consistent styling across all modes |
-| Accessibility regression during UI changes | Refactors removed important ARIA/tabs logic | Added automated axe rechecks + manual keyboard testing | Accessibility consistently maintained |
-| Multiple minor layout bugs during refactor | HTML structure changed without updating IDs/classes | Used dev tools + research to realign layout structure | Layouts corrected and modularized |
+**Cause of the Issue:**  
+- The global `countdownInterval` was not consistently cleared before starting a new game.
+- As a result, `setInterval()` created multiple timers on top of each other, which caused desynchronization and unexpected countdown behavior.
 
-### **7.7 Unresolved Issues**
+**How I Solved It:**  
+Instead of isolating the timer into a self-contained module, I opted for a globally scoped `countdownInterval` variable to track the current instance. I added a check at the start of `startTimer()` to clear any existing intervals before creating a new one:
 
-Despite considerable effort and testing, a few issues remain unresolved:
+This ensures that only one timer is active at any given time. I then converted the user’s selected time from minutes to seconds, stored it in timeRemaining, and used setInterval() to update the display every second. When the countdown reached zero, the interval cleared and the game ended with an alert modal and optional alarm sound.
 
-| **Issue** | **Cause** | **Attempts** | **Why It Remains Unresolved** |
-|----------|-----------|--------------|-------------------------------|
-| Keyboard navigation for grid cell selection | The puzzle grid is implemented using paragraph tags inside a flex-based div structure, which lacks inherent focusability or keyboard control | Tried using `tabindex`, JS focus handling, and keydown listeners, but ran into complex coordination issues with grid selection state | No reliable or consistent way to manage focus order, ARIA roles, and editing behavior across all browsers without fully reengineering grid as a `table` or interactive form-based structure |
-| JavaScript files not minified | Development prioritized readability, debuggability, and modular documentation through clear file structures and docstrings | Considered using build tools (e.g., Webpack, esbuild, or Terser), but was outside the scope of this project’s manual-first workflow | Minification would reduce load time but was traded for human readability and easier code review during development |
+**Reference Materials:**  
+- [Stack Overflow: Clear and reset JavaScript interval](https://stackoverflow.com/questions/57860947)
+- [MDN: setInterval() & clearInterval()](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)
+- [Vaidehi Joshi: The Final Countdown](https://vaidehijoshi.github.io/blog/2015/01/06/the-final-countdown-using-javascripts-setinterval-plus-clearinterval-methods/)
 
-The debugging and testing process was core to Codoku’s evolution. Nearly all major issues across layout, accessibility, interactivity, and validation were resolved through proactive strategies, technical research, and tool-assisted refinement. A small number of issues — notably keyboard grid navigation and JavaScript minification — remain, with clear rationales documented for future enhancement. These do not critically impair usability or functionality and were consciously deferred for maintainability, scope, and clarity.
+**The Result:**  
+The timer now initializes cleanly on every new game, runs exactly once, and updates reliably without overlapping. It gracefully ends the game when time runs out and resets properly with each new puzzle, supporting both timed and untimed play modes.
 
-## **8. Deployment**
+### **7.1.4. Sounds Played When Muted**  
+Even after toggling the mute setting, users reported that game sounds—such as tap effects, key presses, and applause—continued to play. This was especially disruptive in quiet environments and created a poor user experience.
 
+**Cause of the Issue:**  
+- Although a mute toggle was present, the logic to control sound playback was scattered across the codebase.
+- Individual `audio.play()` calls did not check the user's mute preference.
+- The `isSoundEnabled` flag was not being referenced where sounds were triggered.
+
+**How I Solved It:**  
+Instead of checking `isSoundEnabled` at every single sound trigger, I centralized all sound playback inside a `soundEffects.play(name)` function. This wrapper function:
+
+- Accepts a sound name like `"key"` or `"applause"`.
+- Checks whether `isSoundEnabled` is `true`.
+- Resets the current audio’s `currentTime` to `0` before calling `.play()` to ensure sounds can replay rapidly.
+- Gracefully skips playback if the mute toggle is active.
+
+This change made the audio system easier to maintain and guaranteed consistent behavior across all parts of the app. The structure was modeled after techniques used in modular game development and audio best practices from MDN and Stack Overflow.
+
+**Reference Materials:**  
+- [Stack Overflow: JavaScript Audio Play on click](https://stackoverflow.com/questions/18826147)
+- [MDN: Audio.play()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play)
+
+**The Result:**  
+All game sounds now respect the mute setting. When the toggle is off, no audio is played from any event—creating a quieter, more accessible, and user-friendly experience across all devices.
+
+### **7.1.5. Navbar Didn’t Collapse on Link Click**  
+On mobile devices, the Bootstrap navbar would stay open after a navigation link was clicked, covering page content and confusing users who expected it to close.
+
+**Cause of the Issue:**  
+- Bootstrap’s collapsible navbar does not automatically close on link interaction.
+- Manual control using `.collapse('hide')` or API access is required.
+
+**How I Solved It:**  
+I found the relevant section in the [Bootstrap 5 Navbar documentation](https://getbootstrap.com/docs/5.0/components/navbar/#how-it-works), which confirmed that the collapse component must be controlled programmatically.
+
+I then used `Bootstrap.Collapse.getInstance(navbar).hide()` inside each nav link’s event listener. Console testing confirmed the collapse component was correctly initialized.
+
+**The Result:**    
+The navbar now collapses immediately after a user selects a link, greatly improving usability on small screens.
+
+### **7.1.5. Navbar Didn’t Collapse on Link Click**  
+While testing Codoku on smaller screens, I noticed that the mobile navigation menu remained open after a user clicked a link. This led to a frustrating experience where the expanded navbar covered page content and made the interface feel unresponsive or broken.
+
+**Cause of the Issue:**  
+- Bootstrap’s collapsible navbar component doesn’t automatically close when a nav link is clicked.
+- By default, it requires explicit JavaScript instructions to trigger a `.hide()` event on the navbar collapse instance.
+- The expected behavior—auto-collapsing after selection—needs to be implemented manually.
+
+**How I Solved It:**  
+After reviewing the Bootstrap 5 Navbar documentation, I learned that Bootstrap’s `Collapse` provides a programmatic way to hide elements. I used jQuery to target all nav links and attached a click event listener to each one. Inside the handler, I retrieved the current instance of the navbar collapse component using:
+
+```javascript
+const bsCollapse = bootstrap.Collapse.getInstance(document.getElementById('navbarNav'));
+bsCollapse.hide();
+```
+This ensured that whenever a link was clicked, the mobile menu would close as expected. Console testing confirmed that the collapse component was correctly detected and controlled.
+
+**Reference Materials:**  
+- [Bootstrap 5 Navbar Collapse Documentation](https://getbootstrap.com/docs/5.3/components/collapse/)
+- [jQuery .on() Documentation](https://api.jquery.com/on/)
+
+**The Result:**  
+The mobile navbar now collapses smoothly after a link is selected. This significantly improves the navigation experience on small screens and aligns with user expectations for responsive design behavior.
+
+### **7.1.6. Incomplete Reset on New Game**
+During development and testing, it became clear that the hint counter was not always resetting properly between games. Players who used hints during one session would sometimes see the old hint count persist when starting a new puzzle. This undermined the game’s fairness, especially for users trying to track progress or improve over time.
+
+**Cause of the Issue:**  
+- The hint counter (`hintsUsed`) was working but the `#hints` display was not reset in all game start scenarios in the display.
+- Fragmented logic across `game.js` and `setup-modal.js` made it easy to miss this state variable during initialization.
+
+**How I Solved It:**  
+I consolidated all reset-related functionality into a dedicated `startNewGame()` function inside `game.js`. Within this function, I ensured:
+- `hintsUsed` is explicitly reset to 0.
+- The hints display (`#hints`) is updated in the DOM.
+- The counter is cleared before any new game logic runs.
+```javascript
+function startNewGame() {
+    ...
+    hintsUsed = 0;
+    updateHintsDisplay();
+    ...
+}
+```
+This function is triggered via the startNewGame() call in setup-modal.js once a user completes the setup form:
+```javascript
+function setupStartButton() {
+  ...
+  startButton.addEventListener("click", function () {
+      const setupModal = $("#setup-modal");
+      const setupModalBootstrap = bootstrap.Modal.getInstance(setupModal[0]);
+      if (setupModalBootstrap) {
+          setupModalBootstrap.hide();
+      }
+      startNewGame();
+  });
+}
+```
+**Reference Materials:**  
+- [Stack Overflow: How to reset everything in my javascript game](https://stackoverflow.com/questions/63126904)
+
+**The Result:**  
+The hint counter now reliably resets with each new game, preventing carry-over errors and ensuring players start fresh. This change improves consistency, fairness, and the professional polish of the Codoku gameplay experience.
+
+## **7.2 Styling & Layout Issues**  
+Styling issues in Codoku mostly centered around ensuring responsiveness, dark mode compatibility, modal clarity, and visual consistency across devices. These challenges were resolved directly in the `style.css` file using a combination of custom variables, layered selectors, and media queries.
+
+#### **7.2.1. Grid Overflowed on Small Screens**  
+On small devices, the Sudoku grid often exceeded the width or height of the viewport, causing horizontal scrollbars and awkward alignment.
+
+**Cause of the Issue:**  
+- Fixed cell size values set out in `game.js` didn't scale to smaller screen dimensions.
+- Grid was absolutely positioned and centered via transforms, which ignored natural document flow.
+
+**How I Solved It:**
+I defined a base `--cell-size` in `:root`, and then used targeted `@media` queries to redefine it at specific breakpoints:
+```css
+@media screen and (min-width: 280px) and (min-height: 479px) {
+  :root {
+    --cell-size: 30px;
+  }
+}
+```
+I also reset the grid’s layout from `absolute` to static in this smallest breakpoint to remove transform issues:
+```css
+#grid {
+  position: static;
+  transform: none;
+  top: auto;
+  left: auto;
+}
+```
+**Reference Materials:**  
+- [MDN: CSS Variables (--cell-size)](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
+- [MDN: CSS Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+
+**The Result:**  
+The grid now responsively resizes and repositions cleanly across breakpoints, ensuring accessibility and usability on all devices without horizontal scrolling.
+
+### **7.2.2. Toggle Thumb Duplicated in Dark Mode**  
+When switching to dark mode, theme and sound toggles sometimes showed a duplicated white “thumb” over the native switch.
+
+**Cause of the Issue:**  
+- The thumb was rendered using a custom `::before` pseudo-element.
+- It was applied unconditionally, regardless of whether the toggle was focused or not.
+
+**How I Solved It:**  
+Inspired by custom toggle designs on Stack Overflow, I updated the dark mode toggle rule to conditionally apply only when not focused:
+```css
+body.dark #theme-toggle .form-check-input[type="checkbox"]:not(:focus)::before {
+  content: "";
+  display: block;
+  background-color: white;
+}
+```
+I repeated the same fix for the sound toggle using `:not(:checked):not(:focus)` for mute mode.
+
+**Reference Materials:**  
+- [Stack Overflow: Switch Styling with ::before](https://stackoverflow.com/questions/57224537)
+
+**The Result:**  
+The toggles now transition cleanly between states with no visual artifacts, creating a polished look in both light and dark modes.
+
+### **7.2.3. Modal Content Too Wide on Mobile**
+Some modal windows, particularly the rules and congratulations modals, overflowed on narrow viewports.
+
+**Cause of the Issue:**  
+- Modal padding and font sizes were static and didn’t adapt to screen width.
+- Fixed margin values contributed to horizontal overflow.
+
+**How I Solved It:**  
+I used responsive `font-size` declarations and adjusted modal container styles:
+```css
+#rules-modal .modal-content {
+  margin: 1rem;
+  overflow-wrap: break-word;
+}
+```
+I also applied background images with `background-size: cover` and removed borders that caused unnecessary visual bloat on mobile.
+
+**Reference Materials:**  
+- [MDN: overflow-wrap](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap)
+- [Bootstrap Modals Best Practices](https://getbootstrap.com/docs/5.3/components/modal/)
+
+**The Result:**  
+Modals now look well-balanced and readable across devices, with wrapped text and responsive margins ensuring clean display.
+
+### **7.2.4. Game Stats Panel Overlapped Grid Elements**
+
+On devices with shorter screen heights (e.g., landscape phones or small tablets), the game stats panel occasionally overlapped the Sudoku grid, making it difficult to see or interact with bottom cells.
+
+**Cause of the Issue:**  
+- The layout lacked adaptive spacing for vertical stacking in constrained viewports.
+- The grid was absolutely positioned using `top: 50%` with `transform: translate`, which didn't account for elements positioned above it.
+- No vertical margin or push space was provided to accommodate the game stats panel.
+
+**How I Solved It:**  
+I restructured the page layout using Flexbox and applied targeted media queries to reposition the grid when vertical space was limited:
+
+```css
+@media screen and (min-width: 280px) and (min-height: 479px) and (orientation: portrait) {
+  #grid {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 2rem;
+  }
+}
+```
+This allowed the grid to appear below the game stats panel in a natural document flow on squat screens, avoiding visual collisions.
+
+**Reference:**  
+- Layout advice for this issue was provided by my mentor, [David Bowers](https://github.com/dnlbowers).
+
+**The Result:**  
+The Sudoku grid is now always fully visible on all screen sizes. On shorter screens, the grid flows beneath the game stats panel, improving accessibility and gameplay clarity.
+
+### **7.2.5. Theming Conflicts Between Light and Dark Modes**  
+Some UI components retained light styles after switching to dark mode, breaking visual consistency.
+
+**Cause of the Issue:**  
+- Not all components were properly scoped under the `body.dark` selector.
+- Some elements relied on hardcoded color values instead of CSS variables.
+- Certain buttons and modals were unaffected by dark mode due to static Bootstrap classes.
+
+**How I Solved It:**  
+I rewrote all theming styles using `body.dark` scoping in combination with CSS variables:
+
+```css
+body.dark .modal-content {
+  background-color: var(--color-bg-dark);
+  background-image: url(../backgrounds/dark-background-modal.webp);
+}
+```
+To further enhance visual consistency, I added JavaScript logic in theme.js to dynamically update the Bootstrap button styles when toggling themes. I selected key UI buttons and used .`removeClass()` and `.addClass()` to switch between `.btn-dark` and `.btn-light`:
+```javascript
+themeButtons.forEach($btn => {
+  if ($btn.length) {
+    $btn.removeClass("btn-light btn-dark");
+    $btn.addClass(isLightMode ? "btn-dark" : "btn-light");
+  }
+});
+```
+This ensured that even buttons outside modal or navbar contexts would update their appearance instantly and consistently during a theme switch.
+
+**Reference Materials:**  
+- [MDN: CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
+- [Whitep4nth3r: Theming with CSS Variables](https://whitep4nth3r.com/blog/best-light-dark-mode-theme-toggle-javascript/)
+- [freeCodeCamp: JavaScript Array forEach Tutorial](https://www.freecodecamp.org/news/javascript-array-foreach-tutorial-how-to-iterate-through-elements-in-an-array-with-map/)
+
+**The Result:**  
+Theme toggling is now fully consistent and polished across all elements, including buttons, modals, toggles, and navigation components. The dark and light modes retain contrast, legibility, and aesthetic clarity while honoring user preferences across sessions.
+
+## **7.3 Accessibility Issues**  
+Accessibility issues in Codoku primarily surfaced during manual keyboard navigation, screen reader testing, and HTML validation. These problems involved missing ARIA attributes, poor focus management, and lack of descriptive labels—each of which could hinder users relying on assistive technologies. Below is a breakdown of the most significant accessibility challenges encountered and how they were resolved through research, testing, and iterative refinement.
+
+### **7.3.1. Modals Not Announced by Screen Readers**  
+During testing with VoiceOver, I found that screen readers were not reliably announcing modal content, making them difficult or impossible to use without sight.
+
+**Cause of the Issue:**  
+- Missing or incorrect `aria-labelledby`, `aria-describedby`, or modal role attributes.
+- Modal sections didn’t clearly define landmarks or provide readable titles for assistive tech.
+
+**How I Solved It:**  
+Each modal was updated with the proper ARIA attributes, and descriptive hidden headings were added for better screen reader flow:
+- `role="dialog"` or `aria-modal="true"` to mark them as interactive popups.
+- Unique `aria-labelledby` and `aria-describedby` references to titles and body text.
+- Hidden `<h2>` headings inside each modal for additional semantic clarity.
+
+For example:
+```html
+<section id="setup-modal" class="modal fade" tabindex="-1"
+  aria-labelledby="setup-modal-label"
+  aria-describedby="setup-modal-content"
+  aria-hidden="true">
+  <h2 class="d-none">Setup Modal</h2>
+```
+**Reference Materials:**
+- [WAI-ARIA Dialog Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)
+- [MDN: ARIA Modal Best Practices](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role)
+
+**The Result:**
+Modals are now properly announced and described when opened, providing clear context to screen reader users.
+
+### **7.3.2. Theme Toggle Lacked Accessible State**
+The theme toggle appeared visually functional, but assistive technologies had no way of knowing whether dark mode was on or off.
+
+**Cause of the Issue:**
+- Missing `aria-checked` attributes on the switch input.
+- No dynamic update of state during interaction.
+
+**How I Solved It:**  
+In `theme.js`, I added JavaScript that updates the `aria-checked` state whenever the theme toggle is changed:
+
+```javascript
+themeSwitch.addEventListener("change", function () {
+  const isLight = this.checked;
+  this.setAttribute("aria-checked", isLight ? "true" : "false");
+  applyTheme(isLight, true);
+});
+```
+**Reference Materials:**  
+- [Deque: Making Accessible Switches](https://www.deque.com/blog/making-accessible-switch/)
+- [MDN: ARIA Switch Role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/switch_role)
+
+**The Result:**  
+Screen reader users are now clearly informed of the current theme state, with both visual and auditory feedback. 
+
+### **7.3.3. Clear Cell Button Was Ambiguous**  
+The "Clear Cell" button was represented by a visual X icon, but provided no verbal or semantic cue to screen readers.
+
+**Cause of the Issue:**   
+- Icon-only buttons lacked a descriptive label.
+- Screen readers could not interpret the meaning of the icon.
+
+**How I Solved It:**   
+I added a clear `aria-label` and a hidden `<span>` to ensure screen readers announce its purpose:
+
+```html
+<h2 id="clear" aria-label="Clear Cell">
+  <i class="fa-solid fa-delete-left" aria-hidden="true"></i>
+  <span class="visuallyhidden">Clear</span>
+</h2>
+```
+**Reference Materials:**  
+- [MDN: ARIA Label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
+- [W3C: Hiding Elements Accessibly](https://www.w3.org/WAI/tutorials/forms/labels/#hiding-labels)
+
+**The Result:**  
+The button is now fully descriptive for assistive tech while remaining visually minimal.
+
+### **7.4.4. Grid Cell Size Too Small for Touch Accessibility**
+
+Initial grid cells were difficult to select on smaller screens due to insufficient size, violating mobile accessibility and usability guidelines—particularly around recommended touch target areas.
+
+**Cause of the Issue:**   
+- Grid cell dimensions were fixed and too small to reliably tap on compact devices.
+- The design did not account for minimum recommended touch area (48x48px as per WCAG and mobile usability best practices).
+
+**How I Solved It:**   
+I used CSS variables to control `--cell-size` and scaled them up responsively through media queries. This ensured that cells remained large enough to tap without zooming or mis-taps on most screen sizes.
+
+```css
+:root {
+  --cell-size: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --cell-size: 60px;
+  }
+}
+```
+**Accessibility Consideration:**   
+I consulted guidance from MDN and the W3C, which recommends maintaining a minimum target size of approximately 44–48 pixels. Only on the very smallest mobile screens was the cell size reduced below that threshold—and only to preserve layout integrity and prevent horizontal overflow. This was a deliberate trade-off, made only when absolutely necessary. 
+
+**Reference Materials:**  
+- [Accessibility for Products: Target touch size](https://www.bbc.co.uk/accessibility/forproducts/guides/mobile/target-touch-size/#:~:text=Content%20touch%20targets%20must%20be,to%20the%20smallest%20average%20finger.)
+- [MDN: Using CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+- [W3C: Mobile Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/#target-size)
+
+**The Result:**  
+Grid cells are now large enough for comfortable tapping on all but the smallest screens. On ultra-compact devices, layout remains intact, and users still retain full functionality with only minor compromises to spacing.
+
+### **7.3.5. Lack of Initial Guidance on Page Load**
+On first visit, users—especially those relying on assistive technologies—were unsure what to do. The game interface loaded silently without any prompt, leaving some users uncertain how to begin playing.
+
+**Cause of the Issue:**  
+- There was no onboarding mechanism or setup flow.
+- Users could begin interacting with the grid before selecting game settings, which could lead to confusion or accessibility conflicts.
+- The page lacked any visual or semantic cue to indicate required first steps.
+
+**How I Solved It:**  
+This issue was initially highlighted during a feedback session with my mentor, who pointed out that requiring user input before accessing the game would guide all users more effectively—especially screen reader users.
+
+Based on this advice, I added logic to my `init.js` file that:
+
+- Checks whether the puzzle grid has any existing content.
+- If empty, triggers the setup modal automatically on page load.
+- Uses Bootstrap’s modal configuration to make it non-dismissible (`backdrop: 'static'`, `keyboard: false`).
+- Prevents interaction with the rest of the page until valid game settings are selected and submitted.
+```javascript
+const hasGridContent = $('#grid p').length > 0;
+if (!hasGridContent) {
+    const setupModalElement = document.getElementById("setup-modal");
+    if (setupModalElement) {
+        const setupModal = new bootstrap.Modal(setupModalElement, {
+            backdrop: 'static',
+            keyboard: false
+        });
+        setupModal.show();
+        return;
+    }
+}
+```
+This ensured the modal opens automatically on load, users could not dismiss it via Escape key or background click. This meant focus could be trapped within the modal until submission and gameplay begins only after difficulty and timer are explicitly chosen.
+**Reference Materials:**  
+- [Bootstrap Modal Options](https://getbootstrap.com/docs/5.0/components/modal/#static-backdrop)
+- [MDN: Focus Management](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets)
+- Mentor Guidance from [David Bowers](https://github.com/dnlbowers)
+
+**The Result:**  
+All users—visual and non-visual—now receive immediate, guided onboarding upon page load. The structured setup flow improves clarity, prevents premature interaction, and ensures accessibility by making the first step clear, intentional, and accessible.
+
+## **7.4. Performance Issues**
+Performance was a critical focus throughout Codoku’s development, especially given its interactive nature, background media, and dynamic scripting. Slow load times, blocked interactivity, and visual lag were all potential risks particularly on lower-powered devices or slower connections. To ensure a smooth and responsive experience, I identified and resolved several performance-related issues through browser testing, dev tools profiling, mentor feedback, and research into modern frontend optimization strategies.
+
+### **7.4.1. Heavy Background Assets**
+Codoku’s modal and navbar backgrounds initially reused the same large `.webp` files as the full-page body backgrounds. While visually consistent, this introduced unnecessary weight in areas where smaller, more compressed assets would suffice particularly on mobile devices or slower connections. Unnecessarily large assets increase page load time. Even if the image is partially visible or cropped in a small container, the full file still needs to be downloaded and decoded by the browser, adding to the initial load time.
+
+**Cause of the Issue:**  
+Initially, the same `.webp` image assets were reused for both the body background and modal backgrounds. While this ensured visual consistency, it introduced unnecessary load time—especially for modals where smaller images would suffice.
+
+**How I Solved It:**    
+I created dedicated, optimized `.webp` versions of background images specifically for modals. These modal-specific backgrounds were compressed further and resized to a maximum width of 1200px, reducing unnecessary pixel weight while preserving design quality.
+
+**Reference Materials:**  
+- [MDN: Responsive Images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+- [Google: WebP Image Format](https://developers.google.com/speed/webp)
+
+**The Result:**  
+Modal and navbar backgrounds now load significantly faster, with smaller image footprints reducing bandwidth usage. This improves performance across all devices, particularly on mobile and slower connections.
+
+### **7.4.2. Scripts Blocked Interactivity**
+JavaScript files delayed rendering and sluggish interactivity, especially on lower-end devices affecting the performance scores.
+
+**Cause of the Issue:**   
+- Scripts were loaded synchronously in the document `<head>`.
+- Parsing and rendering were blocked until scripts finished executing.
+
+**How I Solved It:**  
+I moved all JavaScript `<script>` tags to the end of the `<body>` and added the `defer` attribute. This allowed the HTML to render first and prevented scripts from blocking the page.
+```html
+<!-- JavaScript Dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+ crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
+<!-- Javascript Files -->
+<script src="assets/script/navbar.js" defer></script>
+<script src="assets/script/sound.js" defer></script>
+<script src="assets/script/theme.js" defer></script>
+<script src="assets/script/setup-modal.js" defer></script>
+<script src="assets/script/init.js" defer></script>
+<script src="assets/script/game.js" defer></script>
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/00ece23e82.js" crossorigin="anonymous" async></script>
+```
+**Reference Materials:**  
+- [MDN: Script Loading Strategies](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer)
+
+**The Result:**  
+The time-to-interactive improved noticeably, with the UI becoming usable much sooner after page load.
+
+### **7.4.5. Inefficient Image Sizing**  
+Early versions of the About and 404 pages featured high-resolution `.webp` images that were visually appealing but far too large for their display context. This led to unnecessary bandwidth consumption and slower load times, especially on mobile devices or limited connections.
+
+**Cause of the Issue:**  
+These images were being served at full resolution even though they appeared at much smaller sizes within the layout. 
+- `.webp` images were not resized or compressed to match their visible dimensions.
+- `<img>` tags lacked explicit `width` and `height` attributes, preventing layout stability and efficient loading.
+- No use of `srcset` or modern responsive image practices to tailor assets by device capability.
+
+**How I Solved It:**  
+I manually resized the About and 404 illustration images to match their maximum display size in the layout (generally under **400px width**). I retained the `.webp` format for compression and adjusted `width` and `height` attributes in the HTML for proper rendering.
+
+To prevent layout shifts and optimize perceived load speed, I also:
+- Added an explicit`height` on all `<img>` tags. 
+
+**Reference Materials:**  
+- [Google: WebP Image Format](https://developers.google.com/speed/webp)
+- [Image Resizer](https://imageresizer.com/)
+
+**The Result:**  
+Images now load quickly without compromising clarity. Codoku’s About and 404 pages are noticeably faster and feel more responsive—especially on mobile—thanks to lighter, correctly-sized visuals and proper layout rendering.
+
+## **7.5. Validation Issues**
+As part of Codoku’s commitment to clean, accessible, and standards-compliant code, I rigorously tested the application against HTML, ARIA, and accessibility validation tools (like the W3C Validator and axe DevTools). These tests surfaced several markup-level issues that, while not always visible to end users, posed risks to semantic clarity, screen reader compatibility, and long-term maintainability.
+
+### **7.5.1. XHTML-Style Self-Closing Tags**
+Codoku originally included self-closing tags like `<img />`, which are valid in XHTML but not in standard HTML5 syntax. While browsers are forgiving, these violations caused W3C validation errors.
+
+**Cause of the Issue:**  
+- Habitual use of self-closing syntax (`<img />`) from older HTML/XHTML patterns.
+- HTML5 expects `<img>` and similar void elements to be written without the trailing slash.
+
+**How I Solved It:**  
+I reviewed all void elements (`<img>`, `<input>`, etc.) and removed trailing slashes from their tags. This brought all templates in line with HTML5 standards.
+
+**The Result:**  
+The code now passes W3C validation cleanly, improving compatibility and technical correctness.
+
+### **7.5.2. Invalid `height="auto"` in HTML**
+Some image or element tags used inline HTML like `height="auto"`, which is not a valid value in standard HTML.
+
+**Cause of the Issue:**  
+- Misuse of CSS-style properties within HTML attributes.
+- Browsers ignored the invalid value, but validators flagged it as incorrect.
+
+**How I Solved It:**  
+I moved all visual sizing (like `height: auto`) from inline HTML to the external CSS file (`style.css`). This not only resolved the error but also improved separation of concerns between content and presentation. This was later changed upon reviewing image performances, see [7.4.5. Inefficient Image Sizing](#745-inefficient-image-sizing). 
+
+**The Result:**  
+All layout and scaling now conform to HTML/CSS best practices, ensuring smooth rendering and valid markup.
+
+### **7.5.3. Duplicate IDs in Modals**  
+During development, reusable modal templates (especially for alerts and game completion) introduced duplicate `id` attributes, which broke the uniqueness requirement of the DOM.
+
+**Cause of the Issue:**  
+- Static `id` values were repeated in dynamically loaded or reused HTML components.
+- This risked unexpected behavior when referencing modals with JavaScript or accessibility tools.
+
+**How I Solved It:**  
+I scoped all modal related IDs more carefully and added conditional logic in the JavaScript to append unique suffixes where necessary (e.g. `-hinted`, `-congrats`, `-alert`).
+
+**The Result:**  
+Each element now has a unique ID, resolving validation issues and avoiding conflicts during DOM interaction.
+
+### **7.5.4. Redundant ARIA Roles**  
+Some semantic HTML elements like `<button>` and `<nav>` were given explicit ARIA roles (e.g. `role="button"`), which are already implied by their tag type.
+
+**Cause of the Issue:**  
+- Overuse of ARIA roles in an attempt to ensure accessibility.
+- Misunderstanding of when native elements already convey necessary semantics.
+
+**How I Solved It:**  
+I removed redundant `role` attributes from semantic elements where the role was implicit. This included roles on `<button>`, `<header>`, and `<nav>` tags.
+
+**The Result:**  
+The markup is now cleaner, easier to read, and conforms to WAI-ARIA best practices without duplication. 
+
+## **7.6. Unresolved Issues**
+Despite extensive testing and iteration, a few issues remain in the current Codoku build. These were either deemed low-impact or out of scope for this project’s goals. However, they have been documented here for transparency and potential future enhancement.
+
+### **7.6.1. Grid Keyboard Navigation**
+While Codoku supports mouse and touch input well, keyboard users—particularly those relying on assistive technologies—cannot currently navigate the Sudoku grid using arrow keys or tab focus. This limits accessibility for non-pointer users.
+
+**Cause of the Issue:**  
+- The grid is constructed using `<p>` tags instead of native form elements or semantic table structures.  
+- Paragraphs are not focusable by default and don’t support directional keyboard interaction.  
+- Grid items lack semantic roles like `grid`, `cell`, and `row`.
+
+**Attempts Made:**  
+- Tried adding `tabindex` to each cell for manual focusability.  
+- Experimented with JavaScript-based focus control and roving `tabindex`.  
+- Considered adding ARIA roles (e.g., `role="gridcell"`), but found limited browser support without full semantic structure.
+
+**Why It Remains Unresolved:**  
+- A robust keyboard implementation would require a complete rebuild of the grid using a `<table>` or fully custom component structure with accessible keyboard handling and focus management.  
+- This was outside the scope of this manually coded, design-first prototype.
+
+**Impact:**  
+- Not critical to core functionality; mouse and touch users can fully interact.  
+- However, a future version should prioritize keyboard accessibility to meet full WCAG compliance.
+
+### **7.6.2. JavaScript Minification**
+All JavaScript files in Codoku are served in unminified form. While easy to read and debug, this results in slightly larger file sizes and longer load times.
+
+**Cause of the Issue:**  
+- Code was written for manual understanding, educational clarity, and ease of debugging.  
+- Production-focused tools like Webpack or Terser were intentionally not used.
+
+**Attempts Made:**  
+- Considered adding a build pipeline with Webpack or using Terser via npm.  
+- Explored browser-based minifiers, but avoided altering file structure.
+
+**Why It Remains Unresolved:**  
+- The project scope emphasized transparency and modular file organization over optimization.  
+- Adding build tooling would conflict with the manual-first, no-framework project goals.
+
+**Impact:**  
+- Slightly longer load and parse times (only measurable on low-end devices or slow networks).  
+- No functional degradation—intentional and acceptable tradeoff for this project phase.
+
+## **8. Deployment**  
 The **Codoku** project was deployed using GitHub Pages, allowing the live version of the site to be accessed directly through a browser without the need for additional server configuration.
 
 To publish the site via GitHub Pages, I followed these steps:
