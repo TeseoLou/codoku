@@ -2037,3 +2037,5 @@ In line with my evaluation model (influenced by research-based usability testing
 - The core functionality remained accessible and usable for all testers.
 
 This measured approach ensured realistic quality control without demanding perfection at the expense of development scope or accessibility goals.
+
+[🔙 Return to Main README](../README.md)

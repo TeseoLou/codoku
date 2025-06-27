@@ -1,3 +1,4 @@
+> ***Note**: To Access the contents list of this README please click this button* (⁝☰) *in the top right of the document* 
 # **Codoku | Built with Logic**
 
 _Project Milestone 2_
@@ -3286,21 +3287,357 @@ A number of planned gameplay and interface enhancements will deepen player engag
 - **Future Plan**: I came across Workbox while researching service worker strategies and plan to explore it in a future module to progressively enhance Codoku toward full Progressive Web App (PWA) support.
 
 # **10. Technologies Used**
+The development of Codoku involved a range of industry-standard technologies, tools, and environments to support efficient planning, development, testing, and design. The following list details the key technologies and tools used throughout the project lifecycle.
 
 ## **10.1 Language Frameworks**
+These powered the structure, logic, and styling of the application:
+- [**HTML5**](https://developer.mozilla.org/en-US/docs/Web/HTML): for semantic markup and structure  
+
+- [**CSS3**](https://developer.mozilla.org/en-US/docs/Web/CSS): for styling and responsive layout  
+
+- [**JavaScript (ES6+)**](https://developer.mozilla.org/en-US/docs/Web/JavaScript): for interactive features and game logic  
+
+- [**Bootstrap 5**](https://getbootstrap.com/): for responsive components and grid layout  
+
+- [**jQuery**](https://jquery.com/): for simplified DOM manipulation and modal handling
+
+- [**Git**](https://git-scm.com/): version control for tracking changes and managing project history  
 
 ## **10.2 Development Environments**
+These tools supported local development, code testing, and version control:
+- [**Visual Studio Code**](https://code.visualstudio.com/): primary code editor with extensive extensions and built-in Git support  
 
-## **10.3 Developer Extensions**
+- [**Live Server**](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer): real-time browser preview during development  
 
-## **10.4 Planning**
+- [**GitHub**](https://github.com/): project hosting, collaboration, and issue tracking  
+
+- [**CodePen**](https://codepen.io/): for quickly prototyping UI ideas and isolated components  
+
+- [**Replit**](https://replit.com/): online IDE used occasionally for testing logic outside the local environment  
+
+- [**Diffchecker**](https://www.diffchecker.com/): used for comparing versions of code snippets or files during debugging and revision
+
+- [**Specificity Calculator**](https://specificity.keegan.st/): Used to understand and debug CSS specificity issues during styling conflicts.
+
+
+## **10.3 VSCode Extensions**
+VS Code extensions that enhanced productivity, formatting, debugging, and styling:
+- [**Auto Comment Blocks**](https://marketplace.visualstudio.com/items?itemName=kevinkyang.auto-comment-blocks): assists in generating formatted comment blocks  
+
+- [**Auto-Open Preview Panel**](https://marketplace.visualstudio.com/items?itemName=YuichiroYoshida.auto-open-preview): automatically opens a browser preview when editing HTML  
+
+- [**Code Spell Checker**](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker): highlights spelling errors in code comments and strings  
+
+- [**Color Highlight**](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight): displays color codes directly in the editor background  
+
+- [**Comment Shortcuts**](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments): organizes comments by color-coded tags for easier readability  
+
+- [**Emmet Keybindings**](https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-emmet): quick HTML/CSS expansions for faster markup  
+
+- [**File Icons**](https://marketplace.visualstudio.com/items?itemName=file-icons.file-icons): Improves file type visibility with custom icons  
+
+- [**Git History**](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory): Visualizes Git commit history and file changes  
+
+- [**HTML/CSS/JS Snippets**](https://marketplace.visualstudio.com/items?itemName=abusaidm.html-snippets): Provides quick code snippet access for HTML, CSS, and JavaScript  
+
+- [**Prettier**](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): automatic code formatting for consistent styling  
+
+## **10.4 Planning Tools**
+These tools supported the ideation, note-taking, and feedback processes throughout Codoku's development:
+- [**Google Keep**](https://keep.google.com/): Served as a quick and accessible tool for jotting down ideas, to-do lists, and project notes  
+
+- [**Inspiration 10**](https://www.inspiration-at.com/inspiration-10): Helped with thought mapping and visually structuring early planning phases  
+
+- [**Jamie AI**](https://www.meetjamie.ai/): Used to generate summaries of meetings and mentor feedback throughout the project lifecycle  
 
 ## **10.5 Design Tools**
+A variety of tools were used to plan, design, and refine the visual and branding elements of Codoku:
+- [**Adobe Color**](https://color.adobe.com/): Assisted in selecting and generating the project’s color palette  
+
+- [**Balsamiq**](https://balsamiq.com/): Used to create low-fidelity wireframes and plan the layout structure  
+
+- [**Canva**](https://www.canva.com/): Designed the custom navbar logo and supported quick graphic creation  
+
+- [**Chroma.js**](https://gka.github.io/chroma.js/): Verified accessibility of color palettes, especially for color blindness  
+
+- [**Color Contrast Checker**](https://webaim.org/resources/contrastchecker/): Ensured readable, WCAG-compliant color combinations  
+
+- [**Favicon.io**](https://favicon.io/): Generated the favicon and icon assets for consistent site branding  
+
+- [**Font Awesome**](https://fontawesome.com/): Provided scalable vector icons to enhance UI across the interface  
+
+- [**FontForge**](https://fontforge.org/): Helped identify and test complementary font pairings  
+
+- [**Google Fonts**](https://fonts.google.com/): Supplied web-friendly, accessible fonts for headings and body text  
+
+- [**Image Resizer**](https://imageresizer.com/): Optimized image dimensions for better performance and faster load times  
+
+- [**Microsoft Paint**](https://apps.microsoft.com/store/detail/paint/9PCFS5B6T72H): Used for quick markups and UI sketching in early ideation stages  
+
+- [**Pixlr Editor**](https://pixlr.com/): Supported lightweight, in-browser image adjustments  
+
+- [**RedKetchup**](https://redketchup.io/): Assisted with image compression, metadata stripping, and general optimization
+
+- [**Sketchbook**](https://www.sketchbook.com/): For digitization of 404.html illustration
 
 ## **10.7 Browser Extensions**
+These browser extensions supported accessibility testing, performance audits, layout debugging, and visual consistency throughout development:
+- [**axe DevTools**](https://www.deque.com/axe/devtools/): Ran automated accessibility audits directly in the browser for a11y validation  
 
-## **10.8 Markdown Tools**
+- [**ColorZilla**](https://www.colorzilla.com/): Used for sampling colors directly from web pages to ensure design consistency  
+
+- [**CSS Viewer**](https://chrome.google.com/webstore/detail/cssviewer/): Allowed inspection of CSS styles on hover for rapid design debugging  
+
+- [**Detailed SEO Extension**](https://chrome.google.com/webstore/detail/detailed-seo-extension/): Helped analyze on-page SEO elements to improve structure and visibility  
+
+- [**Google PageSpeed Insights**](https://pagespeed.web.dev/): Used alongside the extension to assess and improve loading speed and performance metrics  
+
+- [**Pesticide**](https://chrome.google.com/webstore/detail/pesticide-for-chrome/): Provided a visual overlay to debug CSS box models and layout issues  
+
+- [**Responsive Viewer**](https://chrome.google.com/webstore/detail/responsive-viewer/): Enabled side-by-side previews of multiple screen sizes during testing  
+
+- [**WAVE Evaluation Tool**](https://wave.webaim.org/extension/): Evaluated accessibility compliance and flagged WCAG issues across the interface  
+
+## **10.8 README.md Tools**
+### 10.8 Markdown & Documentation Tools
+These tools supported the writing, formatting, visual documentation, and overall clarity of the README and related markdown content:
+- [**Am I Responsive**](http://ami.responsivedesign.is/): Tested Codoku’s responsiveness across various screen sizes for screenshot mockups  
+
+- [**Auto-Open Preview Panel**](https://marketplace.visualstudio.com/items?itemName=YuichiroYoshida.auto-open-preview): Automatically opened Markdown preview in VS Code for real-time formatting checks  
+
+- [**Excel**](https://www.microsoft.com/en-us/microsoft-365/excel): Used to create data tables, graphs, and calculation-based visuals for performance/testing metrics  
+
+- [**ezGIF**](https://ezgif.com/maker): Created GIFs from screen recordings to visually demonstrate interactive features  
+
+- [**Grammarly**](https://www.grammarly.com/): Proofread the README for clarity, grammar, and tone  
+
+- [**Markdown Guide**](https://www.markdownguide.org/): Served as a reference for correct and consistent Markdown formatting  
+
+- [**Microsoft Word**](https://www.microsoft.com/en-us/microsoft-365/word): Used for drafting and editing the README content before converting it to Markdown  
+
+- [**Screen Recorder (Windows 11)**](https://support.microsoft.com/en-us/windows/record-a-game-clip-on-your-pc-with-xbox-game-bar-4f6602a6-8d4e-bd4e-8f2c-bd3f492fa621): Used to capture gameplay and walkthroughs for GIF creation  
+
+- [**Table to Markdown**](https://tabletomarkdown.com/): Converted tables from spreadsheets into clean Markdown for seamless README integration  
 
 ## **10.9 Testing Tools**
+These tools were used throughout the development of **Codoku** to validate functionality, accessibility, performance, and standards compliance:
+- [**AccessibilityChecker**](https://www.accessibilitychecker.org/): Conducted full WCAG 2.2 compliance audits.
 
-# **11. Content Resources**
+- [**BrowserStack**](https://www.browserstack.com/): Tested on real browsers and operating systems virtually.
+
+- [**Chrome DevTools – Responsive Mode**](https://developer.chrome.com/docs/devtools): Approximate how pages look and perform on different device.
+
+- [**Google Forms**](https://www.google.com/forms/about/): Collected structured feedback from 12 testers across various devices.
+
+- [**Google Lighthouse**](https://developer.chrome.com/docs/lighthouse/):  Measured accessibility, performance, SEO, and best practices.
+
+- [**JSHint**](https://jshint.com/): Analyzed JavaScript for syntax issues, complexity, and potential bugs.
+
+- [**Microsoft Excel**](https://www.microsoft.com/en-us/microsoft-365/excel): Used to collate, organize, and chart test results and survey data.
+
+- [**NVDA Screen Reader**](https://www.nvaccess.org/): Tested screen reader experience and keyboard navigation.
+
+- [**W3C CSS Validator**](https://jigsaw.w3.org/css-validator/): Checked CSS syntax and compatibility.
+
+- [**W3C HTML Validator**](https://validator.w3.org/): Validated HTML for syntax, structure, and semantic accuracy.
+
+# **11. Resources**
+This section outlines the wide array of resources that supported the research, planning, implementation, and testing of **Codoku**. From creative assets and sound libraries to developer documentation, online learning platforms, and community contributions, each resource played a vital role in shaping the project’s structure, usability, and performance. These tools and references also served as a springboard for future improvements and professional development, helping ensure both quality execution and long-term maintainability.
+
+## **11.1 Site Content**
+These tools supported the visual and auditory elements of the Codoku project, including custom illustrations, sourced stock media, and sound effects:
+- [**API Ninjas – Sudoku API**](https://www.api-ninjas.com/api/sudoku): Supplied dynamic puzzle and solution data for each new game session.
+
+- [**Canvas Confetti**](https://www.kirilv.com/canvas-confetti/): Powered the celebratory animation triggered on puzzle completion.
+
+- [**ChatGPT (Image Generation)**](https://openai.com/chatgpt): Used to generate custom image of "Codoku in Use" image featured on the About page.
+
+- [**Freesound**](https://freesound.org/): Provided free, Creative Commons-licensed sound effects used for UI feedback (e.g. success, errors, theme toggle).
+
+- [**Grammarly**](https://www.grammarly.com/): Assisted in proofreading, grammar correction, and improving clarity across the README, About content, and modals.
+
+- [**Unsplash**](https://unsplash.com/): Supplied free, high-resolution stock images for Sudoku in Newspaper and Keyboard/Rubik’s Cube on about page
+
+## **11.2 Online Resources**
+The following online platforms, documentation hubs, and developer tools supported both the development and research phases of *Codoku*. These resources contributed to the game’s logic, UI, accessibility, deployment planning, and future optimization strategies.
+- [**Bootstrap Documentation**](https://getbootstrap.com/docs/5.3/): Guided the creation of responsive layouts, modals, and UI components.
+
+- [**cdnjs.com**](https://cdnjs.com/): Referenced for adding libraries (e.g., jQuery, Bootstrap) via CDN.
+
+- [**Codecademy**](https://www.codecademy.com/): Helped with structured lessons on JavaScript, DOM interaction, and jQuery.
+
+- [**CodePen**](https://codepen.io/): Used for testing layout ideas, sharing snippets, and exploring other developers’ solutions.
+
+- [**Codepip**](https://codepip.com/): Provided interactive games for practicing grid logic and programming syntax.
+
+- [**Dev.to**](https://dev.to/): Offered community-written posts on accessibility, performance, and React/JavaScript best practices.
+
+- [**Firebase**](https://firebase.google.com/): Considered for adding cloud-hosted leaderboard functionality and real-time game stats.
+
+- [**GeeksforGeeks**](https://www.geeksforgeeks.org/): Explained logic operations, 2D arrays, randomization, and DOM scripting.
+
+- [**jQuery API**](https://api.jquery.com/): Used for DOM traversal, event handling, and utility methods.
+
+- [**MDN Web Docs**](https://developer.mozilla.org/en-US/docs/): Comprehensive source for JavaScript behavior, HTML semantics, and ARIA accessibility APIs.
+
+- [**Mimo**](https://getmimo.com/): Delivered beginner-friendly mobile exercises for HTML, CSS, and JavaScript.
+
+- [**PurgeCSS**](https://purgecss.com/): Explored for stripping unused Bootstrap styles to reduce file size.
+
+- [**SheCodes**](https://www.shecodes.io/): Aided in writing modular and maintainable JavaScript functions.
+
+- [**Slack Community**](): Helped debug frontend issues through real-time conversation with experienced developers.
+
+- [**Stack Overflow**](https://stackoverflow.com/): Resolved coding issues, optimization concerns, and API integration bugs via peer-sourced answers.
+
+- [**Supabase**](https://supabase.com/): Evaluated as an open-source alternative for future user authentication and game state persistence.
+
+- [**Terser**](https://terser.org/): Investigated for future JavaScript minification to optimize performance before deployment.
+
+- [**W3Schools**](https://www.w3schools.com/): Provided simple and fast documentation lookups for core web technologies.
+
+- [**Workbox**](https://developer.chrome.com/docs/workbox/): Researched for implementing service workers to enable offline support in future versions.
+
+
+### **11.3 Individual Developers**
+The following developers authored blog posts, tutorials, or code samples that directly influenced and aided aspects of the **Codoku** project:
+- [**Reza Lavarian**](https://dev.to/lavary/how-to-check-if-an-element-exists-in-javascript-with-examples-4mpb): How to Check if an Element Exists in JavaScript
+
+- [**Pavel Keyzik**](https://dev.to/pavelkeyzik/does-anyone-knows-how-to-change-current-time-of-song-correctly-in-javascript-2mkn): Controlling Audio Playback Correctly
+
+- [**Vaidehi Joshi**](https://vaidehijoshi.github.io/blog/2015/01/06/the-final-countdown-using-javascripts-setinterval-plus-clearinterval-methods/): JavaScript Countdown Timers
+
+- [**Tim Kamanin**](https://timonweb.com/javascript/how-to-get-a-random-value-from-a-javascript-array/): Pick a Random Item from an Array
+
+- [**Huzaifa**](https://iamhuzaifa.medium.com/keyboard-event-codes-javascript-project-aec43bb7bf79): Keyboard Event Codes Guide
+
+- [**Risharde**](https://www.youtube.com/watch?v=X51Ry-R5coQ): AJAX API Integration Tutorial
+
+- [**Sam Deering**](https://www.sitepoint.com/jquery-check-element-exists/): Check if jQuery Element Exists
+
+- [**Samantha Ming**](https://www.samanthaming.com/tidbits/86-window-location-cheatsheet/): Window Location Cheatsheet
+
+- [**Wes Bos**](https://wesbos.com/destructuring-objects): Destructuring in JavaScript
+
+- [**Salma Alam-Naylor**](https://whitep4nth3r.com/blog/best-light-dark-mode-theme-toggle-javascript/): Accessible Theme Toggle Patterns
+
+- [**Joel Olawanle**](https://www.freecodecamp.org/news/javascript-2d-arrays/): 2D Arrays in JavaScript
+
+- [**Matthew**](https://www.youtube.com/@RedFlyerCoding): Sudoku Game Tutorial using HTML, CSS, and JavaScript
+
+## **11.4. Books**
+
+The following books served as essential references throughout the development of Codoku. They supported everything from writing clean HTML/CSS to implementing interactive JavaScript features, user-centered design, and version control.
+
+- **David Flanagan, *JavaScript Pocket Reference*** (2012): Provided concise reference for JavaScript syntax and core APIs during logic implementation and DOM manipulation.
+
+- **Eric A. Meyer, *CSS: Pocket Reference*** (2018): Helped fine-tune layout, selector specificity, and CSS utility logic.
+
+- **Jesse James Garret, *The Elements of User Experience: User-Centered Design for the Web*** (2002): Grounded the project’s design in foundational UX principles and user-centered approaches.
+
+- **Jennifer Niederst Robbins, *HTML5: Pocket Reference*** (2013): Offered quick solutions for HTML5 syntax, semantics, and accessibility practices.
+
+- **Jon Duckett, *HTML and CSS: Design and Build Websites*** (2011): Supported the development of semantically structured HTML and visually clean CSS for beginner-friendly content.
+
+- **Jon Duckett, *JavaScript and jQuery: Interactive Front-End Web Development*** (2014): Illustrated key jQuery techniques and DOM scripting patterns applied throughout the app.
+
+- **Cody Lindley, *jQuery Cookbook*** (2010): Provided advanced jQuery solutions for event handling, effects, and user interaction improvements.
+
+- **Richard E. Silverman, *Git: Pocket Guide*** (2013): Reinforced best practices in source control, Git branching, and collaboration workflows.
+
+- **Laurence Lars Svekis, *JavaScript From Beginner to Professional*** (2022): Helped solidify understanding of ES6+ features, asynchronous logic, and dynamic interactivity.
+
+## **11.6 Code Institute References**
+These resources were provided by Code Institute and served as foundational tools and examples throughout the development of *Codoku*. They supported best practices in planning, code structure, and documentation:
+- **Course Content** – Provided learning materials, lessons, and guidance throughout the development process. 
+
+- **README Template** – Provided a structured format for documenting the project clearly and professionally. 
+
+- **Repository Template** – Served as the foundation for setting up the project repository with a pre-configured development environment.
+
+# **12. Individual Credits**
+The people acknowledged in this section are those who shaped, supported, and uplifted the journey behind Codoku. From the spark of inspiration to the final deployment, these individuals brought light, laughter, guidance, and perspective, each in their own way helping this project come to life.
+
+## **12.1 Personal Inspiration & Dedication**
+This section is dedicated to the individuals whose lives and passions inspired the creation of **Codoku**. Their influence shaped not only the theme of the project but also its deeper purpose to promote cognitive wellbeing through accessible, engaging design.
+
+- **Peter Smith** – A lifelong Sudoku enthusiast, and my Grandad, whose love for logical puzzles sparked the initial idea behind Codoku and reminded me of the joy these games can bring at any age.
+
+- **Edward Derbyshire (Snr) and Pamela Roberts** – My partner’s late paternal grandfather and maternal grandmother, who both lived with dementia in his final years. Their experiences and memories sparked a driving force for building something inclusive, respectful, and cognitively supportive that prioritized clarity, simplicity, and human-centred design.
+
+## **12.2 Testers & Checkers**
+The following individuals generously offered their time to test and provide feedback on **Codoku** during its development: 
+- Gabe Ison  
+
+- Georgie Thomas  
+
+- Gilly Hsu
+
+- Isaac Derbyshire  
+
+- Isaac Marks
+
+- James Nicholson-Smith  
+
+- Louis Cane
+
+- Luca Johnson  
+
+- Luke Bradshaw  
+
+- Max Ashton  
+
+- Nel Lane 
+
+- Paula Bongiovanni   
+
+## **11.4 Learning Facilitators**
+The following individuals played an important role in supporting my learning journey, offering mentorship, reassurance, and practical help throughout the development of **Codoku** and course learning:
+- [**David Bowers**](https://github.com/dnlbowers): Course Mentor, providing guidance, feedback, and support throughout the project
+
+- **Marko Tot**: Group Tutor, leading weekly sessions and offering insights into project planning and development
+
+- **Kieron Pierson** – Student Care Adviser at Code Institute, who offered encouragement and understanding throughout the course, particularly when I needed to take leave or missed key deadlines.
+
+## **11.5 Peers**
+I’d like to acknowledge my entire tutor group and the wider Slack community for their help, ideas, and encouragement throughout this project. Their shared experiences created a collaborative and supportive environment. Special thanks to:
+- **Ethan Skidmore** – For generously sharing solutions he discovered during his own project development, which helped troubleshoot key features and refine implementation strategies.
+
+- **Seren Hughes** – For actively participating in weekly huddles, suggesting thoughtful improvements, and contributing to group learning with consistent encouragement and shared experience.
+
+- **Wallace Green** – For kindly offering help and support during my period of absence, helping me feel included and motivated to get back on track.
+
+## **11.6 Honourable Mentions**
+
+**Isaac Derbyshire**:  
+
+Throughout this project, Isaac, you’ve been more than just moral support you’ve been an anchor. Your calm when in my chaos, your steady positivity when I felt overwhelmed, and your ability to manage your own work with such balance and self-care have quietly inspired me every step of the way. 
+
+When I was recovering from surgery during a critical phase, you didn’t hesitate, you stepped in, made space for me to heal, and supported me with patience and warmth. You reminded me that it was okay to pause, and you helped me keep going when it would’ve been easier to give up. Your insistence that I take breaks, treat myself, go outside, and cook lovely dinners with you—those were the things that kept me grounded. You showed me what it means to care for yourself and others at the same time.
+
+Thank you for believing in me, and for reminding me (even when I forget) that I’m allowed to rest. I couldn’t have done this without you.
+
+**David Bowers**:  
+
+David Bowers deserves special recognition for the extraordinary level of support and encouragement he provided throughout the development of Codoku. He saw potential in the project and consistently challenged me to elevate my work beyond expectations. The clarity of your feedback, and thoughtful insights into UI and testing were foundational in shaping both this project, documentation and my mindset going forward.
+
+When I was feeling overwhelmed, your words about mental health, work-life balance, and the reminder to breathe stood out just as much as the technical mentorship. You didn’t just mentor my code, you mentored my growth, my process, and my confidence as a developer.
+
+I’ll carry your encouragement and your words with me into the next project and beyond. 
+
+**Louise and James Nicholson-Smith**:  
+
+Mum and Dad, I honestly couldn’t be more grateful for the love, support, and belief you pour into me every single day. You motivate me, uplift me, and give me the courage to be exactly who I am — eccentricities , perfectionism, deep dives and all. Where some might ask me to tone things down, you’ve always leaned in (mostly). You see how much this means to me, and you meet me there with encouragement, support and love.
+
+Thank you for embracing all the intensity I bring to my work, for cheering me on when I needed a boost, and for reminding me that it’s okay to rest and reset too. Our holiday together, the sun, the beach, the laughter, it was a gift. To be able to work on parts of this project in such a beautiful and calming place made all the difference.
+
+Thank you for being my constants. I love you both so much. This project wouldn’t have been the same without your love at the core of it.
+
+---
+
+### **Final Note**
+Thank you for taking the time to explore **Codoku**. Whether you're here to learn, test, play or just peek at the code, I hope it brings you a moment of clarity, inspiration, or even fun.
+
+Made with plenty of coffee, and a lot of love. 
+
+© 2025 Teseo Nicholson. All rights reserved.
