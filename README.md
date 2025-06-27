@@ -3157,4 +3157,22 @@ A number of planned gameplay and interface enhancements will deepen player engag
 - **Barrier**: Offline support would require significant JavaScript changes and testing workflows, which are currently beyond the scope of this project.
 - **Future Plan**: Investigate using Workbox in a future module and progressively enhance the site toward full PWA support.
 
-#
+# **10. Technologies Used**
+
+## **10.1 Language Frameworks**
+
+## **10.2 Development Environments**
+
+## **10.3 Developer Extensions**
+
+## **10.4 Planning**
+
+## **10.5 Design Tools**
+
+## **10.7 Browser Extensions**
+
+## **10.8 Markdown Tools**
+
+## **10.9 Testing Tools**
+
+# **11. Content Resources**
