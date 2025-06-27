@@ -24,6 +24,8 @@ All HTML, CSS, and JavaScript files were passed through official validation tool
 
 This process helped identify and resolve syntax errors, semantic issues, accessibility oversights, and outdated or unsupported syntax ensuring the final product is stable, clean, and standards-compliant.
 
+---
+
 ### **6.1.1 HTML Validation**
 
 All HTML files (`index.html`, `about.html`, and `404.html`) were validated using the W3C Markup Validation Service. This process checks for syntax errors, deprecated tags, improperly nested elements, and other violations of the HTML5 specification.
@@ -33,7 +35,7 @@ The `index.html` file serves as the main interactive hub of Codoku, housing the 
 
 During HTML validation using the W3C Markup Validation Service, a number of informational notices, warnings, and a few errors were flagged. Each was reviewed and resolved during development.
 
-⚠️ Highlighted validation issues:  
+⚠️ Highlighted **fixed** validation issues:  
 - **Trailing slashes on void elements**  
   Multiple lines such as `<meta charset="UTF-8"/>` and `<link rel="stylesheet".../>` triggered info messages like:  
   >> _"Trailing slash on void elements has no effect and interacts badly with unquoted attribute values."_
@@ -65,7 +67,7 @@ The `about.html` page introduces the Codoku project, explains its development co
 
 When tested using the W3C Markup Validation Service, the file initially displayed multiple issues. These were reviewed, corrected, or acknowledged as acceptable where appropriate.
 
-⚠️ Highlighted validation issues:  
+⚠️ Highlighted **fixed** validation issues:  
 - **Trailing slashes on void elements**  
   Numerous tags like `<meta/>` and `<link/>` triggered info-level warnings such as: 
   >> _"Trailing slash on void elements has no effect and interacts badly with unquoted attribute values."_  
@@ -104,7 +106,7 @@ The `404.html` page is a custom error page displayed when a user attempts to acc
 
 The file was run through the W3C Markup Validation Service and, like the other pages, returned a number of issues—primarily warnings and a few minor errors. All were addressed through careful revisions.
 
-⚠️ Highlighted validation issues:  
+⚠️ Highlighted **fixed** validation issues:  
 - **Trailing slashes on void elements**  
   Many `<meta/>`, `<link/>`, and `<input/>` tags used trailing slashes that are unnecessary in HTML5. These caused repeated warnings:  
   >> _"Trailing slash on void elements has no effect and interacts badly with unquoted attribute values."_  
@@ -149,7 +151,7 @@ Despite the complexity and breadth of the stylesheet, no errors were reported by
 ![CSS Validator Badge (Gold)](figures/validation/css-validation.webp)  
 ![CSS Validator Badge (Blue)](figures/validation/css-validation-blue.webp)
 
-⚠️ Warnings
+⚠️ **Fixed** Warnings
 
 Although the Codoku `style.css` file passed W3C validation without any errors, the validator did return 17 warnings, which are important to note for transparency and future maintenance.
 
@@ -223,7 +225,7 @@ These undefined variables are expected and justified:
 - `confetti` comes from a third-party script
 - `bootstrap` refers to Bootstrap’s modal functionality imported via CDN
 
-⚠️ One warning was generated:  
+⚠️ One **fixed** warning was generated:  
 >> *Optional chaining is only available in ES11*  
 
 ```js
@@ -348,6 +350,8 @@ Accessibility testing was conducted using both **automated tools** and **manual 
 | axe DevTools (Deque Systems) | Browser extension used in developer tools to find and explain WCAG violations within the app. |
 | Google Chrome Lighthouse | Generates automated accessibility reports covering contrast, ARIA usage, keyboard support, and more. |
 | NVDA (NonVisual Desktop Access) | Screen reader for Windows used to test how visually impaired users experience and navigate the app. |
+
+---
 
 ### **6.2.1 WAVE Accessibility Testing**
 
@@ -930,6 +934,8 @@ To assess performance, a combination of automated tools were used:
 | **PageSpeed Insights**           | Live Google performance data and opportunities from real-world usage   |
 | **Detailed SEO Extension**       | Real-time browser-based inspection of SEO metadata, robots tags, and structural issues |
 
+---
+
 ### **6.3.1 Lighthouse Performance Testing**
 Lighthouse is an open-source, automated tool developed by Google to audit web performance, accessibility, SEO, and adherence to best practices. It simulates real-world conditions such as throttled mobile networks and underpowered devices, providing a repeatable, objective way to evaluate web experiences.
 
@@ -1318,6 +1324,8 @@ The Detailed SEO Extension played a vital role in elevating Codoku’s on-page S
 
 Ensuring that **Codoku** delivers a smooth and accessible experience across a variety of devices was essential to creating an inclusive and user-friendly interface. Responsive testing was conducted through emulation, browser-based tools, and real-world user feedback. This approach verified not just layout stability, but also the usability of controls, modals, and navigation across multiple screen types and interaction models.
 
+---
+
 ### 6.4.1 **DevTools Responsive Mode**
 
 The Responsive Mode in Chrome DevTools was used to simulate a wide range of real-world devices and screen resolutions. This enabled testing across smartphones, tablets, foldables, and smart displays with varying aspect ratios and pixel densities.
@@ -1550,13 +1558,33 @@ These issues are likely the result of how Safari and Edge handle media playback 
 Despite these minor discrepancies, no functionality was broken, and all browsers successfully displayed and interacted with the game features. This confirms that Codoku is functionally compatible across major modern browsers and platforms.
 
 ## **6.5 User Stories and Feature Functionality**
-This section presents a comprehensive evaluation of Codoku's core features, tested against clearly defined user stories and acceptance criteria. Each feature was developed with accessibility, responsiveness, and user satisfaction in mind, and validated through structured usability testing with 12 real users via a Google Forms survey.
+This section outlines a detailed evaluation of Codoku’s core features, tested against clearly defined user stories and acceptance criteria. Each feature was developed with accessibility, responsiveness, and user satisfaction in mind, and validated through structured usability testing conducted near project completion, when the app was stable.
 
-Each feature is introduced with its expected behavior and the user stories that guided its development. Stories were taken from the original GitHub boards or written later to reflect changes as the project evolved. For each feature, results include tester success rates, noted issues and any user feedback or reflections. 
+#### **Testing Methodology and Rationale**
+My approach was shaped by a background in anthropological and educational research, where user observation and feedback are central. Rather than focusing solely on technical validation, I prioritized human-centered testing rooted in how real users interact with the interface.
 
-For every feature, testers responded to targeted yes/no questions based on the acceptance criteria. If a user answered 'NO' indicating the feature did not behave as expected, they were encouraged to leave a comment explaining what happened or what they observed. This provided valuable insight into edge cases, usability issues, or misunderstandings.
+To simulate real-world use, I recruited 12 testers friends and family of varying technical confidence and device types, to explore Codoku and submit feedback via a structured Google Forms survey. This helped surface not only bugs, but also subtle UX and accessibility gaps.
 
-This methodical approach ensures that Codoku’s design is not only functional but genuinely user-centered, aligning closely with real-world needs and expectations.
+#### **Evaluation Process**
+Each feature is paired with its intended behavior and the user story that informed its creation, drawn from the original GitHub board or written later to reflect evolving scope.
+
+Testers answered yes/no questions tied to each feature’s acceptance criteria. Any 'NO' responses prompted optional comments, which provided valuable insight into edge cases, confusion points, or functional gaps.
+
+#### **User Testing Benchmark Table**
+
+| Percentage | Number of Users (out of 12) | Status         |
+|------------|-----------------------------|----------------|
+| 100%       | 12                          | ✅ Full Pass    |
+| 92%        | 11                          | ✅ Full Pass    |
+| 83%        | 10                          | 🟡 Partial Pass |
+| 75%        | 9                           | 🟡 Partial Pass |
+| <75%       | 8 or fewer                  | ❌ Needs Review |
+
+> Note: A 92%+ score is considered a strong pass unless issues raised indicate usability barriers or accessibility flaws. Any result below 80% was investigated further or flagged for future iteration.
+
+Overall, this testing strategy ensured Codoku meets real user needs and adheres to accessibility and responsive design principles. It reflects a research-informed, user-first approach to front-end development.
+
+---
 
 ### **6.5.1 Theme Toggle**
 Users should be able to seamlessly switch between light and dark themes using a clearly visible toggle. The entire interface should update instantly, maintaining high contrast and accessible color schemes without reloading the page. The toggle should provide an inclusive experience for users with visual preferences or impairments.
@@ -1569,10 +1597,10 @@ Users should be able to seamlessly switch between light and dark themes using a 
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| A toggle button is available in the UI for switching themes | 100% | All users located the toggle easily in both desktop and mobile layouts. |
-| Theme preference visually updates the interface instantly (no page reload) | 92% | One user reported a slight delay in Safari and Edge during the transition. |
-| The Sudoku grid, text, buttons, and backgrounds update consistently across themes | 100% | All users noted button styling updates when toggling between themes. |
-| High contrast is maintained for accessibility in both modes | 100% | All users confirmed good visibility. |
+| A toggle button is available in the UI for switching themes | 100% ✅ | All users located the toggle easily in both desktop and mobile layouts. |
+| Theme preference visually updates the interface instantly (no page reload) | 92% ✅ | One user reported a slight delay in Safari and Edge during the transition. |
+| The Sudoku grid, text, buttons, and backgrounds update consistently across themes | 100% ✅ | All users noted button styling updates when toggling between themes. |
+| High contrast is maintained for accessibility in both modes | 100% ✅ | All users confirmed good visibility. |
 
 Feedback from the 12 testers confirmed that the theme toggle was working as expected for most users, with instant interface switching and a consistent color palette across key elements.
 
@@ -1589,14 +1617,14 @@ The Sound Toggle allows users to enable or disable audio feedback throughout the
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| A clearly visible toggle switch exists for enabling/disabling sound | 100% | All testers identified the toggle in the top-right corner. |
-| Toggle state persists throughout the session and reflects the current sound status visually | 100% | Sound toggle retained state unless the page was reloaded; visual cue (filled/unfilled speaker icon) worked consistently. |
-| Sound effects play when: opening modals, changing pages, clicking Check/Clue/New Game buttons, etc. | 100% | Testers confirmed sounds played during key interactions — especially on modals, grid input, and game completion. |
-| Theme toggle plays distinctive sounds (“hoot” for dark mode, “tweet” for light mode) | 100% | All testers heard the correct sounds during theme changes; 2 Safari users reported delayed audio triggering. |
-| No overlapping or repeating sounds occurred during interaction | 100% | Sound effects played once per interaction. No stacking or glitches were reported. |
-| Sound system respected the global toggle (i.e., no sound when toggle was off) | 100% | All testers confirmed that when toggled off, no sounds were triggered, including modals and feedback effects. |
-| Sounds were brief, soft, and thematically appropriate | 100% | Feedback from all testers described sounds as “light,” “fun,” and “pleasant,” especially the confetti and success effects on completion. |
-| Overall sound works consistently across modern browsers and mobile devices | 75% | Confirmed working on Chrome, Firefox, Opera; Safari and Edge occasionally delayed sound playback due to autoplay restrictions. |
+| A clearly visible toggle switch exists for enabling/disabling sound | 100% ✅ | All testers identified the toggle in the top-right corner. |
+| Toggle state persists throughout the session and reflects the current sound status visually | 100% ✅ | Sound toggle retained state unless the page was reloaded; visual cue (filled/unfilled speaker icon) worked consistently. |
+| Sound effects play when: opening modals, changing pages, clicking Check/Clue/New Game buttons, etc. | 100% ✅ | Testers confirmed sounds played during key interactions — especially on modals, grid input, and game completion. |
+| Theme toggle plays distinctive sounds (“hoot” for dark mode, “tweet” for light mode) | 100% ✅ | All testers heard the correct sounds during theme changes; 2 Safari users reported delayed audio triggering. |
+| No overlapping or repeating sounds occurred during interaction | 100% ✅ | Sound effects played once per interaction. No stacking or glitches were reported. |
+| Sound system respected the global toggle (i.e., no sound when toggle was off) | 100% ✅ | All testers confirmed that when toggled off, no sounds were triggered, including modals and feedback effects. |
+| Sounds were brief, soft, and thematically appropriate | 100% ✅ | Feedback from all testers described sounds as “light,” “fun,” and “pleasant,” especially the confetti and success effects on completion. |
+| Overall sound works consistently across modern browsers and mobile devices | 75% 🟡 | Confirmed working on Chrome, Firefox, Opera; Safari and Edge occasionally delayed sound playback due to autoplay restrictions. |
 
 Testers responded positively to the audio feedback system, praising its subtle integration and thematic consistency. The bird-themed toggles and light UI sounds helped make interactions feel rewarding and polished. Importantly, the sound toggle empowered users to choose a quiet experience when desired, aligning well with accessibility needs and user preference.
 
@@ -1612,12 +1640,12 @@ The navigation bar should remain fixed at the top of the interface, offering qui
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| A fixed navigation bar is present at the top of the site | 100% | Universally confirmed across all devices. |
-| The navbar includes links to: Home, Game, Rules, About | 83% | Two users did not initially notice the "About" link in the mobile hamburger menu. |
-| Links are keyboard-accessible and screen-reader friendly | 100% | All confirmed success when navigating with keyboard; screen reader user said landmark was properly announced. |
-| The current page is clearly indicated using active styling | 92% | Active styling worked; one user said it was less obvious. |
-| On mobile and tablet devices, the navigation collapses into a hamburger or icon menu | 100% | All 8 mobile and tablet users confirmed the collapse and functionality worked correctly. |
-| Navigation items scroll or jump to the relevant sections or pages as appropriate | 100% | All links directed users correctly; internal scroll worked smoothly on desktop and tablet. |
+| A fixed navigation bar is present at the top of the site | 100% ✅ | Universally confirmed across all devices. |
+| The navbar includes links to: Home, Game, Rules, About | 83% 🟡 | Two users did not initially notice the "About" link in the mobile hamburger menu. |
+| Links are keyboard-accessible and screen-reader friendly | 100% ✅ | All confirmed success when navigating with keyboard; screen reader user said landmark was properly announced. |
+| The current page is clearly indicated using active styling | 92% ✅ | Active styling worked; one user said it was less obvious. |
+| On mobile and tablet devices, the navigation collapses into a hamburger or icon menu | 100% ✅ | All 8 mobile and tablet users confirmed the collapse and functionality worked correctly. |
+| Navigation items scroll or jump to the relevant sections or pages as appropriate | 100% ✅ | All links directed users correctly; internal scroll worked smoothly on desktop and tablet. |
 
 Overall, the navigation system performed well across screen sizes, with no critical issues reported. Users appreciated the clarity and stability of the fixed nav bar, especially when playing on smaller devices.
 
@@ -1634,10 +1662,10 @@ When the game loads or a user presses “New Puzzle,” a fresh Sudoku grid shou
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| When the game loads or the "New Puzzle" button is pressed, a valid puzzle is fetched | 83% | 10 users saw the puzzle load instantly; two noted a short delay before it appeared. |
-| The grid structure is always a 9x9 layout | 100% | All users confirmed the correct grid size. |
-| Pre-filled cells are displayed clearly and are non-editable | 100% | No reports of editable fixed cells; presentation was consistent across all users. |
-| User-input cells are editable and styled differently from fixed ones | 92% | One user said the styling difference could be more visually distinct. |
+| When the game loads or the "New Puzzle" button is pressed, a valid puzzle is fetched | 83% 🟡 | 10 users saw the puzzle load instantly; two noted a short delay before it appeared. |
+| The grid structure is always a 9x9 layout | 100% ✅ | All users confirmed the correct grid size. |
+| Pre-filled cells are displayed clearly and are non-editable | 100% ✅ | No reports of editable fixed cells; presentation was consistent across all users. |
+| User-input cells are editable and styled differently from fixed ones | 92% ✅ | One user said the styling difference could be more visually distinct. |
 
 The API-driven puzzle loading feature was reliable and effective for nearly all testers. All users found that puzzles appeared smoothly and correctly, with no functional errors or structural issues.
 
@@ -1655,12 +1683,12 @@ Users should be able to access clear and concise instructions on how to play Sud
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| A “Rules” button is clearly visible in the navigation or game interface | 100% | All testers easily located the button. |
-| Clicking/tapping the button opens a modal with gameplay rules | 100% | All users reported that the modal opened smoothly and without delay. |
-| The modal includes concise, beginner-friendly Sudoku instructions | 100% | Every tester found clarity and simplicity of the content, especially those unfamiliar with Sudoku. |
-| The modal is keyboard and screen-reader accessible | 100% | All found keyboard navigation and Esc-to-close worked; screen reader user confirmed content was announced. |
-| The modal can be closed via a close button, Esc key | 100% | All close methods worked as expected across devices. |
-| The modal works consistently across desktop and mobile devices | 100% | No issues reported with responsiveness or usability across device types. |
+| A “Rules” button is clearly visible in the navigation or game interface | 100% ✅ | All testers easily located the button. |
+| Clicking/tapping the button opens a modal with gameplay rules | 100% ✅ | All users reported that the modal opened smoothly and without delay. |
+| The modal includes concise, beginner-friendly Sudoku instructions | 100%  | Every tester found clarity and simplicity of the content, especially those unfamiliar with Sudoku. |
+| The modal is keyboard and screen-reader accessible | 100% ✅ | All found keyboard navigation and Esc-to-close worked; screen reader user confirmed content was announced. |
+| The modal can be closed via a close button, Esc key | 100% ✅ | All close methods worked as expected across devices. |
+| The modal works consistently across desktop and mobile devices | 100% ✅ | No issues reported with responsiveness or usability across device types. |
 
 The Rules Modal received overwhelmingly positive feedback for accessibility, clarity, and UI integration. Users noted that it was helpful, non-disruptive, and visually consistent with the game’s theme.
 
@@ -1678,12 +1706,12 @@ Users should be able to restart the game at any point using a clearly visible �
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| A clearly visible “New Game” button is available on the game interface | 100% | All users were able to identify and use the button; a few on tablet noted it was slightly cramped. |
-| Completing the setup modal produces a new puzzle upon pressing “Enter” | 92% | All users saw a fresh puzzle appear; one reported a lag in loading on a slower device. |
-| The timer (if active) resets and begins again with the new puzzle | 100% | All users reported the timer reset instantly. |
-| Clue count and other stats reset correctly when the button is pressed | 100% | All users confirmed the clue count reset to 0; game stats were updated accordingly. |
-| Validation highlights (e.g., Check results) and previous messages are cleared | 100% | All users reported that cells that had been highlighted green or red reset. |
-| The button is accessible via mouse, keyboard, and touchscreen input | 100% | All users successfully interacted with the button using different input methods without issue. |
+| A clearly visible “New Game” button is available on the game interface | 100% ✅ | All users were able to identify and use the button; a few on tablet noted it was slightly cramped. |
+| Completing the setup modal produces a new puzzle upon pressing “Enter” | 92% ✅ | All users saw a fresh puzzle appear; one reported a lag in loading on a slower device. |
+| The timer (if active) resets and begins again with the new puzzle | 100% ✅ | All users reported the timer reset instantly. |
+| Clue count and other stats reset correctly when the button is pressed | 100% ✅ | All users confirmed the clue count reset to 0; game stats were updated accordingly. |
+| Validation highlights (e.g., Check results) and previous messages are cleared | 100% ✅ | All users reported that cells that had been highlighted green or red reset. |
+| The button is accessible via mouse, keyboard, and touchscreen input | 100% ✅ | All users successfully interacted with the button using different input methods without issue. |
 
 Overall, the New Game button fulfilled expectations and was highly functional across platforms and input types. Users appreciated the ability to instantly reset the game and receive a fresh challenge with minimal friction.
 
@@ -1699,12 +1727,12 @@ When the setup modal is triggered before gameplay, users can choose a difficulty
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| A difficulty selector is visible in the setup modal (above timer options) | 100% | All users easily located it within the modal. |
-| Users can choose from at least three levels: Easy, Medium, and Hard | 100% | All testers confirmed that the options were selectable and visually distinct. |
-| The selection affects the puzzle generated via the API | 100% | All noticed a difference in puzzle layout; one said the change wasn't clearly noticeable. |
-| Selected difficulty is passed to the API and applied | 100% | All puzzles loaded correctly and varied as expected when difficulty was changed between games. |
-| Puzzle starts with the selected difficulty level once game begins | 100% | Functioned as intended. Setup modal closed and puzzle reflected chosen difficulty. |
-| Active difficulty selection is visually highlighted | 92% | Visually styled radio buttons helped; one user suggested bolding the active selection more clearly in dark mode. |
+| A difficulty selector is visible in the setup modal (above timer options) | 100% ✅ | All users easily located it within the modal. |
+| Users can choose from at least three levels: Easy, Medium, and Hard | 100% ✅ | All testers confirmed that the options were selectable and visually distinct. |
+| The selection affects the puzzle generated via the API | 100% ✅ | All noticed a difference in puzzle layout; one said the change wasn't clearly noticeable. |
+| Selected difficulty is passed to the API and applied | 100% ✅ | All puzzles loaded correctly and varied as expected when difficulty was changed between games. |
+| Puzzle starts with the selected difficulty level once game begins | 100% ✅ | Functioned as intended. Setup modal closed and puzzle reflected chosen difficulty. |
+| Active difficulty selection is visually highlighted | 92% ✅ | Visually styled radio buttons helped; one user suggested bolding the active selection more clearly in dark mode. |
 
 The difficulty selection inside the setup modal functioned as intended and gave users meaningful control over puzzle complexity. Testers appreciated its inclusion at the very beginning of the user flow.
 
@@ -1720,13 +1748,13 @@ When launching the game via the setup modal, users can select a countdown timer 
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| Timer selector is visible in the setup modal | 100% | All users confirmed the timer options were clearly positioned below the difficulty selector. |
-| Users can choose from 3m, 5m, 10m, or No Timer options | 100% | All users confirmed options were easy to understand. |
-| Timer begins once puzzle loads if a duration was selected | 100% | All testers reported the countdown began correctly upon game start. |
-| No countdown shown when “No Timer” is selected | 100% | “No Timer” worked as intended with all users; some appreciated the calmer experience. |
-| Time is visibly displayed and updates every second | 100% | Display was accurate on all devices. |
-| Timer expires correctly and triggers timeout alert | 100% | When users let the clock run out, all confirmed they received a clear timeout modal. |
-| Timer resets if a new puzzle is loaded | 100% | Functionality confirmed for all testers. Timer resets correctly between games. |
+| Timer selector is visible in the setup modal | 100% ✅ | All users confirmed the timer options were clearly positioned below the difficulty selector. |
+| Users can choose from 3m, 5m, 10m, or No Timer options | 100% ✅ | All users confirmed options were easy to understand. |
+| Timer begins once puzzle loads if a duration was selected | 100%  | All testers reported the countdown began correctly upon game start. |
+| No countdown shown when “No Timer” is selected | 100%  | “No Timer” worked as intended with all users; some appreciated the calmer experience. |
+| Time is visibly displayed and updates every second | 100% ✅ | Display was accurate on all devices. |
+| Timer expires correctly and triggers timeout alert | 100% ✅ | When users let the clock run out, all confirmed they received a clear timeout modal. |
+| Timer resets if a new puzzle is loaded | 100% ✅ | Functionality confirmed for all testers. Timer resets correctly between games. |
 
 The timer selector within the setup modal proved effective and popular across all user types — from casual players to those seeking a challenge. Most testers understood its purpose and used it intuitively.
 
@@ -1743,13 +1771,13 @@ Users should be able to interact with the Sudoku puzzle by selecting any empty (
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| Users can navigate to any editable cell | 100% | Most testers succeeded with click/tap; however, full keyboard cell selection was not supported. |
-| Editable cells accept single-digit numeric input (1–9) only | 100% | All testers reported that only valid digits could be entered; no bugs or invalid input accepted. |
-| Cells highlight visually when hovered over or selected | 100% | Clear visual feedback confirmed by all users; selection states were consistent across themes. |
-| Original (pre-filled) puzzle cells are not editable | 100% | All testers noted that fixed cells could not be changed. |
-| Selected cell is clearly styled for visibility | 92% | 11 users praised the clear focus indicator; one mobile tester felt highlight could be slightly bolder. |
-| Users can delete inputs using an erase button or Backspace | 100% | All users tested Backspace successfully; erase button was functional and clearly labeled. |
-| Grid supports input methods | 75% | Touch and mouse input worked across all devices; keyboard navigation was partially implemented only. |
+| Users can navigate to any editable cell | 100% ✅ | Most testers succeeded with click/tap; however, full keyboard cell selection was not supported. |
+| Editable cells accept single-digit numeric input (1–9) only | 100% ✅ | All testers reported that only valid digits could be entered; no bugs or invalid input accepted. |
+| Cells highlight visually when hovered over or selected | 100% ✅ | Clear visual feedback confirmed by all users; selection states were consistent across themes. |
+| Original (pre-filled) puzzle cells are not editable | 100% ✅ | All testers noted that fixed cells could not be changed. |
+| Selected cell is clearly styled for visibility | 92% ✅ | 11 users praised the clear focus indicator; one mobile tester felt highlight could be slightly bolder. |
+| Users can delete inputs using an erase button or Backspace | 100% ✅ | All users tested Backspace successfully; erase button was functional and clearly labeled. |
+| Grid supports input methods | 75% 🟡 | Touch and mouse input worked across all devices; keyboard navigation was partially implemented only. |
 
 Codoku’s grid interaction is highly intuitive and responsive across input types. Users enjoyed smooth input via touch, mouse, and keyboard for number entry and deletion.
 
@@ -1771,13 +1799,13 @@ Users should be able to press a clearly labeled “Check” button at any time d
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| A clearly labeled “Check” button is available during gameplay | 100% | All users confirmed this was visible and accessible. |
-| Button compares user input against the correct solution | 92% | 11 users said incorrect cells were highlighted; one user didn’t notice any visible change. |
-| Incorrect entries are highlighted visually (e.g., red border or icon) | 92% | One user expected cell color change, not just number. |
-| Correct entries remain unchanged or are optionally confirmed visually | 100% | All users saw no change to correct entries, as intended. |
-| Fixed (non-editable) cells are ignored during check | 100% | No issues were raised here. |
-| Users can reset highlighting via input or “Clear” action | 92% | One user noted that they were unable to recognize the color change. |
-| The check function does not end the game or affect game stats | 100% | All testers reported the game continued as expected after checking. |
+| A clearly labeled “Check” button is available during gameplay | 100% ✅ | All users confirmed this was visible and accessible. |
+| Button compares user input against the correct solution | 92% ✅ | 11 users said incorrect cells were highlighted; one user didn’t notice any visible change. |
+| Incorrect entries are highlighted visually (e.g., red border or icon) | 92% ✅ | One user expected cell color change, not just number. |
+| Correct entries remain unchanged or are optionally confirmed visually | 100% ✅ | All users saw no change to correct entries, as intended. |
+| Fixed (non-editable) cells are ignored during check | 100% ✅ | No issues were raised here. |
+| Users can reset highlighting via input or “Clear” action | 92% ✅ | One user noted that they were unable to recognize the color change. |
+| The check function does not end the game or affect game stats | 100% ✅ | All testers reported the game continued as expected after checking. |
 
 The Check feature performed well, giving players the opportunity to self-correct without penalty. Nearly every participant was able to use the button to identify mistakes mid-game. The feature met expectations by maintaining gameplay continuity and not impacting completion stats.
 
@@ -1798,13 +1826,13 @@ During gameplay, users can press a “Clue” button to automatically reveal one
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| A clearly labeled “Clue” button is available during gameplay | 100% | All testers located the button easily. |
-| Clicking the button reveals one correct number in an empty or incorrect cell | 100% | Every user reported this worked as expected, with clues placed in appropriate cells. |
-| Pre-filled (non-editable) cells are excluded from the clue logic | 100% | All testers confirmed that only editable cells were affected. |
-| Each clue press reveals only one cell | 100% | All users affirmed multiple presses yielded one clue per click. |
-| Clue usage is counted and displayed in the stats modal or panel | 100% | All users saw their clue count appear correctly upon puzzle completion or timeout. |
-| Visual feedback identifies the newly revealed cell | 92% | 11 users found cell highlight was seen as clear, though one tester noted that the green was a little too subtle in light mode. |
-| Button is accessible via keyboard and works across screen sizes | 100% | Confirmed on desktop, tablet, and keyboard testing yielded full functionality. |
+| A clearly labeled “Clue” button is available during gameplay | 100% ✅ | All testers located the button easily. |
+| Clicking the button reveals one correct number in an empty or incorrect cell | 100% ✅ | Every user reported this worked as expected, with clues placed in appropriate cells. |
+| Pre-filled (non-editable) cells are excluded from the clue logic | 100% ✅ | All testers confirmed that only editable cells were affected. |
+| Each clue press reveals only one cell | 100% ✅ | All users affirmed multiple presses yielded one clue per click. |
+| Clue usage is counted and displayed in the stats modal or panel | 100% ✅ | All users saw their clue count appear correctly upon puzzle completion or timeout. |
+| Visual feedback identifies the newly revealed cell | 92% ✅ | 11 users found cell highlight was seen as clear, though one tester noted that the green was a little too subtle in light mode. |
+| Button is accessible via keyboard and works across screen sizes | 100% ✅ | Confirmed on desktop, tablet, and keyboard testing yielded full functionality. |
 
 The Clue button feature was well-received, especially by beginners and casual players. It added a sense of safety and learning without over-simplifying the puzzle.
 
@@ -1830,12 +1858,12 @@ These metrics help users track progress, reflect on performance, and compare acr
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| Stats panel appears and updates during game | 100% | All users confirmed the visibility of the live stats. One tester said the panel was small and easy to miss. |
-| Panel displays difficulty level accurately | 100% | All users confirmed correct difficulty shown. |
-| Panel shows time left (if timer was active) | 100% | Accurate display noted by all testers. |
-| Number of hints used is displayed clearly | 100% | Displayed as expected for all devices. |
-| Stats panel is styled clearly and readable on all device sizes | 92% | Font and spacing worked well, though on one very narrow screen, some text wrapped unexpectedly. |
-| Data is reset or cleared when a new puzzle is started | 100% | All testers confirmed this worked; no overlap or stale data reported after starting new games. |
+| Stats panel appears and updates during game | 100% ✅ | All users confirmed the visibility of the live stats. One tester said the panel was small and easy to miss. |
+| Panel displays difficulty level accurately | 100% ✅ | All users confirmed correct difficulty shown. |
+| Panel shows time left (if timer was active) | 100% ✅ | Accurate display noted by all testers. |
+| Number of hints used is displayed clearly | 100% ✅ | Displayed as expected for all devices. |
+| Stats panel is styled clearly and readable on all device sizes | 92% ✅ | Font and spacing worked well, though on one very narrow screen, some text wrapped unexpectedly. |
+| Data is reset or cleared when a new puzzle is started | 100% ✅ | All testers confirmed this worked; no overlap or stale data reported after starting new games. |
 
 Testers found the stats panel helpful for self-evaluation and liked its seamless integration with the completion modal. The inclusion of clues used and time taken gave meaning to each playthrough.
 
@@ -1851,11 +1879,11 @@ When the user successfully solves the entire Sudoku puzzle, a celebratory modal 
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| A modal or popup is triggered when the puzzle is correctly completed | 100% | All testers reported the modal appearing immediately after correct completion. |
-| The modal displays a congratulatory message | 100% | All users who completed the puzzle successfully saw the message. |
-| Two options available: “New Game” and “Admire Puzzle” | 100% | Testers confirmed both buttons were present and functioned correctly. |
-| Visual celebration enhances the success state | 92% | 11 users saw the confetti. One noted it was subtle on smaller mobile screens. |
-| Modal does not trigger unless puzzle is 100% correct | 100% | No tester reported seeing the modal on incomplete or partially correct boards — logic worked as intended. |
+| A modal or popup is triggered when the puzzle is correctly completed | 100% ✅ | All testers reported the modal appearing immediately after correct completion. |
+| The modal displays a congratulatory message | 100% ✅ | All users who completed the puzzle successfully saw the message. |
+| Two options available: “New Game” and “Admire Puzzle” | 100% ✅ | Testers confirmed both buttons were present and functioned correctly. |
+| Visual celebration enhances the success state | 92% ✅ | 11 users saw the confetti. One noted it was subtle on smaller mobile screens. |
+| Modal does not trigger unless puzzle is 100% correct | 100% ✅ | No tester reported seeing the modal on incomplete or partially correct boards — logic worked as intended. |
 
 This celebration feature received universally positive feedback for providing a satisfying payoff after puzzle completion. It reinforces user motivation and makes the experience feel polished.
 
@@ -1871,11 +1899,11 @@ If a user selects a timed mode and fails to complete the puzzle before the count
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| If a countdown timer is active and reaches zero, a modal or alert is triggered | 100% | All users saw the timeout modal appear immediately once the countdown expired. |
-| The modal displays a message | 100% | All users confirmed the message was clear and appropriately worded. |
-| Modal includes “OK” button | 100% | All 12 confirmed button was present. |
-| The puzzle becomes inactive after timeout (inputs are blocked) | 100% | All testers observed they could no longer interact with the grid post-timeout, as expected. |
-| Feature works across all timer durations (3, 5, 10 mins) | 100% | All timer lengths were tested; no inconsistencies reported. |
+| If a countdown timer is active and reaches zero, a modal or alert is triggered | 100% ✅ | All users saw the timeout modal appear immediately once the countdown expired. |
+| The modal displays a message | 100% ✅ | All users confirmed the message was clear and appropriately worded. |
+| Modal includes “OK” button | 100% ✅ | All 12 confirmed button was present. |
+| The puzzle becomes inactive after timeout (inputs are blocked) | 100% ✅ | All testers observed they could no longer interact with the grid post-timeout, as expected. |
+| Feature works across all timer durations (3, 5, 10 mins) | 100% ✅ | All timer lengths were tested; no inconsistencies reported. |
 
 The timeout modal functioned reliably across testers and timers, effectively marking the end of a timed challenge. It added a layer of tension and motivation without feeling punitive.
 
@@ -1891,12 +1919,12 @@ When a user fills every cell in the grid but includes one or more incorrect entr
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| When the puzzle is fully filled but contains incorrect entries, a modal or alert is triggered | 100% | All testers encountered the modal when appropriate. |
-| The alert clearly states the puzzle is not correct | 100% | Every tester reported the message was clear, helpful, and non-punitive. |
-| The puzzle remains active and editable after the modal is dismissed | 100% | All users could continue editing their puzzle freely after dismissing the modal. |
-| The alert does not show if the grid is incomplete | 100% | This logic worked correctly for all testers. |
-| The modal can be dismissed easily with “OK” button | 100% | All testers confirmed it was dismissible with standard interactions. |
-| System distinguishes between a fully filled but incorrect puzzle and one that is incomplete | 100% | Functioned as intended for all testers. |
+| When the puzzle is fully filled but contains incorrect entries, a modal or alert is triggered | 100% ✅ | All testers encountered the modal when appropriate. |
+| The alert clearly states the puzzle is not correct | 100% ✅ | Every tester reported the message was clear, helpful, and non-punitive. |
+| The puzzle remains active and editable after the modal is dismissed | 100% ✅ | All users could continue editing their puzzle freely after dismissing the modal. |
+| The alert does not show if the grid is incomplete | 100% ✅ | This logic worked correctly for all testers. |
+| The modal can be dismissed easily with “OK” button | 100% ✅ | All testers confirmed it was dismissible with standard interactions. |
+| System distinguishes between a fully filled but incorrect puzzle and one that is incomplete | 100% ✅ | Functioned as intended for all testers. |
 
 This feature proved especially helpful for newer or more casual players, acting as a gentle prompt when they mistakenly believed the puzzle was complete.
 
@@ -1912,12 +1940,12 @@ When a puzzle is correctly completed, even with clues used, a summary modal shou
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| On successful puzzle completion, a modal displays a brief game summary | 100% | All testers confirmed the modal appeared correctly upon puzzle completion. |
-| Modal includes: Difficulty level played (Easy / Medium / Hard) | 100% | All users saw the correct difficulty level displayed. |
-| Modal includes: Time taken to complete (if timer was active) | 100% | Every user confirmed the timer value was shown accurately. |
-| Modal includes: Number of hints used (if any) | 100% | Testers using clues saw their usage logged; those who didn’t use hints verified the value stayed at “0”. |
-| Summary appears below message | 100% | Users agreed layout was clear and visually integrated with the celebration modal. |
-| Summary is visually styled and consistent with the app’s design | 100% | All testers confirmed it matched the Codoku aesthetic and did not feel like a generic alert. |
+| On successful puzzle completion, a modal displays a brief game summary | 100% ✅ | All testers confirmed the modal appeared correctly upon puzzle completion. |
+| Modal includes: Difficulty level played (Easy / Medium / Hard) | 100% ✅ | All users saw the correct difficulty level displayed. |
+| Modal includes: Time taken to complete (if timer was active) | 100% ✅ | Every user confirmed the timer value was shown accurately. |
+| Modal includes: Number of hints used (if any) | 100% ✅ | Testers using clues saw their usage logged; those who didn’t use hints verified the value stayed at “0”. |
+| Summary appears below message | 100% ✅ | Users agreed layout was clear and visually integrated with the celebration modal. |
+| Summary is visually styled and consistent with the app’s design | 100% ✅ | All testers confirmed it matched the Codoku aesthetic and did not feel like a generic alert. |
 
 Testers found the summary panel very satisfying. It gave closure to a session and helped reinforce progress or skill growth.
 
@@ -1935,11 +1963,11 @@ When users visit a non-existent or mistyped URL, a custom 404 error page is show
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| A custom 404 page appears when visiting a non-existent or incorrect route | 100% | All testers intentionally visited a wrong URL and saw the correct custom 404 page. |
-| The page contains a clear “Page Not Found” message with friendly, approachable language | 100% | Message was received as friendly and helpful; some praised the lighthearted tone. |
-| A large, visible “Go Home” or “Return to Puzzle” button is provided | 100% | The return button was easily spotted by all users. |
-| The button redirects the user to the main game page (index.html) | 100% | Worked consistently; no navigation errors were reported. |
-| The 404 page matches the visual style and branding of the Codoku site | 100% | All users confirmed visual consistency. |
+| A custom 404 page appears when visiting a non-existent or incorrect route | 100% ✅ | All testers intentionally visited a wrong URL and saw the correct custom 404 page. |
+| The page contains a clear “Page Not Found” message with friendly, approachable language | 100% ✅ | Message was received as friendly and helpful; some praised the lighthearted tone. |
+| A large, visible “Go Home” or “Return to Puzzle” button is provided | 100% ✅ | The return button was easily spotted by all users. |
+| The button redirects the user to the main game page (index.html) | 100% ✅ | Worked consistently; no navigation errors were reported. |
+| The 404 page matches the visual style and branding of the Codoku site | 100% ✅ | All users confirmed visual consistency. |
 
 The 404 page was praised for being clear, consistent, and user-friendly, especially compared to generic error pages users are used to. The prominent return button successfully re-engaged users, preventing frustration.
 
@@ -1954,12 +1982,12 @@ The About page provides users with context about Codoku’s purpose, development
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| The About page is accessible via the navigation bar | 100% | All testers found and accessed the About link in the navbar without issue. |
-| A modal warning appears when navigating to About during an active game | 92% | 11 testers saw the modal as expected and appreciated the confirmation; one said they didn’t see it (in one case, due to no active game). |
-| Modal includes: message warning about progress loss | 100% | Modal buttons worked as intended; all users clicked "Cancel" and stayed on the game page. |
-| About page content includes: purpose, developer motivation, key features, and supporting visuals | 100% | All users reported the page felt informative and clear; a few commented positively on the clarity and layout of visuals. |
-| Page includes a donation link to a relevant charity | 100% | Every tester noticed the donation feature and thought it was a meaningful addition. |
-| Page design is consistent with rest of the site and responsive across all devices | 100% | No design or layout issues reported on any screen size. Testers praised the aesthetic consistency and clarity. |
+| The About page is accessible via the navigation bar | 100% ✅ | All testers found and accessed the About link in the navbar without issue. |
+| A modal warning appears when navigating to About during an active game | 92% ✅ | 11 testers saw the modal as expected and appreciated the confirmation; one said they didn’t see it (in one case, due to no active game). |
+| Modal includes: message warning about progress loss | 100% ✅ | Modal buttons worked as intended; all users clicked "Cancel" and stayed on the game page. |
+| About page content includes: purpose, developer motivation, key features, and supporting visuals | 100% ✅ | All users reported the page felt informative and clear; a few commented positively on the clarity and layout of visuals. |
+| Page includes a donation link to a relevant charity | 100% ✅ | Every tester noticed the donation feature and thought it was a meaningful addition. |
+| Page design is consistent with rest of the site and responsive across all devices | 100% ✅ | No design or layout issues reported on any screen size. Testers praised the aesthetic consistency and clarity. |
 
 Testers responded very positively to the About page, with several calling it "thoughtful" and “well-balanced between visuals and message.” The modal warning was also seen as a good UX choice, though it only triggered when a game session had already begun, which caused one tester to miss it under certain conditions.
 
@@ -1974,9 +2002,9 @@ The Donate button is intended to connect Codoku’s mission of cognitive wellbei
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| A clearly labeled “Donate” button appears on the About page | 100% | All testers confirmed the presence of the button. Its design and label made it clearly distinguishable from other links. |
-| The button links to a valid external charity focused on mental health or dementia support | 100% | All testers clicked the button and confirmed it redirected correctly to the external site (e.g., Alzheimer’s Society) in a new tab. |
-| The button is visually styled to match the rest of the Codoku UI | 100% | Testers felt the button looked polished and in harmony with the overall design aesthetic. |
+| A clearly labeled “Donate” button appears on the About page | 100% ✅ | All testers confirmed the presence of the button. Its design and label made it clearly distinguishable from other links. |
+| The button links to a valid external charity focused on mental health or dementia support | 100% ✅ | All testers clicked the button and confirmed it redirected correctly to the external site (e.g., Alzheimer’s Society) in a new tab. |
+| The button is visually styled to match the rest of the Codoku UI | 100% ✅ | Testers felt the button looked polished and in harmony with the overall design aesthetic. |
 
 Testers widely appreciated the Donate button as a thoughtful and meaningful addition. Its clear alignment with Codoku’s mission to support cognitive health made it feel purposeful rather than promotional. There was a strong sense of user trust because the external link was to a recognized and respected charity.
 
@@ -1992,8 +2020,20 @@ The Social Media Links should be present in the footer across all pages of Codok
 
 | Acceptance Criteria | % Success | Notes |
 |---------------------|-----------|-------|
-| Social media links appear in the footer on all site pages | 100% | All testers confirmed the links were present on index.html, about.html, and 404.html. |
-| Each icon is a recognizable icon representing its platform | 100% | Icons were successfully recognized by all testers. |
-| Links open in a new tab with for safety | 100% | Verified by all testers, links opened safely in new tabs as expected. |
+| Social media links appear in the footer on all site pages | 100% ✅ | All testers confirmed the links were present on index.html, about.html, and 404.html. |
+| Each icon is a recognizable icon representing its platform | 100% ✅ | Icons were successfully recognized by all testers. |
+| Links open in a new tab with for safety | 100% ✅ | Verified by all testers, links opened safely in new tabs as expected. |
 
 The social media footer links were a simple but effective addition that testers found functional, clean, and easy to access. The use of widely recognized icons helped ensure users knew what to expect, and screen reader testing confirmed full accessibility.
+
+---
+
+#### **Partial Passes**
+For features that scored between 75% and 99%, each instance was carefully reviewed to determine the nature of the issue. In all cases, the small number of failed responses did not indicate functional breakage or critical usability barriers. Rather, they surfaced minor clarity gaps, device-specific delays, or personal preference-based observations.
+
+In line with my evaluation model (influenced by research-based usability testing), these partial passes were deemed acceptable because:
+- Issues were non-blocking and often specific to a single browser or user flow.
+- Feedback was taken into account for future improvements.
+- The core functionality remained accessible and usable for all testers.
+
+This measured approach ensured realistic quality control without demanding perfection at the expense of development scope or accessibility goals.

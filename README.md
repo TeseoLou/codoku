@@ -4,8 +4,6 @@ _Project Milestone 2_
 
 ![Responsive Display of Codoku Web App](docs/figures/am-i-responsive/homepage-light-mode.png)
 
-# **Contents**
-
 # 1. **Site Overview**
 
 **Codoku** is a responsive, interactive Sudoku game application built to offer a dynamic and user-centric experience. Developed as part of Project Milestone 2 for the Code Institute's Full Stack Software Development programme, the project encourages logical thinking through engaging gameplay, where each move is driven by the user and validated through real-time interactivity.
@@ -72,6 +70,8 @@ Key questions that framed the project vision:
 ❓ How can the project goals be met while delivering value to users?
 
 These were pivotal in establishing the project's purpose and influenced every stage of its development. From user stories to interface choices, they served as the crux of UX, ensuring all features and design elements were not only practical but meaningful and aligned to real-world usage.
+
+---
 
 ### **2.1.1. Initial Vision**
 
@@ -382,6 +382,8 @@ For **Codoku**, this phase was critical in determining the game’s core functio
 
 This process ensured that development remained tightly focused on what mattered most to users, such as usability, interactivity, and cross-device support, while setting aside lower-priority features for future iterations. 
 
+---
+
 ### **2.2.1. Deriving Requirements**
 The feature planning and UX analysis clearly highlighted which components were essential for **Codoku** to provide value to users and meet its project goals. These insights allowed requirements to be organized into three categories based on their priority and impact: **must-have**, **should-have**, and **could-have** features.
 
@@ -650,6 +652,8 @@ The layout includes:
 Information is structured to minimize distractions and cognitive load, with semantic `HTML` and `ARIA` support for screen readers. Elements are grouped by function and follow consistent patterns to support user familiarity.
 
 **Codoku’s** responsive structure adapts seamlessly across desktop, tablet, and mobile, using scalable fonts, high-contrast visuals, and keyboard-friendly controls. Altogether, this creates an inclusive, focused space that enhances logic-based engagement and replayability.
+
+---
 
 ### **2.3.1 MoSCoW Prioritization**
 
@@ -924,6 +928,8 @@ This addressed three main areas of user experience:
 2. **Information Design**: Structures content in a clear, accessible, and well-organized format to support readability and logical flow.
 3. **Responsiveness**: Ensures layouts and interactive features automatically adjust to different screen sizes (desktop, tablet, or mobile) for a smooth and consistent user experience.
 
+---
+
 ### **2.4.1 Navigation Design**
 
 A clear and consistent navigation system was essential in **Codoku** to support both ease of use and player engagement. While the Structure Plane defined the relationships between pages and content areas, the Skeleton Plane transformed that framework into an interactive visual system guiding users across gameplay and support areas.
@@ -1042,7 +1048,7 @@ The Error Page provides a fallback for broken or invalid links, guiding users ba
 - A **Home button** enables immediate return to the Game Page.  
 - Footer and navbar remain consistent to reinforce user control.
 
-## 2.4.5. Responsiveness
+### 2.4.5. Responsiveness
 
 Responsive design is essential to **Codoku’s** usability and success. As a logic-based puzzle app, **Codoku** prioritizes interaction and accessibility across all devices—especially smartphones and tablets, where users often play on the go. A mobile-first approach ensures smooth gameplay, adaptable layouts, and a consistent interface regardless of screen size.
 
@@ -1123,6 +1129,8 @@ Principles That Guided the Surface Design
 - create an environment that feels both intelligent and approachable
 
 Every interface decision was filtered through a lens of simplicity and user empathy so that nothing distracts from what really matters... the puzzle.
+
+---
 
 ### **2.5.1 Branding and Aesthetic**
 
@@ -1290,12 +1298,12 @@ The first three images were selected or created specifically for the About page,
 
 📰 **Newspaper Sudoku Puzzle** photograph (sourced from the Unsplash) evokes the tactile, analog origins of logic games, grounding **Codoku** in a familiar and nostalgic context.
 
-![Sudoku Puzzle in Newspaper](assets/images/about-sudoku.webp)
+![Sudoku Puzzle in Newspaper](assets/images/about-sudoku.webp)  
 *Photograph of a section of a Sudoku Puzzle from a newspaper puzzle page.*
 
 ⌨️ **Keyboard Rubik’s Cube** image (also from Unsplash) symbolically bridges logic, interactivity, and tech, an ideal visual metaphor for the type of experience **Codoku** provides.
 
-![Sudoku Rubik's Cube in Use](assets/images/sudoku-rubiks.webp)
+![Sudoku Rubik's Cube in Use](assets/images/sudoku-rubiks.webp)  
 *Photograph of a Rubik's Cube created with computer keyboard tiles.*
 
 📱 **Child and Adult on Tablet** was generated using ChatGPT’s image tools and edited on Pixlr, designed to represent a realistic scenario where digital puzzle play is used for focus, education, and quiet engagement.
@@ -1308,7 +1316,7 @@ Together, these visuals help convey that **Codoku** is more than just a game—i
 #### **2.5.5.b 404 Page Illustration**
 To maintain brand consistency and a sense of humor, a custom hand-drawn illustration was created for the 404 Error page. Styled like a vintage newspaper comic strip with a headline proclaiming a '404 Alert' the image places a missing puzzle grid front and center. The image was then edited in Sketchbook to refine and digitize. This approach:
 
-![Person reading newspaper with front page message describing 404 alert](assets/images/breaking-news.webp)
+![Person reading newspaper with front page message describing 404 alert](assets/images/breaking-news.webp)  
 *Illustration of a person in business attire reading the news paper with 404 message alert on front page.*
 
 - Reinforces the printed-paper puzzle theme used across the site
@@ -1373,10 +1381,24 @@ These animations provide intuitive feedback, inviting users to engage with exter
 Icons were styled using either the light (#F8F9FA) or dark (#212529) theme colors, depending on the mode selected. They dynamically inverted based on the theme toggle to maintain contrast and legibility.
 
 # 4. **Process and Methodology**
-The development of **Codoku** followed a structured, iterative methodology rooted in best practices for front-end application design. Unlike content-driven websites, **Codoku’s** success depended on thoughtful logic flow, modular scripting, and reactive feedback systems. This section outlines the processes and architectural strategies used from scoped feature planning and code mapping to milestone-based development tracked through `Git` commits.
+The development of Codoku was guided by a structured and iterative approach, shaped by both industry-standard front-end practices and personal experience in research and design thinking. 
+
+Unlike content-based websites, Codoku's success hinged on dynamic logic, responsive UI behavior, and seamless interaction between user inputs and game states. As such, development required more than layout or styling—it demanded interactive logic planning, modular JavaScript architecture, and real-time feedback mechanisms.
+
+This section outlines the full development workflow, from early feature mapping and decision-making through to issue-driven refactoring and accessibility validation.
+
+Development was broken into clear phases, tracked using version-controlled Git commits and milestone planning, which allowed for regular evaluation and course correction throughout the build.
 
 ## **4.1 Approach**
-This section outlines the key development principles applied, each of which helped ensure accessibility, maintainability, and user-centered design. Additionally, it highlights how I mapped my `JavaScript` logic ahead of time to define reusable functions and avoid duplication before building the final game logic.
+The core development principles that shaped Codoku focused on:
+- **Setup flow architecture:** Modal form handling, timer selection, and difficulty input
+- **Grid interaction system:** Generating puzzles, enabling cell selection, and managing user inputs
+- **Clue and validation logic:** Revealing hints dynamically and comparing inputs against the solution
+- **Timer and state management:** Starting, stopping, and resetting timers based on game events
+- **Theming and sound controls:** Toggle logic for dark/light modes and audio feedback linked to UI events
+- **`JavaScript` logic mapping:** Before writing code, I mapped Codoku’s entire logic architecture.
+
+---
 
 ###  **4.1.1 Mobile-First Development** 📱
 **Codoku** was designed first and foremost for mobile interaction, following a mobile-first development strategy rooted in accessibility and real-device testing.
@@ -1518,7 +1540,7 @@ This group of functions manage how users interact with the board, selecting cell
 `showAlertModal(message)`  
 └── Show `Bootstrap` modal
 
-`initPage() ` 
+`initPage()`   
 ├── `setupOutsideNavbarCollapse()`  
 ├── `setupThemeSwitch()`  
 ├── `setupStartButton()`  
@@ -1617,8 +1639,16 @@ To complement `GitHub`'s interface and VS Code’s built-in `Git` tools, I used 
 Using these tools helped ensure every change was documented and intentional. This approach hoped to not only improve my personal development discipline, but also create a clean, professional commit history useful for tutors and my future self.
 
 ## **4.2 Initial Setup**
+The early stages of Codoku’s development focused on laying a robust foundation for a responsive, accessible, and interactive single-page web application. This involved more than simply setting up `HTML` and `CSS`. It required forward-thinking architecture to ensure the app could scale smoothly as features grew in complexity.
 
-The early stages of **Codoku's** development focused on laying a solid foundation for a responsive, accessible, and interactive single-page web application. This involved establishing essential `HTML` structure, linking key stylesheets and scripts, and preparing the project for scalable logic integration.
+Key setup tasks included:
+- Semantic HTML scaffolding
+- Stylesheet linking
+- Script management
+- Accessibility-first planning
+- Progressive enhancement
+
+---
 
 ### **4.2.1 HTML Scaffold & Metadata**
 
@@ -1682,7 +1712,9 @@ Once the initial project folder and file structure was in place, the next step w
 
 The goal was to create a flexible yet robust `HTML` + `CSS` foundation that could be duplicated into every page and would only require page-specific content edits going forward.
 
-**Key Components of the Universal Template:**  
+---
+
+### **4.3.1 Key Components of the Universal Template:**  
 
 Metadata and Dependencies
   - Meta tags for viewport, character encoding, and accessibility  
@@ -1718,7 +1750,17 @@ This modular and scalable structure ensured:
 - Faster adaptation of updates (like styling refinements or theme adjustments)
 
 ## **4.4 Workflow**
-After establishing the reusable page template (with shared `HTML` layout, background styling, navbar, footer, and toggle elements), development progressed through a deliberate, layered sequence, gradually building structure, style, interactivity and logic while ensuring each feature worked independently before being integrated.
+After establishing the reusable page template, including a consistent `HTML` layout with shared navigation bar, footer, background styling, and global toggle controls, development followed a deliberate, layered sequence. 
+
+This phased approach allowed for:
+
+- Progressive construction
+- Feature isolation
+- Visual and structural consistency
+- Efficient debugging
+- Scalable logic development
+
+---
 
 ### **4.4.1. Refining Structural HTML Elements**
 Page titles, headers, button containers, and stat panels were added to define clear visual anchors for gameplay. Additional semantic containers and ARIA landmarks were incorporated.
@@ -1799,7 +1841,13 @@ Text, grid sizing, and spacing were adjusted to stay consistent on all screen si
 *Responsive design adapting fluidly to tablet, desktop, and mobile viewports.*
 
 ## **4.5 Feedback and Refinement**
-Following a detailed mid-project review, a number of constructive suggestions were offered that significantly helped fine-tune the **Codoku** experience. 
+Following a detailed mid-project review, several constructive suggestions were provided by my mentor, [David Bowers](https://github.com/dnlbowers), which meaningfully enhanced the overall **Codoku** experience.
+
+These insights were pivotal in guiding refinements related to accessibility, usability, and interface polish. David’s feedback encouraged me to focus not just on functionality, but also on how users onboard, receive feedback, and interact with key UI elements.
+
+David’s guidance (ranging from technical advice to UX polish) was instrumental in refining **Codoku’s** overall experience. His input not only identified missed details but also affirmed design choices that contributed to accessibility, consistency, and player satisfaction.
+
+---
 
 ### **4.5.1 Interface & Usability Enhancements**
 Mentor feedback highlighted the need for more polished and modern interaction elements. The most impactful updates were as follows:
@@ -1890,12 +1938,22 @@ In order to address this I:
 This fix prevents content from being squashed or hidden on smaller screens, making gameplay consistent across devices.
 
 # **5. Feature Set**
-This section highlights the complete functionality of **Codoku** in its final state, organized by the user journey. It covers everything from universal components to page-specific features and thoughtful enhancements. 
+This section highlights the complete functionality of **Codoku** in its final state, organized according to the user journey, from first landing on the site through to puzzle completion and optional replay. It covers everything from universal layout components and navigational structures to page-specific interactivity and polish-focused enhancements.
 
-Each entry outlines what users can do, the benefits those features provide, and the technologies that power them. This helps both developers and users understand how the project works, what makes it accessible, and where it shines in terms of user experience and technical design.
+Each entry outlines:
+
+- **What users can do**: detailing the core interactions available on each page or feature.
+- **Why those features matter**: explaining the benefits they provide in terms of usability, accessibility, and engagement.
+- **How they were built**: referencing the technologies and techniques (e.g., JavaScript logic, Bootstrap components, ARIA roles) that power each interaction.
+
+This structure not only documents functionality from a technical perspective but also helps communicate how Codoku was designed with accessibility, clarity, and player enjoyment in mind. Whether you're a developer exploring implementation or a user interested in what the app offers, this section provides a full walkthrough of where **Codoku** shines in both design and execution.
 
 ## **5.1 Universal Features**
-These features form the core structure of the **Codoku** website and are consistently available to all users throughout their experience.
+These features form the core structure of the **Codoku** website and are consistently available to all users throughout their experience. They include foundational layout elements such as the navigation bar, footer, modals, and toggles, all designed to ensure smooth interaction, accessibility, and consistency across devices and page views. 
+
+By providing persistent tools for navigation, theme selection, sound control, and feedback delivery, these universal components support a seamless user journey from start to finish.
+
+---
 
 ### **5.1.1 Theme Toggle** 
 The Theme Toggle permits users to switch between light and dark visual modes based on preference or ambient lighting conditions. It promotes accessibility and personalization by offering visually distinct styles for different contexts.
@@ -2027,10 +2085,12 @@ The game page is the interactive core of **Codoku**, where users engage with the
 
 Each feature below contributes to a smoother, more enjoyable, and responsive gameplay experience.
 
+---
+
 ### **5.2.1 Setup Modal**
 This is an introductory modal that configures difficulty and timer settings before gameplay begins. It streamlines user onboarding and ensures the game starts with a known configuration, acting as a game settings section. This modal appears on first load, upon pressing 'New', and after puzzle completion. Users select options and click 'Enter' to begin. After first game is played, a 'Cancel' button becomes visible to players. 
 
-![Setup modal preview](docs/figures/gifs/setup-modal.gif)
+![Setup modal preview](docs/figures/gifs/setup-modal.gif)  
 *User configuring difficulty and timer settings before starting a game in **Codoku***
 
 **Benefits:**
@@ -2280,6 +2340,8 @@ The About Page in **Codoku** offers users insight into the game’s purpose, des
 
 Each feature is designed to reflect the project's minimalist philosophy while remaining accessible and visually consistent with the rest of the application.
 
+---
+
 ### **5.3.1 Accessible Introduction Content**
 This section outlines **Codoku’s** philosophy, development goals, and intended audience. It introduces the project in a way that is welcoming and inclusive for all users — especially those using assistive technologies.
 
@@ -2338,7 +2400,11 @@ Users can click or tap the button labeled “Donate” to open the charity’s d
 - Can be conditionally rendered via `JavaScript` in future versions if a payment gateway is integrated  
 
 ## **5.4 Error Page Features**
-The custom 404 Error Page provides a user-friendly fallback experience for when visitors navigate to an invalid or missing route. Rather than presenting a generic browser error, **Codoku**’s 404 page reinforces branding and theme consistency, while offering a quick way to recover and return to the main game.
+The custom 404 Error Page provides a user-friendly fallback experience for when visitors navigate to an invalid or missing route. Rather than presenting a generic browser error, Codoku’s 404 page is designed with consistent styling and messaging that aligns with the rest of the site’s aesthetic.
+
+It clearly communicates that the page isn’t found, uses approachable language to reduce user frustration, and features a prominent 'Return to Game' button that allows users to easily navigate back to the homepage. This helps maintain trust, reduces bounce rates, and supports a more polished, professional user experience.
+
+---
 
 ### **5.4.1 Custom Illustration**
 A stylized image and quirky message present the 404 page as an extension of the site's playful, puzzle-themed tone. The design reinforces **Codoku’s** branding while making the error experience more engaging.
@@ -2428,7 +2494,14 @@ Throughout the development of Codoku, various issues surfaced across functionali
 Each issue is outlined with a breakdown of what went wrong, its cause, consequence, what research informed the fix, and how it was resolved. While not every single bug or tweak is listed, as would be unrealistic for any development project, I’ve selected issues that stood out for their learning value. These include both common pitfalls and more complex challenges I was proud to overcome. This selection reflects my growth as a developer and the thoughtful problem-solving that shaped the final product.
 
 ## **7.1 Functional Issues**  
-Functional issues refer to problems that affected how core features of the **Codoku** game and site operated. These bugs typically impacted the logic, interactivity, and behavior of the application, such as how the puzzle grid responded, how the timer worked, how audio was controlled, and how the game reset conditions were triggered. Resolving these issues was essential to ensure a smooth, intuitive, and bug-free experience for the user. Each fix aimed to reinforce correct state management, predictable responses to user input, and a seamless gameplay loop from start to finish.
+Functional issues refer to problems that affected how core features of the **Codoku** game and site operated. These bugs typically impacted the logic, interactivity, and behavior of the application. Fixing them was crucial for delivering a smooth and consistent user experience.
+
+Each fix was guided by the principles of:
+- **Accurate state management**: preventing leftover data or behavior from one game affecting the next.
+- **Predictable user input response**: ensuring the interface reacts intuitively and consistently.
+- **Seamless gameplay loop**: from page load to puzzle completion or timeout, the experience should feel fluid and error-free.
+
+---
 
 ### **7.1.1. Grid Still Active After Puzzle Solved**  
 During development, I noticed that even after solving the puzzle, users were still able to click on the grid and input new numbers. This undermined the sense of completion and allowed players to accidentally overwrite correct answers, making the win feel unfinished.
@@ -2600,7 +2673,14 @@ function setupStartButton() {
 The hint counter now reliably resets with each new game, preventing carry-over errors and ensuring players start fresh. This change improves consistency, fairness, and the professional polish of the Codoku gameplay experience.
 
 ## **7.2 Styling & Layout Issues**  
-Styling issues in Codoku mostly centered around ensuring responsiveness, dark mode compatibility, modal clarity, and visual consistency across devices. These challenges were resolved directly in the `style.css` file using a combination of custom variables, layered selectors, and media queries.
+Styling issues in **Codoku** primarily focused on maintaining a polished, accessible interface across all screen sizes and themes. These challenges were resolved through a combination of improvements in the `style.css` file and targeted logic within supporting `JavaScript` files.
+
+- **Custom CSS Variables**: Enabling easy theme switching and size adjustments without repeating values.
+- **Layered Selectors**: Carefully scoped selectors to override Bootstrap defaults without breaking global styles.
+- **Media Queries**: Adapting the layout and element sizing based on device width, orientation, and height thresholds.
+- **Theming Logic in `theme.js`**: Managed dynamic updates to UI components on theme switch, ensuring full consistency across modals, buttons, and the navigation bar.
+
+---
 
 #### **7.2.1. Grid Overflowed on Small Screens**  
 On small devices, the Sudoku grid often exceeded the width or height of the viewport, causing horizontal scrollbars and awkward alignment.
@@ -2901,7 +2981,15 @@ This ensured the modal opens automatically on load, users could not dismiss it v
 All users—visual and non-visual—now receive immediate, guided onboarding upon page load. The structured setup flow improves clarity, prevents premature interaction, and ensures accessibility by making the first step clear, intentional, and accessible.
 
 ## **7.4. Performance Issues**
-Performance was a critical focus throughout Codoku’s development, especially given its interactive nature, background media, and dynamic scripting. Slow load times, blocked interactivity, and visual lag were all potential risks particularly on lower-powered devices or slower connections. To ensure a smooth and responsive experience, I identified and resolved several performance-related issues through browser testing, dev tools profiling, mentor feedback, and research into modern frontend optimization strategies.
+Performance was a critical focus throughout **Codoku’s** development, especially due to its interactive features, background media usage, and layered scripting. Poor load times, blocked interactivity, or sluggish visuals were all potential risks — particularly on lower-powered devices or slower networks.
+
+To ensure a consistently responsive experience, I took a proactive approach to identifying and resolving performance bottlenecks using a range of strategies:
+
+- **Browser DevTools Profiling**: Used Chrome and Firefox performance panels to analyze layout shifts, scripting delays, and rendering bottlenecks.
+- **Mentor Feedback**: Incorporated expert guidance (from mentor David Bowers) regarding script deferral, asset compression, and perceived load improvements.
+- **Modern Optimization Research**: Consulted sources like MDN, W3Schools and community posts to apply best practices in frontend performance.
+
+---
 
 ### **7.4.1. Heavy Background Assets**
 Codoku’s modal and navbar backgrounds initially reused the same large `.webp` files as the full-page body backgrounds. While visually consistent, this introduced unnecessary weight in areas where smaller, more compressed assets would suffice particularly on mobile devices or slower connections. Unnecessarily large assets increase page load time. Even if the image is partially visible or cropped in a small container, the full file still needs to be downloaded and decoded by the browser, adding to the initial load time.
@@ -2974,7 +3062,14 @@ To prevent layout shifts and optimize perceived load speed, I also:
 Images now load quickly without compromising clarity. Codoku’s About and 404 pages are noticeably faster and feel more responsive—especially on mobile—thanks to lighter, correctly-sized visuals and proper layout rendering.
 
 ## **7.5. Validation Issues**
-As part of Codoku’s commitment to clean, accessible, and standards-compliant code, I rigorously tested the application against HTML, ARIA, and accessibility validation tools (like the W3C Validator and axe DevTools). These tests surfaced several markup-level issues that, while not always visible to end users, posed risks to semantic clarity, screen reader compatibility, and long-term maintainability.
+As part of **Codoku’s** commitment to clean, accessible, and standards-compliant code, I rigorously tested the website in which several markup-level issues surfaced which, while not always visually apparent, had important implications for:
+
+- Semantic clarity (e.g., correct use of elements like `<nav>`, `<main>`, `<section>`)
+- ARIA role accuracy and redundancy
+- Screen reader compatibility and labeling
+- HTML5 syntax compliance for maintainability and forward compatibility
+
+---
 
 ### **7.5.1. XHTML-Style Self-Closing Tags**
 Codoku originally included self-closing tags like `<img />`, which are valid in XHTML but not in standard HTML5 syntax. While browsers are forgiving, these violations caused W3C validation errors.
@@ -3029,7 +3124,20 @@ I removed redundant `role` attributes from semantic elements where the role was 
 The markup is now cleaner, easier to read, and conforms to WAI-ARIA best practices without duplication. 
 
 ## **7.6. Unresolved Issues**
-Despite extensive testing and iteration, a few issues remain in the current Codoku build. These were either deemed low-impact or out of scope for this project’s goals. However, they have been documented here for transparency and potential future enhancement.
+Despite extensive testing and iteration, a few known issues remain in the current **Codoku** build. These were either:
+
+- Considered low-impact for the average user experience
+- Flagged as stretch goals that required a severe structural rework
+- Or were deemed out of scope given the project's academic and time constraints
+
+### Why Include Them?
+- **Transparency:** These are not hidden or ignored; they are acknowledged and tracked for future refinement.
+- **Future Development Roadmap:** They help define clear areas for growth in future versions of Codoku.
+- **User Awareness:** While not critical, users with specific accessibility or platform needs may encounter these limitations.
+
+These unresolved issues do not break functionality, but their documentation reflects a commitment to continual improvement, honest reflection, and responsible software development.
+
+---
 
 ### **7.6.1. Grid Keyboard Navigation**
 While Codoku supports mouse and touch input well, keyboard users—particularly those relying on assistive technologies—cannot currently navigate the Sudoku grid using arrow keys or tab focus. This limits accessibility for non-pointer users.
@@ -3071,7 +3179,7 @@ All JavaScript files in Codoku are served in unminified form. While easy to read
 - Slightly longer load and parse times (only measurable on low-end devices or slow networks).  
 - No functional degradation—intentional and acceptable tradeoff for this project phase.
 
-## **8. Deployment**  
+# **8. Deployment**  
 The **Codoku** project was deployed using GitHub Pages, allowing the live version of the site to be accessed directly through a browser without the need for additional server configuration.
 
 To publish the site via GitHub Pages, I followed these steps:
@@ -3090,10 +3198,23 @@ The deployed site is now live and accessible at:[https://teseolou.github.io/codo
 Additionally, I will fork this repository so that it can be cloned for future use and development.
 
 # 9. Future Developments
-While the current version of **Codoku** is fully functional, responsive, and accessible, several enhancements are planned for future releases. These improvements aim to build upon the strong foundation established during development and address performance optimizations, accessibility refinements, and extended functionality.
+While the current version of **Codoku** is fully functional, responsive, and accessible, several enhancements are planned for future releases.
+
+These improvements are intended to:
+
+- Build on the strong foundation established during development  
+- Address remaining performance optimization opportunities  
+- Refine accessibility to reach even more users  
+- Introduce advanced features for extended engagement and replayability  
 
 ## **9.1 Accessibility Improvements**
-Codoku prioritizes accessibility, but several enhancements remain to support full keyboard control and screen reader interaction. These changes will help ensure a more inclusive experience for users with diverse needs.
+Codoku prioritizes accessibility, but several enhancements remain to support full keyboard control and improved screen reader interaction.
+
+These planned upgrades will help ensure:
+
+- Greater support for non-pointer users through complete keyboard navigability  
+- Clearer, semantically rich ARIA roles within the puzzle grid  
+- More meaningful narration of gameplay feedback for assistive technology  
 
 ### **9.1.1 Grid Cell Keyboard Navigation**
 - **Issue**: Currently, users must use a mouse or touchscreen to select grid cells; full keyboard-only gameplay isn’t supported.
@@ -3103,16 +3224,23 @@ Codoku prioritizes accessibility, but several enhancements remain to support ful
 
 ### **9.1.2 Improved Screen Reader Support**
 - **Observation**: Although modals and toggles are announced properly, screen reader users cannot currently interact with or understand the state of the Sudoku grid itself.
-- **Plan**: Restructure the grid with semantic roles, possibly using ARIA `grid`, `row`, and `cell` roles or a native HTML `<table>` structure to support narrated navigation.
+- **Plan**: I’d like to experiment with restructuring the grid using semantic ARIA roles such as `grid`, `row`, and `cell`, or by converting the layout to a native HTML `<table>`. This would help support screen reader navigation and provide clearer, narrated feedback for non-visual users.
 - **Goal**: Ensure screen reader users receive meaningful cues while moving across the grid and entering values.
 
 ## **9.2 JavaScript Optimization**
-To improve loading time and production efficiency, Codoku will eventually move toward minified and modular JavaScript. This ensures maintainability during development while enabling performance improvements for deployment.
+To improve loading time and production efficiency, Codoku will eventually adopt a more optimized JavaScript pipeline. This will allow the codebase to remain clear and maintainable during development while enabling better performance in deployment environments.
 
-### **9.2.1 Unminified JavaScript Files**
-- **Context**: Lighthouse flagged JavaScript files as unminified.
-- **Reason**: Code was intentionally left readable and commented for learning and assessment.
-- **Planned**: Introduce minification via Terser or integrate a build process using Webpack or Parcel to optimize delivery for production use.
+### 9.2 JavaScript Optimization
+
+To improve loading time and production efficiency, Codoku will eventually adopt a more optimized JavaScript pipeline. This will allow the codebase to remain clear and maintainable during development while enabling better performance in deployment environments.
+
+### 9.2.1 Unminified JavaScript Files
+
+- **Context**: Google Lighthouse flagged all JavaScript files (e.g., `game.js`, `theme.js`, `init.js`) as unminified, leading to slightly larger file sizes and longer load times.
+- **Reason**: The JavaScript was intentionally left in a readable, fully commented format to support learning outcomes, assessment clarity, and debugging.
+- **Planned Enhancements**:
+  - I've come across Terser as a tool for `JavaScript` minification and would like to explore how it can reduce file size and improve load speed.
+  - I’d also like to experiment with ES module support to better understand how breaking code into smaller, reusable parts can enhance scalability and maintainability in larger projects.
 
 ## **9.3 Performance Enhancements**
 Performance tuning is a key focus for future iterations. Planned improvements include stripping unused styles and optimizing visual content to ensure smoother gameplay, especially on mobile devices.
@@ -3120,12 +3248,13 @@ Performance tuning is a key focus for future iterations. Planned improvements in
 ### **9.3.1 Purging Unused CSS**
 - **Issue**: Bootstrap and Font Awesome include many unused styles, increasing CSS payload size.
 - **Future Strategy**:
-  - Use **PurgeCSS** to strip unused selectors in production builds.
-  - Consider creating a **custom Bootstrap build** limited to Codoku's required components.
+  - I’d like to explore using PurgeCSS to remove unused `CSS` selectors in production builds, which could significantly reduce file size and improve performance.
+  - I’m interested in creating a custom `Bootstrap` build that includes only the components Codoku uses, helping streamline the `CSS` and eliminate unnecessary styles.
 
 ### **9.3.2 LCP Optimization (Largest Contentful Paint)**
 - **Observation**: Large `.webp` assets, especially modal and page backgrounds, can slightly delay LCP performance on mobile devices.
-- **Future Plan**: Experiment with further compression tools and consider lazy loading or image swapping based on screen resolution.
+- **Future Plan**: 
+  - Based on performance feedback, I plan to experiment with additional image compression tools and techniques such as lazy loading to optimize load times especially for high-resolution assets.
 
 ## **9.4 Feature Extensions**
 A number of planned gameplay and interface enhancements will deepen player engagement and improve overall UX, including progress tracking, persistent score storage, and offline support.
@@ -3133,29 +3262,28 @@ A number of planned gameplay and interface enhancements will deepen player engag
 ### **9.4.1 Backend Integration for Score Saving**
 - **Goal**: Allow users to save their game progress or submit scores.
 - **Future Tools**:
-  - Use Firebase or Supabase for real-time databases.
-  - Build a REST API using Node.js and Express for authentication and data storage.
+  - I would like to explore Firebase or Supabase which I came across as options for integrating lightweight, real-time databases that could support features like score saving or user accounts.
+  - I’m also interested in learning how to build a REST API using Node.js and Express, which would allow me to handle authentication and manage persistent data as part of expanding Codoku into a more full-stack experience.
 
 ### **9.4.2 Enhanced Visual Feedback for Clues and Errors**
 - **Current Limitation**: Feedback for hints and incorrect answers relies on color alone (green/red).
 - **Future Improvements**:
-  - Add semantic icons or symbols
-  - Include screen reader alerts via ARIA live regions
-  - Use patterns or outlines to distinguish hint and error states
+  - I’m keen to learn how to implement ARIA live regions to provide real-time updates for screen readers, particularly for actions like checking the board or revealing a clue.
+  - I plan to explore non-color visual cues, such as outlines, patterns, or borders, to distinguish hints and errors in a more inclusive way for users with color vision deficiencies.
 
 ### **9.4.3 Progress Bar for Game Completion**
 - **Planned Feature**: Add a visual progress bar showing how much of the puzzle is complete.
 - **Benefits**: Gives real-time feedback, helps motivate players, and supports cognitive accessibility.
-- **Approach**: Track filled cells vs total editable cells and update the bar dynamically using Bootstrap or custom styling.
+- **Approach**: I’m interested in implementing a dynamic progress bar that tracks how many editable cells have been filled versus the total, similar to how the hinted win modal compares the number of clues used with independent cell inputs. This could serve as a scaffold for calculating live progress.
 
 ### **9.4.4 Offline Play Support**
 - **Goal**: Allow Codoku to function without an internet connection.
 - **Cause**: Currently, all assets load from the network and are not cached for offline use.
 - **Planned Solution**:
-  - Implement a service worker to cache HTML, CSS, JS, and assets.
+  - Implement a service worker to cache `HTML`, `CSS`, `JS`, and assets.
   - Add a manifest file to support installability and offline behavior.
 - **Barrier**: Offline support would require significant JavaScript changes and testing workflows, which are currently beyond the scope of this project.
-- **Future Plan**: Investigate using Workbox in a future module and progressively enhance the site toward full PWA support.
+- **Future Plan**: I came across Workbox while researching service worker strategies and plan to explore it in a future module to progressively enhance Codoku toward full Progressive Web App (PWA) support.
 
 # **10. Technologies Used**
 
