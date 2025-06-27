@@ -21,7 +21,9 @@ function showAlertModal(message) {
 function initPage() {
     setupOutsideNavbarCollapse();
     setupThemeSwitch();
-    setupStartButton();
+    if (document.querySelector("#new-game-button")) {
+        setupStartButton();
+    }
     setupSoundToggle();
     const hasGridContent = $('#grid p').length > 0;
     if (!hasGridContent) {
