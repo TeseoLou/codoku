@@ -3089,55 +3089,74 @@ The deployed site is now live and accessible at:[https://teseolou.github.io/codo
 
 Additionally, I will fork this repository so that it can be cloned for future use and development.
 
+## **9. Future Developments**
+While the current version of **Codoku** is fully functional, responsive, and accessible, several enhancements are planned for future releases. These improvements aim to build upon the strong foundation established during development and address performance optimizations, accessibility refinements, and extended functionality.
+
 ## 9. Future Developments
 
-While the current version of **Codoku** is fully functional, responsive, and accessible, there are a number of enhancements planned for future releases. These improvements aim to build upon the strong foundation established during development and address certain technical limitations, stretch goals, and performance opportunities.
+While the current version of **Codoku** is fully functional, responsive, and accessible, several enhancements are planned for future releases. These improvements aim to build upon the strong foundation established during development and address performance optimizations, accessibility refinements, and extended functionality.
 
-### 9.1 Accessibility Improvements
+### **9.1 Accessibility Improvements**
+Codoku prioritizes accessibility, but several enhancements remain to support full keyboard control and screen reader interaction. These changes will help ensure a more inclusive experience for users with diverse needs.
 
-Although Codoku performs well in screen reader and keyboard testing, one accessibility limitation remains:
+#### **9.1.1 Grid Cell Keyboard Navigation**
+- **Issue**: Currently, users must use a mouse or touchscreen to select grid cells; full keyboard-only gameplay isn’t supported.
+- **Cause**: The grid uses `<p>` elements, which are not focusable by default.
+- **Barrier**: True keyboard navigation would require restructuring the grid using `<button>` or `<input>` elements or implementing a roving `tabindex` system with ARIA labels.
+- **Status**: This was scoped out for this version due to time constraints and complexity but is a priority for future accessibility enhancements.
 
-#### 🧩 Grid Cell Keyboard Navigation (Unresolved)
-- **Issue**: Currently, individual Sudoku cells cannot be selected using the keyboard alone. Users must click a cell with a mouse before entering a number.
-- **Cause**: The grid cells are built with `<p>` tags for semantic flexibility and style control but are not focusable elements by default.
-- **Barrier**: To fully support keyboard-based play, each cell would need to be restructured as a `tabindex="0"` focusable element or rendered as a `<button>` or `<input>`, with custom event handling and ARIA labels.
-- **Status**: This enhancement was scoped out of the current project due to time and complexity, but remains a top priority for future releases.
+#### **9.1.2 Improved Screen Reader Support**
+- **Observation**: Although modals and toggles are announced properly, screen reader users cannot currently interact with or understand the state of the Sudoku grid itself.
+- **Plan**: Restructure the grid with semantic roles, possibly using ARIA `grid`, `row`, and `cell` roles or a native HTML `<table>` structure to support narrated navigation.
+- **Goal**: Ensure screen reader users receive meaningful cues while moving across the grid and entering values.
 
-### 9.2 JavaScript Optimization
+### **9.2 JavaScript Optimization**
+To improve loading time and production efficiency, Codoku will eventually move toward minified and modular JavaScript. This ensures maintainability during development while enabling performance improvements for deployment.
 
-#### 🔧 Unminified JavaScript Files
-- **Context**: Lighthouse flagged `game.js` as non-minified, resulting in a marginally larger bundle.
-- **Reason**: The JavaScript has been left in an uncompressed, well-commented state to preserve readability and support assessment.
-- **Planned**: For a production release, all JavaScript files will be minified using tools like Terser or integrated into a build process for optimized delivery.
+#### **9.2.1 Unminified JavaScript Files**
+- **Context**: Lighthouse flagged JavaScript files as unminified.
+- **Reason**: Code was intentionally left readable and commented for learning and assessment.
+- **Planned**: Introduce minification via Terser or integrate a build process using Webpack or Parcel to optimize delivery for production use.
 
-### 9.3 Performance Enhancements
+### **9.3 Performance Enhancements**
+Performance tuning is a key focus for future iterations. Planned improvements include stripping unused styles and optimizing visual content to ensure smoother gameplay, especially on mobile devices.
 
-#### ⏱ Purging Unused CSS
-- **Issue**: Bootstrap’s full bundle is currently used, which includes many unused styles.
-- **Solution (Future)**:
-  - Explore **PurgeCSS** to eliminate unused selectors in production.
-  - Consider creating a **custom Bootstrap build** tailored to Codoku’s components.
-- **Goal**: Reduce CSS payload size to improve load times and maintain cleaner source code.
+#### **9.3.1 Purging Unused CSS**
+- **Issue**: Bootstrap and Font Awesome include many unused styles, increasing CSS payload size.
+- **Future Strategy**:
+  - Use **PurgeCSS** to strip unused selectors in production builds.
+  - Consider creating a **custom Bootstrap build** limited to Codoku's required components.
 
-#### 🖼 LCP Optimization (Largest Contentful Paint)
-- **Observation**: Modal backgrounds and large `.webp` images slightly delay LCP scores on mobile.
-- **Plan**: Conduct further research into image compression tools and responsive asset strategies to optimize visual assets without compromising clarity or theme cohesion.
+#### **9.3.2 LCP Optimization (Largest Contentful Paint)**
+- **Observation**: Large `.webp` assets, especially modal and page backgrounds, can slightly delay LCP performance on mobile devices.
+- **Future Plan**: Experiment with further compression tools and consider lazy loading or image swapping based on screen resolution.
 
-### 9.4 Feature Extensions
+### **9.4 Feature Extensions**
+A number of planned gameplay and interface enhancements will deepen player engagement and improve overall UX, including progress tracking, persistent score storage, and offline support.
 
-#### 📮 Backend Integration for Score Saving
-- **Idea**: Implement optional backend functionality to allow players to submit scores and track high scores over time.
-- **Tools Considered**:
-  - Firebase for lightweight database and auth
-  - Node.js/Express for server setup
-- **Timeline**: Future addition as full-stack knowledge progresses.
+#### **9.4.1 Backend Integration for Score Saving**
+- **Goal**: Allow users to save their game progress or submit scores.
+- **Future Tools**:
+  - Use Firebase or Supabase for real-time databases.
+  - Build a REST API using Node.js and Express for authentication and data storage.
 
-#### ♿ Enhanced Visual Feedback for Clues and Errors
-- **Observation**: Current clue reveals and incorrect inputs are styled using color changes alone (green and red text), which may be insufficient for users with color vision deficiencies or low vision.
-- **Planned Improvements**:
-  - Add icon indicators (e.g., ❌ for errors, 🛈 for hints)
-  - Introduce accessible patterns (e.g., dashed borders for hints, underlines for incorrect entries)
-  - Use ARIA live regions or inline screen reader announcements to describe changes
-- **Goal**: Ensure feedback from the "Check" and "Clue" buttons is perceivable to all users regardless of color perception.
+#### **9.4.2 Enhanced Visual Feedback for Clues and Errors**
+- **Current Limitation**: Feedback for hints and incorrect answers relies on color alone (green/red).
+- **Future Improvements**:
+  - Add semantic icons or symbols
+  - Include screen reader alerts via ARIA live regions
+  - Use patterns or outlines to distinguish hint and error states
 
-Codoku represents a strong foundation in front-end logic, accessibility, and responsive design. Its future will focus on expanding functionality, refining performance, and enhancing interactivity for all users. Accessibility and user experience will remain at the core of every future iteration.
+#### **9.4.3 Progress Bar for Game Completion**
+- **Planned Feature**: Add a visual progress bar showing how much of the puzzle is complete.
+- **Benefits**: Gives real-time feedback, helps motivate players, and supports cognitive accessibility.
+- **Approach**: Track filled cells vs total editable cells and update the bar dynamically using Bootstrap or custom styling.
+
+#### **9.4.4 Offline Play Support**
+- **Goal**: Allow Codoku to function without an internet connection.
+- **Cause**: Currently, all assets load from the network and are not cached for offline use.
+- **Planned Solution**:
+  - Implement a service worker to cache HTML, CSS, JS, and assets.
+  - Add a manifest file to support installability and offline behavior.
+- **Barrier**: Offline support would require significant JavaScript changes and testing workflows, which are currently beyond the scope of this project.
+- **Future Plan**: Investigate using Workbox in a future module and progressively enhance the site toward full PWA support.
